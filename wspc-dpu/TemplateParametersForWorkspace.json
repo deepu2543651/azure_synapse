@@ -1,0 +1,15 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"workspaceName": {
+			"value": "wspc-dpu"
+		},
+		"wspc-dpu-WorkspaceDefaultSqlServer_connectionString": {
+			"value": ""
+		},
+		"wspc-dpu-WorkspaceDefaultStorage_properties_typeProperties_url": {
+			"value": "https://adlsgen2deepu.dfs.core.windows.net"
+		}
+	}
+}

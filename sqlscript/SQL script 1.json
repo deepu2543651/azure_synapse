@@ -2,7 +2,7 @@
 	"name": "SQL script 1",
 	"properties": {
 		"content": {
-			"query": "",
+			"query": "create SCHEMA deepu_schema\n\ncreate EXTERNAL table tbl_vpn_json\nWITH(\nLOCATION ='dpu'\n\n\n)",
 			"metadata": {
 				"language": "sql"
 			},

@@ -1,0 +1,19 @@
+{
+	"name": "DestinationDataset_3nn",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "wspc-dpu-WorkspaceDefaultStorage",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"folderPath": "dpu_json_test",
+				"fileSystem": "dpu"
+			}
+		},
+		"schema": {}
+	}
+}

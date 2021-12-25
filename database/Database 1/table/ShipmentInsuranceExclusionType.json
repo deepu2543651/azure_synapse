@@ -1,0 +1,86 @@
+{
+	"name": "ShipmentInsuranceExclusionType",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "ShipmentInsuranceExclusionType",
+		"Description": "A term used to denote certain types of losses or causes of loss which are not covered by an insurance policy. \n\nExclusions may be expressed in a policy or implied by law or custom. In general, there\nare two types of exclusions:\n\nAbsolute Exclusions   \nstate that certain types of losses or causes of loss are excluded without\nqualification (Example: excluding shortage, leakage or contamination)\n \nConditional Exclusions \nstate that certain types of losses or causes of loss are excluded unless\ncertain events take place (Example: excluding shortage, leakage or contamination unless caused by stranding or collision).\n\nEx:\n- Defects in transportation vehicle/vessel\n- Criminal acts of transportation crew\n- Acts of God\n- Acts of War\n- Misconduct of the assured\n- Ordinary leakage or loss in weight\n- Inherent vice\n- Insufficiency or unsuitability of packing or preparation\n- Delay\n- Nuclear weapons of war\n- Wars\n- Strikes, riots and civil commotions\n- Insolvency of ship owners\n- Unseaworthiness or unfitness of vessel, container or conveyance\n- Radioactive contamination  \n- Barratry \n- Derelict mines torpedoes bombs or other derelict weapons of war.\n- War civil war revolution rebellion insurrection\n- Strikes, lockouts, labor disturbances, riots or civil commotions\n- Ordinary leakage\n- Loss, damage or expense due to delay\n- Loss, damage or expense due to \n- Discharge of cargo at port of distress\n- Earthquake, volcanic eruption or lightning\n- Vessel stranded, grounded, sunk or capsized\n- Discharge of cargo at port of distress\n- Loss damage or expense attributable to willful misconduct of the Assured",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "InsuranceExclusionTypeId",
+					"Description": "The unique identifier of an insurance exclusion type.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentInsuranceExclusionType.cdm.json/ShipmentInsuranceExclusionType",
+						"Name": "InsuranceExclusionTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "InsuranceExclusionTypeName",
+					"Description": "The name of an insurance exclusion type.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentInsuranceExclusionType.cdm.json/ShipmentInsuranceExclusionType",
+						"Name": "InsuranceExclusionTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "InsuranceExclusionTypeDescription",
+					"Description": "The description of an insurance exclusion type.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentInsuranceExclusionType.cdm.json/ShipmentInsuranceExclusionType",
+						"Name": "InsuranceExclusionTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"InsuranceExclusionTypeId\":{\"entity\":\"ShipmentInsuranceExclusionType.cdm.json/ShipmentInsuranceExclusionType\",\"name\":\"InsuranceExclusionTypeId\"},\"InsuranceExclusionTypeName\":{\"entity\":\"ShipmentInsuranceExclusionType.cdm.json/ShipmentInsuranceExclusionType\",\"name\":\"InsuranceExclusionTypeName\"},\"InsuranceExclusionTypeDescription\":{\"entity\":\"ShipmentInsuranceExclusionType.cdm.json/ShipmentInsuranceExclusionType\",\"name\":\"InsuranceExclusionTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"ShipmentInsuranceExclusionType\",\"path\":\"ShipmentInsuranceExclusionType.cdm.json/ShipmentInsuranceExclusionType\"},\"description\":\"A term used to denote certain types of losses or causes of loss which are not covered by an insurance policy. \\n\\nExclusions may be expressed in a policy or implied by law or custom. In general, there\\nare two types of exclusions:\\n\\nAbsolute Exclusions   \\nstate that certain types of losses or causes of loss are excluded without\\nqualification (Example: excluding shortage, leakage or contamination)\\n \\nConditional Exclusions \\nstate that certain types of losses or causes of loss are excluded unless\\ncertain events take place (Example: excluding shortage, leakage or contamination unless caused by stranding or collision).\\n\\nEx:\\n- Defects in transportation vehicle/vessel\\n- Criminal acts of transportation crew\\n- Acts of God\\n- Acts of War\\n- Misconduct of the assured\\n- Ordinary leakage or loss in weight\\n- Inherent vice\\n- Insufficiency or unsuitability of packing or preparation\\n- Delay\\n- Nuclear weapons of war\\n- Wars\\n- Strikes, riots and civil commotions\\n- Insolvency of ship owners\\n- Unseaworthiness or unfitness of vessel, container or conveyance\\n- Radioactive contamination  \\n- Barratry \\n- Derelict mines torpedoes bombs or other derelict weapons of war.\\n- War civil war revolution rebellion insurrection\\n- Strikes, lockouts, labor disturbances, riots or civil commotions\\n- Ordinary leakage\\n- Loss, damage or expense due to delay\\n- Loss, damage or expense due to \\n- Discharge of cargo at port of distress\\n- Earthquake, volcanic eruption or lightning\\n- Vessel stranded, grounded, sunk or capsized\\n- Discharge of cargo at port of distress\\n- Loss damage or expense attributable to willful misconduct of the Assured\",\"primaryKey\":[\"InsuranceExclusionTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"InsuranceExclusionTypeId\",\"attributeReference\":{\"entity\":\"ShipmentInsuranceExclusionType.cdm.json/ShipmentInsuranceExclusionType\",\"name\":\"InsuranceExclusionTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"InsuranceExclusionTypeName\",\"attributeReference\":{\"entity\":\"ShipmentInsuranceExclusionType.cdm.json/ShipmentInsuranceExclusionType\",\"name\":\"InsuranceExclusionTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"InsuranceExclusionTypeDescription\",\"attributeReference\":{\"entity\":\"ShipmentInsuranceExclusionType.cdm.json/ShipmentInsuranceExclusionType\",\"name\":\"InsuranceExclusionTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512}]}}}",
+			"Description": "A term used to denote certain types of losses or causes of loss which are not covered by an insurance policy. \n\nExclusions may be expressed in a policy or implied by law or custom. In general, there\nare two types of exclusions:\n\nAbsolute Exclusions   \nstate that certain types of losses or causes of loss are excluded without\nqualification (Example: excluding shortage, leakage or contamination)\n \nConditional Exclusions \nstate that certain types of losses or causes of loss are excluded unless\ncertain events take place (Example: excluding shortage, leakage or contamination unless caused by stranding or collision).\n\nEx:\n- Defects in transportation vehicle/vessel\n- Criminal acts of transportation crew\n- Acts of God\n- Acts of War\n- Misconduct of the assured\n- Ordinary leakage or loss in weight\n- Inherent vice\n- Insufficiency or unsuitability of packing or preparation\n- Delay\n- Nuclear weapons of war\n- Wars\n- Strikes, riots and civil commotions\n- Insolvency of ship owners\n- Unseaworthiness or unfitness of vessel, container or conveyance\n- Radioactive contamination  \n- Barratry \n- Derelict mines torpedoes bombs or other derelict weapons of war.\n- War civil war revolution rebellion insurrection\n- Strikes, lockouts, labor disturbances, riots or civil commotions\n- Ordinary leakage\n- Loss, damage or expense due to delay\n- Loss, damage or expense due to \n- Discharge of cargo at port of distress\n- Earthquake, volcanic eruption or lightning\n- Vessel stranded, grounded, sunk or capsized\n- Discharge of cargo at port of distress\n- Loss damage or expense attributable to willful misconduct of the Assured",
+			"DisplayFolderInfo": "{\"name\":\"Shipping\",\"colorCode\":\"#000B42\"}",
+			"PrimaryKeys": "InsuranceExclusionTypeId"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

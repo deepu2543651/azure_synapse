@@ -1,0 +1,30 @@
+{
+	"name": "relationship-arjegapjot",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "relationship-arjegapjot",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "ShipmentRouteLeg",
+		"ToTableName": "ShipmentRouteException",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ShipmentId",
+				"ToColumnName": "ShipmentId"
+			},
+			{
+				"FromColumnName": "ShipmentLegNumber",
+				"ToColumnName": "ShipmentLegNumber"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"ShipmentRouteLeg.cdm.json/ShipmentRouteLeg\",\"toEntity\":\"ShipmentRouteException.cdm.json/ShipmentRouteException\",\"joinPairs\":[{\"fromAttribute\":\"ShipmentId\",\"toAttribute\":\"ShipmentId\"},{\"fromAttribute\":\"ShipmentLegNumber\",\"toAttribute\":\"ShipmentLegNumber\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

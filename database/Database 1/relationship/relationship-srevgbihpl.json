@@ -1,0 +1,30 @@
+{
+	"name": "relationship-srevgbihpl",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "relationship-srevgbihpl",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "ShipmentDocument",
+		"ToTableName": "BillOfLading",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "DocumentId",
+				"ToColumnName": "DocumentId"
+			},
+			{
+				"FromColumnName": "ShipmentId",
+				"ToColumnName": "ShipmentId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"ShipmentDocument.cdm.json/ShipmentDocument\",\"toEntity\":\"BillOfLading.cdm.json/BillOfLading\",\"joinPairs\":[{\"fromAttribute\":\"DocumentId\",\"toAttribute\":\"DocumentId\"},{\"fromAttribute\":\"ShipmentId\",\"toAttribute\":\"ShipmentId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

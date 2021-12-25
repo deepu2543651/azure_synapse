@@ -1,0 +1,26 @@
+{
+	"name": "relationship-wgkkaetakx",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "relationship-wgkkaetakx",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "ShipmentItemRejectionReason",
+		"ToTableName": "ShipmentItemRejection",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ShipmentItemRejectionReasonId",
+				"ToColumnName": "ShipmentItemRejectionReasonId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"ShipmentItemRejectionReason.cdm.json/ShipmentItemRejectionReason\",\"toEntity\":\"ShipmentItemRejection.cdm.json/ShipmentItemRejection\",\"joinPairs\":[{\"fromAttribute\":\"ShipmentItemRejectionReasonId\",\"toAttribute\":\"ShipmentItemRejectionReasonId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

@@ -1,0 +1,34 @@
+{
+	"name": "relationship-ncqonkovoy",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "relationship-ncqonkovoy",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "ShipmentRouteLegEquipment",
+		"ToTableName": "ShipmentRouteLegEquipmentSubstitution",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ShipmentId",
+				"ToColumnName": "ShipmentId"
+			},
+			{
+				"FromColumnName": "ShipmentLegNumber",
+				"ToColumnName": "ShipmentLegNumber"
+			},
+			{
+				"FromColumnName": "ShipmentRouteLegEquipmentSequenceNumber",
+				"ToColumnName": "ShipmentRouteLegEquipmentSequenceNumber"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"ShipmentRouteLegEquipment.cdm.json/ShipmentRouteLegEquipment\",\"toEntity\":\"ShipmentRouteLegEquipmentSubstitution.cdm.json/ShipmentRouteLegEquipmentSubstitution\",\"joinPairs\":[{\"fromAttribute\":\"ShipmentId\",\"toAttribute\":\"ShipmentId\"},{\"fromAttribute\":\"ShipmentLegNumber\",\"toAttribute\":\"ShipmentLegNumber\"},{\"fromAttribute\":\"ShipmentRouteLegEquipmentSequenceNumber\",\"toAttribute\":\"ShipmentRouteLegEquipmentSequenceNumber\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

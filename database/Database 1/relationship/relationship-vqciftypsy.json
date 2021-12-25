@@ -1,0 +1,26 @@
+{
+	"name": "relationship-vqciftypsy",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "relationship-vqciftypsy",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "InsurancePolicyPartyRelationshipType",
+		"ToTableName": "InsurancePolicyRelatedParty",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "InsurancePolicyPartyRelationshipTypeId",
+				"ToColumnName": "InsurancePolicyPartyRelationshipTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"InsurancePolicyPartyRelationshipType.cdm.json/InsurancePolicyPartyRelationshipType\",\"toEntity\":\"InsurancePolicyRelatedParty.cdm.json/InsurancePolicyRelatedParty\",\"joinPairs\":[{\"fromAttribute\":\"InsurancePolicyPartyRelationshipTypeId\",\"toAttribute\":\"InsurancePolicyPartyRelationshipTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

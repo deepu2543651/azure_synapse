@@ -1,0 +1,30 @@
+{
+	"name": "relationship-lxhhzopzwd",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "relationship-lxhhzopzwd",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Flight",
+		"ToTableName": "FlightSchedule",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "CarrierId",
+				"ToColumnName": "CarrierId"
+			},
+			{
+				"FromColumnName": "FlightNumber",
+				"ToColumnName": "FlightNumber"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Flight.cdm.json/Flight\",\"toEntity\":\"FlightSchedule.cdm.json/FlightSchedule\",\"joinPairs\":[{\"fromAttribute\":\"CarrierId\",\"toAttribute\":\"CarrierId\"},{\"fromAttribute\":\"FlightNumber\",\"toAttribute\":\"FlightNumber\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

@@ -1,0 +1,26 @@
+{
+	"name": "relationship-oxfbtjwxft",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "relationship-oxfbtjwxft",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "CertificateOfInspectionPartyRelationshipType",
+		"ToTableName": "CertificateOfInspectionRelatedParty",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "CertificateOfInspectionPartyRelationshipTypeId",
+				"ToColumnName": "CertificateOfInspectionPartyRelationshipTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"CertificateOfInspectionPartyRelationshipType.cdm.json/CertificateOfInspectionPartyRelationshipType\",\"toEntity\":\"CertificateOfInspectionRelatedParty.cdm.json/CertificateOfInspectionRelatedParty\",\"joinPairs\":[{\"fromAttribute\":\"CertificateOfInspectionPartyRelationshipTypeId\",\"toAttribute\":\"CertificateOfInspectionPartyRelationshipTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

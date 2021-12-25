@@ -1,0 +1,26 @@
+{
+	"name": "relationship-pzgtuewnnc",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "relationship-pzgtuewnnc",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Aircraft",
+		"ToTableName": "AircraftAllowableCargo",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "AircraftId",
+				"ToColumnName": "AircraftId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Aircraft.cdm.json/Aircraft\",\"toEntity\":\"AircraftAllowableCargo.cdm.json/AircraftAllowableCargo\",\"joinPairs\":[{\"fromAttribute\":\"AircraftId\",\"toAttribute\":\"AircraftId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

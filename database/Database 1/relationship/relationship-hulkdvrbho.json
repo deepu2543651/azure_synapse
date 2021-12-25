@@ -1,0 +1,26 @@
+{
+	"name": "relationship-hulkdvrbho",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "relationship-hulkdvrbho",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Warehouse",
+		"ToTableName": "WarehouseItemAllocationStock",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "WarehouseId",
+				"ToColumnName": "WarehouseId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Warehouse.cdm.json/Warehouse\",\"toEntity\":\"WarehouseItemAllocationStock.cdm.json/WarehouseItemAllocationStock\",\"joinPairs\":[{\"fromAttribute\":\"WarehouseId\",\"toAttribute\":\"WarehouseId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

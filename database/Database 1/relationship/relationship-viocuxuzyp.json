@@ -1,0 +1,26 @@
+{
+	"name": "relationship-viocuxuzyp",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "relationship-viocuxuzyp",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "RfidTagType",
+		"ToTableName": "RfidTag",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "RfidTagTypeId",
+				"ToColumnName": "RfidTagTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"RfidTagType.cdm.json/RfidTagType\",\"toEntity\":\"RfidTag.cdm.json/RfidTag\",\"joinPairs\":[{\"fromAttribute\":\"RfidTagTypeId\",\"toAttribute\":\"RfidTagTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

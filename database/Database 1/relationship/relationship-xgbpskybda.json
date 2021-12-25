@@ -1,0 +1,26 @@
+{
+	"name": "relationship-xgbpskybda",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "relationship-xgbpskybda",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Airport",
+		"ToTableName": "FlightSegment",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "AirportCode",
+				"ToColumnName": "ConnectingAirportCode"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Airport.cdm.json/Airport\",\"toEntity\":\"FlightSegment.cdm.json/FlightSegment\",\"joinPairs\":[{\"fromAttribute\":\"AirportCode\",\"toAttribute\":\"ConnectingAirportCode\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

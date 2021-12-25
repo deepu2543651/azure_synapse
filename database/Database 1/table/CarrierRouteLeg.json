@@ -1,0 +1,181 @@
+{
+	"name": "CarrierRouteLeg",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "CarrierRouteLeg",
+		"Description": "The one or more locations that comprise a route in the associated sequence.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "CarrierId",
+					"Description": "The unique identifier of a Carrier.",
+					"BaseAttributeReference": {
+						"Entity": "CarrierRouteLeg.cdm.json/CarrierRouteLeg",
+						"Name": "CarrierId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "CarrierRouteId",
+					"Description": "The unique identifier of a Carrier Route.",
+					"BaseAttributeReference": {
+						"Entity": "CarrierRouteLeg.cdm.json/CarrierRouteLeg",
+						"Name": "CarrierRouteId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "CarrierRouteLegNumber",
+					"Description": "The assigned to the Carrier Route Leg.",
+					"BaseAttributeReference": {
+						"Entity": "CarrierRouteLeg.cdm.json/CarrierRouteLeg",
+						"Name": "CarrierRouteLegNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "FromLocationId",
+					"Description": "The unique identifier of a Shipping Location.",
+					"BaseAttributeReference": {
+						"Entity": "CarrierRouteLeg.cdm.json/CarrierRouteLeg",
+						"Name": "FromLocationId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ToLocationId",
+					"Description": "The unique identifier of a Shipping Location.",
+					"BaseAttributeReference": {
+						"Entity": "CarrierRouteLeg.cdm.json/CarrierRouteLeg",
+						"Name": "ToLocationId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PlannedRouteLegDistance",
+					"Description": "The planned route leg distance in miles.",
+					"BaseAttributeReference": {
+						"Entity": "CarrierRouteLeg.cdm.json/CarrierRouteLeg",
+						"Name": "PlannedRouteLegDistance"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PlannedRouteLegTransitTime",
+					"Description": "The planned transit time for completion of the leg in hours.",
+					"BaseAttributeReference": {
+						"Entity": "CarrierRouteLeg.cdm.json/CarrierRouteLeg",
+						"Name": "PlannedRouteLegTransitTime"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 256,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "RouteLegTypeId",
+					"Description": "The unique identifier of a Route Leg Type.",
+					"BaseAttributeReference": {
+						"Entity": "CarrierRouteLeg.cdm.json/CarrierRouteLeg",
+						"Name": "RouteLegTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ShipmentMethodId",
+					"Description": "The unique identifier of a Shipment Method.",
+					"BaseAttributeReference": {
+						"Entity": "CarrierRouteLeg.cdm.json/CarrierRouteLeg",
+						"Name": "ShipmentMethodId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"CarrierId\":{\"entity\":\"CarrierRouteLeg.cdm.json/CarrierRouteLeg\",\"name\":\"CarrierId\"},\"CarrierRouteId\":{\"entity\":\"CarrierRouteLeg.cdm.json/CarrierRouteLeg\",\"name\":\"CarrierRouteId\"},\"CarrierRouteLegNumber\":{\"entity\":\"CarrierRouteLeg.cdm.json/CarrierRouteLeg\",\"name\":\"CarrierRouteLegNumber\"},\"FromLocationId\":{\"entity\":\"CarrierRouteLeg.cdm.json/CarrierRouteLeg\",\"name\":\"FromLocationId\"},\"ToLocationId\":{\"entity\":\"CarrierRouteLeg.cdm.json/CarrierRouteLeg\",\"name\":\"ToLocationId\"},\"PlannedRouteLegDistance\":{\"entity\":\"CarrierRouteLeg.cdm.json/CarrierRouteLeg\",\"name\":\"PlannedRouteLegDistance\"},\"PlannedRouteLegTransitTime\":{\"entity\":\"CarrierRouteLeg.cdm.json/CarrierRouteLeg\",\"name\":\"PlannedRouteLegTransitTime\"},\"RouteLegTypeId\":{\"entity\":\"CarrierRouteLeg.cdm.json/CarrierRouteLeg\",\"name\":\"RouteLegTypeId\"},\"ShipmentMethodId\":{\"entity\":\"CarrierRouteLeg.cdm.json/CarrierRouteLeg\",\"name\":\"ShipmentMethodId\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"CarrierRouteLeg\",\"path\":\"CarrierRouteLeg.cdm.json/CarrierRouteLeg\"},\"description\":\"The one or more locations that comprise a route in the associated sequence.\",\"primaryKey\":[\"CarrierId\",\"CarrierRouteId\",\"CarrierRouteLegNumber\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"CarrierId\",\"attributeReference\":{\"entity\":\"CarrierRouteLeg.cdm.json/CarrierRouteLeg\",\"name\":\"CarrierId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"CarrierRouteId\",\"attributeReference\":{\"entity\":\"CarrierRouteLeg.cdm.json/CarrierRouteLeg\",\"name\":\"CarrierRouteId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"CarrierRouteLegNumber\",\"attributeReference\":{\"entity\":\"CarrierRouteLeg.cdm.json/CarrierRouteLeg\",\"name\":\"CarrierRouteLegNumber\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"FromLocationId\",\"attributeReference\":{\"entity\":\"CarrierRouteLeg.cdm.json/CarrierRouteLeg\",\"name\":\"FromLocationId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ToLocationId\",\"attributeReference\":{\"entity\":\"CarrierRouteLeg.cdm.json/CarrierRouteLeg\",\"name\":\"ToLocationId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"PlannedRouteLegDistance\",\"attributeReference\":{\"entity\":\"CarrierRouteLeg.cdm.json/CarrierRouteLeg\",\"name\":\"PlannedRouteLegDistance\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"PlannedRouteLegTransitTime\",\"attributeReference\":{\"entity\":\"CarrierRouteLeg.cdm.json/CarrierRouteLeg\",\"name\":\"PlannedRouteLegTransitTime\"},\"dataType\":\"string\",\"dataTypeLength\":256},{\"type\":\"Existing\",\"name\":\"RouteLegTypeId\",\"attributeReference\":{\"entity\":\"CarrierRouteLeg.cdm.json/CarrierRouteLeg\",\"name\":\"RouteLegTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ShipmentMethodId\",\"attributeReference\":{\"entity\":\"CarrierRouteLeg.cdm.json/CarrierRouteLeg\",\"name\":\"ShipmentMethodId\"},\"dataType\":\"integer\"}]}}}",
+			"Description": "The one or more locations that comprise a route in the associated sequence.",
+			"DisplayFolderInfo": "{\"name\":\"Shipping\",\"colorCode\":\"#000B42\"}",
+			"PrimaryKeys": "CarrierId,CarrierRouteId,CarrierRouteLegNumber"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

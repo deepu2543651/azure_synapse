@@ -1,0 +1,119 @@
+{
+	"name": "VesselStatus",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "VesselStatus",
+		"Description": "The status of the vessel for the associated period.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "VesselId",
+					"Description": "The unique identifier of a vessel/ship.",
+					"BaseAttributeReference": {
+						"Entity": "VesselStatus.cdm.json/VesselStatus",
+						"Name": "VesselId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PeriodStartTimestamp",
+					"Description": "The period start timestamp that the associated vessel status is defined.",
+					"BaseAttributeReference": {
+						"Entity": "VesselStatus.cdm.json/VesselStatus",
+						"Name": "PeriodStartTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "PeriodEndTimestamp",
+					"Description": "The period end timestamp that the associated vessel status is defined.",
+					"BaseAttributeReference": {
+						"Entity": "VesselStatus.cdm.json/VesselStatus",
+						"Name": "PeriodEndTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "VesselStatusTypeId",
+					"Description": "The unique identifier of a Vessel Status Type.",
+					"BaseAttributeReference": {
+						"Entity": "VesselStatus.cdm.json/VesselStatus",
+						"Name": "VesselStatusTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "VesselStatusNote",
+					"Description": "A note, comment or additional information regarding the vessel status.",
+					"BaseAttributeReference": {
+						"Entity": "VesselStatus.cdm.json/VesselStatus",
+						"Name": "VesselStatusNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"VesselId\":{\"entity\":\"VesselStatus.cdm.json/VesselStatus\",\"name\":\"VesselId\"},\"PeriodStartTimestamp\":{\"entity\":\"VesselStatus.cdm.json/VesselStatus\",\"name\":\"PeriodStartTimestamp\"},\"PeriodEndTimestamp\":{\"entity\":\"VesselStatus.cdm.json/VesselStatus\",\"name\":\"PeriodEndTimestamp\"},\"VesselStatusTypeId\":{\"entity\":\"VesselStatus.cdm.json/VesselStatus\",\"name\":\"VesselStatusTypeId\"},\"VesselStatusNote\":{\"entity\":\"VesselStatus.cdm.json/VesselStatus\",\"name\":\"VesselStatusNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"VesselStatus\",\"path\":\"VesselStatus.cdm.json/VesselStatus\"},\"description\":\"The status of the vessel for the associated period.\",\"primaryKey\":[\"VesselId\",\"PeriodStartTimestamp\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"VesselId\",\"attributeReference\":{\"entity\":\"VesselStatus.cdm.json/VesselStatus\",\"name\":\"VesselId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"PeriodStartTimestamp\",\"attributeReference\":{\"entity\":\"VesselStatus.cdm.json/VesselStatus\",\"name\":\"PeriodStartTimestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"PeriodEndTimestamp\",\"attributeReference\":{\"entity\":\"VesselStatus.cdm.json/VesselStatus\",\"name\":\"PeriodEndTimestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"VesselStatusTypeId\",\"attributeReference\":{\"entity\":\"VesselStatus.cdm.json/VesselStatus\",\"name\":\"VesselStatusTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"VesselStatusNote\",\"attributeReference\":{\"entity\":\"VesselStatus.cdm.json/VesselStatus\",\"name\":\"VesselStatusNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024}]}}}",
+			"Description": "The status of the vessel for the associated period.",
+			"DisplayFolderInfo": "{\"name\":\"Shipping\",\"colorCode\":\"#000B42\"}",
+			"PrimaryKeys": "VesselId,PeriodStartTimestamp"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

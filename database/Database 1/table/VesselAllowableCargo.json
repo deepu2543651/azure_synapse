@@ -1,0 +1,119 @@
+{
+	"name": "VesselAllowableCargo",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "VesselAllowableCargo",
+		"Description": "The type of cargo that is allowed to be transported by the vessel.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "VesselId",
+					"Description": "The unique identifier of a vessel/ship.",
+					"BaseAttributeReference": {
+						"Entity": "VesselAllowableCargo.cdm.json/VesselAllowableCargo",
+						"Name": "VesselId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "CargoTypeId",
+					"Description": "The unique identifier of a Cargo Type.",
+					"BaseAttributeReference": {
+						"Entity": "VesselAllowableCargo.cdm.json/VesselAllowableCargo",
+						"Name": "CargoTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PeriodStartDate",
+					"Description": "The period start date for which the associated vessel allowable cargo is effective.",
+					"BaseAttributeReference": {
+						"Entity": "VesselAllowableCargo.cdm.json/VesselAllowableCargo",
+						"Name": "PeriodStartDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "PeriodEndDate",
+					"Description": "The period end date for which the associated aircraft vessel allowable cargo is effective.",
+					"BaseAttributeReference": {
+						"Entity": "VesselAllowableCargo.cdm.json/VesselAllowableCargo",
+						"Name": "PeriodEndDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "VesselAllowableCargoNote",
+					"Description": "A note, comment or additional information regarding the vessel allowable cargo.",
+					"BaseAttributeReference": {
+						"Entity": "VesselAllowableCargo.cdm.json/VesselAllowableCargo",
+						"Name": "VesselAllowableCargoNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"VesselId\":{\"entity\":\"VesselAllowableCargo.cdm.json/VesselAllowableCargo\",\"name\":\"VesselId\"},\"CargoTypeId\":{\"entity\":\"VesselAllowableCargo.cdm.json/VesselAllowableCargo\",\"name\":\"CargoTypeId\"},\"PeriodStartDate\":{\"entity\":\"VesselAllowableCargo.cdm.json/VesselAllowableCargo\",\"name\":\"PeriodStartDate\"},\"PeriodEndDate\":{\"entity\":\"VesselAllowableCargo.cdm.json/VesselAllowableCargo\",\"name\":\"PeriodEndDate\"},\"VesselAllowableCargoNote\":{\"entity\":\"VesselAllowableCargo.cdm.json/VesselAllowableCargo\",\"name\":\"VesselAllowableCargoNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"VesselAllowableCargo\",\"path\":\"VesselAllowableCargo.cdm.json/VesselAllowableCargo\"},\"description\":\"The type of cargo that is allowed to be transported by the vessel.\",\"primaryKey\":[\"VesselId\",\"CargoTypeId\",\"PeriodStartDate\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"VesselId\",\"attributeReference\":{\"entity\":\"VesselAllowableCargo.cdm.json/VesselAllowableCargo\",\"name\":\"VesselId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"CargoTypeId\",\"attributeReference\":{\"entity\":\"VesselAllowableCargo.cdm.json/VesselAllowableCargo\",\"name\":\"CargoTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"PeriodStartDate\",\"attributeReference\":{\"entity\":\"VesselAllowableCargo.cdm.json/VesselAllowableCargo\",\"name\":\"PeriodStartDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\"},{\"type\":\"Existing\",\"name\":\"PeriodEndDate\",\"attributeReference\":{\"entity\":\"VesselAllowableCargo.cdm.json/VesselAllowableCargo\",\"name\":\"PeriodEndDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\"},{\"type\":\"Existing\",\"name\":\"VesselAllowableCargoNote\",\"attributeReference\":{\"entity\":\"VesselAllowableCargo.cdm.json/VesselAllowableCargo\",\"name\":\"VesselAllowableCargoNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024}]}}}",
+			"Description": "The type of cargo that is allowed to be transported by the vessel.",
+			"DisplayFolderInfo": "{\"name\":\"Shipping\",\"colorCode\":\"#000B42\"}",
+			"PrimaryKeys": "VesselId,CargoTypeId,PeriodStartDate"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

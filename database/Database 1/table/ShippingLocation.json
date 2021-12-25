@@ -1,0 +1,368 @@
+{
+	"name": "ShippingLocation",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "ShippingLocation",
+		"Description": "A pre-defined location at which a shipment is shipped from, to or in-transit via.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ShippingLocationId",
+					"Description": "The unique identifier of a Shipping Location.",
+					"BaseAttributeReference": {
+						"Entity": "ShippingLocation.cdm.json/ShippingLocation",
+						"Name": "ShippingLocationId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ShippingLocationName",
+					"Description": "The name of the Shipping Location.\n\nEx:\nSan Francisco Airport = SFO\nSFO Transit Warehouse 9",
+					"BaseAttributeReference": {
+						"Entity": "ShippingLocation.cdm.json/ShippingLocation",
+						"Name": "ShippingLocationName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "LocationId",
+					"Description": "The unique identifier of a Location.",
+					"BaseAttributeReference": {
+						"Entity": "ShippingLocation.cdm.json/ShippingLocation",
+						"Name": "LocationId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "GlobalLocationNumber",
+					"Description": "The Global Location Number (GLN) is a simple tool used to uniquely identify locations. It can be used to identify physical locations such as a warehouse, legal entities, or a function / department within a legal entity. The GLN is part of the GS1 system of standards.",
+					"BaseAttributeReference": {
+						"Entity": "ShippingLocation.cdm.json/ShippingLocation",
+						"Name": "GlobalLocationNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 13,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "TerminalCode",
+					"Description": "A customs location code issued for each bonded warehouse or facility.",
+					"BaseAttributeReference": {
+						"Entity": "ShippingLocation.cdm.json/ShippingLocation",
+						"Name": "TerminalCode"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 4,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "PortCode",
+					"Description": "A customs location code for a port (airport, shipping port or rail station). Each port has its own code.",
+					"BaseAttributeReference": {
+						"Entity": "ShippingLocation.cdm.json/ShippingLocation",
+						"Name": "PortCode"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 5,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ShippingLocationContactTelephoneNumber",
+					"Description": "The contact telephone number at the Shipping Location.",
+					"BaseAttributeReference": {
+						"Entity": "ShippingLocation.cdm.json/ShippingLocation",
+						"Name": "ShippingLocationContactTelephoneNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 15,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "ShippingLocationEmailAddress",
+					"Description": "The contact email address at the Shipping Location.",
+					"BaseAttributeReference": {
+						"Entity": "ShippingLocation.cdm.json/ShippingLocation",
+						"Name": "ShippingLocationEmailAddress"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 256,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ShippingLocationFaxNumber",
+					"Description": "The contact fax number at the Shipping Location.",
+					"BaseAttributeReference": {
+						"Entity": "ShippingLocation.cdm.json/ShippingLocation",
+						"Name": "ShippingLocationFaxNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 15,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "LoadingDeliveryCutOffTime",
+					"Description": "Deliver by time and it will be load.",
+					"BaseAttributeReference": {
+						"Entity": "ShippingLocation.cdm.json/ShippingLocation",
+						"Name": "LoadingDeliveryCutOffTime"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 256,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "LoadingCutOffTime",
+					"Description": "Loaded by time and it will be shipped.",
+					"BaseAttributeReference": {
+						"Entity": "ShippingLocation.cdm.json/ShippingLocation",
+						"Name": "LoadingCutOffTime"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 256,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "BondedLocationIndicator",
+					"Description": "Indicates whether the location is a bonded location.\n\nAn airline terminal authorized by the Customs Authorities for storage of goods until customs duties are paid or the goods are released in some other proper manner.\n\nA warehouse authorized by Customs Authorities for storage of goods until customs duties are paid or the goods are released in some other proper manner.",
+					"BaseAttributeReference": {
+						"Entity": "ShippingLocation.cdm.json/ShippingLocation",
+						"Name": "BondedLocationIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "CustomsLocationIndicator",
+					"Description": "Indicates that the location is a customs location, where a shipment must clear customs when it enters any country from another.",
+					"BaseAttributeReference": {
+						"Entity": "ShippingLocation.cdm.json/ShippingLocation",
+						"Name": "CustomsLocationIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "GatewayCityIndicator",
+					"Description": "Indicates that the location is a gateway city, which is the first port of entry into a country, or the last port before exiting a country.",
+					"BaseAttributeReference": {
+						"Entity": "ShippingLocation.cdm.json/ShippingLocation",
+						"Name": "GatewayCityIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "ForeignTradeZoneLocationIndicator",
+					"Description": "A free port in a country divorced from Customs authority but under government control. Merchandise, except that which is prohibited, may be stored in the zone without being subject to import duty regulations.",
+					"BaseAttributeReference": {
+						"Entity": "ShippingLocation.cdm.json/ShippingLocation",
+						"Name": "ForeignTradeZoneLocationIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "FreePortLocationIndicator",
+					"Description": "A restricted area at a seaport for the handling of duty-exempted import goods. Also called a Foreign Trade Zone.",
+					"BaseAttributeReference": {
+						"Entity": "ShippingLocation.cdm.json/ShippingLocation",
+						"Name": "FreePortLocationIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "FreeTradeZoneLocationIndicator",
+					"Description": "A port designated by the government of a country for duty-free entry of any non-prohibited goods. Merchandise may be stored, displayed, used for manufacturing, etc., within the zone and re-exported without duties.",
+					"BaseAttributeReference": {
+						"Entity": "ShippingLocation.cdm.json/ShippingLocation",
+						"Name": "FreeTradeZoneLocationIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "ShippingLocationTypeId",
+					"Description": "The unique identifier of a Location Type.",
+					"BaseAttributeReference": {
+						"Entity": "ShippingLocation.cdm.json/ShippingLocation",
+						"Name": "ShippingLocationTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "WarehouseId",
+					"Description": "The unique identifier of a Warehouse.",
+					"BaseAttributeReference": {
+						"Entity": "ShippingLocation.cdm.json/ShippingLocation",
+						"Name": "WarehouseId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "StorageContainerId",
+					"Description": "The unique identifier of a Storage Container.",
+					"BaseAttributeReference": {
+						"Entity": "ShippingLocation.cdm.json/ShippingLocation",
+						"Name": "StorageContainerId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ShippingLocationId\":{\"entity\":\"ShippingLocation.cdm.json/ShippingLocation\",\"name\":\"ShippingLocationId\"},\"ShippingLocationName\":{\"entity\":\"ShippingLocation.cdm.json/ShippingLocation\",\"name\":\"ShippingLocationName\"},\"LocationId\":{\"entity\":\"ShippingLocation.cdm.json/ShippingLocation\",\"name\":\"LocationId\"},\"GlobalLocationNumber\":{\"entity\":\"ShippingLocation.cdm.json/ShippingLocation\",\"name\":\"GlobalLocationNumber\"},\"TerminalCode\":{\"entity\":\"ShippingLocation.cdm.json/ShippingLocation\",\"name\":\"TerminalCode\"},\"PortCode\":{\"entity\":\"ShippingLocation.cdm.json/ShippingLocation\",\"name\":\"PortCode\"},\"ShippingLocationContactTelephoneNumber\":{\"entity\":\"ShippingLocation.cdm.json/ShippingLocation\",\"name\":\"ShippingLocationContactTelephoneNumber\"},\"ShippingLocationEmailAddress\":{\"entity\":\"ShippingLocation.cdm.json/ShippingLocation\",\"name\":\"ShippingLocationEmailAddress\"},\"ShippingLocationFaxNumber\":{\"entity\":\"ShippingLocation.cdm.json/ShippingLocation\",\"name\":\"ShippingLocationFaxNumber\"},\"LoadingDeliveryCutOffTime\":{\"entity\":\"ShippingLocation.cdm.json/ShippingLocation\",\"name\":\"LoadingDeliveryCutOffTime\"},\"LoadingCutOffTime\":{\"entity\":\"ShippingLocation.cdm.json/ShippingLocation\",\"name\":\"LoadingCutOffTime\"},\"BondedLocationIndicator\":{\"entity\":\"ShippingLocation.cdm.json/ShippingLocation\",\"name\":\"BondedLocationIndicator\"},\"CustomsLocationIndicator\":{\"entity\":\"ShippingLocation.cdm.json/ShippingLocation\",\"name\":\"CustomsLocationIndicator\"},\"GatewayCityIndicator\":{\"entity\":\"ShippingLocation.cdm.json/ShippingLocation\",\"name\":\"GatewayCityIndicator\"},\"ForeignTradeZoneLocationIndicator\":{\"entity\":\"ShippingLocation.cdm.json/ShippingLocation\",\"name\":\"ForeignTradeZoneLocationIndicator\"},\"FreePortLocationIndicator\":{\"entity\":\"ShippingLocation.cdm.json/ShippingLocation\",\"name\":\"FreePortLocationIndicator\"},\"FreeTradeZoneLocationIndicator\":{\"entity\":\"ShippingLocation.cdm.json/ShippingLocation\",\"name\":\"FreeTradeZoneLocationIndicator\"},\"ShippingLocationTypeId\":{\"entity\":\"ShippingLocation.cdm.json/ShippingLocation\",\"name\":\"ShippingLocationTypeId\"},\"WarehouseId\":{\"entity\":\"ShippingLocation.cdm.json/ShippingLocation\",\"name\":\"WarehouseId\"},\"StorageContainerId\":{\"entity\":\"ShippingLocation.cdm.json/ShippingLocation\",\"name\":\"StorageContainerId\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"ShippingLocation\",\"path\":\"ShippingLocation.cdm.json/ShippingLocation\"},\"description\":\"A pre-defined location at which a shipment is shipped from, to or in-transit via.\",\"primaryKey\":[\"ShippingLocationId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"ShippingLocationId\",\"attributeReference\":{\"entity\":\"ShippingLocation.cdm.json/ShippingLocation\",\"name\":\"ShippingLocationId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ShippingLocationName\",\"attributeReference\":{\"entity\":\"ShippingLocation.cdm.json/ShippingLocation\",\"name\":\"ShippingLocationName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"LocationId\",\"attributeReference\":{\"entity\":\"ShippingLocation.cdm.json/ShippingLocation\",\"name\":\"LocationId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"GlobalLocationNumber\",\"attributeReference\":{\"entity\":\"ShippingLocation.cdm.json/ShippingLocation\",\"name\":\"GlobalLocationNumber\"},\"dataType\":\"decimal\",\"dataTypeLength\":13,\"scale\":0},{\"type\":\"Existing\",\"name\":\"TerminalCode\",\"attributeReference\":{\"entity\":\"ShippingLocation.cdm.json/ShippingLocation\",\"name\":\"TerminalCode\"},\"dataType\":\"string\",\"dataTypeLength\":4},{\"type\":\"Existing\",\"name\":\"PortCode\",\"attributeReference\":{\"entity\":\"ShippingLocation.cdm.json/ShippingLocation\",\"name\":\"PortCode\"},\"dataType\":\"string\",\"dataTypeLength\":5},{\"type\":\"Existing\",\"name\":\"ShippingLocationContactTelephoneNumber\",\"attributeReference\":{\"entity\":\"ShippingLocation.cdm.json/ShippingLocation\",\"name\":\"ShippingLocationContactTelephoneNumber\"},\"dataType\":\"decimal\",\"dataTypeLength\":15,\"scale\":0},{\"type\":\"Existing\",\"name\":\"ShippingLocationEmailAddress\",\"attributeReference\":{\"entity\":\"ShippingLocation.cdm.json/ShippingLocation\",\"name\":\"ShippingLocationEmailAddress\"},\"dataType\":\"string\",\"dataTypeLength\":256},{\"type\":\"Existing\",\"name\":\"ShippingLocationFaxNumber\",\"attributeReference\":{\"entity\":\"ShippingLocation.cdm.json/ShippingLocation\",\"name\":\"ShippingLocationFaxNumber\"},\"dataType\":\"decimal\",\"dataTypeLength\":15,\"scale\":0},{\"type\":\"Existing\",\"name\":\"LoadingDeliveryCutOffTime\",\"attributeReference\":{\"entity\":\"ShippingLocation.cdm.json/ShippingLocation\",\"name\":\"LoadingDeliveryCutOffTime\"},\"dataType\":\"string\",\"dataTypeLength\":256},{\"type\":\"Existing\",\"name\":\"LoadingCutOffTime\",\"attributeReference\":{\"entity\":\"ShippingLocation.cdm.json/ShippingLocation\",\"name\":\"LoadingCutOffTime\"},\"dataType\":\"string\",\"dataTypeLength\":256},{\"type\":\"Existing\",\"name\":\"BondedLocationIndicator\",\"attributeReference\":{\"entity\":\"ShippingLocation.cdm.json/ShippingLocation\",\"name\":\"BondedLocationIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"CustomsLocationIndicator\",\"attributeReference\":{\"entity\":\"ShippingLocation.cdm.json/ShippingLocation\",\"name\":\"CustomsLocationIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"GatewayCityIndicator\",\"attributeReference\":{\"entity\":\"ShippingLocation.cdm.json/ShippingLocation\",\"name\":\"GatewayCityIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"ForeignTradeZoneLocationIndicator\",\"attributeReference\":{\"entity\":\"ShippingLocation.cdm.json/ShippingLocation\",\"name\":\"ForeignTradeZoneLocationIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"FreePortLocationIndicator\",\"attributeReference\":{\"entity\":\"ShippingLocation.cdm.json/ShippingLocation\",\"name\":\"FreePortLocationIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"FreeTradeZoneLocationIndicator\",\"attributeReference\":{\"entity\":\"ShippingLocation.cdm.json/ShippingLocation\",\"name\":\"FreeTradeZoneLocationIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"ShippingLocationTypeId\",\"attributeReference\":{\"entity\":\"ShippingLocation.cdm.json/ShippingLocation\",\"name\":\"ShippingLocationTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"WarehouseId\",\"attributeReference\":{\"entity\":\"ShippingLocation.cdm.json/ShippingLocation\",\"name\":\"WarehouseId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"StorageContainerId\",\"attributeReference\":{\"entity\":\"ShippingLocation.cdm.json/ShippingLocation\",\"name\":\"StorageContainerId\"},\"dataType\":\"long\"}]}}}",
+			"Description": "A pre-defined location at which a shipment is shipped from, to or in-transit via.",
+			"DisplayFolderInfo": "{\"name\":\"Shipping\",\"colorCode\":\"#000B42\"}",
+			"PrimaryKeys": "ShippingLocationId"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

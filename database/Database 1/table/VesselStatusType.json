@@ -1,0 +1,86 @@
+{
+	"name": "VesselStatusType",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "VesselStatusType",
+		"Description": "A status type that may be associated with a Vessel for a period of time.\n\nEx:\n- In Port\n- In Port/Loading\n- In Port/Unloading\n- In-transit\n- Operating/Unscheduled\n- In maintenance/Non-Operational\n- Out-of-Service\n- Disabled vessel\n- Unknown",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "VesselStatusTypeId",
+					"Description": "The unique identifier of a Vessel Status Type.",
+					"BaseAttributeReference": {
+						"Entity": "VesselStatusType.cdm.json/VesselStatusType",
+						"Name": "VesselStatusTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "VesselStatusTypeName",
+					"Description": "The name of a Vessel Status Type.",
+					"BaseAttributeReference": {
+						"Entity": "VesselStatusType.cdm.json/VesselStatusType",
+						"Name": "VesselStatusTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "VesselStatusTypeDescription",
+					"Description": "The description of a Vessel Status Type.",
+					"BaseAttributeReference": {
+						"Entity": "VesselStatusType.cdm.json/VesselStatusType",
+						"Name": "VesselStatusTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"VesselStatusTypeId\":{\"entity\":\"VesselStatusType.cdm.json/VesselStatusType\",\"name\":\"VesselStatusTypeId\"},\"VesselStatusTypeName\":{\"entity\":\"VesselStatusType.cdm.json/VesselStatusType\",\"name\":\"VesselStatusTypeName\"},\"VesselStatusTypeDescription\":{\"entity\":\"VesselStatusType.cdm.json/VesselStatusType\",\"name\":\"VesselStatusTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"VesselStatusType\",\"path\":\"VesselStatusType.cdm.json/VesselStatusType\"},\"description\":\"A status type that may be associated with a Vessel for a period of time.\\n\\nEx:\\n- In Port\\n- In Port/Loading\\n- In Port/Unloading\\n- In-transit\\n- Operating/Unscheduled\\n- In maintenance/Non-Operational\\n- Out-of-Service\\n- Disabled vessel\\n- Unknown\",\"primaryKey\":[\"VesselStatusTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"VesselStatusTypeId\",\"attributeReference\":{\"entity\":\"VesselStatusType.cdm.json/VesselStatusType\",\"name\":\"VesselStatusTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"VesselStatusTypeName\",\"attributeReference\":{\"entity\":\"VesselStatusType.cdm.json/VesselStatusType\",\"name\":\"VesselStatusTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"VesselStatusTypeDescription\",\"attributeReference\":{\"entity\":\"VesselStatusType.cdm.json/VesselStatusType\",\"name\":\"VesselStatusTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512}]}}}",
+			"Description": "A status type that may be associated with a Vessel for a period of time.\n\nEx:\n- In Port\n- In Port/Loading\n- In Port/Unloading\n- In-transit\n- Operating/Unscheduled\n- In maintenance/Non-Operational\n- Out-of-Service\n- Disabled vessel\n- Unknown",
+			"DisplayFolderInfo": "{\"name\":\"Shipping\",\"colorCode\":\"#000B42\"}",
+			"PrimaryKeys": "VesselStatusTypeId"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

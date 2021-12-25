@@ -1,0 +1,252 @@
+{
+	"name": "AirWaybillLineItem",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "AirWaybillLineItem",
+		"Description": "The Line Item(s) identified upon the Air Way Bill.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ShipmentId",
+					"Description": "The unique identifier of a Shipment.",
+					"BaseAttributeReference": {
+						"Entity": "AirWaybillLineItem.cdm.json/AirWaybillLineItem",
+						"Name": "ShipmentId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "DocumentId",
+					"Description": "The unique identifier of a Document.",
+					"BaseAttributeReference": {
+						"Entity": "AirWaybillLineItem.cdm.json/AirWaybillLineItem",
+						"Name": "DocumentId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "AirWayBillLineNumber",
+					"Description": "The unique identifier of the Air Way Bill Line Number, which identifies a single Item contained on the Air Way Bill.",
+					"BaseAttributeReference": {
+						"Entity": "AirWaybillLineItem.cdm.json/AirWaybillLineItem",
+						"Name": "AirWayBillLineNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "NumberOfPieces",
+					"Description": "The number of pieces of quantity of the associated shipment items.",
+					"BaseAttributeReference": {
+						"Entity": "AirWaybillLineItem.cdm.json/AirWaybillLineItem",
+						"Name": "NumberOfPieces"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "GrossWeight",
+					"Description": "The gross weight of the Line Item for the associated Quantity.",
+					"BaseAttributeReference": {
+						"Entity": "AirWaybillLineItem.cdm.json/AirWaybillLineItem",
+						"Name": "GrossWeight"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "UnitOfMeasureId",
+					"Description": "The unique identifier of a Unit Of Measure.",
+					"BaseAttributeReference": {
+						"Entity": "AirWaybillLineItem.cdm.json/AirWaybillLineItem",
+						"Name": "UnitOfMeasureId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "CommodityItemNumber",
+					"Description": "The commodity item number of the associated shipment item, which is a specific description number required in air transport to indicate that a specific freight rate applies.",
+					"BaseAttributeReference": {
+						"Entity": "AirWaybillLineItem.cdm.json/AirWaybillLineItem",
+						"Name": "CommodityItemNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "DescriptionOfItemShipped",
+					"Description": "A description of the Line Item, applicable if different than that contained in Item.",
+					"BaseAttributeReference": {
+						"Entity": "AirWaybillLineItem.cdm.json/AirWaybillLineItem",
+						"Name": "DescriptionOfItemShipped"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ChargeableWeight",
+					"Description": "The shipment weight used in determining air freight charges. The chargeable weight may be the dimensional weight or for container shipments, the gross weight of the shipment less the tare weight of the container.",
+					"BaseAttributeReference": {
+						"Entity": "AirWaybillLineItem.cdm.json/AirWaybillLineItem",
+						"Name": "ChargeableWeight"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "TotalChargeAmount",
+					"Description": "The total charges for the Line Item.",
+					"BaseAttributeReference": {
+						"Entity": "AirWaybillLineItem.cdm.json/AirWaybillLineItem",
+						"Name": "TotalChargeAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "RateClassId",
+					"Description": "The shipment weight used in determining air freight charges. The chargeable weight may be the dimensional weight or for container shipments, the gross weight of the shipment less the tare weight of the container.",
+					"BaseAttributeReference": {
+						"Entity": "AirWaybillLineItem.cdm.json/AirWaybillLineItem",
+						"Name": "RateClassId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ShipmentLineNumber",
+					"Description": "The shipment line number.",
+					"BaseAttributeReference": {
+						"Entity": "AirWaybillLineItem.cdm.json/AirWaybillLineItem",
+						"Name": "ShipmentLineNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ItemSku",
+					"Description": "The Stock Keeping Unit identifier, which is typically used for inventory-related activities.",
+					"BaseAttributeReference": {
+						"Entity": "AirWaybillLineItem.cdm.json/AirWaybillLineItem",
+						"Name": "ItemSku"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 20,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ShipmentId\":{\"entity\":\"AirWaybillLineItem.cdm.json/AirWaybillLineItem\",\"name\":\"ShipmentId\"},\"DocumentId\":{\"entity\":\"AirWaybillLineItem.cdm.json/AirWaybillLineItem\",\"name\":\"DocumentId\"},\"AirWayBillLineNumber\":{\"entity\":\"AirWaybillLineItem.cdm.json/AirWaybillLineItem\",\"name\":\"AirWayBillLineNumber\"},\"NumberOfPieces\":{\"entity\":\"AirWaybillLineItem.cdm.json/AirWaybillLineItem\",\"name\":\"NumberOfPieces\"},\"GrossWeight\":{\"entity\":\"AirWaybillLineItem.cdm.json/AirWaybillLineItem\",\"name\":\"GrossWeight\"},\"UnitOfMeasureId\":{\"entity\":\"AirWaybillLineItem.cdm.json/AirWaybillLineItem\",\"name\":\"UnitOfMeasureId\"},\"CommodityItemNumber\":{\"entity\":\"AirWaybillLineItem.cdm.json/AirWaybillLineItem\",\"name\":\"CommodityItemNumber\"},\"DescriptionOfItemShipped\":{\"entity\":\"AirWaybillLineItem.cdm.json/AirWaybillLineItem\",\"name\":\"DescriptionOfItemShipped\"},\"ChargeableWeight\":{\"entity\":\"AirWaybillLineItem.cdm.json/AirWaybillLineItem\",\"name\":\"ChargeableWeight\"},\"TotalChargeAmount\":{\"entity\":\"AirWaybillLineItem.cdm.json/AirWaybillLineItem\",\"name\":\"TotalChargeAmount\"},\"RateClassId\":{\"entity\":\"AirWaybillLineItem.cdm.json/AirWaybillLineItem\",\"name\":\"RateClassId\"},\"ShipmentLineNumber\":{\"entity\":\"AirWaybillLineItem.cdm.json/AirWaybillLineItem\",\"name\":\"ShipmentLineNumber\"},\"ItemSku\":{\"entity\":\"AirWaybillLineItem.cdm.json/AirWaybillLineItem\",\"name\":\"ItemSku\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"AirWaybillLineItem\",\"path\":\"AirWaybillLineItem.cdm.json/AirWaybillLineItem\"},\"description\":\"The Line Item(s) identified upon the Air Way Bill.\",\"primaryKey\":[\"ShipmentId\",\"DocumentId\",\"AirWayBillLineNumber\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"ShipmentId\",\"attributeReference\":{\"entity\":\"AirWaybillLineItem.cdm.json/AirWaybillLineItem\",\"name\":\"ShipmentId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"DocumentId\",\"attributeReference\":{\"entity\":\"AirWaybillLineItem.cdm.json/AirWaybillLineItem\",\"name\":\"DocumentId\"},\"dataType\":\"long\"},{\"type\":\"Existing\",\"name\":\"AirWayBillLineNumber\",\"attributeReference\":{\"entity\":\"AirWaybillLineItem.cdm.json/AirWaybillLineItem\",\"name\":\"AirWayBillLineNumber\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"NumberOfPieces\",\"attributeReference\":{\"entity\":\"AirWaybillLineItem.cdm.json/AirWaybillLineItem\",\"name\":\"NumberOfPieces\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"GrossWeight\",\"attributeReference\":{\"entity\":\"AirWaybillLineItem.cdm.json/AirWaybillLineItem\",\"name\":\"GrossWeight\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":8},{\"type\":\"Existing\",\"name\":\"UnitOfMeasureId\",\"attributeReference\":{\"entity\":\"AirWaybillLineItem.cdm.json/AirWaybillLineItem\",\"name\":\"UnitOfMeasureId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"CommodityItemNumber\",\"attributeReference\":{\"entity\":\"AirWaybillLineItem.cdm.json/AirWaybillLineItem\",\"name\":\"CommodityItemNumber\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"DescriptionOfItemShipped\",\"attributeReference\":{\"entity\":\"AirWaybillLineItem.cdm.json/AirWaybillLineItem\",\"name\":\"DescriptionOfItemShipped\"},\"dataType\":\"string\",\"dataTypeLength\":512},{\"type\":\"Existing\",\"name\":\"ChargeableWeight\",\"attributeReference\":{\"entity\":\"AirWaybillLineItem.cdm.json/AirWaybillLineItem\",\"name\":\"ChargeableWeight\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":8},{\"type\":\"Existing\",\"name\":\"TotalChargeAmount\",\"attributeReference\":{\"entity\":\"AirWaybillLineItem.cdm.json/AirWaybillLineItem\",\"name\":\"TotalChargeAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"RateClassId\",\"attributeReference\":{\"entity\":\"AirWaybillLineItem.cdm.json/AirWaybillLineItem\",\"name\":\"RateClassId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ShipmentLineNumber\",\"attributeReference\":{\"entity\":\"AirWaybillLineItem.cdm.json/AirWaybillLineItem\",\"name\":\"ShipmentLineNumber\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ItemSku\",\"attributeReference\":{\"entity\":\"AirWaybillLineItem.cdm.json/AirWaybillLineItem\",\"name\":\"ItemSku\"},\"dataType\":\"string\",\"dataTypeLength\":20}]}}}",
+			"Description": "The Line Item(s) identified upon the Air Way Bill.",
+			"DisplayFolderInfo": "{\"name\":\"Shipping\",\"colorCode\":\"#000B42\"}",
+			"PrimaryKeys": "ShipmentId,DocumentId,AirWayBillLineNumber"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

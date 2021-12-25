@@ -1,0 +1,214 @@
+{
+	"name": "TowSchedule",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "TowSchedule",
+		"Description": "The schedule for the associated towboat tow run.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "TowId",
+					"Description": "The unique identifier of a Train.",
+					"BaseAttributeReference": {
+						"Entity": "TowSchedule.cdm.json/TowSchedule",
+						"Name": "TowId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "TowScheduledDepartureTimestamp",
+					"Description": "The scheduled departure timestamp.",
+					"BaseAttributeReference": {
+						"Entity": "TowSchedule.cdm.json/TowSchedule",
+						"Name": "TowScheduledDepartureTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "FromLocationId",
+					"Description": "The unique identifier of a Shipping Location.",
+					"BaseAttributeReference": {
+						"Entity": "TowSchedule.cdm.json/TowSchedule",
+						"Name": "FromLocationId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ToLocationId",
+					"Description": "The unique identifier of a Shipping Location.",
+					"BaseAttributeReference": {
+						"Entity": "TowSchedule.cdm.json/TowSchedule",
+						"Name": "ToLocationId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ScheduledArrivalTimestamp",
+					"Description": "The scheduled arrival timestamp at the arrival-location.",
+					"BaseAttributeReference": {
+						"Entity": "TowSchedule.cdm.json/TowSchedule",
+						"Name": "ScheduledArrivalTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "DepartingTerminalNumber",
+					"Description": "The unique identifier of the terminal at the departing location.",
+					"BaseAttributeReference": {
+						"Entity": "TowSchedule.cdm.json/TowSchedule",
+						"Name": "DepartingTerminalNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "DepartingDockNumber",
+					"Description": "The unique identifier of the dock at the departing location.",
+					"BaseAttributeReference": {
+						"Entity": "TowSchedule.cdm.json/TowSchedule",
+						"Name": "DepartingDockNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ArrivingTerminalNumber",
+					"Description": "The unique identifier of the terminal at the arrival location.",
+					"BaseAttributeReference": {
+						"Entity": "TowSchedule.cdm.json/TowSchedule",
+						"Name": "ArrivingTerminalNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ArrivingDockNumber",
+					"Description": "The unique identifier of the dock at the arrival location.",
+					"BaseAttributeReference": {
+						"Entity": "TowSchedule.cdm.json/TowSchedule",
+						"Name": "ArrivingDockNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "CarrierId",
+					"Description": "The unique identifier of a Carrier.",
+					"BaseAttributeReference": {
+						"Entity": "TowSchedule.cdm.json/TowSchedule",
+						"Name": "CarrierId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "CarrierRouteId",
+					"Description": "The unique identifier of a Carrier Route.",
+					"BaseAttributeReference": {
+						"Entity": "TowSchedule.cdm.json/TowSchedule",
+						"Name": "CarrierRouteId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"TowId\":{\"entity\":\"TowSchedule.cdm.json/TowSchedule\",\"name\":\"TowId\"},\"TowScheduledDepartureTimestamp\":{\"entity\":\"TowSchedule.cdm.json/TowSchedule\",\"name\":\"TowScheduledDepartureTimestamp\"},\"FromLocationId\":{\"entity\":\"TowSchedule.cdm.json/TowSchedule\",\"name\":\"FromLocationId\"},\"ToLocationId\":{\"entity\":\"TowSchedule.cdm.json/TowSchedule\",\"name\":\"ToLocationId\"},\"ScheduledArrivalTimestamp\":{\"entity\":\"TowSchedule.cdm.json/TowSchedule\",\"name\":\"ScheduledArrivalTimestamp\"},\"DepartingTerminalNumber\":{\"entity\":\"TowSchedule.cdm.json/TowSchedule\",\"name\":\"DepartingTerminalNumber\"},\"DepartingDockNumber\":{\"entity\":\"TowSchedule.cdm.json/TowSchedule\",\"name\":\"DepartingDockNumber\"},\"ArrivingTerminalNumber\":{\"entity\":\"TowSchedule.cdm.json/TowSchedule\",\"name\":\"ArrivingTerminalNumber\"},\"ArrivingDockNumber\":{\"entity\":\"TowSchedule.cdm.json/TowSchedule\",\"name\":\"ArrivingDockNumber\"},\"CarrierId\":{\"entity\":\"TowSchedule.cdm.json/TowSchedule\",\"name\":\"CarrierId\"},\"CarrierRouteId\":{\"entity\":\"TowSchedule.cdm.json/TowSchedule\",\"name\":\"CarrierRouteId\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"TowSchedule\",\"path\":\"TowSchedule.cdm.json/TowSchedule\"},\"description\":\"The schedule for the associated towboat tow run.\",\"primaryKey\":[\"TowId\",\"TowScheduledDepartureTimestamp\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"TowId\",\"attributeReference\":{\"entity\":\"TowSchedule.cdm.json/TowSchedule\",\"name\":\"TowId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"TowScheduledDepartureTimestamp\",\"attributeReference\":{\"entity\":\"TowSchedule.cdm.json/TowSchedule\",\"name\":\"TowScheduledDepartureTimestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"FromLocationId\",\"attributeReference\":{\"entity\":\"TowSchedule.cdm.json/TowSchedule\",\"name\":\"FromLocationId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ToLocationId\",\"attributeReference\":{\"entity\":\"TowSchedule.cdm.json/TowSchedule\",\"name\":\"ToLocationId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ScheduledArrivalTimestamp\",\"attributeReference\":{\"entity\":\"TowSchedule.cdm.json/TowSchedule\",\"name\":\"ScheduledArrivalTimestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"DepartingTerminalNumber\",\"attributeReference\":{\"entity\":\"TowSchedule.cdm.json/TowSchedule\",\"name\":\"DepartingTerminalNumber\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"DepartingDockNumber\",\"attributeReference\":{\"entity\":\"TowSchedule.cdm.json/TowSchedule\",\"name\":\"DepartingDockNumber\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ArrivingTerminalNumber\",\"attributeReference\":{\"entity\":\"TowSchedule.cdm.json/TowSchedule\",\"name\":\"ArrivingTerminalNumber\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ArrivingDockNumber\",\"attributeReference\":{\"entity\":\"TowSchedule.cdm.json/TowSchedule\",\"name\":\"ArrivingDockNumber\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"CarrierId\",\"attributeReference\":{\"entity\":\"TowSchedule.cdm.json/TowSchedule\",\"name\":\"CarrierId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"CarrierRouteId\",\"attributeReference\":{\"entity\":\"TowSchedule.cdm.json/TowSchedule\",\"name\":\"CarrierRouteId\"},\"dataType\":\"integer\"}]}}}",
+			"Description": "The schedule for the associated towboat tow run.",
+			"DisplayFolderInfo": "{\"name\":\"Shipping\",\"colorCode\":\"#000B42\"}",
+			"PrimaryKeys": "TowId,TowScheduledDepartureTimestamp"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

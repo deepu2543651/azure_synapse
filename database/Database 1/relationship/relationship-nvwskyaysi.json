@@ -1,0 +1,26 @@
+{
+	"name": "relationship-nvwskyaysi",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "relationship-nvwskyaysi",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Vessel",
+		"ToTableName": "ShipmentRouteLegEquipment",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "VesselId",
+				"ToColumnName": "VesselId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Vessel.cdm.json/Vessel\",\"toEntity\":\"ShipmentRouteLegEquipment.cdm.json/ShipmentRouteLegEquipment\",\"joinPairs\":[{\"fromAttribute\":\"VesselId\",\"toAttribute\":\"VesselId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

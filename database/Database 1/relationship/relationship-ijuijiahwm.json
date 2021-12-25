@@ -1,0 +1,26 @@
+{
+	"name": "relationship-ijuijiahwm",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "relationship-ijuijiahwm",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "ServiceRequestChargeType",
+		"ToTableName": "ServiceRequestCharge",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ServiceRequestChargeTypeId",
+				"ToColumnName": "ServiceRequestChargeTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"ServiceRequestChargeType.cdm.json/ServiceRequestChargeType\",\"toEntity\":\"ServiceRequestCharge.cdm.json/ServiceRequestCharge\",\"joinPairs\":[{\"fromAttribute\":\"ServiceRequestChargeTypeId\",\"toAttribute\":\"ServiceRequestChargeTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

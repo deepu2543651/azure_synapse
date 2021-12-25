@@ -1,0 +1,26 @@
+{
+	"name": "relationship-udnkjeejem",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "relationship-udnkjeejem",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "CertificateOfInspection",
+		"ToTableName": "CertificateOfInspectionRelatedParty",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "CertificateOfInspectionId",
+				"ToColumnName": "CertificateOfInspectionId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"CertificateOfInspection.cdm.json/CertificateOfInspection\",\"toEntity\":\"CertificateOfInspectionRelatedParty.cdm.json/CertificateOfInspectionRelatedParty\",\"joinPairs\":[{\"fromAttribute\":\"CertificateOfInspectionId\",\"toAttribute\":\"CertificateOfInspectionId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

@@ -1,0 +1,26 @@
+{
+	"name": "relationship-ltdukxptew",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "relationship-ltdukxptew",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "IpAddress",
+		"ToTableName": "ApplicationCommunication",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "IpAddress",
+				"ToColumnName": "IpAddress"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"IpAddress.cdm.json/IpAddress\",\"toEntity\":\"ApplicationCommunication.cdm.json/ApplicationCommunication\",\"joinPairs\":[{\"fromAttribute\":\"IpAddress\",\"toAttribute\":\"IpAddress\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

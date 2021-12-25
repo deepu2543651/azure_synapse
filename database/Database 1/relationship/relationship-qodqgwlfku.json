@@ -1,0 +1,26 @@
+{
+	"name": "relationship-qodqgwlfku",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "relationship-qodqgwlfku",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "TrailerType",
+		"ToTableName": "Trailer",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "TrailerTypeId",
+				"ToColumnName": "TrailerTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"TrailerType.cdm.json/TrailerType\",\"toEntity\":\"Trailer.cdm.json/Trailer\",\"joinPairs\":[{\"fromAttribute\":\"TrailerTypeId\",\"toAttribute\":\"TrailerTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

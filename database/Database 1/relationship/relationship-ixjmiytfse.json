@@ -1,0 +1,26 @@
+{
+	"name": "relationship-ixjmiytfse",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "relationship-ixjmiytfse",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "TrainScheduleLegPartyRelationshipType",
+		"ToTableName": "TrainScheduleLegRelatedParty",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "TrainScheduleLegPartyRelationshipTypeId",
+				"ToColumnName": "TrainScheduleLegPartyRelationshipTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"TrainScheduleLegPartyRelationshipType.cdm.json/TrainScheduleLegPartyRelationshipType\",\"toEntity\":\"TrainScheduleLegRelatedParty.cdm.json/TrainScheduleLegRelatedParty\",\"joinPairs\":[{\"fromAttribute\":\"TrainScheduleLegPartyRelationshipTypeId\",\"toAttribute\":\"TrainScheduleLegPartyRelationshipTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

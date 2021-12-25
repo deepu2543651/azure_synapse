@@ -1,0 +1,26 @@
+{
+	"name": "relationship-vhhsqralze",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "relationship-vhhsqralze",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Locomotive",
+		"ToTableName": "ShipmentRouteLegEquipment",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "EngineId",
+				"ToColumnName": "EngineId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Locomotive.cdm.json/Locomotive\",\"toEntity\":\"ShipmentRouteLegEquipment.cdm.json/ShipmentRouteLegEquipment\",\"joinPairs\":[{\"fromAttribute\":\"EngineId\",\"toAttribute\":\"EngineId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

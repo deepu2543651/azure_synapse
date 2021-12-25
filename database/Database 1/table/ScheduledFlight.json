@@ -1,0 +1,477 @@
+{
+	"name": "ScheduledFlight",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "ScheduledFlight",
+		"Description": "A flight scheduled for a specific date.\n\nEx:\n\nFlight 714 is from Boston to San Francisco at 9:00 AM departing Logan Airport.\n\nThe Scheduled Flight is Flight 714 departing on August 24th, 2002.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "CarrierId",
+					"Description": "The unique identifier of a Carrier.",
+					"BaseAttributeReference": {
+						"Entity": "ScheduledFlight.cdm.json/ScheduledFlight",
+						"Name": "CarrierId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "FlightNumber",
+					"Description": "The unique identifier of a Flight.",
+					"BaseAttributeReference": {
+						"Entity": "ScheduledFlight.cdm.json/ScheduledFlight",
+						"Name": "FlightNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ScheduledFlightDate",
+					"Description": "The date of the Flight.",
+					"BaseAttributeReference": {
+						"Entity": "ScheduledFlight.cdm.json/ScheduledFlight",
+						"Name": "ScheduledFlightDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "PlannedCheckInTimestamp",
+					"Description": "The planned check-in timestamp for the scheduled flight.",
+					"BaseAttributeReference": {
+						"Entity": "ScheduledFlight.cdm.json/ScheduledFlight",
+						"Name": "PlannedCheckInTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "ActualCheckInTimestamp",
+					"Description": "The actual check-in timestamp for the scheduled flight.",
+					"BaseAttributeReference": {
+						"Entity": "ScheduledFlight.cdm.json/ScheduledFlight",
+						"Name": "ActualCheckInTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "PlannedBoardingTimestamp",
+					"Description": "The planned boarding timestamp for the scheduled flight.",
+					"BaseAttributeReference": {
+						"Entity": "ScheduledFlight.cdm.json/ScheduledFlight",
+						"Name": "PlannedBoardingTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "ActualBoardingTimestamp",
+					"Description": "The actual boarding timestamp for the scheduled flight.",
+					"BaseAttributeReference": {
+						"Entity": "ScheduledFlight.cdm.json/ScheduledFlight",
+						"Name": "ActualBoardingTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "PlannedDepartureTimestamp",
+					"Description": "The planned departure timestamp for the scheduled flight.",
+					"BaseAttributeReference": {
+						"Entity": "ScheduledFlight.cdm.json/ScheduledFlight",
+						"Name": "PlannedDepartureTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "ActualDepartureTimestamp",
+					"Description": "The actual departure timestamp for the scheduled flight.",
+					"BaseAttributeReference": {
+						"Entity": "ScheduledFlight.cdm.json/ScheduledFlight",
+						"Name": "ActualDepartureTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "OriginatingAirportConcourseNumber",
+					"Description": "The Concourse is the area of an airline terminal where the gates are located. Many airports have multiple concourses. \n\nThe Origination Airport Concourse indicates the concourse from which the scheduled flight departs.",
+					"BaseAttributeReference": {
+						"Entity": "ScheduledFlight.cdm.json/ScheduledFlight",
+						"Name": "OriginatingAirportConcourseNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "OriginatingAirportGateNumber",
+					"Description": "The gate number from which the scheduled flight departs.",
+					"BaseAttributeReference": {
+						"Entity": "ScheduledFlight.cdm.json/ScheduledFlight",
+						"Name": "OriginatingAirportGateNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PlannedArrivalTimestamp",
+					"Description": "The planned arrival timestamp for the scheduled flight.",
+					"BaseAttributeReference": {
+						"Entity": "ScheduledFlight.cdm.json/ScheduledFlight",
+						"Name": "PlannedArrivalTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "ActualArrivalTimestamp",
+					"Description": "The actual arrival timestamp for the scheduled flight.",
+					"BaseAttributeReference": {
+						"Entity": "ScheduledFlight.cdm.json/ScheduledFlight",
+						"Name": "ActualArrivalTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "PlannedFlyingTimeHours",
+					"Description": "The planned flying time of the scheduled flight expressed in hours.",
+					"BaseAttributeReference": {
+						"Entity": "ScheduledFlight.cdm.json/ScheduledFlight",
+						"Name": "PlannedFlyingTimeHours"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ActualFlyingTimeHours",
+					"Description": "The actual flying time of the scheduled flight expressed in hours.",
+					"BaseAttributeReference": {
+						"Entity": "ScheduledFlight.cdm.json/ScheduledFlight",
+						"Name": "ActualFlyingTimeHours"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "DestinationAirportConcourseNumber",
+					"Description": "The Concourse is the area of an airline terminal where the gates are located. Many airports have multiple concourses. \n\nThe Destination Airport Concourse indicates the concourse where the flight is scheduled to arrive.",
+					"BaseAttributeReference": {
+						"Entity": "ScheduledFlight.cdm.json/ScheduledFlight",
+						"Name": "DestinationAirportConcourseNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "DestinationAirportGateNumber",
+					"Description": "The gate to which the flight is scheduled to arrive.",
+					"BaseAttributeReference": {
+						"Entity": "ScheduledFlight.cdm.json/ScheduledFlight",
+						"Name": "DestinationAirportGateNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "FirstClassTargetLoad",
+					"Description": "The targeted percentage of First Class seats to be filled with paying passengers.",
+					"BaseAttributeReference": {
+						"Entity": "ScheduledFlight.cdm.json/ScheduledFlight",
+						"Name": "FirstClassTargetLoad"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "FirstClassActualLoad",
+					"Description": "The actual percentage of First Class seats filled with paying passengers.",
+					"BaseAttributeReference": {
+						"Entity": "ScheduledFlight.cdm.json/ScheduledFlight",
+						"Name": "FirstClassActualLoad"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "BusinessClassTargetLoad",
+					"Description": "The targeted percentage of Business Class seats to be filled with paying passengers.",
+					"BaseAttributeReference": {
+						"Entity": "ScheduledFlight.cdm.json/ScheduledFlight",
+						"Name": "BusinessClassTargetLoad"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "BusinessClassActualLoad",
+					"Description": "The actual percentage of Business Class seats filled with paying passengers.",
+					"BaseAttributeReference": {
+						"Entity": "ScheduledFlight.cdm.json/ScheduledFlight",
+						"Name": "BusinessClassActualLoad"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "EconomyClassTargetLoad",
+					"Description": "The targeted percentage of Economy Class seats to be filled with paying passengers.",
+					"BaseAttributeReference": {
+						"Entity": "ScheduledFlight.cdm.json/ScheduledFlight",
+						"Name": "EconomyClassTargetLoad"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "EconomyClassActualLoad",
+					"Description": "The actual percentage of Economy Class seats filled with paying passengers.",
+					"BaseAttributeReference": {
+						"Entity": "ScheduledFlight.cdm.json/ScheduledFlight",
+						"Name": "EconomyClassActualLoad"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "BlackoutDateIndicator",
+					"Description": "Indicates that the associated Flight Schedule day is a blackout date defined by the Carrier.\n\nBlackout dates are certain days during high-traffic seasons and holidays when airline and hotel-award travel is restricted or not available. \n\nIntroduced in 1989, blackout dates help protect travel dates when the airlines have the most revenue to gain. For instance, blackout dates for some international partners extend all summer long.",
+					"BaseAttributeReference": {
+						"Entity": "ScheduledFlight.cdm.json/ScheduledFlight",
+						"Name": "BlackoutDateIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "AircraftId",
+					"Description": "The unique identifier of an Aircraft.",
+					"BaseAttributeReference": {
+						"Entity": "ScheduledFlight.cdm.json/ScheduledFlight",
+						"Name": "AircraftId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "DayOfWeekId",
+					"Description": "The unique identifier of a Day Of Week.",
+					"BaseAttributeReference": {
+						"Entity": "ScheduledFlight.cdm.json/ScheduledFlight",
+						"Name": "DayOfWeekId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "CarrierRouteId",
+					"Description": "The unique identifier of a Carrier Route.",
+					"BaseAttributeReference": {
+						"Entity": "ScheduledFlight.cdm.json/ScheduledFlight",
+						"Name": "CarrierRouteId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"CarrierId\":{\"entity\":\"ScheduledFlight.cdm.json/ScheduledFlight\",\"name\":\"CarrierId\"},\"FlightNumber\":{\"entity\":\"ScheduledFlight.cdm.json/ScheduledFlight\",\"name\":\"FlightNumber\"},\"ScheduledFlightDate\":{\"entity\":\"ScheduledFlight.cdm.json/ScheduledFlight\",\"name\":\"ScheduledFlightDate\"},\"PlannedCheckInTimestamp\":{\"entity\":\"ScheduledFlight.cdm.json/ScheduledFlight\",\"name\":\"PlannedCheckInTimestamp\"},\"ActualCheckInTimestamp\":{\"entity\":\"ScheduledFlight.cdm.json/ScheduledFlight\",\"name\":\"ActualCheckInTimestamp\"},\"PlannedBoardingTimestamp\":{\"entity\":\"ScheduledFlight.cdm.json/ScheduledFlight\",\"name\":\"PlannedBoardingTimestamp\"},\"ActualBoardingTimestamp\":{\"entity\":\"ScheduledFlight.cdm.json/ScheduledFlight\",\"name\":\"ActualBoardingTimestamp\"},\"PlannedDepartureTimestamp\":{\"entity\":\"ScheduledFlight.cdm.json/ScheduledFlight\",\"name\":\"PlannedDepartureTimestamp\"},\"ActualDepartureTimestamp\":{\"entity\":\"ScheduledFlight.cdm.json/ScheduledFlight\",\"name\":\"ActualDepartureTimestamp\"},\"OriginatingAirportConcourseNumber\":{\"entity\":\"ScheduledFlight.cdm.json/ScheduledFlight\",\"name\":\"OriginatingAirportConcourseNumber\"},\"OriginatingAirportGateNumber\":{\"entity\":\"ScheduledFlight.cdm.json/ScheduledFlight\",\"name\":\"OriginatingAirportGateNumber\"},\"PlannedArrivalTimestamp\":{\"entity\":\"ScheduledFlight.cdm.json/ScheduledFlight\",\"name\":\"PlannedArrivalTimestamp\"},\"ActualArrivalTimestamp\":{\"entity\":\"ScheduledFlight.cdm.json/ScheduledFlight\",\"name\":\"ActualArrivalTimestamp\"},\"PlannedFlyingTimeHours\":{\"entity\":\"ScheduledFlight.cdm.json/ScheduledFlight\",\"name\":\"PlannedFlyingTimeHours\"},\"ActualFlyingTimeHours\":{\"entity\":\"ScheduledFlight.cdm.json/ScheduledFlight\",\"name\":\"ActualFlyingTimeHours\"},\"DestinationAirportConcourseNumber\":{\"entity\":\"ScheduledFlight.cdm.json/ScheduledFlight\",\"name\":\"DestinationAirportConcourseNumber\"},\"DestinationAirportGateNumber\":{\"entity\":\"ScheduledFlight.cdm.json/ScheduledFlight\",\"name\":\"DestinationAirportGateNumber\"},\"FirstClassTargetLoad\":{\"entity\":\"ScheduledFlight.cdm.json/ScheduledFlight\",\"name\":\"FirstClassTargetLoad\"},\"FirstClassActualLoad\":{\"entity\":\"ScheduledFlight.cdm.json/ScheduledFlight\",\"name\":\"FirstClassActualLoad\"},\"BusinessClassTargetLoad\":{\"entity\":\"ScheduledFlight.cdm.json/ScheduledFlight\",\"name\":\"BusinessClassTargetLoad\"},\"BusinessClassActualLoad\":{\"entity\":\"ScheduledFlight.cdm.json/ScheduledFlight\",\"name\":\"BusinessClassActualLoad\"},\"EconomyClassTargetLoad\":{\"entity\":\"ScheduledFlight.cdm.json/ScheduledFlight\",\"name\":\"EconomyClassTargetLoad\"},\"EconomyClassActualLoad\":{\"entity\":\"ScheduledFlight.cdm.json/ScheduledFlight\",\"name\":\"EconomyClassActualLoad\"},\"BlackoutDateIndicator\":{\"entity\":\"ScheduledFlight.cdm.json/ScheduledFlight\",\"name\":\"BlackoutDateIndicator\"},\"AircraftId\":{\"entity\":\"ScheduledFlight.cdm.json/ScheduledFlight\",\"name\":\"AircraftId\"},\"DayOfWeekId\":{\"entity\":\"ScheduledFlight.cdm.json/ScheduledFlight\",\"name\":\"DayOfWeekId\"},\"CarrierRouteId\":{\"entity\":\"ScheduledFlight.cdm.json/ScheduledFlight\",\"name\":\"CarrierRouteId\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"ScheduledFlight\",\"path\":\"ScheduledFlight.cdm.json/ScheduledFlight\"},\"description\":\"A flight scheduled for a specific date.\\n\\nEx:\\n\\nFlight 714 is from Boston to San Francisco at 9:00 AM departing Logan Airport.\\n\\nThe Scheduled Flight is Flight 714 departing on August 24th, 2002.\",\"primaryKey\":[\"CarrierId\",\"FlightNumber\",\"ScheduledFlightDate\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"CarrierId\",\"attributeReference\":{\"entity\":\"ScheduledFlight.cdm.json/ScheduledFlight\",\"name\":\"CarrierId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"FlightNumber\",\"attributeReference\":{\"entity\":\"ScheduledFlight.cdm.json/ScheduledFlight\",\"name\":\"FlightNumber\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ScheduledFlightDate\",\"attributeReference\":{\"entity\":\"ScheduledFlight.cdm.json/ScheduledFlight\",\"name\":\"ScheduledFlightDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\"},{\"type\":\"Existing\",\"name\":\"PlannedCheckInTimestamp\",\"attributeReference\":{\"entity\":\"ScheduledFlight.cdm.json/ScheduledFlight\",\"name\":\"PlannedCheckInTimestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"ActualCheckInTimestamp\",\"attributeReference\":{\"entity\":\"ScheduledFlight.cdm.json/ScheduledFlight\",\"name\":\"ActualCheckInTimestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"PlannedBoardingTimestamp\",\"attributeReference\":{\"entity\":\"ScheduledFlight.cdm.json/ScheduledFlight\",\"name\":\"PlannedBoardingTimestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"ActualBoardingTimestamp\",\"attributeReference\":{\"entity\":\"ScheduledFlight.cdm.json/ScheduledFlight\",\"name\":\"ActualBoardingTimestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"PlannedDepartureTimestamp\",\"attributeReference\":{\"entity\":\"ScheduledFlight.cdm.json/ScheduledFlight\",\"name\":\"PlannedDepartureTimestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"ActualDepartureTimestamp\",\"attributeReference\":{\"entity\":\"ScheduledFlight.cdm.json/ScheduledFlight\",\"name\":\"ActualDepartureTimestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"OriginatingAirportConcourseNumber\",\"attributeReference\":{\"entity\":\"ScheduledFlight.cdm.json/ScheduledFlight\",\"name\":\"OriginatingAirportConcourseNumber\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"OriginatingAirportGateNumber\",\"attributeReference\":{\"entity\":\"ScheduledFlight.cdm.json/ScheduledFlight\",\"name\":\"OriginatingAirportGateNumber\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"PlannedArrivalTimestamp\",\"attributeReference\":{\"entity\":\"ScheduledFlight.cdm.json/ScheduledFlight\",\"name\":\"PlannedArrivalTimestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"ActualArrivalTimestamp\",\"attributeReference\":{\"entity\":\"ScheduledFlight.cdm.json/ScheduledFlight\",\"name\":\"ActualArrivalTimestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"PlannedFlyingTimeHours\",\"attributeReference\":{\"entity\":\"ScheduledFlight.cdm.json/ScheduledFlight\",\"name\":\"PlannedFlyingTimeHours\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ActualFlyingTimeHours\",\"attributeReference\":{\"entity\":\"ScheduledFlight.cdm.json/ScheduledFlight\",\"name\":\"ActualFlyingTimeHours\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"DestinationAirportConcourseNumber\",\"attributeReference\":{\"entity\":\"ScheduledFlight.cdm.json/ScheduledFlight\",\"name\":\"DestinationAirportConcourseNumber\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"DestinationAirportGateNumber\",\"attributeReference\":{\"entity\":\"ScheduledFlight.cdm.json/ScheduledFlight\",\"name\":\"DestinationAirportGateNumber\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"FirstClassTargetLoad\",\"attributeReference\":{\"entity\":\"ScheduledFlight.cdm.json/ScheduledFlight\",\"name\":\"FirstClassTargetLoad\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"FirstClassActualLoad\",\"attributeReference\":{\"entity\":\"ScheduledFlight.cdm.json/ScheduledFlight\",\"name\":\"FirstClassActualLoad\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"BusinessClassTargetLoad\",\"attributeReference\":{\"entity\":\"ScheduledFlight.cdm.json/ScheduledFlight\",\"name\":\"BusinessClassTargetLoad\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"BusinessClassActualLoad\",\"attributeReference\":{\"entity\":\"ScheduledFlight.cdm.json/ScheduledFlight\",\"name\":\"BusinessClassActualLoad\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"EconomyClassTargetLoad\",\"attributeReference\":{\"entity\":\"ScheduledFlight.cdm.json/ScheduledFlight\",\"name\":\"EconomyClassTargetLoad\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"EconomyClassActualLoad\",\"attributeReference\":{\"entity\":\"ScheduledFlight.cdm.json/ScheduledFlight\",\"name\":\"EconomyClassActualLoad\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"BlackoutDateIndicator\",\"attributeReference\":{\"entity\":\"ScheduledFlight.cdm.json/ScheduledFlight\",\"name\":\"BlackoutDateIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"AircraftId\",\"attributeReference\":{\"entity\":\"ScheduledFlight.cdm.json/ScheduledFlight\",\"name\":\"AircraftId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"DayOfWeekId\",\"attributeReference\":{\"entity\":\"ScheduledFlight.cdm.json/ScheduledFlight\",\"name\":\"DayOfWeekId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"CarrierRouteId\",\"attributeReference\":{\"entity\":\"ScheduledFlight.cdm.json/ScheduledFlight\",\"name\":\"CarrierRouteId\"},\"dataType\":\"integer\"}]}}}",
+			"Description": "A flight scheduled for a specific date.\n\nEx:\n\nFlight 714 is from Boston to San Francisco at 9:00 AM departing Logan Airport.\n\nThe Scheduled Flight is Flight 714 departing on August 24th, 2002.",
+			"DisplayFolderInfo": "{\"name\":\"Shipping\",\"colorCode\":\"#000B42\"}",
+			"PrimaryKeys": "CarrierId,FlightNumber,ScheduledFlightDate"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

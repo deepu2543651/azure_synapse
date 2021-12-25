@@ -1,0 +1,30 @@
+{
+	"name": "relationship-zxospfuteh",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "relationship-zxospfuteh",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Flight",
+		"ToTableName": "FlightSegment",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "CarrierId",
+				"ToColumnName": "ConnectingCarrierId"
+			},
+			{
+				"FromColumnName": "FlightNumber",
+				"ToColumnName": "ConnectingFlightNumber"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Flight.cdm.json/Flight\",\"toEntity\":\"FlightSegment.cdm.json/FlightSegment\",\"joinPairs\":[{\"fromAttribute\":\"CarrierId\",\"toAttribute\":\"ConnectingCarrierId\"},{\"fromAttribute\":\"FlightNumber\",\"toAttribute\":\"ConnectingFlightNumber\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

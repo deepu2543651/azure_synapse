@@ -1,0 +1,26 @@
+{
+	"name": "relationship-hsbjagkuho",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "relationship-hsbjagkuho",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "CommunicationDevice",
+		"ToTableName": "CommunicationDeviceDriver",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "DeviceId",
+				"ToColumnName": "DeviceId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"CommunicationDevice.cdm.json/CommunicationDevice\",\"toEntity\":\"CommunicationDeviceDriver.cdm.json/CommunicationDeviceDriver\",\"joinPairs\":[{\"fromAttribute\":\"DeviceId\",\"toAttribute\":\"DeviceId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

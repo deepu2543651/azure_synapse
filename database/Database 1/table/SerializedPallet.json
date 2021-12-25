@@ -1,0 +1,104 @@
+{
+	"name": "SerializedPallet",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "SerializedPallet",
+		"Description": "A pallet that can be uniquely identified by an associated serial number.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "PalletTypeId",
+					"Description": "The unique identifier of a Pallet Type.",
+					"BaseAttributeReference": {
+						"Entity": "SerializedPallet.cdm.json/SerializedPallet",
+						"Name": "PalletTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PalletSerialNumber",
+					"Description": "The serial number of the Pallet.",
+					"BaseAttributeReference": {
+						"Entity": "SerializedPallet.cdm.json/SerializedPallet",
+						"Name": "PalletSerialNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Length": 30,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ItemSku",
+					"Description": "The Stock Keeping Unit identifier, which is typically used for inventory-related activities.",
+					"BaseAttributeReference": {
+						"Entity": "SerializedPallet.cdm.json/SerializedPallet",
+						"Name": "ItemSku"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Length": 20,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "SerialShippingContainerCode",
+					"Description": "The Serial Shipping Container Code (SSCC) is an 18-digit number developed by GS1 to be used to identify logistics units. In order to automate the reading process, the SSCC is often encoded in a barcode or encoded in an RFID tag.\n\nThe SSCC enables the unique identification of any combination of items packaged together for storage and/or transport purposes.",
+					"BaseAttributeReference": {
+						"Entity": "SerializedPallet.cdm.json/SerializedPallet",
+						"Name": "SerialShippingContainerCode"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"PalletTypeId\":{\"entity\":\"SerializedPallet.cdm.json/SerializedPallet\",\"name\":\"PalletTypeId\"},\"PalletSerialNumber\":{\"entity\":\"SerializedPallet.cdm.json/SerializedPallet\",\"name\":\"PalletSerialNumber\"},\"ItemSku\":{\"entity\":\"SerializedPallet.cdm.json/SerializedPallet\",\"name\":\"ItemSku\"},\"SerialShippingContainerCode\":{\"entity\":\"SerializedPallet.cdm.json/SerializedPallet\",\"name\":\"SerialShippingContainerCode\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"SerializedPallet\",\"path\":\"SerializedPallet.cdm.json/SerializedPallet\"},\"description\":\"A pallet that can be uniquely identified by an associated serial number.\",\"primaryKey\":[\"PalletTypeId\",\"PalletSerialNumber\",\"ItemSku\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"PalletTypeId\",\"attributeReference\":{\"entity\":\"SerializedPallet.cdm.json/SerializedPallet\",\"name\":\"PalletTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"PalletSerialNumber\",\"attributeReference\":{\"entity\":\"SerializedPallet.cdm.json/SerializedPallet\",\"name\":\"PalletSerialNumber\"},\"dataType\":\"string\",\"dataTypeLength\":30},{\"type\":\"Existing\",\"name\":\"ItemSku\",\"attributeReference\":{\"entity\":\"SerializedPallet.cdm.json/SerializedPallet\",\"name\":\"ItemSku\"},\"dataType\":\"string\",\"dataTypeLength\":20},{\"type\":\"Existing\",\"name\":\"SerialShippingContainerCode\",\"attributeReference\":{\"entity\":\"SerializedPallet.cdm.json/SerializedPallet\",\"name\":\"SerialShippingContainerCode\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":0}]}}}",
+			"Description": "A pallet that can be uniquely identified by an associated serial number.",
+			"DisplayFolderInfo": "{\"name\":\"Shipping\",\"colorCode\":\"#000B42\"}",
+			"PrimaryKeys": "PalletTypeId,PalletSerialNumber,ItemSku"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

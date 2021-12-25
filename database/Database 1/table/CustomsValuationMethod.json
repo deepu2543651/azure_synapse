@@ -1,0 +1,86 @@
+{
+	"name": "CustomsValuationMethod",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "CustomsValuationMethod",
+		"Description": "The method for determining by Customs the dutiable value of imported goods.\n\nEx:\nAD VALOREM\nDEDUCTIVE VALUE\nTRANSACTION VALUE OF IDENTICAL ITEMS\nTRANSACTION VALUE OF ITEMS\nTRANSACTION VALUE OF SIMILAR ITEMS\n\nwhere:\n\nAD VALOREM\nA duty assesses as a percentage rate or value of the imported merchandise.\n\nDEDUCTIVE VALUE\nA valuation method used to determine the value of imported merchandise if the transaction value of identical merchandise or similar merchandise cannot be determined.\n\nThe deductive value method is used by Customs unless the Importer has designated the Computed Value as the designated method of appraising the value of the merchandise.\n\nThe Deductive Value is the resale price in the US after importation of the goods with deductions for commissions, general expenses, transportation costs, insurance costs and customs duties.\n\nTRANSACTION VALUE OF IDENTICAL ITEMS\nThe method for determining by Customs the dutiable value of imported goods.\n\nPossible methods are:\n\n(1) Transaction value of goods\n(2) Transaction value of identical merchandise\n(3) Transaction value of similar merchandise\n\nTRANSACTION VALUE OF ITEMS\nThe method for determining by Customs the dutiable value of imported goods.\n\nPossible methods are:\n\n(1) Transaction value of goods\n(2) Transaction value of identical merchandise\n(3) Transaction value of similar merchandise\n\nTRANSACTION VALUE OF SIMILAR ITEMS\nThe method for determining by Customs the dutiable value of imported goods.\n\nPossible methods are:\n\n(1) Transaction value of goods\n(2) Transaction value of identical merchandise\n(3) Transaction value of similar merchandise",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "CustomsValuationMethodId",
+					"Description": "The unique identifier of the Customs Valuation Method.",
+					"BaseAttributeReference": {
+						"Entity": "CustomsValuationMethod.cdm.json/CustomsValuationMethod",
+						"Name": "CustomsValuationMethodId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "CustomsValuationMethodName",
+					"Description": "The name of the Customs Valuation Method.",
+					"BaseAttributeReference": {
+						"Entity": "CustomsValuationMethod.cdm.json/CustomsValuationMethod",
+						"Name": "CustomsValuationMethodName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "CustomsValuationMethodDescription",
+					"Description": "The description of the Customs Valuation Method.",
+					"BaseAttributeReference": {
+						"Entity": "CustomsValuationMethod.cdm.json/CustomsValuationMethod",
+						"Name": "CustomsValuationMethodDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"CustomsValuationMethodId\":{\"entity\":\"CustomsValuationMethod.cdm.json/CustomsValuationMethod\",\"name\":\"CustomsValuationMethodId\"},\"CustomsValuationMethodName\":{\"entity\":\"CustomsValuationMethod.cdm.json/CustomsValuationMethod\",\"name\":\"CustomsValuationMethodName\"},\"CustomsValuationMethodDescription\":{\"entity\":\"CustomsValuationMethod.cdm.json/CustomsValuationMethod\",\"name\":\"CustomsValuationMethodDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"CustomsValuationMethod\",\"path\":\"CustomsValuationMethod.cdm.json/CustomsValuationMethod\"},\"description\":\"The method for determining by Customs the dutiable value of imported goods.\\n\\nEx:\\nAD VALOREM\\nDEDUCTIVE VALUE\\nTRANSACTION VALUE OF IDENTICAL ITEMS\\nTRANSACTION VALUE OF ITEMS\\nTRANSACTION VALUE OF SIMILAR ITEMS\\n\\nwhere:\\n\\nAD VALOREM\\nA duty assesses as a percentage rate or value of the imported merchandise.\\n\\nDEDUCTIVE VALUE\\nA valuation method used to determine the value of imported merchandise if the transaction value of identical merchandise or similar merchandise cannot be determined.\\n\\nThe deductive value method is used by Customs unless the Importer has designated the Computed Value as the designated method of appraising the value of the merchandise.\\n\\nThe Deductive Value is the resale price in the US after importation of the goods with deductions for commissions, general expenses, transportation costs, insurance costs and customs duties.\\n\\nTRANSACTION VALUE OF IDENTICAL ITEMS\\nThe method for determining by Customs the dutiable value of imported goods.\\n\\nPossible methods are:\\n\\n(1) Transaction value of goods\\n(2) Transaction value of identical merchandise\\n(3) Transaction value of similar merchandise\\n\\nTRANSACTION VALUE OF ITEMS\\nThe method for determining by Customs the dutiable value of imported goods.\\n\\nPossible methods are:\\n\\n(1) Transaction value of goods\\n(2) Transaction value of identical merchandise\\n(3) Transaction value of similar merchandise\\n\\nTRANSACTION VALUE OF SIMILAR ITEMS\\nThe method for determining by Customs the dutiable value of imported goods.\\n\\nPossible methods are:\\n\\n(1) Transaction value of goods\\n(2) Transaction value of identical merchandise\\n(3) Transaction value of similar merchandise\",\"primaryKey\":[\"CustomsValuationMethodId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"CustomsValuationMethodId\",\"attributeReference\":{\"entity\":\"CustomsValuationMethod.cdm.json/CustomsValuationMethod\",\"name\":\"CustomsValuationMethodId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"CustomsValuationMethodName\",\"attributeReference\":{\"entity\":\"CustomsValuationMethod.cdm.json/CustomsValuationMethod\",\"name\":\"CustomsValuationMethodName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"CustomsValuationMethodDescription\",\"attributeReference\":{\"entity\":\"CustomsValuationMethod.cdm.json/CustomsValuationMethod\",\"name\":\"CustomsValuationMethodDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512}]}}}",
+			"Description": "The method for determining by Customs the dutiable value of imported goods.\n\nEx:\nAD VALOREM\nDEDUCTIVE VALUE\nTRANSACTION VALUE OF IDENTICAL ITEMS\nTRANSACTION VALUE OF ITEMS\nTRANSACTION VALUE OF SIMILAR ITEMS\n\nwhere:\n\nAD VALOREM\nA duty assesses as a percentage rate or value of the imported merchandise.\n\nDEDUCTIVE VALUE\nA valuation method used to determine the value of imported merchandise if the transaction value of identical merchandise or similar merchandise cannot be determined.\n\nThe deductive value method is used by Customs unless the Importer has designated the Computed Value as the designated method of appraising the value of the merchandise.\n\nThe Deductive Value is the resale price in the US after importation of the goods with deductions for commissions, general expenses, transportation costs, insurance costs and customs duties.\n\nTRANSACTION VALUE OF IDENTICAL ITEMS\nThe method for determining by Customs the dutiable value of imported goods.\n\nPossible methods are:\n\n(1) Transaction value of goods\n(2) Transaction value of identical merchandise\n(3) Transaction value of similar merchandise\n\nTRANSACTION VALUE OF ITEMS\nThe method for determining by Customs the dutiable value of imported goods.\n\nPossible methods are:\n\n(1) Transaction value of goods\n(2) Transaction value of identical merchandise\n(3) Transaction value of similar merchandise\n\nTRANSACTION VALUE OF SIMILAR ITEMS\nThe method for determining by Customs the dutiable value of imported goods.\n\nPossible methods are:\n\n(1) Transaction value of goods\n(2) Transaction value of identical merchandise\n(3) Transaction value of similar merchandise",
+			"DisplayFolderInfo": "{\"name\":\"Shipping\",\"colorCode\":\"#000B42\"}",
+			"PrimaryKeys": "CustomsValuationMethodId"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

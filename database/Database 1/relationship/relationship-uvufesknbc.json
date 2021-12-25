@@ -1,0 +1,26 @@
+{
+	"name": "relationship-uvufesknbc",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "relationship-uvufesknbc",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "InformationAcquisitionMethod",
+		"ToTableName": "ShipmentLocation",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "InformationAcquisitionMethodId",
+				"ToColumnName": "InformationAcquisitionMethodId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"InformationAcquisitionMethod.cdm.json/InformationAcquisitionMethod\",\"toEntity\":\"ShipmentLocation.cdm.json/ShipmentLocation\",\"joinPairs\":[{\"fromAttribute\":\"InformationAcquisitionMethodId\",\"toAttribute\":\"InformationAcquisitionMethodId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

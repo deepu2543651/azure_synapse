@@ -1,0 +1,86 @@
+{
+	"name": "VesselType",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "VesselType",
+		"Description": "A categorization of vessels based on common characteristics or functionality.\n\nEx:\n\nwhere:\n- Bulk carrier\n- Barge\n- Freighter\n- Lighter\n- Roll-on/roll-off vessel\n- Tanker\n\nwhere:\n\nBARGE\nShips designed to carry barges; some are fitted to act as full containerships and can carry a varying number of barges and containers at the same time. At present this class includes two types of vessels LASH and Sea-Bee.\n\nBULK CARRIER\nAll vessels designed to carry bulk cargo such as grain, fertilizers, ore, and oil.\n\nCARFLOAT\nA barge equipped with tracks on which up to about 12 railroad cars are moved in harbors or inland waterways.\n\nCOMBINATION PASSENGER/CARGO SHIP\nShips with a capacity for 13 or more passengers.\n\nFREIGHTER\nAn ocean going vessel that carriers mixed cargo.\n\nFULL CONTAINERSHIP\nShips equipped with permanent container cells, with little or no space for other types of cargo.\n\nGENERAL CARGO CARRIER\nBreakbulk freighters, car carriers, cattle carriers, pallet carriers and timber carriers.\n\nLIGHTER\nAn open or covered barge towed by a tugboat and used mainly in harbors and inland waterways to carry cargo to/from alongside a vessel.\n\nPARTIAL CONTAINERSHIP\nMultipurpose containerships where one or more but not all compartments are fitted with permanent container cells. Remaining compartments are used for other types of cargo.\n\nROLL-ON ROLL-OFF VESSEL\nShips specially designed to carry wheeled containers or trailers using interior ramps.\n\nTANKER\nShips fitted with tanks to carry liquid cargo such as: crude petroleum and petroleum products; chemicals, Liquefied gasses(LNG and LPG), wine, molasses, and similar product tankers.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "VesselTypeId",
+					"Description": "The unique identifier of a Vessel Type.",
+					"BaseAttributeReference": {
+						"Entity": "VesselType.cdm.json/VesselType",
+						"Name": "VesselTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "VesselTypeName",
+					"Description": "The name of a Vessel Type.",
+					"BaseAttributeReference": {
+						"Entity": "VesselType.cdm.json/VesselType",
+						"Name": "VesselTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "VesselTypeDescription",
+					"Description": "The description of a Vessel Type.",
+					"BaseAttributeReference": {
+						"Entity": "VesselType.cdm.json/VesselType",
+						"Name": "VesselTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"VesselTypeId\":{\"entity\":\"VesselType.cdm.json/VesselType\",\"name\":\"VesselTypeId\"},\"VesselTypeName\":{\"entity\":\"VesselType.cdm.json/VesselType\",\"name\":\"VesselTypeName\"},\"VesselTypeDescription\":{\"entity\":\"VesselType.cdm.json/VesselType\",\"name\":\"VesselTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"VesselType\",\"path\":\"VesselType.cdm.json/VesselType\"},\"description\":\"A categorization of vessels based on common characteristics or functionality.\\n\\nEx:\\n\\nwhere:\\n- Bulk carrier\\n- Barge\\n- Freighter\\n- Lighter\\n- Roll-on/roll-off vessel\\n- Tanker\\n\\nwhere:\\n\\nBARGE\\nShips designed to carry barges; some are fitted to act as full containerships and can carry a varying number of barges and containers at the same time. At present this class includes two types of vessels LASH and Sea-Bee.\\n\\nBULK CARRIER\\nAll vessels designed to carry bulk cargo such as grain, fertilizers, ore, and oil.\\n\\nCARFLOAT\\nA barge equipped with tracks on which up to about 12 railroad cars are moved in harbors or inland waterways.\\n\\nCOMBINATION PASSENGER/CARGO SHIP\\nShips with a capacity for 13 or more passengers.\\n\\nFREIGHTER\\nAn ocean going vessel that carriers mixed cargo.\\n\\nFULL CONTAINERSHIP\\nShips equipped with permanent container cells, with little or no space for other types of cargo.\\n\\nGENERAL CARGO CARRIER\\nBreakbulk freighters, car carriers, cattle carriers, pallet carriers and timber carriers.\\n\\nLIGHTER\\nAn open or covered barge towed by a tugboat and used mainly in harbors and inland waterways to carry cargo to/from alongside a vessel.\\n\\nPARTIAL CONTAINERSHIP\\nMultipurpose containerships where one or more but not all compartments are fitted with permanent container cells. Remaining compartments are used for other types of cargo.\\n\\nROLL-ON ROLL-OFF VESSEL\\nShips specially designed to carry wheeled containers or trailers using interior ramps.\\n\\nTANKER\\nShips fitted with tanks to carry liquid cargo such as: crude petroleum and petroleum products; chemicals, Liquefied gasses(LNG and LPG), wine, molasses, and similar product tankers.\",\"primaryKey\":[\"VesselTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"VesselTypeId\",\"attributeReference\":{\"entity\":\"VesselType.cdm.json/VesselType\",\"name\":\"VesselTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"VesselTypeName\",\"attributeReference\":{\"entity\":\"VesselType.cdm.json/VesselType\",\"name\":\"VesselTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"VesselTypeDescription\",\"attributeReference\":{\"entity\":\"VesselType.cdm.json/VesselType\",\"name\":\"VesselTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512}]}}}",
+			"Description": "A categorization of vessels based on common characteristics or functionality.\n\nEx:\n\nwhere:\n- Bulk carrier\n- Barge\n- Freighter\n- Lighter\n- Roll-on/roll-off vessel\n- Tanker\n\nwhere:\n\nBARGE\nShips designed to carry barges; some are fitted to act as full containerships and can carry a varying number of barges and containers at the same time. At present this class includes two types of vessels LASH and Sea-Bee.\n\nBULK CARRIER\nAll vessels designed to carry bulk cargo such as grain, fertilizers, ore, and oil.\n\nCARFLOAT\nA barge equipped with tracks on which up to about 12 railroad cars are moved in harbors or inland waterways.\n\nCOMBINATION PASSENGER/CARGO SHIP\nShips with a capacity for 13 or more passengers.\n\nFREIGHTER\nAn ocean going vessel that carriers mixed cargo.\n\nFULL CONTAINERSHIP\nShips equipped with permanent container cells, with little or no space for other types of cargo.\n\nGENERAL CARGO CARRIER\nBreakbulk freighters, car carriers, cattle carriers, pallet carriers and timber carriers.\n\nLIGHTER\nAn open or covered barge towed by a tugboat and used mainly in harbors and inland waterways to carry cargo to/from alongside a vessel.\n\nPARTIAL CONTAINERSHIP\nMultipurpose containerships where one or more but not all compartments are fitted with permanent container cells. Remaining compartments are used for other types of cargo.\n\nROLL-ON ROLL-OFF VESSEL\nShips specially designed to carry wheeled containers or trailers using interior ramps.\n\nTANKER\nShips fitted with tanks to carry liquid cargo such as: crude petroleum and petroleum products; chemicals, Liquefied gasses(LNG and LPG), wine, molasses, and similar product tankers.",
+			"DisplayFolderInfo": "{\"name\":\"Shipping\",\"colorCode\":\"#000B42\"}",
+			"PrimaryKeys": "VesselTypeId"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

@@ -1,0 +1,26 @@
+{
+	"name": "relationship-gihxjbyhjz",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "relationship-gihxjbyhjz",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Party",
+		"ToTableName": "Shipment",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "PartyId",
+				"ToColumnName": "ConsignorPartyId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Party.cdm.json/Party\",\"toEntity\":\"Shipment.cdm.json/Shipment\",\"joinPairs\":[{\"fromAttribute\":\"PartyId\",\"toAttribute\":\"ConsignorPartyId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

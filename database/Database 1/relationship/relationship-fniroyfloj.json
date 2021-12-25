@@ -1,0 +1,26 @@
+{
+	"name": "relationship-fniroyfloj",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "relationship-fniroyfloj",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "ShipmentPartyRelationshipType",
+		"ToTableName": "ShipmentRelatedParty",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ShipmentPartyRelationshipTypeId",
+				"ToColumnName": "ShipmentPartyRelationshipTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"ShipmentPartyRelationshipType.cdm.json/ShipmentPartyRelationshipType\",\"toEntity\":\"ShipmentRelatedParty.cdm.json/ShipmentRelatedParty\",\"joinPairs\":[{\"fromAttribute\":\"ShipmentPartyRelationshipTypeId\",\"toAttribute\":\"ShipmentPartyRelationshipTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

@@ -1,0 +1,26 @@
+{
+	"name": "relationship-deqtayqqxv",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "relationship-deqtayqqxv",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "RouteLegType",
+		"ToTableName": "CarrierRouteLeg",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "RouteLegTypeId",
+				"ToColumnName": "RouteLegTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"RouteLegType.cdm.json/RouteLegType\",\"toEntity\":\"CarrierRouteLeg.cdm.json/CarrierRouteLeg\",\"joinPairs\":[{\"fromAttribute\":\"RouteLegTypeId\",\"toAttribute\":\"RouteLegTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

@@ -1,0 +1,26 @@
+{
+	"name": "relationship-dardnneexr",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "relationship-dardnneexr",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Railcar",
+		"ToTableName": "ShipmentRouteLegEquipment",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "RailcarId",
+				"ToColumnName": "RailcarId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Railcar.cdm.json/Railcar\",\"toEntity\":\"ShipmentRouteLegEquipment.cdm.json/ShipmentRouteLegEquipment\",\"joinPairs\":[{\"fromAttribute\":\"RailcarId\",\"toAttribute\":\"RailcarId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

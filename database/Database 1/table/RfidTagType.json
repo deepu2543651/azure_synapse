@@ -1,0 +1,86 @@
+{
+	"name": "RfidTagType",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "RfidTagType",
+		"Description": "The type of RFID tag.\n\nEx:\n- Active\n- Passive\n\nwhere:\n\nACTIVE TAG\nTags which use batteries as a partial or complete source of power. They are further differentiated by separating them into those with replaceable batteries and those which have the batteries inside a sealed unit or what may be termed unitized active tags.\n\nPASSIVE TAG\nPassive tags contain no internal power source. They are externally powered and typically derive their power from the carrier signal radiated from the scanner.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "RfidTagTypeId",
+					"Description": "The unique identifier of a RFID Tag Type.",
+					"BaseAttributeReference": {
+						"Entity": "RfidTagType.cdm.json/RfidTagType",
+						"Name": "RfidTagTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "RfidTagTypeName",
+					"Description": "The name of a RFID Tag Type.",
+					"BaseAttributeReference": {
+						"Entity": "RfidTagType.cdm.json/RfidTagType",
+						"Name": "RfidTagTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "RfidTagTypeDescription",
+					"Description": "The description of a RFID Tag Type.",
+					"BaseAttributeReference": {
+						"Entity": "RfidTagType.cdm.json/RfidTagType",
+						"Name": "RfidTagTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"RfidTagTypeId\":{\"entity\":\"RfidTagType.cdm.json/RfidTagType\",\"name\":\"RfidTagTypeId\"},\"RfidTagTypeName\":{\"entity\":\"RfidTagType.cdm.json/RfidTagType\",\"name\":\"RfidTagTypeName\"},\"RfidTagTypeDescription\":{\"entity\":\"RfidTagType.cdm.json/RfidTagType\",\"name\":\"RfidTagTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"RfidTagType\",\"path\":\"RfidTagType.cdm.json/RfidTagType\"},\"description\":\"The type of RFID tag.\\n\\nEx:\\n- Active\\n- Passive\\n\\nwhere:\\n\\nACTIVE TAG\\nTags which use batteries as a partial or complete source of power. They are further differentiated by separating them into those with replaceable batteries and those which have the batteries inside a sealed unit or what may be termed unitized active tags.\\n\\nPASSIVE TAG\\nPassive tags contain no internal power source. They are externally powered and typically derive their power from the carrier signal radiated from the scanner.\",\"primaryKey\":[\"RfidTagTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"RfidTagTypeId\",\"attributeReference\":{\"entity\":\"RfidTagType.cdm.json/RfidTagType\",\"name\":\"RfidTagTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"RfidTagTypeName\",\"attributeReference\":{\"entity\":\"RfidTagType.cdm.json/RfidTagType\",\"name\":\"RfidTagTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"RfidTagTypeDescription\",\"attributeReference\":{\"entity\":\"RfidTagType.cdm.json/RfidTagType\",\"name\":\"RfidTagTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512}]}}}",
+			"Description": "The type of RFID tag.\n\nEx:\n- Active\n- Passive\n\nwhere:\n\nACTIVE TAG\nTags which use batteries as a partial or complete source of power. They are further differentiated by separating them into those with replaceable batteries and those which have the batteries inside a sealed unit or what may be termed unitized active tags.\n\nPASSIVE TAG\nPassive tags contain no internal power source. They are externally powered and typically derive their power from the carrier signal radiated from the scanner.",
+			"DisplayFolderInfo": "{\"name\":\"Inventory\",\"colorCode\":\"#EA279F\"}",
+			"PrimaryKeys": "RfidTagTypeId"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

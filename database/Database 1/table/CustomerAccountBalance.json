@@ -1,0 +1,120 @@
+{
+	"name": "CustomerAccountBalance",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "CustomerAccountBalance",
+		"Description": "The Customer Account balance of the associated type as of the timestamp shown.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "CustomerAccountId",
+					"Description": "The unique identifier of a Customer Account.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountBalance.cdm.json/CustomerAccountBalance",
+						"Name": "CustomerAccountId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "BalanceTypeId",
+					"Description": "The unique identifier of a Balance Type.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountBalance.cdm.json/CustomerAccountBalance",
+						"Name": "BalanceTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "Timestamp",
+					"Description": "The timestamp that the associated Customer Account Balance is accurate as-of.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountBalance.cdm.json/CustomerAccountBalance",
+						"Name": "Timestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "BalanceAmount",
+					"Description": "The Customer Account balance amount reported of the associated Balance Type for the associated timestamp.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountBalance.cdm.json/CustomerAccountBalance",
+						"Name": "BalanceAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "IsoCurrencyCode",
+					"Description": "The ISO 4217 currency code.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountBalance.cdm.json/CustomerAccountBalance",
+						"Name": "IsoCurrencyCode"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 3,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"CustomerAccountId\":{\"entity\":\"CustomerAccountBalance.cdm.json/CustomerAccountBalance\",\"name\":\"CustomerAccountId\"},\"BalanceTypeId\":{\"entity\":\"CustomerAccountBalance.cdm.json/CustomerAccountBalance\",\"name\":\"BalanceTypeId\"},\"Timestamp\":{\"entity\":\"CustomerAccountBalance.cdm.json/CustomerAccountBalance\",\"name\":\"Timestamp\"},\"BalanceAmount\":{\"entity\":\"CustomerAccountBalance.cdm.json/CustomerAccountBalance\",\"name\":\"BalanceAmount\"},\"IsoCurrencyCode\":{\"entity\":\"CustomerAccountBalance.cdm.json/CustomerAccountBalance\",\"name\":\"IsoCurrencyCode\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"CustomerAccountBalance\",\"path\":\"CustomerAccountBalance.cdm.json/CustomerAccountBalance\"},\"description\":\"The Customer Account balance of the associated type as of the timestamp shown.\",\"primaryKey\":[\"CustomerAccountId\",\"BalanceTypeId\",\"Timestamp\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"CustomerAccountId\",\"attributeReference\":{\"entity\":\"CustomerAccountBalance.cdm.json/CustomerAccountBalance\",\"name\":\"CustomerAccountId\"},\"dataType\":\"long\"},{\"type\":\"Existing\",\"name\":\"BalanceTypeId\",\"attributeReference\":{\"entity\":\"CustomerAccountBalance.cdm.json/CustomerAccountBalance\",\"name\":\"BalanceTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"Timestamp\",\"attributeReference\":{\"entity\":\"CustomerAccountBalance.cdm.json/CustomerAccountBalance\",\"name\":\"Timestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"BalanceAmount\",\"attributeReference\":{\"entity\":\"CustomerAccountBalance.cdm.json/CustomerAccountBalance\",\"name\":\"BalanceAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"IsoCurrencyCode\",\"attributeReference\":{\"entity\":\"CustomerAccountBalance.cdm.json/CustomerAccountBalance\",\"name\":\"IsoCurrencyCode\"},\"dataType\":\"string\",\"dataTypeLength\":3}]}}}",
+			"Description": "The Customer Account balance of the associated type as of the timestamp shown.",
+			"DisplayFolderInfo": "{\"name\":\"Customer Account\",\"colorCode\":\"#022F22\"}",
+			"PrimaryKeys": "CustomerAccountId,BalanceTypeId,Timestamp"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

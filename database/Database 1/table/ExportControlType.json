@@ -1,0 +1,86 @@
+{
+	"name": "ExportControlType",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "ExportControlType",
+		"Description": "A U.S. Government categorization of controlled exports based upon common functions, characteristics or uses.\n\nThe Export Control Type is used to build the 5-character number for every export product identifying the category, product group, type of control and country group level of control specified in the US Commerce Control List.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ExportControlTypeId",
+					"Description": "The unique identifier of an Export Control Type.",
+					"BaseAttributeReference": {
+						"Entity": "ExportControlType.cdm.json/ExportControlType",
+						"Name": "ExportControlTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ExportControlTypeName",
+					"Description": "The name of an Export Control Type.",
+					"BaseAttributeReference": {
+						"Entity": "ExportControlType.cdm.json/ExportControlType",
+						"Name": "ExportControlTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ExportControlTypeDescription",
+					"Description": "The description of an Export Control Type.",
+					"BaseAttributeReference": {
+						"Entity": "ExportControlType.cdm.json/ExportControlType",
+						"Name": "ExportControlTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ExportControlTypeId\":{\"entity\":\"ExportControlType.cdm.json/ExportControlType\",\"name\":\"ExportControlTypeId\"},\"ExportControlTypeName\":{\"entity\":\"ExportControlType.cdm.json/ExportControlType\",\"name\":\"ExportControlTypeName\"},\"ExportControlTypeDescription\":{\"entity\":\"ExportControlType.cdm.json/ExportControlType\",\"name\":\"ExportControlTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"ExportControlType\",\"path\":\"ExportControlType.cdm.json/ExportControlType\"},\"description\":\"A U.S. Government categorization of controlled exports based upon common functions, characteristics or uses.\\n\\nThe Export Control Type is used to build the 5-character number for every export product identifying the category, product group, type of control and country group level of control specified in the US Commerce Control List.\",\"primaryKey\":[\"ExportControlTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"ExportControlTypeId\",\"attributeReference\":{\"entity\":\"ExportControlType.cdm.json/ExportControlType\",\"name\":\"ExportControlTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ExportControlTypeName\",\"attributeReference\":{\"entity\":\"ExportControlType.cdm.json/ExportControlType\",\"name\":\"ExportControlTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"ExportControlTypeDescription\",\"attributeReference\":{\"entity\":\"ExportControlType.cdm.json/ExportControlType\",\"name\":\"ExportControlTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512}]}}}",
+			"Description": "A U.S. Government categorization of controlled exports based upon common functions, characteristics or uses.\n\nThe Export Control Type is used to build the 5-character number for every export product identifying the category, product group, type of control and country group level of control specified in the US Commerce Control List.",
+			"DisplayFolderInfo": "{\"name\":\"Shipping\",\"colorCode\":\"#000B42\"}",
+			"PrimaryKeys": "ExportControlTypeId"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

@@ -1,0 +1,194 @@
+{
+	"name": "AssetNetPresentValue",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "AssetNetPresentValue",
+		"Description": "The difference between the present value of cash inflows and the present value of cash outflows. \n\nNPV is used in capital budgeting to analyze the profitability of an investment or project.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "AssetId",
+					"Description": "The unique identifier of an Asset.",
+					"BaseAttributeReference": {
+						"Entity": "AssetNetPresentValue.cdm.json/AssetNetPresentValue",
+						"Name": "AssetId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "PeriodStartDate",
+					"Description": "The period start date for which the Asset NPV is calculated.",
+					"BaseAttributeReference": {
+						"Entity": "AssetNetPresentValue.cdm.json/AssetNetPresentValue",
+						"Name": "PeriodStartDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "PeriodEndDate",
+					"Description": "The period end date for which the Asset NPV is calculated.",
+					"BaseAttributeReference": {
+						"Entity": "AssetNetPresentValue.cdm.json/AssetNetPresentValue",
+						"Name": "PeriodEndDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "InvestmentAmount",
+					"Description": "The amount invested in the Asset.",
+					"BaseAttributeReference": {
+						"Entity": "AssetNetPresentValue.cdm.json/AssetNetPresentValue",
+						"Name": "InvestmentAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "DepreciationOfAssetAmount",
+					"Description": "The amount of depreciation for the Asset for the year analyzed.",
+					"BaseAttributeReference": {
+						"Entity": "AssetNetPresentValue.cdm.json/AssetNetPresentValue",
+						"Name": "DepreciationOfAssetAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "TotalDeductionsAmount",
+					"Description": "The total deductions taken on the Asset.",
+					"BaseAttributeReference": {
+						"Entity": "AssetNetPresentValue.cdm.json/AssetNetPresentValue",
+						"Name": "TotalDeductionsAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "TaxSavingsAmount",
+					"Description": "The amount of tax savings calculated for the Asset in the year being analyzed.",
+					"BaseAttributeReference": {
+						"Entity": "AssetNetPresentValue.cdm.json/AssetNetPresentValue",
+						"Name": "TaxSavingsAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "CashOutflowAmount",
+					"Description": "The amount of cash outflow calculated for the Asset in the year being analyzed.",
+					"BaseAttributeReference": {
+						"Entity": "AssetNetPresentValue.cdm.json/AssetNetPresentValue",
+						"Name": "CashOutflowAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "PresentValueAmount",
+					"Description": "The present value of the asset for the year being analyzed.",
+					"BaseAttributeReference": {
+						"Entity": "AssetNetPresentValue.cdm.json/AssetNetPresentValue",
+						"Name": "PresentValueAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"AssetId\":{\"entity\":\"AssetNetPresentValue.cdm.json/AssetNetPresentValue\",\"name\":\"AssetId\"},\"PeriodStartDate\":{\"entity\":\"AssetNetPresentValue.cdm.json/AssetNetPresentValue\",\"name\":\"PeriodStartDate\"},\"PeriodEndDate\":{\"entity\":\"AssetNetPresentValue.cdm.json/AssetNetPresentValue\",\"name\":\"PeriodEndDate\"},\"InvestmentAmount\":{\"entity\":\"AssetNetPresentValue.cdm.json/AssetNetPresentValue\",\"name\":\"InvestmentAmount\"},\"DepreciationOfAssetAmount\":{\"entity\":\"AssetNetPresentValue.cdm.json/AssetNetPresentValue\",\"name\":\"DepreciationOfAssetAmount\"},\"TotalDeductionsAmount\":{\"entity\":\"AssetNetPresentValue.cdm.json/AssetNetPresentValue\",\"name\":\"TotalDeductionsAmount\"},\"TaxSavingsAmount\":{\"entity\":\"AssetNetPresentValue.cdm.json/AssetNetPresentValue\",\"name\":\"TaxSavingsAmount\"},\"CashOutflowAmount\":{\"entity\":\"AssetNetPresentValue.cdm.json/AssetNetPresentValue\",\"name\":\"CashOutflowAmount\"},\"PresentValueAmount\":{\"entity\":\"AssetNetPresentValue.cdm.json/AssetNetPresentValue\",\"name\":\"PresentValueAmount\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"AssetNetPresentValue\",\"path\":\"AssetNetPresentValue.cdm.json/AssetNetPresentValue\"},\"description\":\"The difference between the present value of cash inflows and the present value of cash outflows. \\n\\nNPV is used in capital budgeting to analyze the profitability of an investment or project.\",\"primaryKey\":[\"AssetId\",\"PeriodStartDate\",\"PeriodEndDate\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"AssetId\",\"attributeReference\":{\"entity\":\"AssetNetPresentValue.cdm.json/AssetNetPresentValue\",\"name\":\"AssetId\"},\"dataType\":\"long\"},{\"type\":\"Existing\",\"name\":\"PeriodStartDate\",\"attributeReference\":{\"entity\":\"AssetNetPresentValue.cdm.json/AssetNetPresentValue\",\"name\":\"PeriodStartDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\"},{\"type\":\"Existing\",\"name\":\"PeriodEndDate\",\"attributeReference\":{\"entity\":\"AssetNetPresentValue.cdm.json/AssetNetPresentValue\",\"name\":\"PeriodEndDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\"},{\"type\":\"Existing\",\"name\":\"InvestmentAmount\",\"attributeReference\":{\"entity\":\"AssetNetPresentValue.cdm.json/AssetNetPresentValue\",\"name\":\"InvestmentAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"DepreciationOfAssetAmount\",\"attributeReference\":{\"entity\":\"AssetNetPresentValue.cdm.json/AssetNetPresentValue\",\"name\":\"DepreciationOfAssetAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"TotalDeductionsAmount\",\"attributeReference\":{\"entity\":\"AssetNetPresentValue.cdm.json/AssetNetPresentValue\",\"name\":\"TotalDeductionsAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"TaxSavingsAmount\",\"attributeReference\":{\"entity\":\"AssetNetPresentValue.cdm.json/AssetNetPresentValue\",\"name\":\"TaxSavingsAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"CashOutflowAmount\",\"attributeReference\":{\"entity\":\"AssetNetPresentValue.cdm.json/AssetNetPresentValue\",\"name\":\"CashOutflowAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"PresentValueAmount\",\"attributeReference\":{\"entity\":\"AssetNetPresentValue.cdm.json/AssetNetPresentValue\",\"name\":\"PresentValueAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2}]}}}",
+			"Description": "The difference between the present value of cash inflows and the present value of cash outflows. \n\nNPV is used in capital budgeting to analyze the profitability of an investment or project.",
+			"DisplayFolderInfo": "{\"name\":\"Property & Equipment\",\"colorCode\":\"#BD4B37\"}",
+			"PrimaryKeys": "AssetId,PeriodStartDate,PeriodEndDate"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

@@ -1,0 +1,26 @@
+{
+	"name": "relationship-cadpvmqszl",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "relationship-cadpvmqszl",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Party",
+		"ToTableName": "ShipmentReconsignment",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "PartyId",
+				"ToColumnName": "NewConsigneePartyId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Party.cdm.json/Party\",\"toEntity\":\"ShipmentReconsignment.cdm.json/ShipmentReconsignment\",\"joinPairs\":[{\"fromAttribute\":\"PartyId\",\"toAttribute\":\"NewConsigneePartyId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

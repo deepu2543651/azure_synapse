@@ -1,0 +1,26 @@
+{
+	"name": "relationship-niplumriph",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "relationship-niplumriph",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "EquipmentAvailabilityStatusType",
+		"ToTableName": "ShipmentLocationRequiredEquipment",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "EquipmentAvailabilityStatusTypeId",
+				"ToColumnName": "EquipmentAvailabilityStatusTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"EquipmentAvailabilityStatusType.cdm.json/EquipmentAvailabilityStatusType\",\"toEntity\":\"ShipmentLocationRequiredEquipment.cdm.json/ShipmentLocationRequiredEquipment\",\"joinPairs\":[{\"fromAttribute\":\"EquipmentAvailabilityStatusTypeId\",\"toAttribute\":\"EquipmentAvailabilityStatusTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

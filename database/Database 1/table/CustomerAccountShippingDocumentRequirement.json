@@ -1,0 +1,135 @@
+{
+	"name": "CustomerAccountShippingDocumentRequirement",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "CustomerAccountShippingDocumentRequirement",
+		"Description": "The shipping document requirement of a customer account for a particular shipment method for a period of time.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "CustomerAccountId",
+					"Description": "The unique identifier of a Customer Account.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountShippingDocumentRequirement.cdm.json/CustomerAccountShippingDocumentRequirement",
+						"Name": "CustomerAccountId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "ShipmentMethodId",
+					"Description": "The unique identifier of a Shipment Method.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountShippingDocumentRequirement.cdm.json/CustomerAccountShippingDocumentRequirement",
+						"Name": "ShipmentMethodId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ShippingDocumentTypeId",
+					"Description": "The unique identifier of a Shipping Document Type.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountShippingDocumentRequirement.cdm.json/CustomerAccountShippingDocumentRequirement",
+						"Name": "ShippingDocumentTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PeriodStartTimestamp",
+					"Description": "The period start timestamp for which the associated Customer Account Shipping Document is required.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountShippingDocumentRequirement.cdm.json/CustomerAccountShippingDocumentRequirement",
+						"Name": "PeriodStartTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "PeriodEndTimestamp",
+					"Description": "The period end timestamp for which the associated Customer Account Shipping Document is required.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountShippingDocumentRequirement.cdm.json/CustomerAccountShippingDocumentRequirement",
+						"Name": "PeriodEndTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "CustomerAccountShippingDocumentRequirementNote",
+					"Description": "A note, comment or additional information regarding the customer account shipping document requirement.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountShippingDocumentRequirement.cdm.json/CustomerAccountShippingDocumentRequirement",
+						"Name": "CustomerAccountShippingDocumentRequirementNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"CustomerAccountId\":{\"entity\":\"CustomerAccountShippingDocumentRequirement.cdm.json/CustomerAccountShippingDocumentRequirement\",\"name\":\"CustomerAccountId\"},\"ShipmentMethodId\":{\"entity\":\"CustomerAccountShippingDocumentRequirement.cdm.json/CustomerAccountShippingDocumentRequirement\",\"name\":\"ShipmentMethodId\"},\"ShippingDocumentTypeId\":{\"entity\":\"CustomerAccountShippingDocumentRequirement.cdm.json/CustomerAccountShippingDocumentRequirement\",\"name\":\"ShippingDocumentTypeId\"},\"PeriodStartTimestamp\":{\"entity\":\"CustomerAccountShippingDocumentRequirement.cdm.json/CustomerAccountShippingDocumentRequirement\",\"name\":\"PeriodStartTimestamp\"},\"PeriodEndTimestamp\":{\"entity\":\"CustomerAccountShippingDocumentRequirement.cdm.json/CustomerAccountShippingDocumentRequirement\",\"name\":\"PeriodEndTimestamp\"},\"CustomerAccountShippingDocumentRequirementNote\":{\"entity\":\"CustomerAccountShippingDocumentRequirement.cdm.json/CustomerAccountShippingDocumentRequirement\",\"name\":\"CustomerAccountShippingDocumentRequirementNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"CustomerAccountShippingDocumentRequirement\",\"path\":\"CustomerAccountShippingDocumentRequirement.cdm.json/CustomerAccountShippingDocumentRequirement\"},\"description\":\"The shipping document requirement of a customer account for a particular shipment method for a period of time.\",\"primaryKey\":[\"CustomerAccountId\",\"ShipmentMethodId\",\"ShippingDocumentTypeId\",\"PeriodStartTimestamp\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"CustomerAccountId\",\"attributeReference\":{\"entity\":\"CustomerAccountShippingDocumentRequirement.cdm.json/CustomerAccountShippingDocumentRequirement\",\"name\":\"CustomerAccountId\"},\"dataType\":\"long\"},{\"type\":\"Existing\",\"name\":\"ShipmentMethodId\",\"attributeReference\":{\"entity\":\"CustomerAccountShippingDocumentRequirement.cdm.json/CustomerAccountShippingDocumentRequirement\",\"name\":\"ShipmentMethodId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ShippingDocumentTypeId\",\"attributeReference\":{\"entity\":\"CustomerAccountShippingDocumentRequirement.cdm.json/CustomerAccountShippingDocumentRequirement\",\"name\":\"ShippingDocumentTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"PeriodStartTimestamp\",\"attributeReference\":{\"entity\":\"CustomerAccountShippingDocumentRequirement.cdm.json/CustomerAccountShippingDocumentRequirement\",\"name\":\"PeriodStartTimestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"PeriodEndTimestamp\",\"attributeReference\":{\"entity\":\"CustomerAccountShippingDocumentRequirement.cdm.json/CustomerAccountShippingDocumentRequirement\",\"name\":\"PeriodEndTimestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"CustomerAccountShippingDocumentRequirementNote\",\"attributeReference\":{\"entity\":\"CustomerAccountShippingDocumentRequirement.cdm.json/CustomerAccountShippingDocumentRequirement\",\"name\":\"CustomerAccountShippingDocumentRequirementNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024}]}}}",
+			"Description": "The shipping document requirement of a customer account for a particular shipment method for a period of time.",
+			"DisplayFolderInfo": "{\"name\":\"Customer Account\",\"colorCode\":\"#022F22\"}",
+			"PrimaryKeys": "CustomerAccountId,ShipmentMethodId,ShippingDocumentTypeId,PeriodStartTimestamp"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

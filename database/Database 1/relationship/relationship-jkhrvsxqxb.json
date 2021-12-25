@@ -1,0 +1,26 @@
+{
+	"name": "relationship-jkhrvsxqxb",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "relationship-jkhrvsxqxb",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Warehouse",
+		"ToTableName": "WarehouseItemObsoleteInventory",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "WarehouseId",
+				"ToColumnName": "WarehouseId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Warehouse.cdm.json/Warehouse\",\"toEntity\":\"WarehouseItemObsoleteInventory.cdm.json/WarehouseItemObsoleteInventory\",\"joinPairs\":[{\"fromAttribute\":\"WarehouseId\",\"toAttribute\":\"WarehouseId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

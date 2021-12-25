@@ -1,0 +1,26 @@
+{
+	"name": "relationship-qqwugxbdgn",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "relationship-qqwugxbdgn",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "ContainerRelationshipType",
+		"ToTableName": "ShipmentContainer",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ContainerRelationshipTypeId",
+				"ToColumnName": "ContainerRelationshipTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"ContainerRelationshipType.cdm.json/ContainerRelationshipType\",\"toEntity\":\"ShipmentContainer.cdm.json/ShipmentContainer\",\"joinPairs\":[{\"fromAttribute\":\"ContainerRelationshipTypeId\",\"toAttribute\":\"ContainerRelationshipTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

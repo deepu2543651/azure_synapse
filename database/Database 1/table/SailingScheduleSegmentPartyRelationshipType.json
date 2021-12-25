@@ -1,0 +1,86 @@
+{
+	"name": "SailingScheduleSegmentPartyRelationshipType",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "SailingScheduleSegmentPartyRelationshipType",
+		"Description": "The nature of the relationship between a sailing schedule segment and a related party.\n\nEx:\n- Captain\n- Crew Member",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "SailingScheduleSegmentPartyRelationshipTypeId",
+					"Description": "The unique identifier of a Sailing Schedule Segment Party relationship type.",
+					"BaseAttributeReference": {
+						"Entity": "SailingScheduleSegmentPartyRelationshipType.cdm.json/SailingScheduleSegmentPartyRelationshipType",
+						"Name": "SailingScheduleSegmentPartyRelationshipTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "SailingScheduleSegmentPartyRelationshipTypeName",
+					"Description": "The name of a Sailing Schedule Segment Party relationship type.",
+					"BaseAttributeReference": {
+						"Entity": "SailingScheduleSegmentPartyRelationshipType.cdm.json/SailingScheduleSegmentPartyRelationshipType",
+						"Name": "SailingScheduleSegmentPartyRelationshipTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "SailingScheduleSegmentPartyRelationshipTypeDescription",
+					"Description": "The description of a Sailing Schedule Segment Party relationship type.",
+					"BaseAttributeReference": {
+						"Entity": "SailingScheduleSegmentPartyRelationshipType.cdm.json/SailingScheduleSegmentPartyRelationshipType",
+						"Name": "SailingScheduleSegmentPartyRelationshipTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"SailingScheduleSegmentPartyRelationshipTypeId\":{\"entity\":\"SailingScheduleSegmentPartyRelationshipType.cdm.json/SailingScheduleSegmentPartyRelationshipType\",\"name\":\"SailingScheduleSegmentPartyRelationshipTypeId\"},\"SailingScheduleSegmentPartyRelationshipTypeName\":{\"entity\":\"SailingScheduleSegmentPartyRelationshipType.cdm.json/SailingScheduleSegmentPartyRelationshipType\",\"name\":\"SailingScheduleSegmentPartyRelationshipTypeName\"},\"SailingScheduleSegmentPartyRelationshipTypeDescription\":{\"entity\":\"SailingScheduleSegmentPartyRelationshipType.cdm.json/SailingScheduleSegmentPartyRelationshipType\",\"name\":\"SailingScheduleSegmentPartyRelationshipTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"SailingScheduleSegmentPartyRelationshipType\",\"path\":\"SailingScheduleSegmentPartyRelationshipType.cdm.json/SailingScheduleSegmentPartyRelationshipType\"},\"description\":\"The nature of the relationship between a sailing schedule segment and a related party.\\n\\nEx:\\n- Captain\\n- Crew Member\",\"primaryKey\":[\"SailingScheduleSegmentPartyRelationshipTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"SailingScheduleSegmentPartyRelationshipTypeId\",\"attributeReference\":{\"entity\":\"SailingScheduleSegmentPartyRelationshipType.cdm.json/SailingScheduleSegmentPartyRelationshipType\",\"name\":\"SailingScheduleSegmentPartyRelationshipTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"SailingScheduleSegmentPartyRelationshipTypeName\",\"attributeReference\":{\"entity\":\"SailingScheduleSegmentPartyRelationshipType.cdm.json/SailingScheduleSegmentPartyRelationshipType\",\"name\":\"SailingScheduleSegmentPartyRelationshipTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"SailingScheduleSegmentPartyRelationshipTypeDescription\",\"attributeReference\":{\"entity\":\"SailingScheduleSegmentPartyRelationshipType.cdm.json/SailingScheduleSegmentPartyRelationshipType\",\"name\":\"SailingScheduleSegmentPartyRelationshipTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512}]}}}",
+			"Description": "The nature of the relationship between a sailing schedule segment and a related party.\n\nEx:\n- Captain\n- Crew Member",
+			"DisplayFolderInfo": "{\"name\":\"Shipping\",\"colorCode\":\"#000B42\"}",
+			"PrimaryKeys": "SailingScheduleSegmentPartyRelationshipTypeId"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

@@ -1,0 +1,86 @@
+{
+	"name": "CustomerAccountRelationshipType",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "CustomerAccountRelationshipType",
+		"Description": "The nature of the relationship between two or more customer accounts.\n\nEx:\n- Customer account has related business account\n- Customer account is a subaccount\n- Spouse or Family member's customer account \n- Company Account - Department Account\n- Company Account - Bill-To Company Account\n- Replacement customer account\n- Corporate account billed to related account\n- Individual account - Paid for by Corporate Account\n- Government account billed to related account",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "CustomerAccountRelationshipTypeId",
+					"Description": "The unique identifier of a Customer Account Relationship Type.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountRelationshipType.cdm.json/CustomerAccountRelationshipType",
+						"Name": "CustomerAccountRelationshipTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "CustomerAccountRelationshipTypeName",
+					"Description": "The name of a Customer Account Relationship Type.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountRelationshipType.cdm.json/CustomerAccountRelationshipType",
+						"Name": "CustomerAccountRelationshipTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "CustomerAccountRelationshipTypeDescription",
+					"Description": "The description of a Customer Account Relationship Type.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountRelationshipType.cdm.json/CustomerAccountRelationshipType",
+						"Name": "CustomerAccountRelationshipTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"CustomerAccountRelationshipTypeId\":{\"entity\":\"CustomerAccountRelationshipType.cdm.json/CustomerAccountRelationshipType\",\"name\":\"CustomerAccountRelationshipTypeId\"},\"CustomerAccountRelationshipTypeName\":{\"entity\":\"CustomerAccountRelationshipType.cdm.json/CustomerAccountRelationshipType\",\"name\":\"CustomerAccountRelationshipTypeName\"},\"CustomerAccountRelationshipTypeDescription\":{\"entity\":\"CustomerAccountRelationshipType.cdm.json/CustomerAccountRelationshipType\",\"name\":\"CustomerAccountRelationshipTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"CustomerAccountRelationshipType\",\"path\":\"CustomerAccountRelationshipType.cdm.json/CustomerAccountRelationshipType\"},\"description\":\"The nature of the relationship between two or more customer accounts.\\n\\nEx:\\n- Customer account has related business account\\n- Customer account is a subaccount\\n- Spouse or Family member's customer account \\n- Company Account - Department Account\\n- Company Account - Bill-To Company Account\\n- Replacement customer account\\n- Corporate account billed to related account\\n- Individual account - Paid for by Corporate Account\\n- Government account billed to related account\",\"primaryKey\":[\"CustomerAccountRelationshipTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"CustomerAccountRelationshipTypeId\",\"attributeReference\":{\"entity\":\"CustomerAccountRelationshipType.cdm.json/CustomerAccountRelationshipType\",\"name\":\"CustomerAccountRelationshipTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"CustomerAccountRelationshipTypeName\",\"attributeReference\":{\"entity\":\"CustomerAccountRelationshipType.cdm.json/CustomerAccountRelationshipType\",\"name\":\"CustomerAccountRelationshipTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"CustomerAccountRelationshipTypeDescription\",\"attributeReference\":{\"entity\":\"CustomerAccountRelationshipType.cdm.json/CustomerAccountRelationshipType\",\"name\":\"CustomerAccountRelationshipTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512}]}}}",
+			"Description": "The nature of the relationship between two or more customer accounts.\n\nEx:\n- Customer account has related business account\n- Customer account is a subaccount\n- Spouse or Family member's customer account \n- Company Account - Department Account\n- Company Account - Bill-To Company Account\n- Replacement customer account\n- Corporate account billed to related account\n- Individual account - Paid for by Corporate Account\n- Government account billed to related account",
+			"DisplayFolderInfo": "{\"name\":\"Customer Account\",\"colorCode\":\"#022F22\"}",
+			"PrimaryKeys": "CustomerAccountRelationshipTypeId"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

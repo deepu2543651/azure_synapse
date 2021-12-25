@@ -1,0 +1,86 @@
+{
+	"name": "RailcarType",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "RailcarType",
+		"Description": "A categorization of railcar based on common characteristics or functionality.\n\nEx:\n- Boxcar\n- Covered wagon\n- Covered hopper\n- Double stack car\n- Flatcar\n- Gondola (US)\n- Hoppers\n- Open wagon (UIC)\n- Reefer / refrigerator car\n- Side dump car\n- Spine car \n- Tank car\n- Tippler (UK)",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "RailcarTypeId",
+					"Description": "The unique identifier of a railcar type.",
+					"BaseAttributeReference": {
+						"Entity": "RailcarType.cdm.json/RailcarType",
+						"Name": "RailcarTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "RailcarTypeName",
+					"Description": "The name of a railcar type.",
+					"BaseAttributeReference": {
+						"Entity": "RailcarType.cdm.json/RailcarType",
+						"Name": "RailcarTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "RailcarTypeDescription",
+					"Description": "The description of a railcar type.",
+					"BaseAttributeReference": {
+						"Entity": "RailcarType.cdm.json/RailcarType",
+						"Name": "RailcarTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"RailcarTypeId\":{\"entity\":\"RailcarType.cdm.json/RailcarType\",\"name\":\"RailcarTypeId\"},\"RailcarTypeName\":{\"entity\":\"RailcarType.cdm.json/RailcarType\",\"name\":\"RailcarTypeName\"},\"RailcarTypeDescription\":{\"entity\":\"RailcarType.cdm.json/RailcarType\",\"name\":\"RailcarTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"RailcarType\",\"path\":\"RailcarType.cdm.json/RailcarType\"},\"description\":\"A categorization of railcar based on common characteristics or functionality.\\n\\nEx:\\n- Boxcar\\n- Covered wagon\\n- Covered hopper\\n- Double stack car\\n- Flatcar\\n- Gondola (US)\\n- Hoppers\\n- Open wagon (UIC)\\n- Reefer / refrigerator car\\n- Side dump car\\n- Spine car \\n- Tank car\\n- Tippler (UK)\",\"primaryKey\":[\"RailcarTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"RailcarTypeId\",\"attributeReference\":{\"entity\":\"RailcarType.cdm.json/RailcarType\",\"name\":\"RailcarTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"RailcarTypeName\",\"attributeReference\":{\"entity\":\"RailcarType.cdm.json/RailcarType\",\"name\":\"RailcarTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"RailcarTypeDescription\",\"attributeReference\":{\"entity\":\"RailcarType.cdm.json/RailcarType\",\"name\":\"RailcarTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512}]}}}",
+			"Description": "A categorization of railcar based on common characteristics or functionality.\n\nEx:\n- Boxcar\n- Covered wagon\n- Covered hopper\n- Double stack car\n- Flatcar\n- Gondola (US)\n- Hoppers\n- Open wagon (UIC)\n- Reefer / refrigerator car\n- Side dump car\n- Spine car \n- Tank car\n- Tippler (UK)",
+			"DisplayFolderInfo": "{\"name\":\"Shipping\",\"colorCode\":\"#000B42\"}",
+			"PrimaryKeys": "RailcarTypeId"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

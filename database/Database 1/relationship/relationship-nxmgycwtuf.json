@@ -1,0 +1,26 @@
+{
+	"name": "relationship-nxmgycwtuf",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "relationship-nxmgycwtuf",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "ShippingLocation",
+		"ToTableName": "SailingScheduleSegment",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ShippingLocationId",
+				"ToColumnName": "DepartureToPortLocationId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"ShippingLocation.cdm.json/ShippingLocation\",\"toEntity\":\"SailingScheduleSegment.cdm.json/SailingScheduleSegment\",\"joinPairs\":[{\"fromAttribute\":\"ShippingLocationId\",\"toAttribute\":\"DepartureToPortLocationId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

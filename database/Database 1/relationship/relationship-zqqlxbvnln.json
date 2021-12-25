@@ -1,0 +1,26 @@
+{
+	"name": "relationship-zqqlxbvnln",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "relationship-zqqlxbvnln",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "CarrierType",
+		"ToTableName": "Carrier",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "CarrierTypeId",
+				"ToColumnName": "CarrierTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"CarrierType.cdm.json/CarrierType\",\"toEntity\":\"Carrier.cdm.json/Carrier\",\"joinPairs\":[{\"fromAttribute\":\"CarrierTypeId\",\"toAttribute\":\"CarrierTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

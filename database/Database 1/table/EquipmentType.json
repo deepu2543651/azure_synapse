@@ -1,0 +1,86 @@
+{
+	"name": "EquipmentType",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "EquipmentType",
+		"Description": "A categorization of assets that are defined as 'equipment' for use in a variety of activities including manufacturing, transportation, shipping and storage.\n\nEx:\n- Belt loader\n- Bulk cargo cart\n- Cargo loader\n- Dolly\n- Tank\n- Trailer\n- Vat\n- Fire protection equipment\n- Pumps\n- Compensators\n- Compressors\n- Boiler equipment\n- Heat exchangers\n- Filter systems for liquids and gases\n- Water treatment and cleaning systems\n- Energy equipment\n- Mixers",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "EquipmentTypeId",
+					"Description": "The unique identifier of an equipment type.",
+					"BaseAttributeReference": {
+						"Entity": "EquipmentType.cdm.json/EquipmentType",
+						"Name": "EquipmentTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "EquipmentTypeName",
+					"Description": "The name of an equipment type.",
+					"BaseAttributeReference": {
+						"Entity": "EquipmentType.cdm.json/EquipmentType",
+						"Name": "EquipmentTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "EquipmentTypeDescription",
+					"Description": "The description of an equipment type.",
+					"BaseAttributeReference": {
+						"Entity": "EquipmentType.cdm.json/EquipmentType",
+						"Name": "EquipmentTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"EquipmentTypeId\":{\"entity\":\"EquipmentType.cdm.json/EquipmentType\",\"name\":\"EquipmentTypeId\"},\"EquipmentTypeName\":{\"entity\":\"EquipmentType.cdm.json/EquipmentType\",\"name\":\"EquipmentTypeName\"},\"EquipmentTypeDescription\":{\"entity\":\"EquipmentType.cdm.json/EquipmentType\",\"name\":\"EquipmentTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"EquipmentType\",\"path\":\"EquipmentType.cdm.json/EquipmentType\"},\"description\":\"A categorization of assets that are defined as 'equipment' for use in a variety of activities including manufacturing, transportation, shipping and storage.\\n\\nEx:\\n- Belt loader\\n- Bulk cargo cart\\n- Cargo loader\\n- Dolly\\n- Tank\\n- Trailer\\n- Vat\\n- Fire protection equipment\\n- Pumps\\n- Compensators\\n- Compressors\\n- Boiler equipment\\n- Heat exchangers\\n- Filter systems for liquids and gases\\n- Water treatment and cleaning systems\\n- Energy equipment\\n- Mixers\",\"primaryKey\":[\"EquipmentTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"EquipmentTypeId\",\"attributeReference\":{\"entity\":\"EquipmentType.cdm.json/EquipmentType\",\"name\":\"EquipmentTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"EquipmentTypeName\",\"attributeReference\":{\"entity\":\"EquipmentType.cdm.json/EquipmentType\",\"name\":\"EquipmentTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"EquipmentTypeDescription\",\"attributeReference\":{\"entity\":\"EquipmentType.cdm.json/EquipmentType\",\"name\":\"EquipmentTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512}]}}}",
+			"Description": "A categorization of assets that are defined as 'equipment' for use in a variety of activities including manufacturing, transportation, shipping and storage.\n\nEx:\n- Belt loader\n- Bulk cargo cart\n- Cargo loader\n- Dolly\n- Tank\n- Trailer\n- Vat\n- Fire protection equipment\n- Pumps\n- Compensators\n- Compressors\n- Boiler equipment\n- Heat exchangers\n- Filter systems for liquids and gases\n- Water treatment and cleaning systems\n- Energy equipment\n- Mixers",
+			"DisplayFolderInfo": "{\"name\":\"Property & Equipment\",\"colorCode\":\"#BD4B37\"}",
+			"PrimaryKeys": "EquipmentTypeId"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

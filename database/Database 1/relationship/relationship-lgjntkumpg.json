@@ -1,0 +1,26 @@
+{
+	"name": "relationship-lgjntkumpg",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "relationship-lgjntkumpg",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Country",
+		"ToTableName": "Vessel",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "CountryId",
+				"ToColumnName": "FlagOfCountryId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Country.cdm.json/Country\",\"toEntity\":\"Vessel.cdm.json/Vessel\",\"joinPairs\":[{\"fromAttribute\":\"CountryId\",\"toAttribute\":\"FlagOfCountryId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

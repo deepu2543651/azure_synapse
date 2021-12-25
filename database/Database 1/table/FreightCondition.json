@@ -1,0 +1,86 @@
+{
+	"name": "FreightCondition",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "FreightCondition",
+		"Description": "The condition of the freight.\n\nEx:\n- Undamaged\n- External damage evident\n- Water damage\n- Heat damage\n- Physical damage",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "FreightConditionId",
+					"Description": "The unique identifier of an descriptive Freight Condition.",
+					"BaseAttributeReference": {
+						"Entity": "FreightCondition.cdm.json/FreightCondition",
+						"Name": "FreightConditionId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "FreightConditionName",
+					"Description": "The name of an descriptive Freight Condition.",
+					"BaseAttributeReference": {
+						"Entity": "FreightCondition.cdm.json/FreightCondition",
+						"Name": "FreightConditionName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "FreightConditionDescription",
+					"Description": "The description of an descriptive Freight Condition.",
+					"BaseAttributeReference": {
+						"Entity": "FreightCondition.cdm.json/FreightCondition",
+						"Name": "FreightConditionDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"FreightConditionId\":{\"entity\":\"FreightCondition.cdm.json/FreightCondition\",\"name\":\"FreightConditionId\"},\"FreightConditionName\":{\"entity\":\"FreightCondition.cdm.json/FreightCondition\",\"name\":\"FreightConditionName\"},\"FreightConditionDescription\":{\"entity\":\"FreightCondition.cdm.json/FreightCondition\",\"name\":\"FreightConditionDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"FreightCondition\",\"path\":\"FreightCondition.cdm.json/FreightCondition\"},\"description\":\"The condition of the freight.\\n\\nEx:\\n- Undamaged\\n- External damage evident\\n- Water damage\\n- Heat damage\\n- Physical damage\",\"primaryKey\":[\"FreightConditionId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"FreightConditionId\",\"attributeReference\":{\"entity\":\"FreightCondition.cdm.json/FreightCondition\",\"name\":\"FreightConditionId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"FreightConditionName\",\"attributeReference\":{\"entity\":\"FreightCondition.cdm.json/FreightCondition\",\"name\":\"FreightConditionName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"FreightConditionDescription\",\"attributeReference\":{\"entity\":\"FreightCondition.cdm.json/FreightCondition\",\"name\":\"FreightConditionDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512}]}}}",
+			"Description": "The condition of the freight.\n\nEx:\n- Undamaged\n- External damage evident\n- Water damage\n- Heat damage\n- Physical damage",
+			"DisplayFolderInfo": "{\"name\":\"Shipping\",\"colorCode\":\"#000B42\"}",
+			"PrimaryKeys": "FreightConditionId"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

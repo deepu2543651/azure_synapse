@@ -1,0 +1,84 @@
+{
+	"name": "CarrierShippingLocationMarking",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "CarrierShippingLocationMarking",
+		"Description": "The specific marking that used to identify that carrier in the associated location.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ShippingLocationId",
+					"Description": "The unique identifier of a Location.",
+					"BaseAttributeReference": {
+						"Entity": "CarrierShippingLocationMarking.cdm.json/CarrierShippingLocationMarking",
+						"Name": "ShippingLocationId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "CarrierId",
+					"Description": "The unique identifier of a Carrier.",
+					"BaseAttributeReference": {
+						"Entity": "CarrierShippingLocationMarking.cdm.json/CarrierShippingLocationMarking",
+						"Name": "CarrierId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "CarrierMarking",
+					"Description": "The carrier marking text or graphic.",
+					"BaseAttributeReference": {
+						"Entity": "CarrierShippingLocationMarking.cdm.json/CarrierShippingLocationMarking",
+						"Name": "CarrierMarking"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "binary",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "binary"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ShippingLocationId\":{\"entity\":\"CarrierShippingLocationMarking.cdm.json/CarrierShippingLocationMarking\",\"name\":\"ShippingLocationId\"},\"CarrierId\":{\"entity\":\"CarrierShippingLocationMarking.cdm.json/CarrierShippingLocationMarking\",\"name\":\"CarrierId\"},\"CarrierMarking\":{\"entity\":\"CarrierShippingLocationMarking.cdm.json/CarrierShippingLocationMarking\",\"name\":\"CarrierMarking\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"CarrierShippingLocationMarking\",\"path\":\"CarrierShippingLocationMarking.cdm.json/CarrierShippingLocationMarking\"},\"description\":\"The specific marking that used to identify that carrier in the associated location.\",\"primaryKey\":[\"ShippingLocationId\",\"CarrierId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"ShippingLocationId\",\"attributeReference\":{\"entity\":\"CarrierShippingLocationMarking.cdm.json/CarrierShippingLocationMarking\",\"name\":\"ShippingLocationId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"CarrierId\",\"attributeReference\":{\"entity\":\"CarrierShippingLocationMarking.cdm.json/CarrierShippingLocationMarking\",\"name\":\"CarrierId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"CarrierMarking\",\"attributeReference\":{\"entity\":\"CarrierShippingLocationMarking.cdm.json/CarrierShippingLocationMarking\",\"name\":\"CarrierMarking\"},\"dataType\":\"binary\"}]}}}",
+			"Description": "The specific marking that used to identify that carrier in the associated location.",
+			"DisplayFolderInfo": "{\"name\":\"Shipping\",\"colorCode\":\"#000B42\"}",
+			"PrimaryKeys": "ShippingLocationId,CarrierId"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

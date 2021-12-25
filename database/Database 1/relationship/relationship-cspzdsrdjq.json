@@ -1,0 +1,26 @@
+{
+	"name": "relationship-cspzdsrdjq",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "relationship-cspzdsrdjq",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Party",
+		"ToTableName": "InsurancePolicy",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "PartyId",
+				"ToColumnName": "InsuranceCompanyId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Party.cdm.json/Party\",\"toEntity\":\"InsurancePolicy.cdm.json/InsurancePolicy\",\"joinPairs\":[{\"fromAttribute\":\"PartyId\",\"toAttribute\":\"InsuranceCompanyId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

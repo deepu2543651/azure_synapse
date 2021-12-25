@@ -1,0 +1,30 @@
+{
+	"name": "relationship-eopvopqejs",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "relationship-eopvopqejs",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "VehicleSchedule",
+		"ToTableName": "VehicleDeliveryLeg",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ScheduledDepartureTimestamp",
+				"ToColumnName": "ScheduledDepartureTimestamp"
+			},
+			{
+				"FromColumnName": "VehicleId",
+				"ToColumnName": "VehicleId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"VehicleSchedule.cdm.json/VehicleSchedule\",\"toEntity\":\"VehicleDeliveryLeg.cdm.json/VehicleDeliveryLeg\",\"joinPairs\":[{\"fromAttribute\":\"ScheduledDepartureTimestamp\",\"toAttribute\":\"ScheduledDepartureTimestamp\"},{\"fromAttribute\":\"VehicleId\",\"toAttribute\":\"VehicleId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

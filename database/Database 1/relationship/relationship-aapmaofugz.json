@@ -1,0 +1,26 @@
+{
+	"name": "relationship-aapmaofugz",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "relationship-aapmaofugz",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Vehicle",
+		"ToTableName": "VehicleTrailerCombination",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "VehicleId",
+				"ToColumnName": "VehicleId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Vehicle.cdm.json/Vehicle\",\"toEntity\":\"VehicleTrailerCombination.cdm.json/VehicleTrailerCombination\",\"joinPairs\":[{\"fromAttribute\":\"VehicleId\",\"toAttribute\":\"VehicleId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

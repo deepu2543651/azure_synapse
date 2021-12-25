@@ -1,0 +1,135 @@
+{
+	"name": "LocationGeographicArea",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "LocationGeographicArea",
+		"Description": "The relationship between a location and a geographic area.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "LocationId",
+					"Description": "The unique identifier of a Location.",
+					"BaseAttributeReference": {
+						"Entity": "LocationGeographicArea.cdm.json/LocationGeographicArea",
+						"Name": "LocationId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "GeographicAreaId",
+					"Description": "The unique identifier of a Geographic Area.",
+					"BaseAttributeReference": {
+						"Entity": "LocationGeographicArea.cdm.json/LocationGeographicArea",
+						"Name": "GeographicAreaId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "LocationGeographicAreaRelationshipTypeId",
+					"Description": "The unique identifier of a Ledger Relationship Type.",
+					"BaseAttributeReference": {
+						"Entity": "LocationGeographicArea.cdm.json/LocationGeographicArea",
+						"Name": "LocationGeographicAreaRelationshipTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PeriodStartDate",
+					"Description": "The period start date associated with the location geographic area.",
+					"BaseAttributeReference": {
+						"Entity": "LocationGeographicArea.cdm.json/LocationGeographicArea",
+						"Name": "PeriodStartDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "PeriodEndDate",
+					"Description": "The period end date associated with the location geographic area.",
+					"BaseAttributeReference": {
+						"Entity": "LocationGeographicArea.cdm.json/LocationGeographicArea",
+						"Name": "PeriodEndDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "LocationGeographicAreaNote",
+					"Description": "A note, comment or additional information regarding the location geographic area.",
+					"BaseAttributeReference": {
+						"Entity": "LocationGeographicArea.cdm.json/LocationGeographicArea",
+						"Name": "LocationGeographicAreaNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"LocationId\":{\"entity\":\"LocationGeographicArea.cdm.json/LocationGeographicArea\",\"name\":\"LocationId\"},\"GeographicAreaId\":{\"entity\":\"LocationGeographicArea.cdm.json/LocationGeographicArea\",\"name\":\"GeographicAreaId\"},\"LocationGeographicAreaRelationshipTypeId\":{\"entity\":\"LocationGeographicArea.cdm.json/LocationGeographicArea\",\"name\":\"LocationGeographicAreaRelationshipTypeId\"},\"PeriodStartDate\":{\"entity\":\"LocationGeographicArea.cdm.json/LocationGeographicArea\",\"name\":\"PeriodStartDate\"},\"PeriodEndDate\":{\"entity\":\"LocationGeographicArea.cdm.json/LocationGeographicArea\",\"name\":\"PeriodEndDate\"},\"LocationGeographicAreaNote\":{\"entity\":\"LocationGeographicArea.cdm.json/LocationGeographicArea\",\"name\":\"LocationGeographicAreaNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"LocationGeographicArea\",\"path\":\"LocationGeographicArea.cdm.json/LocationGeographicArea\"},\"description\":\"The relationship between a location and a geographic area.\",\"primaryKey\":[\"LocationId\",\"GeographicAreaId\",\"LocationGeographicAreaRelationshipTypeId\",\"PeriodStartDate\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"LocationId\",\"attributeReference\":{\"entity\":\"LocationGeographicArea.cdm.json/LocationGeographicArea\",\"name\":\"LocationId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"GeographicAreaId\",\"attributeReference\":{\"entity\":\"LocationGeographicArea.cdm.json/LocationGeographicArea\",\"name\":\"GeographicAreaId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"LocationGeographicAreaRelationshipTypeId\",\"attributeReference\":{\"entity\":\"LocationGeographicArea.cdm.json/LocationGeographicArea\",\"name\":\"LocationGeographicAreaRelationshipTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"PeriodStartDate\",\"attributeReference\":{\"entity\":\"LocationGeographicArea.cdm.json/LocationGeographicArea\",\"name\":\"PeriodStartDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\"},{\"type\":\"Existing\",\"name\":\"PeriodEndDate\",\"attributeReference\":{\"entity\":\"LocationGeographicArea.cdm.json/LocationGeographicArea\",\"name\":\"PeriodEndDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\"},{\"type\":\"Existing\",\"name\":\"LocationGeographicAreaNote\",\"attributeReference\":{\"entity\":\"LocationGeographicArea.cdm.json/LocationGeographicArea\",\"name\":\"LocationGeographicAreaNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024}]}}}",
+			"Description": "The relationship between a location and a geographic area.",
+			"DisplayFolderInfo": "{\"name\":\"Geography\",\"colorCode\":\"#8170C2\"}",
+			"PrimaryKeys": "LocationId,GeographicAreaId,LocationGeographicAreaRelationshipTypeId,PeriodStartDate"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

@@ -1,0 +1,291 @@
+{
+	"name": "CustomerAccountInvoiceLine",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "CustomerAccountInvoiceLine",
+		"Description": "A component of the customer account invoice that details specific products, quantities and values invoiced.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "InvoiceId",
+					"Description": "The unique identifier of an Invoice.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountInvoiceLine.cdm.json/CustomerAccountInvoiceLine",
+						"Name": "InvoiceId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "InvoiceLineNumber",
+					"Description": "The unique identifier of an Invoice Line Item.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountInvoiceLine.cdm.json/CustomerAccountInvoiceLine",
+						"Name": "InvoiceLineNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "Quantity",
+					"Description": "The quantity of Products to be invoiced by the invoice line item.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountInvoiceLine.cdm.json/CustomerAccountInvoiceLine",
+						"Name": "Quantity"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "UnitPriceAmount",
+					"Description": "The list unit price of the invoiced line item products.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountInvoiceLine.cdm.json/CustomerAccountInvoiceLine",
+						"Name": "UnitPriceAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "SalesPriceAmount",
+					"Description": "The actual price invoice for the Product(s), which may differ from the list price.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountInvoiceLine.cdm.json/CustomerAccountInvoiceLine",
+						"Name": "SalesPriceAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "InvoiceLineItemNote",
+					"Description": "A note, comment or additional information regarding the invoice line item.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountInvoiceLine.cdm.json/CustomerAccountInvoiceLine",
+						"Name": "InvoiceLineItemNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ProductId",
+					"Description": "The unique identifier of a Product.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountInvoiceLine.cdm.json/CustomerAccountInvoiceLine",
+						"Name": "ProductId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "ItemSku",
+					"Description": "The Stock Keeping Unit identifier, which is typically used for inventory-related activities.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountInvoiceLine.cdm.json/CustomerAccountInvoiceLine",
+						"Name": "ItemSku"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 20,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "TotalProductInvoiceAmount",
+					"Description": "The total amount of product invoiced on the invoice line.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountInvoiceLine.cdm.json/CustomerAccountInvoiceLine",
+						"Name": "TotalProductInvoiceAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "ShipmentId",
+					"Description": "The unique identifier of a Shipment.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountInvoiceLine.cdm.json/CustomerAccountInvoiceLine",
+						"Name": "ShipmentId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ChargeId",
+					"Description": "The unique identifier of a Charge.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountInvoiceLine.cdm.json/CustomerAccountInvoiceLine",
+						"Name": "ChargeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "InvoiceLineChargeAmount",
+					"Description": "The amount of the charge invoiced on the invoice line.\n\nNote:\nOne or more adjustments may be invoiced on the same invoice line (see INVOICE LINE ADJUSTMENT).     However, each Charge is invoiced as a single invoice line item.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountInvoiceLine.cdm.json/CustomerAccountInvoiceLine",
+						"Name": "InvoiceLineChargeAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "InvoiceLineAdjustmentsAmount",
+					"Description": "The amount of adjustment(s) invoiced on the invoice line.\n\nNote:\nOne or more adjustments may be invoiced on the same invoice line (see INVOICE LINE ADJUSTMENT).     However, each Charge is invoiced as a single invoice line item.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountInvoiceLine.cdm.json/CustomerAccountInvoiceLine",
+						"Name": "InvoiceLineAdjustmentsAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "IsoCurrencyCode",
+					"Description": "The ISO 4217 currency code.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountInvoiceLine.cdm.json/CustomerAccountInvoiceLine",
+						"Name": "IsoCurrencyCode"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 3,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "CustomerAccountInvoiceLineTypeId",
+					"Description": "The unique identifier of a Customer Account Invoice Item Type.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountInvoiceLine.cdm.json/CustomerAccountInvoiceLine",
+						"Name": "CustomerAccountInvoiceLineTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"InvoiceId\":{\"entity\":\"CustomerAccountInvoiceLine.cdm.json/CustomerAccountInvoiceLine\",\"name\":\"InvoiceId\"},\"InvoiceLineNumber\":{\"entity\":\"CustomerAccountInvoiceLine.cdm.json/CustomerAccountInvoiceLine\",\"name\":\"InvoiceLineNumber\"},\"Quantity\":{\"entity\":\"CustomerAccountInvoiceLine.cdm.json/CustomerAccountInvoiceLine\",\"name\":\"Quantity\"},\"UnitPriceAmount\":{\"entity\":\"CustomerAccountInvoiceLine.cdm.json/CustomerAccountInvoiceLine\",\"name\":\"UnitPriceAmount\"},\"SalesPriceAmount\":{\"entity\":\"CustomerAccountInvoiceLine.cdm.json/CustomerAccountInvoiceLine\",\"name\":\"SalesPriceAmount\"},\"InvoiceLineItemNote\":{\"entity\":\"CustomerAccountInvoiceLine.cdm.json/CustomerAccountInvoiceLine\",\"name\":\"InvoiceLineItemNote\"},\"ProductId\":{\"entity\":\"CustomerAccountInvoiceLine.cdm.json/CustomerAccountInvoiceLine\",\"name\":\"ProductId\"},\"ItemSku\":{\"entity\":\"CustomerAccountInvoiceLine.cdm.json/CustomerAccountInvoiceLine\",\"name\":\"ItemSku\"},\"TotalProductInvoiceAmount\":{\"entity\":\"CustomerAccountInvoiceLine.cdm.json/CustomerAccountInvoiceLine\",\"name\":\"TotalProductInvoiceAmount\"},\"ShipmentId\":{\"entity\":\"CustomerAccountInvoiceLine.cdm.json/CustomerAccountInvoiceLine\",\"name\":\"ShipmentId\"},\"ChargeId\":{\"entity\":\"CustomerAccountInvoiceLine.cdm.json/CustomerAccountInvoiceLine\",\"name\":\"ChargeId\"},\"InvoiceLineChargeAmount\":{\"entity\":\"CustomerAccountInvoiceLine.cdm.json/CustomerAccountInvoiceLine\",\"name\":\"InvoiceLineChargeAmount\"},\"InvoiceLineAdjustmentsAmount\":{\"entity\":\"CustomerAccountInvoiceLine.cdm.json/CustomerAccountInvoiceLine\",\"name\":\"InvoiceLineAdjustmentsAmount\"},\"IsoCurrencyCode\":{\"entity\":\"CustomerAccountInvoiceLine.cdm.json/CustomerAccountInvoiceLine\",\"name\":\"IsoCurrencyCode\"},\"CustomerAccountInvoiceLineTypeId\":{\"entity\":\"CustomerAccountInvoiceLine.cdm.json/CustomerAccountInvoiceLine\",\"name\":\"CustomerAccountInvoiceLineTypeId\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"CustomerAccountInvoiceLine\",\"path\":\"CustomerAccountInvoiceLine.cdm.json/CustomerAccountInvoiceLine\"},\"description\":\"A component of the customer account invoice that details specific products, quantities and values invoiced.\",\"primaryKey\":[\"InvoiceId\",\"InvoiceLineNumber\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"InvoiceId\",\"attributeReference\":{\"entity\":\"CustomerAccountInvoiceLine.cdm.json/CustomerAccountInvoiceLine\",\"name\":\"InvoiceId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"InvoiceLineNumber\",\"attributeReference\":{\"entity\":\"CustomerAccountInvoiceLine.cdm.json/CustomerAccountInvoiceLine\",\"name\":\"InvoiceLineNumber\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"Quantity\",\"attributeReference\":{\"entity\":\"CustomerAccountInvoiceLine.cdm.json/CustomerAccountInvoiceLine\",\"name\":\"Quantity\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"UnitPriceAmount\",\"attributeReference\":{\"entity\":\"CustomerAccountInvoiceLine.cdm.json/CustomerAccountInvoiceLine\",\"name\":\"UnitPriceAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"SalesPriceAmount\",\"attributeReference\":{\"entity\":\"CustomerAccountInvoiceLine.cdm.json/CustomerAccountInvoiceLine\",\"name\":\"SalesPriceAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"InvoiceLineItemNote\",\"attributeReference\":{\"entity\":\"CustomerAccountInvoiceLine.cdm.json/CustomerAccountInvoiceLine\",\"name\":\"InvoiceLineItemNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024},{\"type\":\"Existing\",\"name\":\"ProductId\",\"attributeReference\":{\"entity\":\"CustomerAccountInvoiceLine.cdm.json/CustomerAccountInvoiceLine\",\"name\":\"ProductId\"},\"dataType\":\"long\"},{\"type\":\"Existing\",\"name\":\"ItemSku\",\"attributeReference\":{\"entity\":\"CustomerAccountInvoiceLine.cdm.json/CustomerAccountInvoiceLine\",\"name\":\"ItemSku\"},\"dataType\":\"string\",\"dataTypeLength\":20},{\"type\":\"Existing\",\"name\":\"TotalProductInvoiceAmount\",\"attributeReference\":{\"entity\":\"CustomerAccountInvoiceLine.cdm.json/CustomerAccountInvoiceLine\",\"name\":\"TotalProductInvoiceAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"ShipmentId\",\"attributeReference\":{\"entity\":\"CustomerAccountInvoiceLine.cdm.json/CustomerAccountInvoiceLine\",\"name\":\"ShipmentId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ChargeId\",\"attributeReference\":{\"entity\":\"CustomerAccountInvoiceLine.cdm.json/CustomerAccountInvoiceLine\",\"name\":\"ChargeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"InvoiceLineChargeAmount\",\"attributeReference\":{\"entity\":\"CustomerAccountInvoiceLine.cdm.json/CustomerAccountInvoiceLine\",\"name\":\"InvoiceLineChargeAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"InvoiceLineAdjustmentsAmount\",\"attributeReference\":{\"entity\":\"CustomerAccountInvoiceLine.cdm.json/CustomerAccountInvoiceLine\",\"name\":\"InvoiceLineAdjustmentsAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"IsoCurrencyCode\",\"attributeReference\":{\"entity\":\"CustomerAccountInvoiceLine.cdm.json/CustomerAccountInvoiceLine\",\"name\":\"IsoCurrencyCode\"},\"dataType\":\"string\",\"dataTypeLength\":3},{\"type\":\"Existing\",\"name\":\"CustomerAccountInvoiceLineTypeId\",\"attributeReference\":{\"entity\":\"CustomerAccountInvoiceLine.cdm.json/CustomerAccountInvoiceLine\",\"name\":\"CustomerAccountInvoiceLineTypeId\"},\"dataType\":\"integer\"}]}}}",
+			"Description": "A component of the customer account invoice that details specific products, quantities and values invoiced.",
+			"DisplayFolderInfo": "{\"name\":\"Customer Account\",\"colorCode\":\"#022F22\"}",
+			"PrimaryKeys": "InvoiceId,InvoiceLineNumber"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

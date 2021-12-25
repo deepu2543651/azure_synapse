@@ -1,0 +1,34 @@
+{
+	"name": "relationship-cqqfldtrsg",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "relationship-cqqfldtrsg",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "TrainScheduleLeg",
+		"ToTableName": "ShipmentRouteLeg",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "TrainId",
+				"ToColumnName": "ActualTrainId"
+			},
+			{
+				"FromColumnName": "TrainScheduleLegNumber",
+				"ToColumnName": "ActualTrainLegNumber"
+			},
+			{
+				"FromColumnName": "TrainScheduledDepartureTimestamp",
+				"ToColumnName": "ActualTrainDepartureTimestamp"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"TrainScheduleLeg.cdm.json/TrainScheduleLeg\",\"toEntity\":\"ShipmentRouteLeg.cdm.json/ShipmentRouteLeg\",\"joinPairs\":[{\"fromAttribute\":\"TrainId\",\"toAttribute\":\"ActualTrainId\"},{\"fromAttribute\":\"TrainScheduleLegNumber\",\"toAttribute\":\"ActualTrainLegNumber\"},{\"fromAttribute\":\"TrainScheduledDepartureTimestamp\",\"toAttribute\":\"ActualTrainDepartureTimestamp\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

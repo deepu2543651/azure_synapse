@@ -1,0 +1,86 @@
+{
+	"name": "CommunicationStatus",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "CommunicationStatus",
+		"Description": "The status of the associated communication.\n\nEx:\n- Assigned\n- Issued/Sent\n- Confirmed/Received\n- Communication Failed\n- Communication Returned Undeliverable\n- Pending Authorization\n- Unknown\n- N/A",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "CommunicationStatusId",
+					"Description": "The unique identifier of a Communication Status.",
+					"BaseAttributeReference": {
+						"Entity": "CommunicationStatus.cdm.json/CommunicationStatus",
+						"Name": "CommunicationStatusId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "CommunicationStatusName",
+					"Description": "The name of a Communication Status.",
+					"BaseAttributeReference": {
+						"Entity": "CommunicationStatus.cdm.json/CommunicationStatus",
+						"Name": "CommunicationStatusName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "CommunicationStatusDescription",
+					"Description": "The description of a Communication Status.",
+					"BaseAttributeReference": {
+						"Entity": "CommunicationStatus.cdm.json/CommunicationStatus",
+						"Name": "CommunicationStatusDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"CommunicationStatusId\":{\"entity\":\"CommunicationStatus.cdm.json/CommunicationStatus\",\"name\":\"CommunicationStatusId\"},\"CommunicationStatusName\":{\"entity\":\"CommunicationStatus.cdm.json/CommunicationStatus\",\"name\":\"CommunicationStatusName\"},\"CommunicationStatusDescription\":{\"entity\":\"CommunicationStatus.cdm.json/CommunicationStatus\",\"name\":\"CommunicationStatusDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"CommunicationStatus\",\"path\":\"CommunicationStatus.cdm.json/CommunicationStatus\"},\"description\":\"The status of the associated communication.\\n\\nEx:\\n- Assigned\\n- Issued/Sent\\n- Confirmed/Received\\n- Communication Failed\\n- Communication Returned Undeliverable\\n- Pending Authorization\\n- Unknown\\n- N/A\",\"primaryKey\":[\"CommunicationStatusId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"CommunicationStatusId\",\"attributeReference\":{\"entity\":\"CommunicationStatus.cdm.json/CommunicationStatus\",\"name\":\"CommunicationStatusId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"CommunicationStatusName\",\"attributeReference\":{\"entity\":\"CommunicationStatus.cdm.json/CommunicationStatus\",\"name\":\"CommunicationStatusName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"CommunicationStatusDescription\",\"attributeReference\":{\"entity\":\"CommunicationStatus.cdm.json/CommunicationStatus\",\"name\":\"CommunicationStatusDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512}]}}}",
+			"Description": "The status of the associated communication.\n\nEx:\n- Assigned\n- Issued/Sent\n- Confirmed/Received\n- Communication Failed\n- Communication Returned Undeliverable\n- Pending Authorization\n- Unknown\n- N/A",
+			"DisplayFolderInfo": "{\"name\":\"Customer Service & Contact Management\",\"colorCode\":\"#502006\"}",
+			"PrimaryKeys": "CommunicationStatusId"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

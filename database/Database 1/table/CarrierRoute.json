@@ -1,0 +1,165 @@
+{
+	"name": "CarrierRoute",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "CarrierRoute",
+		"Description": "A carrier-defined published route to send cargo.\n\nFED/ Route 1 = SF to Shanghai by AIR\nFrom US\nFrom San Francisco\nFrom Location = SFO\nTo China\nTo Shanghai\nTo Location = SHA",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "CarrierId",
+					"Description": "The unique identifier of a Carrier.",
+					"BaseAttributeReference": {
+						"Entity": "CarrierRoute.cdm.json/CarrierRoute",
+						"Name": "CarrierId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "CarrierRouteId",
+					"Description": "The unique identifier of a Carrier Route.",
+					"BaseAttributeReference": {
+						"Entity": "CarrierRoute.cdm.json/CarrierRoute",
+						"Name": "CarrierRouteId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "RouteId",
+					"Description": "The unique identifier of a route.",
+					"BaseAttributeReference": {
+						"Entity": "CarrierRoute.cdm.json/CarrierRoute",
+						"Name": "RouteId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "FromLocationId",
+					"Description": "The unique identifier of a Shipping Location.",
+					"BaseAttributeReference": {
+						"Entity": "CarrierRoute.cdm.json/CarrierRoute",
+						"Name": "FromLocationId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ToLocationId",
+					"Description": "The unique identifier of a Shipping Location.",
+					"BaseAttributeReference": {
+						"Entity": "CarrierRoute.cdm.json/CarrierRoute",
+						"Name": "ToLocationId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ShipmentMethodId",
+					"Description": "The unique identifier of a Shipment Method.",
+					"BaseAttributeReference": {
+						"Entity": "CarrierRoute.cdm.json/CarrierRoute",
+						"Name": "ShipmentMethodId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PlannedRouteTransitTime",
+					"Description": "The planned route transit time to complete.",
+					"BaseAttributeReference": {
+						"Entity": "CarrierRoute.cdm.json/CarrierRoute",
+						"Name": "PlannedRouteTransitTime"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 256,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "PlannedRouteDistance",
+					"Description": "The planned route distance expressed in miles.",
+					"BaseAttributeReference": {
+						"Entity": "CarrierRoute.cdm.json/CarrierRoute",
+						"Name": "PlannedRouteDistance"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"CarrierId\":{\"entity\":\"CarrierRoute.cdm.json/CarrierRoute\",\"name\":\"CarrierId\"},\"CarrierRouteId\":{\"entity\":\"CarrierRoute.cdm.json/CarrierRoute\",\"name\":\"CarrierRouteId\"},\"RouteId\":{\"entity\":\"CarrierRoute.cdm.json/CarrierRoute\",\"name\":\"RouteId\"},\"FromLocationId\":{\"entity\":\"CarrierRoute.cdm.json/CarrierRoute\",\"name\":\"FromLocationId\"},\"ToLocationId\":{\"entity\":\"CarrierRoute.cdm.json/CarrierRoute\",\"name\":\"ToLocationId\"},\"ShipmentMethodId\":{\"entity\":\"CarrierRoute.cdm.json/CarrierRoute\",\"name\":\"ShipmentMethodId\"},\"PlannedRouteTransitTime\":{\"entity\":\"CarrierRoute.cdm.json/CarrierRoute\",\"name\":\"PlannedRouteTransitTime\"},\"PlannedRouteDistance\":{\"entity\":\"CarrierRoute.cdm.json/CarrierRoute\",\"name\":\"PlannedRouteDistance\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"CarrierRoute\",\"path\":\"CarrierRoute.cdm.json/CarrierRoute\"},\"description\":\"A carrier-defined published route to send cargo.\\n\\nFED/ Route 1 = SF to Shanghai by AIR\\nFrom US\\nFrom San Francisco\\nFrom Location = SFO\\nTo China\\nTo Shanghai\\nTo Location = SHA\",\"primaryKey\":[\"CarrierId\",\"CarrierRouteId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"CarrierId\",\"attributeReference\":{\"entity\":\"CarrierRoute.cdm.json/CarrierRoute\",\"name\":\"CarrierId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"CarrierRouteId\",\"attributeReference\":{\"entity\":\"CarrierRoute.cdm.json/CarrierRoute\",\"name\":\"CarrierRouteId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"RouteId\",\"attributeReference\":{\"entity\":\"CarrierRoute.cdm.json/CarrierRoute\",\"name\":\"RouteId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"FromLocationId\",\"attributeReference\":{\"entity\":\"CarrierRoute.cdm.json/CarrierRoute\",\"name\":\"FromLocationId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ToLocationId\",\"attributeReference\":{\"entity\":\"CarrierRoute.cdm.json/CarrierRoute\",\"name\":\"ToLocationId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ShipmentMethodId\",\"attributeReference\":{\"entity\":\"CarrierRoute.cdm.json/CarrierRoute\",\"name\":\"ShipmentMethodId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"PlannedRouteTransitTime\",\"attributeReference\":{\"entity\":\"CarrierRoute.cdm.json/CarrierRoute\",\"name\":\"PlannedRouteTransitTime\"},\"dataType\":\"string\",\"dataTypeLength\":256},{\"type\":\"Existing\",\"name\":\"PlannedRouteDistance\",\"attributeReference\":{\"entity\":\"CarrierRoute.cdm.json/CarrierRoute\",\"name\":\"PlannedRouteDistance\"},\"dataType\":\"integer\"}]}}}",
+			"Description": "A carrier-defined published route to send cargo.\n\nFED/ Route 1 = SF to Shanghai by AIR\nFrom US\nFrom San Francisco\nFrom Location = SFO\nTo China\nTo Shanghai\nTo Location = SHA",
+			"DisplayFolderInfo": "{\"name\":\"Shipping\",\"colorCode\":\"#000B42\"}",
+			"PrimaryKeys": "CarrierId,CarrierRouteId"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

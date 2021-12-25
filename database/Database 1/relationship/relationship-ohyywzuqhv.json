@@ -1,0 +1,26 @@
+{
+	"name": "relationship-ohyywzuqhv",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "relationship-ohyywzuqhv",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Trailer",
+		"ToTableName": "VehicleTrailerCombination",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "TrailerId",
+				"ToColumnName": "TrailerId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Trailer.cdm.json/Trailer\",\"toEntity\":\"VehicleTrailerCombination.cdm.json/VehicleTrailerCombination\",\"joinPairs\":[{\"fromAttribute\":\"TrailerId\",\"toAttribute\":\"TrailerId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

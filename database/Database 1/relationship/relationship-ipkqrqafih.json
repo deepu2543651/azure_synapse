@@ -1,0 +1,26 @@
+{
+	"name": "relationship-ipkqrqafih",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "relationship-ipkqrqafih",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Vehicle",
+		"ToTableName": "ShipmentRouteLeg",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "VehicleId",
+				"ToColumnName": "ActualVehicleId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Vehicle.cdm.json/Vehicle\",\"toEntity\":\"ShipmentRouteLeg.cdm.json/ShipmentRouteLeg\",\"joinPairs\":[{\"fromAttribute\":\"VehicleId\",\"toAttribute\":\"ActualVehicleId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

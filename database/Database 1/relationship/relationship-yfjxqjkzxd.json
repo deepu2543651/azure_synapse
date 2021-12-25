@@ -1,0 +1,26 @@
+{
+	"name": "relationship-yfjxqjkzxd",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "relationship-yfjxqjkzxd",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Driver",
+		"ToTableName": "DeliveryLegDriver",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "DriverId",
+				"ToColumnName": "DriverId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Driver.cdm.json/Driver\",\"toEntity\":\"DeliveryLegDriver.cdm.json/DeliveryLegDriver\",\"joinPairs\":[{\"fromAttribute\":\"DriverId\",\"toAttribute\":\"DriverId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

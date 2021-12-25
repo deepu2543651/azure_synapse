@@ -1,0 +1,86 @@
+{
+	"name": "ContainerSecurityMethod",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "ContainerSecurityMethod",
+		"Description": "The method by which a container is secured.\n\nEx:\n- Adjustable door lock\n- King pin lock\n- Seal",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ContainerSecurityMethodId",
+					"Description": "The unique identifier of a Container Security Method.",
+					"BaseAttributeReference": {
+						"Entity": "ContainerSecurityMethod.cdm.json/ContainerSecurityMethod",
+						"Name": "ContainerSecurityMethodId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ContainerSecurityMethodName",
+					"Description": "The name of a Container Security Method.",
+					"BaseAttributeReference": {
+						"Entity": "ContainerSecurityMethod.cdm.json/ContainerSecurityMethod",
+						"Name": "ContainerSecurityMethodName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ContainerSecurityMethodDescription",
+					"Description": "The description of a Container Security Method.",
+					"BaseAttributeReference": {
+						"Entity": "ContainerSecurityMethod.cdm.json/ContainerSecurityMethod",
+						"Name": "ContainerSecurityMethodDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ContainerSecurityMethodId\":{\"entity\":\"ContainerSecurityMethod.cdm.json/ContainerSecurityMethod\",\"name\":\"ContainerSecurityMethodId\"},\"ContainerSecurityMethodName\":{\"entity\":\"ContainerSecurityMethod.cdm.json/ContainerSecurityMethod\",\"name\":\"ContainerSecurityMethodName\"},\"ContainerSecurityMethodDescription\":{\"entity\":\"ContainerSecurityMethod.cdm.json/ContainerSecurityMethod\",\"name\":\"ContainerSecurityMethodDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"ContainerSecurityMethod\",\"path\":\"ContainerSecurityMethod.cdm.json/ContainerSecurityMethod\"},\"description\":\"The method by which a container is secured.\\n\\nEx:\\n- Adjustable door lock\\n- King pin lock\\n- Seal\",\"primaryKey\":[\"ContainerSecurityMethodId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"ContainerSecurityMethodId\",\"attributeReference\":{\"entity\":\"ContainerSecurityMethod.cdm.json/ContainerSecurityMethod\",\"name\":\"ContainerSecurityMethodId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ContainerSecurityMethodName\",\"attributeReference\":{\"entity\":\"ContainerSecurityMethod.cdm.json/ContainerSecurityMethod\",\"name\":\"ContainerSecurityMethodName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"ContainerSecurityMethodDescription\",\"attributeReference\":{\"entity\":\"ContainerSecurityMethod.cdm.json/ContainerSecurityMethod\",\"name\":\"ContainerSecurityMethodDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512}]}}}",
+			"Description": "The method by which a container is secured.\n\nEx:\n- Adjustable door lock\n- King pin lock\n- Seal",
+			"DisplayFolderInfo": "{\"name\":\"Shipping\",\"colorCode\":\"#000B42\"}",
+			"PrimaryKeys": "ContainerSecurityMethodId"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

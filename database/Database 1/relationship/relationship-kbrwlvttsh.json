@@ -1,0 +1,26 @@
+{
+	"name": "relationship-kbrwlvttsh",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "relationship-kbrwlvttsh",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Railcar",
+		"ToTableName": "TrainScheduleLegConfiguration",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "RailcarId",
+				"ToColumnName": "RailcarId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Railcar.cdm.json/Railcar\",\"toEntity\":\"TrainScheduleLegConfiguration.cdm.json/TrainScheduleLegConfiguration\",\"joinPairs\":[{\"fromAttribute\":\"RailcarId\",\"toAttribute\":\"RailcarId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

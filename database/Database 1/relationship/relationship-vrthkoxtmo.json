@@ -1,0 +1,26 @@
+{
+	"name": "relationship-vrthkoxtmo",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "relationship-vrthkoxtmo",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Trailer",
+		"ToTableName": "ShipmentRouteLegEquipmentSubstitution",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "TrailerId",
+				"ToColumnName": "SubstitutionTrailerId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Trailer.cdm.json/Trailer\",\"toEntity\":\"ShipmentRouteLegEquipmentSubstitution.cdm.json/ShipmentRouteLegEquipmentSubstitution\",\"joinPairs\":[{\"fromAttribute\":\"TrailerId\",\"toAttribute\":\"SubstitutionTrailerId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

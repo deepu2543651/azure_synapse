@@ -1,0 +1,30 @@
+{
+	"name": "relationship-ssparvbmvg",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "relationship-ssparvbmvg",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "ShipmentDocument",
+		"ToTableName": "ProofOfDelivery",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "DocumentId",
+				"ToColumnName": "DocumentId"
+			},
+			{
+				"FromColumnName": "ShipmentId",
+				"ToColumnName": "ShipmentId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"ShipmentDocument.cdm.json/ShipmentDocument\",\"toEntity\":\"ProofOfDelivery.cdm.json/ProofOfDelivery\",\"joinPairs\":[{\"fromAttribute\":\"DocumentId\",\"toAttribute\":\"DocumentId\"},{\"fromAttribute\":\"ShipmentId\",\"toAttribute\":\"ShipmentId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

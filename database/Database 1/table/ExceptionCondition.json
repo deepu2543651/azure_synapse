@@ -1,0 +1,86 @@
+{
+	"name": "ExceptionCondition",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "ExceptionCondition",
+		"Description": "The condition of the shipment associated with the condition.\n\nEx:\n- Physical damage to package\n- Contents leaking\n- Suspected damage to contents\n- Water damage incurred",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ExceptionConditionId",
+					"Description": "The unique identifier of an exception condition.",
+					"BaseAttributeReference": {
+						"Entity": "ExceptionCondition.cdm.json/ExceptionCondition",
+						"Name": "ExceptionConditionId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ExceptionConditionName",
+					"Description": "The name of an exception condition.",
+					"BaseAttributeReference": {
+						"Entity": "ExceptionCondition.cdm.json/ExceptionCondition",
+						"Name": "ExceptionConditionName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ExceptionConditionDescription",
+					"Description": "The description of an exception condition.",
+					"BaseAttributeReference": {
+						"Entity": "ExceptionCondition.cdm.json/ExceptionCondition",
+						"Name": "ExceptionConditionDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ExceptionConditionId\":{\"entity\":\"ExceptionCondition.cdm.json/ExceptionCondition\",\"name\":\"ExceptionConditionId\"},\"ExceptionConditionName\":{\"entity\":\"ExceptionCondition.cdm.json/ExceptionCondition\",\"name\":\"ExceptionConditionName\"},\"ExceptionConditionDescription\":{\"entity\":\"ExceptionCondition.cdm.json/ExceptionCondition\",\"name\":\"ExceptionConditionDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"ExceptionCondition\",\"path\":\"ExceptionCondition.cdm.json/ExceptionCondition\"},\"description\":\"The condition of the shipment associated with the condition.\\n\\nEx:\\n- Physical damage to package\\n- Contents leaking\\n- Suspected damage to contents\\n- Water damage incurred\",\"primaryKey\":[\"ExceptionConditionId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"ExceptionConditionId\",\"attributeReference\":{\"entity\":\"ExceptionCondition.cdm.json/ExceptionCondition\",\"name\":\"ExceptionConditionId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ExceptionConditionName\",\"attributeReference\":{\"entity\":\"ExceptionCondition.cdm.json/ExceptionCondition\",\"name\":\"ExceptionConditionName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"ExceptionConditionDescription\",\"attributeReference\":{\"entity\":\"ExceptionCondition.cdm.json/ExceptionCondition\",\"name\":\"ExceptionConditionDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512}]}}}",
+			"Description": "The condition of the shipment associated with the condition.\n\nEx:\n- Physical damage to package\n- Contents leaking\n- Suspected damage to contents\n- Water damage incurred",
+			"DisplayFolderInfo": "{\"name\":\"Shipping\",\"colorCode\":\"#000B42\"}",
+			"PrimaryKeys": "ExceptionConditionId"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

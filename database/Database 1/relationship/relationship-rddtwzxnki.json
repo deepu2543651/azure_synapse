@@ -1,0 +1,26 @@
+{
+	"name": "relationship-rddtwzxnki",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "relationship-rddtwzxnki",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "AircraftFamily",
+		"ToTableName": "AircraftFamilyModel",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "AircraftFamilyId",
+				"ToColumnName": "AircraftFamilyId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"AircraftFamily.cdm.json/AircraftFamily\",\"toEntity\":\"AircraftFamilyModel.cdm.json/AircraftFamilyModel\",\"joinPairs\":[{\"fromAttribute\":\"AircraftFamilyId\",\"toAttribute\":\"AircraftFamilyId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

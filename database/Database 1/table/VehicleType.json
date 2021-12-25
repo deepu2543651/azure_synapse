@@ -1,0 +1,86 @@
+{
+	"name": "VehicleType",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "VehicleType",
+		"Description": "The type of a vehicle.\n\nEx:\n- Automobile\n- Truck\n- Recreation Vehicle\n- Motorcycle\n- Bicycle\n- Ship\n- Barge",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "VehicleTypeId",
+					"Description": "The unique identifier of a vehicle type.",
+					"BaseAttributeReference": {
+						"Entity": "VehicleType.cdm.json/VehicleType",
+						"Name": "VehicleTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "VehicleTypeName",
+					"Description": "The name of a vehicle type.",
+					"BaseAttributeReference": {
+						"Entity": "VehicleType.cdm.json/VehicleType",
+						"Name": "VehicleTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "VehicleTypeDescription",
+					"Description": "The description of a vehicle type.",
+					"BaseAttributeReference": {
+						"Entity": "VehicleType.cdm.json/VehicleType",
+						"Name": "VehicleTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"VehicleTypeId\":{\"entity\":\"VehicleType.cdm.json/VehicleType\",\"name\":\"VehicleTypeId\"},\"VehicleTypeName\":{\"entity\":\"VehicleType.cdm.json/VehicleType\",\"name\":\"VehicleTypeName\"},\"VehicleTypeDescription\":{\"entity\":\"VehicleType.cdm.json/VehicleType\",\"name\":\"VehicleTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"VehicleType\",\"path\":\"VehicleType.cdm.json/VehicleType\"},\"description\":\"The type of a vehicle.\\n\\nEx:\\n- Automobile\\n- Truck\\n- Recreation Vehicle\\n- Motorcycle\\n- Bicycle\\n- Ship\\n- Barge\",\"primaryKey\":[\"VehicleTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"VehicleTypeId\",\"attributeReference\":{\"entity\":\"VehicleType.cdm.json/VehicleType\",\"name\":\"VehicleTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"VehicleTypeName\",\"attributeReference\":{\"entity\":\"VehicleType.cdm.json/VehicleType\",\"name\":\"VehicleTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"VehicleTypeDescription\",\"attributeReference\":{\"entity\":\"VehicleType.cdm.json/VehicleType\",\"name\":\"VehicleTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512}]}}}",
+			"Description": "The type of a vehicle.\n\nEx:\n- Automobile\n- Truck\n- Recreation Vehicle\n- Motorcycle\n- Bicycle\n- Ship\n- Barge",
+			"DisplayFolderInfo": "{\"name\":\"Inventory\",\"colorCode\":\"#EA279F\"}",
+			"PrimaryKeys": "VehicleTypeId"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

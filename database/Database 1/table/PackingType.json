@@ -1,0 +1,86 @@
+{
+	"name": "PackingType",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "PackingType",
+		"Description": "The type of package required or utilized by the Package.\n\nEx:\n- Letter\n- Box\n- Crate\n- Bale\n- Refrigerated Container\n- Insulated Box",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "PackingTypeId",
+					"Description": "The unique identifier of a Packing Type.",
+					"BaseAttributeReference": {
+						"Entity": "PackingType.cdm.json/PackingType",
+						"Name": "PackingTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PackingTypeName",
+					"Description": "The name of a Packing Type.",
+					"BaseAttributeReference": {
+						"Entity": "PackingType.cdm.json/PackingType",
+						"Name": "PackingTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "PackingTypeDescription",
+					"Description": "The description of a Packing Type.",
+					"BaseAttributeReference": {
+						"Entity": "PackingType.cdm.json/PackingType",
+						"Name": "PackingTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"PackingTypeId\":{\"entity\":\"PackingType.cdm.json/PackingType\",\"name\":\"PackingTypeId\"},\"PackingTypeName\":{\"entity\":\"PackingType.cdm.json/PackingType\",\"name\":\"PackingTypeName\"},\"PackingTypeDescription\":{\"entity\":\"PackingType.cdm.json/PackingType\",\"name\":\"PackingTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"PackingType\",\"path\":\"PackingType.cdm.json/PackingType\"},\"description\":\"The type of package required or utilized by the Package.\\n\\nEx:\\n- Letter\\n- Box\\n- Crate\\n- Bale\\n- Refrigerated Container\\n- Insulated Box\",\"primaryKey\":[\"PackingTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"PackingTypeId\",\"attributeReference\":{\"entity\":\"PackingType.cdm.json/PackingType\",\"name\":\"PackingTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"PackingTypeName\",\"attributeReference\":{\"entity\":\"PackingType.cdm.json/PackingType\",\"name\":\"PackingTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"PackingTypeDescription\",\"attributeReference\":{\"entity\":\"PackingType.cdm.json/PackingType\",\"name\":\"PackingTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512}]}}}",
+			"Description": "The type of package required or utilized by the Package.\n\nEx:\n- Letter\n- Box\n- Crate\n- Bale\n- Refrigerated Container\n- Insulated Box",
+			"DisplayFolderInfo": "{\"name\":\"Shipping\",\"colorCode\":\"#000B42\"}",
+			"PrimaryKeys": "PackingTypeId"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

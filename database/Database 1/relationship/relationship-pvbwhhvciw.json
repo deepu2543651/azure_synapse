@@ -1,0 +1,42 @@
+{
+	"name": "relationship-pvbwhhvciw",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "relationship-pvbwhhvciw",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "ScheduledFlightLeg",
+		"ToTableName": "ScheduledFlightLegRelatedParty",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "CarrierId",
+				"ToColumnName": "CarrierId"
+			},
+			{
+				"FromColumnName": "FlightNumber",
+				"ToColumnName": "FlightNumber"
+			},
+			{
+				"FromColumnName": "ScheduledFlightDate",
+				"ToColumnName": "ScheduledFlightDate"
+			},
+			{
+				"FromColumnName": "ScheduledFlightLegArrivalAirportCode",
+				"ToColumnName": "ScheduledFlightLegArrivalAirportCode"
+			},
+			{
+				"FromColumnName": "ScheduledFlightLegDepartureAirportCode",
+				"ToColumnName": "ScheduledFlightLegDepartureAirportCode"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"ScheduledFlightLeg.cdm.json/ScheduledFlightLeg\",\"toEntity\":\"ScheduledFlightLegRelatedParty.cdm.json/ScheduledFlightLegRelatedParty\",\"joinPairs\":[{\"fromAttribute\":\"CarrierId\",\"toAttribute\":\"CarrierId\"},{\"fromAttribute\":\"FlightNumber\",\"toAttribute\":\"FlightNumber\"},{\"fromAttribute\":\"ScheduledFlightDate\",\"toAttribute\":\"ScheduledFlightDate\"},{\"fromAttribute\":\"ScheduledFlightLegArrivalAirportCode\",\"toAttribute\":\"ScheduledFlightLegArrivalAirportCode\"},{\"fromAttribute\":\"ScheduledFlightLegDepartureAirportCode\",\"toAttribute\":\"ScheduledFlightLegDepartureAirportCode\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

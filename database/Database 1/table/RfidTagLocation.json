@@ -1,0 +1,139 @@
+{
+	"name": "RfidTagLocation",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "RfidTagLocation",
+		"Description": "The location of the RFID tag at a point in time.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "RfidTagId",
+					"Description": "The unique identifier of a RFID Tag.\n\nThe transmitter/receiver pair or transceiver plus the information storage mechanism attached to the object is referred to as the tag, transponder, electronic label, code plate and various other terms. \n\nAlthough transponder is technically the most accurate, the most common term and the one preferred by the Automatic Identification Manufacturers is tag.",
+					"BaseAttributeReference": {
+						"Entity": "RfidTagLocation.cdm.json/RfidTagLocation",
+						"Name": "RfidTagId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "StartTimestamp",
+					"Description": "The start timestamp of the associated RFID Tag Location.",
+					"BaseAttributeReference": {
+						"Entity": "RfidTagLocation.cdm.json/RfidTagLocation",
+						"Name": "StartTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "EndTimestamp",
+					"Description": "The end timestamp of the associated RFID Tag Location.",
+					"BaseAttributeReference": {
+						"Entity": "RfidTagLocation.cdm.json/RfidTagLocation",
+						"Name": "EndTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "RfidTagLocationLatitude",
+					"Description": "The location north or south in reference to the equator, which is designated at zero (0) degrees. Parallel lines that circle the globe both north and south of the equator. \n\nLatitude is often measured in degrees, minutes, seconds (ddd mm ss), but other formats are also commonly used: gps coordinate (ddd mm.mmmm), decimal degrees (ddd.dddd).",
+					"BaseAttributeReference": {
+						"Entity": "RfidTagLocation.cdm.json/RfidTagLocation",
+						"Name": "RfidTagLocationLatitude"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 7,
+						"Scale": 4,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "RfidTagLocationLongitude",
+					"Description": "The location east or west in reference to the Prime Meridian, which is designated as zero (0) degrees longitude. The distance between lines of longitude are greater at the equator and smaller at the higher latitudes, intersecting at the earth's North and South Poles. Time zones are correlated to longitude.\n\nLongitude is often measured in degrees, minutes, seconds (ddd mm ss), but other formats are also commonly used: gps coordinate (ddd mm.mmmm), decimal degrees (ddd.dddd).",
+					"BaseAttributeReference": {
+						"Entity": "RfidTagLocation.cdm.json/RfidTagLocation",
+						"Name": "RfidTagLocationLongitude"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 7,
+						"Scale": 4,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "RfidTagLocationNote",
+					"Description": "Notes, comments or additional information about the RFID Tag location.",
+					"BaseAttributeReference": {
+						"Entity": "RfidTagLocation.cdm.json/RfidTagLocation",
+						"Name": "RfidTagLocationNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"RfidTagId\":{\"entity\":\"RfidTagLocation.cdm.json/RfidTagLocation\",\"name\":\"RfidTagId\"},\"StartTimestamp\":{\"entity\":\"RfidTagLocation.cdm.json/RfidTagLocation\",\"name\":\"StartTimestamp\"},\"EndTimestamp\":{\"entity\":\"RfidTagLocation.cdm.json/RfidTagLocation\",\"name\":\"EndTimestamp\"},\"RfidTagLocationLatitude\":{\"entity\":\"RfidTagLocation.cdm.json/RfidTagLocation\",\"name\":\"RfidTagLocationLatitude\"},\"RfidTagLocationLongitude\":{\"entity\":\"RfidTagLocation.cdm.json/RfidTagLocation\",\"name\":\"RfidTagLocationLongitude\"},\"RfidTagLocationNote\":{\"entity\":\"RfidTagLocation.cdm.json/RfidTagLocation\",\"name\":\"RfidTagLocationNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"RfidTagLocation\",\"path\":\"RfidTagLocation.cdm.json/RfidTagLocation\"},\"description\":\"The location of the RFID tag at a point in time.\",\"primaryKey\":[\"RfidTagId\",\"StartTimestamp\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"RfidTagId\",\"attributeReference\":{\"entity\":\"RfidTagLocation.cdm.json/RfidTagLocation\",\"name\":\"RfidTagId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"StartTimestamp\",\"attributeReference\":{\"entity\":\"RfidTagLocation.cdm.json/RfidTagLocation\",\"name\":\"StartTimestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"EndTimestamp\",\"attributeReference\":{\"entity\":\"RfidTagLocation.cdm.json/RfidTagLocation\",\"name\":\"EndTimestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"RfidTagLocationLatitude\",\"attributeReference\":{\"entity\":\"RfidTagLocation.cdm.json/RfidTagLocation\",\"name\":\"RfidTagLocationLatitude\"},\"dataType\":\"decimal\",\"dataTypeLength\":7,\"scale\":4},{\"type\":\"Existing\",\"name\":\"RfidTagLocationLongitude\",\"attributeReference\":{\"entity\":\"RfidTagLocation.cdm.json/RfidTagLocation\",\"name\":\"RfidTagLocationLongitude\"},\"dataType\":\"decimal\",\"dataTypeLength\":7,\"scale\":4},{\"type\":\"Existing\",\"name\":\"RfidTagLocationNote\",\"attributeReference\":{\"entity\":\"RfidTagLocation.cdm.json/RfidTagLocation\",\"name\":\"RfidTagLocationNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024}]}}}",
+			"Description": "The location of the RFID tag at a point in time.",
+			"DisplayFolderInfo": "{\"name\":\"Inventory\",\"colorCode\":\"#EA279F\"}",
+			"PrimaryKeys": "RfidTagId,StartTimestamp"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

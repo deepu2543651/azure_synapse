@@ -1,0 +1,86 @@
+{
+	"name": "ShipmentLocationType",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "ShipmentLocationType",
+		"Description": "A type of shipment location.\n\nEx:\n- shipment initiated at\n- shipment confirmed at\n- shipment fulfilled at\n- shipment delivered to",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ShipmentLocationTypeId",
+					"Description": "The unique identifier of a Shipment Location Type.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentLocationType.cdm.json/ShipmentLocationType",
+						"Name": "ShipmentLocationTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ShipmentLocationTypeName",
+					"Description": "The name of a Shipment Location Type.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentLocationType.cdm.json/ShipmentLocationType",
+						"Name": "ShipmentLocationTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ShipmentLocationTypeDescription",
+					"Description": "The description of a Shipment Location Type.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentLocationType.cdm.json/ShipmentLocationType",
+						"Name": "ShipmentLocationTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ShipmentLocationTypeId\":{\"entity\":\"ShipmentLocationType.cdm.json/ShipmentLocationType\",\"name\":\"ShipmentLocationTypeId\"},\"ShipmentLocationTypeName\":{\"entity\":\"ShipmentLocationType.cdm.json/ShipmentLocationType\",\"name\":\"ShipmentLocationTypeName\"},\"ShipmentLocationTypeDescription\":{\"entity\":\"ShipmentLocationType.cdm.json/ShipmentLocationType\",\"name\":\"ShipmentLocationTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"ShipmentLocationType\",\"path\":\"ShipmentLocationType.cdm.json/ShipmentLocationType\"},\"description\":\"A type of shipment location.\\n\\nEx:\\n- shipment initiated at\\n- shipment confirmed at\\n- shipment fulfilled at\\n- shipment delivered to\",\"primaryKey\":[\"ShipmentLocationTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"ShipmentLocationTypeId\",\"attributeReference\":{\"entity\":\"ShipmentLocationType.cdm.json/ShipmentLocationType\",\"name\":\"ShipmentLocationTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ShipmentLocationTypeName\",\"attributeReference\":{\"entity\":\"ShipmentLocationType.cdm.json/ShipmentLocationType\",\"name\":\"ShipmentLocationTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"ShipmentLocationTypeDescription\",\"attributeReference\":{\"entity\":\"ShipmentLocationType.cdm.json/ShipmentLocationType\",\"name\":\"ShipmentLocationTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512}]}}}",
+			"Description": "A type of shipment location.\n\nEx:\n- shipment initiated at\n- shipment confirmed at\n- shipment fulfilled at\n- shipment delivered to",
+			"DisplayFolderInfo": "{\"name\":\"Shipping\",\"colorCode\":\"#000B42\"}",
+			"PrimaryKeys": "ShipmentLocationTypeId"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

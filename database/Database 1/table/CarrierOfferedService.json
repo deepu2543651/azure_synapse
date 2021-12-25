@@ -1,0 +1,119 @@
+{
+	"name": "CarrierOfferedService",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "CarrierOfferedService",
+		"Description": "The Service(s) offered by the associated Carrier.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "CarrierId",
+					"Description": "The unique identifier of a Carrier.",
+					"BaseAttributeReference": {
+						"Entity": "CarrierOfferedService.cdm.json/CarrierOfferedService",
+						"Name": "CarrierId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ShipmentServiceTypeId",
+					"Description": "The unique identifier of a service.",
+					"BaseAttributeReference": {
+						"Entity": "CarrierOfferedService.cdm.json/CarrierOfferedService",
+						"Name": "ShipmentServiceTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ServiceFirstOfferingDate",
+					"Description": "The first offering or available date for the service.",
+					"BaseAttributeReference": {
+						"Entity": "CarrierOfferedService.cdm.json/CarrierOfferedService",
+						"Name": "ServiceFirstOfferingDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "ServiceLastOfferingDate",
+					"Description": "The last offering or available date for the service.",
+					"BaseAttributeReference": {
+						"Entity": "CarrierOfferedService.cdm.json/CarrierOfferedService",
+						"Name": "ServiceLastOfferingDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "CarrierServiceNote",
+					"Description": "Notes, comments or additional information regarding the carrier shipment service.",
+					"BaseAttributeReference": {
+						"Entity": "CarrierOfferedService.cdm.json/CarrierOfferedService",
+						"Name": "CarrierServiceNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"CarrierId\":{\"entity\":\"CarrierOfferedService.cdm.json/CarrierOfferedService\",\"name\":\"CarrierId\"},\"ShipmentServiceTypeId\":{\"entity\":\"CarrierOfferedService.cdm.json/CarrierOfferedService\",\"name\":\"ShipmentServiceTypeId\"},\"ServiceFirstOfferingDate\":{\"entity\":\"CarrierOfferedService.cdm.json/CarrierOfferedService\",\"name\":\"ServiceFirstOfferingDate\"},\"ServiceLastOfferingDate\":{\"entity\":\"CarrierOfferedService.cdm.json/CarrierOfferedService\",\"name\":\"ServiceLastOfferingDate\"},\"CarrierServiceNote\":{\"entity\":\"CarrierOfferedService.cdm.json/CarrierOfferedService\",\"name\":\"CarrierServiceNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"CarrierOfferedService\",\"path\":\"CarrierOfferedService.cdm.json/CarrierOfferedService\"},\"description\":\"The Service(s) offered by the associated Carrier.\",\"primaryKey\":[\"CarrierId\",\"ShipmentServiceTypeId\",\"ServiceFirstOfferingDate\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"CarrierId\",\"attributeReference\":{\"entity\":\"CarrierOfferedService.cdm.json/CarrierOfferedService\",\"name\":\"CarrierId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ShipmentServiceTypeId\",\"attributeReference\":{\"entity\":\"CarrierOfferedService.cdm.json/CarrierOfferedService\",\"name\":\"ShipmentServiceTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ServiceFirstOfferingDate\",\"attributeReference\":{\"entity\":\"CarrierOfferedService.cdm.json/CarrierOfferedService\",\"name\":\"ServiceFirstOfferingDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\"},{\"type\":\"Existing\",\"name\":\"ServiceLastOfferingDate\",\"attributeReference\":{\"entity\":\"CarrierOfferedService.cdm.json/CarrierOfferedService\",\"name\":\"ServiceLastOfferingDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\"},{\"type\":\"Existing\",\"name\":\"CarrierServiceNote\",\"attributeReference\":{\"entity\":\"CarrierOfferedService.cdm.json/CarrierOfferedService\",\"name\":\"CarrierServiceNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024}]}}}",
+			"Description": "The Service(s) offered by the associated Carrier.",
+			"DisplayFolderInfo": "{\"name\":\"Shipping\",\"colorCode\":\"#000B42\"}",
+			"PrimaryKeys": "CarrierId,ShipmentServiceTypeId,ServiceFirstOfferingDate"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

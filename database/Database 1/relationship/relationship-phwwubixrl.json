@@ -1,0 +1,26 @@
+{
+	"name": "relationship-phwwubixrl",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "relationship-phwwubixrl",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "ShipmentPriority",
+		"ToTableName": "Shipment",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ShipmentPriorityId",
+				"ToColumnName": "ShipmentPriorityId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"ShipmentPriority.cdm.json/ShipmentPriority\",\"toEntity\":\"Shipment.cdm.json/Shipment\",\"joinPairs\":[{\"fromAttribute\":\"ShipmentPriorityId\",\"toAttribute\":\"ShipmentPriorityId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

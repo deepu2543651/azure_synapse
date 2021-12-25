@@ -1,0 +1,26 @@
+{
+	"name": "relationship-plfikmnyvr",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "relationship-plfikmnyvr",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "ComputingDeviceType",
+		"ToTableName": "ApplicationCommunication",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ComputingDeviceTypeId",
+				"ToColumnName": "ComputingDeviceTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"ComputingDeviceType.cdm.json/ComputingDeviceType\",\"toEntity\":\"ApplicationCommunication.cdm.json/ApplicationCommunication\",\"joinPairs\":[{\"fromAttribute\":\"ComputingDeviceTypeId\",\"toAttribute\":\"ComputingDeviceTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

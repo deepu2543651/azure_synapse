@@ -1,0 +1,26 @@
+{
+	"name": "relationship-oezftrwmng",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "relationship-oezftrwmng",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "ShippingLocation",
+		"ToTableName": "CarrierRouteLeg",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ShippingLocationId",
+				"ToColumnName": "ToLocationId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"ShippingLocation.cdm.json/ShippingLocation\",\"toEntity\":\"CarrierRouteLeg.cdm.json/CarrierRouteLeg\",\"joinPairs\":[{\"fromAttribute\":\"ShippingLocationId\",\"toAttribute\":\"ToLocationId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

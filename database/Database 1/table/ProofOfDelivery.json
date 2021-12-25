@@ -1,0 +1,135 @@
+{
+	"name": "ProofOfDelivery",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "ProofOfDelivery",
+		"Description": "A proof of delivery document is used to confirm that the recipient received \"goods\" from the sender.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ShipmentId",
+					"Description": "The unique identifier of a Shipment.",
+					"BaseAttributeReference": {
+						"Entity": "ProofOfDelivery.cdm.json/ProofOfDelivery",
+						"Name": "ShipmentId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "DocumentId",
+					"Description": "The unique identifier of a Document.",
+					"BaseAttributeReference": {
+						"Entity": "ProofOfDelivery.cdm.json/ProofOfDelivery",
+						"Name": "DocumentId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "ProofOfDeliveryDate",
+					"Description": "The date that the proof of delivery was obtained from the recipient of the \"goods\".",
+					"BaseAttributeReference": {
+						"Entity": "ProofOfDelivery.cdm.json/ProofOfDelivery",
+						"Name": "ProofOfDeliveryDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "ProofOfDeliveryName",
+					"Description": "The name of the individual that received the \"goods\".",
+					"BaseAttributeReference": {
+						"Entity": "ProofOfDelivery.cdm.json/ProofOfDelivery",
+						"Name": "ProofOfDeliveryName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ProofOfDeliverySignature",
+					"Description": "A digital image of the signature obtained when the \"goods\" were delivered to the recipient.",
+					"BaseAttributeReference": {
+						"Entity": "ProofOfDelivery.cdm.json/ProofOfDelivery",
+						"Name": "ProofOfDeliverySignature"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "binary",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "binary"
+						}
+					}
+				},
+				{
+					"Name": "ProofOfDeliveryNote",
+					"Description": "Notes, comments or additional information regarding the proof of delivery.",
+					"BaseAttributeReference": {
+						"Entity": "ProofOfDelivery.cdm.json/ProofOfDelivery",
+						"Name": "ProofOfDeliveryNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ShipmentId\":{\"entity\":\"ProofOfDelivery.cdm.json/ProofOfDelivery\",\"name\":\"ShipmentId\"},\"DocumentId\":{\"entity\":\"ProofOfDelivery.cdm.json/ProofOfDelivery\",\"name\":\"DocumentId\"},\"ProofOfDeliveryDate\":{\"entity\":\"ProofOfDelivery.cdm.json/ProofOfDelivery\",\"name\":\"ProofOfDeliveryDate\"},\"ProofOfDeliveryName\":{\"entity\":\"ProofOfDelivery.cdm.json/ProofOfDelivery\",\"name\":\"ProofOfDeliveryName\"},\"ProofOfDeliverySignature\":{\"entity\":\"ProofOfDelivery.cdm.json/ProofOfDelivery\",\"name\":\"ProofOfDeliverySignature\"},\"ProofOfDeliveryNote\":{\"entity\":\"ProofOfDelivery.cdm.json/ProofOfDelivery\",\"name\":\"ProofOfDeliveryNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"ProofOfDelivery\",\"path\":\"ProofOfDelivery.cdm.json/ProofOfDelivery\"},\"description\":\"A proof of delivery document is used to confirm that the recipient received \\\"goods\\\" from the sender.\",\"primaryKey\":[\"ShipmentId\",\"DocumentId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"ShipmentId\",\"attributeReference\":{\"entity\":\"ProofOfDelivery.cdm.json/ProofOfDelivery\",\"name\":\"ShipmentId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"DocumentId\",\"attributeReference\":{\"entity\":\"ProofOfDelivery.cdm.json/ProofOfDelivery\",\"name\":\"DocumentId\"},\"dataType\":\"long\"},{\"type\":\"Existing\",\"name\":\"ProofOfDeliveryDate\",\"attributeReference\":{\"entity\":\"ProofOfDelivery.cdm.json/ProofOfDelivery\",\"name\":\"ProofOfDeliveryDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\"},{\"type\":\"Existing\",\"name\":\"ProofOfDeliveryName\",\"attributeReference\":{\"entity\":\"ProofOfDelivery.cdm.json/ProofOfDelivery\",\"name\":\"ProofOfDeliveryName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"ProofOfDeliverySignature\",\"attributeReference\":{\"entity\":\"ProofOfDelivery.cdm.json/ProofOfDelivery\",\"name\":\"ProofOfDeliverySignature\"},\"dataType\":\"binary\"},{\"type\":\"Existing\",\"name\":\"ProofOfDeliveryNote\",\"attributeReference\":{\"entity\":\"ProofOfDelivery.cdm.json/ProofOfDelivery\",\"name\":\"ProofOfDeliveryNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024}]}}}",
+			"Description": "A proof of delivery document is used to confirm that the recipient received \"goods\" from the sender.",
+			"DisplayFolderInfo": "{\"name\":\"Shipping\",\"colorCode\":\"#000B42\"}",
+			"PrimaryKeys": "ShipmentId,DocumentId"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

@@ -1,0 +1,86 @@
+{
+	"name": "ContainerRelationshipType",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "ContainerRelationshipType",
+		"Description": "The nature of the relationship between two or more container(s).\n\nEx:\n- Contained\n- Attached-To\n- Contained-Within\n- Consolidation  (The placing of LCL/LTL cargo from several sources into a container in order to fill the container and obtain a better per-unit cost for shipping.)",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ContainerRelationshipTypeId",
+					"Description": "The unique identifier of a Container Relationship Type.",
+					"BaseAttributeReference": {
+						"Entity": "ContainerRelationshipType.cdm.json/ContainerRelationshipType",
+						"Name": "ContainerRelationshipTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ContainerRelationshipTypeName",
+					"Description": "The name of a Container Relationship Type.",
+					"BaseAttributeReference": {
+						"Entity": "ContainerRelationshipType.cdm.json/ContainerRelationshipType",
+						"Name": "ContainerRelationshipTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ContainerRelationshipTypeDescription",
+					"Description": "The description of a Container Relationship Type.",
+					"BaseAttributeReference": {
+						"Entity": "ContainerRelationshipType.cdm.json/ContainerRelationshipType",
+						"Name": "ContainerRelationshipTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ContainerRelationshipTypeId\":{\"entity\":\"ContainerRelationshipType.cdm.json/ContainerRelationshipType\",\"name\":\"ContainerRelationshipTypeId\"},\"ContainerRelationshipTypeName\":{\"entity\":\"ContainerRelationshipType.cdm.json/ContainerRelationshipType\",\"name\":\"ContainerRelationshipTypeName\"},\"ContainerRelationshipTypeDescription\":{\"entity\":\"ContainerRelationshipType.cdm.json/ContainerRelationshipType\",\"name\":\"ContainerRelationshipTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"ContainerRelationshipType\",\"path\":\"ContainerRelationshipType.cdm.json/ContainerRelationshipType\"},\"description\":\"The nature of the relationship between two or more container(s).\\n\\nEx:\\n- Contained\\n- Attached-To\\n- Contained-Within\\n- Consolidation  (The placing of LCL/LTL cargo from several sources into a container in order to fill the container and obtain a better per-unit cost for shipping.)\",\"primaryKey\":[\"ContainerRelationshipTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"ContainerRelationshipTypeId\",\"attributeReference\":{\"entity\":\"ContainerRelationshipType.cdm.json/ContainerRelationshipType\",\"name\":\"ContainerRelationshipTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ContainerRelationshipTypeName\",\"attributeReference\":{\"entity\":\"ContainerRelationshipType.cdm.json/ContainerRelationshipType\",\"name\":\"ContainerRelationshipTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"ContainerRelationshipTypeDescription\",\"attributeReference\":{\"entity\":\"ContainerRelationshipType.cdm.json/ContainerRelationshipType\",\"name\":\"ContainerRelationshipTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512}]}}}",
+			"Description": "The nature of the relationship between two or more container(s).\n\nEx:\n- Contained\n- Attached-To\n- Contained-Within\n- Consolidation  (The placing of LCL/LTL cargo from several sources into a container in order to fill the container and obtain a better per-unit cost for shipping.)",
+			"DisplayFolderInfo": "{\"name\":\"Shipping\",\"colorCode\":\"#000B42\"}",
+			"PrimaryKeys": "ContainerRelationshipTypeId"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

@@ -1,0 +1,26 @@
+{
+	"name": "relationship-nhaktpzctu",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "relationship-nhaktpzctu",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "ApplicationCommunication",
+		"ToTableName": "ShipmentLocation",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ApplicationCommunicationId",
+				"ToColumnName": "ApplicationCommunicationId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"ApplicationCommunication.cdm.json/ApplicationCommunication\",\"toEntity\":\"ShipmentLocation.cdm.json/ShipmentLocation\",\"joinPairs\":[{\"fromAttribute\":\"ApplicationCommunicationId\",\"toAttribute\":\"ApplicationCommunicationId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

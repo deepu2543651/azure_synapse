@@ -1,0 +1,26 @@
+{
+	"name": "relationship-mjekbvggpx",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "relationship-mjekbvggpx",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Carrier",
+		"ToTableName": "ScheduledFlight",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "CarrierId",
+				"ToColumnName": "CarrierId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Carrier.cdm.json/Carrier\",\"toEntity\":\"ScheduledFlight.cdm.json/ScheduledFlight\",\"joinPairs\":[{\"fromAttribute\":\"CarrierId\",\"toAttribute\":\"CarrierId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

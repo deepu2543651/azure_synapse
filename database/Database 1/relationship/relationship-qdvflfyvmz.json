@@ -1,0 +1,30 @@
+{
+	"name": "relationship-qdvflfyvmz",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "relationship-qdvflfyvmz",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "ShipmentItem",
+		"ToTableName": "ShipmentItemAllowance",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ShipmentId",
+				"ToColumnName": "ShipmentId"
+			},
+			{
+				"FromColumnName": "ShipmentItemNumber",
+				"ToColumnName": "ShipmentItemNumber"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"ShipmentItem.cdm.json/ShipmentItem\",\"toEntity\":\"ShipmentItemAllowance.cdm.json/ShipmentItemAllowance\",\"joinPairs\":[{\"fromAttribute\":\"ShipmentId\",\"toAttribute\":\"ShipmentId\"},{\"fromAttribute\":\"ShipmentItemNumber\",\"toAttribute\":\"ShipmentItemNumber\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

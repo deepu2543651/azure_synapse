@@ -1,0 +1,86 @@
+{
+	"name": "ShipmentPartyRelationshipType",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "ShipmentPartyRelationshipType",
+		"Description": "The nature of the relationship between the shipment and the party.\n\nEx:\n-  Air Freight Forwarder\n-  Agent\n-  Authorized By\n-  Beneficial Cargo Owner\n-  Broker\n-  Cargo Agent\n-  Cartage Agent\n-  Co-loader\n-  Consignee (see Shipment because of importance)\n-  Consignor (see Shipment because of importance)\n-  Consolidator\n-  Courier\n - Customs\n-  Customs Clearance Service\n-  Customs House Broker\n-  Dealer\n-  Deliver To \n-  Export Broker\n-  Export Jobber\n-  Freight Cashier\n-  Freight Forwarder\n-  Master Loader\n-  Responsible Shipping Agent\n-  Paid By\n-  Purchasing Agent\n-  Shipped By\n-  Stevedore",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ShipmentPartyRelationshipTypeId",
+					"Description": "The unique identifier of a Shipment-Party Relationship Type.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentPartyRelationshipType.cdm.json/ShipmentPartyRelationshipType",
+						"Name": "ShipmentPartyRelationshipTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ShipmentPartyRelationshipTypeName",
+					"Description": "The name of a Shipment-Party Relationship Type.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentPartyRelationshipType.cdm.json/ShipmentPartyRelationshipType",
+						"Name": "ShipmentPartyRelationshipTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ShipmentPartyRelationshipTypeDescription",
+					"Description": "The description of a Shipment-Party Relationship Type.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentPartyRelationshipType.cdm.json/ShipmentPartyRelationshipType",
+						"Name": "ShipmentPartyRelationshipTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ShipmentPartyRelationshipTypeId\":{\"entity\":\"ShipmentPartyRelationshipType.cdm.json/ShipmentPartyRelationshipType\",\"name\":\"ShipmentPartyRelationshipTypeId\"},\"ShipmentPartyRelationshipTypeName\":{\"entity\":\"ShipmentPartyRelationshipType.cdm.json/ShipmentPartyRelationshipType\",\"name\":\"ShipmentPartyRelationshipTypeName\"},\"ShipmentPartyRelationshipTypeDescription\":{\"entity\":\"ShipmentPartyRelationshipType.cdm.json/ShipmentPartyRelationshipType\",\"name\":\"ShipmentPartyRelationshipTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"ShipmentPartyRelationshipType\",\"path\":\"ShipmentPartyRelationshipType.cdm.json/ShipmentPartyRelationshipType\"},\"description\":\"The nature of the relationship between the shipment and the party.\\n\\nEx:\\n-  Air Freight Forwarder\\n-  Agent\\n-  Authorized By\\n-  Beneficial Cargo Owner\\n-  Broker\\n-  Cargo Agent\\n-  Cartage Agent\\n-  Co-loader\\n-  Consignee (see Shipment because of importance)\\n-  Consignor (see Shipment because of importance)\\n-  Consolidator\\n-  Courier\\n - Customs\\n-  Customs Clearance Service\\n-  Customs House Broker\\n-  Dealer\\n-  Deliver To \\n-  Export Broker\\n-  Export Jobber\\n-  Freight Cashier\\n-  Freight Forwarder\\n-  Master Loader\\n-  Responsible Shipping Agent\\n-  Paid By\\n-  Purchasing Agent\\n-  Shipped By\\n-  Stevedore\",\"primaryKey\":[\"ShipmentPartyRelationshipTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"ShipmentPartyRelationshipTypeId\",\"attributeReference\":{\"entity\":\"ShipmentPartyRelationshipType.cdm.json/ShipmentPartyRelationshipType\",\"name\":\"ShipmentPartyRelationshipTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ShipmentPartyRelationshipTypeName\",\"attributeReference\":{\"entity\":\"ShipmentPartyRelationshipType.cdm.json/ShipmentPartyRelationshipType\",\"name\":\"ShipmentPartyRelationshipTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"ShipmentPartyRelationshipTypeDescription\",\"attributeReference\":{\"entity\":\"ShipmentPartyRelationshipType.cdm.json/ShipmentPartyRelationshipType\",\"name\":\"ShipmentPartyRelationshipTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512}]}}}",
+			"Description": "The nature of the relationship between the shipment and the party.\n\nEx:\n-  Air Freight Forwarder\n-  Agent\n-  Authorized By\n-  Beneficial Cargo Owner\n-  Broker\n-  Cargo Agent\n-  Cartage Agent\n-  Co-loader\n-  Consignee (see Shipment because of importance)\n-  Consignor (see Shipment because of importance)\n-  Consolidator\n-  Courier\n - Customs\n-  Customs Clearance Service\n-  Customs House Broker\n-  Dealer\n-  Deliver To \n-  Export Broker\n-  Export Jobber\n-  Freight Cashier\n-  Freight Forwarder\n-  Master Loader\n-  Responsible Shipping Agent\n-  Paid By\n-  Purchasing Agent\n-  Shipped By\n-  Stevedore",
+			"DisplayFolderInfo": "{\"name\":\"Shipping\",\"colorCode\":\"#000B42\"}",
+			"PrimaryKeys": "ShipmentPartyRelationshipTypeId"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

@@ -1,0 +1,26 @@
+{
+	"name": "relationship-ltrigcajzq",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "relationship-ltrigcajzq",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Carrier",
+		"ToTableName": "CarrierOfferedService",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "CarrierId",
+				"ToColumnName": "CarrierId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Carrier.cdm.json/Carrier\",\"toEntity\":\"CarrierOfferedService.cdm.json/CarrierOfferedService\",\"joinPairs\":[{\"fromAttribute\":\"CarrierId\",\"toAttribute\":\"CarrierId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

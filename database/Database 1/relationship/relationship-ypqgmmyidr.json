@@ -1,0 +1,26 @@
+{
+	"name": "relationship-ypqgmmyidr",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "relationship-ypqgmmyidr",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "ShipmentRelationshipType",
+		"ToTableName": "RelatedShipment",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ShipmentRelationshipTypeId",
+				"ToColumnName": "ShipmentRelationshipTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"ShipmentRelationshipType.cdm.json/ShipmentRelationshipType\",\"toEntity\":\"RelatedShipment.cdm.json/RelatedShipment\",\"joinPairs\":[{\"fromAttribute\":\"ShipmentRelationshipTypeId\",\"toAttribute\":\"ShipmentRelationshipTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

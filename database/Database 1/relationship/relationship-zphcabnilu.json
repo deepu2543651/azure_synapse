@@ -1,0 +1,30 @@
+{
+	"name": "relationship-zphcabnilu",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "relationship-zphcabnilu",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "ShipmentItem",
+		"ToTableName": "RelatedShipmentItem",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ShipmentId",
+				"ToColumnName": "ShipmentId"
+			},
+			{
+				"FromColumnName": "ShipmentItemNumber",
+				"ToColumnName": "ShipmentItemNumber"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"ShipmentItem.cdm.json/ShipmentItem\",\"toEntity\":\"RelatedShipmentItem.cdm.json/RelatedShipmentItem\",\"joinPairs\":[{\"fromAttribute\":\"ShipmentId\",\"toAttribute\":\"ShipmentId\"},{\"fromAttribute\":\"ShipmentItemNumber\",\"toAttribute\":\"ShipmentItemNumber\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

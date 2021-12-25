@@ -1,0 +1,119 @@
+{
+	"name": "VesselEngine",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "VesselEngine",
+		"Description": "An engine that is attached to the vessel.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "EngineId",
+					"Description": "The unique identifier of a Barge instance.",
+					"BaseAttributeReference": {
+						"Entity": "VesselEngine.cdm.json/VesselEngine",
+						"Name": "EngineId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "VesselId",
+					"Description": "The unique identifier of a vessel/ship.",
+					"BaseAttributeReference": {
+						"Entity": "VesselEngine.cdm.json/VesselEngine",
+						"Name": "VesselId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "VesselEnginePeriodStartTimestamp",
+					"Description": "The period start timestamp that the engine is configured / installed on the associated vessel.",
+					"BaseAttributeReference": {
+						"Entity": "VesselEngine.cdm.json/VesselEngine",
+						"Name": "VesselEnginePeriodStartTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "VesselEnginePeriodEndTimestamp",
+					"Description": "The period end timestamp that the engine is configured / installed on the associated vessel.",
+					"BaseAttributeReference": {
+						"Entity": "VesselEngine.cdm.json/VesselEngine",
+						"Name": "VesselEnginePeriodEndTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "VesselEngineNote",
+					"Description": "A note, comment or additional information regarding the vessel engine.",
+					"BaseAttributeReference": {
+						"Entity": "VesselEngine.cdm.json/VesselEngine",
+						"Name": "VesselEngineNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"EngineId\":{\"entity\":\"VesselEngine.cdm.json/VesselEngine\",\"name\":\"EngineId\"},\"VesselId\":{\"entity\":\"VesselEngine.cdm.json/VesselEngine\",\"name\":\"VesselId\"},\"VesselEnginePeriodStartTimestamp\":{\"entity\":\"VesselEngine.cdm.json/VesselEngine\",\"name\":\"VesselEnginePeriodStartTimestamp\"},\"VesselEnginePeriodEndTimestamp\":{\"entity\":\"VesselEngine.cdm.json/VesselEngine\",\"name\":\"VesselEnginePeriodEndTimestamp\"},\"VesselEngineNote\":{\"entity\":\"VesselEngine.cdm.json/VesselEngine\",\"name\":\"VesselEngineNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"VesselEngine\",\"path\":\"VesselEngine.cdm.json/VesselEngine\"},\"description\":\"An engine that is attached to the vessel.\",\"primaryKey\":[\"EngineId\",\"VesselId\",\"VesselEnginePeriodStartTimestamp\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"EngineId\",\"attributeReference\":{\"entity\":\"VesselEngine.cdm.json/VesselEngine\",\"name\":\"EngineId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"VesselId\",\"attributeReference\":{\"entity\":\"VesselEngine.cdm.json/VesselEngine\",\"name\":\"VesselId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"VesselEnginePeriodStartTimestamp\",\"attributeReference\":{\"entity\":\"VesselEngine.cdm.json/VesselEngine\",\"name\":\"VesselEnginePeriodStartTimestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"VesselEnginePeriodEndTimestamp\",\"attributeReference\":{\"entity\":\"VesselEngine.cdm.json/VesselEngine\",\"name\":\"VesselEnginePeriodEndTimestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"VesselEngineNote\",\"attributeReference\":{\"entity\":\"VesselEngine.cdm.json/VesselEngine\",\"name\":\"VesselEngineNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024}]}}}",
+			"Description": "An engine that is attached to the vessel.",
+			"DisplayFolderInfo": "{\"name\":\"Shipping\",\"colorCode\":\"#000B42\"}",
+			"PrimaryKeys": "EngineId,VesselId,VesselEnginePeriodStartTimestamp"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

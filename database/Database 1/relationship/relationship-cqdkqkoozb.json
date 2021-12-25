@@ -1,0 +1,26 @@
+{
+	"name": "relationship-cqdkqkoozb",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "relationship-cqdkqkoozb",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "CustomerAccountInvoice",
+		"ToTableName": "CustomerAccountInvoiceLine",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "InvoiceId",
+				"ToColumnName": "InvoiceId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"CustomerAccountInvoice.cdm.json/CustomerAccountInvoice\",\"toEntity\":\"CustomerAccountInvoiceLine.cdm.json/CustomerAccountInvoiceLine\",\"joinPairs\":[{\"fromAttribute\":\"InvoiceId\",\"toAttribute\":\"InvoiceId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

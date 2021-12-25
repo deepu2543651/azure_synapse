@@ -1,0 +1,296 @@
+{
+	"name": "BillOfLadingLineItem",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "BillOfLadingLineItem",
+		"Description": "The line Item(s) identified on a Bill of Lading.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ShipmentId",
+					"Description": "The unique identifier of a Shipment.",
+					"BaseAttributeReference": {
+						"Entity": "BillOfLadingLineItem.cdm.json/BillOfLadingLineItem",
+						"Name": "ShipmentId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "DocumentId",
+					"Description": "The unique identifier of a Document.",
+					"BaseAttributeReference": {
+						"Entity": "BillOfLadingLineItem.cdm.json/BillOfLadingLineItem",
+						"Name": "DocumentId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "BillOfLadingLineItemNumber",
+					"Description": "The Line Item Number that identifies a specific Item.",
+					"BaseAttributeReference": {
+						"Entity": "BillOfLadingLineItem.cdm.json/BillOfLadingLineItem",
+						"Name": "BillOfLadingLineItemNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ShipmentItemNumber",
+					"Description": "The shipment line number.",
+					"BaseAttributeReference": {
+						"Entity": "BillOfLadingLineItem.cdm.json/BillOfLadingLineItem",
+						"Name": "ShipmentItemNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "CargoTypeId",
+					"Description": "The unique identifier of a Cargo Type.",
+					"BaseAttributeReference": {
+						"Entity": "BillOfLadingLineItem.cdm.json/BillOfLadingLineItem",
+						"Name": "CargoTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PackingTypeId",
+					"Description": "The unique identifier of a Packing Type.",
+					"BaseAttributeReference": {
+						"Entity": "BillOfLadingLineItem.cdm.json/BillOfLadingLineItem",
+						"Name": "PackingTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "Quantity",
+					"Description": "The quantity of Items.",
+					"BaseAttributeReference": {
+						"Entity": "BillOfLadingLineItem.cdm.json/BillOfLadingLineItem",
+						"Name": "Quantity"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "QuantityUomId",
+					"Description": "The unique identifier of a Unit Of Measure.",
+					"BaseAttributeReference": {
+						"Entity": "BillOfLadingLineItem.cdm.json/BillOfLadingLineItem",
+						"Name": "QuantityUomId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "NumberOfBillOfLadingShipmentUnits",
+					"Description": "The number of bill of lading line item shipping units associated with or aggregating the Bill Of Lading Line Item.",
+					"BaseAttributeReference": {
+						"Entity": "BillOfLadingLineItem.cdm.json/BillOfLadingLineItem",
+						"Name": "NumberOfBillOfLadingShipmentUnits"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "WeightPerUnit",
+					"Description": "The weight per Item unit.",
+					"BaseAttributeReference": {
+						"Entity": "BillOfLadingLineItem.cdm.json/BillOfLadingLineItem",
+						"Name": "WeightPerUnit"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "TotalWeightAllUnits",
+					"Description": "The total weight of all the Item quantity or the sum of all packaged items.",
+					"BaseAttributeReference": {
+						"Entity": "BillOfLadingLineItem.cdm.json/BillOfLadingLineItem",
+						"Name": "TotalWeightAllUnits"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "WeightUomId",
+					"Description": "The unique identifier of a Unit Of Measure.",
+					"BaseAttributeReference": {
+						"Entity": "BillOfLadingLineItem.cdm.json/BillOfLadingLineItem",
+						"Name": "WeightUomId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "CustomsDisclosure",
+					"Description": "A statement to customs regarding the bill of lading line item.\n\nEx:\n- Contains no sold wood material",
+					"BaseAttributeReference": {
+						"Entity": "BillOfLadingLineItem.cdm.json/BillOfLadingLineItem",
+						"Name": "CustomsDisclosure"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 2048,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "BillOfLadingItemNote",
+					"Description": "A note, comment or additional information regarding the bill of lading item.",
+					"BaseAttributeReference": {
+						"Entity": "BillOfLadingLineItem.cdm.json/BillOfLadingLineItem",
+						"Name": "BillOfLadingItemNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "BillOfLadingRateClassId",
+					"Description": "The unique identifier of a Bill Of Lading Rate Class.",
+					"BaseAttributeReference": {
+						"Entity": "BillOfLadingLineItem.cdm.json/BillOfLadingLineItem",
+						"Name": "BillOfLadingRateClassId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "IataCommodityItemNumber",
+					"Description": "The IATA Commodity Item Number assigned to the Bill Of Lading Line Item.",
+					"BaseAttributeReference": {
+						"Entity": "BillOfLadingLineItem.cdm.json/BillOfLadingLineItem",
+						"Name": "IataCommodityItemNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ShipmentId\":{\"entity\":\"BillOfLadingLineItem.cdm.json/BillOfLadingLineItem\",\"name\":\"ShipmentId\"},\"DocumentId\":{\"entity\":\"BillOfLadingLineItem.cdm.json/BillOfLadingLineItem\",\"name\":\"DocumentId\"},\"BillOfLadingLineItemNumber\":{\"entity\":\"BillOfLadingLineItem.cdm.json/BillOfLadingLineItem\",\"name\":\"BillOfLadingLineItemNumber\"},\"ShipmentItemNumber\":{\"entity\":\"BillOfLadingLineItem.cdm.json/BillOfLadingLineItem\",\"name\":\"ShipmentItemNumber\"},\"CargoTypeId\":{\"entity\":\"BillOfLadingLineItem.cdm.json/BillOfLadingLineItem\",\"name\":\"CargoTypeId\"},\"PackingTypeId\":{\"entity\":\"BillOfLadingLineItem.cdm.json/BillOfLadingLineItem\",\"name\":\"PackingTypeId\"},\"Quantity\":{\"entity\":\"BillOfLadingLineItem.cdm.json/BillOfLadingLineItem\",\"name\":\"Quantity\"},\"QuantityUomId\":{\"entity\":\"BillOfLadingLineItem.cdm.json/BillOfLadingLineItem\",\"name\":\"QuantityUomId\"},\"NumberOfBillOfLadingShipmentUnits\":{\"entity\":\"BillOfLadingLineItem.cdm.json/BillOfLadingLineItem\",\"name\":\"NumberOfBillOfLadingShipmentUnits\"},\"WeightPerUnit\":{\"entity\":\"BillOfLadingLineItem.cdm.json/BillOfLadingLineItem\",\"name\":\"WeightPerUnit\"},\"TotalWeightAllUnits\":{\"entity\":\"BillOfLadingLineItem.cdm.json/BillOfLadingLineItem\",\"name\":\"TotalWeightAllUnits\"},\"WeightUomId\":{\"entity\":\"BillOfLadingLineItem.cdm.json/BillOfLadingLineItem\",\"name\":\"WeightUomId\"},\"CustomsDisclosure\":{\"entity\":\"BillOfLadingLineItem.cdm.json/BillOfLadingLineItem\",\"name\":\"CustomsDisclosure\"},\"BillOfLadingItemNote\":{\"entity\":\"BillOfLadingLineItem.cdm.json/BillOfLadingLineItem\",\"name\":\"BillOfLadingItemNote\"},\"BillOfLadingRateClassId\":{\"entity\":\"BillOfLadingLineItem.cdm.json/BillOfLadingLineItem\",\"name\":\"BillOfLadingRateClassId\"},\"IataCommodityItemNumber\":{\"entity\":\"BillOfLadingLineItem.cdm.json/BillOfLadingLineItem\",\"name\":\"IataCommodityItemNumber\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"BillOfLadingLineItem\",\"path\":\"BillOfLadingLineItem.cdm.json/BillOfLadingLineItem\"},\"description\":\"The line Item(s) identified on a Bill of Lading.\",\"primaryKey\":[\"ShipmentId\",\"DocumentId\",\"BillOfLadingLineItemNumber\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"ShipmentId\",\"attributeReference\":{\"entity\":\"BillOfLadingLineItem.cdm.json/BillOfLadingLineItem\",\"name\":\"ShipmentId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"DocumentId\",\"attributeReference\":{\"entity\":\"BillOfLadingLineItem.cdm.json/BillOfLadingLineItem\",\"name\":\"DocumentId\"},\"dataType\":\"long\"},{\"type\":\"Existing\",\"name\":\"BillOfLadingLineItemNumber\",\"attributeReference\":{\"entity\":\"BillOfLadingLineItem.cdm.json/BillOfLadingLineItem\",\"name\":\"BillOfLadingLineItemNumber\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ShipmentItemNumber\",\"attributeReference\":{\"entity\":\"BillOfLadingLineItem.cdm.json/BillOfLadingLineItem\",\"name\":\"ShipmentItemNumber\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"CargoTypeId\",\"attributeReference\":{\"entity\":\"BillOfLadingLineItem.cdm.json/BillOfLadingLineItem\",\"name\":\"CargoTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"PackingTypeId\",\"attributeReference\":{\"entity\":\"BillOfLadingLineItem.cdm.json/BillOfLadingLineItem\",\"name\":\"PackingTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"Quantity\",\"attributeReference\":{\"entity\":\"BillOfLadingLineItem.cdm.json/BillOfLadingLineItem\",\"name\":\"Quantity\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"QuantityUomId\",\"attributeReference\":{\"entity\":\"BillOfLadingLineItem.cdm.json/BillOfLadingLineItem\",\"name\":\"QuantityUomId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"NumberOfBillOfLadingShipmentUnits\",\"attributeReference\":{\"entity\":\"BillOfLadingLineItem.cdm.json/BillOfLadingLineItem\",\"name\":\"NumberOfBillOfLadingShipmentUnits\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"WeightPerUnit\",\"attributeReference\":{\"entity\":\"BillOfLadingLineItem.cdm.json/BillOfLadingLineItem\",\"name\":\"WeightPerUnit\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"TotalWeightAllUnits\",\"attributeReference\":{\"entity\":\"BillOfLadingLineItem.cdm.json/BillOfLadingLineItem\",\"name\":\"TotalWeightAllUnits\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"WeightUomId\",\"attributeReference\":{\"entity\":\"BillOfLadingLineItem.cdm.json/BillOfLadingLineItem\",\"name\":\"WeightUomId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"CustomsDisclosure\",\"attributeReference\":{\"entity\":\"BillOfLadingLineItem.cdm.json/BillOfLadingLineItem\",\"name\":\"CustomsDisclosure\"},\"dataType\":\"string\",\"dataTypeLength\":2048},{\"type\":\"Existing\",\"name\":\"BillOfLadingItemNote\",\"attributeReference\":{\"entity\":\"BillOfLadingLineItem.cdm.json/BillOfLadingLineItem\",\"name\":\"BillOfLadingItemNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024},{\"type\":\"Existing\",\"name\":\"BillOfLadingRateClassId\",\"attributeReference\":{\"entity\":\"BillOfLadingLineItem.cdm.json/BillOfLadingLineItem\",\"name\":\"BillOfLadingRateClassId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"IataCommodityItemNumber\",\"attributeReference\":{\"entity\":\"BillOfLadingLineItem.cdm.json/BillOfLadingLineItem\",\"name\":\"IataCommodityItemNumber\"},\"dataType\":\"integer\"}]}}}",
+			"Description": "The line Item(s) identified on a Bill of Lading.",
+			"DisplayFolderInfo": "{\"name\":\"Shipping\",\"colorCode\":\"#000B42\"}",
+			"PrimaryKeys": "ShipmentId,DocumentId,BillOfLadingLineItemNumber"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

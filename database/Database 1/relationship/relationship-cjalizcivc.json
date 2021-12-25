@@ -1,0 +1,26 @@
+{
+	"name": "relationship-cjalizcivc",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "relationship-cjalizcivc",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "ShippingLocation",
+		"ToTableName": "BillOfLading",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ShippingLocationId",
+				"ToColumnName": "ShipToLocationId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"ShippingLocation.cdm.json/ShippingLocation\",\"toEntity\":\"BillOfLading.cdm.json/BillOfLading\",\"joinPairs\":[{\"fromAttribute\":\"ShippingLocationId\",\"toAttribute\":\"ShipToLocationId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

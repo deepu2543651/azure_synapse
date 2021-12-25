@@ -1,0 +1,155 @@
+{
+	"name": "GeographicAreaPolygonVertex",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "GeographicAreaPolygonVertex",
+		"Description": "An area is defined by a polygon consisting of an ordered series of vertices, each defined by a single latitude / longitude. When these points are joined, in the pre-defined sequence, with the last point connecting to the first a polygon is formed that defines the area.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "GeographicAreaId",
+					"Description": "The unique identifier of a Geographic Area.",
+					"BaseAttributeReference": {
+						"Entity": "GeographicAreaPolygonVertex.cdm.json/GeographicAreaPolygonVertex",
+						"Name": "GeographicAreaId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "GeographicAreaPolygonVertexSequenceNumber",
+					"Description": "The sequence number of the vertex used when connecting vertices together. A Vertex is connected with the vertex with a sequence number one higher and one lower than its sequence number. If the vertex is the first or last vertices, they are joined together to complete the polygon.",
+					"BaseAttributeReference": {
+						"Entity": "GeographicAreaPolygonVertex.cdm.json/GeographicAreaPolygonVertex",
+						"Name": "GeographicAreaPolygonVertexSequenceNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PeriodStartTimestamp",
+					"Description": "The period start timestamp associated with the geographic area polygon vertex.",
+					"BaseAttributeReference": {
+						"Entity": "GeographicAreaPolygonVertex.cdm.json/GeographicAreaPolygonVertex",
+						"Name": "PeriodStartTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "PeriodEndTimestamp",
+					"Description": "The period end timestamp associated with the geographic area polygon vertex.",
+					"BaseAttributeReference": {
+						"Entity": "GeographicAreaPolygonVertex.cdm.json/GeographicAreaPolygonVertex",
+						"Name": "PeriodEndTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "GeographicAreaPolygonVertexLatitude",
+					"Description": "The location north or south in reference to the equator, which is designated at zero (0) degrees. Parallel lines that circle the globe both north and south of the equator.",
+					"BaseAttributeReference": {
+						"Entity": "GeographicAreaPolygonVertex.cdm.json/GeographicAreaPolygonVertex",
+						"Name": "GeographicAreaPolygonVertexLatitude"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 7,
+						"Scale": 4,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "GeographicAreaPolygonVertexLongitude",
+					"Description": "The location east or west in reference to the Prime Meridian, which is designated as zero (0) degrees longitude. The distance between lines of longitude are greater at the equator and smaller at the higher latitudes, intersecting at the earth's North and South Poles. Time zones are correlated to longitude.",
+					"BaseAttributeReference": {
+						"Entity": "GeographicAreaPolygonVertex.cdm.json/GeographicAreaPolygonVertex",
+						"Name": "GeographicAreaPolygonVertexLongitude"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 7,
+						"Scale": 4,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "GeographicAreaPolygonVertexNote",
+					"Description": "Notes, comments or additional information about the geographic area polygon vertex.",
+					"BaseAttributeReference": {
+						"Entity": "GeographicAreaPolygonVertex.cdm.json/GeographicAreaPolygonVertex",
+						"Name": "GeographicAreaPolygonVertexNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"GeographicAreaId\":{\"entity\":\"GeographicAreaPolygonVertex.cdm.json/GeographicAreaPolygonVertex\",\"name\":\"GeographicAreaId\"},\"GeographicAreaPolygonVertexSequenceNumber\":{\"entity\":\"GeographicAreaPolygonVertex.cdm.json/GeographicAreaPolygonVertex\",\"name\":\"GeographicAreaPolygonVertexSequenceNumber\"},\"PeriodStartTimestamp\":{\"entity\":\"GeographicAreaPolygonVertex.cdm.json/GeographicAreaPolygonVertex\",\"name\":\"PeriodStartTimestamp\"},\"PeriodEndTimestamp\":{\"entity\":\"GeographicAreaPolygonVertex.cdm.json/GeographicAreaPolygonVertex\",\"name\":\"PeriodEndTimestamp\"},\"GeographicAreaPolygonVertexLatitude\":{\"entity\":\"GeographicAreaPolygonVertex.cdm.json/GeographicAreaPolygonVertex\",\"name\":\"GeographicAreaPolygonVertexLatitude\"},\"GeographicAreaPolygonVertexLongitude\":{\"entity\":\"GeographicAreaPolygonVertex.cdm.json/GeographicAreaPolygonVertex\",\"name\":\"GeographicAreaPolygonVertexLongitude\"},\"GeographicAreaPolygonVertexNote\":{\"entity\":\"GeographicAreaPolygonVertex.cdm.json/GeographicAreaPolygonVertex\",\"name\":\"GeographicAreaPolygonVertexNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"GeographicAreaPolygonVertex\",\"path\":\"GeographicAreaPolygonVertex.cdm.json/GeographicAreaPolygonVertex\"},\"description\":\"An area is defined by a polygon consisting of an ordered series of vertices, each defined by a single latitude / longitude. When these points are joined, in the pre-defined sequence, with the last point connecting to the first a polygon is formed that defines the area.\",\"primaryKey\":[\"GeographicAreaId\",\"GeographicAreaPolygonVertexSequenceNumber\",\"PeriodStartTimestamp\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"GeographicAreaId\",\"attributeReference\":{\"entity\":\"GeographicAreaPolygonVertex.cdm.json/GeographicAreaPolygonVertex\",\"name\":\"GeographicAreaId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"GeographicAreaPolygonVertexSequenceNumber\",\"attributeReference\":{\"entity\":\"GeographicAreaPolygonVertex.cdm.json/GeographicAreaPolygonVertex\",\"name\":\"GeographicAreaPolygonVertexSequenceNumber\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"PeriodStartTimestamp\",\"attributeReference\":{\"entity\":\"GeographicAreaPolygonVertex.cdm.json/GeographicAreaPolygonVertex\",\"name\":\"PeriodStartTimestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"PeriodEndTimestamp\",\"attributeReference\":{\"entity\":\"GeographicAreaPolygonVertex.cdm.json/GeographicAreaPolygonVertex\",\"name\":\"PeriodEndTimestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"GeographicAreaPolygonVertexLatitude\",\"attributeReference\":{\"entity\":\"GeographicAreaPolygonVertex.cdm.json/GeographicAreaPolygonVertex\",\"name\":\"GeographicAreaPolygonVertexLatitude\"},\"dataType\":\"decimal\",\"dataTypeLength\":7,\"scale\":4},{\"type\":\"Existing\",\"name\":\"GeographicAreaPolygonVertexLongitude\",\"attributeReference\":{\"entity\":\"GeographicAreaPolygonVertex.cdm.json/GeographicAreaPolygonVertex\",\"name\":\"GeographicAreaPolygonVertexLongitude\"},\"dataType\":\"decimal\",\"dataTypeLength\":7,\"scale\":4},{\"type\":\"Existing\",\"name\":\"GeographicAreaPolygonVertexNote\",\"attributeReference\":{\"entity\":\"GeographicAreaPolygonVertex.cdm.json/GeographicAreaPolygonVertex\",\"name\":\"GeographicAreaPolygonVertexNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024}]}}}",
+			"Description": "An area is defined by a polygon consisting of an ordered series of vertices, each defined by a single latitude / longitude. When these points are joined, in the pre-defined sequence, with the last point connecting to the first a polygon is formed that defines the area.",
+			"DisplayFolderInfo": "{\"name\":\"Geography\",\"colorCode\":\"#8170C2\"}",
+			"PrimaryKeys": "GeographicAreaId,GeographicAreaPolygonVertexSequenceNumber,PeriodStartTimestamp"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

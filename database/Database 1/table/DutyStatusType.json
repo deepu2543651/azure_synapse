@@ -1,0 +1,86 @@
+{
+	"name": "DutyStatusType",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "DutyStatusType",
+		"Description": "A duty status that may be applied to a shipment.\n\nEx:\n- Carnet\n- Bonded\n- Admission Temporaire\n- Countervailing Duty\n- Arrivals\n\nwhere:\n\nADMISSION TEMPORAIRE\nThe free entry of goods that are normally dutied.\n\nARRIVALS\nImported goods which have been placed in a bonded warehouse and for which duty has not been paid.\n\nBONDED\nGoods stored under customs supervision until the import duties are paid or the goods are exported.\n\nCARNET\nDerived from a permit that allows the holder to carry or send merchandise temporarily into certain foreign countries without paying duties of posting bonds.\n\nThis typically done for display, demonstration or similar activities.\n\nCOUNTERVAILING DUTY\nAn additional duty imposed to offset export grants, bounties or subsidies paid to foreign suppliers in certain countries by the government of that country for the purpose of promoting export.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "DutyStatusTypeId",
+					"Description": "The unique identifier of a Duty Status Type.",
+					"BaseAttributeReference": {
+						"Entity": "DutyStatusType.cdm.json/DutyStatusType",
+						"Name": "DutyStatusTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "DutyStatusTypeName",
+					"Description": "The name of the Duty Status Type.",
+					"BaseAttributeReference": {
+						"Entity": "DutyStatusType.cdm.json/DutyStatusType",
+						"Name": "DutyStatusTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "DutyStatusTypeDescription",
+					"Description": "The description of the Duty Status Type.",
+					"BaseAttributeReference": {
+						"Entity": "DutyStatusType.cdm.json/DutyStatusType",
+						"Name": "DutyStatusTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"DutyStatusTypeId\":{\"entity\":\"DutyStatusType.cdm.json/DutyStatusType\",\"name\":\"DutyStatusTypeId\"},\"DutyStatusTypeName\":{\"entity\":\"DutyStatusType.cdm.json/DutyStatusType\",\"name\":\"DutyStatusTypeName\"},\"DutyStatusTypeDescription\":{\"entity\":\"DutyStatusType.cdm.json/DutyStatusType\",\"name\":\"DutyStatusTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"DutyStatusType\",\"path\":\"DutyStatusType.cdm.json/DutyStatusType\"},\"description\":\"A duty status that may be applied to a shipment.\\n\\nEx:\\n- Carnet\\n- Bonded\\n- Admission Temporaire\\n- Countervailing Duty\\n- Arrivals\\n\\nwhere:\\n\\nADMISSION TEMPORAIRE\\nThe free entry of goods that are normally dutied.\\n\\nARRIVALS\\nImported goods which have been placed in a bonded warehouse and for which duty has not been paid.\\n\\nBONDED\\nGoods stored under customs supervision until the import duties are paid or the goods are exported.\\n\\nCARNET\\nDerived from a permit that allows the holder to carry or send merchandise temporarily into certain foreign countries without paying duties of posting bonds.\\n\\nThis typically done for display, demonstration or similar activities.\\n\\nCOUNTERVAILING DUTY\\nAn additional duty imposed to offset export grants, bounties or subsidies paid to foreign suppliers in certain countries by the government of that country for the purpose of promoting export.\",\"primaryKey\":[\"DutyStatusTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"DutyStatusTypeId\",\"attributeReference\":{\"entity\":\"DutyStatusType.cdm.json/DutyStatusType\",\"name\":\"DutyStatusTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"DutyStatusTypeName\",\"attributeReference\":{\"entity\":\"DutyStatusType.cdm.json/DutyStatusType\",\"name\":\"DutyStatusTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"DutyStatusTypeDescription\",\"attributeReference\":{\"entity\":\"DutyStatusType.cdm.json/DutyStatusType\",\"name\":\"DutyStatusTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512}]}}}",
+			"Description": "A duty status that may be applied to a shipment.\n\nEx:\n- Carnet\n- Bonded\n- Admission Temporaire\n- Countervailing Duty\n- Arrivals\n\nwhere:\n\nADMISSION TEMPORAIRE\nThe free entry of goods that are normally dutied.\n\nARRIVALS\nImported goods which have been placed in a bonded warehouse and for which duty has not been paid.\n\nBONDED\nGoods stored under customs supervision until the import duties are paid or the goods are exported.\n\nCARNET\nDerived from a permit that allows the holder to carry or send merchandise temporarily into certain foreign countries without paying duties of posting bonds.\n\nThis typically done for display, demonstration or similar activities.\n\nCOUNTERVAILING DUTY\nAn additional duty imposed to offset export grants, bounties or subsidies paid to foreign suppliers in certain countries by the government of that country for the purpose of promoting export.",
+			"DisplayFolderInfo": "{\"name\":\"Shipping\",\"colorCode\":\"#000B42\"}",
+			"PrimaryKeys": "DutyStatusTypeId"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

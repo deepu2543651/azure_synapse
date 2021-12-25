@@ -1,0 +1,303 @@
+{
+	"name": "CarrierRouteTariffSchedule",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "CarrierRouteTariffSchedule",
+		"Description": "The tariff by which the associated Carrier charges for shipments based on the associated criteria.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "CarrierId",
+					"Description": "The unique identifier of a Carrier.",
+					"BaseAttributeReference": {
+						"Entity": "CarrierRouteTariffSchedule.cdm.json/CarrierRouteTariffSchedule",
+						"Name": "CarrierId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "CarrierRouteId",
+					"Description": "The unique identifier of a Carrier Route.",
+					"BaseAttributeReference": {
+						"Entity": "CarrierRouteTariffSchedule.cdm.json/CarrierRouteTariffSchedule",
+						"Name": "CarrierRouteId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PackingTypeId",
+					"Description": "The unique identifier of a Packing Type.",
+					"BaseAttributeReference": {
+						"Entity": "CarrierRouteTariffSchedule.cdm.json/CarrierRouteTariffSchedule",
+						"Name": "PackingTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ShipmentMethodId",
+					"Description": "The unique identifier of a Shipment Method.",
+					"BaseAttributeReference": {
+						"Entity": "CarrierRouteTariffSchedule.cdm.json/CarrierRouteTariffSchedule",
+						"Name": "ShipmentMethodId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ShipmentTermId",
+					"Description": "The unique identifier of a Shipment Term.",
+					"BaseAttributeReference": {
+						"Entity": "CarrierRouteTariffSchedule.cdm.json/CarrierRouteTariffSchedule",
+						"Name": "ShipmentTermId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "CargoTypeId",
+					"Description": "The unique identifier of a Cargo Type.",
+					"BaseAttributeReference": {
+						"Entity": "CarrierRouteTariffSchedule.cdm.json/CarrierRouteTariffSchedule",
+						"Name": "CargoTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "InsuranceOptionId",
+					"Description": "The unique identifier of an Insurance Option.",
+					"BaseAttributeReference": {
+						"Entity": "CarrierRouteTariffSchedule.cdm.json/CarrierRouteTariffSchedule",
+						"Name": "InsuranceOptionId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "IsoCurrencyCode",
+					"Description": "The ISO 4217 currency code.",
+					"BaseAttributeReference": {
+						"Entity": "CarrierRouteTariffSchedule.cdm.json/CarrierRouteTariffSchedule",
+						"Name": "IsoCurrencyCode"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Length": 3,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "MinimumUnitsOfMeasure",
+					"Description": "The minimum Units Of Measure for which the tariff is defined.",
+					"BaseAttributeReference": {
+						"Entity": "CarrierRouteTariffSchedule.cdm.json/CarrierRouteTariffSchedule",
+						"Name": "MinimumUnitsOfMeasure"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "MaximumUnitsOfMeasure",
+					"Description": "The maximum Units Of Measure for which the tariff is defined.",
+					"BaseAttributeReference": {
+						"Entity": "CarrierRouteTariffSchedule.cdm.json/CarrierRouteTariffSchedule",
+						"Name": "MaximumUnitsOfMeasure"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "UnitOfMeasureId",
+					"Description": "The unique identifier of a Unit Of Measure.",
+					"BaseAttributeReference": {
+						"Entity": "CarrierRouteTariffSchedule.cdm.json/CarrierRouteTariffSchedule",
+						"Name": "UnitOfMeasureId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ShipmentServiceTypeId",
+					"Description": "The unique identifier of a Shipment Service Type.",
+					"BaseAttributeReference": {
+						"Entity": "CarrierRouteTariffSchedule.cdm.json/CarrierRouteTariffSchedule",
+						"Name": "ShipmentServiceTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PeriodStartTimestamp",
+					"Description": "The period start timestamp associated with the information.",
+					"BaseAttributeReference": {
+						"Entity": "CarrierRouteTariffSchedule.cdm.json/CarrierRouteTariffSchedule",
+						"Name": "PeriodStartTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "PeriodEndTimestamp",
+					"Description": "The period end timestamp associated with the information.",
+					"BaseAttributeReference": {
+						"Entity": "CarrierRouteTariffSchedule.cdm.json/CarrierRouteTariffSchedule",
+						"Name": "PeriodEndTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "PerUnitOfMeasureShippingChargeAmount",
+					"Description": "The per unit shipping charge under the associated parameters.",
+					"BaseAttributeReference": {
+						"Entity": "CarrierRouteTariffSchedule.cdm.json/CarrierRouteTariffSchedule",
+						"Name": "PerUnitOfMeasureShippingChargeAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "MinimumShipmentChargeAmount",
+					"Description": "Minimum weight = 0 and max weight = 1000 then your per unit is 5$/kilo, then you need a min. shipping charge of $200.",
+					"BaseAttributeReference": {
+						"Entity": "CarrierRouteTariffSchedule.cdm.json/CarrierRouteTariffSchedule",
+						"Name": "MinimumShipmentChargeAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"CarrierId\":{\"entity\":\"CarrierRouteTariffSchedule.cdm.json/CarrierRouteTariffSchedule\",\"name\":\"CarrierId\"},\"CarrierRouteId\":{\"entity\":\"CarrierRouteTariffSchedule.cdm.json/CarrierRouteTariffSchedule\",\"name\":\"CarrierRouteId\"},\"PackingTypeId\":{\"entity\":\"CarrierRouteTariffSchedule.cdm.json/CarrierRouteTariffSchedule\",\"name\":\"PackingTypeId\"},\"ShipmentMethodId\":{\"entity\":\"CarrierRouteTariffSchedule.cdm.json/CarrierRouteTariffSchedule\",\"name\":\"ShipmentMethodId\"},\"ShipmentTermId\":{\"entity\":\"CarrierRouteTariffSchedule.cdm.json/CarrierRouteTariffSchedule\",\"name\":\"ShipmentTermId\"},\"CargoTypeId\":{\"entity\":\"CarrierRouteTariffSchedule.cdm.json/CarrierRouteTariffSchedule\",\"name\":\"CargoTypeId\"},\"InsuranceOptionId\":{\"entity\":\"CarrierRouteTariffSchedule.cdm.json/CarrierRouteTariffSchedule\",\"name\":\"InsuranceOptionId\"},\"IsoCurrencyCode\":{\"entity\":\"CarrierRouteTariffSchedule.cdm.json/CarrierRouteTariffSchedule\",\"name\":\"IsoCurrencyCode\"},\"MinimumUnitsOfMeasure\":{\"entity\":\"CarrierRouteTariffSchedule.cdm.json/CarrierRouteTariffSchedule\",\"name\":\"MinimumUnitsOfMeasure\"},\"MaximumUnitsOfMeasure\":{\"entity\":\"CarrierRouteTariffSchedule.cdm.json/CarrierRouteTariffSchedule\",\"name\":\"MaximumUnitsOfMeasure\"},\"UnitOfMeasureId\":{\"entity\":\"CarrierRouteTariffSchedule.cdm.json/CarrierRouteTariffSchedule\",\"name\":\"UnitOfMeasureId\"},\"ShipmentServiceTypeId\":{\"entity\":\"CarrierRouteTariffSchedule.cdm.json/CarrierRouteTariffSchedule\",\"name\":\"ShipmentServiceTypeId\"},\"PeriodStartTimestamp\":{\"entity\":\"CarrierRouteTariffSchedule.cdm.json/CarrierRouteTariffSchedule\",\"name\":\"PeriodStartTimestamp\"},\"PeriodEndTimestamp\":{\"entity\":\"CarrierRouteTariffSchedule.cdm.json/CarrierRouteTariffSchedule\",\"name\":\"PeriodEndTimestamp\"},\"PerUnitOfMeasureShippingChargeAmount\":{\"entity\":\"CarrierRouteTariffSchedule.cdm.json/CarrierRouteTariffSchedule\",\"name\":\"PerUnitOfMeasureShippingChargeAmount\"},\"MinimumShipmentChargeAmount\":{\"entity\":\"CarrierRouteTariffSchedule.cdm.json/CarrierRouteTariffSchedule\",\"name\":\"MinimumShipmentChargeAmount\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"CarrierRouteTariffSchedule\",\"path\":\"CarrierRouteTariffSchedule.cdm.json/CarrierRouteTariffSchedule\"},\"description\":\"The tariff by which the associated Carrier charges for shipments based on the associated criteria.\",\"primaryKey\":[\"CarrierId\",\"CarrierRouteId\",\"PackingTypeId\",\"ShipmentMethodId\",\"ShipmentTermId\",\"CargoTypeId\",\"InsuranceOptionId\",\"IsoCurrencyCode\",\"MinimumUnitsOfMeasure\",\"MaximumUnitsOfMeasure\",\"UnitOfMeasureId\",\"ShipmentServiceTypeId\",\"PeriodStartTimestamp\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"CarrierId\",\"attributeReference\":{\"entity\":\"CarrierRouteTariffSchedule.cdm.json/CarrierRouteTariffSchedule\",\"name\":\"CarrierId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"CarrierRouteId\",\"attributeReference\":{\"entity\":\"CarrierRouteTariffSchedule.cdm.json/CarrierRouteTariffSchedule\",\"name\":\"CarrierRouteId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"PackingTypeId\",\"attributeReference\":{\"entity\":\"CarrierRouteTariffSchedule.cdm.json/CarrierRouteTariffSchedule\",\"name\":\"PackingTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ShipmentMethodId\",\"attributeReference\":{\"entity\":\"CarrierRouteTariffSchedule.cdm.json/CarrierRouteTariffSchedule\",\"name\":\"ShipmentMethodId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ShipmentTermId\",\"attributeReference\":{\"entity\":\"CarrierRouteTariffSchedule.cdm.json/CarrierRouteTariffSchedule\",\"name\":\"ShipmentTermId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"CargoTypeId\",\"attributeReference\":{\"entity\":\"CarrierRouteTariffSchedule.cdm.json/CarrierRouteTariffSchedule\",\"name\":\"CargoTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"InsuranceOptionId\",\"attributeReference\":{\"entity\":\"CarrierRouteTariffSchedule.cdm.json/CarrierRouteTariffSchedule\",\"name\":\"InsuranceOptionId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"IsoCurrencyCode\",\"attributeReference\":{\"entity\":\"CarrierRouteTariffSchedule.cdm.json/CarrierRouteTariffSchedule\",\"name\":\"IsoCurrencyCode\"},\"dataType\":\"string\",\"dataTypeLength\":3},{\"type\":\"Existing\",\"name\":\"MinimumUnitsOfMeasure\",\"attributeReference\":{\"entity\":\"CarrierRouteTariffSchedule.cdm.json/CarrierRouteTariffSchedule\",\"name\":\"MinimumUnitsOfMeasure\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":8},{\"type\":\"Existing\",\"name\":\"MaximumUnitsOfMeasure\",\"attributeReference\":{\"entity\":\"CarrierRouteTariffSchedule.cdm.json/CarrierRouteTariffSchedule\",\"name\":\"MaximumUnitsOfMeasure\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":8},{\"type\":\"Existing\",\"name\":\"UnitOfMeasureId\",\"attributeReference\":{\"entity\":\"CarrierRouteTariffSchedule.cdm.json/CarrierRouteTariffSchedule\",\"name\":\"UnitOfMeasureId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ShipmentServiceTypeId\",\"attributeReference\":{\"entity\":\"CarrierRouteTariffSchedule.cdm.json/CarrierRouteTariffSchedule\",\"name\":\"ShipmentServiceTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"PeriodStartTimestamp\",\"attributeReference\":{\"entity\":\"CarrierRouteTariffSchedule.cdm.json/CarrierRouteTariffSchedule\",\"name\":\"PeriodStartTimestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"PeriodEndTimestamp\",\"attributeReference\":{\"entity\":\"CarrierRouteTariffSchedule.cdm.json/CarrierRouteTariffSchedule\",\"name\":\"PeriodEndTimestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"PerUnitOfMeasureShippingChargeAmount\",\"attributeReference\":{\"entity\":\"CarrierRouteTariffSchedule.cdm.json/CarrierRouteTariffSchedule\",\"name\":\"PerUnitOfMeasureShippingChargeAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"MinimumShipmentChargeAmount\",\"attributeReference\":{\"entity\":\"CarrierRouteTariffSchedule.cdm.json/CarrierRouteTariffSchedule\",\"name\":\"MinimumShipmentChargeAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2}]}}}",
+			"Description": "The tariff by which the associated Carrier charges for shipments based on the associated criteria.",
+			"DisplayFolderInfo": "{\"name\":\"Shipping\",\"colorCode\":\"#000B42\"}",
+			"PrimaryKeys": "CarrierId,CarrierRouteId,PackingTypeId,ShipmentMethodId,ShipmentTermId,CargoTypeId,InsuranceOptionId,IsoCurrencyCode,MinimumUnitsOfMeasure,MaximumUnitsOfMeasure,UnitOfMeasureId,ShipmentServiceTypeId,PeriodStartTimestamp"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

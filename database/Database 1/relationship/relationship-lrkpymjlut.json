@@ -1,0 +1,26 @@
+{
+	"name": "relationship-lrkpymjlut",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "relationship-lrkpymjlut",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Towboat",
+		"ToTableName": "TowboatEngine",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "TowboatId",
+				"ToColumnName": "TowboatId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Towboat.cdm.json/Towboat\",\"toEntity\":\"TowboatEngine.cdm.json/TowboatEngine\",\"joinPairs\":[{\"fromAttribute\":\"TowboatId\",\"toAttribute\":\"TowboatId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

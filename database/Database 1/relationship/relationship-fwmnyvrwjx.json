@@ -1,0 +1,26 @@
+{
+	"name": "relationship-fwmnyvrwjx",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "relationship-fwmnyvrwjx",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "AssetType",
+		"ToTableName": "Asset",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "AssetTypeId",
+				"ToColumnName": "AssetTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"AssetType.cdm.json/AssetType\",\"toEntity\":\"Asset.cdm.json/Asset\",\"joinPairs\":[{\"fromAttribute\":\"AssetTypeId\",\"toAttribute\":\"AssetTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

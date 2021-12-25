@@ -1,0 +1,26 @@
+{
+	"name": "relationship-kejjsoxzef",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "relationship-kejjsoxzef",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Party",
+		"ToTableName": "AssetAssessment",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "PartyId",
+				"ToColumnName": "AssessedByPartyId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Party.cdm.json/Party\",\"toEntity\":\"AssetAssessment.cdm.json/AssetAssessment\",\"joinPairs\":[{\"fromAttribute\":\"PartyId\",\"toAttribute\":\"AssessedByPartyId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

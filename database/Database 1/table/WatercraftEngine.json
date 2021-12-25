@@ -1,0 +1,135 @@
+{
+	"name": "WatercraftEngine",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "WatercraftEngine",
+		"Description": "An engine that is used to propel a watercraft.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "EngineId",
+					"Description": "The unique identifier of an engine.",
+					"BaseAttributeReference": {
+						"Entity": "WatercraftEngine.cdm.json/WatercraftEngine",
+						"Name": "EngineId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "EngineHorsepower",
+					"Description": "The horsepower of the engine.",
+					"BaseAttributeReference": {
+						"Entity": "WatercraftEngine.cdm.json/WatercraftEngine",
+						"Name": "EngineHorsepower"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ManufacturerName",
+					"Description": "The name of the manufacturer of the engine.",
+					"BaseAttributeReference": {
+						"Entity": "WatercraftEngine.cdm.json/WatercraftEngine",
+						"Name": "ManufacturerName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ModelNumber",
+					"Description": "The model number of the engine.",
+					"BaseAttributeReference": {
+						"Entity": "WatercraftEngine.cdm.json/WatercraftEngine",
+						"Name": "ModelNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "SerialNumber",
+					"Description": "The serial number of the engine.",
+					"BaseAttributeReference": {
+						"Entity": "WatercraftEngine.cdm.json/WatercraftEngine",
+						"Name": "SerialNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 30,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "AssetId",
+					"Description": "The unique identifier of an Asset.",
+					"BaseAttributeReference": {
+						"Entity": "WatercraftEngine.cdm.json/WatercraftEngine",
+						"Name": "AssetId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"EngineId\":{\"entity\":\"WatercraftEngine.cdm.json/WatercraftEngine\",\"name\":\"EngineId\"},\"EngineHorsepower\":{\"entity\":\"WatercraftEngine.cdm.json/WatercraftEngine\",\"name\":\"EngineHorsepower\"},\"ManufacturerName\":{\"entity\":\"WatercraftEngine.cdm.json/WatercraftEngine\",\"name\":\"ManufacturerName\"},\"ModelNumber\":{\"entity\":\"WatercraftEngine.cdm.json/WatercraftEngine\",\"name\":\"ModelNumber\"},\"SerialNumber\":{\"entity\":\"WatercraftEngine.cdm.json/WatercraftEngine\",\"name\":\"SerialNumber\"},\"AssetId\":{\"entity\":\"WatercraftEngine.cdm.json/WatercraftEngine\",\"name\":\"AssetId\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"WatercraftEngine\",\"path\":\"WatercraftEngine.cdm.json/WatercraftEngine\"},\"description\":\"An engine that is used to propel a watercraft.\",\"primaryKey\":[\"EngineId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"EngineId\",\"attributeReference\":{\"entity\":\"WatercraftEngine.cdm.json/WatercraftEngine\",\"name\":\"EngineId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"EngineHorsepower\",\"attributeReference\":{\"entity\":\"WatercraftEngine.cdm.json/WatercraftEngine\",\"name\":\"EngineHorsepower\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ManufacturerName\",\"attributeReference\":{\"entity\":\"WatercraftEngine.cdm.json/WatercraftEngine\",\"name\":\"ManufacturerName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"ModelNumber\",\"attributeReference\":{\"entity\":\"WatercraftEngine.cdm.json/WatercraftEngine\",\"name\":\"ModelNumber\"},\"dataType\":\"string\",\"dataTypeLength\":1024},{\"type\":\"Existing\",\"name\":\"SerialNumber\",\"attributeReference\":{\"entity\":\"WatercraftEngine.cdm.json/WatercraftEngine\",\"name\":\"SerialNumber\"},\"dataType\":\"string\",\"dataTypeLength\":30},{\"type\":\"Existing\",\"name\":\"AssetId\",\"attributeReference\":{\"entity\":\"WatercraftEngine.cdm.json/WatercraftEngine\",\"name\":\"AssetId\"},\"dataType\":\"long\"}]}}}",
+			"Description": "An engine that is used to propel a watercraft.",
+			"DisplayFolderInfo": "{\"name\":\"Shipping\",\"colorCode\":\"#000B42\"}",
+			"PrimaryKeys": "EngineId"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

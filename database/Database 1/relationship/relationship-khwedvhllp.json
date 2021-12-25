@@ -1,0 +1,34 @@
+{
+	"name": "relationship-khwedvhllp",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "relationship-khwedvhllp",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "InsurancePolicyCoverage",
+		"ToTableName": "InsurancePolicyCoverageDeductible",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "InsuranceCoverageTypeId",
+				"ToColumnName": "InsuranceCoverageTypeId"
+			},
+			{
+				"FromColumnName": "InsurancePolicyId",
+				"ToColumnName": "InsurancePolicyId"
+			},
+			{
+				"FromColumnName": "PeriodStartDate",
+				"ToColumnName": "PeriodStartDate"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"InsurancePolicyCoverage.cdm.json/InsurancePolicyCoverage\",\"toEntity\":\"InsurancePolicyCoverageDeductible.cdm.json/InsurancePolicyCoverageDeductible\",\"joinPairs\":[{\"fromAttribute\":\"InsuranceCoverageTypeId\",\"toAttribute\":\"InsuranceCoverageTypeId\"},{\"fromAttribute\":\"InsurancePolicyId\",\"toAttribute\":\"InsurancePolicyId\"},{\"fromAttribute\":\"PeriodStartDate\",\"toAttribute\":\"PeriodStartDate\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

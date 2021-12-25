@@ -1,0 +1,26 @@
+{
+	"name": "relationship-wzyhlxqicn",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "relationship-wzyhlxqicn",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "ShippingLocation",
+		"ToTableName": "RelatedShipment",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ShippingLocationId",
+				"ToColumnName": "ContainerFreightStationLocationId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"ShippingLocation.cdm.json/ShippingLocation\",\"toEntity\":\"RelatedShipment.cdm.json/RelatedShipment\",\"joinPairs\":[{\"fromAttribute\":\"ShippingLocationId\",\"toAttribute\":\"ContainerFreightStationLocationId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

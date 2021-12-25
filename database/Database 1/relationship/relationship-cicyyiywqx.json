@@ -1,0 +1,26 @@
+{
+	"name": "relationship-cicyyiywqx",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "relationship-cicyyiywqx",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "DutyStatusType",
+		"ToTableName": "ShipmentDutyStatus",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "DutyStatusTypeId",
+				"ToColumnName": "DutyStatusTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"DutyStatusType.cdm.json/DutyStatusType\",\"toEntity\":\"ShipmentDutyStatus.cdm.json/ShipmentDutyStatus\",\"joinPairs\":[{\"fromAttribute\":\"DutyStatusTypeId\",\"toAttribute\":\"DutyStatusTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

@@ -1,0 +1,669 @@
+{
+	"name": "ExportDeclaration",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "ExportDeclaration",
+		"Description": "A government document permitting designated goods to be shipped out of the country.\n\nA custom house form filled by the shipper of goods to other countries. Also called shipper's manifest. It mentions the marks, numbers, quantity, description and value of the goods at time and place of export. There is a different definition in USA as \"The shipper's export declaration (SEDs) forms 7525-V and 7525-V-Alternate (Intermodal) and the shipper's export declaration for In-Transit Goods, Form 7513, are JOINT-BUREAU OF THE CENSUS- INTERNATIONAL TRADE ADMINISTRATION DOCUMENTS used for compiling the official U.S. export statistics and administering the requirements of the Export Administrative Act.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ShipmentId",
+					"Description": "The unique identifier of a Shipment.",
+					"BaseAttributeReference": {
+						"Entity": "ExportDeclaration.cdm.json/ExportDeclaration",
+						"Name": "ShipmentId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "DocumentId",
+					"Description": "The unique identifier of a Document.",
+					"BaseAttributeReference": {
+						"Entity": "ExportDeclaration.cdm.json/ExportDeclaration",
+						"Name": "DocumentId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "DateOfExportation",
+					"Description": "The date that the Items were exported.",
+					"BaseAttributeReference": {
+						"Entity": "ExportDeclaration.cdm.json/ExportDeclaration",
+						"Name": "DateOfExportation"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "FormNumber",
+					"Description": "The US Customs form of the associated Export Declaration, Form 7525-V.",
+					"BaseAttributeReference": {
+						"Entity": "ExportDeclaration.cdm.json/ExportDeclaration",
+						"Name": "FormNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ExporterName",
+					"Description": "The name of the Exporter.",
+					"BaseAttributeReference": {
+						"Entity": "ExportDeclaration.cdm.json/ExportDeclaration",
+						"Name": "ExporterName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ExporterEinNumber",
+					"Description": "The IRS EIN, Employer Identification Number, of the Exporter.",
+					"BaseAttributeReference": {
+						"Entity": "ExportDeclaration.cdm.json/ExportDeclaration",
+						"Name": "ExporterEinNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ExporterSsnNumber",
+					"Description": "The IRS Social Security Number of the Exporter if the EIN number is not available.",
+					"BaseAttributeReference": {
+						"Entity": "ExportDeclaration.cdm.json/ExportDeclaration",
+						"Name": "ExporterSsnNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ExporterAddress",
+					"Description": "The 'street/po #' component of the Exporter's address.",
+					"BaseAttributeReference": {
+						"Entity": "ExportDeclaration.cdm.json/ExportDeclaration",
+						"Name": "ExporterAddress"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ExporterCity",
+					"Description": "The 'city' component of the Exporter's address.",
+					"BaseAttributeReference": {
+						"Entity": "ExportDeclaration.cdm.json/ExportDeclaration",
+						"Name": "ExporterCity"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ExporterState",
+					"Description": "The 'state' component of the Exporter's address.",
+					"BaseAttributeReference": {
+						"Entity": "ExportDeclaration.cdm.json/ExportDeclaration",
+						"Name": "ExporterState"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 64,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ExporterZipCode",
+					"Description": "The 'zip code' component of the Exporter's address.",
+					"BaseAttributeReference": {
+						"Entity": "ExportDeclaration.cdm.json/ExportDeclaration",
+						"Name": "ExporterZipCode"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 11,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "ExporterCountry",
+					"Description": "The 'country' component of the Exporter's address.",
+					"BaseAttributeReference": {
+						"Entity": "ExportDeclaration.cdm.json/ExportDeclaration",
+						"Name": "ExporterCountry"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 64,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "PartyRelatedUnrelatedToTransactionIndicator",
+					"Description": "Indicates whether the 'parties', Exporter and Importer, are related if as individuals or companies under common control (subsidiaries or branches trading with each other.",
+					"BaseAttributeReference": {
+						"Entity": "ExportDeclaration.cdm.json/ExportDeclaration",
+						"Name": "PartyRelatedUnrelatedToTransactionIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "UltimateConsigneeName",
+					"Description": "The ultimate consignee is the company or person that actually receives the goods.",
+					"BaseAttributeReference": {
+						"Entity": "ExportDeclaration.cdm.json/ExportDeclaration",
+						"Name": "UltimateConsigneeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "UltimateConsigneeIndividualCompanyIndicator",
+					"Description": "Indicates whether the Ultimate Consignee is an Individual or Company.",
+					"BaseAttributeReference": {
+						"Entity": "ExportDeclaration.cdm.json/ExportDeclaration",
+						"Name": "UltimateConsigneeIndividualCompanyIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "IntermediateConsigneeName",
+					"Description": "The intermediate consignee is the company or person that actually receives the goods.",
+					"BaseAttributeReference": {
+						"Entity": "ExportDeclaration.cdm.json/ExportDeclaration",
+						"Name": "IntermediateConsigneeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "IntermediateConsigneeIndividualCompanyIndicator",
+					"Description": "Indicates whether the Intermediate Consignee is an Individual or Company.",
+					"BaseAttributeReference": {
+						"Entity": "ExportDeclaration.cdm.json/ExportDeclaration",
+						"Name": "IntermediateConsigneeIndividualCompanyIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "ForwardingAgentName",
+					"Description": "The name of the Forwarding Agent.",
+					"BaseAttributeReference": {
+						"Entity": "ExportDeclaration.cdm.json/ExportDeclaration",
+						"Name": "ForwardingAgentName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "PointOfOrigin",
+					"Description": "The US State from which the export shipment originates.",
+					"BaseAttributeReference": {
+						"Entity": "ExportDeclaration.cdm.json/ExportDeclaration",
+						"Name": "PointOfOrigin"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "FreeTradeZoneOfOrigin",
+					"Description": "The Free Trade Zone from which the export shipment originates.",
+					"BaseAttributeReference": {
+						"Entity": "ExportDeclaration.cdm.json/ExportDeclaration",
+						"Name": "FreeTradeZoneOfOrigin"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "VesselName",
+					"Description": "The name of the vessel used to export the associated shipment.",
+					"BaseAttributeReference": {
+						"Entity": "ExportDeclaration.cdm.json/ExportDeclaration",
+						"Name": "VesselName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "LoadingPier",
+					"Description": "The Loading Pier from the Port Of Export from which the shipment is exported.",
+					"BaseAttributeReference": {
+						"Entity": "ExportDeclaration.cdm.json/ExportDeclaration",
+						"Name": "LoadingPier"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "PortOfExport",
+					"Description": "The Port Of Export of the exported shipment.",
+					"BaseAttributeReference": {
+						"Entity": "ExportDeclaration.cdm.json/ExportDeclaration",
+						"Name": "PortOfExport"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "PortOfUnloading",
+					"Description": "The port from which the shipment is to be unloaded.",
+					"BaseAttributeReference": {
+						"Entity": "ExportDeclaration.cdm.json/ExportDeclaration",
+						"Name": "PortOfUnloading"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ContainerizedIndicator",
+					"Description": "Identifies whether the identified items are to be containerized.",
+					"BaseAttributeReference": {
+						"Entity": "ExportDeclaration.cdm.json/ExportDeclaration",
+						"Name": "ContainerizedIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "AuthorizedByOfficerName",
+					"Description": "The name of the US Customs officer authorizing the Export Declaration.",
+					"BaseAttributeReference": {
+						"Entity": "ExportDeclaration.cdm.json/ExportDeclaration",
+						"Name": "AuthorizedByOfficerName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "AuthorizedByOfficerTitle",
+					"Description": "The Title of the US Customs officer authorizing the Export Declaration.",
+					"BaseAttributeReference": {
+						"Entity": "ExportDeclaration.cdm.json/ExportDeclaration",
+						"Name": "AuthorizedByOfficerTitle"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 16,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "DeclarationCertifiedByName",
+					"Description": "The name of the shipper or shipper representative certifying the Export Declaration.",
+					"BaseAttributeReference": {
+						"Entity": "ExportDeclaration.cdm.json/ExportDeclaration",
+						"Name": "DeclarationCertifiedByName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "DeclarationCertifiedByTitle",
+					"Description": "The title of the shipper or shipper representative certifying the Export Declaration.",
+					"BaseAttributeReference": {
+						"Entity": "ExportDeclaration.cdm.json/ExportDeclaration",
+						"Name": "DeclarationCertifiedByTitle"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 16,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "DeclarationCertifiedDate",
+					"Description": "The date that the Export Declaration was certified.",
+					"BaseAttributeReference": {
+						"Entity": "ExportDeclaration.cdm.json/ExportDeclaration",
+						"Name": "DeclarationCertifiedDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "AuthenticationRequiredIndicator",
+					"Description": "Indicates that the Export Declaration requires authentication.",
+					"BaseAttributeReference": {
+						"Entity": "ExportDeclaration.cdm.json/ExportDeclaration",
+						"Name": "AuthenticationRequiredIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "NumberOfDocumentCopiesRequired",
+					"Description": "The number of copies of the Export Declaration to be completed.",
+					"BaseAttributeReference": {
+						"Entity": "ExportDeclaration.cdm.json/ExportDeclaration",
+						"Name": "NumberOfDocumentCopiesRequired"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ShipmentMethodId",
+					"Description": "The unique identifier of a Shipment Method.",
+					"BaseAttributeReference": {
+						"Entity": "ExportDeclaration.cdm.json/ExportDeclaration",
+						"Name": "ShipmentMethodId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ExportBrokerName",
+					"Description": "The name of the Export Broker.",
+					"BaseAttributeReference": {
+						"Entity": "ExportDeclaration.cdm.json/ExportDeclaration",
+						"Name": "ExportBrokerName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "FreightForwarderName",
+					"Description": "The name of the Freight Forwarder.",
+					"BaseAttributeReference": {
+						"Entity": "ExportDeclaration.cdm.json/ExportDeclaration",
+						"Name": "FreightForwarderName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "CarrierName",
+					"Description": "The name of the Carrier.",
+					"BaseAttributeReference": {
+						"Entity": "ExportDeclaration.cdm.json/ExportDeclaration",
+						"Name": "CarrierName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "BillOfLadingNumber",
+					"Description": "The unique identifier of a Bill of Lading.",
+					"BaseAttributeReference": {
+						"Entity": "ExportDeclaration.cdm.json/ExportDeclaration",
+						"Name": "BillOfLadingNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "AirWayBillNumber",
+					"Description": "The unique identifier of an Air Way Bill.",
+					"BaseAttributeReference": {
+						"Entity": "ExportDeclaration.cdm.json/ExportDeclaration",
+						"Name": "AirWayBillNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ShipmentId\":{\"entity\":\"ExportDeclaration.cdm.json/ExportDeclaration\",\"name\":\"ShipmentId\"},\"DocumentId\":{\"entity\":\"ExportDeclaration.cdm.json/ExportDeclaration\",\"name\":\"DocumentId\"},\"DateOfExportation\":{\"entity\":\"ExportDeclaration.cdm.json/ExportDeclaration\",\"name\":\"DateOfExportation\"},\"FormNumber\":{\"entity\":\"ExportDeclaration.cdm.json/ExportDeclaration\",\"name\":\"FormNumber\"},\"ExporterName\":{\"entity\":\"ExportDeclaration.cdm.json/ExportDeclaration\",\"name\":\"ExporterName\"},\"ExporterEinNumber\":{\"entity\":\"ExportDeclaration.cdm.json/ExportDeclaration\",\"name\":\"ExporterEinNumber\"},\"ExporterSsnNumber\":{\"entity\":\"ExportDeclaration.cdm.json/ExportDeclaration\",\"name\":\"ExporterSsnNumber\"},\"ExporterAddress\":{\"entity\":\"ExportDeclaration.cdm.json/ExportDeclaration\",\"name\":\"ExporterAddress\"},\"ExporterCity\":{\"entity\":\"ExportDeclaration.cdm.json/ExportDeclaration\",\"name\":\"ExporterCity\"},\"ExporterState\":{\"entity\":\"ExportDeclaration.cdm.json/ExportDeclaration\",\"name\":\"ExporterState\"},\"ExporterZipCode\":{\"entity\":\"ExportDeclaration.cdm.json/ExportDeclaration\",\"name\":\"ExporterZipCode\"},\"ExporterCountry\":{\"entity\":\"ExportDeclaration.cdm.json/ExportDeclaration\",\"name\":\"ExporterCountry\"},\"PartyRelatedUnrelatedToTransactionIndicator\":{\"entity\":\"ExportDeclaration.cdm.json/ExportDeclaration\",\"name\":\"PartyRelatedUnrelatedToTransactionIndicator\"},\"UltimateConsigneeName\":{\"entity\":\"ExportDeclaration.cdm.json/ExportDeclaration\",\"name\":\"UltimateConsigneeName\"},\"UltimateConsigneeIndividualCompanyIndicator\":{\"entity\":\"ExportDeclaration.cdm.json/ExportDeclaration\",\"name\":\"UltimateConsigneeIndividualCompanyIndicator\"},\"IntermediateConsigneeName\":{\"entity\":\"ExportDeclaration.cdm.json/ExportDeclaration\",\"name\":\"IntermediateConsigneeName\"},\"IntermediateConsigneeIndividualCompanyIndicator\":{\"entity\":\"ExportDeclaration.cdm.json/ExportDeclaration\",\"name\":\"IntermediateConsigneeIndividualCompanyIndicator\"},\"ForwardingAgentName\":{\"entity\":\"ExportDeclaration.cdm.json/ExportDeclaration\",\"name\":\"ForwardingAgentName\"},\"PointOfOrigin\":{\"entity\":\"ExportDeclaration.cdm.json/ExportDeclaration\",\"name\":\"PointOfOrigin\"},\"FreeTradeZoneOfOrigin\":{\"entity\":\"ExportDeclaration.cdm.json/ExportDeclaration\",\"name\":\"FreeTradeZoneOfOrigin\"},\"VesselName\":{\"entity\":\"ExportDeclaration.cdm.json/ExportDeclaration\",\"name\":\"VesselName\"},\"LoadingPier\":{\"entity\":\"ExportDeclaration.cdm.json/ExportDeclaration\",\"name\":\"LoadingPier\"},\"PortOfExport\":{\"entity\":\"ExportDeclaration.cdm.json/ExportDeclaration\",\"name\":\"PortOfExport\"},\"PortOfUnloading\":{\"entity\":\"ExportDeclaration.cdm.json/ExportDeclaration\",\"name\":\"PortOfUnloading\"},\"ContainerizedIndicator\":{\"entity\":\"ExportDeclaration.cdm.json/ExportDeclaration\",\"name\":\"ContainerizedIndicator\"},\"AuthorizedByOfficerName\":{\"entity\":\"ExportDeclaration.cdm.json/ExportDeclaration\",\"name\":\"AuthorizedByOfficerName\"},\"AuthorizedByOfficerTitle\":{\"entity\":\"ExportDeclaration.cdm.json/ExportDeclaration\",\"name\":\"AuthorizedByOfficerTitle\"},\"DeclarationCertifiedByName\":{\"entity\":\"ExportDeclaration.cdm.json/ExportDeclaration\",\"name\":\"DeclarationCertifiedByName\"},\"DeclarationCertifiedByTitle\":{\"entity\":\"ExportDeclaration.cdm.json/ExportDeclaration\",\"name\":\"DeclarationCertifiedByTitle\"},\"DeclarationCertifiedDate\":{\"entity\":\"ExportDeclaration.cdm.json/ExportDeclaration\",\"name\":\"DeclarationCertifiedDate\"},\"AuthenticationRequiredIndicator\":{\"entity\":\"ExportDeclaration.cdm.json/ExportDeclaration\",\"name\":\"AuthenticationRequiredIndicator\"},\"NumberOfDocumentCopiesRequired\":{\"entity\":\"ExportDeclaration.cdm.json/ExportDeclaration\",\"name\":\"NumberOfDocumentCopiesRequired\"},\"ShipmentMethodId\":{\"entity\":\"ExportDeclaration.cdm.json/ExportDeclaration\",\"name\":\"ShipmentMethodId\"},\"ExportBrokerName\":{\"entity\":\"ExportDeclaration.cdm.json/ExportDeclaration\",\"name\":\"ExportBrokerName\"},\"FreightForwarderName\":{\"entity\":\"ExportDeclaration.cdm.json/ExportDeclaration\",\"name\":\"FreightForwarderName\"},\"CarrierName\":{\"entity\":\"ExportDeclaration.cdm.json/ExportDeclaration\",\"name\":\"CarrierName\"},\"BillOfLadingNumber\":{\"entity\":\"ExportDeclaration.cdm.json/ExportDeclaration\",\"name\":\"BillOfLadingNumber\"},\"AirWayBillNumber\":{\"entity\":\"ExportDeclaration.cdm.json/ExportDeclaration\",\"name\":\"AirWayBillNumber\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"ExportDeclaration\",\"path\":\"ExportDeclaration.cdm.json/ExportDeclaration\"},\"description\":\"A government document permitting designated goods to be shipped out of the country.\\n\\nA custom house form filled by the shipper of goods to other countries. Also called shipper's manifest. It mentions the marks, numbers, quantity, description and value of the goods at time and place of export. There is a different definition in USA as \\\"The shipper's export declaration (SEDs) forms 7525-V and 7525-V-Alternate (Intermodal) and the shipper's export declaration for In-Transit Goods, Form 7513, are JOINT-BUREAU OF THE CENSUS- INTERNATIONAL TRADE ADMINISTRATION DOCUMENTS used for compiling the official U.S. export statistics and administering the requirements of the Export Administrative Act.\",\"primaryKey\":[\"ShipmentId\",\"DocumentId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"ShipmentId\",\"attributeReference\":{\"entity\":\"ExportDeclaration.cdm.json/ExportDeclaration\",\"name\":\"ShipmentId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"DocumentId\",\"attributeReference\":{\"entity\":\"ExportDeclaration.cdm.json/ExportDeclaration\",\"name\":\"DocumentId\"},\"dataType\":\"long\"},{\"type\":\"Existing\",\"name\":\"DateOfExportation\",\"attributeReference\":{\"entity\":\"ExportDeclaration.cdm.json/ExportDeclaration\",\"name\":\"DateOfExportation\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\"},{\"type\":\"Existing\",\"name\":\"FormNumber\",\"attributeReference\":{\"entity\":\"ExportDeclaration.cdm.json/ExportDeclaration\",\"name\":\"FormNumber\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ExporterName\",\"attributeReference\":{\"entity\":\"ExportDeclaration.cdm.json/ExportDeclaration\",\"name\":\"ExporterName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"ExporterEinNumber\",\"attributeReference\":{\"entity\":\"ExportDeclaration.cdm.json/ExportDeclaration\",\"name\":\"ExporterEinNumber\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ExporterSsnNumber\",\"attributeReference\":{\"entity\":\"ExportDeclaration.cdm.json/ExportDeclaration\",\"name\":\"ExporterSsnNumber\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ExporterAddress\",\"attributeReference\":{\"entity\":\"ExportDeclaration.cdm.json/ExportDeclaration\",\"name\":\"ExporterAddress\"},\"dataType\":\"string\",\"dataTypeLength\":512},{\"type\":\"Existing\",\"name\":\"ExporterCity\",\"attributeReference\":{\"entity\":\"ExportDeclaration.cdm.json/ExportDeclaration\",\"name\":\"ExporterCity\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"ExporterState\",\"attributeReference\":{\"entity\":\"ExportDeclaration.cdm.json/ExportDeclaration\",\"name\":\"ExporterState\"},\"dataType\":\"string\",\"dataTypeLength\":64},{\"type\":\"Existing\",\"name\":\"ExporterZipCode\",\"attributeReference\":{\"entity\":\"ExportDeclaration.cdm.json/ExportDeclaration\",\"name\":\"ExporterZipCode\"},\"dataType\":\"decimal\",\"dataTypeLength\":11,\"scale\":0},{\"type\":\"Existing\",\"name\":\"ExporterCountry\",\"attributeReference\":{\"entity\":\"ExportDeclaration.cdm.json/ExportDeclaration\",\"name\":\"ExporterCountry\"},\"dataType\":\"string\",\"dataTypeLength\":64},{\"type\":\"Existing\",\"name\":\"PartyRelatedUnrelatedToTransactionIndicator\",\"attributeReference\":{\"entity\":\"ExportDeclaration.cdm.json/ExportDeclaration\",\"name\":\"PartyRelatedUnrelatedToTransactionIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"UltimateConsigneeName\",\"attributeReference\":{\"entity\":\"ExportDeclaration.cdm.json/ExportDeclaration\",\"name\":\"UltimateConsigneeName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"UltimateConsigneeIndividualCompanyIndicator\",\"attributeReference\":{\"entity\":\"ExportDeclaration.cdm.json/ExportDeclaration\",\"name\":\"UltimateConsigneeIndividualCompanyIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"IntermediateConsigneeName\",\"attributeReference\":{\"entity\":\"ExportDeclaration.cdm.json/ExportDeclaration\",\"name\":\"IntermediateConsigneeName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"IntermediateConsigneeIndividualCompanyIndicator\",\"attributeReference\":{\"entity\":\"ExportDeclaration.cdm.json/ExportDeclaration\",\"name\":\"IntermediateConsigneeIndividualCompanyIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"ForwardingAgentName\",\"attributeReference\":{\"entity\":\"ExportDeclaration.cdm.json/ExportDeclaration\",\"name\":\"ForwardingAgentName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"PointOfOrigin\",\"attributeReference\":{\"entity\":\"ExportDeclaration.cdm.json/ExportDeclaration\",\"name\":\"PointOfOrigin\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"FreeTradeZoneOfOrigin\",\"attributeReference\":{\"entity\":\"ExportDeclaration.cdm.json/ExportDeclaration\",\"name\":\"FreeTradeZoneOfOrigin\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"VesselName\",\"attributeReference\":{\"entity\":\"ExportDeclaration.cdm.json/ExportDeclaration\",\"name\":\"VesselName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"LoadingPier\",\"attributeReference\":{\"entity\":\"ExportDeclaration.cdm.json/ExportDeclaration\",\"name\":\"LoadingPier\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"PortOfExport\",\"attributeReference\":{\"entity\":\"ExportDeclaration.cdm.json/ExportDeclaration\",\"name\":\"PortOfExport\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"PortOfUnloading\",\"attributeReference\":{\"entity\":\"ExportDeclaration.cdm.json/ExportDeclaration\",\"name\":\"PortOfUnloading\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"ContainerizedIndicator\",\"attributeReference\":{\"entity\":\"ExportDeclaration.cdm.json/ExportDeclaration\",\"name\":\"ContainerizedIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"AuthorizedByOfficerName\",\"attributeReference\":{\"entity\":\"ExportDeclaration.cdm.json/ExportDeclaration\",\"name\":\"AuthorizedByOfficerName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"AuthorizedByOfficerTitle\",\"attributeReference\":{\"entity\":\"ExportDeclaration.cdm.json/ExportDeclaration\",\"name\":\"AuthorizedByOfficerTitle\"},\"dataType\":\"string\",\"dataTypeLength\":16},{\"type\":\"Existing\",\"name\":\"DeclarationCertifiedByName\",\"attributeReference\":{\"entity\":\"ExportDeclaration.cdm.json/ExportDeclaration\",\"name\":\"DeclarationCertifiedByName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"DeclarationCertifiedByTitle\",\"attributeReference\":{\"entity\":\"ExportDeclaration.cdm.json/ExportDeclaration\",\"name\":\"DeclarationCertifiedByTitle\"},\"dataType\":\"string\",\"dataTypeLength\":16},{\"type\":\"Existing\",\"name\":\"DeclarationCertifiedDate\",\"attributeReference\":{\"entity\":\"ExportDeclaration.cdm.json/ExportDeclaration\",\"name\":\"DeclarationCertifiedDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\"},{\"type\":\"Existing\",\"name\":\"AuthenticationRequiredIndicator\",\"attributeReference\":{\"entity\":\"ExportDeclaration.cdm.json/ExportDeclaration\",\"name\":\"AuthenticationRequiredIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"NumberOfDocumentCopiesRequired\",\"attributeReference\":{\"entity\":\"ExportDeclaration.cdm.json/ExportDeclaration\",\"name\":\"NumberOfDocumentCopiesRequired\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ShipmentMethodId\",\"attributeReference\":{\"entity\":\"ExportDeclaration.cdm.json/ExportDeclaration\",\"name\":\"ShipmentMethodId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ExportBrokerName\",\"attributeReference\":{\"entity\":\"ExportDeclaration.cdm.json/ExportDeclaration\",\"name\":\"ExportBrokerName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"FreightForwarderName\",\"attributeReference\":{\"entity\":\"ExportDeclaration.cdm.json/ExportDeclaration\",\"name\":\"FreightForwarderName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"CarrierName\",\"attributeReference\":{\"entity\":\"ExportDeclaration.cdm.json/ExportDeclaration\",\"name\":\"CarrierName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"BillOfLadingNumber\",\"attributeReference\":{\"entity\":\"ExportDeclaration.cdm.json/ExportDeclaration\",\"name\":\"BillOfLadingNumber\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"AirWayBillNumber\",\"attributeReference\":{\"entity\":\"ExportDeclaration.cdm.json/ExportDeclaration\",\"name\":\"AirWayBillNumber\"},\"dataType\":\"integer\"}]}}}",
+			"Description": "A government document permitting designated goods to be shipped out of the country.\n\nA custom house form filled by the shipper of goods to other countries. Also called shipper's manifest. It mentions the marks, numbers, quantity, description and value of the goods at time and place of export. There is a different definition in USA as \"The shipper's export declaration (SEDs) forms 7525-V and 7525-V-Alternate (Intermodal) and the shipper's export declaration for In-Transit Goods, Form 7513, are JOINT-BUREAU OF THE CENSUS- INTERNATIONAL TRADE ADMINISTRATION DOCUMENTS used for compiling the official U.S. export statistics and administering the requirements of the Export Administrative Act.",
+			"DisplayFolderInfo": "{\"name\":\"Shipping\",\"colorCode\":\"#000B42\"}",
+			"PrimaryKeys": "ShipmentId,DocumentId"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

@@ -1,0 +1,34 @@
+{
+	"name": "relationship-sanngpvxpr",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "relationship-sanngpvxpr",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "TowScheduleLeg",
+		"ToTableName": "ShipmentRouteLeg",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "TowId",
+				"ToColumnName": "PlannedTowId"
+			},
+			{
+				"FromColumnName": "TowScheduleLegNumber",
+				"ToColumnName": "PlannedTowLegNumber"
+			},
+			{
+				"FromColumnName": "TowScheduledDepartureTimestamp",
+				"ToColumnName": "PlannedTowDepartureTimestamp"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"TowScheduleLeg.cdm.json/TowScheduleLeg\",\"toEntity\":\"ShipmentRouteLeg.cdm.json/ShipmentRouteLeg\",\"joinPairs\":[{\"fromAttribute\":\"TowId\",\"toAttribute\":\"PlannedTowId\"},{\"fromAttribute\":\"TowScheduleLegNumber\",\"toAttribute\":\"PlannedTowLegNumber\"},{\"fromAttribute\":\"TowScheduledDepartureTimestamp\",\"toAttribute\":\"PlannedTowDepartureTimestamp\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

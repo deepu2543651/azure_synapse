@@ -1,0 +1,184 @@
+{
+	"name": "TrainScheduleLegConfiguration",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "TrainScheduleLegConfiguration",
+		"Description": "The combination or railcars and engines that comprise a train schedule leg. Timestamps are used for the configuration as railcars or engines  may be added or removed during the journey.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "TrainId",
+					"Description": "The unique identifier of a Train.",
+					"BaseAttributeReference": {
+						"Entity": "TrainScheduleLegConfiguration.cdm.json/TrainScheduleLegConfiguration",
+						"Name": "TrainId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "TrainScheduledDepartureTimestamp",
+					"Description": "The scheduled departure timestamp.",
+					"BaseAttributeReference": {
+						"Entity": "TrainScheduleLegConfiguration.cdm.json/TrainScheduleLegConfiguration",
+						"Name": "TrainScheduledDepartureTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "TrainScheduleLegNumber",
+					"Description": "The leg number of the train schedule.",
+					"BaseAttributeReference": {
+						"Entity": "TrainScheduleLegConfiguration.cdm.json/TrainScheduleLegConfiguration",
+						"Name": "TrainScheduleLegNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "TrainScheduleLegPosition",
+					"Description": "The position of the railcar or engine in the train with 1 being the front of the configuration.",
+					"BaseAttributeReference": {
+						"Entity": "TrainScheduleLegConfiguration.cdm.json/TrainScheduleLegConfiguration",
+						"Name": "TrainScheduleLegPosition"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PeriodStartTimestamp",
+					"Description": "The period start timestamp that the railcar or engine is configured with the associated train.",
+					"BaseAttributeReference": {
+						"Entity": "TrainScheduleLegConfiguration.cdm.json/TrainScheduleLegConfiguration",
+						"Name": "PeriodStartTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "PeriodEndTimestamp",
+					"Description": "The period end timestamp that the railcar or engine is configured with the associated train.",
+					"BaseAttributeReference": {
+						"Entity": "TrainScheduleLegConfiguration.cdm.json/TrainScheduleLegConfiguration",
+						"Name": "PeriodEndTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "RailcarId",
+					"Description": "The unique identifier of a Railcar instance.",
+					"BaseAttributeReference": {
+						"Entity": "TrainScheduleLegConfiguration.cdm.json/TrainScheduleLegConfiguration",
+						"Name": "RailcarId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "EngineId",
+					"Description": "The unique identifier of an engine.",
+					"BaseAttributeReference": {
+						"Entity": "TrainScheduleLegConfiguration.cdm.json/TrainScheduleLegConfiguration",
+						"Name": "EngineId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "TrainScheduleLegConfigurationNote",
+					"Description": "A note, comment or additional information regarding the train schedule leg configuration.",
+					"BaseAttributeReference": {
+						"Entity": "TrainScheduleLegConfiguration.cdm.json/TrainScheduleLegConfiguration",
+						"Name": "TrainScheduleLegConfigurationNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"TrainId\":{\"entity\":\"TrainScheduleLegConfiguration.cdm.json/TrainScheduleLegConfiguration\",\"name\":\"TrainId\"},\"TrainScheduledDepartureTimestamp\":{\"entity\":\"TrainScheduleLegConfiguration.cdm.json/TrainScheduleLegConfiguration\",\"name\":\"TrainScheduledDepartureTimestamp\"},\"TrainScheduleLegNumber\":{\"entity\":\"TrainScheduleLegConfiguration.cdm.json/TrainScheduleLegConfiguration\",\"name\":\"TrainScheduleLegNumber\"},\"TrainScheduleLegPosition\":{\"entity\":\"TrainScheduleLegConfiguration.cdm.json/TrainScheduleLegConfiguration\",\"name\":\"TrainScheduleLegPosition\"},\"PeriodStartTimestamp\":{\"entity\":\"TrainScheduleLegConfiguration.cdm.json/TrainScheduleLegConfiguration\",\"name\":\"PeriodStartTimestamp\"},\"PeriodEndTimestamp\":{\"entity\":\"TrainScheduleLegConfiguration.cdm.json/TrainScheduleLegConfiguration\",\"name\":\"PeriodEndTimestamp\"},\"RailcarId\":{\"entity\":\"TrainScheduleLegConfiguration.cdm.json/TrainScheduleLegConfiguration\",\"name\":\"RailcarId\"},\"EngineId\":{\"entity\":\"TrainScheduleLegConfiguration.cdm.json/TrainScheduleLegConfiguration\",\"name\":\"EngineId\"},\"TrainScheduleLegConfigurationNote\":{\"entity\":\"TrainScheduleLegConfiguration.cdm.json/TrainScheduleLegConfiguration\",\"name\":\"TrainScheduleLegConfigurationNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"TrainScheduleLegConfiguration\",\"path\":\"TrainScheduleLegConfiguration.cdm.json/TrainScheduleLegConfiguration\"},\"description\":\"The combination or railcars and engines that comprise a train schedule leg. Timestamps are used for the configuration as railcars or engines  may be added or removed during the journey.\",\"primaryKey\":[\"TrainId\",\"TrainScheduledDepartureTimestamp\",\"TrainScheduleLegNumber\",\"TrainScheduleLegPosition\",\"PeriodStartTimestamp\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"TrainId\",\"attributeReference\":{\"entity\":\"TrainScheduleLegConfiguration.cdm.json/TrainScheduleLegConfiguration\",\"name\":\"TrainId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"TrainScheduledDepartureTimestamp\",\"attributeReference\":{\"entity\":\"TrainScheduleLegConfiguration.cdm.json/TrainScheduleLegConfiguration\",\"name\":\"TrainScheduledDepartureTimestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"TrainScheduleLegNumber\",\"attributeReference\":{\"entity\":\"TrainScheduleLegConfiguration.cdm.json/TrainScheduleLegConfiguration\",\"name\":\"TrainScheduleLegNumber\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"TrainScheduleLegPosition\",\"attributeReference\":{\"entity\":\"TrainScheduleLegConfiguration.cdm.json/TrainScheduleLegConfiguration\",\"name\":\"TrainScheduleLegPosition\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"PeriodStartTimestamp\",\"attributeReference\":{\"entity\":\"TrainScheduleLegConfiguration.cdm.json/TrainScheduleLegConfiguration\",\"name\":\"PeriodStartTimestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"PeriodEndTimestamp\",\"attributeReference\":{\"entity\":\"TrainScheduleLegConfiguration.cdm.json/TrainScheduleLegConfiguration\",\"name\":\"PeriodEndTimestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"RailcarId\",\"attributeReference\":{\"entity\":\"TrainScheduleLegConfiguration.cdm.json/TrainScheduleLegConfiguration\",\"name\":\"RailcarId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"EngineId\",\"attributeReference\":{\"entity\":\"TrainScheduleLegConfiguration.cdm.json/TrainScheduleLegConfiguration\",\"name\":\"EngineId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"TrainScheduleLegConfigurationNote\",\"attributeReference\":{\"entity\":\"TrainScheduleLegConfiguration.cdm.json/TrainScheduleLegConfiguration\",\"name\":\"TrainScheduleLegConfigurationNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024}]}}}",
+			"Description": "The combination or railcars and engines that comprise a train schedule leg. Timestamps are used for the configuration as railcars or engines  may be added or removed during the journey.",
+			"DisplayFolderInfo": "{\"name\":\"Shipping\",\"colorCode\":\"#000B42\"}",
+			"PrimaryKeys": "TrainId,TrainScheduledDepartureTimestamp,TrainScheduleLegNumber,TrainScheduleLegPosition,PeriodStartTimestamp"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

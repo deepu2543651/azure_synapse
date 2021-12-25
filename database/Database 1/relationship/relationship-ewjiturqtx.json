@@ -1,0 +1,26 @@
+{
+	"name": "relationship-ewjiturqtx",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "relationship-ewjiturqtx",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Party",
+		"ToTableName": "Railcar",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "PartyId",
+				"ToColumnName": "OwningPartyId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Party.cdm.json/Party\",\"toEntity\":\"Railcar.cdm.json/Railcar\",\"joinPairs\":[{\"fromAttribute\":\"PartyId\",\"toAttribute\":\"OwningPartyId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

@@ -1,0 +1,333 @@
+{
+	"name": "ExportDeclarationItem",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "ExportDeclarationItem",
+		"Description": "The individual items declared on or reflected in the associated Export Declaration.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ShipmentId",
+					"Description": "The unique identifier of a Shipment.",
+					"BaseAttributeReference": {
+						"Entity": "ExportDeclarationItem.cdm.json/ExportDeclarationItem",
+						"Name": "ShipmentId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "DocumentId",
+					"Description": "The unique identifier of a Document.",
+					"BaseAttributeReference": {
+						"Entity": "ExportDeclarationItem.cdm.json/ExportDeclarationItem",
+						"Name": "DocumentId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "ItemSku",
+					"Description": "The Stock Keeping Unit identifier, which is typically used for inventory-related activities.",
+					"BaseAttributeReference": {
+						"Entity": "ExportDeclarationItem.cdm.json/ExportDeclarationItem",
+						"Name": "ItemSku"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Length": 20,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ShippedQuantity",
+					"Description": "The total quantity of Items shipped.",
+					"BaseAttributeReference": {
+						"Entity": "ExportDeclarationItem.cdm.json/ExportDeclarationItem",
+						"Name": "ShippedQuantity"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "ScheduleBQuantity",
+					"Description": "The Schedule B quantity shipped.",
+					"BaseAttributeReference": {
+						"Entity": "ExportDeclarationItem.cdm.json/ExportDeclarationItem",
+						"Name": "ScheduleBQuantity"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "ShippedUnitOfMeasureId",
+					"Description": "The unique identifier of a Unit Of Measure.",
+					"BaseAttributeReference": {
+						"Entity": "ExportDeclarationItem.cdm.json/ExportDeclarationItem",
+						"Name": "ShippedUnitOfMeasureId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "CheckDigit",
+					"Description": "The last digit of the 11-digit Schedule B number is put into the Check Digit column, which is used to insure that the air waybill number is correctly entered into a computer system.",
+					"BaseAttributeReference": {
+						"Entity": "ExportDeclarationItem.cdm.json/ExportDeclarationItem",
+						"Name": "CheckDigit"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "TotalShippingWeight",
+					"Description": "The total shipping weight of the items shipped.",
+					"BaseAttributeReference": {
+						"Entity": "ExportDeclarationItem.cdm.json/ExportDeclarationItem",
+						"Name": "TotalShippingWeight"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "ExportItemMarks",
+					"Description": "The marks shown on the Container \"as addressed\".",
+					"BaseAttributeReference": {
+						"Entity": "ExportDeclarationItem.cdm.json/ExportDeclarationItem",
+						"Name": "ExportItemMarks"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "binary",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "binary"
+						}
+					}
+				},
+				{
+					"Name": "NumberExportedContainers",
+					"Description": "The number of Containers shipped.",
+					"BaseAttributeReference": {
+						"Entity": "ExportDeclarationItem.cdm.json/ExportDeclarationItem",
+						"Name": "NumberExportedContainers"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "DomesticForeignManufacturerIndicator",
+					"Description": "Indicates whether the Item was manufactured in the US (\"D\"=Domestic) or outside the US (\"F\" = Foreign).",
+					"BaseAttributeReference": {
+						"Entity": "ExportDeclarationItem.cdm.json/ExportDeclarationItem",
+						"Name": "DomesticForeignManufacturerIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "FasValueAmount",
+					"Description": "The value of the items shipped (selling price or cost if not sold amount).",
+					"BaseAttributeReference": {
+						"Entity": "ExportDeclarationItem.cdm.json/ExportDeclarationItem",
+						"Name": "FasValueAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "ShippedUnderValidatedLicenseNumber",
+					"Description": "The validated license number under which the items are shipped.",
+					"BaseAttributeReference": {
+						"Entity": "ExportDeclarationItem.cdm.json/ExportDeclarationItem",
+						"Name": "ShippedUnderValidatedLicenseNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "EccnNumber",
+					"Description": "The unique identifier of a ECCN.",
+					"BaseAttributeReference": {
+						"Entity": "ExportDeclarationItem.cdm.json/ExportDeclarationItem",
+						"Name": "EccnNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "GeneralLicenseNumber",
+					"Description": "The unique identifier of a General License.",
+					"BaseAttributeReference": {
+						"Entity": "ExportDeclarationItem.cdm.json/ExportDeclarationItem",
+						"Name": "GeneralLicenseNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ContainerNumber",
+					"Description": "The container ID in which the items are packed.",
+					"BaseAttributeReference": {
+						"Entity": "ExportDeclarationItem.cdm.json/ExportDeclarationItem",
+						"Name": "ContainerNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "UsCustomsScheduleBClassificationNumber",
+					"Description": "US Customs Schedule B Classification Number associated with the shipment/items.",
+					"BaseAttributeReference": {
+						"Entity": "ExportDeclarationItem.cdm.json/ExportDeclarationItem",
+						"Name": "UsCustomsScheduleBClassificationNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ShipmentLineNumber",
+					"Description": "The shipment line number.",
+					"BaseAttributeReference": {
+						"Entity": "ExportDeclarationItem.cdm.json/ExportDeclarationItem",
+						"Name": "ShipmentLineNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ShipmentId\":{\"entity\":\"ExportDeclarationItem.cdm.json/ExportDeclarationItem\",\"name\":\"ShipmentId\"},\"DocumentId\":{\"entity\":\"ExportDeclarationItem.cdm.json/ExportDeclarationItem\",\"name\":\"DocumentId\"},\"ItemSku\":{\"entity\":\"ExportDeclarationItem.cdm.json/ExportDeclarationItem\",\"name\":\"ItemSku\"},\"ShippedQuantity\":{\"entity\":\"ExportDeclarationItem.cdm.json/ExportDeclarationItem\",\"name\":\"ShippedQuantity\"},\"ScheduleBQuantity\":{\"entity\":\"ExportDeclarationItem.cdm.json/ExportDeclarationItem\",\"name\":\"ScheduleBQuantity\"},\"ShippedUnitOfMeasureId\":{\"entity\":\"ExportDeclarationItem.cdm.json/ExportDeclarationItem\",\"name\":\"ShippedUnitOfMeasureId\"},\"CheckDigit\":{\"entity\":\"ExportDeclarationItem.cdm.json/ExportDeclarationItem\",\"name\":\"CheckDigit\"},\"TotalShippingWeight\":{\"entity\":\"ExportDeclarationItem.cdm.json/ExportDeclarationItem\",\"name\":\"TotalShippingWeight\"},\"ExportItemMarks\":{\"entity\":\"ExportDeclarationItem.cdm.json/ExportDeclarationItem\",\"name\":\"ExportItemMarks\"},\"NumberExportedContainers\":{\"entity\":\"ExportDeclarationItem.cdm.json/ExportDeclarationItem\",\"name\":\"NumberExportedContainers\"},\"DomesticForeignManufacturerIndicator\":{\"entity\":\"ExportDeclarationItem.cdm.json/ExportDeclarationItem\",\"name\":\"DomesticForeignManufacturerIndicator\"},\"FasValueAmount\":{\"entity\":\"ExportDeclarationItem.cdm.json/ExportDeclarationItem\",\"name\":\"FasValueAmount\"},\"ShippedUnderValidatedLicenseNumber\":{\"entity\":\"ExportDeclarationItem.cdm.json/ExportDeclarationItem\",\"name\":\"ShippedUnderValidatedLicenseNumber\"},\"EccnNumber\":{\"entity\":\"ExportDeclarationItem.cdm.json/ExportDeclarationItem\",\"name\":\"EccnNumber\"},\"GeneralLicenseNumber\":{\"entity\":\"ExportDeclarationItem.cdm.json/ExportDeclarationItem\",\"name\":\"GeneralLicenseNumber\"},\"ContainerNumber\":{\"entity\":\"ExportDeclarationItem.cdm.json/ExportDeclarationItem\",\"name\":\"ContainerNumber\"},\"UsCustomsScheduleBClassificationNumber\":{\"entity\":\"ExportDeclarationItem.cdm.json/ExportDeclarationItem\",\"name\":\"UsCustomsScheduleBClassificationNumber\"},\"ShipmentLineNumber\":{\"entity\":\"ExportDeclarationItem.cdm.json/ExportDeclarationItem\",\"name\":\"ShipmentLineNumber\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"ExportDeclarationItem\",\"path\":\"ExportDeclarationItem.cdm.json/ExportDeclarationItem\"},\"description\":\"The individual items declared on or reflected in the associated Export Declaration.\",\"primaryKey\":[\"ShipmentId\",\"DocumentId\",\"ItemSku\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"ShipmentId\",\"attributeReference\":{\"entity\":\"ExportDeclarationItem.cdm.json/ExportDeclarationItem\",\"name\":\"ShipmentId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"DocumentId\",\"attributeReference\":{\"entity\":\"ExportDeclarationItem.cdm.json/ExportDeclarationItem\",\"name\":\"DocumentId\"},\"dataType\":\"long\"},{\"type\":\"Existing\",\"name\":\"ItemSku\",\"attributeReference\":{\"entity\":\"ExportDeclarationItem.cdm.json/ExportDeclarationItem\",\"name\":\"ItemSku\"},\"dataType\":\"string\",\"dataTypeLength\":20},{\"type\":\"Existing\",\"name\":\"ShippedQuantity\",\"attributeReference\":{\"entity\":\"ExportDeclarationItem.cdm.json/ExportDeclarationItem\",\"name\":\"ShippedQuantity\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"ScheduleBQuantity\",\"attributeReference\":{\"entity\":\"ExportDeclarationItem.cdm.json/ExportDeclarationItem\",\"name\":\"ScheduleBQuantity\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"ShippedUnitOfMeasureId\",\"attributeReference\":{\"entity\":\"ExportDeclarationItem.cdm.json/ExportDeclarationItem\",\"name\":\"ShippedUnitOfMeasureId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"CheckDigit\",\"attributeReference\":{\"entity\":\"ExportDeclarationItem.cdm.json/ExportDeclarationItem\",\"name\":\"CheckDigit\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"TotalShippingWeight\",\"attributeReference\":{\"entity\":\"ExportDeclarationItem.cdm.json/ExportDeclarationItem\",\"name\":\"TotalShippingWeight\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":8},{\"type\":\"Existing\",\"name\":\"ExportItemMarks\",\"attributeReference\":{\"entity\":\"ExportDeclarationItem.cdm.json/ExportDeclarationItem\",\"name\":\"ExportItemMarks\"},\"dataType\":\"binary\"},{\"type\":\"Existing\",\"name\":\"NumberExportedContainers\",\"attributeReference\":{\"entity\":\"ExportDeclarationItem.cdm.json/ExportDeclarationItem\",\"name\":\"NumberExportedContainers\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"DomesticForeignManufacturerIndicator\",\"attributeReference\":{\"entity\":\"ExportDeclarationItem.cdm.json/ExportDeclarationItem\",\"name\":\"DomesticForeignManufacturerIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"FasValueAmount\",\"attributeReference\":{\"entity\":\"ExportDeclarationItem.cdm.json/ExportDeclarationItem\",\"name\":\"FasValueAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"ShippedUnderValidatedLicenseNumber\",\"attributeReference\":{\"entity\":\"ExportDeclarationItem.cdm.json/ExportDeclarationItem\",\"name\":\"ShippedUnderValidatedLicenseNumber\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"EccnNumber\",\"attributeReference\":{\"entity\":\"ExportDeclarationItem.cdm.json/ExportDeclarationItem\",\"name\":\"EccnNumber\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"GeneralLicenseNumber\",\"attributeReference\":{\"entity\":\"ExportDeclarationItem.cdm.json/ExportDeclarationItem\",\"name\":\"GeneralLicenseNumber\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ContainerNumber\",\"attributeReference\":{\"entity\":\"ExportDeclarationItem.cdm.json/ExportDeclarationItem\",\"name\":\"ContainerNumber\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"UsCustomsScheduleBClassificationNumber\",\"attributeReference\":{\"entity\":\"ExportDeclarationItem.cdm.json/ExportDeclarationItem\",\"name\":\"UsCustomsScheduleBClassificationNumber\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ShipmentLineNumber\",\"attributeReference\":{\"entity\":\"ExportDeclarationItem.cdm.json/ExportDeclarationItem\",\"name\":\"ShipmentLineNumber\"},\"dataType\":\"integer\"}]}}}",
+			"Description": "The individual items declared on or reflected in the associated Export Declaration.",
+			"DisplayFolderInfo": "{\"name\":\"Shipping\",\"colorCode\":\"#000B42\"}",
+			"PrimaryKeys": "ShipmentId,DocumentId,ItemSku"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

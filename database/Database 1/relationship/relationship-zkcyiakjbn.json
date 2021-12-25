@@ -1,0 +1,26 @@
+{
+	"name": "relationship-zkcyiakjbn",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "relationship-zkcyiakjbn",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "CustomsValuationMethod",
+		"ToTableName": "CustomsDuty",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "CustomsValuationMethodId",
+				"ToColumnName": "CustomsValuationMethodId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"CustomsValuationMethod.cdm.json/CustomsValuationMethod\",\"toEntity\":\"CustomsDuty.cdm.json/CustomsDuty\",\"joinPairs\":[{\"fromAttribute\":\"CustomsValuationMethodId\",\"toAttribute\":\"CustomsValuationMethodId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

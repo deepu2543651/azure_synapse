@@ -1,0 +1,86 @@
+{
+	"name": "ShipmentRoutePartyRelationshipType",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "ShipmentRoutePartyRelationshipType",
+		"Description": "The nature of the relationship between a Shipment Route and a Party(s) for a period and optionally a location/leg.\n\nEx:\n- Customs Party\n- Responsible Shipping Agent Party\n- Air Freight Forwarder Party\n- Customers Clearance Service Party\n- Customs House Broker Party\n- Freight Cashier Party\n- Stevedore Party",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ShipmentRoutePartyRelationshipTypeId",
+					"Description": "The unique identifier of a shipment route party relationship type.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentRoutePartyRelationshipType.cdm.json/ShipmentRoutePartyRelationshipType",
+						"Name": "ShipmentRoutePartyRelationshipTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ShipmentRoutePartyRelationshipTypeName",
+					"Description": "The name of a shipment route party relationship type.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentRoutePartyRelationshipType.cdm.json/ShipmentRoutePartyRelationshipType",
+						"Name": "ShipmentRoutePartyRelationshipTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ShipmentRoutePartyRelationshipTypeDescription",
+					"Description": "The description of a shipment route party relationship type.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentRoutePartyRelationshipType.cdm.json/ShipmentRoutePartyRelationshipType",
+						"Name": "ShipmentRoutePartyRelationshipTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ShipmentRoutePartyRelationshipTypeId\":{\"entity\":\"ShipmentRoutePartyRelationshipType.cdm.json/ShipmentRoutePartyRelationshipType\",\"name\":\"ShipmentRoutePartyRelationshipTypeId\"},\"ShipmentRoutePartyRelationshipTypeName\":{\"entity\":\"ShipmentRoutePartyRelationshipType.cdm.json/ShipmentRoutePartyRelationshipType\",\"name\":\"ShipmentRoutePartyRelationshipTypeName\"},\"ShipmentRoutePartyRelationshipTypeDescription\":{\"entity\":\"ShipmentRoutePartyRelationshipType.cdm.json/ShipmentRoutePartyRelationshipType\",\"name\":\"ShipmentRoutePartyRelationshipTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"ShipmentRoutePartyRelationshipType\",\"path\":\"ShipmentRoutePartyRelationshipType.cdm.json/ShipmentRoutePartyRelationshipType\"},\"description\":\"The nature of the relationship between a Shipment Route and a Party(s) for a period and optionally a location/leg.\\n\\nEx:\\n- Customs Party\\n- Responsible Shipping Agent Party\\n- Air Freight Forwarder Party\\n- Customers Clearance Service Party\\n- Customs House Broker Party\\n- Freight Cashier Party\\n- Stevedore Party\",\"primaryKey\":[\"ShipmentRoutePartyRelationshipTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"ShipmentRoutePartyRelationshipTypeId\",\"attributeReference\":{\"entity\":\"ShipmentRoutePartyRelationshipType.cdm.json/ShipmentRoutePartyRelationshipType\",\"name\":\"ShipmentRoutePartyRelationshipTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ShipmentRoutePartyRelationshipTypeName\",\"attributeReference\":{\"entity\":\"ShipmentRoutePartyRelationshipType.cdm.json/ShipmentRoutePartyRelationshipType\",\"name\":\"ShipmentRoutePartyRelationshipTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"ShipmentRoutePartyRelationshipTypeDescription\",\"attributeReference\":{\"entity\":\"ShipmentRoutePartyRelationshipType.cdm.json/ShipmentRoutePartyRelationshipType\",\"name\":\"ShipmentRoutePartyRelationshipTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512}]}}}",
+			"Description": "The nature of the relationship between a Shipment Route and a Party(s) for a period and optionally a location/leg.\n\nEx:\n- Customs Party\n- Responsible Shipping Agent Party\n- Air Freight Forwarder Party\n- Customers Clearance Service Party\n- Customs House Broker Party\n- Freight Cashier Party\n- Stevedore Party",
+			"DisplayFolderInfo": "{\"name\":\"Shipping\",\"colorCode\":\"#000B42\"}",
+			"PrimaryKeys": "ShipmentRoutePartyRelationshipTypeId"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

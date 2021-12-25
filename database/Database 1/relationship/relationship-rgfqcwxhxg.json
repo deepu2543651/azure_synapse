@@ -1,0 +1,26 @@
+{
+	"name": "relationship-rgfqcwxhxg",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "relationship-rgfqcwxhxg",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "ShippingLocation",
+		"ToTableName": "SailingScheduleSegment",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ShippingLocationId",
+				"ToColumnName": "DepartureFromPortLocationId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"ShippingLocation.cdm.json/ShippingLocation\",\"toEntity\":\"SailingScheduleSegment.cdm.json/SailingScheduleSegment\",\"joinPairs\":[{\"fromAttribute\":\"ShippingLocationId\",\"toAttribute\":\"DepartureFromPortLocationId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

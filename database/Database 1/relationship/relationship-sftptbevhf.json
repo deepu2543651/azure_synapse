@@ -1,0 +1,26 @@
+{
+	"name": "relationship-sftptbevhf",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "relationship-sftptbevhf",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "CommunicationStatus",
+		"ToTableName": "Communication",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "CommunicationStatusId",
+				"ToColumnName": "CommunicationStatusId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"CommunicationStatus.cdm.json/CommunicationStatus\",\"toEntity\":\"Communication.cdm.json/Communication\",\"joinPairs\":[{\"fromAttribute\":\"CommunicationStatusId\",\"toAttribute\":\"CommunicationStatusId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

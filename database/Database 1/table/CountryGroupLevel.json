@@ -1,0 +1,86 @@
+{
+	"name": "CountryGroupLevel",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "CountryGroupLevel",
+		"Description": "A U.S. Government grouping of countries based characteristics activities or associations.\n\nThe Country Group Level is used to build the 5-character number for every export product identifying the category, product group, type of control and country group level of control specified in the US Commerce Control List.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "CountryGroupLevelId",
+					"Description": "The unique identifier of a Country Group Level.",
+					"BaseAttributeReference": {
+						"Entity": "CountryGroupLevel.cdm.json/CountryGroupLevel",
+						"Name": "CountryGroupLevelId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "CountryGroupLevelName",
+					"Description": "The name of a Country Group Level.",
+					"BaseAttributeReference": {
+						"Entity": "CountryGroupLevel.cdm.json/CountryGroupLevel",
+						"Name": "CountryGroupLevelName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "CountryGroupLevelDescription",
+					"Description": "The description of a Country Group Level.",
+					"BaseAttributeReference": {
+						"Entity": "CountryGroupLevel.cdm.json/CountryGroupLevel",
+						"Name": "CountryGroupLevelDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"CountryGroupLevelId\":{\"entity\":\"CountryGroupLevel.cdm.json/CountryGroupLevel\",\"name\":\"CountryGroupLevelId\"},\"CountryGroupLevelName\":{\"entity\":\"CountryGroupLevel.cdm.json/CountryGroupLevel\",\"name\":\"CountryGroupLevelName\"},\"CountryGroupLevelDescription\":{\"entity\":\"CountryGroupLevel.cdm.json/CountryGroupLevel\",\"name\":\"CountryGroupLevelDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"CountryGroupLevel\",\"path\":\"CountryGroupLevel.cdm.json/CountryGroupLevel\"},\"description\":\"A U.S. Government grouping of countries based characteristics activities or associations.\\n\\nThe Country Group Level is used to build the 5-character number for every export product identifying the category, product group, type of control and country group level of control specified in the US Commerce Control List.\",\"primaryKey\":[\"CountryGroupLevelId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"CountryGroupLevelId\",\"attributeReference\":{\"entity\":\"CountryGroupLevel.cdm.json/CountryGroupLevel\",\"name\":\"CountryGroupLevelId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"CountryGroupLevelName\",\"attributeReference\":{\"entity\":\"CountryGroupLevel.cdm.json/CountryGroupLevel\",\"name\":\"CountryGroupLevelName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"CountryGroupLevelDescription\",\"attributeReference\":{\"entity\":\"CountryGroupLevel.cdm.json/CountryGroupLevel\",\"name\":\"CountryGroupLevelDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512}]}}}",
+			"Description": "A U.S. Government grouping of countries based characteristics activities or associations.\n\nThe Country Group Level is used to build the 5-character number for every export product identifying the category, product group, type of control and country group level of control specified in the US Commerce Control List.",
+			"DisplayFolderInfo": "{\"name\":\"Shipping\",\"colorCode\":\"#000B42\"}",
+			"PrimaryKeys": "CountryGroupLevelId"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

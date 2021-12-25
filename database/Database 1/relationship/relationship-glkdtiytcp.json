@@ -1,0 +1,26 @@
+{
+	"name": "relationship-glkdtiytcp",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "relationship-glkdtiytcp",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Incoterm",
+		"ToTableName": "ShipmentItem",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "IncotermId",
+				"ToColumnName": "IncotermId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Incoterm.cdm.json/Incoterm\",\"toEntity\":\"ShipmentItem.cdm.json/ShipmentItem\",\"joinPairs\":[{\"fromAttribute\":\"IncotermId\",\"toAttribute\":\"IncotermId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

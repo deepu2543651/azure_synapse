@@ -1,0 +1,118 @@
+{
+	"name": "ShipmentRouteStatus",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "ShipmentRouteStatus",
+		"Description": "The status of a shipment route (\"Leg\") at a point in time.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ShipmentId",
+					"Description": "The unique identifier of a Shipment.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentRouteStatus.cdm.json/ShipmentRouteStatus",
+						"Name": "ShipmentId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ShipmentLegNumber",
+					"Description": "The unique identifier of the Shipment Leg Number, which equals the shipment leg 'sequence number'.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentRouteStatus.cdm.json/ShipmentRouteStatus",
+						"Name": "ShipmentLegNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ShipmentRouteStatusTimestamp",
+					"Description": "The timestamp that the shipment route status is effective.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentRouteStatus.cdm.json/ShipmentRouteStatus",
+						"Name": "ShipmentRouteStatusTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "ShipmentRouteStatusTypeId",
+					"Description": "The unique identifier of a shipment route status type.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentRouteStatus.cdm.json/ShipmentRouteStatus",
+						"Name": "ShipmentRouteStatusTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ShipmentRouteStatusNote",
+					"Description": "A note, comment or additional information regarding the shipment route status.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentRouteStatus.cdm.json/ShipmentRouteStatus",
+						"Name": "ShipmentRouteStatusNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ShipmentId\":{\"entity\":\"ShipmentRouteStatus.cdm.json/ShipmentRouteStatus\",\"name\":\"ShipmentId\"},\"ShipmentLegNumber\":{\"entity\":\"ShipmentRouteStatus.cdm.json/ShipmentRouteStatus\",\"name\":\"ShipmentLegNumber\"},\"ShipmentRouteStatusTimestamp\":{\"entity\":\"ShipmentRouteStatus.cdm.json/ShipmentRouteStatus\",\"name\":\"ShipmentRouteStatusTimestamp\"},\"ShipmentRouteStatusTypeId\":{\"entity\":\"ShipmentRouteStatus.cdm.json/ShipmentRouteStatus\",\"name\":\"ShipmentRouteStatusTypeId\"},\"ShipmentRouteStatusNote\":{\"entity\":\"ShipmentRouteStatus.cdm.json/ShipmentRouteStatus\",\"name\":\"ShipmentRouteStatusNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"ShipmentRouteStatus\",\"path\":\"ShipmentRouteStatus.cdm.json/ShipmentRouteStatus\"},\"description\":\"The status of a shipment route (\\\"Leg\\\") at a point in time.\",\"primaryKey\":[\"ShipmentId\",\"ShipmentLegNumber\",\"ShipmentRouteStatusTimestamp\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"ShipmentId\",\"attributeReference\":{\"entity\":\"ShipmentRouteStatus.cdm.json/ShipmentRouteStatus\",\"name\":\"ShipmentId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ShipmentLegNumber\",\"attributeReference\":{\"entity\":\"ShipmentRouteStatus.cdm.json/ShipmentRouteStatus\",\"name\":\"ShipmentLegNumber\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ShipmentRouteStatusTimestamp\",\"attributeReference\":{\"entity\":\"ShipmentRouteStatus.cdm.json/ShipmentRouteStatus\",\"name\":\"ShipmentRouteStatusTimestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"ShipmentRouteStatusTypeId\",\"attributeReference\":{\"entity\":\"ShipmentRouteStatus.cdm.json/ShipmentRouteStatus\",\"name\":\"ShipmentRouteStatusTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ShipmentRouteStatusNote\",\"attributeReference\":{\"entity\":\"ShipmentRouteStatus.cdm.json/ShipmentRouteStatus\",\"name\":\"ShipmentRouteStatusNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024}]}}}",
+			"Description": "The status of a shipment route (\"Leg\") at a point in time.",
+			"DisplayFolderInfo": "{\"name\":\"Shipping\",\"colorCode\":\"#000B42\"}",
+			"PrimaryKeys": "ShipmentId,ShipmentLegNumber,ShipmentRouteStatusTimestamp"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

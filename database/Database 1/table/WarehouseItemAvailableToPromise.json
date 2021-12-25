@@ -1,0 +1,121 @@
+{
+	"name": "WarehouseItemAvailableToPromise",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "WarehouseItemAvailableToPromise",
+		"Description": "The uncommitted portion of a company's inventory at a Warehouse to support customer order promising.  The ATP quantity is the uncommitted inventory balance.  ATP includes on-hand inventory less customer orders that are due and overdue.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "WarehouseId",
+					"Description": "The unique identifier of a Warehouse.",
+					"BaseAttributeReference": {
+						"Entity": "WarehouseItemAvailableToPromise.cdm.json/WarehouseItemAvailableToPromise",
+						"Name": "WarehouseId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ItemSku",
+					"Description": "The Stock Keeping Unit identifier, which is typically used for inventory-related activities.",
+					"BaseAttributeReference": {
+						"Entity": "WarehouseItemAvailableToPromise.cdm.json/WarehouseItemAvailableToPromise",
+						"Name": "ItemSku"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Length": 20,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "Timestamp",
+					"Description": "The effective timestamp for which the Available Item To Promise (ATP) quantity is determined at the Warehouse.",
+					"BaseAttributeReference": {
+						"Entity": "WarehouseItemAvailableToPromise.cdm.json/WarehouseItemAvailableToPromise",
+						"Name": "Timestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "AvailableToPromiseQuantity",
+					"Description": "The Available Item To Promise quantity at the Warehouse as of the associated date.",
+					"BaseAttributeReference": {
+						"Entity": "WarehouseItemAvailableToPromise.cdm.json/WarehouseItemAvailableToPromise",
+						"Name": "AvailableToPromiseQuantity"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "Note",
+					"Description": "A note, comment or additional information regarding the Warehouse Available Item To Promise (ATP) Stock.",
+					"BaseAttributeReference": {
+						"Entity": "WarehouseItemAvailableToPromise.cdm.json/WarehouseItemAvailableToPromise",
+						"Name": "Note"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"WarehouseId\":{\"entity\":\"WarehouseItemAvailableToPromise.cdm.json/WarehouseItemAvailableToPromise\",\"name\":\"WarehouseId\"},\"ItemSku\":{\"entity\":\"WarehouseItemAvailableToPromise.cdm.json/WarehouseItemAvailableToPromise\",\"name\":\"ItemSku\"},\"Timestamp\":{\"entity\":\"WarehouseItemAvailableToPromise.cdm.json/WarehouseItemAvailableToPromise\",\"name\":\"Timestamp\"},\"AvailableToPromiseQuantity\":{\"entity\":\"WarehouseItemAvailableToPromise.cdm.json/WarehouseItemAvailableToPromise\",\"name\":\"AvailableToPromiseQuantity\"},\"Note\":{\"entity\":\"WarehouseItemAvailableToPromise.cdm.json/WarehouseItemAvailableToPromise\",\"name\":\"Note\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"WarehouseItemAvailableToPromise\",\"path\":\"WarehouseItemAvailableToPromise.cdm.json/WarehouseItemAvailableToPromise\"},\"description\":\"The uncommitted portion of a company's inventory at a Warehouse to support customer order promising.  The ATP quantity is the uncommitted inventory balance.  ATP includes on-hand inventory less customer orders that are due and overdue.\",\"primaryKey\":[\"WarehouseId\",\"ItemSku\",\"Timestamp\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"WarehouseId\",\"attributeReference\":{\"entity\":\"WarehouseItemAvailableToPromise.cdm.json/WarehouseItemAvailableToPromise\",\"name\":\"WarehouseId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ItemSku\",\"attributeReference\":{\"entity\":\"WarehouseItemAvailableToPromise.cdm.json/WarehouseItemAvailableToPromise\",\"name\":\"ItemSku\"},\"dataType\":\"string\",\"dataTypeLength\":20},{\"type\":\"Existing\",\"name\":\"Timestamp\",\"attributeReference\":{\"entity\":\"WarehouseItemAvailableToPromise.cdm.json/WarehouseItemAvailableToPromise\",\"name\":\"Timestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"AvailableToPromiseQuantity\",\"attributeReference\":{\"entity\":\"WarehouseItemAvailableToPromise.cdm.json/WarehouseItemAvailableToPromise\",\"name\":\"AvailableToPromiseQuantity\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"Note\",\"attributeReference\":{\"entity\":\"WarehouseItemAvailableToPromise.cdm.json/WarehouseItemAvailableToPromise\",\"name\":\"Note\"},\"dataType\":\"string\",\"dataTypeLength\":1024}]}}}",
+			"Description": "The uncommitted portion of a company's inventory at a Warehouse to support customer order promising.  The ATP quantity is the uncommitted inventory balance.  ATP includes on-hand inventory less customer orders that are due and overdue.",
+			"DisplayFolderInfo": "{\"name\":\"Inventory\",\"colorCode\":\"#EA279F\"}",
+			"PrimaryKeys": "WarehouseId,ItemSku,Timestamp"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

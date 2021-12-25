@@ -1,0 +1,34 @@
+{
+	"name": "relationship-qrehcivbpl",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "relationship-qrehcivbpl",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "SailingScheduleSegment",
+		"ToTableName": "ShipmentRouteLeg",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "SailingScheduleSegmentNumber",
+				"ToColumnName": "PlannedSailingSegmentNumber"
+			},
+			{
+				"FromColumnName": "VesselId",
+				"ToColumnName": "PlannedVesselId"
+			},
+			{
+				"FromColumnName": "VesselScheduledDepartureTimestamp",
+				"ToColumnName": "PlannedVesselDepartureTimestamp"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"SailingScheduleSegment.cdm.json/SailingScheduleSegment\",\"toEntity\":\"ShipmentRouteLeg.cdm.json/ShipmentRouteLeg\",\"joinPairs\":[{\"fromAttribute\":\"SailingScheduleSegmentNumber\",\"toAttribute\":\"PlannedSailingSegmentNumber\"},{\"fromAttribute\":\"VesselId\",\"toAttribute\":\"PlannedVesselId\"},{\"fromAttribute\":\"VesselScheduledDepartureTimestamp\",\"toAttribute\":\"PlannedVesselDepartureTimestamp\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

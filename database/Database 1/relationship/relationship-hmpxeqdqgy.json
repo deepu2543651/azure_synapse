@@ -1,0 +1,26 @@
+{
+	"name": "relationship-hmpxeqdqgy",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "relationship-hmpxeqdqgy",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "ShipmentMethod",
+		"ToTableName": "CarrierRouteLeg",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ShipmentMethodId",
+				"ToColumnName": "ShipmentMethodId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"ShipmentMethod.cdm.json/ShipmentMethod\",\"toEntity\":\"CarrierRouteLeg.cdm.json/CarrierRouteLeg\",\"joinPairs\":[{\"fromAttribute\":\"ShipmentMethodId\",\"toAttribute\":\"ShipmentMethodId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

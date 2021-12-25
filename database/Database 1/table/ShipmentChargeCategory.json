@@ -1,0 +1,86 @@
+{
+	"name": "ShipmentChargeCategory",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "ShipmentChargeCategory",
+		"Description": "A categorization of shipment charges based on common characteristics or functions performed.\n\nEx:\n- Administrative Charge\n- Delivery Charge\n- Freight Charge\n- Handling Charge\n- Import / Export Charge\n- Insurance Charge\n- Processing Charge\n- Special Handling Charge",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ShipmentChargeCategoryId",
+					"Description": "The unique identifier of a Shipment Charge Category.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentChargeCategory.cdm.json/ShipmentChargeCategory",
+						"Name": "ShipmentChargeCategoryId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ShipmentChargeCategoryName",
+					"Description": "The name of a Shipment Charge Category.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentChargeCategory.cdm.json/ShipmentChargeCategory",
+						"Name": "ShipmentChargeCategoryName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ShipmentChargeCategoryDescription",
+					"Description": "The description of a Shipment Charge Category.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentChargeCategory.cdm.json/ShipmentChargeCategory",
+						"Name": "ShipmentChargeCategoryDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ShipmentChargeCategoryId\":{\"entity\":\"ShipmentChargeCategory.cdm.json/ShipmentChargeCategory\",\"name\":\"ShipmentChargeCategoryId\"},\"ShipmentChargeCategoryName\":{\"entity\":\"ShipmentChargeCategory.cdm.json/ShipmentChargeCategory\",\"name\":\"ShipmentChargeCategoryName\"},\"ShipmentChargeCategoryDescription\":{\"entity\":\"ShipmentChargeCategory.cdm.json/ShipmentChargeCategory\",\"name\":\"ShipmentChargeCategoryDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"ShipmentChargeCategory\",\"path\":\"ShipmentChargeCategory.cdm.json/ShipmentChargeCategory\"},\"description\":\"A categorization of shipment charges based on common characteristics or functions performed.\\n\\nEx:\\n- Administrative Charge\\n- Delivery Charge\\n- Freight Charge\\n- Handling Charge\\n- Import / Export Charge\\n- Insurance Charge\\n- Processing Charge\\n- Special Handling Charge\",\"primaryKey\":[\"ShipmentChargeCategoryId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"ShipmentChargeCategoryId\",\"attributeReference\":{\"entity\":\"ShipmentChargeCategory.cdm.json/ShipmentChargeCategory\",\"name\":\"ShipmentChargeCategoryId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ShipmentChargeCategoryName\",\"attributeReference\":{\"entity\":\"ShipmentChargeCategory.cdm.json/ShipmentChargeCategory\",\"name\":\"ShipmentChargeCategoryName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"ShipmentChargeCategoryDescription\",\"attributeReference\":{\"entity\":\"ShipmentChargeCategory.cdm.json/ShipmentChargeCategory\",\"name\":\"ShipmentChargeCategoryDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512}]}}}",
+			"Description": "A categorization of shipment charges based on common characteristics or functions performed.\n\nEx:\n- Administrative Charge\n- Delivery Charge\n- Freight Charge\n- Handling Charge\n- Import / Export Charge\n- Insurance Charge\n- Processing Charge\n- Special Handling Charge",
+			"DisplayFolderInfo": "{\"name\":\"Shipping\",\"colorCode\":\"#000B42\"}",
+			"PrimaryKeys": "ShipmentChargeCategoryId"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

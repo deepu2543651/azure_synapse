@@ -1,0 +1,560 @@
+{
+	"name": "ScheduledFlightLeg",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "ScheduledFlightLeg",
+		"Description": "The individual segments or legs of a flight involving Segment of a flight involving a stopover, change of aircraft, or change of airline.\n\nEx:\nFor a journey from London (England) to Honolulu(USA) with a plane change at San Francisco you have 2 flight legs/segments. The first leg is London to San Francisco and the 2nd leg is San Francisco to Honolulu. Thus for the journey San Francisco is the via point.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "CarrierId",
+					"Description": "The unique identifier of a Carrier.",
+					"BaseAttributeReference": {
+						"Entity": "ScheduledFlightLeg.cdm.json/ScheduledFlightLeg",
+						"Name": "CarrierId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "FlightNumber",
+					"Description": "The unique identifier of a Flight.",
+					"BaseAttributeReference": {
+						"Entity": "ScheduledFlightLeg.cdm.json/ScheduledFlightLeg",
+						"Name": "FlightNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ScheduledFlightDate",
+					"Description": "The date of the Flight.",
+					"BaseAttributeReference": {
+						"Entity": "ScheduledFlightLeg.cdm.json/ScheduledFlightLeg",
+						"Name": "ScheduledFlightDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "ScheduledFlightLegDepartureAirportCode",
+					"Description": "AKA Airport Code\n\nThree-letter codes used to identify airports.\n\nAirport Code \nThe airport code is a three letter designator for a commercial airport, or other travel point -- e.g. a large bus station. These are the codes that airlines and pilots use to identify airports and are used in timetables, baggage tags, tickets, advertisements, Airline and Global Reservation Systems. There are approximately 9,000 of them in use of a total of 17,576 available",
+					"BaseAttributeReference": {
+						"Entity": "ScheduledFlightLeg.cdm.json/ScheduledFlightLeg",
+						"Name": "ScheduledFlightLegDepartureAirportCode"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Length": 3,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ScheduledFlightLegArrivalAirportCode",
+					"Description": "AKA Airport Code\n\nThree-letter codes used to identify airports.\n\nAirport Code \nThe airport code is a three letter designator for a commercial airport, or other travel point -- e.g. a large bus station. These are the codes that airlines and pilots use to identify airports and are used in timetables, baggage tags, tickets, advertisements, Airline and Global Reservation Systems. There are approximately 9,000 of them in use of a total of 17,576 available",
+					"BaseAttributeReference": {
+						"Entity": "ScheduledFlightLeg.cdm.json/ScheduledFlightLeg",
+						"Name": "ScheduledFlightLegArrivalAirportCode"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Length": 3,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ScheduledFlightLegNumber",
+					"Description": "Leg Number indicates the order in which the Flight Segments are flown.",
+					"BaseAttributeReference": {
+						"Entity": "ScheduledFlightLeg.cdm.json/ScheduledFlightLeg",
+						"Name": "ScheduledFlightLegNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "AircraftId",
+					"Description": "The unique identifier of an Aircraft.",
+					"BaseAttributeReference": {
+						"Entity": "ScheduledFlightLeg.cdm.json/ScheduledFlightLeg",
+						"Name": "AircraftId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ScheduledFlightLegArrivalTimestamp",
+					"Description": "The scheduled flight leg arrival timestamp.",
+					"BaseAttributeReference": {
+						"Entity": "ScheduledFlightLeg.cdm.json/ScheduledFlightLeg",
+						"Name": "ScheduledFlightLegArrivalTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "ScheduledFlightLegDepartureTimestamp",
+					"Description": "The scheduled flight leg departure timestamp.",
+					"BaseAttributeReference": {
+						"Entity": "ScheduledFlightLeg.cdm.json/ScheduledFlightLeg",
+						"Name": "ScheduledFlightLegDepartureTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "PlannedBoardingTimestamp",
+					"Description": "The planned boarding timestamp for the scheduled flight leg.",
+					"BaseAttributeReference": {
+						"Entity": "ScheduledFlightLeg.cdm.json/ScheduledFlightLeg",
+						"Name": "PlannedBoardingTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "ActualBoardingTimestamp",
+					"Description": "The actual boarding timestamp for the scheduled flight leg.",
+					"BaseAttributeReference": {
+						"Entity": "ScheduledFlightLeg.cdm.json/ScheduledFlightLeg",
+						"Name": "ActualBoardingTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "PlannedDepartureTimestamp",
+					"Description": "The planned departure timestamp for the scheduled flight leg.",
+					"BaseAttributeReference": {
+						"Entity": "ScheduledFlightLeg.cdm.json/ScheduledFlightLeg",
+						"Name": "PlannedDepartureTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "ActualDepartureTimestamp",
+					"Description": "The actual departure timestamp for the scheduled flight leg.",
+					"BaseAttributeReference": {
+						"Entity": "ScheduledFlightLeg.cdm.json/ScheduledFlightLeg",
+						"Name": "ActualDepartureTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "DepartureAirportConcourseNumber",
+					"Description": "The Concourse is the area of an airline terminal where the gates are located. Many airports have multiple concourses. \n\nThe Departure Airport Concourse indicates the concourse from which the scheduled flight leg departs.",
+					"BaseAttributeReference": {
+						"Entity": "ScheduledFlightLeg.cdm.json/ScheduledFlightLeg",
+						"Name": "DepartureAirportConcourseNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "DepartureAirportGateNumber",
+					"Description": "The gate number from which the scheduled flight leg departs.",
+					"BaseAttributeReference": {
+						"Entity": "ScheduledFlightLeg.cdm.json/ScheduledFlightLeg",
+						"Name": "DepartureAirportGateNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PlannedArrivalTimestamp",
+					"Description": "The planned arrival timestamp for the scheduled flight leg.",
+					"BaseAttributeReference": {
+						"Entity": "ScheduledFlightLeg.cdm.json/ScheduledFlightLeg",
+						"Name": "PlannedArrivalTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "ActualArrivalTimestamp",
+					"Description": "The actual arrival timestamp for the scheduled flight leg.",
+					"BaseAttributeReference": {
+						"Entity": "ScheduledFlightLeg.cdm.json/ScheduledFlightLeg",
+						"Name": "ActualArrivalTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "PlannedFlyingTimeHours",
+					"Description": "The planned flying time of the scheduled flight leg expressed in hours.",
+					"BaseAttributeReference": {
+						"Entity": "ScheduledFlightLeg.cdm.json/ScheduledFlightLeg",
+						"Name": "PlannedFlyingTimeHours"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ActualFlyingTimeHours",
+					"Description": "The actual flying time of the scheduled flight leg expressed in hours.",
+					"BaseAttributeReference": {
+						"Entity": "ScheduledFlightLeg.cdm.json/ScheduledFlightLeg",
+						"Name": "ActualFlyingTimeHours"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ArrivalAirportConcourseNumber",
+					"Description": "The Concourse is the area of an airline terminal where the gates are located. Many airports have multiple concourses. \n\nThe Arrival Airport Concourse indicates the concourse where the flight leg is scheduled to arrive.",
+					"BaseAttributeReference": {
+						"Entity": "ScheduledFlightLeg.cdm.json/ScheduledFlightLeg",
+						"Name": "ArrivalAirportConcourseNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ArrivalAirportGateNumber",
+					"Description": "The gate to which the flight leg is scheduled to arrive.",
+					"BaseAttributeReference": {
+						"Entity": "ScheduledFlightLeg.cdm.json/ScheduledFlightLeg",
+						"Name": "ArrivalAirportGateNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "LayoverTime",
+					"Description": "The amount of time a connecting passenger has between flights, before reaching the final destination.",
+					"BaseAttributeReference": {
+						"Entity": "ScheduledFlightLeg.cdm.json/ScheduledFlightLeg",
+						"Name": "LayoverTime"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 256,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "EstimatedFlyingTimeInMinutes",
+					"Description": "Estimated flight time between departure city and destination or connecting point.",
+					"BaseAttributeReference": {
+						"Entity": "ScheduledFlightLeg.cdm.json/ScheduledFlightLeg",
+						"Name": "EstimatedFlyingTimeInMinutes"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "FrequentFlyerMileageDistance",
+					"Description": "The number of Frequent Flyer Airmiles that will be earned for this flight.",
+					"BaseAttributeReference": {
+						"Entity": "ScheduledFlightLeg.cdm.json/ScheduledFlightLeg",
+						"Name": "FrequentFlyerMileageDistance"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "MultiLegFlightIndicator",
+					"Description": "A journey from point A to point B to point C, and back to point A.",
+					"BaseAttributeReference": {
+						"Entity": "ScheduledFlightLeg.cdm.json/ScheduledFlightLeg",
+						"Name": "MultiLegFlightIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "PassportRequiredIndicator",
+					"Description": "Indicates that a passport is required by passengers for this flight.",
+					"BaseAttributeReference": {
+						"Entity": "ScheduledFlightLeg.cdm.json/ScheduledFlightLeg",
+						"Name": "PassportRequiredIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "UsDomesticFlightIndicator",
+					"Description": "Any flight within the continental U.S., Hawaii and Alaska and any flight from the continental U.S.",
+					"BaseAttributeReference": {
+						"Entity": "ScheduledFlightLeg.cdm.json/ScheduledFlightLeg",
+						"Name": "UsDomesticFlightIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "PeakFlightIndicator",
+					"Description": "Time period designated by day, week month or year that is inside of peak periods of demand.",
+					"BaseAttributeReference": {
+						"Entity": "ScheduledFlightLeg.cdm.json/ScheduledFlightLeg",
+						"Name": "PeakFlightIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "OffPeakFlightIndicator",
+					"Description": "Time period designated by day, week month or year that is outside of peak periods of demand and therefore is generally discounted by a given percentage below the full price.",
+					"BaseAttributeReference": {
+						"Entity": "ScheduledFlightLeg.cdm.json/ScheduledFlightLeg",
+						"Name": "OffPeakFlightIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "FlightLegTypeId",
+					"Description": "The unique identifier of a Flight Leg Type.",
+					"BaseAttributeReference": {
+						"Entity": "ScheduledFlightLeg.cdm.json/ScheduledFlightLeg",
+						"Name": "FlightLegTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "CarrierRouteId",
+					"Description": "The unique identifier of a Carrier Route.",
+					"BaseAttributeReference": {
+						"Entity": "ScheduledFlightLeg.cdm.json/ScheduledFlightLeg",
+						"Name": "CarrierRouteId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "CarrierRouteLegNumber",
+					"Description": "The assigned to the Carrier Route Leg.",
+					"BaseAttributeReference": {
+						"Entity": "ScheduledFlightLeg.cdm.json/ScheduledFlightLeg",
+						"Name": "CarrierRouteLegNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"CarrierId\":{\"entity\":\"ScheduledFlightLeg.cdm.json/ScheduledFlightLeg\",\"name\":\"CarrierId\"},\"FlightNumber\":{\"entity\":\"ScheduledFlightLeg.cdm.json/ScheduledFlightLeg\",\"name\":\"FlightNumber\"},\"ScheduledFlightDate\":{\"entity\":\"ScheduledFlightLeg.cdm.json/ScheduledFlightLeg\",\"name\":\"ScheduledFlightDate\"},\"ScheduledFlightLegDepartureAirportCode\":{\"entity\":\"ScheduledFlightLeg.cdm.json/ScheduledFlightLeg\",\"name\":\"ScheduledFlightLegDepartureAirportCode\"},\"ScheduledFlightLegArrivalAirportCode\":{\"entity\":\"ScheduledFlightLeg.cdm.json/ScheduledFlightLeg\",\"name\":\"ScheduledFlightLegArrivalAirportCode\"},\"ScheduledFlightLegNumber\":{\"entity\":\"ScheduledFlightLeg.cdm.json/ScheduledFlightLeg\",\"name\":\"ScheduledFlightLegNumber\"},\"AircraftId\":{\"entity\":\"ScheduledFlightLeg.cdm.json/ScheduledFlightLeg\",\"name\":\"AircraftId\"},\"ScheduledFlightLegArrivalTimestamp\":{\"entity\":\"ScheduledFlightLeg.cdm.json/ScheduledFlightLeg\",\"name\":\"ScheduledFlightLegArrivalTimestamp\"},\"ScheduledFlightLegDepartureTimestamp\":{\"entity\":\"ScheduledFlightLeg.cdm.json/ScheduledFlightLeg\",\"name\":\"ScheduledFlightLegDepartureTimestamp\"},\"PlannedBoardingTimestamp\":{\"entity\":\"ScheduledFlightLeg.cdm.json/ScheduledFlightLeg\",\"name\":\"PlannedBoardingTimestamp\"},\"ActualBoardingTimestamp\":{\"entity\":\"ScheduledFlightLeg.cdm.json/ScheduledFlightLeg\",\"name\":\"ActualBoardingTimestamp\"},\"PlannedDepartureTimestamp\":{\"entity\":\"ScheduledFlightLeg.cdm.json/ScheduledFlightLeg\",\"name\":\"PlannedDepartureTimestamp\"},\"ActualDepartureTimestamp\":{\"entity\":\"ScheduledFlightLeg.cdm.json/ScheduledFlightLeg\",\"name\":\"ActualDepartureTimestamp\"},\"DepartureAirportConcourseNumber\":{\"entity\":\"ScheduledFlightLeg.cdm.json/ScheduledFlightLeg\",\"name\":\"DepartureAirportConcourseNumber\"},\"DepartureAirportGateNumber\":{\"entity\":\"ScheduledFlightLeg.cdm.json/ScheduledFlightLeg\",\"name\":\"DepartureAirportGateNumber\"},\"PlannedArrivalTimestamp\":{\"entity\":\"ScheduledFlightLeg.cdm.json/ScheduledFlightLeg\",\"name\":\"PlannedArrivalTimestamp\"},\"ActualArrivalTimestamp\":{\"entity\":\"ScheduledFlightLeg.cdm.json/ScheduledFlightLeg\",\"name\":\"ActualArrivalTimestamp\"},\"PlannedFlyingTimeHours\":{\"entity\":\"ScheduledFlightLeg.cdm.json/ScheduledFlightLeg\",\"name\":\"PlannedFlyingTimeHours\"},\"ActualFlyingTimeHours\":{\"entity\":\"ScheduledFlightLeg.cdm.json/ScheduledFlightLeg\",\"name\":\"ActualFlyingTimeHours\"},\"ArrivalAirportConcourseNumber\":{\"entity\":\"ScheduledFlightLeg.cdm.json/ScheduledFlightLeg\",\"name\":\"ArrivalAirportConcourseNumber\"},\"ArrivalAirportGateNumber\":{\"entity\":\"ScheduledFlightLeg.cdm.json/ScheduledFlightLeg\",\"name\":\"ArrivalAirportGateNumber\"},\"LayoverTime\":{\"entity\":\"ScheduledFlightLeg.cdm.json/ScheduledFlightLeg\",\"name\":\"LayoverTime\"},\"EstimatedFlyingTimeInMinutes\":{\"entity\":\"ScheduledFlightLeg.cdm.json/ScheduledFlightLeg\",\"name\":\"EstimatedFlyingTimeInMinutes\"},\"FrequentFlyerMileageDistance\":{\"entity\":\"ScheduledFlightLeg.cdm.json/ScheduledFlightLeg\",\"name\":\"FrequentFlyerMileageDistance\"},\"MultiLegFlightIndicator\":{\"entity\":\"ScheduledFlightLeg.cdm.json/ScheduledFlightLeg\",\"name\":\"MultiLegFlightIndicator\"},\"PassportRequiredIndicator\":{\"entity\":\"ScheduledFlightLeg.cdm.json/ScheduledFlightLeg\",\"name\":\"PassportRequiredIndicator\"},\"UsDomesticFlightIndicator\":{\"entity\":\"ScheduledFlightLeg.cdm.json/ScheduledFlightLeg\",\"name\":\"UsDomesticFlightIndicator\"},\"PeakFlightIndicator\":{\"entity\":\"ScheduledFlightLeg.cdm.json/ScheduledFlightLeg\",\"name\":\"PeakFlightIndicator\"},\"OffPeakFlightIndicator\":{\"entity\":\"ScheduledFlightLeg.cdm.json/ScheduledFlightLeg\",\"name\":\"OffPeakFlightIndicator\"},\"FlightLegTypeId\":{\"entity\":\"ScheduledFlightLeg.cdm.json/ScheduledFlightLeg\",\"name\":\"FlightLegTypeId\"},\"CarrierRouteId\":{\"entity\":\"ScheduledFlightLeg.cdm.json/ScheduledFlightLeg\",\"name\":\"CarrierRouteId\"},\"CarrierRouteLegNumber\":{\"entity\":\"ScheduledFlightLeg.cdm.json/ScheduledFlightLeg\",\"name\":\"CarrierRouteLegNumber\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"ScheduledFlightLeg\",\"path\":\"ScheduledFlightLeg.cdm.json/ScheduledFlightLeg\"},\"description\":\"The individual segments or legs of a flight involving Segment of a flight involving a stopover, change of aircraft, or change of airline.\\n\\nEx:\\nFor a journey from London (England) to Honolulu(USA) with a plane change at San Francisco you have 2 flight legs/segments. The first leg is London to San Francisco and the 2nd leg is San Francisco to Honolulu. Thus for the journey San Francisco is the via point.\",\"primaryKey\":[\"CarrierId\",\"FlightNumber\",\"ScheduledFlightDate\",\"ScheduledFlightLegDepartureAirportCode\",\"ScheduledFlightLegArrivalAirportCode\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"CarrierId\",\"attributeReference\":{\"entity\":\"ScheduledFlightLeg.cdm.json/ScheduledFlightLeg\",\"name\":\"CarrierId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"FlightNumber\",\"attributeReference\":{\"entity\":\"ScheduledFlightLeg.cdm.json/ScheduledFlightLeg\",\"name\":\"FlightNumber\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ScheduledFlightDate\",\"attributeReference\":{\"entity\":\"ScheduledFlightLeg.cdm.json/ScheduledFlightLeg\",\"name\":\"ScheduledFlightDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\"},{\"type\":\"Existing\",\"name\":\"ScheduledFlightLegDepartureAirportCode\",\"attributeReference\":{\"entity\":\"ScheduledFlightLeg.cdm.json/ScheduledFlightLeg\",\"name\":\"ScheduledFlightLegDepartureAirportCode\"},\"dataType\":\"string\",\"dataTypeLength\":3},{\"type\":\"Existing\",\"name\":\"ScheduledFlightLegArrivalAirportCode\",\"attributeReference\":{\"entity\":\"ScheduledFlightLeg.cdm.json/ScheduledFlightLeg\",\"name\":\"ScheduledFlightLegArrivalAirportCode\"},\"dataType\":\"string\",\"dataTypeLength\":3},{\"type\":\"Existing\",\"name\":\"ScheduledFlightLegNumber\",\"attributeReference\":{\"entity\":\"ScheduledFlightLeg.cdm.json/ScheduledFlightLeg\",\"name\":\"ScheduledFlightLegNumber\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"AircraftId\",\"attributeReference\":{\"entity\":\"ScheduledFlightLeg.cdm.json/ScheduledFlightLeg\",\"name\":\"AircraftId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ScheduledFlightLegArrivalTimestamp\",\"attributeReference\":{\"entity\":\"ScheduledFlightLeg.cdm.json/ScheduledFlightLeg\",\"name\":\"ScheduledFlightLegArrivalTimestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"ScheduledFlightLegDepartureTimestamp\",\"attributeReference\":{\"entity\":\"ScheduledFlightLeg.cdm.json/ScheduledFlightLeg\",\"name\":\"ScheduledFlightLegDepartureTimestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"PlannedBoardingTimestamp\",\"attributeReference\":{\"entity\":\"ScheduledFlightLeg.cdm.json/ScheduledFlightLeg\",\"name\":\"PlannedBoardingTimestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"ActualBoardingTimestamp\",\"attributeReference\":{\"entity\":\"ScheduledFlightLeg.cdm.json/ScheduledFlightLeg\",\"name\":\"ActualBoardingTimestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"PlannedDepartureTimestamp\",\"attributeReference\":{\"entity\":\"ScheduledFlightLeg.cdm.json/ScheduledFlightLeg\",\"name\":\"PlannedDepartureTimestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"ActualDepartureTimestamp\",\"attributeReference\":{\"entity\":\"ScheduledFlightLeg.cdm.json/ScheduledFlightLeg\",\"name\":\"ActualDepartureTimestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"DepartureAirportConcourseNumber\",\"attributeReference\":{\"entity\":\"ScheduledFlightLeg.cdm.json/ScheduledFlightLeg\",\"name\":\"DepartureAirportConcourseNumber\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"DepartureAirportGateNumber\",\"attributeReference\":{\"entity\":\"ScheduledFlightLeg.cdm.json/ScheduledFlightLeg\",\"name\":\"DepartureAirportGateNumber\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"PlannedArrivalTimestamp\",\"attributeReference\":{\"entity\":\"ScheduledFlightLeg.cdm.json/ScheduledFlightLeg\",\"name\":\"PlannedArrivalTimestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"ActualArrivalTimestamp\",\"attributeReference\":{\"entity\":\"ScheduledFlightLeg.cdm.json/ScheduledFlightLeg\",\"name\":\"ActualArrivalTimestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"PlannedFlyingTimeHours\",\"attributeReference\":{\"entity\":\"ScheduledFlightLeg.cdm.json/ScheduledFlightLeg\",\"name\":\"PlannedFlyingTimeHours\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ActualFlyingTimeHours\",\"attributeReference\":{\"entity\":\"ScheduledFlightLeg.cdm.json/ScheduledFlightLeg\",\"name\":\"ActualFlyingTimeHours\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ArrivalAirportConcourseNumber\",\"attributeReference\":{\"entity\":\"ScheduledFlightLeg.cdm.json/ScheduledFlightLeg\",\"name\":\"ArrivalAirportConcourseNumber\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ArrivalAirportGateNumber\",\"attributeReference\":{\"entity\":\"ScheduledFlightLeg.cdm.json/ScheduledFlightLeg\",\"name\":\"ArrivalAirportGateNumber\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"LayoverTime\",\"attributeReference\":{\"entity\":\"ScheduledFlightLeg.cdm.json/ScheduledFlightLeg\",\"name\":\"LayoverTime\"},\"dataType\":\"string\",\"dataTypeLength\":256},{\"type\":\"Existing\",\"name\":\"EstimatedFlyingTimeInMinutes\",\"attributeReference\":{\"entity\":\"ScheduledFlightLeg.cdm.json/ScheduledFlightLeg\",\"name\":\"EstimatedFlyingTimeInMinutes\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"FrequentFlyerMileageDistance\",\"attributeReference\":{\"entity\":\"ScheduledFlightLeg.cdm.json/ScheduledFlightLeg\",\"name\":\"FrequentFlyerMileageDistance\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"MultiLegFlightIndicator\",\"attributeReference\":{\"entity\":\"ScheduledFlightLeg.cdm.json/ScheduledFlightLeg\",\"name\":\"MultiLegFlightIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"PassportRequiredIndicator\",\"attributeReference\":{\"entity\":\"ScheduledFlightLeg.cdm.json/ScheduledFlightLeg\",\"name\":\"PassportRequiredIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"UsDomesticFlightIndicator\",\"attributeReference\":{\"entity\":\"ScheduledFlightLeg.cdm.json/ScheduledFlightLeg\",\"name\":\"UsDomesticFlightIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"PeakFlightIndicator\",\"attributeReference\":{\"entity\":\"ScheduledFlightLeg.cdm.json/ScheduledFlightLeg\",\"name\":\"PeakFlightIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"OffPeakFlightIndicator\",\"attributeReference\":{\"entity\":\"ScheduledFlightLeg.cdm.json/ScheduledFlightLeg\",\"name\":\"OffPeakFlightIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"FlightLegTypeId\",\"attributeReference\":{\"entity\":\"ScheduledFlightLeg.cdm.json/ScheduledFlightLeg\",\"name\":\"FlightLegTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"CarrierRouteId\",\"attributeReference\":{\"entity\":\"ScheduledFlightLeg.cdm.json/ScheduledFlightLeg\",\"name\":\"CarrierRouteId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"CarrierRouteLegNumber\",\"attributeReference\":{\"entity\":\"ScheduledFlightLeg.cdm.json/ScheduledFlightLeg\",\"name\":\"CarrierRouteLegNumber\"},\"dataType\":\"integer\"}]}}}",
+			"Description": "The individual segments or legs of a flight involving Segment of a flight involving a stopover, change of aircraft, or change of airline.\n\nEx:\nFor a journey from London (England) to Honolulu(USA) with a plane change at San Francisco you have 2 flight legs/segments. The first leg is London to San Francisco and the 2nd leg is San Francisco to Honolulu. Thus for the journey San Francisco is the via point.",
+			"DisplayFolderInfo": "{\"name\":\"Shipping\",\"colorCode\":\"#000B42\"}",
+			"PrimaryKeys": "CarrierId,FlightNumber,ScheduledFlightDate,ScheduledFlightLegDepartureAirportCode,ScheduledFlightLegArrivalAirportCode"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

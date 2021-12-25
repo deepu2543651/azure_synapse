@@ -1,0 +1,86 @@
+{
+	"name": "ShipmentRouteStatusType",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "ShipmentRouteStatusType",
+		"Description": "The status type of a shipment route (\"Leg\"):\n\nEx:\n- Planned leg\n- Scheduled leg\n- Leg in transit\n- Let Canceled\n- Leg pending plan\n- Leg is storage = 'in storage'\n- Leg completed",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ShipmentRouteStatusTypeId",
+					"Description": "The unique identifier of a shipment route status type.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentRouteStatusType.cdm.json/ShipmentRouteStatusType",
+						"Name": "ShipmentRouteStatusTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ShipmentRouteStatusTypeName",
+					"Description": "The name of a shipment route status type.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentRouteStatusType.cdm.json/ShipmentRouteStatusType",
+						"Name": "ShipmentRouteStatusTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ShipmentRouteStatusTypeDescription",
+					"Description": "The description of a shipment route status type.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentRouteStatusType.cdm.json/ShipmentRouteStatusType",
+						"Name": "ShipmentRouteStatusTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ShipmentRouteStatusTypeId\":{\"entity\":\"ShipmentRouteStatusType.cdm.json/ShipmentRouteStatusType\",\"name\":\"ShipmentRouteStatusTypeId\"},\"ShipmentRouteStatusTypeName\":{\"entity\":\"ShipmentRouteStatusType.cdm.json/ShipmentRouteStatusType\",\"name\":\"ShipmentRouteStatusTypeName\"},\"ShipmentRouteStatusTypeDescription\":{\"entity\":\"ShipmentRouteStatusType.cdm.json/ShipmentRouteStatusType\",\"name\":\"ShipmentRouteStatusTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"ShipmentRouteStatusType\",\"path\":\"ShipmentRouteStatusType.cdm.json/ShipmentRouteStatusType\"},\"description\":\"The status type of a shipment route (\\\"Leg\\\"):\\n\\nEx:\\n- Planned leg\\n- Scheduled leg\\n- Leg in transit\\n- Let Canceled\\n- Leg pending plan\\n- Leg is storage = 'in storage'\\n- Leg completed\",\"primaryKey\":[\"ShipmentRouteStatusTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"ShipmentRouteStatusTypeId\",\"attributeReference\":{\"entity\":\"ShipmentRouteStatusType.cdm.json/ShipmentRouteStatusType\",\"name\":\"ShipmentRouteStatusTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ShipmentRouteStatusTypeName\",\"attributeReference\":{\"entity\":\"ShipmentRouteStatusType.cdm.json/ShipmentRouteStatusType\",\"name\":\"ShipmentRouteStatusTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"ShipmentRouteStatusTypeDescription\",\"attributeReference\":{\"entity\":\"ShipmentRouteStatusType.cdm.json/ShipmentRouteStatusType\",\"name\":\"ShipmentRouteStatusTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512}]}}}",
+			"Description": "The status type of a shipment route (\"Leg\"):\n\nEx:\n- Planned leg\n- Scheduled leg\n- Leg in transit\n- Let Canceled\n- Leg pending plan\n- Leg is storage = 'in storage'\n- Leg completed",
+			"DisplayFolderInfo": "{\"name\":\"Shipping\",\"colorCode\":\"#000B42\"}",
+			"PrimaryKeys": "ShipmentRouteStatusTypeId"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

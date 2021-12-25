@@ -1,0 +1,26 @@
+{
+	"name": "relationship-uoexhtsijz",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "relationship-uoexhtsijz",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "InsuranceOption",
+		"ToTableName": "CarrierRouteTariffSchedule",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "InsuranceOptionId",
+				"ToColumnName": "InsuranceOptionId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"InsuranceOption.cdm.json/InsuranceOption\",\"toEntity\":\"CarrierRouteTariffSchedule.cdm.json/CarrierRouteTariffSchedule\",\"joinPairs\":[{\"fromAttribute\":\"InsuranceOptionId\",\"toAttribute\":\"InsuranceOptionId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

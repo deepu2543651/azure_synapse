@@ -1,0 +1,69 @@
+{
+	"name": "HtsScheduleBCode",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "HtsScheduleBCode",
+		"Description": "The U.S. defines products using 10-digit HTS codes. Exports codes (which the U.S. calls Schedule B) are administered by the U.S. Census Bureau. Import codes are administered by the U.S. International Trade Commission (USITC).\n\nAll of the imports and export codes used by the United States are based on the Harmonized Tariff System (HTS). The HTS assigns 6-digit codes for general categories. Countries which use the HTS are allowed to define commodities at a more detailed level than 6-digits, but all definitions must be within that 6-digit framework. \n\nWhat's the difference between the Schedule B codes (for exports) and the Harmonized Tariff Schedule (HTS) codes (for imports)?\nAll of the imports and export codes used by the United States are based on the Harmonized Tariff System (HTS). The HTS assigns 6-digit codes for general categories. Countries which use the HTS are allowed to define commodities at a more detailed level than 6-digits, but all definitions must be within that 6-digit framework. \n\nThe U.S. defines products using 10-digit HTS codes. Exports codes (which the U.S. calls Schedule B) are administered by the U.S. Census Bureau. Import codes are administered by the U.S. International Trade Commission (USITC). \n\nWeb sites for U.S. import and export HTS codes:",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "HtsScheduleBCode",
+					"Description": "The unique code identifying items within the HTS Schedule B.",
+					"BaseAttributeReference": {
+						"Entity": "HtsScheduleBCode.cdm.json/HtsScheduleBCode",
+						"Name": "HtsScheduleBCode"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "HtsScheduleBCommodityDescription",
+					"Description": "The description of the HTS Schedule B item.",
+					"BaseAttributeReference": {
+						"Entity": "HtsScheduleBCode.cdm.json/HtsScheduleBCode",
+						"Name": "HtsScheduleBCommodityDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"HtsScheduleBCode\":{\"entity\":\"HtsScheduleBCode.cdm.json/HtsScheduleBCode\",\"name\":\"HtsScheduleBCode\"},\"HtsScheduleBCommodityDescription\":{\"entity\":\"HtsScheduleBCode.cdm.json/HtsScheduleBCode\",\"name\":\"HtsScheduleBCommodityDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"HtsScheduleBCode\",\"path\":\"HtsScheduleBCode.cdm.json/HtsScheduleBCode\"},\"description\":\"The U.S. defines products using 10-digit HTS codes. Exports codes (which the U.S. calls Schedule B) are administered by the U.S. Census Bureau. Import codes are administered by the U.S. International Trade Commission (USITC).\\n\\nAll of the imports and export codes used by the United States are based on the Harmonized Tariff System (HTS). The HTS assigns 6-digit codes for general categories. Countries which use the HTS are allowed to define commodities at a more detailed level than 6-digits, but all definitions must be within that 6-digit framework. \\n\\nWhat's the difference between the Schedule B codes (for exports) and the Harmonized Tariff Schedule (HTS) codes (for imports)?\\nAll of the imports and export codes used by the United States are based on the Harmonized Tariff System (HTS). The HTS assigns 6-digit codes for general categories. Countries which use the HTS are allowed to define commodities at a more detailed level than 6-digits, but all definitions must be within that 6-digit framework. \\n\\nThe U.S. defines products using 10-digit HTS codes. Exports codes (which the U.S. calls Schedule B) are administered by the U.S. Census Bureau. Import codes are administered by the U.S. International Trade Commission (USITC). \\n\\nWeb sites for U.S. import and export HTS codes:\",\"primaryKey\":[\"HtsScheduleBCode\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"HtsScheduleBCode\",\"attributeReference\":{\"entity\":\"HtsScheduleBCode.cdm.json/HtsScheduleBCode\",\"name\":\"HtsScheduleBCode\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"HtsScheduleBCommodityDescription\",\"attributeReference\":{\"entity\":\"HtsScheduleBCode.cdm.json/HtsScheduleBCode\",\"name\":\"HtsScheduleBCommodityDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512}]}}}",
+			"Description": "The U.S. defines products using 10-digit HTS codes. Exports codes (which the U.S. calls Schedule B) are administered by the U.S. Census Bureau. Import codes are administered by the U.S. International Trade Commission (USITC).\n\nAll of the imports and export codes used by the United States are based on the Harmonized Tariff System (HTS). The HTS assigns 6-digit codes for general categories. Countries which use the HTS are allowed to define commodities at a more detailed level than 6-digits, but all definitions must be within that 6-digit framework. \n\nWhat's the difference between the Schedule B codes (for exports) and the Harmonized Tariff Schedule (HTS) codes (for imports)?\nAll of the imports and export codes used by the United States are based on the Harmonized Tariff System (HTS). The HTS assigns 6-digit codes for general categories. Countries which use the HTS are allowed to define commodities at a more detailed level than 6-digits, but all definitions must be within that 6-digit framework. \n\nThe U.S. defines products using 10-digit HTS codes. Exports codes (which the U.S. calls Schedule B) are administered by the U.S. Census Bureau. Import codes are administered by the U.S. International Trade Commission (USITC). \n\nWeb sites for U.S. import and export HTS codes:",
+			"DisplayFolderInfo": "{\"name\":\"Shipping\",\"colorCode\":\"#000B42\"}",
+			"PrimaryKeys": "HtsScheduleBCode"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

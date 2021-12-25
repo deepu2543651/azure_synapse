@@ -1,0 +1,26 @@
+{
+	"name": "relationship-ujjxphgsgn",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "relationship-ujjxphgsgn",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Carrier",
+		"ToTableName": "Flight",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "CarrierId",
+				"ToColumnName": "OperatingCarrierId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Carrier.cdm.json/Carrier\",\"toEntity\":\"Flight.cdm.json/Flight\",\"joinPairs\":[{\"fromAttribute\":\"CarrierId\",\"toAttribute\":\"OperatingCarrierId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

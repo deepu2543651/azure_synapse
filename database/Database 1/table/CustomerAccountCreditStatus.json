@@ -1,0 +1,119 @@
+{
+	"name": "CustomerAccountCreditStatus",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "CustomerAccountCreditStatus",
+		"Description": "The Credit Status of the Customer Account for the associated period.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "CustomerAccountId",
+					"Description": "The unique identifier of a Customer Account.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountCreditStatus.cdm.json/CustomerAccountCreditStatus",
+						"Name": "CustomerAccountId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "PeriodStartTimestamp",
+					"Description": "The period start timestamp associated with the information.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountCreditStatus.cdm.json/CustomerAccountCreditStatus",
+						"Name": "PeriodStartTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "PeriodEndTimestamp",
+					"Description": "The period end timestamp associated with the information.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountCreditStatus.cdm.json/CustomerAccountCreditStatus",
+						"Name": "PeriodEndTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "CreditStatusTypeId",
+					"Description": "The unique identifier of a Credit Status Type.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountCreditStatus.cdm.json/CustomerAccountCreditStatus",
+						"Name": "CreditStatusTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "CreditStatusNote",
+					"Description": "A note, comment or additional information regarding the Credit Status.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountCreditStatus.cdm.json/CustomerAccountCreditStatus",
+						"Name": "CreditStatusNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"CustomerAccountId\":{\"entity\":\"CustomerAccountCreditStatus.cdm.json/CustomerAccountCreditStatus\",\"name\":\"CustomerAccountId\"},\"PeriodStartTimestamp\":{\"entity\":\"CustomerAccountCreditStatus.cdm.json/CustomerAccountCreditStatus\",\"name\":\"PeriodStartTimestamp\"},\"PeriodEndTimestamp\":{\"entity\":\"CustomerAccountCreditStatus.cdm.json/CustomerAccountCreditStatus\",\"name\":\"PeriodEndTimestamp\"},\"CreditStatusTypeId\":{\"entity\":\"CustomerAccountCreditStatus.cdm.json/CustomerAccountCreditStatus\",\"name\":\"CreditStatusTypeId\"},\"CreditStatusNote\":{\"entity\":\"CustomerAccountCreditStatus.cdm.json/CustomerAccountCreditStatus\",\"name\":\"CreditStatusNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"CustomerAccountCreditStatus\",\"path\":\"CustomerAccountCreditStatus.cdm.json/CustomerAccountCreditStatus\"},\"description\":\"The Credit Status of the Customer Account for the associated period.\",\"primaryKey\":[\"CustomerAccountId\",\"PeriodStartTimestamp\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"CustomerAccountId\",\"attributeReference\":{\"entity\":\"CustomerAccountCreditStatus.cdm.json/CustomerAccountCreditStatus\",\"name\":\"CustomerAccountId\"},\"dataType\":\"long\"},{\"type\":\"Existing\",\"name\":\"PeriodStartTimestamp\",\"attributeReference\":{\"entity\":\"CustomerAccountCreditStatus.cdm.json/CustomerAccountCreditStatus\",\"name\":\"PeriodStartTimestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"PeriodEndTimestamp\",\"attributeReference\":{\"entity\":\"CustomerAccountCreditStatus.cdm.json/CustomerAccountCreditStatus\",\"name\":\"PeriodEndTimestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"CreditStatusTypeId\",\"attributeReference\":{\"entity\":\"CustomerAccountCreditStatus.cdm.json/CustomerAccountCreditStatus\",\"name\":\"CreditStatusTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"CreditStatusNote\",\"attributeReference\":{\"entity\":\"CustomerAccountCreditStatus.cdm.json/CustomerAccountCreditStatus\",\"name\":\"CreditStatusNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024}]}}}",
+			"Description": "The Credit Status of the Customer Account for the associated period.",
+			"DisplayFolderInfo": "{\"name\":\"Customer Account\",\"colorCode\":\"#022F22\"}",
+			"PrimaryKeys": "CustomerAccountId,PeriodStartTimestamp"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

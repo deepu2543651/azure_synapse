@@ -1,0 +1,26 @@
+{
+	"name": "relationship-xnakgxozrb",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "relationship-xnakgxozrb",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "ShipmentStatusType",
+		"ToTableName": "ShipmentItemStatus",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ShipmentStatusTypeId",
+				"ToColumnName": "ShipmentStatusTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"ShipmentStatusType.cdm.json/ShipmentStatusType\",\"toEntity\":\"ShipmentItemStatus.cdm.json/ShipmentItemStatus\",\"joinPairs\":[{\"fromAttribute\":\"ShipmentStatusTypeId\",\"toAttribute\":\"ShipmentStatusTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

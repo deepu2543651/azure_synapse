@@ -1,0 +1,26 @@
+{
+	"name": "relationship-grpmjrmsbu",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "relationship-grpmjrmsbu",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "CargoType",
+		"ToTableName": "CarrierRouteTariffSchedule",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "CargoTypeId",
+				"ToColumnName": "CargoTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"CargoType.cdm.json/CargoType\",\"toEntity\":\"CarrierRouteTariffSchedule.cdm.json/CarrierRouteTariffSchedule\",\"joinPairs\":[{\"fromAttribute\":\"CargoTypeId\",\"toAttribute\":\"CargoTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

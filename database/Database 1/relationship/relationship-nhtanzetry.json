@@ -1,0 +1,26 @@
+{
+	"name": "relationship-nhtanzetry",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "relationship-nhtanzetry",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "SoftwareProduct",
+		"ToTableName": "SoftwareProductVersion",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "SoftwareProductId",
+				"ToColumnName": "SoftwareProductId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"SoftwareProduct.cdm.json/SoftwareProduct\",\"toEntity\":\"SoftwareProductVersion.cdm.json/SoftwareProductVersion\",\"joinPairs\":[{\"fromAttribute\":\"SoftwareProductId\",\"toAttribute\":\"SoftwareProductId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

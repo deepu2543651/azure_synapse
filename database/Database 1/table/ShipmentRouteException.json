@@ -1,0 +1,219 @@
+{
+	"name": "ShipmentRouteException",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "ShipmentRouteException",
+		"Description": "Notations made during a route/leg.\n\nFor example when it is received at the carrier's terminal or loaded aboard a vessel. \n\nThey show any irregularities in packaging or actual or suspected damage to the cargo. Exceptions are then noted on the bill of lading.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ShipmentId",
+					"Description": "The unique identifier of a Shipment.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentRouteException.cdm.json/ShipmentRouteException",
+						"Name": "ShipmentId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ShipmentLegNumber",
+					"Description": "The unique identifier of the Shipment Leg Number, which equals the shipment leg 'sequence number'.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentRouteException.cdm.json/ShipmentRouteException",
+						"Name": "ShipmentLegNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ExceptionTypeId",
+					"Description": "The unique identifier of an Exception Type.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentRouteException.cdm.json/ShipmentRouteException",
+						"Name": "ExceptionTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PeriodStartTimestamp",
+					"Description": "The period start timestamp associated with the shipment route/leg.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentRouteException.cdm.json/ShipmentRouteException",
+						"Name": "PeriodStartTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "PeriodEndTimestamp",
+					"Description": "The period end timestamp associated with the shipment route/leg.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentRouteException.cdm.json/ShipmentRouteException",
+						"Name": "PeriodEndTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "ExceptionConditionId",
+					"Description": "The unique identifier of an exception condition.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentRouteException.cdm.json/ShipmentRouteException",
+						"Name": "ExceptionConditionId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ShipmentRouteExceptionGpsLongitudePosition",
+					"Description": "The GPS position of the Shipment expressed in longitude. This may be an in-transit location.\n\nEx:\nGPS Coords (Ex= 39deg 58.589min) - seconds are converted to decimal format.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentRouteException.cdm.json/ShipmentRouteException",
+						"Name": "ShipmentRouteExceptionGpsLongitudePosition"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Precision": 7,
+						"Scale": 4,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "ShipmentRouteExceptionGpsLatitudePosition",
+					"Description": "The GPS position of the Shipment Location. expressed in latitude. This may be an in-transit location.\n\nEx:\nGPS Coords (Ex= 39deg 58.589min) - seconds are converted to decimal format.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentRouteException.cdm.json/ShipmentRouteException",
+						"Name": "ShipmentRouteExceptionGpsLatitudePosition"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Precision": 7,
+						"Scale": 4,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "ShippingLocationId",
+					"Description": "The unique identifier of a Shipping Location.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentRouteException.cdm.json/ShipmentRouteException",
+						"Name": "ShippingLocationId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "LocationId",
+					"Description": "The unique identifier of a Location.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentRouteException.cdm.json/ShipmentRouteException",
+						"Name": "LocationId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ExceptionNote",
+					"Description": "A note, comment or additional information regarding the exception.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentRouteException.cdm.json/ShipmentRouteException",
+						"Name": "ExceptionNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ShipmentId\":{\"entity\":\"ShipmentRouteException.cdm.json/ShipmentRouteException\",\"name\":\"ShipmentId\"},\"ShipmentLegNumber\":{\"entity\":\"ShipmentRouteException.cdm.json/ShipmentRouteException\",\"name\":\"ShipmentLegNumber\"},\"ExceptionTypeId\":{\"entity\":\"ShipmentRouteException.cdm.json/ShipmentRouteException\",\"name\":\"ExceptionTypeId\"},\"PeriodStartTimestamp\":{\"entity\":\"ShipmentRouteException.cdm.json/ShipmentRouteException\",\"name\":\"PeriodStartTimestamp\"},\"PeriodEndTimestamp\":{\"entity\":\"ShipmentRouteException.cdm.json/ShipmentRouteException\",\"name\":\"PeriodEndTimestamp\"},\"ExceptionConditionId\":{\"entity\":\"ShipmentRouteException.cdm.json/ShipmentRouteException\",\"name\":\"ExceptionConditionId\"},\"ShipmentRouteExceptionGpsLongitudePosition\":{\"entity\":\"ShipmentRouteException.cdm.json/ShipmentRouteException\",\"name\":\"ShipmentRouteExceptionGpsLongitudePosition\"},\"ShipmentRouteExceptionGpsLatitudePosition\":{\"entity\":\"ShipmentRouteException.cdm.json/ShipmentRouteException\",\"name\":\"ShipmentRouteExceptionGpsLatitudePosition\"},\"ShippingLocationId\":{\"entity\":\"ShipmentRouteException.cdm.json/ShipmentRouteException\",\"name\":\"ShippingLocationId\"},\"LocationId\":{\"entity\":\"ShipmentRouteException.cdm.json/ShipmentRouteException\",\"name\":\"LocationId\"},\"ExceptionNote\":{\"entity\":\"ShipmentRouteException.cdm.json/ShipmentRouteException\",\"name\":\"ExceptionNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"ShipmentRouteException\",\"path\":\"ShipmentRouteException.cdm.json/ShipmentRouteException\"},\"description\":\"Notations made during a route/leg.\\n\\nFor example when it is received at the carrier's terminal or loaded aboard a vessel. \\n\\nThey show any irregularities in packaging or actual or suspected damage to the cargo. Exceptions are then noted on the bill of lading.\",\"primaryKey\":[\"ShipmentId\",\"ShipmentLegNumber\",\"ExceptionTypeId\",\"PeriodStartTimestamp\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"ShipmentId\",\"attributeReference\":{\"entity\":\"ShipmentRouteException.cdm.json/ShipmentRouteException\",\"name\":\"ShipmentId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ShipmentLegNumber\",\"attributeReference\":{\"entity\":\"ShipmentRouteException.cdm.json/ShipmentRouteException\",\"name\":\"ShipmentLegNumber\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ExceptionTypeId\",\"attributeReference\":{\"entity\":\"ShipmentRouteException.cdm.json/ShipmentRouteException\",\"name\":\"ExceptionTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"PeriodStartTimestamp\",\"attributeReference\":{\"entity\":\"ShipmentRouteException.cdm.json/ShipmentRouteException\",\"name\":\"PeriodStartTimestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"PeriodEndTimestamp\",\"attributeReference\":{\"entity\":\"ShipmentRouteException.cdm.json/ShipmentRouteException\",\"name\":\"PeriodEndTimestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"ExceptionConditionId\",\"attributeReference\":{\"entity\":\"ShipmentRouteException.cdm.json/ShipmentRouteException\",\"name\":\"ExceptionConditionId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ShipmentRouteExceptionGpsLongitudePosition\",\"attributeReference\":{\"entity\":\"ShipmentRouteException.cdm.json/ShipmentRouteException\",\"name\":\"ShipmentRouteExceptionGpsLongitudePosition\"},\"dataType\":\"decimal\",\"dataTypeLength\":7,\"scale\":4},{\"type\":\"Existing\",\"name\":\"ShipmentRouteExceptionGpsLatitudePosition\",\"attributeReference\":{\"entity\":\"ShipmentRouteException.cdm.json/ShipmentRouteException\",\"name\":\"ShipmentRouteExceptionGpsLatitudePosition\"},\"dataType\":\"decimal\",\"dataTypeLength\":7,\"scale\":4},{\"type\":\"Existing\",\"name\":\"ShippingLocationId\",\"attributeReference\":{\"entity\":\"ShipmentRouteException.cdm.json/ShipmentRouteException\",\"name\":\"ShippingLocationId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"LocationId\",\"attributeReference\":{\"entity\":\"ShipmentRouteException.cdm.json/ShipmentRouteException\",\"name\":\"LocationId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ExceptionNote\",\"attributeReference\":{\"entity\":\"ShipmentRouteException.cdm.json/ShipmentRouteException\",\"name\":\"ExceptionNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024}]}}}",
+			"Description": "Notations made during a route/leg.\n\nFor example when it is received at the carrier's terminal or loaded aboard a vessel. \n\nThey show any irregularities in packaging or actual or suspected damage to the cargo. Exceptions are then noted on the bill of lading.",
+			"DisplayFolderInfo": "{\"name\":\"Shipping\",\"colorCode\":\"#000B42\"}",
+			"PrimaryKeys": "ShipmentId,ShipmentLegNumber,ExceptionTypeId,PeriodStartTimestamp"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

@@ -1,0 +1,26 @@
+{
+	"name": "relationship-lkkptybgzz",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "relationship-lkkptybgzz",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "RateClass",
+		"ToTableName": "AirWaybillLineItem",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "RateClassId",
+				"ToColumnName": "RateClassId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"RateClass.cdm.json/RateClass\",\"toEntity\":\"AirWaybillLineItem.cdm.json/AirWaybillLineItem\",\"joinPairs\":[{\"fromAttribute\":\"RateClassId\",\"toAttribute\":\"RateClassId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

@@ -1,0 +1,86 @@
+{
+	"name": "ExportCategory",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "ExportCategory",
+		"Description": "A U.S. Government categorization of exports based upon common functions or characteristics.\n\nThe Export Category is used to build the 5-character number for every export product identifying the category, product group, type of control and country group level of control specified in the US Commerce Control List.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ExportCategoryId",
+					"Description": "The unique identifier of an Export Category.",
+					"BaseAttributeReference": {
+						"Entity": "ExportCategory.cdm.json/ExportCategory",
+						"Name": "ExportCategoryId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ExportCategoryName",
+					"Description": "The name of an Export Category.",
+					"BaseAttributeReference": {
+						"Entity": "ExportCategory.cdm.json/ExportCategory",
+						"Name": "ExportCategoryName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ExportCategoryDescription",
+					"Description": "The description of an Export Category.",
+					"BaseAttributeReference": {
+						"Entity": "ExportCategory.cdm.json/ExportCategory",
+						"Name": "ExportCategoryDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ExportCategoryId\":{\"entity\":\"ExportCategory.cdm.json/ExportCategory\",\"name\":\"ExportCategoryId\"},\"ExportCategoryName\":{\"entity\":\"ExportCategory.cdm.json/ExportCategory\",\"name\":\"ExportCategoryName\"},\"ExportCategoryDescription\":{\"entity\":\"ExportCategory.cdm.json/ExportCategory\",\"name\":\"ExportCategoryDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"ExportCategory\",\"path\":\"ExportCategory.cdm.json/ExportCategory\"},\"description\":\"A U.S. Government categorization of exports based upon common functions or characteristics.\\n\\nThe Export Category is used to build the 5-character number for every export product identifying the category, product group, type of control and country group level of control specified in the US Commerce Control List.\",\"primaryKey\":[\"ExportCategoryId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"ExportCategoryId\",\"attributeReference\":{\"entity\":\"ExportCategory.cdm.json/ExportCategory\",\"name\":\"ExportCategoryId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ExportCategoryName\",\"attributeReference\":{\"entity\":\"ExportCategory.cdm.json/ExportCategory\",\"name\":\"ExportCategoryName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"ExportCategoryDescription\",\"attributeReference\":{\"entity\":\"ExportCategory.cdm.json/ExportCategory\",\"name\":\"ExportCategoryDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512}]}}}",
+			"Description": "A U.S. Government categorization of exports based upon common functions or characteristics.\n\nThe Export Category is used to build the 5-character number for every export product identifying the category, product group, type of control and country group level of control specified in the US Commerce Control List.",
+			"DisplayFolderInfo": "{\"name\":\"Shipping\",\"colorCode\":\"#000B42\"}",
+			"PrimaryKeys": "ExportCategoryId"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

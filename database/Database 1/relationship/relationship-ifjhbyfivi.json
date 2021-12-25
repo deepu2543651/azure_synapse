@@ -1,0 +1,26 @@
+{
+	"name": "relationship-ifjhbyfivi",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "relationship-ifjhbyfivi",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "DayOfWeek",
+		"ToTableName": "FlightSchedule",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "DayOfWeekId",
+				"ToColumnName": "DayOfWeekId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"DayOfWeek.cdm.json/DayOfWeek\",\"toEntity\":\"FlightSchedule.cdm.json/FlightSchedule\",\"joinPairs\":[{\"fromAttribute\":\"DayOfWeekId\",\"toAttribute\":\"DayOfWeekId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

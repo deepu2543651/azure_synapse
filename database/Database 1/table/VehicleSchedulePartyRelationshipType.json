@@ -1,0 +1,86 @@
+{
+	"name": "VehicleSchedulePartyRelationshipType",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "VehicleSchedulePartyRelationshipType",
+		"Description": "The nature of the relationship between a vehicle schedule and a related party.\n\nEx:\n- Driver\n- Co-Driver",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "VehicleSchedulePartyRelationshipTypeId",
+					"Description": "The unique identifier of a Vehicle Schedule Party relationship type.",
+					"BaseAttributeReference": {
+						"Entity": "VehicleSchedulePartyRelationshipType.cdm.json/VehicleSchedulePartyRelationshipType",
+						"Name": "VehicleSchedulePartyRelationshipTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "VehicleSchedulePartyRelationshipTypeName",
+					"Description": "The name of a Vehicle Schedule Party relationship type.",
+					"BaseAttributeReference": {
+						"Entity": "VehicleSchedulePartyRelationshipType.cdm.json/VehicleSchedulePartyRelationshipType",
+						"Name": "VehicleSchedulePartyRelationshipTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "VehicleSchedulePartyRelationshipTypeDescription",
+					"Description": "The description of a Vehicle Schedule Party relationship type.",
+					"BaseAttributeReference": {
+						"Entity": "VehicleSchedulePartyRelationshipType.cdm.json/VehicleSchedulePartyRelationshipType",
+						"Name": "VehicleSchedulePartyRelationshipTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"VehicleSchedulePartyRelationshipTypeId\":{\"entity\":\"VehicleSchedulePartyRelationshipType.cdm.json/VehicleSchedulePartyRelationshipType\",\"name\":\"VehicleSchedulePartyRelationshipTypeId\"},\"VehicleSchedulePartyRelationshipTypeName\":{\"entity\":\"VehicleSchedulePartyRelationshipType.cdm.json/VehicleSchedulePartyRelationshipType\",\"name\":\"VehicleSchedulePartyRelationshipTypeName\"},\"VehicleSchedulePartyRelationshipTypeDescription\":{\"entity\":\"VehicleSchedulePartyRelationshipType.cdm.json/VehicleSchedulePartyRelationshipType\",\"name\":\"VehicleSchedulePartyRelationshipTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"VehicleSchedulePartyRelationshipType\",\"path\":\"VehicleSchedulePartyRelationshipType.cdm.json/VehicleSchedulePartyRelationshipType\"},\"description\":\"The nature of the relationship between a vehicle schedule and a related party.\\n\\nEx:\\n- Driver\\n- Co-Driver\",\"primaryKey\":[\"VehicleSchedulePartyRelationshipTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"VehicleSchedulePartyRelationshipTypeId\",\"attributeReference\":{\"entity\":\"VehicleSchedulePartyRelationshipType.cdm.json/VehicleSchedulePartyRelationshipType\",\"name\":\"VehicleSchedulePartyRelationshipTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"VehicleSchedulePartyRelationshipTypeName\",\"attributeReference\":{\"entity\":\"VehicleSchedulePartyRelationshipType.cdm.json/VehicleSchedulePartyRelationshipType\",\"name\":\"VehicleSchedulePartyRelationshipTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"VehicleSchedulePartyRelationshipTypeDescription\",\"attributeReference\":{\"entity\":\"VehicleSchedulePartyRelationshipType.cdm.json/VehicleSchedulePartyRelationshipType\",\"name\":\"VehicleSchedulePartyRelationshipTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512}]}}}",
+			"Description": "The nature of the relationship between a vehicle schedule and a related party.\n\nEx:\n- Driver\n- Co-Driver",
+			"DisplayFolderInfo": "{\"name\":\"Shipping\",\"colorCode\":\"#000B42\"}",
+			"PrimaryKeys": "VehicleSchedulePartyRelationshipTypeId"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

@@ -1,0 +1,26 @@
+{
+	"name": "relationship-jbloomujko",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "relationship-jbloomujko",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Location",
+		"ToTableName": "ShipmentItemConsolidation",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "LocationId",
+				"ToColumnName": "ConsolidationLocationId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Location.cdm.json/Location\",\"toEntity\":\"ShipmentItemConsolidation.cdm.json/ShipmentItemConsolidation\",\"joinPairs\":[{\"fromAttribute\":\"LocationId\",\"toAttribute\":\"ConsolidationLocationId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

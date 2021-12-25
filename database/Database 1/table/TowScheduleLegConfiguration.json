@@ -1,0 +1,168 @@
+{
+	"name": "TowScheduleLegConfiguration",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "TowScheduleLegConfiguration",
+		"Description": "The combination or barges that comprise a scheduled towboat tow. Timestamps are used for the configuration as barges may be added or removed during the journey.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "TowId",
+					"Description": "The unique identifier of a Train.",
+					"BaseAttributeReference": {
+						"Entity": "TowScheduleLegConfiguration.cdm.json/TowScheduleLegConfiguration",
+						"Name": "TowId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "TowScheduledDepartureTimestamp",
+					"Description": "The scheduled departure timestamp.",
+					"BaseAttributeReference": {
+						"Entity": "TowScheduleLegConfiguration.cdm.json/TowScheduleLegConfiguration",
+						"Name": "TowScheduledDepartureTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "TowScheduleLegNumber",
+					"Description": "The leg number of the tow schedule.",
+					"BaseAttributeReference": {
+						"Entity": "TowScheduleLegConfiguration.cdm.json/TowScheduleLegConfiguration",
+						"Name": "TowScheduleLegNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "TowScheduleLegPosition",
+					"Description": "The position of the barge in the tow configuration.",
+					"BaseAttributeReference": {
+						"Entity": "TowScheduleLegConfiguration.cdm.json/TowScheduleLegConfiguration",
+						"Name": "TowScheduleLegPosition"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PeriodStartTimestamp",
+					"Description": "The period start timestamp that the barge is configured with the associated tow.",
+					"BaseAttributeReference": {
+						"Entity": "TowScheduleLegConfiguration.cdm.json/TowScheduleLegConfiguration",
+						"Name": "PeriodStartTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "PeriodEndTimestamp",
+					"Description": "The period end timestamp that the barge is configured with the associated towboat tow.",
+					"BaseAttributeReference": {
+						"Entity": "TowScheduleLegConfiguration.cdm.json/TowScheduleLegConfiguration",
+						"Name": "PeriodEndTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "BargeId",
+					"Description": "The unique identifier of a Barge instance.",
+					"BaseAttributeReference": {
+						"Entity": "TowScheduleLegConfiguration.cdm.json/TowScheduleLegConfiguration",
+						"Name": "BargeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "TowScheduleLegConfigurationNote",
+					"Description": "A note, comment or additional information regarding the tow schedule leg configuration.",
+					"BaseAttributeReference": {
+						"Entity": "TowScheduleLegConfiguration.cdm.json/TowScheduleLegConfiguration",
+						"Name": "TowScheduleLegConfigurationNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"TowId\":{\"entity\":\"TowScheduleLegConfiguration.cdm.json/TowScheduleLegConfiguration\",\"name\":\"TowId\"},\"TowScheduledDepartureTimestamp\":{\"entity\":\"TowScheduleLegConfiguration.cdm.json/TowScheduleLegConfiguration\",\"name\":\"TowScheduledDepartureTimestamp\"},\"TowScheduleLegNumber\":{\"entity\":\"TowScheduleLegConfiguration.cdm.json/TowScheduleLegConfiguration\",\"name\":\"TowScheduleLegNumber\"},\"TowScheduleLegPosition\":{\"entity\":\"TowScheduleLegConfiguration.cdm.json/TowScheduleLegConfiguration\",\"name\":\"TowScheduleLegPosition\"},\"PeriodStartTimestamp\":{\"entity\":\"TowScheduleLegConfiguration.cdm.json/TowScheduleLegConfiguration\",\"name\":\"PeriodStartTimestamp\"},\"PeriodEndTimestamp\":{\"entity\":\"TowScheduleLegConfiguration.cdm.json/TowScheduleLegConfiguration\",\"name\":\"PeriodEndTimestamp\"},\"BargeId\":{\"entity\":\"TowScheduleLegConfiguration.cdm.json/TowScheduleLegConfiguration\",\"name\":\"BargeId\"},\"TowScheduleLegConfigurationNote\":{\"entity\":\"TowScheduleLegConfiguration.cdm.json/TowScheduleLegConfiguration\",\"name\":\"TowScheduleLegConfigurationNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"TowScheduleLegConfiguration\",\"path\":\"TowScheduleLegConfiguration.cdm.json/TowScheduleLegConfiguration\"},\"description\":\"The combination or barges that comprise a scheduled towboat tow. Timestamps are used for the configuration as barges may be added or removed during the journey.\",\"primaryKey\":[\"TowId\",\"TowScheduledDepartureTimestamp\",\"TowScheduleLegNumber\",\"TowScheduleLegPosition\",\"PeriodStartTimestamp\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"TowId\",\"attributeReference\":{\"entity\":\"TowScheduleLegConfiguration.cdm.json/TowScheduleLegConfiguration\",\"name\":\"TowId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"TowScheduledDepartureTimestamp\",\"attributeReference\":{\"entity\":\"TowScheduleLegConfiguration.cdm.json/TowScheduleLegConfiguration\",\"name\":\"TowScheduledDepartureTimestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"TowScheduleLegNumber\",\"attributeReference\":{\"entity\":\"TowScheduleLegConfiguration.cdm.json/TowScheduleLegConfiguration\",\"name\":\"TowScheduleLegNumber\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"TowScheduleLegPosition\",\"attributeReference\":{\"entity\":\"TowScheduleLegConfiguration.cdm.json/TowScheduleLegConfiguration\",\"name\":\"TowScheduleLegPosition\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"PeriodStartTimestamp\",\"attributeReference\":{\"entity\":\"TowScheduleLegConfiguration.cdm.json/TowScheduleLegConfiguration\",\"name\":\"PeriodStartTimestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"PeriodEndTimestamp\",\"attributeReference\":{\"entity\":\"TowScheduleLegConfiguration.cdm.json/TowScheduleLegConfiguration\",\"name\":\"PeriodEndTimestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"BargeId\",\"attributeReference\":{\"entity\":\"TowScheduleLegConfiguration.cdm.json/TowScheduleLegConfiguration\",\"name\":\"BargeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"TowScheduleLegConfigurationNote\",\"attributeReference\":{\"entity\":\"TowScheduleLegConfiguration.cdm.json/TowScheduleLegConfiguration\",\"name\":\"TowScheduleLegConfigurationNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024}]}}}",
+			"Description": "The combination or barges that comprise a scheduled towboat tow. Timestamps are used for the configuration as barges may be added or removed during the journey.",
+			"DisplayFolderInfo": "{\"name\":\"Shipping\",\"colorCode\":\"#000B42\"}",
+			"PrimaryKeys": "TowId,TowScheduledDepartureTimestamp,TowScheduleLegNumber,TowScheduleLegPosition,PeriodStartTimestamp"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

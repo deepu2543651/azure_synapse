@@ -1,0 +1,86 @@
+{
+	"name": "CertificateOfInspectionPartyRelationshipType",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "CertificateOfInspectionPartyRelationshipType",
+		"Description": "The nature of the relationship between the Certificate Of Inspection and the related party.\n\nEx:\n- Inspected-by Party\n- Authorized-By Party\n- Rejected-By Party\n- Issued-By Party",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "CertificateOfInspectionPartyRelationshipTypeId",
+					"Description": "The unique identifier of a Certificate Of Inspection Party Relationship Type.",
+					"BaseAttributeReference": {
+						"Entity": "CertificateOfInspectionPartyRelationshipType.cdm.json/CertificateOfInspectionPartyRelationshipType",
+						"Name": "CertificateOfInspectionPartyRelationshipTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "CertificateOfInspectionPartyRelationshipTypeName",
+					"Description": "The name of a Certificate Of Inspection Party Relationship Type.",
+					"BaseAttributeReference": {
+						"Entity": "CertificateOfInspectionPartyRelationshipType.cdm.json/CertificateOfInspectionPartyRelationshipType",
+						"Name": "CertificateOfInspectionPartyRelationshipTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "CertificateOfInspectionPartyRelationshipTypeDescription",
+					"Description": "The description of a Certificate Of Inspection Party Relationship Type.",
+					"BaseAttributeReference": {
+						"Entity": "CertificateOfInspectionPartyRelationshipType.cdm.json/CertificateOfInspectionPartyRelationshipType",
+						"Name": "CertificateOfInspectionPartyRelationshipTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"CertificateOfInspectionPartyRelationshipTypeId\":{\"entity\":\"CertificateOfInspectionPartyRelationshipType.cdm.json/CertificateOfInspectionPartyRelationshipType\",\"name\":\"CertificateOfInspectionPartyRelationshipTypeId\"},\"CertificateOfInspectionPartyRelationshipTypeName\":{\"entity\":\"CertificateOfInspectionPartyRelationshipType.cdm.json/CertificateOfInspectionPartyRelationshipType\",\"name\":\"CertificateOfInspectionPartyRelationshipTypeName\"},\"CertificateOfInspectionPartyRelationshipTypeDescription\":{\"entity\":\"CertificateOfInspectionPartyRelationshipType.cdm.json/CertificateOfInspectionPartyRelationshipType\",\"name\":\"CertificateOfInspectionPartyRelationshipTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"CertificateOfInspectionPartyRelationshipType\",\"path\":\"CertificateOfInspectionPartyRelationshipType.cdm.json/CertificateOfInspectionPartyRelationshipType\"},\"description\":\"The nature of the relationship between the Certificate Of Inspection and the related party.\\n\\nEx:\\n- Inspected-by Party\\n- Authorized-By Party\\n- Rejected-By Party\\n- Issued-By Party\",\"primaryKey\":[\"CertificateOfInspectionPartyRelationshipTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"CertificateOfInspectionPartyRelationshipTypeId\",\"attributeReference\":{\"entity\":\"CertificateOfInspectionPartyRelationshipType.cdm.json/CertificateOfInspectionPartyRelationshipType\",\"name\":\"CertificateOfInspectionPartyRelationshipTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"CertificateOfInspectionPartyRelationshipTypeName\",\"attributeReference\":{\"entity\":\"CertificateOfInspectionPartyRelationshipType.cdm.json/CertificateOfInspectionPartyRelationshipType\",\"name\":\"CertificateOfInspectionPartyRelationshipTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"CertificateOfInspectionPartyRelationshipTypeDescription\",\"attributeReference\":{\"entity\":\"CertificateOfInspectionPartyRelationshipType.cdm.json/CertificateOfInspectionPartyRelationshipType\",\"name\":\"CertificateOfInspectionPartyRelationshipTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512}]}}}",
+			"Description": "The nature of the relationship between the Certificate Of Inspection and the related party.\n\nEx:\n- Inspected-by Party\n- Authorized-By Party\n- Rejected-By Party\n- Issued-By Party",
+			"DisplayFolderInfo": "{\"name\":\"Shipping\",\"colorCode\":\"#000B42\"}",
+			"PrimaryKeys": "CertificateOfInspectionPartyRelationshipTypeId"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

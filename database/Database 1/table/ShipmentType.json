@@ -1,0 +1,86 @@
+{
+	"name": "ShipmentType",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "ShipmentType",
+		"Description": "A classification of the associated Shipment to identify its composition:  \n\nEx:\n- Customer shipment\n- Load\n- Partial shipment\n- Complete shipment\n- Consolidated shipment\n- Issue\n\nwhere:\n\n- Partial shipment (only part of the Order has been shipped due to product unavailability)\n- Complete shipment (the Order has been shipped complete)\n- Consolidated shipment (more than one Order have been consolidated in a single shipment)\n- Issue (a shipment not based on an Order - usually informal and unplanned)",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ShipmentTypeId",
+					"Description": "The unique identifier of a Shipment Type.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentType.cdm.json/ShipmentType",
+						"Name": "ShipmentTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ShipmentTypeName",
+					"Description": "The name of the Shipment Type.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentType.cdm.json/ShipmentType",
+						"Name": "ShipmentTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ShipmentTypeDescription",
+					"Description": "The description of the Shipment Type.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentType.cdm.json/ShipmentType",
+						"Name": "ShipmentTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ShipmentTypeId\":{\"entity\":\"ShipmentType.cdm.json/ShipmentType\",\"name\":\"ShipmentTypeId\"},\"ShipmentTypeName\":{\"entity\":\"ShipmentType.cdm.json/ShipmentType\",\"name\":\"ShipmentTypeName\"},\"ShipmentTypeDescription\":{\"entity\":\"ShipmentType.cdm.json/ShipmentType\",\"name\":\"ShipmentTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"ShipmentType\",\"path\":\"ShipmentType.cdm.json/ShipmentType\"},\"description\":\"A classification of the associated Shipment to identify its composition:  \\n\\nEx:\\n- Customer shipment\\n- Load\\n- Partial shipment\\n- Complete shipment\\n- Consolidated shipment\\n- Issue\\n\\nwhere:\\n\\n- Partial shipment (only part of the Order has been shipped due to product unavailability)\\n- Complete shipment (the Order has been shipped complete)\\n- Consolidated shipment (more than one Order have been consolidated in a single shipment)\\n- Issue (a shipment not based on an Order - usually informal and unplanned)\",\"primaryKey\":[\"ShipmentTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"ShipmentTypeId\",\"attributeReference\":{\"entity\":\"ShipmentType.cdm.json/ShipmentType\",\"name\":\"ShipmentTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ShipmentTypeName\",\"attributeReference\":{\"entity\":\"ShipmentType.cdm.json/ShipmentType\",\"name\":\"ShipmentTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"ShipmentTypeDescription\",\"attributeReference\":{\"entity\":\"ShipmentType.cdm.json/ShipmentType\",\"name\":\"ShipmentTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512}]}}}",
+			"Description": "A classification of the associated Shipment to identify its composition:  \n\nEx:\n- Customer shipment\n- Load\n- Partial shipment\n- Complete shipment\n- Consolidated shipment\n- Issue\n\nwhere:\n\n- Partial shipment (only part of the Order has been shipped due to product unavailability)\n- Complete shipment (the Order has been shipped complete)\n- Consolidated shipment (more than one Order have been consolidated in a single shipment)\n- Issue (a shipment not based on an Order - usually informal and unplanned)",
+			"DisplayFolderInfo": "{\"name\":\"Shipping\",\"colorCode\":\"#000B42\"}",
+			"PrimaryKeys": "ShipmentTypeId"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

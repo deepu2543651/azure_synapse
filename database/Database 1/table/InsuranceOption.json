@@ -1,0 +1,86 @@
+{
+	"name": "InsuranceOption",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "InsuranceOption",
+		"Description": "The type of insurance applied to a shipment in the associated carrier tariff.\n\nEx:\n- Replacement Value\n- Specified Value\n- All Perils & Misfortunes\n- Average Clause\n- Barratry (Fraudulent, criminal, or wrongful act by ship's captain or crew which causes loss or damage to the ship or cargo.)\n- Average (Any partial loss or damage, due to insured perils)\n- Cargo War Risk (A separate Cargo policy covering cargo while waterborne only (except at transshipping point, which may be on land or water). Insures against war risks.)\n- Constructive Total Loss (An instance in which the cost of recovering and/or repairing damaged goods would, when recovered or repaired, exceed the insured value.)\n- Free Of Particular Average, American Conditions (Average clause that limits recovery of partial losses under the Perils clause to those losses directly resulting from fire, stranding, sinking, or collision of the vessel.)\n- War Risk (Insurance against loss or damage to property as a result of war risks.)",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "InsuranceOptionId",
+					"Description": "The unique identifier of an Insurance Option.",
+					"BaseAttributeReference": {
+						"Entity": "InsuranceOption.cdm.json/InsuranceOption",
+						"Name": "InsuranceOptionId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "InsuranceOptionName",
+					"Description": "The name of an Insurance Option.",
+					"BaseAttributeReference": {
+						"Entity": "InsuranceOption.cdm.json/InsuranceOption",
+						"Name": "InsuranceOptionName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "InsuranceOptionDescription",
+					"Description": "The description of an Insurance Option.",
+					"BaseAttributeReference": {
+						"Entity": "InsuranceOption.cdm.json/InsuranceOption",
+						"Name": "InsuranceOptionDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"InsuranceOptionId\":{\"entity\":\"InsuranceOption.cdm.json/InsuranceOption\",\"name\":\"InsuranceOptionId\"},\"InsuranceOptionName\":{\"entity\":\"InsuranceOption.cdm.json/InsuranceOption\",\"name\":\"InsuranceOptionName\"},\"InsuranceOptionDescription\":{\"entity\":\"InsuranceOption.cdm.json/InsuranceOption\",\"name\":\"InsuranceOptionDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"InsuranceOption\",\"path\":\"InsuranceOption.cdm.json/InsuranceOption\"},\"description\":\"The type of insurance applied to a shipment in the associated carrier tariff.\\n\\nEx:\\n- Replacement Value\\n- Specified Value\\n- All Perils & Misfortunes\\n- Average Clause\\n- Barratry (Fraudulent, criminal, or wrongful act by ship's captain or crew which causes loss or damage to the ship or cargo.)\\n- Average (Any partial loss or damage, due to insured perils)\\n- Cargo War Risk (A separate Cargo policy covering cargo while waterborne only (except at transshipping point, which may be on land or water). Insures against war risks.)\\n- Constructive Total Loss (An instance in which the cost of recovering and/or repairing damaged goods would, when recovered or repaired, exceed the insured value.)\\n- Free Of Particular Average, American Conditions (Average clause that limits recovery of partial losses under the Perils clause to those losses directly resulting from fire, stranding, sinking, or collision of the vessel.)\\n- War Risk (Insurance against loss or damage to property as a result of war risks.)\",\"primaryKey\":[\"InsuranceOptionId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"InsuranceOptionId\",\"attributeReference\":{\"entity\":\"InsuranceOption.cdm.json/InsuranceOption\",\"name\":\"InsuranceOptionId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"InsuranceOptionName\",\"attributeReference\":{\"entity\":\"InsuranceOption.cdm.json/InsuranceOption\",\"name\":\"InsuranceOptionName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"InsuranceOptionDescription\",\"attributeReference\":{\"entity\":\"InsuranceOption.cdm.json/InsuranceOption\",\"name\":\"InsuranceOptionDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512}]}}}",
+			"Description": "The type of insurance applied to a shipment in the associated carrier tariff.\n\nEx:\n- Replacement Value\n- Specified Value\n- All Perils & Misfortunes\n- Average Clause\n- Barratry (Fraudulent, criminal, or wrongful act by ship's captain or crew which causes loss or damage to the ship or cargo.)\n- Average (Any partial loss or damage, due to insured perils)\n- Cargo War Risk (A separate Cargo policy covering cargo while waterborne only (except at transshipping point, which may be on land or water). Insures against war risks.)\n- Constructive Total Loss (An instance in which the cost of recovering and/or repairing damaged goods would, when recovered or repaired, exceed the insured value.)\n- Free Of Particular Average, American Conditions (Average clause that limits recovery of partial losses under the Perils clause to those losses directly resulting from fire, stranding, sinking, or collision of the vessel.)\n- War Risk (Insurance against loss or damage to property as a result of war risks.)",
+			"DisplayFolderInfo": "{\"name\":\"Shipping\",\"colorCode\":\"#000B42\"}",
+			"PrimaryKeys": "InsuranceOptionId"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

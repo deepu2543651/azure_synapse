@@ -1,0 +1,26 @@
+{
+	"name": "relationship-yeavccmpws",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "relationship-yeavccmpws",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "ConsolidationReason",
+		"ToTableName": "ShipmentItemConsolidation",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ConsolidationReasonId",
+				"ToColumnName": "ConsolidationReasonId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"ConsolidationReason.cdm.json/ConsolidationReason\",\"toEntity\":\"ShipmentItemConsolidation.cdm.json/ShipmentItemConsolidation\",\"joinPairs\":[{\"fromAttribute\":\"ConsolidationReasonId\",\"toAttribute\":\"ConsolidationReasonId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

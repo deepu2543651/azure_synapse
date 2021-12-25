@@ -1,0 +1,86 @@
+{
+	"name": "StorageCondition",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "StorageCondition",
+		"Description": "A factor or characteristic related to how an Item is stored or where it may be stored.\n\nEx:\n- Requires refrigeration\n- Avoid sunlight\n- Store at room temperature\n- Do not shake",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "StorageConditionId",
+					"Description": "The unique identifier of a Storage Condition.",
+					"BaseAttributeReference": {
+						"Entity": "StorageCondition.cdm.json/StorageCondition",
+						"Name": "StorageConditionId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "StorageConditionName",
+					"Description": "The name of a Storage Condition.",
+					"BaseAttributeReference": {
+						"Entity": "StorageCondition.cdm.json/StorageCondition",
+						"Name": "StorageConditionName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "StorageConditionDescription",
+					"Description": "The description of a Storage Condition.",
+					"BaseAttributeReference": {
+						"Entity": "StorageCondition.cdm.json/StorageCondition",
+						"Name": "StorageConditionDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"StorageConditionId\":{\"entity\":\"StorageCondition.cdm.json/StorageCondition\",\"name\":\"StorageConditionId\"},\"StorageConditionName\":{\"entity\":\"StorageCondition.cdm.json/StorageCondition\",\"name\":\"StorageConditionName\"},\"StorageConditionDescription\":{\"entity\":\"StorageCondition.cdm.json/StorageCondition\",\"name\":\"StorageConditionDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"StorageCondition\",\"path\":\"StorageCondition.cdm.json/StorageCondition\"},\"description\":\"A factor or characteristic related to how an Item is stored or where it may be stored.\\n\\nEx:\\n- Requires refrigeration\\n- Avoid sunlight\\n- Store at room temperature\\n- Do not shake\",\"primaryKey\":[\"StorageConditionId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"StorageConditionId\",\"attributeReference\":{\"entity\":\"StorageCondition.cdm.json/StorageCondition\",\"name\":\"StorageConditionId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"StorageConditionName\",\"attributeReference\":{\"entity\":\"StorageCondition.cdm.json/StorageCondition\",\"name\":\"StorageConditionName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"StorageConditionDescription\",\"attributeReference\":{\"entity\":\"StorageCondition.cdm.json/StorageCondition\",\"name\":\"StorageConditionDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512}]}}}",
+			"Description": "A factor or characteristic related to how an Item is stored or where it may be stored.\n\nEx:\n- Requires refrigeration\n- Avoid sunlight\n- Store at room temperature\n- Do not shake",
+			"DisplayFolderInfo": "{\"name\":\"Inventory\",\"colorCode\":\"#EA279F\"}",
+			"PrimaryKeys": "StorageConditionId"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

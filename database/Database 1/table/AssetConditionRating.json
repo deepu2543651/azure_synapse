@@ -1,0 +1,86 @@
+{
+	"name": "AssetConditionRating",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "AssetConditionRating",
+		"Description": "A rating or ranking of the condition of an asset.\n\nEx:\n-  Optimum condition\n-  Above average\n-  Average\n-  Below average\n-  Inoperable/repairable\n-  Inoperable/salvage value only",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "AssetConditionRatingId",
+					"Description": "The unique identifier of an Asset Condition Rating.",
+					"BaseAttributeReference": {
+						"Entity": "AssetConditionRating.cdm.json/AssetConditionRating",
+						"Name": "AssetConditionRatingId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "AssetConditionRatingName",
+					"Description": "The name of an Asset Condition Rating.",
+					"BaseAttributeReference": {
+						"Entity": "AssetConditionRating.cdm.json/AssetConditionRating",
+						"Name": "AssetConditionRatingName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "AssetConditionRatingDescription",
+					"Description": "The description of an Asset Condition Rating.",
+					"BaseAttributeReference": {
+						"Entity": "AssetConditionRating.cdm.json/AssetConditionRating",
+						"Name": "AssetConditionRatingDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"AssetConditionRatingId\":{\"entity\":\"AssetConditionRating.cdm.json/AssetConditionRating\",\"name\":\"AssetConditionRatingId\"},\"AssetConditionRatingName\":{\"entity\":\"AssetConditionRating.cdm.json/AssetConditionRating\",\"name\":\"AssetConditionRatingName\"},\"AssetConditionRatingDescription\":{\"entity\":\"AssetConditionRating.cdm.json/AssetConditionRating\",\"name\":\"AssetConditionRatingDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"AssetConditionRating\",\"path\":\"AssetConditionRating.cdm.json/AssetConditionRating\"},\"description\":\"A rating or ranking of the condition of an asset.\\n\\nEx:\\n-  Optimum condition\\n-  Above average\\n-  Average\\n-  Below average\\n-  Inoperable/repairable\\n-  Inoperable/salvage value only\",\"primaryKey\":[\"AssetConditionRatingId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"AssetConditionRatingId\",\"attributeReference\":{\"entity\":\"AssetConditionRating.cdm.json/AssetConditionRating\",\"name\":\"AssetConditionRatingId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"AssetConditionRatingName\",\"attributeReference\":{\"entity\":\"AssetConditionRating.cdm.json/AssetConditionRating\",\"name\":\"AssetConditionRatingName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"AssetConditionRatingDescription\",\"attributeReference\":{\"entity\":\"AssetConditionRating.cdm.json/AssetConditionRating\",\"name\":\"AssetConditionRatingDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512}]}}}",
+			"Description": "A rating or ranking of the condition of an asset.\n\nEx:\n-  Optimum condition\n-  Above average\n-  Average\n-  Below average\n-  Inoperable/repairable\n-  Inoperable/salvage value only",
+			"DisplayFolderInfo": "{\"name\":\"Property & Equipment\",\"colorCode\":\"#BD4B37\"}",
+			"PrimaryKeys": "AssetConditionRatingId"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

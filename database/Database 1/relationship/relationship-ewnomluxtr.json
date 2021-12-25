@@ -1,0 +1,26 @@
+{
+	"name": "relationship-ewnomluxtr",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "relationship-ewnomluxtr",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Shipment",
+		"ToTableName": "ShipmentAssignment",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ShipmentId",
+				"ToColumnName": "ShipmentId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Shipment.cdm.json/Shipment\",\"toEntity\":\"ShipmentAssignment.cdm.json/ShipmentAssignment\",\"joinPairs\":[{\"fromAttribute\":\"ShipmentId\",\"toAttribute\":\"ShipmentId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

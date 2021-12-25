@@ -1,0 +1,171 @@
+{
+	"name": "InsurancePolicyClaim",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "InsurancePolicyClaim",
+		"Description": "A demand made upon a transportation line for payment on account of loss sustained through its negligence.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ClaimId",
+					"Description": "The unique identifier of a Claim.",
+					"BaseAttributeReference": {
+						"Entity": "InsurancePolicyClaim.cdm.json/InsurancePolicyClaim",
+						"Name": "ClaimId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "ClaimSubmittedTimestamp",
+					"Description": "The timestamp that the claim was submitted.",
+					"BaseAttributeReference": {
+						"Entity": "InsurancePolicyClaim.cdm.json/InsurancePolicyClaim",
+						"Name": "ClaimSubmittedTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "ClaimPaidTimestamp",
+					"Description": "The timestamp that the claim was paid.",
+					"BaseAttributeReference": {
+						"Entity": "InsurancePolicyClaim.cdm.json/InsurancePolicyClaim",
+						"Name": "ClaimPaidTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "InsurancePolicyClaimTypeId",
+					"Description": "The unique identifier of a Claim Type.",
+					"BaseAttributeReference": {
+						"Entity": "InsurancePolicyClaim.cdm.json/InsurancePolicyClaim",
+						"Name": "InsurancePolicyClaimTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ClaimPaidAmount",
+					"Description": "The amount of the claim paid.",
+					"BaseAttributeReference": {
+						"Entity": "InsurancePolicyClaim.cdm.json/InsurancePolicyClaim",
+						"Name": "ClaimPaidAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "ClaimSubmittedAmount",
+					"Description": "The amount of the claim submitted.",
+					"BaseAttributeReference": {
+						"Entity": "InsurancePolicyClaim.cdm.json/InsurancePolicyClaim",
+						"Name": "ClaimSubmittedAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "InsurancePolicyClaimNote",
+					"Description": "A note, comment or additional information regarding the insurance policy claim.",
+					"BaseAttributeReference": {
+						"Entity": "InsurancePolicyClaim.cdm.json/InsurancePolicyClaim",
+						"Name": "InsurancePolicyClaimNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "InsurancePolicyId",
+					"Description": "The unique identifier of an Insurance Policy.",
+					"BaseAttributeReference": {
+						"Entity": "InsurancePolicyClaim.cdm.json/InsurancePolicyClaim",
+						"Name": "InsurancePolicyId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ClaimId\":{\"entity\":\"InsurancePolicyClaim.cdm.json/InsurancePolicyClaim\",\"name\":\"ClaimId\"},\"ClaimSubmittedTimestamp\":{\"entity\":\"InsurancePolicyClaim.cdm.json/InsurancePolicyClaim\",\"name\":\"ClaimSubmittedTimestamp\"},\"ClaimPaidTimestamp\":{\"entity\":\"InsurancePolicyClaim.cdm.json/InsurancePolicyClaim\",\"name\":\"ClaimPaidTimestamp\"},\"InsurancePolicyClaimTypeId\":{\"entity\":\"InsurancePolicyClaim.cdm.json/InsurancePolicyClaim\",\"name\":\"InsurancePolicyClaimTypeId\"},\"ClaimPaidAmount\":{\"entity\":\"InsurancePolicyClaim.cdm.json/InsurancePolicyClaim\",\"name\":\"ClaimPaidAmount\"},\"ClaimSubmittedAmount\":{\"entity\":\"InsurancePolicyClaim.cdm.json/InsurancePolicyClaim\",\"name\":\"ClaimSubmittedAmount\"},\"InsurancePolicyClaimNote\":{\"entity\":\"InsurancePolicyClaim.cdm.json/InsurancePolicyClaim\",\"name\":\"InsurancePolicyClaimNote\"},\"InsurancePolicyId\":{\"entity\":\"InsurancePolicyClaim.cdm.json/InsurancePolicyClaim\",\"name\":\"InsurancePolicyId\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"InsurancePolicyClaim\",\"path\":\"InsurancePolicyClaim.cdm.json/InsurancePolicyClaim\"},\"description\":\"A demand made upon a transportation line for payment on account of loss sustained through its negligence.\",\"primaryKey\":[\"ClaimId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"ClaimId\",\"attributeReference\":{\"entity\":\"InsurancePolicyClaim.cdm.json/InsurancePolicyClaim\",\"name\":\"ClaimId\"},\"dataType\":\"long\"},{\"type\":\"Existing\",\"name\":\"ClaimSubmittedTimestamp\",\"attributeReference\":{\"entity\":\"InsurancePolicyClaim.cdm.json/InsurancePolicyClaim\",\"name\":\"ClaimSubmittedTimestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"ClaimPaidTimestamp\",\"attributeReference\":{\"entity\":\"InsurancePolicyClaim.cdm.json/InsurancePolicyClaim\",\"name\":\"ClaimPaidTimestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"InsurancePolicyClaimTypeId\",\"attributeReference\":{\"entity\":\"InsurancePolicyClaim.cdm.json/InsurancePolicyClaim\",\"name\":\"InsurancePolicyClaimTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ClaimPaidAmount\",\"attributeReference\":{\"entity\":\"InsurancePolicyClaim.cdm.json/InsurancePolicyClaim\",\"name\":\"ClaimPaidAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"ClaimSubmittedAmount\",\"attributeReference\":{\"entity\":\"InsurancePolicyClaim.cdm.json/InsurancePolicyClaim\",\"name\":\"ClaimSubmittedAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"InsurancePolicyClaimNote\",\"attributeReference\":{\"entity\":\"InsurancePolicyClaim.cdm.json/InsurancePolicyClaim\",\"name\":\"InsurancePolicyClaimNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024},{\"type\":\"Existing\",\"name\":\"InsurancePolicyId\",\"attributeReference\":{\"entity\":\"InsurancePolicyClaim.cdm.json/InsurancePolicyClaim\",\"name\":\"InsurancePolicyId\"},\"dataType\":\"integer\"}]}}}",
+			"Description": "A demand made upon a transportation line for payment on account of loss sustained through its negligence.",
+			"DisplayFolderInfo": "{\"name\":\"Policy\",\"colorCode\":\"#7D0F6C\"}",
+			"PrimaryKeys": "ClaimId"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

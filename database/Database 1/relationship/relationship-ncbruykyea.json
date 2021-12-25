@@ -1,0 +1,26 @@
+{
+	"name": "relationship-ncbruykyea",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "relationship-ncbruykyea",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Party",
+		"ToTableName": "ShipmentItemConsolidation",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "PartyId",
+				"ToColumnName": "ResponsibleForConsolidationPartyId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Party.cdm.json/Party\",\"toEntity\":\"ShipmentItemConsolidation.cdm.json/ShipmentItemConsolidation\",\"joinPairs\":[{\"fromAttribute\":\"PartyId\",\"toAttribute\":\"ResponsibleForConsolidationPartyId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

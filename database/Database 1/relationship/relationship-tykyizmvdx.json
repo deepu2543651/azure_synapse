@@ -1,0 +1,26 @@
+{
+	"name": "relationship-tykyizmvdx",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "relationship-tykyizmvdx",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "VesselStatusType",
+		"ToTableName": "VesselStatus",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "VesselStatusTypeId",
+				"ToColumnName": "VesselStatusTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"VesselStatusType.cdm.json/VesselStatusType\",\"toEntity\":\"VesselStatus.cdm.json/VesselStatus\",\"joinPairs\":[{\"fromAttribute\":\"VesselStatusTypeId\",\"toAttribute\":\"VesselStatusTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

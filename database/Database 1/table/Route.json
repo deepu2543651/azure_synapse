@@ -1,0 +1,100 @@
+{
+	"name": "Route",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "Route",
+		"Description": "A from-city/to-city route that may be managed via one or more transportation mode by various carriers.\n\nEx:\nSan Francisco TO Shanghai",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "RouteId",
+					"Description": "The unique identifier of a route.",
+					"BaseAttributeReference": {
+						"Entity": "Route.cdm.json/Route",
+						"Name": "RouteId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "FromLocationId",
+					"Description": "The unique identifier of a Shipping Location.",
+					"BaseAttributeReference": {
+						"Entity": "Route.cdm.json/Route",
+						"Name": "FromLocationId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ToLocationId",
+					"Description": "The unique identifier of a Shipping Location.",
+					"BaseAttributeReference": {
+						"Entity": "Route.cdm.json/Route",
+						"Name": "ToLocationId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "RouteTotalDistance",
+					"Description": "The total distance of the route.",
+					"BaseAttributeReference": {
+						"Entity": "Route.cdm.json/Route",
+						"Name": "RouteTotalDistance"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"RouteId\":{\"entity\":\"Route.cdm.json/Route\",\"name\":\"RouteId\"},\"FromLocationId\":{\"entity\":\"Route.cdm.json/Route\",\"name\":\"FromLocationId\"},\"ToLocationId\":{\"entity\":\"Route.cdm.json/Route\",\"name\":\"ToLocationId\"},\"RouteTotalDistance\":{\"entity\":\"Route.cdm.json/Route\",\"name\":\"RouteTotalDistance\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"Route\",\"path\":\"Route.cdm.json/Route\"},\"description\":\"A from-city/to-city route that may be managed via one or more transportation mode by various carriers.\\n\\nEx:\\nSan Francisco TO Shanghai\",\"primaryKey\":[\"RouteId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"RouteId\",\"attributeReference\":{\"entity\":\"Route.cdm.json/Route\",\"name\":\"RouteId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"FromLocationId\",\"attributeReference\":{\"entity\":\"Route.cdm.json/Route\",\"name\":\"FromLocationId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ToLocationId\",\"attributeReference\":{\"entity\":\"Route.cdm.json/Route\",\"name\":\"ToLocationId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"RouteTotalDistance\",\"attributeReference\":{\"entity\":\"Route.cdm.json/Route\",\"name\":\"RouteTotalDistance\"},\"dataType\":\"integer\"}]}}}",
+			"Description": "A from-city/to-city route that may be managed via one or more transportation mode by various carriers.\n\nEx:\nSan Francisco TO Shanghai",
+			"DisplayFolderInfo": "{\"name\":\"Shipping\",\"colorCode\":\"#000B42\"}",
+			"PrimaryKeys": "RouteId"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

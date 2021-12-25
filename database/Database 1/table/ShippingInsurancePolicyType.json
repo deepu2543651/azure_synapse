@@ -1,0 +1,86 @@
+{
+	"name": "ShippingInsurancePolicyType",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "ShippingInsurancePolicyType",
+		"Description": "The type of Insurance Policy.\n\nEx:\n- Free Of Particular Average (FPA)\n- With Average (WA)\n\nwhere:\n\nFree of Particular Average (FPA) - Covers stranding, sinking, burning, collision, fire, lightning, crash, collision.\n\nWith Average (WA) - This is not a common type of policy anymore. It covers stranding, sinking, burning, collisions, heavy weather, fire, lightning, crash, collision, heavy weather.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "InsurancePolicyTypeId",
+					"Description": "The unique identifier of an Insurance Policy Type.",
+					"BaseAttributeReference": {
+						"Entity": "ShippingInsurancePolicyType.cdm.json/ShippingInsurancePolicyType",
+						"Name": "InsurancePolicyTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "InsurancePolicyTypeName",
+					"Description": "The name of an Insurance Policy Type.",
+					"BaseAttributeReference": {
+						"Entity": "ShippingInsurancePolicyType.cdm.json/ShippingInsurancePolicyType",
+						"Name": "InsurancePolicyTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "InsurancePolicyTypeDescription",
+					"Description": "The description of an Insurance Policy Type.",
+					"BaseAttributeReference": {
+						"Entity": "ShippingInsurancePolicyType.cdm.json/ShippingInsurancePolicyType",
+						"Name": "InsurancePolicyTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"InsurancePolicyTypeId\":{\"entity\":\"ShippingInsurancePolicyType.cdm.json/ShippingInsurancePolicyType\",\"name\":\"InsurancePolicyTypeId\"},\"InsurancePolicyTypeName\":{\"entity\":\"ShippingInsurancePolicyType.cdm.json/ShippingInsurancePolicyType\",\"name\":\"InsurancePolicyTypeName\"},\"InsurancePolicyTypeDescription\":{\"entity\":\"ShippingInsurancePolicyType.cdm.json/ShippingInsurancePolicyType\",\"name\":\"InsurancePolicyTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"ShippingInsurancePolicyType\",\"path\":\"ShippingInsurancePolicyType.cdm.json/ShippingInsurancePolicyType\"},\"description\":\"The type of Insurance Policy.\\n\\nEx:\\n- Free Of Particular Average (FPA)\\n- With Average (WA)\\n\\nwhere:\\n\\nFree of Particular Average (FPA) - Covers stranding, sinking, burning, collision, fire, lightning, crash, collision.\\n\\nWith Average (WA) - This is not a common type of policy anymore. It covers stranding, sinking, burning, collisions, heavy weather, fire, lightning, crash, collision, heavy weather.\",\"primaryKey\":[\"InsurancePolicyTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"InsurancePolicyTypeId\",\"attributeReference\":{\"entity\":\"ShippingInsurancePolicyType.cdm.json/ShippingInsurancePolicyType\",\"name\":\"InsurancePolicyTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"InsurancePolicyTypeName\",\"attributeReference\":{\"entity\":\"ShippingInsurancePolicyType.cdm.json/ShippingInsurancePolicyType\",\"name\":\"InsurancePolicyTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"InsurancePolicyTypeDescription\",\"attributeReference\":{\"entity\":\"ShippingInsurancePolicyType.cdm.json/ShippingInsurancePolicyType\",\"name\":\"InsurancePolicyTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512}]}}}",
+			"Description": "The type of Insurance Policy.\n\nEx:\n- Free Of Particular Average (FPA)\n- With Average (WA)\n\nwhere:\n\nFree of Particular Average (FPA) - Covers stranding, sinking, burning, collision, fire, lightning, crash, collision.\n\nWith Average (WA) - This is not a common type of policy anymore. It covers stranding, sinking, burning, collisions, heavy weather, fire, lightning, crash, collision, heavy weather.",
+			"DisplayFolderInfo": "{\"name\":\"Shipping\",\"colorCode\":\"#000B42\"}",
+			"PrimaryKeys": "InsurancePolicyTypeId"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

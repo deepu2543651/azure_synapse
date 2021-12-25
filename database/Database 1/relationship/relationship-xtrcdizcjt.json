@@ -1,0 +1,26 @@
+{
+	"name": "relationship-xtrcdizcjt",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "relationship-xtrcdizcjt",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "CargoType",
+		"ToTableName": "AircraftAllowableCargo",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "CargoTypeId",
+				"ToColumnName": "CargoTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"CargoType.cdm.json/CargoType\",\"toEntity\":\"AircraftAllowableCargo.cdm.json/AircraftAllowableCargo\",\"joinPairs\":[{\"fromAttribute\":\"CargoTypeId\",\"toAttribute\":\"CargoTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

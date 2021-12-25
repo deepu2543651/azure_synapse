@@ -1,0 +1,26 @@
+{
+	"name": "relationship-uqdwxaogmb",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "relationship-uqdwxaogmb",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "ShipmentItemRelationshipType",
+		"ToTableName": "RelatedShipmentItem",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ShipmentItemRelationshipTypeId",
+				"ToColumnName": "ShipmentItemRelationshipTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"ShipmentItemRelationshipType.cdm.json/ShipmentItemRelationshipType\",\"toEntity\":\"RelatedShipmentItem.cdm.json/RelatedShipmentItem\",\"joinPairs\":[{\"fromAttribute\":\"ShipmentItemRelationshipTypeId\",\"toAttribute\":\"ShipmentItemRelationshipTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

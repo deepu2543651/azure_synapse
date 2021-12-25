@@ -1,0 +1,119 @@
+{
+	"name": "RailcarAllowableCargo",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "RailcarAllowableCargo",
+		"Description": "The type of cargo that is allowed to be transported by the railcar.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "RailcarId",
+					"Description": "The unique identifier of a Railcar instance.",
+					"BaseAttributeReference": {
+						"Entity": "RailcarAllowableCargo.cdm.json/RailcarAllowableCargo",
+						"Name": "RailcarId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "CargoTypeId",
+					"Description": "The unique identifier of a Cargo Type.",
+					"BaseAttributeReference": {
+						"Entity": "RailcarAllowableCargo.cdm.json/RailcarAllowableCargo",
+						"Name": "CargoTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PeriodStartDate",
+					"Description": "The period start date for which the associated railcar allowable cargo is effective.",
+					"BaseAttributeReference": {
+						"Entity": "RailcarAllowableCargo.cdm.json/RailcarAllowableCargo",
+						"Name": "PeriodStartDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "PeriodEndDate",
+					"Description": "The period end date for which the associated aircraft railcar allowable cargo is effective.",
+					"BaseAttributeReference": {
+						"Entity": "RailcarAllowableCargo.cdm.json/RailcarAllowableCargo",
+						"Name": "PeriodEndDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "RailcarAllowableCargoNote",
+					"Description": "A note, comment or additional information regarding the railcar allowable cargo.",
+					"BaseAttributeReference": {
+						"Entity": "RailcarAllowableCargo.cdm.json/RailcarAllowableCargo",
+						"Name": "RailcarAllowableCargoNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"RailcarId\":{\"entity\":\"RailcarAllowableCargo.cdm.json/RailcarAllowableCargo\",\"name\":\"RailcarId\"},\"CargoTypeId\":{\"entity\":\"RailcarAllowableCargo.cdm.json/RailcarAllowableCargo\",\"name\":\"CargoTypeId\"},\"PeriodStartDate\":{\"entity\":\"RailcarAllowableCargo.cdm.json/RailcarAllowableCargo\",\"name\":\"PeriodStartDate\"},\"PeriodEndDate\":{\"entity\":\"RailcarAllowableCargo.cdm.json/RailcarAllowableCargo\",\"name\":\"PeriodEndDate\"},\"RailcarAllowableCargoNote\":{\"entity\":\"RailcarAllowableCargo.cdm.json/RailcarAllowableCargo\",\"name\":\"RailcarAllowableCargoNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"RailcarAllowableCargo\",\"path\":\"RailcarAllowableCargo.cdm.json/RailcarAllowableCargo\"},\"description\":\"The type of cargo that is allowed to be transported by the railcar.\",\"primaryKey\":[\"RailcarId\",\"CargoTypeId\",\"PeriodStartDate\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"RailcarId\",\"attributeReference\":{\"entity\":\"RailcarAllowableCargo.cdm.json/RailcarAllowableCargo\",\"name\":\"RailcarId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"CargoTypeId\",\"attributeReference\":{\"entity\":\"RailcarAllowableCargo.cdm.json/RailcarAllowableCargo\",\"name\":\"CargoTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"PeriodStartDate\",\"attributeReference\":{\"entity\":\"RailcarAllowableCargo.cdm.json/RailcarAllowableCargo\",\"name\":\"PeriodStartDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\"},{\"type\":\"Existing\",\"name\":\"PeriodEndDate\",\"attributeReference\":{\"entity\":\"RailcarAllowableCargo.cdm.json/RailcarAllowableCargo\",\"name\":\"PeriodEndDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\"},{\"type\":\"Existing\",\"name\":\"RailcarAllowableCargoNote\",\"attributeReference\":{\"entity\":\"RailcarAllowableCargo.cdm.json/RailcarAllowableCargo\",\"name\":\"RailcarAllowableCargoNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024}]}}}",
+			"Description": "The type of cargo that is allowed to be transported by the railcar.",
+			"DisplayFolderInfo": "{\"name\":\"Shipping\",\"colorCode\":\"#000B42\"}",
+			"PrimaryKeys": "RailcarId,CargoTypeId,PeriodStartDate"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

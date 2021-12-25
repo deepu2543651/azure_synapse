@@ -1,0 +1,26 @@
+{
+	"name": "relationship-bvrtvjvclq",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "relationship-bvrtvjvclq",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "HazardSeverityCategory",
+		"ToTableName": "ShipmentItem",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "HazardSeverityCategoryId",
+				"ToColumnName": "HazardSeverityCategoryId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"HazardSeverityCategory.cdm.json/HazardSeverityCategory\",\"toEntity\":\"ShipmentItem.cdm.json/ShipmentItem\",\"joinPairs\":[{\"fromAttribute\":\"HazardSeverityCategoryId\",\"toAttribute\":\"HazardSeverityCategoryId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

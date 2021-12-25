@@ -1,0 +1,26 @@
+{
+	"name": "relationship-pckvcmuyiv",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "relationship-pckvcmuyiv",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "ShipmentInspectionType",
+		"ToTableName": "ShipmentItemRejection",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ShipmentInspectionTypeId",
+				"ToColumnName": "ShipmentInspectionTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"ShipmentInspectionType.cdm.json/ShipmentInspectionType\",\"toEntity\":\"ShipmentItemRejection.cdm.json/ShipmentItemRejection\",\"joinPairs\":[{\"fromAttribute\":\"ShipmentInspectionTypeId\",\"toAttribute\":\"ShipmentInspectionTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

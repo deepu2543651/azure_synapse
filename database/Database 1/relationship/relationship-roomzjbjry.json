@@ -1,0 +1,26 @@
+{
+	"name": "relationship-roomzjbjry",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "relationship-roomzjbjry",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "ItemSafetyClassification",
+		"ToTableName": "ShipmentItem",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ItemSafetyClassificationId",
+				"ToColumnName": "ItemSafetyClassificationId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"ItemSafetyClassification.cdm.json/ItemSafetyClassification\",\"toEntity\":\"ShipmentItem.cdm.json/ShipmentItem\",\"joinPairs\":[{\"fromAttribute\":\"ItemSafetyClassificationId\",\"toAttribute\":\"ItemSafetyClassificationId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

@@ -1,0 +1,86 @@
+{
+	"name": "RateClass",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "RateClass",
+		"Description": "A schedule for the charges for cargo shipments applicable to a minimum charge, per pound charge, per hundred weight charge, container charge, or specific commodity rate charge.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "RateClassId",
+					"Description": "The unique identifier of a Rate Class.",
+					"BaseAttributeReference": {
+						"Entity": "RateClass.cdm.json/RateClass",
+						"Name": "RateClassId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "RateClassName",
+					"Description": "The name of a Rate Class.",
+					"BaseAttributeReference": {
+						"Entity": "RateClass.cdm.json/RateClass",
+						"Name": "RateClassName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "RateClassDescription",
+					"Description": "The description of a Rate Class.",
+					"BaseAttributeReference": {
+						"Entity": "RateClass.cdm.json/RateClass",
+						"Name": "RateClassDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"RateClassId\":{\"entity\":\"RateClass.cdm.json/RateClass\",\"name\":\"RateClassId\"},\"RateClassName\":{\"entity\":\"RateClass.cdm.json/RateClass\",\"name\":\"RateClassName\"},\"RateClassDescription\":{\"entity\":\"RateClass.cdm.json/RateClass\",\"name\":\"RateClassDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"RateClass\",\"path\":\"RateClass.cdm.json/RateClass\"},\"description\":\"A schedule for the charges for cargo shipments applicable to a minimum charge, per pound charge, per hundred weight charge, container charge, or specific commodity rate charge.\",\"primaryKey\":[\"RateClassId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"RateClassId\",\"attributeReference\":{\"entity\":\"RateClass.cdm.json/RateClass\",\"name\":\"RateClassId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"RateClassName\",\"attributeReference\":{\"entity\":\"RateClass.cdm.json/RateClass\",\"name\":\"RateClassName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"RateClassDescription\",\"attributeReference\":{\"entity\":\"RateClass.cdm.json/RateClass\",\"name\":\"RateClassDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512}]}}}",
+			"Description": "A schedule for the charges for cargo shipments applicable to a minimum charge, per pound charge, per hundred weight charge, container charge, or specific commodity rate charge.",
+			"DisplayFolderInfo": "{\"name\":\"Shipping\",\"colorCode\":\"#000B42\"}",
+			"PrimaryKeys": "RateClassId"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

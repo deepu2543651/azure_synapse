@@ -1,0 +1,467 @@
+{
+	"name": "CustomsDuty",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "CustomsDuty",
+		"Description": "A government tax on imports or exports",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ShipmentId",
+					"Description": "The unique identifier of a Shipment.",
+					"BaseAttributeReference": {
+						"Entity": "CustomsDuty.cdm.json/CustomsDuty",
+						"Name": "ShipmentId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "DocumentId",
+					"Description": "The unique identifier of a Document.",
+					"BaseAttributeReference": {
+						"Entity": "CustomsDuty.cdm.json/CustomsDuty",
+						"Name": "DocumentId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "CustomsValuationMethodId",
+					"Description": "The unique identifier of the Customs Valuation Method.",
+					"BaseAttributeReference": {
+						"Entity": "CustomsDuty.cdm.json/CustomsDuty",
+						"Name": "CustomsValuationMethodId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "CustomsValuationCode",
+					"Description": "The unique identifier of the Customs Valuation Code.",
+					"BaseAttributeReference": {
+						"Entity": "CustomsDuty.cdm.json/CustomsDuty",
+						"Name": "CustomsValuationCode"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Length": 4,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "CustomsDutiesInspectionDate",
+					"Description": "The date that the items were inspected by Customs.",
+					"BaseAttributeReference": {
+						"Entity": "CustomsDuty.cdm.json/CustomsDuty",
+						"Name": "CustomsDutiesInspectionDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "CustomsReceivedDate",
+					"Description": "The date that the items were received by Customs.",
+					"BaseAttributeReference": {
+						"Entity": "CustomsDuty.cdm.json/CustomsDuty",
+						"Name": "CustomsReceivedDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "CustomsClearanceDate",
+					"Description": "The date the items were cleared by Customs.",
+					"BaseAttributeReference": {
+						"Entity": "CustomsDuty.cdm.json/CustomsDuty",
+						"Name": "CustomsClearanceDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "CustomsDutiesLeviedDate",
+					"Description": "The date that customs duties were levied.",
+					"BaseAttributeReference": {
+						"Entity": "CustomsDuty.cdm.json/CustomsDuty",
+						"Name": "CustomsDutiesLeviedDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "CustomsDutiesDueDate",
+					"Description": "The date that customs duties were due.",
+					"BaseAttributeReference": {
+						"Entity": "CustomsDuty.cdm.json/CustomsDuty",
+						"Name": "CustomsDutiesDueDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "CustomsDutiesPaidDate",
+					"Description": "The date that customs duties were paid.",
+					"BaseAttributeReference": {
+						"Entity": "CustomsDuty.cdm.json/CustomsDuty",
+						"Name": "CustomsDutiesPaidDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "CustomsDutiesAmount",
+					"Description": "The amount of customs duties paid.",
+					"BaseAttributeReference": {
+						"Entity": "CustomsDuty.cdm.json/CustomsDuty",
+						"Name": "CustomsDutiesAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "CustomsDutiesPenaltiesAmount",
+					"Description": "The amount of customs duties penalties.",
+					"BaseAttributeReference": {
+						"Entity": "CustomsDuty.cdm.json/CustomsDuty",
+						"Name": "CustomsDutiesPenaltiesAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "CountervailingDutyAmount",
+					"Description": "An extra duty charge that a country places on imported goods to counter the subsidies or bounties granted to the exporters of the goods by their home governments.",
+					"BaseAttributeReference": {
+						"Entity": "CustomsDuty.cdm.json/CustomsDuty",
+						"Name": "CountervailingDutyAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "CustomsImportValueAmount",
+					"Description": "The value of merchandise appraised by the US Customs Service, which is based upon the value of the product in the foreign country of origin and excludes charges incurred in bringing the merchandise to the U.S.",
+					"BaseAttributeReference": {
+						"Entity": "CustomsDuty.cdm.json/CustomsDuty",
+						"Name": "CustomsImportValueAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "CustomsProcessingFeeAmount",
+					"Description": "A surcharge of the CIF value on imported goods assessed by customs authorities.",
+					"BaseAttributeReference": {
+						"Entity": "CustomsDuty.cdm.json/CustomsDuty",
+						"Name": "CustomsProcessingFeeAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "SurchargesAmount",
+					"Description": "Any surcharges charged.",
+					"BaseAttributeReference": {
+						"Entity": "CustomsDuty.cdm.json/CustomsDuty",
+						"Name": "SurchargesAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "EntryValueAmount",
+					"Description": "The value reflected on the entry documentation submitted by the importer.",
+					"BaseAttributeReference": {
+						"Entity": "CustomsDuty.cdm.json/CustomsDuty",
+						"Name": "EntryValueAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "ExportDutyAmount",
+					"Description": "A tax imposed on exports by the government authorities of a country.",
+					"BaseAttributeReference": {
+						"Entity": "CustomsDuty.cdm.json/CustomsDuty",
+						"Name": "ExportDutyAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "ImportTariffTaxAmount",
+					"Description": "The amount of import tariff tax charged.",
+					"BaseAttributeReference": {
+						"Entity": "CustomsDuty.cdm.json/CustomsDuty",
+						"Name": "ImportTariffTaxAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "ImporterOfRecordName",
+					"Description": "The name of the importer of record.",
+					"BaseAttributeReference": {
+						"Entity": "CustomsDuty.cdm.json/CustomsDuty",
+						"Name": "ImporterOfRecordName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "CustomsAppraiserName",
+					"Description": "The name of the Customs appraiser authorized by the U.S. Customs Service to examine and determine the value of imported merchandise.",
+					"BaseAttributeReference": {
+						"Entity": "CustomsDuty.cdm.json/CustomsDuty",
+						"Name": "CustomsAppraiserName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "CustomsAppraiserTitle",
+					"Description": "The title of the Customs appraiser authorized by the U.S. Customs Service to examine and determine the value of imported merchandise.",
+					"BaseAttributeReference": {
+						"Entity": "CustomsDuty.cdm.json/CustomsDuty",
+						"Name": "CustomsAppraiserTitle"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 16,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "CountryName",
+					"Description": "The unique identifier of a Country.",
+					"BaseAttributeReference": {
+						"Entity": "CustomsDuty.cdm.json/CustomsDuty",
+						"Name": "CountryName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ExportDeclarationStatement",
+					"Description": "A formal statement made to Customs at a port of exit declaring full details about goods being exported.",
+					"BaseAttributeReference": {
+						"Entity": "CustomsDuty.cdm.json/CustomsDuty",
+						"Name": "ExportDeclarationStatement"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 2048,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "CustomsInspectionLocation",
+					"Description": "The location at which customs inspection for duties was performed.",
+					"BaseAttributeReference": {
+						"Entity": "CustomsDuty.cdm.json/CustomsDuty",
+						"Name": "CustomsInspectionLocation"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ShipmentId\":{\"entity\":\"CustomsDuty.cdm.json/CustomsDuty\",\"name\":\"ShipmentId\"},\"DocumentId\":{\"entity\":\"CustomsDuty.cdm.json/CustomsDuty\",\"name\":\"DocumentId\"},\"CustomsValuationMethodId\":{\"entity\":\"CustomsDuty.cdm.json/CustomsDuty\",\"name\":\"CustomsValuationMethodId\"},\"CustomsValuationCode\":{\"entity\":\"CustomsDuty.cdm.json/CustomsDuty\",\"name\":\"CustomsValuationCode\"},\"CustomsDutiesInspectionDate\":{\"entity\":\"CustomsDuty.cdm.json/CustomsDuty\",\"name\":\"CustomsDutiesInspectionDate\"},\"CustomsReceivedDate\":{\"entity\":\"CustomsDuty.cdm.json/CustomsDuty\",\"name\":\"CustomsReceivedDate\"},\"CustomsClearanceDate\":{\"entity\":\"CustomsDuty.cdm.json/CustomsDuty\",\"name\":\"CustomsClearanceDate\"},\"CustomsDutiesLeviedDate\":{\"entity\":\"CustomsDuty.cdm.json/CustomsDuty\",\"name\":\"CustomsDutiesLeviedDate\"},\"CustomsDutiesDueDate\":{\"entity\":\"CustomsDuty.cdm.json/CustomsDuty\",\"name\":\"CustomsDutiesDueDate\"},\"CustomsDutiesPaidDate\":{\"entity\":\"CustomsDuty.cdm.json/CustomsDuty\",\"name\":\"CustomsDutiesPaidDate\"},\"CustomsDutiesAmount\":{\"entity\":\"CustomsDuty.cdm.json/CustomsDuty\",\"name\":\"CustomsDutiesAmount\"},\"CustomsDutiesPenaltiesAmount\":{\"entity\":\"CustomsDuty.cdm.json/CustomsDuty\",\"name\":\"CustomsDutiesPenaltiesAmount\"},\"CountervailingDutyAmount\":{\"entity\":\"CustomsDuty.cdm.json/CustomsDuty\",\"name\":\"CountervailingDutyAmount\"},\"CustomsImportValueAmount\":{\"entity\":\"CustomsDuty.cdm.json/CustomsDuty\",\"name\":\"CustomsImportValueAmount\"},\"CustomsProcessingFeeAmount\":{\"entity\":\"CustomsDuty.cdm.json/CustomsDuty\",\"name\":\"CustomsProcessingFeeAmount\"},\"SurchargesAmount\":{\"entity\":\"CustomsDuty.cdm.json/CustomsDuty\",\"name\":\"SurchargesAmount\"},\"EntryValueAmount\":{\"entity\":\"CustomsDuty.cdm.json/CustomsDuty\",\"name\":\"EntryValueAmount\"},\"ExportDutyAmount\":{\"entity\":\"CustomsDuty.cdm.json/CustomsDuty\",\"name\":\"ExportDutyAmount\"},\"ImportTariffTaxAmount\":{\"entity\":\"CustomsDuty.cdm.json/CustomsDuty\",\"name\":\"ImportTariffTaxAmount\"},\"ImporterOfRecordName\":{\"entity\":\"CustomsDuty.cdm.json/CustomsDuty\",\"name\":\"ImporterOfRecordName\"},\"CustomsAppraiserName\":{\"entity\":\"CustomsDuty.cdm.json/CustomsDuty\",\"name\":\"CustomsAppraiserName\"},\"CustomsAppraiserTitle\":{\"entity\":\"CustomsDuty.cdm.json/CustomsDuty\",\"name\":\"CustomsAppraiserTitle\"},\"CountryName\":{\"entity\":\"CustomsDuty.cdm.json/CustomsDuty\",\"name\":\"CountryName\"},\"ExportDeclarationStatement\":{\"entity\":\"CustomsDuty.cdm.json/CustomsDuty\",\"name\":\"ExportDeclarationStatement\"},\"CustomsInspectionLocation\":{\"entity\":\"CustomsDuty.cdm.json/CustomsDuty\",\"name\":\"CustomsInspectionLocation\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"CustomsDuty\",\"path\":\"CustomsDuty.cdm.json/CustomsDuty\"},\"description\":\"A government tax on imports or exports\",\"primaryKey\":[\"ShipmentId\",\"DocumentId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"ShipmentId\",\"attributeReference\":{\"entity\":\"CustomsDuty.cdm.json/CustomsDuty\",\"name\":\"ShipmentId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"DocumentId\",\"attributeReference\":{\"entity\":\"CustomsDuty.cdm.json/CustomsDuty\",\"name\":\"DocumentId\"},\"dataType\":\"long\"},{\"type\":\"Existing\",\"name\":\"CustomsValuationMethodId\",\"attributeReference\":{\"entity\":\"CustomsDuty.cdm.json/CustomsDuty\",\"name\":\"CustomsValuationMethodId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"CustomsValuationCode\",\"attributeReference\":{\"entity\":\"CustomsDuty.cdm.json/CustomsDuty\",\"name\":\"CustomsValuationCode\"},\"dataType\":\"string\",\"dataTypeLength\":4},{\"type\":\"Existing\",\"name\":\"CustomsDutiesInspectionDate\",\"attributeReference\":{\"entity\":\"CustomsDuty.cdm.json/CustomsDuty\",\"name\":\"CustomsDutiesInspectionDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\"},{\"type\":\"Existing\",\"name\":\"CustomsReceivedDate\",\"attributeReference\":{\"entity\":\"CustomsDuty.cdm.json/CustomsDuty\",\"name\":\"CustomsReceivedDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\"},{\"type\":\"Existing\",\"name\":\"CustomsClearanceDate\",\"attributeReference\":{\"entity\":\"CustomsDuty.cdm.json/CustomsDuty\",\"name\":\"CustomsClearanceDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\"},{\"type\":\"Existing\",\"name\":\"CustomsDutiesLeviedDate\",\"attributeReference\":{\"entity\":\"CustomsDuty.cdm.json/CustomsDuty\",\"name\":\"CustomsDutiesLeviedDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\"},{\"type\":\"Existing\",\"name\":\"CustomsDutiesDueDate\",\"attributeReference\":{\"entity\":\"CustomsDuty.cdm.json/CustomsDuty\",\"name\":\"CustomsDutiesDueDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\"},{\"type\":\"Existing\",\"name\":\"CustomsDutiesPaidDate\",\"attributeReference\":{\"entity\":\"CustomsDuty.cdm.json/CustomsDuty\",\"name\":\"CustomsDutiesPaidDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\"},{\"type\":\"Existing\",\"name\":\"CustomsDutiesAmount\",\"attributeReference\":{\"entity\":\"CustomsDuty.cdm.json/CustomsDuty\",\"name\":\"CustomsDutiesAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"CustomsDutiesPenaltiesAmount\",\"attributeReference\":{\"entity\":\"CustomsDuty.cdm.json/CustomsDuty\",\"name\":\"CustomsDutiesPenaltiesAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"CountervailingDutyAmount\",\"attributeReference\":{\"entity\":\"CustomsDuty.cdm.json/CustomsDuty\",\"name\":\"CountervailingDutyAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"CustomsImportValueAmount\",\"attributeReference\":{\"entity\":\"CustomsDuty.cdm.json/CustomsDuty\",\"name\":\"CustomsImportValueAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"CustomsProcessingFeeAmount\",\"attributeReference\":{\"entity\":\"CustomsDuty.cdm.json/CustomsDuty\",\"name\":\"CustomsProcessingFeeAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"SurchargesAmount\",\"attributeReference\":{\"entity\":\"CustomsDuty.cdm.json/CustomsDuty\",\"name\":\"SurchargesAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"EntryValueAmount\",\"attributeReference\":{\"entity\":\"CustomsDuty.cdm.json/CustomsDuty\",\"name\":\"EntryValueAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"ExportDutyAmount\",\"attributeReference\":{\"entity\":\"CustomsDuty.cdm.json/CustomsDuty\",\"name\":\"ExportDutyAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"ImportTariffTaxAmount\",\"attributeReference\":{\"entity\":\"CustomsDuty.cdm.json/CustomsDuty\",\"name\":\"ImportTariffTaxAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"ImporterOfRecordName\",\"attributeReference\":{\"entity\":\"CustomsDuty.cdm.json/CustomsDuty\",\"name\":\"ImporterOfRecordName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"CustomsAppraiserName\",\"attributeReference\":{\"entity\":\"CustomsDuty.cdm.json/CustomsDuty\",\"name\":\"CustomsAppraiserName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"CustomsAppraiserTitle\",\"attributeReference\":{\"entity\":\"CustomsDuty.cdm.json/CustomsDuty\",\"name\":\"CustomsAppraiserTitle\"},\"dataType\":\"string\",\"dataTypeLength\":16},{\"type\":\"Existing\",\"name\":\"CountryName\",\"attributeReference\":{\"entity\":\"CustomsDuty.cdm.json/CustomsDuty\",\"name\":\"CountryName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"ExportDeclarationStatement\",\"attributeReference\":{\"entity\":\"CustomsDuty.cdm.json/CustomsDuty\",\"name\":\"ExportDeclarationStatement\"},\"dataType\":\"string\",\"dataTypeLength\":2048},{\"type\":\"Existing\",\"name\":\"CustomsInspectionLocation\",\"attributeReference\":{\"entity\":\"CustomsDuty.cdm.json/CustomsDuty\",\"name\":\"CustomsInspectionLocation\"},\"dataType\":\"string\",\"dataTypeLength\":128}]}}}",
+			"Description": "A government tax on imports or exports",
+			"DisplayFolderInfo": "{\"name\":\"Shipping\",\"colorCode\":\"#000B42\"}",
+			"PrimaryKeys": "ShipmentId,DocumentId"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

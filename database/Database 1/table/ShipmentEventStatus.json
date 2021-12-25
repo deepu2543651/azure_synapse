@@ -1,0 +1,86 @@
+{
+	"name": "ShipmentEventStatus",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "ShipmentEventStatus",
+		"Description": "The status of the Shipment Event.\n\nEx:\n- planned\n- in process\n- completed\n- unknown",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ShipmentEventStatusId",
+					"Description": "The unique identifier of a Shipment Event Status.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentEventStatus.cdm.json/ShipmentEventStatus",
+						"Name": "ShipmentEventStatusId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ShipmentEventStatusName",
+					"Description": "The name of a Shipment Event Status.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentEventStatus.cdm.json/ShipmentEventStatus",
+						"Name": "ShipmentEventStatusName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ShipmentEventStatusDescription",
+					"Description": "The description of a Shipment Event Status.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentEventStatus.cdm.json/ShipmentEventStatus",
+						"Name": "ShipmentEventStatusDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ShipmentEventStatusId\":{\"entity\":\"ShipmentEventStatus.cdm.json/ShipmentEventStatus\",\"name\":\"ShipmentEventStatusId\"},\"ShipmentEventStatusName\":{\"entity\":\"ShipmentEventStatus.cdm.json/ShipmentEventStatus\",\"name\":\"ShipmentEventStatusName\"},\"ShipmentEventStatusDescription\":{\"entity\":\"ShipmentEventStatus.cdm.json/ShipmentEventStatus\",\"name\":\"ShipmentEventStatusDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"ShipmentEventStatus\",\"path\":\"ShipmentEventStatus.cdm.json/ShipmentEventStatus\"},\"description\":\"The status of the Shipment Event.\\n\\nEx:\\n- planned\\n- in process\\n- completed\\n- unknown\",\"primaryKey\":[\"ShipmentEventStatusId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"ShipmentEventStatusId\",\"attributeReference\":{\"entity\":\"ShipmentEventStatus.cdm.json/ShipmentEventStatus\",\"name\":\"ShipmentEventStatusId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ShipmentEventStatusName\",\"attributeReference\":{\"entity\":\"ShipmentEventStatus.cdm.json/ShipmentEventStatus\",\"name\":\"ShipmentEventStatusName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"ShipmentEventStatusDescription\",\"attributeReference\":{\"entity\":\"ShipmentEventStatus.cdm.json/ShipmentEventStatus\",\"name\":\"ShipmentEventStatusDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512}]}}}",
+			"Description": "The status of the Shipment Event.\n\nEx:\n- planned\n- in process\n- completed\n- unknown",
+			"DisplayFolderInfo": "{\"name\":\"Shipping\",\"colorCode\":\"#000B42\"}",
+			"PrimaryKeys": "ShipmentEventStatusId"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

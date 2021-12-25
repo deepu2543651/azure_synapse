@@ -1,0 +1,101 @@
+{
+	"name": "ShipmentItemAssignedTerm",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "ShipmentItemAssignedTerm",
+		"Description": "The one or more Shipment Item Term(s) assigned to or describing a Shipment.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ShipmentId",
+					"Description": "The unique identifier of a Shipment.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentItemAssignedTerm.cdm.json/ShipmentItemAssignedTerm",
+						"Name": "ShipmentId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ShipmentItemNumber",
+					"Description": "The shipment line number.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentItemAssignedTerm.cdm.json/ShipmentItemAssignedTerm",
+						"Name": "ShipmentItemNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ShipmentTermTypeId",
+					"Description": "The unique identifier of a Shipment Term Type.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentItemAssignedTerm.cdm.json/ShipmentItemAssignedTerm",
+						"Name": "ShipmentTermTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ShipmentItemAssignedTermNote",
+					"Description": "Notes, comments or additional information regarding the shipment item assigned term(s).",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentItemAssignedTerm.cdm.json/ShipmentItemAssignedTerm",
+						"Name": "ShipmentItemAssignedTermNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ShipmentId\":{\"entity\":\"ShipmentItemAssignedTerm.cdm.json/ShipmentItemAssignedTerm\",\"name\":\"ShipmentId\"},\"ShipmentItemNumber\":{\"entity\":\"ShipmentItemAssignedTerm.cdm.json/ShipmentItemAssignedTerm\",\"name\":\"ShipmentItemNumber\"},\"ShipmentTermTypeId\":{\"entity\":\"ShipmentItemAssignedTerm.cdm.json/ShipmentItemAssignedTerm\",\"name\":\"ShipmentTermTypeId\"},\"ShipmentItemAssignedTermNote\":{\"entity\":\"ShipmentItemAssignedTerm.cdm.json/ShipmentItemAssignedTerm\",\"name\":\"ShipmentItemAssignedTermNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"ShipmentItemAssignedTerm\",\"path\":\"ShipmentItemAssignedTerm.cdm.json/ShipmentItemAssignedTerm\"},\"description\":\"The one or more Shipment Item Term(s) assigned to or describing a Shipment.\",\"primaryKey\":[\"ShipmentId\",\"ShipmentItemNumber\",\"ShipmentTermTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"ShipmentId\",\"attributeReference\":{\"entity\":\"ShipmentItemAssignedTerm.cdm.json/ShipmentItemAssignedTerm\",\"name\":\"ShipmentId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ShipmentItemNumber\",\"attributeReference\":{\"entity\":\"ShipmentItemAssignedTerm.cdm.json/ShipmentItemAssignedTerm\",\"name\":\"ShipmentItemNumber\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ShipmentTermTypeId\",\"attributeReference\":{\"entity\":\"ShipmentItemAssignedTerm.cdm.json/ShipmentItemAssignedTerm\",\"name\":\"ShipmentTermTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ShipmentItemAssignedTermNote\",\"attributeReference\":{\"entity\":\"ShipmentItemAssignedTerm.cdm.json/ShipmentItemAssignedTerm\",\"name\":\"ShipmentItemAssignedTermNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024}]}}}",
+			"Description": "The one or more Shipment Item Term(s) assigned to or describing a Shipment.",
+			"DisplayFolderInfo": "{\"name\":\"Shipping\",\"colorCode\":\"#000B42\"}",
+			"PrimaryKeys": "ShipmentId,ShipmentItemNumber,ShipmentTermTypeId"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

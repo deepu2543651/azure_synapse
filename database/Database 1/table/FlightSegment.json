@@ -1,0 +1,181 @@
+{
+	"name": "FlightSegment",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "FlightSegment",
+		"Description": "The individual segments or legs of a flight.\n\nEx:\n\nFor a journey from London (England) to Honolulu(USA) with a plane change at San Francisco you have 2 flight legs/segments. The first leg is London to San Francisco and the 2nd leg is San Francisco to Honolulu. Thus for the journey San Francisco is the via point.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "CarrierId",
+					"Description": "The unique identifier of a Carrier.",
+					"BaseAttributeReference": {
+						"Entity": "FlightSegment.cdm.json/FlightSegment",
+						"Name": "CarrierId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "FlightNumber",
+					"Description": "The unique identifier of a Flight.",
+					"BaseAttributeReference": {
+						"Entity": "FlightSegment.cdm.json/FlightSegment",
+						"Name": "FlightNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ConnectingCarrierId",
+					"Description": "The unique identifier of a Carrier.",
+					"BaseAttributeReference": {
+						"Entity": "FlightSegment.cdm.json/FlightSegment",
+						"Name": "ConnectingCarrierId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ConnectingFlightNumber",
+					"Description": "The unique identifier of the connecting Flight.",
+					"BaseAttributeReference": {
+						"Entity": "FlightSegment.cdm.json/FlightSegment",
+						"Name": "ConnectingFlightNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "FlightSequenceNumber",
+					"Description": "The sequence in which the legs or segments are performed.",
+					"BaseAttributeReference": {
+						"Entity": "FlightSegment.cdm.json/FlightSegment",
+						"Name": "FlightSequenceNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ConnectingAirportCode",
+					"Description": "AKA Airport Code\n\nThree-letter codes used to identify airports.\n\nAirport Code \nThe airport code is a three letter designator for a commercial airport, or other travel point -- e.g. a large bus station. These are the codes that airlines and pilots use to identify airports and are used in timetables, baggage tags, tickets, advertisements, Airline and Global Reservation Systems. There are approximately 9,000 of them in use of a total of 17,576 available",
+					"BaseAttributeReference": {
+						"Entity": "FlightSegment.cdm.json/FlightSegment",
+						"Name": "ConnectingAirportCode"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 3,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "LayoverTimeHours",
+					"Description": "The amount of time a connecting passenger has between flights, before reaching the final destination.",
+					"BaseAttributeReference": {
+						"Entity": "FlightSegment.cdm.json/FlightSegment",
+						"Name": "LayoverTimeHours"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "MinimumConnectionTimeHours",
+					"Description": "The minimum standard of time required by airlines to make a connecting flight in a particular airport.  This standard is determined by the Air Traffic Conferences and varies according to the airport and the airline",
+					"BaseAttributeReference": {
+						"Entity": "FlightSegment.cdm.json/FlightSegment",
+						"Name": "MinimumConnectionTimeHours"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "FlightSegmentTypeId",
+					"Description": "The unique identifier of a Flight Leg/Segment Type.",
+					"BaseAttributeReference": {
+						"Entity": "FlightSegment.cdm.json/FlightSegment",
+						"Name": "FlightSegmentTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"CarrierId\":{\"entity\":\"FlightSegment.cdm.json/FlightSegment\",\"name\":\"CarrierId\"},\"FlightNumber\":{\"entity\":\"FlightSegment.cdm.json/FlightSegment\",\"name\":\"FlightNumber\"},\"ConnectingCarrierId\":{\"entity\":\"FlightSegment.cdm.json/FlightSegment\",\"name\":\"ConnectingCarrierId\"},\"ConnectingFlightNumber\":{\"entity\":\"FlightSegment.cdm.json/FlightSegment\",\"name\":\"ConnectingFlightNumber\"},\"FlightSequenceNumber\":{\"entity\":\"FlightSegment.cdm.json/FlightSegment\",\"name\":\"FlightSequenceNumber\"},\"ConnectingAirportCode\":{\"entity\":\"FlightSegment.cdm.json/FlightSegment\",\"name\":\"ConnectingAirportCode\"},\"LayoverTimeHours\":{\"entity\":\"FlightSegment.cdm.json/FlightSegment\",\"name\":\"LayoverTimeHours\"},\"MinimumConnectionTimeHours\":{\"entity\":\"FlightSegment.cdm.json/FlightSegment\",\"name\":\"MinimumConnectionTimeHours\"},\"FlightSegmentTypeId\":{\"entity\":\"FlightSegment.cdm.json/FlightSegment\",\"name\":\"FlightSegmentTypeId\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"FlightSegment\",\"path\":\"FlightSegment.cdm.json/FlightSegment\"},\"description\":\"The individual segments or legs of a flight.\\n\\nEx:\\n\\nFor a journey from London (England) to Honolulu(USA) with a plane change at San Francisco you have 2 flight legs/segments. The first leg is London to San Francisco and the 2nd leg is San Francisco to Honolulu. Thus for the journey San Francisco is the via point.\",\"primaryKey\":[\"CarrierId\",\"FlightNumber\",\"ConnectingCarrierId\",\"ConnectingFlightNumber\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"CarrierId\",\"attributeReference\":{\"entity\":\"FlightSegment.cdm.json/FlightSegment\",\"name\":\"CarrierId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"FlightNumber\",\"attributeReference\":{\"entity\":\"FlightSegment.cdm.json/FlightSegment\",\"name\":\"FlightNumber\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ConnectingCarrierId\",\"attributeReference\":{\"entity\":\"FlightSegment.cdm.json/FlightSegment\",\"name\":\"ConnectingCarrierId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ConnectingFlightNumber\",\"attributeReference\":{\"entity\":\"FlightSegment.cdm.json/FlightSegment\",\"name\":\"ConnectingFlightNumber\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"FlightSequenceNumber\",\"attributeReference\":{\"entity\":\"FlightSegment.cdm.json/FlightSegment\",\"name\":\"FlightSequenceNumber\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ConnectingAirportCode\",\"attributeReference\":{\"entity\":\"FlightSegment.cdm.json/FlightSegment\",\"name\":\"ConnectingAirportCode\"},\"dataType\":\"string\",\"dataTypeLength\":3},{\"type\":\"Existing\",\"name\":\"LayoverTimeHours\",\"attributeReference\":{\"entity\":\"FlightSegment.cdm.json/FlightSegment\",\"name\":\"LayoverTimeHours\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"MinimumConnectionTimeHours\",\"attributeReference\":{\"entity\":\"FlightSegment.cdm.json/FlightSegment\",\"name\":\"MinimumConnectionTimeHours\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"FlightSegmentTypeId\",\"attributeReference\":{\"entity\":\"FlightSegment.cdm.json/FlightSegment\",\"name\":\"FlightSegmentTypeId\"},\"dataType\":\"integer\"}]}}}",
+			"Description": "The individual segments or legs of a flight.\n\nEx:\n\nFor a journey from London (England) to Honolulu(USA) with a plane change at San Francisco you have 2 flight legs/segments. The first leg is London to San Francisco and the 2nd leg is San Francisco to Honolulu. Thus for the journey San Francisco is the via point.",
+			"DisplayFolderInfo": "{\"name\":\"Shipping\",\"colorCode\":\"#000B42\"}",
+			"PrimaryKeys": "CarrierId,FlightNumber,ConnectingCarrierId,ConnectingFlightNumber"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

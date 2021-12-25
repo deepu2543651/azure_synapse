@@ -1,0 +1,86 @@
+{
+	"name": "CarrierRelationshipType",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "CarrierRelationshipType",
+		"Description": "The nature of the relationship between/among carriers.\n\nEx:\n- Codeshare partner\n- Star Alliance partner",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "CarrierRelationshipTypeId",
+					"Description": "The unique identifier of a Carrier Relationship Type.",
+					"BaseAttributeReference": {
+						"Entity": "CarrierRelationshipType.cdm.json/CarrierRelationshipType",
+						"Name": "CarrierRelationshipTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "CarrierRelationshipTypeName",
+					"Description": "The name of a Carrier Relationship Type.",
+					"BaseAttributeReference": {
+						"Entity": "CarrierRelationshipType.cdm.json/CarrierRelationshipType",
+						"Name": "CarrierRelationshipTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "CarrierRelationshipTypeDescription",
+					"Description": "The description of a Carrier Relationship Type.",
+					"BaseAttributeReference": {
+						"Entity": "CarrierRelationshipType.cdm.json/CarrierRelationshipType",
+						"Name": "CarrierRelationshipTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"CarrierRelationshipTypeId\":{\"entity\":\"CarrierRelationshipType.cdm.json/CarrierRelationshipType\",\"name\":\"CarrierRelationshipTypeId\"},\"CarrierRelationshipTypeName\":{\"entity\":\"CarrierRelationshipType.cdm.json/CarrierRelationshipType\",\"name\":\"CarrierRelationshipTypeName\"},\"CarrierRelationshipTypeDescription\":{\"entity\":\"CarrierRelationshipType.cdm.json/CarrierRelationshipType\",\"name\":\"CarrierRelationshipTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"CarrierRelationshipType\",\"path\":\"CarrierRelationshipType.cdm.json/CarrierRelationshipType\"},\"description\":\"The nature of the relationship between/among carriers.\\n\\nEx:\\n- Codeshare partner\\n- Star Alliance partner\",\"primaryKey\":[\"CarrierRelationshipTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"CarrierRelationshipTypeId\",\"attributeReference\":{\"entity\":\"CarrierRelationshipType.cdm.json/CarrierRelationshipType\",\"name\":\"CarrierRelationshipTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"CarrierRelationshipTypeName\",\"attributeReference\":{\"entity\":\"CarrierRelationshipType.cdm.json/CarrierRelationshipType\",\"name\":\"CarrierRelationshipTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"CarrierRelationshipTypeDescription\",\"attributeReference\":{\"entity\":\"CarrierRelationshipType.cdm.json/CarrierRelationshipType\",\"name\":\"CarrierRelationshipTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512}]}}}",
+			"Description": "The nature of the relationship between/among carriers.\n\nEx:\n- Codeshare partner\n- Star Alliance partner",
+			"DisplayFolderInfo": "{\"name\":\"Shipping\",\"colorCode\":\"#000B42\"}",
+			"PrimaryKeys": "CarrierRelationshipTypeId"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

@@ -1,0 +1,26 @@
+{
+	"name": "relationship-wmlbxvcisb",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "relationship-wmlbxvcisb",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "CertificateOfInspection",
+		"ToTableName": "InsurancePolicyCertificateOfInspection",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "CertificateOfInspectionId",
+				"ToColumnName": "CertificateOfInspectionId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"CertificateOfInspection.cdm.json/CertificateOfInspection\",\"toEntity\":\"InsurancePolicyCertificateOfInspection.cdm.json/InsurancePolicyCertificateOfInspection\",\"joinPairs\":[{\"fromAttribute\":\"CertificateOfInspectionId\",\"toAttribute\":\"CertificateOfInspectionId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

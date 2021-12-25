@@ -1,0 +1,102 @@
+{
+	"name": "ShipmentMethod",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "ShipmentMethod",
+		"Description": "The method by which the shipment is to be shipped.\n\nEx:\n- Air - general air cargo\n- Air - next day air\n- Air - overnight air\n- Barge\n- Fast Freight\n- Piggyback Service\n- Pipeline\n- Rail\n- Ship\n- Tanker\n- Truck\n- Transloading Privilege\n- Vessel",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ShipmentMethodId",
+					"Description": "The unique identifier of a Shipment Method.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentMethod.cdm.json/ShipmentMethod",
+						"Name": "ShipmentMethodId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ShipmentMethodName",
+					"Description": "The name of a Shipment Method.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentMethod.cdm.json/ShipmentMethod",
+						"Name": "ShipmentMethodName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ShipmentMethodDescription",
+					"Description": "The description of a Shipment Method.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentMethod.cdm.json/ShipmentMethod",
+						"Name": "ShipmentMethodDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ExpressShipmentMethodIndicator",
+					"Description": "Indicates whether the shipment method is considered to be an express shipment method.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentMethod.cdm.json/ShipmentMethod",
+						"Name": "ExpressShipmentMethodIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ShipmentMethodId\":{\"entity\":\"ShipmentMethod.cdm.json/ShipmentMethod\",\"name\":\"ShipmentMethodId\"},\"ShipmentMethodName\":{\"entity\":\"ShipmentMethod.cdm.json/ShipmentMethod\",\"name\":\"ShipmentMethodName\"},\"ShipmentMethodDescription\":{\"entity\":\"ShipmentMethod.cdm.json/ShipmentMethod\",\"name\":\"ShipmentMethodDescription\"},\"ExpressShipmentMethodIndicator\":{\"entity\":\"ShipmentMethod.cdm.json/ShipmentMethod\",\"name\":\"ExpressShipmentMethodIndicator\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"ShipmentMethod\",\"path\":\"ShipmentMethod.cdm.json/ShipmentMethod\"},\"description\":\"The method by which the shipment is to be shipped.\\n\\nEx:\\n- Air - general air cargo\\n- Air - next day air\\n- Air - overnight air\\n- Barge\\n- Fast Freight\\n- Piggyback Service\\n- Pipeline\\n- Rail\\n- Ship\\n- Tanker\\n- Truck\\n- Transloading Privilege\\n- Vessel\",\"primaryKey\":[\"ShipmentMethodId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"ShipmentMethodId\",\"attributeReference\":{\"entity\":\"ShipmentMethod.cdm.json/ShipmentMethod\",\"name\":\"ShipmentMethodId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ShipmentMethodName\",\"attributeReference\":{\"entity\":\"ShipmentMethod.cdm.json/ShipmentMethod\",\"name\":\"ShipmentMethodName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"ShipmentMethodDescription\",\"attributeReference\":{\"entity\":\"ShipmentMethod.cdm.json/ShipmentMethod\",\"name\":\"ShipmentMethodDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512},{\"type\":\"Existing\",\"name\":\"ExpressShipmentMethodIndicator\",\"attributeReference\":{\"entity\":\"ShipmentMethod.cdm.json/ShipmentMethod\",\"name\":\"ExpressShipmentMethodIndicator\"},\"dataType\":\"boolean\"}]}}}",
+			"Description": "The method by which the shipment is to be shipped.\n\nEx:\n- Air - general air cargo\n- Air - next day air\n- Air - overnight air\n- Barge\n- Fast Freight\n- Piggyback Service\n- Pipeline\n- Rail\n- Ship\n- Tanker\n- Truck\n- Transloading Privilege\n- Vessel",
+			"DisplayFolderInfo": "{\"name\":\"Shipping\",\"colorCode\":\"#000B42\"}",
+			"PrimaryKeys": "ShipmentMethodId"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

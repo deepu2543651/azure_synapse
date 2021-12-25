@@ -1,0 +1,30 @@
+{
+	"name": "relationship-wknizdrxlo",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "relationship-wknizdrxlo",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "CarrierRoute",
+		"ToTableName": "VesselSailingSchedule",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "CarrierId",
+				"ToColumnName": "CarrierId"
+			},
+			{
+				"FromColumnName": "CarrierRouteId",
+				"ToColumnName": "CarrierRouteId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"CarrierRoute.cdm.json/CarrierRoute\",\"toEntity\":\"VesselSailingSchedule.cdm.json/VesselSailingSchedule\",\"joinPairs\":[{\"fromAttribute\":\"CarrierId\",\"toAttribute\":\"CarrierId\"},{\"fromAttribute\":\"CarrierRouteId\",\"toAttribute\":\"CarrierRouteId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

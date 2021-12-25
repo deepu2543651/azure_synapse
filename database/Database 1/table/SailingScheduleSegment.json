@@ -1,0 +1,247 @@
+{
+	"name": "SailingScheduleSegment",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "SailingScheduleSegment",
+		"Description": "The individual segments or legs of a sail.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "VesselId",
+					"Description": "The unique identifier of a vessel/ship.",
+					"BaseAttributeReference": {
+						"Entity": "SailingScheduleSegment.cdm.json/SailingScheduleSegment",
+						"Name": "VesselId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "VesselScheduledDepartureTimestamp",
+					"Description": "The scheduled departure timestamp.",
+					"BaseAttributeReference": {
+						"Entity": "SailingScheduleSegment.cdm.json/SailingScheduleSegment",
+						"Name": "VesselScheduledDepartureTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "SailingScheduleSegmentNumber",
+					"Description": "The ordered segment number associated with this segment (leg) of the sailing schedule.",
+					"BaseAttributeReference": {
+						"Entity": "SailingScheduleSegment.cdm.json/SailingScheduleSegment",
+						"Name": "SailingScheduleSegmentNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "DepartureFromPortLocationId",
+					"Description": "The unique identifier of a Shipping Location.",
+					"BaseAttributeReference": {
+						"Entity": "SailingScheduleSegment.cdm.json/SailingScheduleSegment",
+						"Name": "DepartureFromPortLocationId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "DepartureToPortLocationId",
+					"Description": "The unique identifier of a Shipping Location.",
+					"BaseAttributeReference": {
+						"Entity": "SailingScheduleSegment.cdm.json/SailingScheduleSegment",
+						"Name": "DepartureToPortLocationId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ScheduledSailingSegmentSequenceNumber",
+					"Description": "The sequence in which the legs or segments are performed.",
+					"BaseAttributeReference": {
+						"Entity": "SailingScheduleSegment.cdm.json/SailingScheduleSegment",
+						"Name": "ScheduledSailingSegmentSequenceNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PlannedLoadingStartTimestamp",
+					"Description": "The planned loading timestamp.",
+					"BaseAttributeReference": {
+						"Entity": "SailingScheduleSegment.cdm.json/SailingScheduleSegment",
+						"Name": "PlannedLoadingStartTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "PlannedLoadingCompletionTimestamp",
+					"Description": "The planned loading completion timestamp.",
+					"BaseAttributeReference": {
+						"Entity": "SailingScheduleSegment.cdm.json/SailingScheduleSegment",
+						"Name": "PlannedLoadingCompletionTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "SailingScheduleSegmentTypeId",
+					"Description": "The unique identifier of a Flight Leg/Segment Type.",
+					"BaseAttributeReference": {
+						"Entity": "SailingScheduleSegment.cdm.json/SailingScheduleSegment",
+						"Name": "SailingScheduleSegmentTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "SegmentLengthKmiles",
+					"Description": "The length of the segment expressed in nautical miles.",
+					"BaseAttributeReference": {
+						"Entity": "SailingScheduleSegment.cdm.json/SailingScheduleSegment",
+						"Name": "SegmentLengthKmiles"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "CarrierId",
+					"Description": "The unique identifier of a Carrier.",
+					"BaseAttributeReference": {
+						"Entity": "SailingScheduleSegment.cdm.json/SailingScheduleSegment",
+						"Name": "CarrierId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "CarrierRouteId",
+					"Description": "The unique identifier of a Carrier Route.",
+					"BaseAttributeReference": {
+						"Entity": "SailingScheduleSegment.cdm.json/SailingScheduleSegment",
+						"Name": "CarrierRouteId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "CarrierRouteLegNumber",
+					"Description": "The assigned to the Carrier Route Leg.",
+					"BaseAttributeReference": {
+						"Entity": "SailingScheduleSegment.cdm.json/SailingScheduleSegment",
+						"Name": "CarrierRouteLegNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"VesselId\":{\"entity\":\"SailingScheduleSegment.cdm.json/SailingScheduleSegment\",\"name\":\"VesselId\"},\"VesselScheduledDepartureTimestamp\":{\"entity\":\"SailingScheduleSegment.cdm.json/SailingScheduleSegment\",\"name\":\"VesselScheduledDepartureTimestamp\"},\"SailingScheduleSegmentNumber\":{\"entity\":\"SailingScheduleSegment.cdm.json/SailingScheduleSegment\",\"name\":\"SailingScheduleSegmentNumber\"},\"DepartureFromPortLocationId\":{\"entity\":\"SailingScheduleSegment.cdm.json/SailingScheduleSegment\",\"name\":\"DepartureFromPortLocationId\"},\"DepartureToPortLocationId\":{\"entity\":\"SailingScheduleSegment.cdm.json/SailingScheduleSegment\",\"name\":\"DepartureToPortLocationId\"},\"ScheduledSailingSegmentSequenceNumber\":{\"entity\":\"SailingScheduleSegment.cdm.json/SailingScheduleSegment\",\"name\":\"ScheduledSailingSegmentSequenceNumber\"},\"PlannedLoadingStartTimestamp\":{\"entity\":\"SailingScheduleSegment.cdm.json/SailingScheduleSegment\",\"name\":\"PlannedLoadingStartTimestamp\"},\"PlannedLoadingCompletionTimestamp\":{\"entity\":\"SailingScheduleSegment.cdm.json/SailingScheduleSegment\",\"name\":\"PlannedLoadingCompletionTimestamp\"},\"SailingScheduleSegmentTypeId\":{\"entity\":\"SailingScheduleSegment.cdm.json/SailingScheduleSegment\",\"name\":\"SailingScheduleSegmentTypeId\"},\"SegmentLengthKmiles\":{\"entity\":\"SailingScheduleSegment.cdm.json/SailingScheduleSegment\",\"name\":\"SegmentLengthKmiles\"},\"CarrierId\":{\"entity\":\"SailingScheduleSegment.cdm.json/SailingScheduleSegment\",\"name\":\"CarrierId\"},\"CarrierRouteId\":{\"entity\":\"SailingScheduleSegment.cdm.json/SailingScheduleSegment\",\"name\":\"CarrierRouteId\"},\"CarrierRouteLegNumber\":{\"entity\":\"SailingScheduleSegment.cdm.json/SailingScheduleSegment\",\"name\":\"CarrierRouteLegNumber\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"SailingScheduleSegment\",\"path\":\"SailingScheduleSegment.cdm.json/SailingScheduleSegment\"},\"description\":\"The individual segments or legs of a sail.\",\"primaryKey\":[\"VesselId\",\"VesselScheduledDepartureTimestamp\",\"SailingScheduleSegmentNumber\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"VesselId\",\"attributeReference\":{\"entity\":\"SailingScheduleSegment.cdm.json/SailingScheduleSegment\",\"name\":\"VesselId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"VesselScheduledDepartureTimestamp\",\"attributeReference\":{\"entity\":\"SailingScheduleSegment.cdm.json/SailingScheduleSegment\",\"name\":\"VesselScheduledDepartureTimestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"SailingScheduleSegmentNumber\",\"attributeReference\":{\"entity\":\"SailingScheduleSegment.cdm.json/SailingScheduleSegment\",\"name\":\"SailingScheduleSegmentNumber\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"DepartureFromPortLocationId\",\"attributeReference\":{\"entity\":\"SailingScheduleSegment.cdm.json/SailingScheduleSegment\",\"name\":\"DepartureFromPortLocationId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"DepartureToPortLocationId\",\"attributeReference\":{\"entity\":\"SailingScheduleSegment.cdm.json/SailingScheduleSegment\",\"name\":\"DepartureToPortLocationId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ScheduledSailingSegmentSequenceNumber\",\"attributeReference\":{\"entity\":\"SailingScheduleSegment.cdm.json/SailingScheduleSegment\",\"name\":\"ScheduledSailingSegmentSequenceNumber\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"PlannedLoadingStartTimestamp\",\"attributeReference\":{\"entity\":\"SailingScheduleSegment.cdm.json/SailingScheduleSegment\",\"name\":\"PlannedLoadingStartTimestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"PlannedLoadingCompletionTimestamp\",\"attributeReference\":{\"entity\":\"SailingScheduleSegment.cdm.json/SailingScheduleSegment\",\"name\":\"PlannedLoadingCompletionTimestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"SailingScheduleSegmentTypeId\",\"attributeReference\":{\"entity\":\"SailingScheduleSegment.cdm.json/SailingScheduleSegment\",\"name\":\"SailingScheduleSegmentTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"SegmentLengthKmiles\",\"attributeReference\":{\"entity\":\"SailingScheduleSegment.cdm.json/SailingScheduleSegment\",\"name\":\"SegmentLengthKmiles\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"CarrierId\",\"attributeReference\":{\"entity\":\"SailingScheduleSegment.cdm.json/SailingScheduleSegment\",\"name\":\"CarrierId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"CarrierRouteId\",\"attributeReference\":{\"entity\":\"SailingScheduleSegment.cdm.json/SailingScheduleSegment\",\"name\":\"CarrierRouteId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"CarrierRouteLegNumber\",\"attributeReference\":{\"entity\":\"SailingScheduleSegment.cdm.json/SailingScheduleSegment\",\"name\":\"CarrierRouteLegNumber\"},\"dataType\":\"integer\"}]}}}",
+			"Description": "The individual segments or legs of a sail.",
+			"DisplayFolderInfo": "{\"name\":\"Shipping\",\"colorCode\":\"#000B42\"}",
+			"PrimaryKeys": "VesselId,VesselScheduledDepartureTimestamp,SailingScheduleSegmentNumber"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

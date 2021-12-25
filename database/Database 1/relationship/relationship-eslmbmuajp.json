@@ -1,0 +1,26 @@
+{
+	"name": "relationship-eslmbmuajp",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "relationship-eslmbmuajp",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "ShipmentLocationPartyRelationshipType",
+		"ToTableName": "ShipmentLocationRelatedParty",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ShipmentLocationPartyRelationshipTypeId",
+				"ToColumnName": "ShipmentLocationPartyRelationshipTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"ShipmentLocationPartyRelationshipType.cdm.json/ShipmentLocationPartyRelationshipType\",\"toEntity\":\"ShipmentLocationRelatedParty.cdm.json/ShipmentLocationRelatedParty\",\"joinPairs\":[{\"fromAttribute\":\"ShipmentLocationPartyRelationshipTypeId\",\"toAttribute\":\"ShipmentLocationPartyRelationshipTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

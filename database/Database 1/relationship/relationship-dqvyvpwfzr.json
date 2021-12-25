@@ -1,0 +1,26 @@
+{
+	"name": "relationship-dqvyvpwfzr",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "relationship-dqvyvpwfzr",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "FreightCondition",
+		"ToTableName": "ShipmentItem",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "FreightConditionId",
+				"ToColumnName": "FreightConditionId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"FreightCondition.cdm.json/FreightCondition\",\"toEntity\":\"ShipmentItem.cdm.json/ShipmentItem\",\"joinPairs\":[{\"fromAttribute\":\"FreightConditionId\",\"toAttribute\":\"FreightConditionId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

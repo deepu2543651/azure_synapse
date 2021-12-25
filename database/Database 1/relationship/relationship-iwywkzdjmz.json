@@ -1,0 +1,26 @@
+{
+	"name": "relationship-iwywkzdjmz",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "relationship-iwywkzdjmz",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "RfidTag",
+		"ToTableName": "RfidTagLocation",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "RfidTagId",
+				"ToColumnName": "RfidTagId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"RfidTag.cdm.json/RfidTag\",\"toEntity\":\"RfidTagLocation.cdm.json/RfidTagLocation\",\"joinPairs\":[{\"fromAttribute\":\"RfidTagId\",\"toAttribute\":\"RfidTagId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

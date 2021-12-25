@@ -1,0 +1,293 @@
+{
+	"name": "ShipmentRouteLegEquipmentSubstitution",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "ShipmentRouteLegEquipmentSubstitution",
+		"Description": "The shipment mode(s) being utilized for the shipment route leg.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ShipmentId",
+					"Description": "The unique identifier of a Shipment.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentRouteLegEquipmentSubstitution.cdm.json/ShipmentRouteLegEquipmentSubstitution",
+						"Name": "ShipmentId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ShipmentLegNumber",
+					"Description": "The unique identifier of the Shipment Leg Number, which equals the shipment leg 'sequence number'.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentRouteLegEquipmentSubstitution.cdm.json/ShipmentRouteLegEquipmentSubstitution",
+						"Name": "ShipmentLegNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ShipmentRouteLegEquipmentSequenceNumber",
+					"Description": "The sequence number associated with the shipment route/leg equipment.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentRouteLegEquipmentSubstitution.cdm.json/ShipmentRouteLegEquipmentSubstitution",
+						"Name": "ShipmentRouteLegEquipmentSequenceNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "EquipmentSubstitutionTimestamp",
+					"Description": "The timestamp that the equipment was substituted.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentRouteLegEquipmentSubstitution.cdm.json/ShipmentRouteLegEquipmentSubstitution",
+						"Name": "EquipmentSubstitutionTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "SubstitutionReasonTypeId",
+					"Description": "The unique identifier of a Substitution Reason Type.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentRouteLegEquipmentSubstitution.cdm.json/ShipmentRouteLegEquipmentSubstitution",
+						"Name": "SubstitutionReasonTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "SubstitutionAircraftId",
+					"Description": "The unique identifier of an Aircraft.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentRouteLegEquipmentSubstitution.cdm.json/ShipmentRouteLegEquipmentSubstitution",
+						"Name": "SubstitutionAircraftId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "SubstitutionVesselId",
+					"Description": "The unique identifier of a vessel/ship.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentRouteLegEquipmentSubstitution.cdm.json/ShipmentRouteLegEquipmentSubstitution",
+						"Name": "SubstitutionVesselId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "SubstitutionTowboatId",
+					"Description": "The unique identifier of a towboat.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentRouteLegEquipmentSubstitution.cdm.json/ShipmentRouteLegEquipmentSubstitution",
+						"Name": "SubstitutionTowboatId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "SubstitutionBargeId",
+					"Description": "The unique identifier of a Barge instance.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentRouteLegEquipmentSubstitution.cdm.json/ShipmentRouteLegEquipmentSubstitution",
+						"Name": "SubstitutionBargeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "SubstitutionVehicleId",
+					"Description": "The unique identifier of a Vehicle.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentRouteLegEquipmentSubstitution.cdm.json/ShipmentRouteLegEquipmentSubstitution",
+						"Name": "SubstitutionVehicleId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "SubstitutionTrailerId",
+					"Description": "The unique identifier of a trailer.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentRouteLegEquipmentSubstitution.cdm.json/ShipmentRouteLegEquipmentSubstitution",
+						"Name": "SubstitutionTrailerId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "SubstitutionEngineId",
+					"Description": "The unique identifier of an engine.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentRouteLegEquipmentSubstitution.cdm.json/ShipmentRouteLegEquipmentSubstitution",
+						"Name": "SubstitutionEngineId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "SubstitutionRailcarId",
+					"Description": "The unique identifier of a Railcar instance.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentRouteLegEquipmentSubstitution.cdm.json/ShipmentRouteLegEquipmentSubstitution",
+						"Name": "SubstitutionRailcarId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "SubstitutionPipelineStationId",
+					"Description": "The unique identifier of a Pipeline Station.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentRouteLegEquipmentSubstitution.cdm.json/ShipmentRouteLegEquipmentSubstitution",
+						"Name": "SubstitutionPipelineStationId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "SubstitutionContainerId",
+					"Description": "The unique identifier of the container.\n\nThis would be the 'serial number' of the container if it is serialized.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentRouteLegEquipmentSubstitution.cdm.json/ShipmentRouteLegEquipmentSubstitution",
+						"Name": "SubstitutionContainerId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "SubstitutionStorageContainerId",
+					"Description": "The unique identifier of a Storage Container.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentRouteLegEquipmentSubstitution.cdm.json/ShipmentRouteLegEquipmentSubstitution",
+						"Name": "SubstitutionStorageContainerId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ShipmentId\":{\"entity\":\"ShipmentRouteLegEquipmentSubstitution.cdm.json/ShipmentRouteLegEquipmentSubstitution\",\"name\":\"ShipmentId\"},\"ShipmentLegNumber\":{\"entity\":\"ShipmentRouteLegEquipmentSubstitution.cdm.json/ShipmentRouteLegEquipmentSubstitution\",\"name\":\"ShipmentLegNumber\"},\"ShipmentRouteLegEquipmentSequenceNumber\":{\"entity\":\"ShipmentRouteLegEquipmentSubstitution.cdm.json/ShipmentRouteLegEquipmentSubstitution\",\"name\":\"ShipmentRouteLegEquipmentSequenceNumber\"},\"EquipmentSubstitutionTimestamp\":{\"entity\":\"ShipmentRouteLegEquipmentSubstitution.cdm.json/ShipmentRouteLegEquipmentSubstitution\",\"name\":\"EquipmentSubstitutionTimestamp\"},\"SubstitutionReasonTypeId\":{\"entity\":\"ShipmentRouteLegEquipmentSubstitution.cdm.json/ShipmentRouteLegEquipmentSubstitution\",\"name\":\"SubstitutionReasonTypeId\"},\"SubstitutionAircraftId\":{\"entity\":\"ShipmentRouteLegEquipmentSubstitution.cdm.json/ShipmentRouteLegEquipmentSubstitution\",\"name\":\"SubstitutionAircraftId\"},\"SubstitutionVesselId\":{\"entity\":\"ShipmentRouteLegEquipmentSubstitution.cdm.json/ShipmentRouteLegEquipmentSubstitution\",\"name\":\"SubstitutionVesselId\"},\"SubstitutionTowboatId\":{\"entity\":\"ShipmentRouteLegEquipmentSubstitution.cdm.json/ShipmentRouteLegEquipmentSubstitution\",\"name\":\"SubstitutionTowboatId\"},\"SubstitutionBargeId\":{\"entity\":\"ShipmentRouteLegEquipmentSubstitution.cdm.json/ShipmentRouteLegEquipmentSubstitution\",\"name\":\"SubstitutionBargeId\"},\"SubstitutionVehicleId\":{\"entity\":\"ShipmentRouteLegEquipmentSubstitution.cdm.json/ShipmentRouteLegEquipmentSubstitution\",\"name\":\"SubstitutionVehicleId\"},\"SubstitutionTrailerId\":{\"entity\":\"ShipmentRouteLegEquipmentSubstitution.cdm.json/ShipmentRouteLegEquipmentSubstitution\",\"name\":\"SubstitutionTrailerId\"},\"SubstitutionEngineId\":{\"entity\":\"ShipmentRouteLegEquipmentSubstitution.cdm.json/ShipmentRouteLegEquipmentSubstitution\",\"name\":\"SubstitutionEngineId\"},\"SubstitutionRailcarId\":{\"entity\":\"ShipmentRouteLegEquipmentSubstitution.cdm.json/ShipmentRouteLegEquipmentSubstitution\",\"name\":\"SubstitutionRailcarId\"},\"SubstitutionPipelineStationId\":{\"entity\":\"ShipmentRouteLegEquipmentSubstitution.cdm.json/ShipmentRouteLegEquipmentSubstitution\",\"name\":\"SubstitutionPipelineStationId\"},\"SubstitutionContainerId\":{\"entity\":\"ShipmentRouteLegEquipmentSubstitution.cdm.json/ShipmentRouteLegEquipmentSubstitution\",\"name\":\"SubstitutionContainerId\"},\"SubstitutionStorageContainerId\":{\"entity\":\"ShipmentRouteLegEquipmentSubstitution.cdm.json/ShipmentRouteLegEquipmentSubstitution\",\"name\":\"SubstitutionStorageContainerId\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"ShipmentRouteLegEquipmentSubstitution\",\"path\":\"ShipmentRouteLegEquipmentSubstitution.cdm.json/ShipmentRouteLegEquipmentSubstitution\"},\"description\":\"The shipment mode(s) being utilized for the shipment route leg.\",\"primaryKey\":[\"ShipmentId\",\"ShipmentLegNumber\",\"ShipmentRouteLegEquipmentSequenceNumber\",\"EquipmentSubstitutionTimestamp\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"ShipmentId\",\"attributeReference\":{\"entity\":\"ShipmentRouteLegEquipmentSubstitution.cdm.json/ShipmentRouteLegEquipmentSubstitution\",\"name\":\"ShipmentId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ShipmentLegNumber\",\"attributeReference\":{\"entity\":\"ShipmentRouteLegEquipmentSubstitution.cdm.json/ShipmentRouteLegEquipmentSubstitution\",\"name\":\"ShipmentLegNumber\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ShipmentRouteLegEquipmentSequenceNumber\",\"attributeReference\":{\"entity\":\"ShipmentRouteLegEquipmentSubstitution.cdm.json/ShipmentRouteLegEquipmentSubstitution\",\"name\":\"ShipmentRouteLegEquipmentSequenceNumber\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"EquipmentSubstitutionTimestamp\",\"attributeReference\":{\"entity\":\"ShipmentRouteLegEquipmentSubstitution.cdm.json/ShipmentRouteLegEquipmentSubstitution\",\"name\":\"EquipmentSubstitutionTimestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"SubstitutionReasonTypeId\",\"attributeReference\":{\"entity\":\"ShipmentRouteLegEquipmentSubstitution.cdm.json/ShipmentRouteLegEquipmentSubstitution\",\"name\":\"SubstitutionReasonTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"SubstitutionAircraftId\",\"attributeReference\":{\"entity\":\"ShipmentRouteLegEquipmentSubstitution.cdm.json/ShipmentRouteLegEquipmentSubstitution\",\"name\":\"SubstitutionAircraftId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"SubstitutionVesselId\",\"attributeReference\":{\"entity\":\"ShipmentRouteLegEquipmentSubstitution.cdm.json/ShipmentRouteLegEquipmentSubstitution\",\"name\":\"SubstitutionVesselId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"SubstitutionTowboatId\",\"attributeReference\":{\"entity\":\"ShipmentRouteLegEquipmentSubstitution.cdm.json/ShipmentRouteLegEquipmentSubstitution\",\"name\":\"SubstitutionTowboatId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"SubstitutionBargeId\",\"attributeReference\":{\"entity\":\"ShipmentRouteLegEquipmentSubstitution.cdm.json/ShipmentRouteLegEquipmentSubstitution\",\"name\":\"SubstitutionBargeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"SubstitutionVehicleId\",\"attributeReference\":{\"entity\":\"ShipmentRouteLegEquipmentSubstitution.cdm.json/ShipmentRouteLegEquipmentSubstitution\",\"name\":\"SubstitutionVehicleId\"},\"dataType\":\"long\"},{\"type\":\"Existing\",\"name\":\"SubstitutionTrailerId\",\"attributeReference\":{\"entity\":\"ShipmentRouteLegEquipmentSubstitution.cdm.json/ShipmentRouteLegEquipmentSubstitution\",\"name\":\"SubstitutionTrailerId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"SubstitutionEngineId\",\"attributeReference\":{\"entity\":\"ShipmentRouteLegEquipmentSubstitution.cdm.json/ShipmentRouteLegEquipmentSubstitution\",\"name\":\"SubstitutionEngineId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"SubstitutionRailcarId\",\"attributeReference\":{\"entity\":\"ShipmentRouteLegEquipmentSubstitution.cdm.json/ShipmentRouteLegEquipmentSubstitution\",\"name\":\"SubstitutionRailcarId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"SubstitutionPipelineStationId\",\"attributeReference\":{\"entity\":\"ShipmentRouteLegEquipmentSubstitution.cdm.json/ShipmentRouteLegEquipmentSubstitution\",\"name\":\"SubstitutionPipelineStationId\"},\"dataType\":\"long\"},{\"type\":\"Existing\",\"name\":\"SubstitutionContainerId\",\"attributeReference\":{\"entity\":\"ShipmentRouteLegEquipmentSubstitution.cdm.json/ShipmentRouteLegEquipmentSubstitution\",\"name\":\"SubstitutionContainerId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"SubstitutionStorageContainerId\",\"attributeReference\":{\"entity\":\"ShipmentRouteLegEquipmentSubstitution.cdm.json/ShipmentRouteLegEquipmentSubstitution\",\"name\":\"SubstitutionStorageContainerId\"},\"dataType\":\"long\"}]}}}",
+			"Description": "The shipment mode(s) being utilized for the shipment route leg.",
+			"DisplayFolderInfo": "{\"name\":\"Shipping\",\"colorCode\":\"#000B42\"}",
+			"PrimaryKeys": "ShipmentId,ShipmentLegNumber,ShipmentRouteLegEquipmentSequenceNumber,EquipmentSubstitutionTimestamp"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

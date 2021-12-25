@@ -1,0 +1,26 @@
+{
+	"name": "relationship-mkpcujlaiy",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "relationship-mkpcujlaiy",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "GeographicArea",
+		"ToTableName": "GeographicAreaPolygonVertex",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "GeographicAreaId",
+				"ToColumnName": "GeographicAreaId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"GeographicArea.cdm.json/GeographicArea\",\"toEntity\":\"GeographicAreaPolygonVertex.cdm.json/GeographicAreaPolygonVertex\",\"joinPairs\":[{\"fromAttribute\":\"GeographicAreaId\",\"toAttribute\":\"GeographicAreaId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

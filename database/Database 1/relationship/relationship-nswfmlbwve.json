@@ -1,0 +1,26 @@
+{
+	"name": "relationship-nswfmlbwve",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "relationship-nswfmlbwve",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "ShippingLocationPartyRelationshipType",
+		"ToTableName": "ShippingLocationRelatedParty",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ShippingLocationPartyRelationshipTypeId",
+				"ToColumnName": "ShippingLocationPartyRelationshipTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"ShippingLocationPartyRelationshipType.cdm.json/ShippingLocationPartyRelationshipType\",\"toEntity\":\"ShippingLocationRelatedParty.cdm.json/ShippingLocationRelatedParty\",\"joinPairs\":[{\"fromAttribute\":\"ShippingLocationPartyRelationshipTypeId\",\"toAttribute\":\"ShippingLocationPartyRelationshipTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

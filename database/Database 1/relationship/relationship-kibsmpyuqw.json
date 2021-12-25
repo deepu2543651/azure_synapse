@@ -1,0 +1,26 @@
+{
+	"name": "relationship-kibsmpyuqw",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "relationship-kibsmpyuqw",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "CargoType",
+		"ToTableName": "ShipmentItem",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "CargoTypeId",
+				"ToColumnName": "CargoTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"CargoType.cdm.json/CargoType\",\"toEntity\":\"ShipmentItem.cdm.json/ShipmentItem\",\"joinPairs\":[{\"fromAttribute\":\"CargoTypeId\",\"toAttribute\":\"CargoTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

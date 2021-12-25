@@ -1,0 +1,189 @@
+{
+	"name": "InsurancePolicyCoverageLiability",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "InsurancePolicyCoverageLiability",
+		"Description": "The coverage protection provided under the insurance policy coverage type and liability.\n\nBoat Ex:\nCoverage Category = Boating Equipment\nLiability Type = \"Per Item\"\nCoverage Amount = $1,000\n\nCoverage Category = Boating Equipment\nLiability Type = \"Total\"\nCoverage Amount = $3,000\n\nCondominium Ex:\nCoverage Type = Fire Department Service Charge\nLiability Type = Per Occurrence\nCoverage = $500\n\nCoverage Type = Electronic Apparatus\nLiability Type = Per Occurrence\nCoverage = $1,000\n\nCoverage Type = Watercraft\nLiability Type = Single Limit\nCoverage = $1,000\n\nEarthquake Ex:\nCoverage Type = Dwelling\nCoverage Liability = \"Replacement Cost\"\nCoverage Amount = \"Replacement Cost\"\n\nCoverage Type = Personal Property\nCoverage Liability = \"Each Occurrence\"\nCoverage Amount = $50,000\n\nCoverage Type = Living Expenses\nCoverage Liability = \"Each Occurrence\"\nCoverage Amount = $25,000\n\nCoverage Type = Audio and Visual Equipment\nCoverage Liability = \"Each Occurrence\"\nCoverage Amount = $20,000\n\nFlood Ex:\nCoverage Type = Residential Dwelling\nCoverage Liability = \"Cap coverage\"\nCoverage Amount = $250,000\n\nCoverage Type = Replacement Cost\nCoverage Liability = \"Per Occurrence\"\nCoverage Amount = 80% of building replacement cost\n\nHomeowners Ex:\nCoverage Type = Personal Property\nLiability Type = \"Each Occurrence\"\nCoverage Amount = $20,000\n\nCoverage Type = Vandalism\nLiability Type = \"Each Occurrence\"\nCoverage Amount = $5,000\n\nCoverage Type = Bursting Water Heater\nLiability Type = \"Each Occurrence\"\nCoverage Amount = $2,500\n\nCoverage Type = Dwelling\nLiability Type = \"Replacement Value\nCoverage Amount = Replacement Value - Deductible\n\nCoverage Type = Hail\nLiability Type = \"Each Occurrence\"\nCoverage Amount = $2,500\n\nCoverage Type = Auto Rental Reimbursement\nCoverage Liability = \"Each Occurrence\"\nCoverage Amount = $500\n\nMotorcycle Ex:\nCoverage Type = Liability \nCoverage Liability = \"CAP Coverage\"\nCoverage Amount = $200,000\n\nCoverage Type = Other Vehicles Collision\nCoverage Liability = \"Each Occurrence\"\nCoverage Amount = $50,000\n\nCoverage Type = Ambulance Fees\nCoverage Liability = \"Each Occurrence\"\nCoverage Amount = $2,000\n\nCoverage Type = Property Damage\nCoverage Liability = \"Each Accident\"\nCoverage Amount = $10,000\n\nCoverage Type = Hail\nCoverage Liability = \"Each Occurrence\"\nCoverage Amount = $2,500\n\nPersonal Umbrella Liability Ex:\nCoverage Type = Liability \nLiability Type = \"CAP Coverage\"\nCoverage Amount = $200,000\n\nCoverage Type = Libel\nLiability Type = \"CAP Coverage\"\nCoverage Amount = $100,000\n\nCoverage Type = Automobile\nLiability Type = \"Each Occurrence\"\nCoverage Amount = $50,000\n\nCoverage Type = Property Damage\nLiability Type = \"Each Accident\"\nCoverage Amount = $100,000\n\nRecreational Vehicle (RV) Ex:\nCoverage Type = Awning Replacement\nCoverage Liability = \"Annual\"\nCoverage Amount = $2,000\n\nCoverage Type = Collision\nCoverage Liability = \"Per Accident\"\nCoverage Amount = $100,000\n\nCoverage Type = Ambulance Fees\nCoverage Liability = \"Each Occurrence\"\nCoverage Amount = $2,000\n\nCoverage Type = Personal Items\nCoverage Liability = \"CAP\"\nCoverage Amount = $10,000\n\nCoverage Type = Towing and Labor Costs\nCoverage Liability = \"Annual\"\nCoverage Amount = $500\n\nRenters Ex:\nCoverage Type = Fire Department Service Charge\nLiability Type = Per Occurrence\nCoverage = $500\n\nCoverage Type = Electronic Apparatus\nLiability Type = Per Occurrence\nCoverage = $1,000\n\nCoverage Type = Watercraft\nLiability Type = Single Limit\nCoverage = $1,000\n\nVehicle Ex:\nCoverage Type = Liability \nLiability Type = \"CAP Coverage\"\nCoverage Amount = $200,000\n\nCoverage Type = Other Vehicles Collision\nLiability Type = \"Each Occurrence\"\nCoverage Amount = $50,000\n\nCoverage Type = Ambulance Fees\nLiability Type = \"Each Occurrence\"\nCoverage Amount = $2,000\n\nCoverage Type = Property Damage\nLiability Type = \"Each Accident\"\nCoverage Amount = $10,000\n\nCoverage Type = Hail\nLiability Type = \"Each Occurrence\"\nCoverage Amount = $2,500\n\nCoverage Type = Auto Rental Reimbursement\nCoverage Liability = \"Each Occurrence\"\nCoverage Amount = $500",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "InsurancePolicyId",
+					"Description": "The unique identifier of an Insurance Policy.",
+					"BaseAttributeReference": {
+						"Entity": "InsurancePolicyCoverageLiability.cdm.json/InsurancePolicyCoverageLiability",
+						"Name": "InsurancePolicyId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "InsuranceCoverageTypeId",
+					"Description": "The unique identifier of an Insurance Coverage Type.",
+					"BaseAttributeReference": {
+						"Entity": "InsurancePolicyCoverageLiability.cdm.json/InsurancePolicyCoverageLiability",
+						"Name": "InsuranceCoverageTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "InsuranceLiabilityTypeId",
+					"Description": "The unique identifier of an Insurance Liability Type.",
+					"BaseAttributeReference": {
+						"Entity": "InsurancePolicyCoverageLiability.cdm.json/InsurancePolicyCoverageLiability",
+						"Name": "InsuranceLiabilityTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PeriodStartDate",
+					"Description": "The period start date that the associated policy coverage liability is in effect.",
+					"BaseAttributeReference": {
+						"Entity": "InsurancePolicyCoverageLiability.cdm.json/InsurancePolicyCoverageLiability",
+						"Name": "PeriodStartDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "PeriodEndDate",
+					"Description": "The period end date that the associated policy coverage liability is in effect.",
+					"BaseAttributeReference": {
+						"Entity": "InsurancePolicyCoverageLiability.cdm.json/InsurancePolicyCoverageLiability",
+						"Name": "PeriodEndDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "CoverageAmount",
+					"Description": "The amount of liability coverage that may be provided by an associated insurance policy",
+					"BaseAttributeReference": {
+						"Entity": "InsurancePolicyCoverageLiability.cdm.json/InsurancePolicyCoverageLiability",
+						"Name": "CoverageAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "PercentageCoverageAmount",
+					"Description": "The percentage amount of liability coverage that may be provided by an associated insurance policy.",
+					"BaseAttributeReference": {
+						"Entity": "InsurancePolicyCoverageLiability.cdm.json/InsurancePolicyCoverageLiability",
+						"Name": "PercentageCoverageAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "OccurrencesAllowed",
+					"Description": "The number of occurrences that can be claimed during coverage that may be provided by an associated insurance product.",
+					"BaseAttributeReference": {
+						"Entity": "InsurancePolicyCoverageLiability.cdm.json/InsurancePolicyCoverageLiability",
+						"Name": "OccurrencesAllowed"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "InsurancePolicyCoverageLiabilityNote",
+					"Description": "The policy note detailing the terms and conditions related to the insurance policy coverage.",
+					"BaseAttributeReference": {
+						"Entity": "InsurancePolicyCoverageLiability.cdm.json/InsurancePolicyCoverageLiability",
+						"Name": "InsurancePolicyCoverageLiabilityNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"InsurancePolicyId\":{\"entity\":\"InsurancePolicyCoverageLiability.cdm.json/InsurancePolicyCoverageLiability\",\"name\":\"InsurancePolicyId\"},\"InsuranceCoverageTypeId\":{\"entity\":\"InsurancePolicyCoverageLiability.cdm.json/InsurancePolicyCoverageLiability\",\"name\":\"InsuranceCoverageTypeId\"},\"InsuranceLiabilityTypeId\":{\"entity\":\"InsurancePolicyCoverageLiability.cdm.json/InsurancePolicyCoverageLiability\",\"name\":\"InsuranceLiabilityTypeId\"},\"PeriodStartDate\":{\"entity\":\"InsurancePolicyCoverageLiability.cdm.json/InsurancePolicyCoverageLiability\",\"name\":\"PeriodStartDate\"},\"PeriodEndDate\":{\"entity\":\"InsurancePolicyCoverageLiability.cdm.json/InsurancePolicyCoverageLiability\",\"name\":\"PeriodEndDate\"},\"CoverageAmount\":{\"entity\":\"InsurancePolicyCoverageLiability.cdm.json/InsurancePolicyCoverageLiability\",\"name\":\"CoverageAmount\"},\"PercentageCoverageAmount\":{\"entity\":\"InsurancePolicyCoverageLiability.cdm.json/InsurancePolicyCoverageLiability\",\"name\":\"PercentageCoverageAmount\"},\"OccurrencesAllowed\":{\"entity\":\"InsurancePolicyCoverageLiability.cdm.json/InsurancePolicyCoverageLiability\",\"name\":\"OccurrencesAllowed\"},\"InsurancePolicyCoverageLiabilityNote\":{\"entity\":\"InsurancePolicyCoverageLiability.cdm.json/InsurancePolicyCoverageLiability\",\"name\":\"InsurancePolicyCoverageLiabilityNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"InsurancePolicyCoverageLiability\",\"path\":\"InsurancePolicyCoverageLiability.cdm.json/InsurancePolicyCoverageLiability\"},\"description\":\"The coverage protection provided under the insurance policy coverage type and liability.\\n\\nBoat Ex:\\nCoverage Category = Boating Equipment\\nLiability Type = \\\"Per Item\\\"\\nCoverage Amount = $1,000\\n\\nCoverage Category = Boating Equipment\\nLiability Type = \\\"Total\\\"\\nCoverage Amount = $3,000\\n\\nCondominium Ex:\\nCoverage Type = Fire Department Service Charge\\nLiability Type = Per Occurrence\\nCoverage = $500\\n\\nCoverage Type = Electronic Apparatus\\nLiability Type = Per Occurrence\\nCoverage = $1,000\\n\\nCoverage Type = Watercraft\\nLiability Type = Single Limit\\nCoverage = $1,000\\n\\nEarthquake Ex:\\nCoverage Type = Dwelling\\nCoverage Liability = \\\"Replacement Cost\\\"\\nCoverage Amount = \\\"Replacement Cost\\\"\\n\\nCoverage Type = Personal Property\\nCoverage Liability = \\\"Each Occurrence\\\"\\nCoverage Amount = $50,000\\n\\nCoverage Type = Living Expenses\\nCoverage Liability = \\\"Each Occurrence\\\"\\nCoverage Amount = $25,000\\n\\nCoverage Type = Audio and Visual Equipment\\nCoverage Liability = \\\"Each Occurrence\\\"\\nCoverage Amount = $20,000\\n\\nFlood Ex:\\nCoverage Type = Residential Dwelling\\nCoverage Liability = \\\"Cap coverage\\\"\\nCoverage Amount = $250,000\\n\\nCoverage Type = Replacement Cost\\nCoverage Liability = \\\"Per Occurrence\\\"\\nCoverage Amount = 80% of building replacement cost\\n\\nHomeowners Ex:\\nCoverage Type = Personal Property\\nLiability Type = \\\"Each Occurrence\\\"\\nCoverage Amount = $20,000\\n\\nCoverage Type = Vandalism\\nLiability Type = \\\"Each Occurrence\\\"\\nCoverage Amount = $5,000\\n\\nCoverage Type = Bursting Water Heater\\nLiability Type = \\\"Each Occurrence\\\"\\nCoverage Amount = $2,500\\n\\nCoverage Type = Dwelling\\nLiability Type = \\\"Replacement Value\\nCoverage Amount = Replacement Value - Deductible\\n\\nCoverage Type = Hail\\nLiability Type = \\\"Each Occurrence\\\"\\nCoverage Amount = $2,500\\n\\nCoverage Type = Auto Rental Reimbursement\\nCoverage Liability = \\\"Each Occurrence\\\"\\nCoverage Amount = $500\\n\\nMotorcycle Ex:\\nCoverage Type = Liability \\nCoverage Liability = \\\"CAP Coverage\\\"\\nCoverage Amount = $200,000\\n\\nCoverage Type = Other Vehicles Collision\\nCoverage Liability = \\\"Each Occurrence\\\"\\nCoverage Amount = $50,000\\n\\nCoverage Type = Ambulance Fees\\nCoverage Liability = \\\"Each Occurrence\\\"\\nCoverage Amount = $2,000\\n\\nCoverage Type = Property Damage\\nCoverage Liability = \\\"Each Accident\\\"\\nCoverage Amount = $10,000\\n\\nCoverage Type = Hail\\nCoverage Liability = \\\"Each Occurrence\\\"\\nCoverage Amount = $2,500\\n\\nPersonal Umbrella Liability Ex:\\nCoverage Type = Liability \\nLiability Type = \\\"CAP Coverage\\\"\\nCoverage Amount = $200,000\\n\\nCoverage Type = Libel\\nLiability Type = \\\"CAP Coverage\\\"\\nCoverage Amount = $100,000\\n\\nCoverage Type = Automobile\\nLiability Type = \\\"Each Occurrence\\\"\\nCoverage Amount = $50,000\\n\\nCoverage Type = Property Damage\\nLiability Type = \\\"Each Accident\\\"\\nCoverage Amount = $100,000\\n\\nRecreational Vehicle (RV) Ex:\\nCoverage Type = Awning Replacement\\nCoverage Liability = \\\"Annual\\\"\\nCoverage Amount = $2,000\\n\\nCoverage Type = Collision\\nCoverage Liability = \\\"Per Accident\\\"\\nCoverage Amount = $100,000\\n\\nCoverage Type = Ambulance Fees\\nCoverage Liability = \\\"Each Occurrence\\\"\\nCoverage Amount = $2,000\\n\\nCoverage Type = Personal Items\\nCoverage Liability = \\\"CAP\\\"\\nCoverage Amount = $10,000\\n\\nCoverage Type = Towing and Labor Costs\\nCoverage Liability = \\\"Annual\\\"\\nCoverage Amount = $500\\n\\nRenters Ex:\\nCoverage Type = Fire Department Service Charge\\nLiability Type = Per Occurrence\\nCoverage = $500\\n\\nCoverage Type = Electronic Apparatus\\nLiability Type = Per Occurrence\\nCoverage = $1,000\\n\\nCoverage Type = Watercraft\\nLiability Type = Single Limit\\nCoverage = $1,000\\n\\nVehicle Ex:\\nCoverage Type = Liability \\nLiability Type = \\\"CAP Coverage\\\"\\nCoverage Amount = $200,000\\n\\nCoverage Type = Other Vehicles Collision\\nLiability Type = \\\"Each Occurrence\\\"\\nCoverage Amount = $50,000\\n\\nCoverage Type = Ambulance Fees\\nLiability Type = \\\"Each Occurrence\\\"\\nCoverage Amount = $2,000\\n\\nCoverage Type = Property Damage\\nLiability Type = \\\"Each Accident\\\"\\nCoverage Amount = $10,000\\n\\nCoverage Type = Hail\\nLiability Type = \\\"Each Occurrence\\\"\\nCoverage Amount = $2,500\\n\\nCoverage Type = Auto Rental Reimbursement\\nCoverage Liability = \\\"Each Occurrence\\\"\\nCoverage Amount = $500\",\"primaryKey\":[\"InsurancePolicyId\",\"InsuranceCoverageTypeId\",\"InsuranceLiabilityTypeId\",\"PeriodStartDate\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"InsurancePolicyId\",\"attributeReference\":{\"entity\":\"InsurancePolicyCoverageLiability.cdm.json/InsurancePolicyCoverageLiability\",\"name\":\"InsurancePolicyId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"InsuranceCoverageTypeId\",\"attributeReference\":{\"entity\":\"InsurancePolicyCoverageLiability.cdm.json/InsurancePolicyCoverageLiability\",\"name\":\"InsuranceCoverageTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"InsuranceLiabilityTypeId\",\"attributeReference\":{\"entity\":\"InsurancePolicyCoverageLiability.cdm.json/InsurancePolicyCoverageLiability\",\"name\":\"InsuranceLiabilityTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"PeriodStartDate\",\"attributeReference\":{\"entity\":\"InsurancePolicyCoverageLiability.cdm.json/InsurancePolicyCoverageLiability\",\"name\":\"PeriodStartDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\"},{\"type\":\"Existing\",\"name\":\"PeriodEndDate\",\"attributeReference\":{\"entity\":\"InsurancePolicyCoverageLiability.cdm.json/InsurancePolicyCoverageLiability\",\"name\":\"PeriodEndDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\"},{\"type\":\"Existing\",\"name\":\"CoverageAmount\",\"attributeReference\":{\"entity\":\"InsurancePolicyCoverageLiability.cdm.json/InsurancePolicyCoverageLiability\",\"name\":\"CoverageAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"PercentageCoverageAmount\",\"attributeReference\":{\"entity\":\"InsurancePolicyCoverageLiability.cdm.json/InsurancePolicyCoverageLiability\",\"name\":\"PercentageCoverageAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":8},{\"type\":\"Existing\",\"name\":\"OccurrencesAllowed\",\"attributeReference\":{\"entity\":\"InsurancePolicyCoverageLiability.cdm.json/InsurancePolicyCoverageLiability\",\"name\":\"OccurrencesAllowed\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"InsurancePolicyCoverageLiabilityNote\",\"attributeReference\":{\"entity\":\"InsurancePolicyCoverageLiability.cdm.json/InsurancePolicyCoverageLiability\",\"name\":\"InsurancePolicyCoverageLiabilityNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024}]}}}",
+			"Description": "The coverage protection provided under the insurance policy coverage type and liability.\n\nBoat Ex:\nCoverage Category = Boating Equipment\nLiability Type = \"Per Item\"\nCoverage Amount = $1,000\n\nCoverage Category = Boating Equipment\nLiability Type = \"Total\"\nCoverage Amount = $3,000\n\nCondominium Ex:\nCoverage Type = Fire Department Service Charge\nLiability Type = Per Occurrence\nCoverage = $500\n\nCoverage Type = Electronic Apparatus\nLiability Type = Per Occurrence\nCoverage = $1,000\n\nCoverage Type = Watercraft\nLiability Type = Single Limit\nCoverage = $1,000\n\nEarthquake Ex:\nCoverage Type = Dwelling\nCoverage Liability = \"Replacement Cost\"\nCoverage Amount = \"Replacement Cost\"\n\nCoverage Type = Personal Property\nCoverage Liability = \"Each Occurrence\"\nCoverage Amount = $50,000\n\nCoverage Type = Living Expenses\nCoverage Liability = \"Each Occurrence\"\nCoverage Amount = $25,000\n\nCoverage Type = Audio and Visual Equipment\nCoverage Liability = \"Each Occurrence\"\nCoverage Amount = $20,000\n\nFlood Ex:\nCoverage Type = Residential Dwelling\nCoverage Liability = \"Cap coverage\"\nCoverage Amount = $250,000\n\nCoverage Type = Replacement Cost\nCoverage Liability = \"Per Occurrence\"\nCoverage Amount = 80% of building replacement cost\n\nHomeowners Ex:\nCoverage Type = Personal Property\nLiability Type = \"Each Occurrence\"\nCoverage Amount = $20,000\n\nCoverage Type = Vandalism\nLiability Type = \"Each Occurrence\"\nCoverage Amount = $5,000\n\nCoverage Type = Bursting Water Heater\nLiability Type = \"Each Occurrence\"\nCoverage Amount = $2,500\n\nCoverage Type = Dwelling\nLiability Type = \"Replacement Value\nCoverage Amount = Replacement Value - Deductible\n\nCoverage Type = Hail\nLiability Type = \"Each Occurrence\"\nCoverage Amount = $2,500\n\nCoverage Type = Auto Rental Reimbursement\nCoverage Liability = \"Each Occurrence\"\nCoverage Amount = $500\n\nMotorcycle Ex:\nCoverage Type = Liability \nCoverage Liability = \"CAP Coverage\"\nCoverage Amount = $200,000\n\nCoverage Type = Other Vehicles Collision\nCoverage Liability = \"Each Occurrence\"\nCoverage Amount = $50,000\n\nCoverage Type = Ambulance Fees\nCoverage Liability = \"Each Occurrence\"\nCoverage Amount = $2,000\n\nCoverage Type = Property Damage\nCoverage Liability = \"Each Accident\"\nCoverage Amount = $10,000\n\nCoverage Type = Hail\nCoverage Liability = \"Each Occurrence\"\nCoverage Amount = $2,500\n\nPersonal Umbrella Liability Ex:\nCoverage Type = Liability \nLiability Type = \"CAP Coverage\"\nCoverage Amount = $200,000\n\nCoverage Type = Libel\nLiability Type = \"CAP Coverage\"\nCoverage Amount = $100,000\n\nCoverage Type = Automobile\nLiability Type = \"Each Occurrence\"\nCoverage Amount = $50,000\n\nCoverage Type = Property Damage\nLiability Type = \"Each Accident\"\nCoverage Amount = $100,000\n\nRecreational Vehicle (RV) Ex:\nCoverage Type = Awning Replacement\nCoverage Liability = \"Annual\"\nCoverage Amount = $2,000\n\nCoverage Type = Collision\nCoverage Liability = \"Per Accident\"\nCoverage Amount = $100,000\n\nCoverage Type = Ambulance Fees\nCoverage Liability = \"Each Occurrence\"\nCoverage Amount = $2,000\n\nCoverage Type = Personal Items\nCoverage Liability = \"CAP\"\nCoverage Amount = $10,000\n\nCoverage Type = Towing and Labor Costs\nCoverage Liability = \"Annual\"\nCoverage Amount = $500\n\nRenters Ex:\nCoverage Type = Fire Department Service Charge\nLiability Type = Per Occurrence\nCoverage = $500\n\nCoverage Type = Electronic Apparatus\nLiability Type = Per Occurrence\nCoverage = $1,000\n\nCoverage Type = Watercraft\nLiability Type = Single Limit\nCoverage = $1,000\n\nVehicle Ex:\nCoverage Type = Liability \nLiability Type = \"CAP Coverage\"\nCoverage Amount = $200,000\n\nCoverage Type = Other Vehicles Collision\nLiability Type = \"Each Occurrence\"\nCoverage Amount = $50,000\n\nCoverage Type = Ambulance Fees\nLiability Type = \"Each Occurrence\"\nCoverage Amount = $2,000\n\nCoverage Type = Property Damage\nLiability Type = \"Each Accident\"\nCoverage Amount = $10,000\n\nCoverage Type = Hail\nLiability Type = \"Each Occurrence\"\nCoverage Amount = $2,500\n\nCoverage Type = Auto Rental Reimbursement\nCoverage Liability = \"Each Occurrence\"\nCoverage Amount = $500",
+			"DisplayFolderInfo": "{\"name\":\"Policy\",\"colorCode\":\"#7D0F6C\"}",
+			"PrimaryKeys": "InsurancePolicyId,InsuranceCoverageTypeId,InsuranceLiabilityTypeId,PeriodStartDate"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

@@ -1,0 +1,102 @@
+{
+	"name": "ShipmentAssignment",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "ShipmentAssignment",
+		"Description": "The transfer of rights, title, interest and benefits of a Shipment to a third party, the Assignee.\n\nA term commonly used in connection with a bill of lading. It involves the transfer of rights, title and interest in order to assign goods by endorsing the bill of lading.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ShipmentId",
+					"Description": "The unique identifier of a Shipment.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentAssignment.cdm.json/ShipmentAssignment",
+						"Name": "ShipmentId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "AssignmentToPartyId",
+					"Description": "The unique identifier of a Party.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentAssignment.cdm.json/ShipmentAssignment",
+						"Name": "AssignmentToPartyId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "AssignmentDate",
+					"Description": "The date of the assignment.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentAssignment.cdm.json/ShipmentAssignment",
+						"Name": "AssignmentDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "AssignmentNote",
+					"Description": "Notes, details or additional information regarding the assignment.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentAssignment.cdm.json/ShipmentAssignment",
+						"Name": "AssignmentNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ShipmentId\":{\"entity\":\"ShipmentAssignment.cdm.json/ShipmentAssignment\",\"name\":\"ShipmentId\"},\"AssignmentToPartyId\":{\"entity\":\"ShipmentAssignment.cdm.json/ShipmentAssignment\",\"name\":\"AssignmentToPartyId\"},\"AssignmentDate\":{\"entity\":\"ShipmentAssignment.cdm.json/ShipmentAssignment\",\"name\":\"AssignmentDate\"},\"AssignmentNote\":{\"entity\":\"ShipmentAssignment.cdm.json/ShipmentAssignment\",\"name\":\"AssignmentNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"ShipmentAssignment\",\"path\":\"ShipmentAssignment.cdm.json/ShipmentAssignment\"},\"description\":\"The transfer of rights, title, interest and benefits of a Shipment to a third party, the Assignee.\\n\\nA term commonly used in connection with a bill of lading. It involves the transfer of rights, title and interest in order to assign goods by endorsing the bill of lading.\",\"primaryKey\":[\"ShipmentId\",\"AssignmentToPartyId\",\"AssignmentDate\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"ShipmentId\",\"attributeReference\":{\"entity\":\"ShipmentAssignment.cdm.json/ShipmentAssignment\",\"name\":\"ShipmentId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"AssignmentToPartyId\",\"attributeReference\":{\"entity\":\"ShipmentAssignment.cdm.json/ShipmentAssignment\",\"name\":\"AssignmentToPartyId\"},\"dataType\":\"long\"},{\"type\":\"Existing\",\"name\":\"AssignmentDate\",\"attributeReference\":{\"entity\":\"ShipmentAssignment.cdm.json/ShipmentAssignment\",\"name\":\"AssignmentDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\"},{\"type\":\"Existing\",\"name\":\"AssignmentNote\",\"attributeReference\":{\"entity\":\"ShipmentAssignment.cdm.json/ShipmentAssignment\",\"name\":\"AssignmentNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024}]}}}",
+			"Description": "The transfer of rights, title, interest and benefits of a Shipment to a third party, the Assignee.\n\nA term commonly used in connection with a bill of lading. It involves the transfer of rights, title and interest in order to assign goods by endorsing the bill of lading.",
+			"DisplayFolderInfo": "{\"name\":\"Shipping\",\"colorCode\":\"#000B42\"}",
+			"PrimaryKeys": "ShipmentId,AssignmentToPartyId,AssignmentDate"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

@@ -1,0 +1,30 @@
+{
+	"name": "relationship-xrqxlnvuff",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "relationship-xrqxlnvuff",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "VesselSailingSchedule",
+		"ToTableName": "SailingScheduleSegment",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "VesselId",
+				"ToColumnName": "VesselId"
+			},
+			{
+				"FromColumnName": "VesselScheduledDepartureTimestamp",
+				"ToColumnName": "VesselScheduledDepartureTimestamp"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"VesselSailingSchedule.cdm.json/VesselSailingSchedule\",\"toEntity\":\"SailingScheduleSegment.cdm.json/SailingScheduleSegment\",\"joinPairs\":[{\"fromAttribute\":\"VesselId\",\"toAttribute\":\"VesselId\"},{\"fromAttribute\":\"VesselScheduledDepartureTimestamp\",\"toAttribute\":\"VesselScheduledDepartureTimestamp\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

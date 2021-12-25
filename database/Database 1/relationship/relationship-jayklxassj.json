@@ -1,0 +1,26 @@
+{
+	"name": "relationship-jayklxassj",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "relationship-jayklxassj",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Tow",
+		"ToTableName": "TowSchedule",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "TowId",
+				"ToColumnName": "TowId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Tow.cdm.json/Tow\",\"toEntity\":\"TowSchedule.cdm.json/TowSchedule\",\"joinPairs\":[{\"fromAttribute\":\"TowId\",\"toAttribute\":\"TowId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

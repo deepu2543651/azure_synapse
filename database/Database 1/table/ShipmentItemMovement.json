@@ -1,0 +1,86 @@
+{
+	"name": "ShipmentItemMovement",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "ShipmentItemMovement",
+		"Description": "The movement of the shipment item during the shipment route leg.\n\nEx:\n- Item Picked Up At Beginning (Shipment Route Leg From-Location)\n- Item Picked Up En Route\n- Item Dropped Off at End (Shipment Route Leg To-Location)\n- Item Dropped Off En Route",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ShipmentItemMovementId",
+					"Description": "The unique identifier of a Shipment Item Movement.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentItemMovement.cdm.json/ShipmentItemMovement",
+						"Name": "ShipmentItemMovementId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ShipmentItemMovementName",
+					"Description": "The name of a Shipment Item Movement.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentItemMovement.cdm.json/ShipmentItemMovement",
+						"Name": "ShipmentItemMovementName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ShipmentItemMovementDescription",
+					"Description": "The description of a Shipment Item Movement.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentItemMovement.cdm.json/ShipmentItemMovement",
+						"Name": "ShipmentItemMovementDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ShipmentItemMovementId\":{\"entity\":\"ShipmentItemMovement.cdm.json/ShipmentItemMovement\",\"name\":\"ShipmentItemMovementId\"},\"ShipmentItemMovementName\":{\"entity\":\"ShipmentItemMovement.cdm.json/ShipmentItemMovement\",\"name\":\"ShipmentItemMovementName\"},\"ShipmentItemMovementDescription\":{\"entity\":\"ShipmentItemMovement.cdm.json/ShipmentItemMovement\",\"name\":\"ShipmentItemMovementDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"ShipmentItemMovement\",\"path\":\"ShipmentItemMovement.cdm.json/ShipmentItemMovement\"},\"description\":\"The movement of the shipment item during the shipment route leg.\\n\\nEx:\\n- Item Picked Up At Beginning (Shipment Route Leg From-Location)\\n- Item Picked Up En Route\\n- Item Dropped Off at End (Shipment Route Leg To-Location)\\n- Item Dropped Off En Route\",\"primaryKey\":[\"ShipmentItemMovementId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"ShipmentItemMovementId\",\"attributeReference\":{\"entity\":\"ShipmentItemMovement.cdm.json/ShipmentItemMovement\",\"name\":\"ShipmentItemMovementId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ShipmentItemMovementName\",\"attributeReference\":{\"entity\":\"ShipmentItemMovement.cdm.json/ShipmentItemMovement\",\"name\":\"ShipmentItemMovementName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"ShipmentItemMovementDescription\",\"attributeReference\":{\"entity\":\"ShipmentItemMovement.cdm.json/ShipmentItemMovement\",\"name\":\"ShipmentItemMovementDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512}]}}}",
+			"Description": "The movement of the shipment item during the shipment route leg.\n\nEx:\n- Item Picked Up At Beginning (Shipment Route Leg From-Location)\n- Item Picked Up En Route\n- Item Dropped Off at End (Shipment Route Leg To-Location)\n- Item Dropped Off En Route",
+			"DisplayFolderInfo": "{\"name\":\"Shipping\",\"colorCode\":\"#000B42\"}",
+			"PrimaryKeys": "ShipmentItemMovementId"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

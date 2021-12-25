@@ -1,0 +1,86 @@
+{
+	"name": "ShipmentTerm",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "ShipmentTerm",
+		"Description": "A term under which the shipment may be shipped.\n\nEx:\nCOD\nFAS\nFree Domicile\nFOB\nHold For Pickup\n\nWhere:\n\nCOD = Collect (cash) on Delivery; Carried on Docket (pricing); Change of Destination.\n\nFree Along Side (FAS) - A basis of pricing meaning the price of goods alongside a transport vessel at a specified location. The buyer is responsible for loading the goods onto the transport vessel and pays all the cost of shipping beyond that location.\n\nFree Domicile - A term used in international transportation where the shipper pays all transportation charges and any applicable duties and/or taxes.\n\nFree On Board (FOB) - A pricing term indication that the quoted price includes the cost of loading the goods into transport vessels at the specified place.\n\nHold For Pickup - Pickup - Freight to be held at the carrier's destination location for pickup by the recipient.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ShipmentTermId",
+					"Description": "The unique identifier of a Shipment Term.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentTerm.cdm.json/ShipmentTerm",
+						"Name": "ShipmentTermId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ShipmentTermName",
+					"Description": "The name of a Shipment Term.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentTerm.cdm.json/ShipmentTerm",
+						"Name": "ShipmentTermName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ShipmentTermDescription",
+					"Description": "The description of a Shipment Term.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentTerm.cdm.json/ShipmentTerm",
+						"Name": "ShipmentTermDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ShipmentTermId\":{\"entity\":\"ShipmentTerm.cdm.json/ShipmentTerm\",\"name\":\"ShipmentTermId\"},\"ShipmentTermName\":{\"entity\":\"ShipmentTerm.cdm.json/ShipmentTerm\",\"name\":\"ShipmentTermName\"},\"ShipmentTermDescription\":{\"entity\":\"ShipmentTerm.cdm.json/ShipmentTerm\",\"name\":\"ShipmentTermDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"ShipmentTerm\",\"path\":\"ShipmentTerm.cdm.json/ShipmentTerm\"},\"description\":\"A term under which the shipment may be shipped.\\n\\nEx:\\nCOD\\nFAS\\nFree Domicile\\nFOB\\nHold For Pickup\\n\\nWhere:\\n\\nCOD = Collect (cash) on Delivery; Carried on Docket (pricing); Change of Destination.\\n\\nFree Along Side (FAS) - A basis of pricing meaning the price of goods alongside a transport vessel at a specified location. The buyer is responsible for loading the goods onto the transport vessel and pays all the cost of shipping beyond that location.\\n\\nFree Domicile - A term used in international transportation where the shipper pays all transportation charges and any applicable duties and/or taxes.\\n\\nFree On Board (FOB) - A pricing term indication that the quoted price includes the cost of loading the goods into transport vessels at the specified place.\\n\\nHold For Pickup - Pickup - Freight to be held at the carrier's destination location for pickup by the recipient.\",\"primaryKey\":[\"ShipmentTermId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"ShipmentTermId\",\"attributeReference\":{\"entity\":\"ShipmentTerm.cdm.json/ShipmentTerm\",\"name\":\"ShipmentTermId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ShipmentTermName\",\"attributeReference\":{\"entity\":\"ShipmentTerm.cdm.json/ShipmentTerm\",\"name\":\"ShipmentTermName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"ShipmentTermDescription\",\"attributeReference\":{\"entity\":\"ShipmentTerm.cdm.json/ShipmentTerm\",\"name\":\"ShipmentTermDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512}]}}}",
+			"Description": "A term under which the shipment may be shipped.\n\nEx:\nCOD\nFAS\nFree Domicile\nFOB\nHold For Pickup\n\nWhere:\n\nCOD = Collect (cash) on Delivery; Carried on Docket (pricing); Change of Destination.\n\nFree Along Side (FAS) - A basis of pricing meaning the price of goods alongside a transport vessel at a specified location. The buyer is responsible for loading the goods onto the transport vessel and pays all the cost of shipping beyond that location.\n\nFree Domicile - A term used in international transportation where the shipper pays all transportation charges and any applicable duties and/or taxes.\n\nFree On Board (FOB) - A pricing term indication that the quoted price includes the cost of loading the goods into transport vessels at the specified place.\n\nHold For Pickup - Pickup - Freight to be held at the carrier's destination location for pickup by the recipient.",
+			"DisplayFolderInfo": "{\"name\":\"Shipping\",\"colorCode\":\"#000B42\"}",
+			"PrimaryKeys": "ShipmentTermId"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

@@ -1,0 +1,153 @@
+{
+	"name": "SerializedPalletRfidTag",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "SerializedPalletRfidTag",
+		"Description": "The RFID tag associated with a serialized pallet.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "PalletTypeId",
+					"Description": "The unique identifier of a Pallet Type.",
+					"BaseAttributeReference": {
+						"Entity": "SerializedPalletRfidTag.cdm.json/SerializedPalletRfidTag",
+						"Name": "PalletTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PalletSerialNumber",
+					"Description": "The serial number of the Pallet.",
+					"BaseAttributeReference": {
+						"Entity": "SerializedPalletRfidTag.cdm.json/SerializedPalletRfidTag",
+						"Name": "PalletSerialNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Length": 30,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "RfidTagId",
+					"Description": "The unique identifier of a RFID Tag.\n\nThe transmitter/receiver pair or transceiver plus the information storage mechanism attached to the object is referred to as the tag, transponder, electronic label, code plate and various other terms. \n\nAlthough transponder is technically the most accurate, the most common term and the one preferred by the Automatic Identification Manufacturers is tag.",
+					"BaseAttributeReference": {
+						"Entity": "SerializedPalletRfidTag.cdm.json/SerializedPalletRfidTag",
+						"Name": "RfidTagId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PeriodStartDate",
+					"Description": "The period start date that the associated data is effective.",
+					"BaseAttributeReference": {
+						"Entity": "SerializedPalletRfidTag.cdm.json/SerializedPalletRfidTag",
+						"Name": "PeriodStartDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "ItemSku",
+					"Description": "The Stock Keeping Unit identifier, which is typically used for inventory-related activities.",
+					"BaseAttributeReference": {
+						"Entity": "SerializedPalletRfidTag.cdm.json/SerializedPalletRfidTag",
+						"Name": "ItemSku"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Length": 20,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "PeriodEndDate",
+					"Description": "The period end date that the associated data is effective.",
+					"BaseAttributeReference": {
+						"Entity": "SerializedPalletRfidTag.cdm.json/SerializedPalletRfidTag",
+						"Name": "PeriodEndDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "SerializedPalletRfidTagNote",
+					"Description": "A note, comment or additional information regarding the Serialized Pallet RFID Tag.",
+					"BaseAttributeReference": {
+						"Entity": "SerializedPalletRfidTag.cdm.json/SerializedPalletRfidTag",
+						"Name": "SerializedPalletRfidTagNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"PalletTypeId\":{\"entity\":\"SerializedPalletRfidTag.cdm.json/SerializedPalletRfidTag\",\"name\":\"PalletTypeId\"},\"PalletSerialNumber\":{\"entity\":\"SerializedPalletRfidTag.cdm.json/SerializedPalletRfidTag\",\"name\":\"PalletSerialNumber\"},\"RfidTagId\":{\"entity\":\"SerializedPalletRfidTag.cdm.json/SerializedPalletRfidTag\",\"name\":\"RfidTagId\"},\"PeriodStartDate\":{\"entity\":\"SerializedPalletRfidTag.cdm.json/SerializedPalletRfidTag\",\"name\":\"PeriodStartDate\"},\"ItemSku\":{\"entity\":\"SerializedPalletRfidTag.cdm.json/SerializedPalletRfidTag\",\"name\":\"ItemSku\"},\"PeriodEndDate\":{\"entity\":\"SerializedPalletRfidTag.cdm.json/SerializedPalletRfidTag\",\"name\":\"PeriodEndDate\"},\"SerializedPalletRfidTagNote\":{\"entity\":\"SerializedPalletRfidTag.cdm.json/SerializedPalletRfidTag\",\"name\":\"SerializedPalletRfidTagNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"SerializedPalletRfidTag\",\"path\":\"SerializedPalletRfidTag.cdm.json/SerializedPalletRfidTag\"},\"description\":\"The RFID tag associated with a serialized pallet.\",\"primaryKey\":[\"PalletTypeId\",\"PalletSerialNumber\",\"RfidTagId\",\"PeriodStartDate\",\"ItemSku\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"PalletTypeId\",\"attributeReference\":{\"entity\":\"SerializedPalletRfidTag.cdm.json/SerializedPalletRfidTag\",\"name\":\"PalletTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"PalletSerialNumber\",\"attributeReference\":{\"entity\":\"SerializedPalletRfidTag.cdm.json/SerializedPalletRfidTag\",\"name\":\"PalletSerialNumber\"},\"dataType\":\"string\",\"dataTypeLength\":30},{\"type\":\"Existing\",\"name\":\"RfidTagId\",\"attributeReference\":{\"entity\":\"SerializedPalletRfidTag.cdm.json/SerializedPalletRfidTag\",\"name\":\"RfidTagId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"PeriodStartDate\",\"attributeReference\":{\"entity\":\"SerializedPalletRfidTag.cdm.json/SerializedPalletRfidTag\",\"name\":\"PeriodStartDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\"},{\"type\":\"Existing\",\"name\":\"ItemSku\",\"attributeReference\":{\"entity\":\"SerializedPalletRfidTag.cdm.json/SerializedPalletRfidTag\",\"name\":\"ItemSku\"},\"dataType\":\"string\",\"dataTypeLength\":20},{\"type\":\"Existing\",\"name\":\"PeriodEndDate\",\"attributeReference\":{\"entity\":\"SerializedPalletRfidTag.cdm.json/SerializedPalletRfidTag\",\"name\":\"PeriodEndDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\"},{\"type\":\"Existing\",\"name\":\"SerializedPalletRfidTagNote\",\"attributeReference\":{\"entity\":\"SerializedPalletRfidTag.cdm.json/SerializedPalletRfidTag\",\"name\":\"SerializedPalletRfidTagNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024}]}}}",
+			"Description": "The RFID tag associated with a serialized pallet.",
+			"DisplayFolderInfo": "{\"name\":\"Shipping\",\"colorCode\":\"#000B42\"}",
+			"PrimaryKeys": "PalletTypeId,PalletSerialNumber,RfidTagId,PeriodStartDate,ItemSku"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

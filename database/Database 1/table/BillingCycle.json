@@ -1,0 +1,86 @@
+{
+	"name": "BillingCycle",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "BillingCycle",
+		"Description": "The period upon which the Customer or Customer Account is regularly billed or statements issued.\n\nExamples:\n- Bi-Weekly\n- Weekly\n- Monthly\n- Quarterly\n- Annually\n- Per Transaction\n- One-time\n- At time of event",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "BillingCycleId",
+					"Description": "The unique identifier of a Billing Cycle.",
+					"BaseAttributeReference": {
+						"Entity": "BillingCycle.cdm.json/BillingCycle",
+						"Name": "BillingCycleId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "BillingCycleName",
+					"Description": "The name of the Billing Cycle.",
+					"BaseAttributeReference": {
+						"Entity": "BillingCycle.cdm.json/BillingCycle",
+						"Name": "BillingCycleName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "BillingCycleDescription",
+					"Description": "The description of the Billing Cycle.",
+					"BaseAttributeReference": {
+						"Entity": "BillingCycle.cdm.json/BillingCycle",
+						"Name": "BillingCycleDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"BillingCycleId\":{\"entity\":\"BillingCycle.cdm.json/BillingCycle\",\"name\":\"BillingCycleId\"},\"BillingCycleName\":{\"entity\":\"BillingCycle.cdm.json/BillingCycle\",\"name\":\"BillingCycleName\"},\"BillingCycleDescription\":{\"entity\":\"BillingCycle.cdm.json/BillingCycle\",\"name\":\"BillingCycleDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"BillingCycle\",\"path\":\"BillingCycle.cdm.json/BillingCycle\"},\"description\":\"The period upon which the Customer or Customer Account is regularly billed or statements issued.\\n\\nExamples:\\n- Bi-Weekly\\n- Weekly\\n- Monthly\\n- Quarterly\\n- Annually\\n- Per Transaction\\n- One-time\\n- At time of event\",\"primaryKey\":[\"BillingCycleId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"BillingCycleId\",\"attributeReference\":{\"entity\":\"BillingCycle.cdm.json/BillingCycle\",\"name\":\"BillingCycleId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"BillingCycleName\",\"attributeReference\":{\"entity\":\"BillingCycle.cdm.json/BillingCycle\",\"name\":\"BillingCycleName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"BillingCycleDescription\",\"attributeReference\":{\"entity\":\"BillingCycle.cdm.json/BillingCycle\",\"name\":\"BillingCycleDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512}]}}}",
+			"Description": "The period upon which the Customer or Customer Account is regularly billed or statements issued.\n\nExamples:\n- Bi-Weekly\n- Weekly\n- Monthly\n- Quarterly\n- Annually\n- Per Transaction\n- One-time\n- At time of event",
+			"DisplayFolderInfo": "{\"name\":\"Transaction\",\"colorCode\":\"#1C508C\"}",
+			"PrimaryKeys": "BillingCycleId"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

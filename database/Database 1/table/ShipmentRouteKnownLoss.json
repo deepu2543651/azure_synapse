@@ -1,0 +1,119 @@
+{
+	"name": "ShipmentRouteKnownLoss",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "ShipmentRouteKnownLoss",
+		"Description": "Known losses that are known to have occurred to the shipment during the associated route/leg.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ShipmentId",
+					"Description": "The unique identifier of a Shipment.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentRouteKnownLoss.cdm.json/ShipmentRouteKnownLoss",
+						"Name": "ShipmentId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ShipmentLegNumber",
+					"Description": "The unique identifier of the Shipment Leg Number, which equals the shipment leg 'sequence number'.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentRouteKnownLoss.cdm.json/ShipmentRouteKnownLoss",
+						"Name": "ShipmentLegNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "KnownLossTypeId",
+					"Description": "The unique identifier of a Known Loss Type.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentRouteKnownLoss.cdm.json/ShipmentRouteKnownLoss",
+						"Name": "KnownLossTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "KnownLossValuationAmount",
+					"Description": "The amount of the known loss.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentRouteKnownLoss.cdm.json/ShipmentRouteKnownLoss",
+						"Name": "KnownLossValuationAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "KnownLossNote",
+					"Description": "A note, comment or additional information regarding the known loss.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentRouteKnownLoss.cdm.json/ShipmentRouteKnownLoss",
+						"Name": "KnownLossNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ShipmentId\":{\"entity\":\"ShipmentRouteKnownLoss.cdm.json/ShipmentRouteKnownLoss\",\"name\":\"ShipmentId\"},\"ShipmentLegNumber\":{\"entity\":\"ShipmentRouteKnownLoss.cdm.json/ShipmentRouteKnownLoss\",\"name\":\"ShipmentLegNumber\"},\"KnownLossTypeId\":{\"entity\":\"ShipmentRouteKnownLoss.cdm.json/ShipmentRouteKnownLoss\",\"name\":\"KnownLossTypeId\"},\"KnownLossValuationAmount\":{\"entity\":\"ShipmentRouteKnownLoss.cdm.json/ShipmentRouteKnownLoss\",\"name\":\"KnownLossValuationAmount\"},\"KnownLossNote\":{\"entity\":\"ShipmentRouteKnownLoss.cdm.json/ShipmentRouteKnownLoss\",\"name\":\"KnownLossNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"ShipmentRouteKnownLoss\",\"path\":\"ShipmentRouteKnownLoss.cdm.json/ShipmentRouteKnownLoss\"},\"description\":\"Known losses that are known to have occurred to the shipment during the associated route/leg.\",\"primaryKey\":[\"ShipmentId\",\"ShipmentLegNumber\",\"KnownLossTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"ShipmentId\",\"attributeReference\":{\"entity\":\"ShipmentRouteKnownLoss.cdm.json/ShipmentRouteKnownLoss\",\"name\":\"ShipmentId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ShipmentLegNumber\",\"attributeReference\":{\"entity\":\"ShipmentRouteKnownLoss.cdm.json/ShipmentRouteKnownLoss\",\"name\":\"ShipmentLegNumber\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"KnownLossTypeId\",\"attributeReference\":{\"entity\":\"ShipmentRouteKnownLoss.cdm.json/ShipmentRouteKnownLoss\",\"name\":\"KnownLossTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"KnownLossValuationAmount\",\"attributeReference\":{\"entity\":\"ShipmentRouteKnownLoss.cdm.json/ShipmentRouteKnownLoss\",\"name\":\"KnownLossValuationAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"KnownLossNote\",\"attributeReference\":{\"entity\":\"ShipmentRouteKnownLoss.cdm.json/ShipmentRouteKnownLoss\",\"name\":\"KnownLossNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024}]}}}",
+			"Description": "Known losses that are known to have occurred to the shipment during the associated route/leg.",
+			"DisplayFolderInfo": "{\"name\":\"Shipping\",\"colorCode\":\"#000B42\"}",
+			"PrimaryKeys": "ShipmentId,ShipmentLegNumber,KnownLossTypeId"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

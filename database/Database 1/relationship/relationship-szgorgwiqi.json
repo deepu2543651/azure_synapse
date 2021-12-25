@@ -1,0 +1,26 @@
+{
+	"name": "relationship-szgorgwiqi",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "relationship-szgorgwiqi",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "ExceptionType",
+		"ToTableName": "ShipmentRouteException",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ExceptionTypeId",
+				"ToColumnName": "ExceptionTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"ExceptionType.cdm.json/ExceptionType\",\"toEntity\":\"ShipmentRouteException.cdm.json/ShipmentRouteException\",\"joinPairs\":[{\"fromAttribute\":\"ExceptionTypeId\",\"toAttribute\":\"ExceptionTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

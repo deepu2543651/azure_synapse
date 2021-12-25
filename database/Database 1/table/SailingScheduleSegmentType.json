@@ -1,0 +1,86 @@
+{
+	"name": "SailingScheduleSegmentType",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "SailingScheduleSegmentType",
+		"Description": "A classification of flight legs or segments based on common characteristics or functions.\n\nEx:\n- Planned Segment\n- Unscheduled Segment\n- Maintenance Segment \n- Weather-related Segment",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "SailingScheduleSegmentTypeId",
+					"Description": "The unique identifier of a Sailing Schedule Segment Type.",
+					"BaseAttributeReference": {
+						"Entity": "SailingScheduleSegmentType.cdm.json/SailingScheduleSegmentType",
+						"Name": "SailingScheduleSegmentTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "SailingScheduleSegmentTypeName",
+					"Description": "The name of a Sailing Schedule Segment Type.",
+					"BaseAttributeReference": {
+						"Entity": "SailingScheduleSegmentType.cdm.json/SailingScheduleSegmentType",
+						"Name": "SailingScheduleSegmentTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "SailingScheduleSegmentTypeDescription",
+					"Description": "The description of a Sailing Schedule Segment Type.",
+					"BaseAttributeReference": {
+						"Entity": "SailingScheduleSegmentType.cdm.json/SailingScheduleSegmentType",
+						"Name": "SailingScheduleSegmentTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"SailingScheduleSegmentTypeId\":{\"entity\":\"SailingScheduleSegmentType.cdm.json/SailingScheduleSegmentType\",\"name\":\"SailingScheduleSegmentTypeId\"},\"SailingScheduleSegmentTypeName\":{\"entity\":\"SailingScheduleSegmentType.cdm.json/SailingScheduleSegmentType\",\"name\":\"SailingScheduleSegmentTypeName\"},\"SailingScheduleSegmentTypeDescription\":{\"entity\":\"SailingScheduleSegmentType.cdm.json/SailingScheduleSegmentType\",\"name\":\"SailingScheduleSegmentTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"SailingScheduleSegmentType\",\"path\":\"SailingScheduleSegmentType.cdm.json/SailingScheduleSegmentType\"},\"description\":\"A classification of flight legs or segments based on common characteristics or functions.\\n\\nEx:\\n- Planned Segment\\n- Unscheduled Segment\\n- Maintenance Segment \\n- Weather-related Segment\",\"primaryKey\":[\"SailingScheduleSegmentTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"SailingScheduleSegmentTypeId\",\"attributeReference\":{\"entity\":\"SailingScheduleSegmentType.cdm.json/SailingScheduleSegmentType\",\"name\":\"SailingScheduleSegmentTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"SailingScheduleSegmentTypeName\",\"attributeReference\":{\"entity\":\"SailingScheduleSegmentType.cdm.json/SailingScheduleSegmentType\",\"name\":\"SailingScheduleSegmentTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"SailingScheduleSegmentTypeDescription\",\"attributeReference\":{\"entity\":\"SailingScheduleSegmentType.cdm.json/SailingScheduleSegmentType\",\"name\":\"SailingScheduleSegmentTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512}]}}}",
+			"Description": "A classification of flight legs or segments based on common characteristics or functions.\n\nEx:\n- Planned Segment\n- Unscheduled Segment\n- Maintenance Segment \n- Weather-related Segment",
+			"DisplayFolderInfo": "{\"name\":\"Shipping\",\"colorCode\":\"#000B42\"}",
+			"PrimaryKeys": "SailingScheduleSegmentTypeId"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

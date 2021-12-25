@@ -1,0 +1,30 @@
+{
+	"name": "relationship-pkepuheknh",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "relationship-pkepuheknh",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "ShipmentItem",
+		"ToTableName": "ShipmentItemRejection",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ShipmentId",
+				"ToColumnName": "ShipmentId"
+			},
+			{
+				"FromColumnName": "ShipmentItemNumber",
+				"ToColumnName": "ShipmentItemNumber"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"ShipmentItem.cdm.json/ShipmentItem\",\"toEntity\":\"ShipmentItemRejection.cdm.json/ShipmentItemRejection\",\"joinPairs\":[{\"fromAttribute\":\"ShipmentId\",\"toAttribute\":\"ShipmentId\"},{\"fromAttribute\":\"ShipmentItemNumber\",\"toAttribute\":\"ShipmentItemNumber\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

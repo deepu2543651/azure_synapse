@@ -1,0 +1,34 @@
+{
+	"name": "relationship-bijrpxhcog",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "relationship-bijrpxhcog",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "TrainScheduleLeg",
+		"ToTableName": "TrainScheduleLegConfiguration",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "TrainId",
+				"ToColumnName": "TrainId"
+			},
+			{
+				"FromColumnName": "TrainScheduleLegNumber",
+				"ToColumnName": "TrainScheduleLegNumber"
+			},
+			{
+				"FromColumnName": "TrainScheduledDepartureTimestamp",
+				"ToColumnName": "TrainScheduledDepartureTimestamp"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"TrainScheduleLeg.cdm.json/TrainScheduleLeg\",\"toEntity\":\"TrainScheduleLegConfiguration.cdm.json/TrainScheduleLegConfiguration\",\"joinPairs\":[{\"fromAttribute\":\"TrainId\",\"toAttribute\":\"TrainId\"},{\"fromAttribute\":\"TrainScheduleLegNumber\",\"toAttribute\":\"TrainScheduleLegNumber\"},{\"fromAttribute\":\"TrainScheduledDepartureTimestamp\",\"toAttribute\":\"TrainScheduledDepartureTimestamp\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

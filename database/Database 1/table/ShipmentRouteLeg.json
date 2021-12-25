@@ -1,0 +1,989 @@
+{
+	"name": "ShipmentRouteLeg",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "ShipmentRouteLeg",
+		"Description": "The route leg that a shipment transits (already has transited) or is planned to transit.\n\nNote that a shipment route can be changed or modified and then the leg may have a status of:\n\n- Leg Planned\n- Leg Scheduled\n- Leg Modified From Original Planned Leg\n- Leg Completed",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ShipmentId",
+					"Description": "The unique identifier of a Shipment.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentRouteLeg.cdm.json/ShipmentRouteLeg",
+						"Name": "ShipmentId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ShipmentLegNumber",
+					"Description": "The unique identifier of the Shipment Leg Number, which equals the shipment leg 'sequence number'.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentRouteLeg.cdm.json/ShipmentRouteLeg",
+						"Name": "ShipmentLegNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ShipmentMethodId",
+					"Description": "The unique identifier of a Shipment Method.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentRouteLeg.cdm.json/ShipmentRouteLeg",
+						"Name": "ShipmentMethodId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ShipmentRouteNote",
+					"Description": "A note, comment or additional information regarding the shipment route/leg.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentRouteLeg.cdm.json/ShipmentRouteLeg",
+						"Name": "ShipmentRouteNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "CarrierId",
+					"Description": "The unique identifier of a Carrier.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentRouteLeg.cdm.json/ShipmentRouteLeg",
+						"Name": "CarrierId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "CarrierRouteId",
+					"Description": "The unique identifier of a Carrier Route.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentRouteLeg.cdm.json/ShipmentRouteLeg",
+						"Name": "CarrierRouteId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "CarrierRouteLegNumber",
+					"Description": "The assigned to the Carrier Route Leg.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentRouteLeg.cdm.json/ShipmentRouteLeg",
+						"Name": "CarrierRouteLegNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "RouteLegTypeId",
+					"Description": "The unique identifier of a Route Leg Type.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentRouteLeg.cdm.json/ShipmentRouteLeg",
+						"Name": "RouteLegTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ExpectedCarrierChargeAmount",
+					"Description": "The amount expected to be charged by the carrier based on the carrier route schedule.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentRouteLeg.cdm.json/ShipmentRouteLeg",
+						"Name": "ExpectedCarrierChargeAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "ShipmentLegFromLocationId",
+					"Description": "The unique identifier of the From-Location.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentRouteLeg.cdm.json/ShipmentRouteLeg",
+						"Name": "ShipmentLegFromLocationId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ShipmentLegToLocationId",
+					"Description": "The unique identifier of the To-Location.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentRouteLeg.cdm.json/ShipmentRouteLeg",
+						"Name": "ShipmentLegToLocationId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PlannedEarliestPickUpTimestamp",
+					"Description": "The earliest that the shipment items can be picked up.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentRouteLeg.cdm.json/ShipmentRouteLeg",
+						"Name": "PlannedEarliestPickUpTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "PlannedLatestPickUpTimestamp",
+					"Description": "The latest that the shipment items can be picked-up.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentRouteLeg.cdm.json/ShipmentRouteLeg",
+						"Name": "PlannedLatestPickUpTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "PlannedEarliestDeliveryTimestamp",
+					"Description": "The earliest that the shipment items can be delivered.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentRouteLeg.cdm.json/ShipmentRouteLeg",
+						"Name": "PlannedEarliestDeliveryTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "PlannedLatestDeliveryTimestamp",
+					"Description": "The latest that the shipment items can be delivered.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentRouteLeg.cdm.json/ShipmentRouteLeg",
+						"Name": "PlannedLatestDeliveryTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "PlannedDepartureTimestamp",
+					"Description": "The planned departure timestamp.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentRouteLeg.cdm.json/ShipmentRouteLeg",
+						"Name": "PlannedDepartureTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "PlannedArrivalTimestamp",
+					"Description": "The planned arrival timestamp.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentRouteLeg.cdm.json/ShipmentRouteLeg",
+						"Name": "PlannedArrivalTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "ActualDepartureTimestamp",
+					"Description": "The actual departure timestamp.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentRouteLeg.cdm.json/ShipmentRouteLeg",
+						"Name": "ActualDepartureTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "ActualArrivalTimestamp",
+					"Description": "The actual arrival timestamp.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentRouteLeg.cdm.json/ShipmentRouteLeg",
+						"Name": "ActualArrivalTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "AssetReplacementOccurredIndicator",
+					"Description": "Indicates that the replacement of an Asset occurred during the shipment leg.  \n\nEx:\n- Truck had to be replaced",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentRouteLeg.cdm.json/ShipmentRouteLeg",
+						"Name": "AssetReplacementOccurredIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "BackhaulLegIndicator",
+					"Description": "To haul a shipment back over part of a route it has traveled.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentRouteLeg.cdm.json/ShipmentRouteLeg",
+						"Name": "BackhaulLegIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "InterlineCargoTransferLocationIndicator",
+					"Description": "Indicates that the cargo is arriving at a point by one carrier and continuing its journey through another carrier.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentRouteLeg.cdm.json/ShipmentRouteLeg",
+						"Name": "InterlineCargoTransferLocationIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "PlannedCarrierId",
+					"Description": "The unique identifier of a Carrier.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentRouteLeg.cdm.json/ShipmentRouteLeg",
+						"Name": "PlannedCarrierId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PlannedFlightNumber",
+					"Description": "The unique identifier of a Flight.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentRouteLeg.cdm.json/ShipmentRouteLeg",
+						"Name": "PlannedFlightNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PlannedFlightDate",
+					"Description": "The date of the Flight.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentRouteLeg.cdm.json/ShipmentRouteLeg",
+						"Name": "PlannedFlightDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "PlannedFlightLegDepartureAirportCode",
+					"Description": "AKA Airport Code\n\nThree-letter codes used to identify airports.\n\nAirport Code \nThe airport code is a three letter designator for a commercial airport, or other travel point -- e.g. a large bus station. These are the codes that airlines and pilots use to identify airports and are used in timetables, baggage tags, tickets, advertisements, Airline and Global Reservation Systems. There are approximately 9,000 of them in use of a total of 17,576 available",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentRouteLeg.cdm.json/ShipmentRouteLeg",
+						"Name": "PlannedFlightLegDepartureAirportCode"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 3,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "PlannedFlightLegArrivalAirportCode",
+					"Description": "AKA Airport Code\n\nThree-letter codes used to identify airports.\n\nAirport Code \nThe airport code is a three letter designator for a commercial airport, or other travel point -- e.g. a large bus station. These are the codes that airlines and pilots use to identify airports and are used in timetables, baggage tags, tickets, advertisements, Airline and Global Reservation Systems. There are approximately 9,000 of them in use of a total of 17,576 available",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentRouteLeg.cdm.json/ShipmentRouteLeg",
+						"Name": "PlannedFlightLegArrivalAirportCode"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 3,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ActualCarrierId",
+					"Description": "The unique identifier of a Carrier.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentRouteLeg.cdm.json/ShipmentRouteLeg",
+						"Name": "ActualCarrierId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ActualFlightNumber",
+					"Description": "The unique identifier of a Flight.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentRouteLeg.cdm.json/ShipmentRouteLeg",
+						"Name": "ActualFlightNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ActualFlightDate",
+					"Description": "The date of the Flight.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentRouteLeg.cdm.json/ShipmentRouteLeg",
+						"Name": "ActualFlightDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "ActualFlightLegDepartureAirportCode",
+					"Description": "AKA Airport Code\n\nThree-letter codes used to identify airports.\n\nAirport Code \nThe airport code is a three letter designator for a commercial airport, or other travel point -- e.g. a large bus station. These are the codes that airlines and pilots use to identify airports and are used in timetables, baggage tags, tickets, advertisements, Airline and Global Reservation Systems. There are approximately 9,000 of them in use of a total of 17,576 available",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentRouteLeg.cdm.json/ShipmentRouteLeg",
+						"Name": "ActualFlightLegDepartureAirportCode"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 3,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ActualFlightLegArrivalAirportCode",
+					"Description": "AKA Airport Code\n\nThree-letter codes used to identify airports.\n\nAirport Code \nThe airport code is a three letter designator for a commercial airport, or other travel point -- e.g. a large bus station. These are the codes that airlines and pilots use to identify airports and are used in timetables, baggage tags, tickets, advertisements, Airline and Global Reservation Systems. There are approximately 9,000 of them in use of a total of 17,576 available",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentRouteLeg.cdm.json/ShipmentRouteLeg",
+						"Name": "ActualFlightLegArrivalAirportCode"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 3,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "PlannedVesselId",
+					"Description": "The unique identifier of a vessel/ship.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentRouteLeg.cdm.json/ShipmentRouteLeg",
+						"Name": "PlannedVesselId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PlannedVesselDepartureTimestamp",
+					"Description": "The scheduled departure timestamp.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentRouteLeg.cdm.json/ShipmentRouteLeg",
+						"Name": "PlannedVesselDepartureTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "PlannedSailingSegmentNumber",
+					"Description": "The ordered segment number associated with this segment (leg) of the sailing schedule.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentRouteLeg.cdm.json/ShipmentRouteLeg",
+						"Name": "PlannedSailingSegmentNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ActualVesselId",
+					"Description": "The unique identifier of a vessel/ship.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentRouteLeg.cdm.json/ShipmentRouteLeg",
+						"Name": "ActualVesselId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ActualVesselDepartureTimestamp",
+					"Description": "The scheduled departure timestamp.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentRouteLeg.cdm.json/ShipmentRouteLeg",
+						"Name": "ActualVesselDepartureTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "ActualSailingSegmentNumber",
+					"Description": "The ordered segment number associated with this segment (leg) of the sailing schedule.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentRouteLeg.cdm.json/ShipmentRouteLeg",
+						"Name": "ActualSailingSegmentNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PlannedTowId",
+					"Description": "The unique identifier of a Train.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentRouteLeg.cdm.json/ShipmentRouteLeg",
+						"Name": "PlannedTowId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PlannedTowLegNumber",
+					"Description": "The leg number of the tow schedule.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentRouteLeg.cdm.json/ShipmentRouteLeg",
+						"Name": "PlannedTowLegNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PlannedTowDepartureTimestamp",
+					"Description": "The scheduled departure timestamp.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentRouteLeg.cdm.json/ShipmentRouteLeg",
+						"Name": "PlannedTowDepartureTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "ActualTowId",
+					"Description": "The unique identifier of a Train.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentRouteLeg.cdm.json/ShipmentRouteLeg",
+						"Name": "ActualTowId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ActualTowDepartureTimestamp",
+					"Description": "The scheduled departure timestamp.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentRouteLeg.cdm.json/ShipmentRouteLeg",
+						"Name": "ActualTowDepartureTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "ActualTowLegNumber",
+					"Description": "The leg number of the tow schedule.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentRouteLeg.cdm.json/ShipmentRouteLeg",
+						"Name": "ActualTowLegNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PlannedVehicleId",
+					"Description": "The unique identifier of a Vehicle.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentRouteLeg.cdm.json/ShipmentRouteLeg",
+						"Name": "PlannedVehicleId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "ActualVehicleId",
+					"Description": "The unique identifier of a Vehicle.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentRouteLeg.cdm.json/ShipmentRouteLeg",
+						"Name": "ActualVehicleId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "PlannedTrainId",
+					"Description": "The unique identifier of a Train.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentRouteLeg.cdm.json/ShipmentRouteLeg",
+						"Name": "PlannedTrainId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PlannedTrainDepartureTimestamp",
+					"Description": "The scheduled departure timestamp.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentRouteLeg.cdm.json/ShipmentRouteLeg",
+						"Name": "PlannedTrainDepartureTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "PlannedTrainLegNumber",
+					"Description": "The leg number of the train schedule.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentRouteLeg.cdm.json/ShipmentRouteLeg",
+						"Name": "PlannedTrainLegNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ActualTrainId",
+					"Description": "The unique identifier of a Train.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentRouteLeg.cdm.json/ShipmentRouteLeg",
+						"Name": "ActualTrainId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ActualTrainDepartureTimestamp",
+					"Description": "The scheduled departure timestamp.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentRouteLeg.cdm.json/ShipmentRouteLeg",
+						"Name": "ActualTrainDepartureTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "ActualTrainLegNumber",
+					"Description": "The leg number of the train schedule.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentRouteLeg.cdm.json/ShipmentRouteLeg",
+						"Name": "ActualTrainLegNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PlannedPipelineId",
+					"Description": "The unique identifier of a Pipeline.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentRouteLeg.cdm.json/ShipmentRouteLeg",
+						"Name": "PlannedPipelineId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "PlannedPipelineStationId",
+					"Description": "The unique identifier of a Pipeline Station.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentRouteLeg.cdm.json/ShipmentRouteLeg",
+						"Name": "PlannedPipelineStationId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "PlannedPipelineInjectionTimestamp",
+					"Description": "The planned pipeline injection timestamp.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentRouteLeg.cdm.json/ShipmentRouteLeg",
+						"Name": "PlannedPipelineInjectionTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "ActualPipelineId",
+					"Description": "The unique identifier of a Pipeline.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentRouteLeg.cdm.json/ShipmentRouteLeg",
+						"Name": "ActualPipelineId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "ActualPipelineStationId",
+					"Description": "The unique identifier of a Pipeline Station.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentRouteLeg.cdm.json/ShipmentRouteLeg",
+						"Name": "ActualPipelineStationId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "ActualPipelineInjectionTimestamp",
+					"Description": "The actual pipeline injection timestamp.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentRouteLeg.cdm.json/ShipmentRouteLeg",
+						"Name": "ActualPipelineInjectionTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ShipmentId\":{\"entity\":\"ShipmentRouteLeg.cdm.json/ShipmentRouteLeg\",\"name\":\"ShipmentId\"},\"ShipmentLegNumber\":{\"entity\":\"ShipmentRouteLeg.cdm.json/ShipmentRouteLeg\",\"name\":\"ShipmentLegNumber\"},\"ShipmentMethodId\":{\"entity\":\"ShipmentRouteLeg.cdm.json/ShipmentRouteLeg\",\"name\":\"ShipmentMethodId\"},\"ShipmentRouteNote\":{\"entity\":\"ShipmentRouteLeg.cdm.json/ShipmentRouteLeg\",\"name\":\"ShipmentRouteNote\"},\"CarrierId\":{\"entity\":\"ShipmentRouteLeg.cdm.json/ShipmentRouteLeg\",\"name\":\"CarrierId\"},\"CarrierRouteId\":{\"entity\":\"ShipmentRouteLeg.cdm.json/ShipmentRouteLeg\",\"name\":\"CarrierRouteId\"},\"CarrierRouteLegNumber\":{\"entity\":\"ShipmentRouteLeg.cdm.json/ShipmentRouteLeg\",\"name\":\"CarrierRouteLegNumber\"},\"RouteLegTypeId\":{\"entity\":\"ShipmentRouteLeg.cdm.json/ShipmentRouteLeg\",\"name\":\"RouteLegTypeId\"},\"ExpectedCarrierChargeAmount\":{\"entity\":\"ShipmentRouteLeg.cdm.json/ShipmentRouteLeg\",\"name\":\"ExpectedCarrierChargeAmount\"},\"ShipmentLegFromLocationId\":{\"entity\":\"ShipmentRouteLeg.cdm.json/ShipmentRouteLeg\",\"name\":\"ShipmentLegFromLocationId\"},\"ShipmentLegToLocationId\":{\"entity\":\"ShipmentRouteLeg.cdm.json/ShipmentRouteLeg\",\"name\":\"ShipmentLegToLocationId\"},\"PlannedEarliestPickUpTimestamp\":{\"entity\":\"ShipmentRouteLeg.cdm.json/ShipmentRouteLeg\",\"name\":\"PlannedEarliestPickUpTimestamp\"},\"PlannedLatestPickUpTimestamp\":{\"entity\":\"ShipmentRouteLeg.cdm.json/ShipmentRouteLeg\",\"name\":\"PlannedLatestPickUpTimestamp\"},\"PlannedEarliestDeliveryTimestamp\":{\"entity\":\"ShipmentRouteLeg.cdm.json/ShipmentRouteLeg\",\"name\":\"PlannedEarliestDeliveryTimestamp\"},\"PlannedLatestDeliveryTimestamp\":{\"entity\":\"ShipmentRouteLeg.cdm.json/ShipmentRouteLeg\",\"name\":\"PlannedLatestDeliveryTimestamp\"},\"PlannedDepartureTimestamp\":{\"entity\":\"ShipmentRouteLeg.cdm.json/ShipmentRouteLeg\",\"name\":\"PlannedDepartureTimestamp\"},\"PlannedArrivalTimestamp\":{\"entity\":\"ShipmentRouteLeg.cdm.json/ShipmentRouteLeg\",\"name\":\"PlannedArrivalTimestamp\"},\"ActualDepartureTimestamp\":{\"entity\":\"ShipmentRouteLeg.cdm.json/ShipmentRouteLeg\",\"name\":\"ActualDepartureTimestamp\"},\"ActualArrivalTimestamp\":{\"entity\":\"ShipmentRouteLeg.cdm.json/ShipmentRouteLeg\",\"name\":\"ActualArrivalTimestamp\"},\"AssetReplacementOccurredIndicator\":{\"entity\":\"ShipmentRouteLeg.cdm.json/ShipmentRouteLeg\",\"name\":\"AssetReplacementOccurredIndicator\"},\"BackhaulLegIndicator\":{\"entity\":\"ShipmentRouteLeg.cdm.json/ShipmentRouteLeg\",\"name\":\"BackhaulLegIndicator\"},\"InterlineCargoTransferLocationIndicator\":{\"entity\":\"ShipmentRouteLeg.cdm.json/ShipmentRouteLeg\",\"name\":\"InterlineCargoTransferLocationIndicator\"},\"PlannedCarrierId\":{\"entity\":\"ShipmentRouteLeg.cdm.json/ShipmentRouteLeg\",\"name\":\"PlannedCarrierId\"},\"PlannedFlightNumber\":{\"entity\":\"ShipmentRouteLeg.cdm.json/ShipmentRouteLeg\",\"name\":\"PlannedFlightNumber\"},\"PlannedFlightDate\":{\"entity\":\"ShipmentRouteLeg.cdm.json/ShipmentRouteLeg\",\"name\":\"PlannedFlightDate\"},\"PlannedFlightLegDepartureAirportCode\":{\"entity\":\"ShipmentRouteLeg.cdm.json/ShipmentRouteLeg\",\"name\":\"PlannedFlightLegDepartureAirportCode\"},\"PlannedFlightLegArrivalAirportCode\":{\"entity\":\"ShipmentRouteLeg.cdm.json/ShipmentRouteLeg\",\"name\":\"PlannedFlightLegArrivalAirportCode\"},\"ActualCarrierId\":{\"entity\":\"ShipmentRouteLeg.cdm.json/ShipmentRouteLeg\",\"name\":\"ActualCarrierId\"},\"ActualFlightNumber\":{\"entity\":\"ShipmentRouteLeg.cdm.json/ShipmentRouteLeg\",\"name\":\"ActualFlightNumber\"},\"ActualFlightDate\":{\"entity\":\"ShipmentRouteLeg.cdm.json/ShipmentRouteLeg\",\"name\":\"ActualFlightDate\"},\"ActualFlightLegDepartureAirportCode\":{\"entity\":\"ShipmentRouteLeg.cdm.json/ShipmentRouteLeg\",\"name\":\"ActualFlightLegDepartureAirportCode\"},\"ActualFlightLegArrivalAirportCode\":{\"entity\":\"ShipmentRouteLeg.cdm.json/ShipmentRouteLeg\",\"name\":\"ActualFlightLegArrivalAirportCode\"},\"PlannedVesselId\":{\"entity\":\"ShipmentRouteLeg.cdm.json/ShipmentRouteLeg\",\"name\":\"PlannedVesselId\"},\"PlannedVesselDepartureTimestamp\":{\"entity\":\"ShipmentRouteLeg.cdm.json/ShipmentRouteLeg\",\"name\":\"PlannedVesselDepartureTimestamp\"},\"PlannedSailingSegmentNumber\":{\"entity\":\"ShipmentRouteLeg.cdm.json/ShipmentRouteLeg\",\"name\":\"PlannedSailingSegmentNumber\"},\"ActualVesselId\":{\"entity\":\"ShipmentRouteLeg.cdm.json/ShipmentRouteLeg\",\"name\":\"ActualVesselId\"},\"ActualVesselDepartureTimestamp\":{\"entity\":\"ShipmentRouteLeg.cdm.json/ShipmentRouteLeg\",\"name\":\"ActualVesselDepartureTimestamp\"},\"ActualSailingSegmentNumber\":{\"entity\":\"ShipmentRouteLeg.cdm.json/ShipmentRouteLeg\",\"name\":\"ActualSailingSegmentNumber\"},\"PlannedTowId\":{\"entity\":\"ShipmentRouteLeg.cdm.json/ShipmentRouteLeg\",\"name\":\"PlannedTowId\"},\"PlannedTowLegNumber\":{\"entity\":\"ShipmentRouteLeg.cdm.json/ShipmentRouteLeg\",\"name\":\"PlannedTowLegNumber\"},\"PlannedTowDepartureTimestamp\":{\"entity\":\"ShipmentRouteLeg.cdm.json/ShipmentRouteLeg\",\"name\":\"PlannedTowDepartureTimestamp\"},\"ActualTowId\":{\"entity\":\"ShipmentRouteLeg.cdm.json/ShipmentRouteLeg\",\"name\":\"ActualTowId\"},\"ActualTowDepartureTimestamp\":{\"entity\":\"ShipmentRouteLeg.cdm.json/ShipmentRouteLeg\",\"name\":\"ActualTowDepartureTimestamp\"},\"ActualTowLegNumber\":{\"entity\":\"ShipmentRouteLeg.cdm.json/ShipmentRouteLeg\",\"name\":\"ActualTowLegNumber\"},\"PlannedVehicleId\":{\"entity\":\"ShipmentRouteLeg.cdm.json/ShipmentRouteLeg\",\"name\":\"PlannedVehicleId\"},\"ActualVehicleId\":{\"entity\":\"ShipmentRouteLeg.cdm.json/ShipmentRouteLeg\",\"name\":\"ActualVehicleId\"},\"PlannedTrainId\":{\"entity\":\"ShipmentRouteLeg.cdm.json/ShipmentRouteLeg\",\"name\":\"PlannedTrainId\"},\"PlannedTrainDepartureTimestamp\":{\"entity\":\"ShipmentRouteLeg.cdm.json/ShipmentRouteLeg\",\"name\":\"PlannedTrainDepartureTimestamp\"},\"PlannedTrainLegNumber\":{\"entity\":\"ShipmentRouteLeg.cdm.json/ShipmentRouteLeg\",\"name\":\"PlannedTrainLegNumber\"},\"ActualTrainId\":{\"entity\":\"ShipmentRouteLeg.cdm.json/ShipmentRouteLeg\",\"name\":\"ActualTrainId\"},\"ActualTrainDepartureTimestamp\":{\"entity\":\"ShipmentRouteLeg.cdm.json/ShipmentRouteLeg\",\"name\":\"ActualTrainDepartureTimestamp\"},\"ActualTrainLegNumber\":{\"entity\":\"ShipmentRouteLeg.cdm.json/ShipmentRouteLeg\",\"name\":\"ActualTrainLegNumber\"},\"PlannedPipelineId\":{\"entity\":\"ShipmentRouteLeg.cdm.json/ShipmentRouteLeg\",\"name\":\"PlannedPipelineId\"},\"PlannedPipelineStationId\":{\"entity\":\"ShipmentRouteLeg.cdm.json/ShipmentRouteLeg\",\"name\":\"PlannedPipelineStationId\"},\"PlannedPipelineInjectionTimestamp\":{\"entity\":\"ShipmentRouteLeg.cdm.json/ShipmentRouteLeg\",\"name\":\"PlannedPipelineInjectionTimestamp\"},\"ActualPipelineId\":{\"entity\":\"ShipmentRouteLeg.cdm.json/ShipmentRouteLeg\",\"name\":\"ActualPipelineId\"},\"ActualPipelineStationId\":{\"entity\":\"ShipmentRouteLeg.cdm.json/ShipmentRouteLeg\",\"name\":\"ActualPipelineStationId\"},\"ActualPipelineInjectionTimestamp\":{\"entity\":\"ShipmentRouteLeg.cdm.json/ShipmentRouteLeg\",\"name\":\"ActualPipelineInjectionTimestamp\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"ShipmentRouteLeg\",\"path\":\"ShipmentRouteLeg.cdm.json/ShipmentRouteLeg\"},\"description\":\"The route leg that a shipment transits (already has transited) or is planned to transit.\\n\\nNote that a shipment route can be changed or modified and then the leg may have a status of:\\n\\n- Leg Planned\\n- Leg Scheduled\\n- Leg Modified From Original Planned Leg\\n- Leg Completed\",\"primaryKey\":[\"ShipmentId\",\"ShipmentLegNumber\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"ShipmentId\",\"attributeReference\":{\"entity\":\"ShipmentRouteLeg.cdm.json/ShipmentRouteLeg\",\"name\":\"ShipmentId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ShipmentLegNumber\",\"attributeReference\":{\"entity\":\"ShipmentRouteLeg.cdm.json/ShipmentRouteLeg\",\"name\":\"ShipmentLegNumber\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ShipmentMethodId\",\"attributeReference\":{\"entity\":\"ShipmentRouteLeg.cdm.json/ShipmentRouteLeg\",\"name\":\"ShipmentMethodId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ShipmentRouteNote\",\"attributeReference\":{\"entity\":\"ShipmentRouteLeg.cdm.json/ShipmentRouteLeg\",\"name\":\"ShipmentRouteNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024},{\"type\":\"Existing\",\"name\":\"CarrierId\",\"attributeReference\":{\"entity\":\"ShipmentRouteLeg.cdm.json/ShipmentRouteLeg\",\"name\":\"CarrierId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"CarrierRouteId\",\"attributeReference\":{\"entity\":\"ShipmentRouteLeg.cdm.json/ShipmentRouteLeg\",\"name\":\"CarrierRouteId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"CarrierRouteLegNumber\",\"attributeReference\":{\"entity\":\"ShipmentRouteLeg.cdm.json/ShipmentRouteLeg\",\"name\":\"CarrierRouteLegNumber\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"RouteLegTypeId\",\"attributeReference\":{\"entity\":\"ShipmentRouteLeg.cdm.json/ShipmentRouteLeg\",\"name\":\"RouteLegTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ExpectedCarrierChargeAmount\",\"attributeReference\":{\"entity\":\"ShipmentRouteLeg.cdm.json/ShipmentRouteLeg\",\"name\":\"ExpectedCarrierChargeAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"ShipmentLegFromLocationId\",\"attributeReference\":{\"entity\":\"ShipmentRouteLeg.cdm.json/ShipmentRouteLeg\",\"name\":\"ShipmentLegFromLocationId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ShipmentLegToLocationId\",\"attributeReference\":{\"entity\":\"ShipmentRouteLeg.cdm.json/ShipmentRouteLeg\",\"name\":\"ShipmentLegToLocationId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"PlannedEarliestPickUpTimestamp\",\"attributeReference\":{\"entity\":\"ShipmentRouteLeg.cdm.json/ShipmentRouteLeg\",\"name\":\"PlannedEarliestPickUpTimestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"PlannedLatestPickUpTimestamp\",\"attributeReference\":{\"entity\":\"ShipmentRouteLeg.cdm.json/ShipmentRouteLeg\",\"name\":\"PlannedLatestPickUpTimestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"PlannedEarliestDeliveryTimestamp\",\"attributeReference\":{\"entity\":\"ShipmentRouteLeg.cdm.json/ShipmentRouteLeg\",\"name\":\"PlannedEarliestDeliveryTimestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"PlannedLatestDeliveryTimestamp\",\"attributeReference\":{\"entity\":\"ShipmentRouteLeg.cdm.json/ShipmentRouteLeg\",\"name\":\"PlannedLatestDeliveryTimestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"PlannedDepartureTimestamp\",\"attributeReference\":{\"entity\":\"ShipmentRouteLeg.cdm.json/ShipmentRouteLeg\",\"name\":\"PlannedDepartureTimestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"PlannedArrivalTimestamp\",\"attributeReference\":{\"entity\":\"ShipmentRouteLeg.cdm.json/ShipmentRouteLeg\",\"name\":\"PlannedArrivalTimestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"ActualDepartureTimestamp\",\"attributeReference\":{\"entity\":\"ShipmentRouteLeg.cdm.json/ShipmentRouteLeg\",\"name\":\"ActualDepartureTimestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"ActualArrivalTimestamp\",\"attributeReference\":{\"entity\":\"ShipmentRouteLeg.cdm.json/ShipmentRouteLeg\",\"name\":\"ActualArrivalTimestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"AssetReplacementOccurredIndicator\",\"attributeReference\":{\"entity\":\"ShipmentRouteLeg.cdm.json/ShipmentRouteLeg\",\"name\":\"AssetReplacementOccurredIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"BackhaulLegIndicator\",\"attributeReference\":{\"entity\":\"ShipmentRouteLeg.cdm.json/ShipmentRouteLeg\",\"name\":\"BackhaulLegIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"InterlineCargoTransferLocationIndicator\",\"attributeReference\":{\"entity\":\"ShipmentRouteLeg.cdm.json/ShipmentRouteLeg\",\"name\":\"InterlineCargoTransferLocationIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"PlannedCarrierId\",\"attributeReference\":{\"entity\":\"ShipmentRouteLeg.cdm.json/ShipmentRouteLeg\",\"name\":\"PlannedCarrierId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"PlannedFlightNumber\",\"attributeReference\":{\"entity\":\"ShipmentRouteLeg.cdm.json/ShipmentRouteLeg\",\"name\":\"PlannedFlightNumber\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"PlannedFlightDate\",\"attributeReference\":{\"entity\":\"ShipmentRouteLeg.cdm.json/ShipmentRouteLeg\",\"name\":\"PlannedFlightDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\"},{\"type\":\"Existing\",\"name\":\"PlannedFlightLegDepartureAirportCode\",\"attributeReference\":{\"entity\":\"ShipmentRouteLeg.cdm.json/ShipmentRouteLeg\",\"name\":\"PlannedFlightLegDepartureAirportCode\"},\"dataType\":\"string\",\"dataTypeLength\":3},{\"type\":\"Existing\",\"name\":\"PlannedFlightLegArrivalAirportCode\",\"attributeReference\":{\"entity\":\"ShipmentRouteLeg.cdm.json/ShipmentRouteLeg\",\"name\":\"PlannedFlightLegArrivalAirportCode\"},\"dataType\":\"string\",\"dataTypeLength\":3},{\"type\":\"Existing\",\"name\":\"ActualCarrierId\",\"attributeReference\":{\"entity\":\"ShipmentRouteLeg.cdm.json/ShipmentRouteLeg\",\"name\":\"ActualCarrierId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ActualFlightNumber\",\"attributeReference\":{\"entity\":\"ShipmentRouteLeg.cdm.json/ShipmentRouteLeg\",\"name\":\"ActualFlightNumber\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ActualFlightDate\",\"attributeReference\":{\"entity\":\"ShipmentRouteLeg.cdm.json/ShipmentRouteLeg\",\"name\":\"ActualFlightDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\"},{\"type\":\"Existing\",\"name\":\"ActualFlightLegDepartureAirportCode\",\"attributeReference\":{\"entity\":\"ShipmentRouteLeg.cdm.json/ShipmentRouteLeg\",\"name\":\"ActualFlightLegDepartureAirportCode\"},\"dataType\":\"string\",\"dataTypeLength\":3},{\"type\":\"Existing\",\"name\":\"ActualFlightLegArrivalAirportCode\",\"attributeReference\":{\"entity\":\"ShipmentRouteLeg.cdm.json/ShipmentRouteLeg\",\"name\":\"ActualFlightLegArrivalAirportCode\"},\"dataType\":\"string\",\"dataTypeLength\":3},{\"type\":\"Existing\",\"name\":\"PlannedVesselId\",\"attributeReference\":{\"entity\":\"ShipmentRouteLeg.cdm.json/ShipmentRouteLeg\",\"name\":\"PlannedVesselId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"PlannedVesselDepartureTimestamp\",\"attributeReference\":{\"entity\":\"ShipmentRouteLeg.cdm.json/ShipmentRouteLeg\",\"name\":\"PlannedVesselDepartureTimestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"PlannedSailingSegmentNumber\",\"attributeReference\":{\"entity\":\"ShipmentRouteLeg.cdm.json/ShipmentRouteLeg\",\"name\":\"PlannedSailingSegmentNumber\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ActualVesselId\",\"attributeReference\":{\"entity\":\"ShipmentRouteLeg.cdm.json/ShipmentRouteLeg\",\"name\":\"ActualVesselId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ActualVesselDepartureTimestamp\",\"attributeReference\":{\"entity\":\"ShipmentRouteLeg.cdm.json/ShipmentRouteLeg\",\"name\":\"ActualVesselDepartureTimestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"ActualSailingSegmentNumber\",\"attributeReference\":{\"entity\":\"ShipmentRouteLeg.cdm.json/ShipmentRouteLeg\",\"name\":\"ActualSailingSegmentNumber\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"PlannedTowId\",\"attributeReference\":{\"entity\":\"ShipmentRouteLeg.cdm.json/ShipmentRouteLeg\",\"name\":\"PlannedTowId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"PlannedTowLegNumber\",\"attributeReference\":{\"entity\":\"ShipmentRouteLeg.cdm.json/ShipmentRouteLeg\",\"name\":\"PlannedTowLegNumber\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"PlannedTowDepartureTimestamp\",\"attributeReference\":{\"entity\":\"ShipmentRouteLeg.cdm.json/ShipmentRouteLeg\",\"name\":\"PlannedTowDepartureTimestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"ActualTowId\",\"attributeReference\":{\"entity\":\"ShipmentRouteLeg.cdm.json/ShipmentRouteLeg\",\"name\":\"ActualTowId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ActualTowDepartureTimestamp\",\"attributeReference\":{\"entity\":\"ShipmentRouteLeg.cdm.json/ShipmentRouteLeg\",\"name\":\"ActualTowDepartureTimestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"ActualTowLegNumber\",\"attributeReference\":{\"entity\":\"ShipmentRouteLeg.cdm.json/ShipmentRouteLeg\",\"name\":\"ActualTowLegNumber\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"PlannedVehicleId\",\"attributeReference\":{\"entity\":\"ShipmentRouteLeg.cdm.json/ShipmentRouteLeg\",\"name\":\"PlannedVehicleId\"},\"dataType\":\"long\"},{\"type\":\"Existing\",\"name\":\"ActualVehicleId\",\"attributeReference\":{\"entity\":\"ShipmentRouteLeg.cdm.json/ShipmentRouteLeg\",\"name\":\"ActualVehicleId\"},\"dataType\":\"long\"},{\"type\":\"Existing\",\"name\":\"PlannedTrainId\",\"attributeReference\":{\"entity\":\"ShipmentRouteLeg.cdm.json/ShipmentRouteLeg\",\"name\":\"PlannedTrainId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"PlannedTrainDepartureTimestamp\",\"attributeReference\":{\"entity\":\"ShipmentRouteLeg.cdm.json/ShipmentRouteLeg\",\"name\":\"PlannedTrainDepartureTimestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"PlannedTrainLegNumber\",\"attributeReference\":{\"entity\":\"ShipmentRouteLeg.cdm.json/ShipmentRouteLeg\",\"name\":\"PlannedTrainLegNumber\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ActualTrainId\",\"attributeReference\":{\"entity\":\"ShipmentRouteLeg.cdm.json/ShipmentRouteLeg\",\"name\":\"ActualTrainId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ActualTrainDepartureTimestamp\",\"attributeReference\":{\"entity\":\"ShipmentRouteLeg.cdm.json/ShipmentRouteLeg\",\"name\":\"ActualTrainDepartureTimestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"ActualTrainLegNumber\",\"attributeReference\":{\"entity\":\"ShipmentRouteLeg.cdm.json/ShipmentRouteLeg\",\"name\":\"ActualTrainLegNumber\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"PlannedPipelineId\",\"attributeReference\":{\"entity\":\"ShipmentRouteLeg.cdm.json/ShipmentRouteLeg\",\"name\":\"PlannedPipelineId\"},\"dataType\":\"long\"},{\"type\":\"Existing\",\"name\":\"PlannedPipelineStationId\",\"attributeReference\":{\"entity\":\"ShipmentRouteLeg.cdm.json/ShipmentRouteLeg\",\"name\":\"PlannedPipelineStationId\"},\"dataType\":\"long\"},{\"type\":\"Existing\",\"name\":\"PlannedPipelineInjectionTimestamp\",\"attributeReference\":{\"entity\":\"ShipmentRouteLeg.cdm.json/ShipmentRouteLeg\",\"name\":\"PlannedPipelineInjectionTimestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"ActualPipelineId\",\"attributeReference\":{\"entity\":\"ShipmentRouteLeg.cdm.json/ShipmentRouteLeg\",\"name\":\"ActualPipelineId\"},\"dataType\":\"long\"},{\"type\":\"Existing\",\"name\":\"ActualPipelineStationId\",\"attributeReference\":{\"entity\":\"ShipmentRouteLeg.cdm.json/ShipmentRouteLeg\",\"name\":\"ActualPipelineStationId\"},\"dataType\":\"long\"},{\"type\":\"Existing\",\"name\":\"ActualPipelineInjectionTimestamp\",\"attributeReference\":{\"entity\":\"ShipmentRouteLeg.cdm.json/ShipmentRouteLeg\",\"name\":\"ActualPipelineInjectionTimestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"}]}}}",
+			"Description": "The route leg that a shipment transits (already has transited) or is planned to transit.\n\nNote that a shipment route can be changed or modified and then the leg may have a status of:\n\n- Leg Planned\n- Leg Scheduled\n- Leg Modified From Original Planned Leg\n- Leg Completed",
+			"DisplayFolderInfo": "{\"name\":\"Shipping\",\"colorCode\":\"#000B42\"}",
+			"PrimaryKeys": "ShipmentId,ShipmentLegNumber"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

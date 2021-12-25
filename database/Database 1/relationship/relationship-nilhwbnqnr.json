@@ -1,0 +1,26 @@
+{
+	"name": "relationship-nilhwbnqnr",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "relationship-nilhwbnqnr",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Towboat",
+		"ToTableName": "TowScheduleTowboatPosition",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "TowboatId",
+				"ToColumnName": "TowboatId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Towboat.cdm.json/Towboat\",\"toEntity\":\"TowScheduleTowboatPosition.cdm.json/TowScheduleTowboatPosition\",\"joinPairs\":[{\"fromAttribute\":\"TowboatId\",\"toAttribute\":\"TowboatId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

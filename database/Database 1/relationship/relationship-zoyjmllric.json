@@ -1,0 +1,34 @@
+{
+	"name": "relationship-zoyjmllric",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "relationship-zoyjmllric",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "VehicleDeliveryLeg",
+		"ToTableName": "VehicleScheduleLegRelatedParty",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ScheduledDepartureTimestamp",
+				"ToColumnName": "ScheduledDepartureTimestamp"
+			},
+			{
+				"FromColumnName": "VehicleDeliveryLegNumber",
+				"ToColumnName": "VehicleDeliveryLegNumber"
+			},
+			{
+				"FromColumnName": "VehicleId",
+				"ToColumnName": "VehicleId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"VehicleDeliveryLeg.cdm.json/VehicleDeliveryLeg\",\"toEntity\":\"VehicleScheduleLegRelatedParty.cdm.json/VehicleScheduleLegRelatedParty\",\"joinPairs\":[{\"fromAttribute\":\"ScheduledDepartureTimestamp\",\"toAttribute\":\"ScheduledDepartureTimestamp\"},{\"fromAttribute\":\"VehicleDeliveryLegNumber\",\"toAttribute\":\"VehicleDeliveryLegNumber\"},{\"fromAttribute\":\"VehicleId\",\"toAttribute\":\"VehicleId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

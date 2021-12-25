@@ -1,0 +1,1624 @@
+{
+	"name": "BillOfLading",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "BillOfLading",
+		"Description": "The Bill of Lading acts as evidence of a contract of carriage between the shipper and the shipping line to carry out the transportation of cargo under the terms and conditions agreed upon between the seller and buyer. \n\nIt proves the existence of a goods transportation contract.\n\n- RECEIPT OF THE GOODS.\nThe BOL is issued by the carrier to the shipper in exchange for the receipt of the cargo. This is proof that the carrier has received the goods from the shipper in apparently good condition.\n\n- EVIDENCE OF THE CONTRACT BETWEEN CARRIER AND SHIPPER.\nAs evidence of a contract, a BOL is the contract of carriage between the carrier and shipper in order to transport the freight.\n\n- DOCUMENT OF TITLE TO THE GOODS. \nA document of title means the freight can be transferred to the holder of the BOL. Now, the holder of the BOL has the right to claim to transfer the goods to another.\n\nBill of Lading is one of the three crucial documents which is used excessively in international trade to ensure the exporters receive their payment and respective importers receive their merchandise. The other two important documents in international trade would be the policy of insurance and an invoice.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ShipmentId",
+					"Description": "The unique identifier of a Shipment.",
+					"BaseAttributeReference": {
+						"Entity": "BillOfLading.cdm.json/BillOfLading",
+						"Name": "ShipmentId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "DocumentId",
+					"Description": "The unique identifier of a Document.",
+					"BaseAttributeReference": {
+						"Entity": "BillOfLading.cdm.json/BillOfLading",
+						"Name": "DocumentId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "ShipperName",
+					"Description": "The name of the Shipper.",
+					"BaseAttributeReference": {
+						"Entity": "BillOfLading.cdm.json/BillOfLading",
+						"Name": "ShipperName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ShipperNumber",
+					"Description": "The number assigned to the Shipper by the US Government.",
+					"BaseAttributeReference": {
+						"Entity": "BillOfLading.cdm.json/BillOfLading",
+						"Name": "ShipperNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ShipFromLocationId",
+					"Description": "The unique identifier of a location.",
+					"BaseAttributeReference": {
+						"Entity": "BillOfLading.cdm.json/BillOfLading",
+						"Name": "ShipFromLocationId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ShipFromDate",
+					"Description": "The date of the shipment.",
+					"BaseAttributeReference": {
+						"Entity": "BillOfLading.cdm.json/BillOfLading",
+						"Name": "ShipFromDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "ConsigneeName",
+					"Description": "The name of the Consignee.",
+					"BaseAttributeReference": {
+						"Entity": "BillOfLading.cdm.json/BillOfLading",
+						"Name": "ConsigneeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ConsigneeAddress",
+					"Description": "The 'street/po box' component of the Consignee address.",
+					"BaseAttributeReference": {
+						"Entity": "BillOfLading.cdm.json/BillOfLading",
+						"Name": "ConsigneeAddress"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ConsigneeCity",
+					"Description": "The 'city' component of the Consignee address.",
+					"BaseAttributeReference": {
+						"Entity": "BillOfLading.cdm.json/BillOfLading",
+						"Name": "ConsigneeCity"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ConsigneeStateProvince",
+					"Description": "The 'state/province' component of the Consignee address.",
+					"BaseAttributeReference": {
+						"Entity": "BillOfLading.cdm.json/BillOfLading",
+						"Name": "ConsigneeStateProvince"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 64,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ConsigneeCountry",
+					"Description": "The 'country' component of the Consignee address.",
+					"BaseAttributeReference": {
+						"Entity": "BillOfLading.cdm.json/BillOfLading",
+						"Name": "ConsigneeCountry"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 64,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ShipmentDestinationAddress",
+					"Description": "The 'street/po box' component of the Shipment address.",
+					"BaseAttributeReference": {
+						"Entity": "BillOfLading.cdm.json/BillOfLading",
+						"Name": "ShipmentDestinationAddress"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ShipmentDestinationCity",
+					"Description": "The 'city' component of the Shipment address.",
+					"BaseAttributeReference": {
+						"Entity": "BillOfLading.cdm.json/BillOfLading",
+						"Name": "ShipmentDestinationCity"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ShipmentDestinationCountry",
+					"Description": "The 'country' component of the Shipment address.",
+					"BaseAttributeReference": {
+						"Entity": "BillOfLading.cdm.json/BillOfLading",
+						"Name": "ShipmentDestinationCountry"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 64,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "PrepaidChargedIndicator",
+					"Description": "Indicates that charges are to be prepaid.",
+					"BaseAttributeReference": {
+						"Entity": "BillOfLading.cdm.json/BillOfLading",
+						"Name": "PrepaidChargedIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "NonNegotiableBillOfLadingIndicator",
+					"Description": "Non-negotiable bills of lading are bills of lading that, due to their nature, cannot be transferred to a third party. \n\nThese non-negotiable documents came into being out of necessity to create a document that did not have to be presented to the master at destination. \n\nThe goods are delivered to the named consignee in the document who only has to prove his identity.",
+					"BaseAttributeReference": {
+						"Entity": "BillOfLading.cdm.json/BillOfLading",
+						"Name": "NonNegotiableBillOfLadingIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "AmountToBeAppliedToCharges",
+					"Description": "An amount paid that is to be applied to charges.",
+					"BaseAttributeReference": {
+						"Entity": "BillOfLading.cdm.json/BillOfLading",
+						"Name": "AmountToBeAppliedToCharges"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "CodShipmentIndicator",
+					"Description": "Indicates that the Shipment is COD.",
+					"BaseAttributeReference": {
+						"Entity": "BillOfLading.cdm.json/BillOfLading",
+						"Name": "CodShipmentIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "CodCollectionFee",
+					"Description": "The collection fee for the COD shipment.",
+					"BaseAttributeReference": {
+						"Entity": "BillOfLading.cdm.json/BillOfLading",
+						"Name": "CodCollectionFee"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "TotalCodChargesAmount",
+					"Description": "The total COD charges amount.",
+					"BaseAttributeReference": {
+						"Entity": "BillOfLading.cdm.json/BillOfLading",
+						"Name": "TotalCodChargesAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "ShipperAgentId",
+					"Description": "The unique identifier of the Shipper Agent.",
+					"BaseAttributeReference": {
+						"Entity": "BillOfLading.cdm.json/BillOfLading",
+						"Name": "ShipperAgentId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "CarrierId",
+					"Description": "The unique identifier of a Carrier.",
+					"BaseAttributeReference": {
+						"Entity": "BillOfLading.cdm.json/BillOfLading",
+						"Name": "CarrierId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "BillOfLadingTypeId",
+					"Description": "The unique identifier of a Bill Of Lading Type.",
+					"BaseAttributeReference": {
+						"Entity": "BillOfLading.cdm.json/BillOfLading",
+						"Name": "BillOfLadingTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "BillOfLadingCreatedTimestamp",
+					"Description": "The timestamp when the bill of lading was created.",
+					"BaseAttributeReference": {
+						"Entity": "BillOfLading.cdm.json/BillOfLading",
+						"Name": "BillOfLadingCreatedTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "NegotiableBillOfLadingIndicator",
+					"Description": "Negotiable bills of lading are bills of lading which can be transferred to a third party by endorsement.\n\nThe bill of lading must meet the following two conditions:\n\n- it must be drawn up to order or to bearer\n- it has to be clean.\n\nIt follows that bills of lading to a named person and bills of lading with restrictive clauses (with regard to the quantity and the condition of the goods) are not negotiable.\n\nIn case of a bill of lading to a named person, only the consignee on who's name the bill of lading was made out, has the right to receive the goods.",
+					"BaseAttributeReference": {
+						"Entity": "BillOfLading.cdm.json/BillOfLading",
+						"Name": "NegotiableBillOfLadingIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "NumberOfDaysAfterShipmentPresentationMustBeMade",
+					"Description": "The number of days in which presentation must be made in compliance with the terms and conditions of the credit. \n\nIf no such period of time is stipulated, banks will not accept documents presented to them later than 21 days after the date of Shipment. In any event, documents must be presented not later than the expiry date of the credit.",
+					"BaseAttributeReference": {
+						"Entity": "BillOfLading.cdm.json/BillOfLading",
+						"Name": "NumberOfDaysAfterShipmentPresentationMustBeMade"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ConsigneePostalCode",
+					"Description": "The 'zip code/postal code' component of the Consignee address.",
+					"BaseAttributeReference": {
+						"Entity": "BillOfLading.cdm.json/BillOfLading",
+						"Name": "ConsigneePostalCode"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 6,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ShipmentDestinationState",
+					"Description": "The 'state/province' component of the shipment final delivery address.",
+					"BaseAttributeReference": {
+						"Entity": "BillOfLading.cdm.json/BillOfLading",
+						"Name": "ShipmentDestinationState"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 64,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ShipmentDestinationPostalCode",
+					"Description": "The 'zip code/postal code' component of the shipment final delivery address.",
+					"BaseAttributeReference": {
+						"Entity": "BillOfLading.cdm.json/BillOfLading",
+						"Name": "ShipmentDestinationPostalCode"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 6,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "MaximumCarrierDeliveryChargeAmount",
+					"Description": "If the carrier is collecting payment upon delivery, the bill of lading must include both the maximum amount the carrier will charge to deliver the shipment",
+					"BaseAttributeReference": {
+						"Entity": "BillOfLading.cdm.json/BillOfLading",
+						"Name": "MaximumCarrierDeliveryChargeAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "GuaranteedPickupTimestamp",
+					"Description": "The guaranteed pickup date of the shipment items if a guaranteed service.",
+					"BaseAttributeReference": {
+						"Entity": "BillOfLading.cdm.json/BillOfLading",
+						"Name": "GuaranteedPickupTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "ActualPickupTimestamp",
+					"Description": "The actual pickup date of the shipment items.",
+					"BaseAttributeReference": {
+						"Entity": "BillOfLading.cdm.json/BillOfLading",
+						"Name": "ActualPickupTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "DeclaredShipmentValueAmount",
+					"Description": "The declared value of the shipment.",
+					"BaseAttributeReference": {
+						"Entity": "BillOfLading.cdm.json/BillOfLading",
+						"Name": "DeclaredShipmentValueAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "StaleBillOfLadingTimestamp",
+					"Description": "The timestamp when the bill of lading is determined to be 'stale'.\n\nStale Bill of Lading\nEvery credit which calls for a transport document(s) should also stipulate a specified period of time after the date of Shipment, during which presentation must be made in compliance with the terms and conditions of the credit. If no such period of time is stipulated, banks will not accept documents presented to them later than 21 days after the date of Shipment. In any event, documents must be presented not later than the expiry date of the credit.",
+					"BaseAttributeReference": {
+						"Entity": "BillOfLading.cdm.json/BillOfLading",
+						"Name": "StaleBillOfLadingTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "BillOfLadingPaymentMethodId",
+					"Description": "The unique identifier of a bill of lading payment method.",
+					"BaseAttributeReference": {
+						"Entity": "BillOfLading.cdm.json/BillOfLading",
+						"Name": "BillOfLadingPaymentMethodId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "BillOfLadingMediaFormatId",
+					"Description": "The unique identifier of a bill of lading media format.",
+					"BaseAttributeReference": {
+						"Entity": "BillOfLading.cdm.json/BillOfLading",
+						"Name": "BillOfLadingMediaFormatId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "NonBindingCarrierCostToShipGoodsAmount",
+					"Description": "The non-binding estimate of carrier costs to ship the goods.",
+					"BaseAttributeReference": {
+						"Entity": "BillOfLading.cdm.json/BillOfLading",
+						"Name": "NonBindingCarrierCostToShipGoodsAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "NumberOfShippingUnits",
+					"Description": "The number of shipping units associated with the bill of lading.",
+					"BaseAttributeReference": {
+						"Entity": "BillOfLading.cdm.json/BillOfLading",
+						"Name": "NumberOfShippingUnits"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "BillOfLadingNote",
+					"Description": "A note, comment or additional information regarding the bill of lading.",
+					"BaseAttributeReference": {
+						"Entity": "BillOfLading.cdm.json/BillOfLading",
+						"Name": "BillOfLadingNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "SwitchBillOfLadingIndicator",
+					"Description": "Shippers use this type in foreign-to-foreign shipments to keep suppliers and consignee information confidential.\n\nA second set of Bill of Lading issued by the carrier (or its agent) to substitute the original bills of lading issued at the time of shipment. \n\nThe information on a Switch B/L is not meant to be identical to the original B/L it substitutes.\n\nThe switch Bill of Lading format is exactly the same as the original's and it deals with the same cargo. It holds the same value and purpose as an original Bill of Lading:\n\n- Evidence of contract of carriage A receipt for goods\n- Title to the goods",
+					"BaseAttributeReference": {
+						"Entity": "BillOfLading.cdm.json/BillOfLading",
+						"Name": "SwitchBillOfLadingIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "ReleaseViaTelegraphicTransferIndicator",
+					"Description": "A telex release is typically delivered by email and incurs additional expenses. \n\nIdeally, a telex release is quick and convenient, but issues with paperwork can cause delays and may increase costs. \n\nIt is not a replacement for a bill of lading. Instead, a telex release is a convenient option for shippers who do not need original documents for their accounting or legal records.\n\nIn some cases, a telex release may be requested because of a problem with the original bill of lading. If the documents are lost, stolen or otherwise inaccessible, the shipper must request a telex release from the shipping company. \n\nThis process is generally quite time-consuming and often results in additional charges for freight storage. The carrier sends the telex release when the original bill of lading is located or when a letter of indemnity from the shipper is provided.",
+					"BaseAttributeReference": {
+						"Entity": "BillOfLading.cdm.json/BillOfLading",
+						"Name": "ReleaseViaTelegraphicTransferIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "PickupInstructions",
+					"Description": "Instructions related to the pickup of the shipment.\n\nEx:\n- Place of pickup\n- Forwarding agent contacts and references\n- Carrier pre-carriage details\n- Consolidation center details",
+					"BaseAttributeReference": {
+						"Entity": "BillOfLading.cdm.json/BillOfLading",
+						"Name": "PickupInstructions"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 2048,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "DeliveryInstructions",
+					"Description": "Instructions related to the delivery of the shipment.\n\nEx:\n- Point of final delivery for the goods\n- Delivery agent details\n- Consolidation center details",
+					"BaseAttributeReference": {
+						"Entity": "BillOfLading.cdm.json/BillOfLading",
+						"Name": "DeliveryInstructions"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 2048,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "BillOfLadingReleaseMethodId",
+					"Description": "The unique identifier of a bill of lading release method.",
+					"BaseAttributeReference": {
+						"Entity": "BillOfLading.cdm.json/BillOfLading",
+						"Name": "BillOfLadingReleaseMethodId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "BillOfLadingClosedTimestamp",
+					"Description": "The timestamp that the bill of lading was closed.",
+					"BaseAttributeReference": {
+						"Entity": "BillOfLading.cdm.json/BillOfLading",
+						"Name": "BillOfLadingClosedTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "BillOfLadingIssuedToCarrierTimestamp",
+					"Description": "The timestamp that the bill of lading was issued to the carrier.",
+					"BaseAttributeReference": {
+						"Entity": "BillOfLading.cdm.json/BillOfLading",
+						"Name": "BillOfLadingIssuedToCarrierTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "BillOfLadingReceivedByCarrierTimestamp",
+					"Description": "The timestamp when the bill of lading was received by the carrier.",
+					"BaseAttributeReference": {
+						"Entity": "BillOfLading.cdm.json/BillOfLading",
+						"Name": "BillOfLadingReceivedByCarrierTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "ShipperAddress",
+					"Description": "The 'street/po box' component of the shipper.",
+					"BaseAttributeReference": {
+						"Entity": "BillOfLading.cdm.json/BillOfLading",
+						"Name": "ShipperAddress"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ShipperCity",
+					"Description": "The 'city' component of the shipper.",
+					"BaseAttributeReference": {
+						"Entity": "BillOfLading.cdm.json/BillOfLading",
+						"Name": "ShipperCity"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ShipperState",
+					"Description": "The 'state' component of the shipper.",
+					"BaseAttributeReference": {
+						"Entity": "BillOfLading.cdm.json/BillOfLading",
+						"Name": "ShipperState"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 64,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ShipperPostalCode",
+					"Description": "The 'postal code' component of the shipper.",
+					"BaseAttributeReference": {
+						"Entity": "BillOfLading.cdm.json/BillOfLading",
+						"Name": "ShipperPostalCode"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 6,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ShipperCountry",
+					"Description": "The 'country' component of the shipper.",
+					"BaseAttributeReference": {
+						"Entity": "BillOfLading.cdm.json/BillOfLading",
+						"Name": "ShipperCountry"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 64,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ShipmentLoadedTimestamp",
+					"Description": "The timestamp when the shipment is loaded.",
+					"BaseAttributeReference": {
+						"Entity": "BillOfLading.cdm.json/BillOfLading",
+						"Name": "ShipmentLoadedTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "ShipmentReceivedTimestamp",
+					"Description": "The timestamp when the shipment is received.",
+					"BaseAttributeReference": {
+						"Entity": "BillOfLading.cdm.json/BillOfLading",
+						"Name": "ShipmentReceivedTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "ShipmentTimestamp",
+					"Description": "The timestamp when the shipment is initiated.",
+					"BaseAttributeReference": {
+						"Entity": "BillOfLading.cdm.json/BillOfLading",
+						"Name": "ShipmentTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "CargoDescription",
+					"Description": "A description of the cargo associated with the bill of lading.",
+					"BaseAttributeReference": {
+						"Entity": "BillOfLading.cdm.json/BillOfLading",
+						"Name": "CargoDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "MasterBillOfLadingIndictor",
+					"Description": "Issued by the shipping carrier to freight forwarder/NVOCC, who is listed as the shipper, consignee, and notify party.\n\nIf you've booked your shipment through an intermediary, there will be two sets of Bills of Lading involved in the shipment. These are known as the master Bill of Lading and the house Bill of Lading.",
+					"BaseAttributeReference": {
+						"Entity": "BillOfLading.cdm.json/BillOfLading",
+						"Name": "MasterBillOfLadingIndictor"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "HouseBillOfLadingIndicator",
+					"Description": "Issued by the NVOCC or freight forwarder to the actual exporter of the merchandise.\n\nIf you've booked your shipment through an intermediary, there will be two sets of Bills of Lading involved in the shipment. These are known as the master Bill of Lading and the house Bill of Lading.",
+					"BaseAttributeReference": {
+						"Entity": "BillOfLading.cdm.json/BillOfLading",
+						"Name": "HouseBillOfLadingIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "OriginalBillOfLadingIndicator",
+					"Description": "Issued in sets of originals (usually three). One of the original needs to be presented at destination to secure release of cargo.",
+					"BaseAttributeReference": {
+						"Entity": "BillOfLading.cdm.json/BillOfLading",
+						"Name": "OriginalBillOfLadingIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "TelexReleaseBillOfLadingIndicator",
+					"Description": "A virtual copy of the Original Bill of Lading. \n\nA copy can be presented to secure the release of cargo at destination.\n\nA Telex Release is a digital version of the original Bill of Lading that allows merchandise to be released without needing to produce a physical copy of the original Bill of Lading.\n\nHard copies of the original Bill of Lading are still issued and the Telex Release is by no means a substitute. However, by presenting a digital copy in the form of a Telex Release is enough to secure the release of the cargo.\n\nWith a Telex Release, the shipper holds on to the set of original Bill of Ladings. \n\nThere is no need for the shipper to send the originals to the importer. As soon as the shipper gets paid, he sends the set of original Bill of Ladings to the carrier and requests for a Telex Release, with which the buyer or consignee can receive the cargo at destination.\n\nThe Telex Release offers three main advantages:\n\n- It's fast and convenient.\n- It expedites the customs clearance process.\n- It eliminates",
+					"BaseAttributeReference": {
+						"Entity": "BillOfLading.cdm.json/BillOfLading",
+						"Name": "TelexReleaseBillOfLadingIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "ExpressBillOfLadingIndicator",
+					"Description": "No original hard copy of the Bill of Lading involved. \n\nIt is usually issued in cases whereby the shipper and consignee are part of the same company and no negotiations are required.",
+					"BaseAttributeReference": {
+						"Entity": "BillOfLading.cdm.json/BillOfLading",
+						"Name": "ExpressBillOfLadingIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "ShipmentRoutingInstructions",
+					"Description": "Instructions related to the routing of the shipment.",
+					"BaseAttributeReference": {
+						"Entity": "BillOfLading.cdm.json/BillOfLading",
+						"Name": "ShipmentRoutingInstructions"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 2048,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "BookingNumber",
+					"Description": "A unique control number to reference the shipment with the carrier.",
+					"BaseAttributeReference": {
+						"Entity": "BillOfLading.cdm.json/BillOfLading",
+						"Name": "BookingNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ThroughBillOfLadingIndicator",
+					"Description": "A through B/L is almost similar to Combined Transport B/L with the exception that the carrier is directly liable for the port to port transportation of the shipment.\n\nHowever, for the non-coastal inland movement, the carrier performs the role of an agent by arranging the transportation. In this case, the carrier is supposed to specify the terms on the through B/L.\n\nIn a Through B/L, the sections like \"Pre-Carriage by\", On-Carriage by\" etc. will be entered. Many people have a false notion as they term a bill as Telex Release B/L when there is no such term in existence.",
+					"BaseAttributeReference": {
+						"Entity": "BillOfLading.cdm.json/BillOfLading",
+						"Name": "ThroughBillOfLadingIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "InlandBillOfLadingIndicator",
+					"Description": "Inland bills of lading are often the first transportation document issued for the international shipment. \n\nThey are used for cargo shipments by rail or road, but not sea.",
+					"BaseAttributeReference": {
+						"Entity": "BillOfLading.cdm.json/BillOfLading",
+						"Name": "InlandBillOfLadingIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "CombinedTransportBillOfLadingIndicator",
+					"Description": "The combined bill of lading will cover whatever means or modes of transport have been used to carry out the shipment from origin to destination. \n\nA single contract will encompass all of the services and transportation carried out to deliver the goods.",
+					"BaseAttributeReference": {
+						"Entity": "BillOfLading.cdm.json/BillOfLading",
+						"Name": "CombinedTransportBillOfLadingIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "DirectBillOfLadingIndicator",
+					"Description": "When the vessel is used to pick up the cargo and goods are delivered to the final destination.",
+					"BaseAttributeReference": {
+						"Entity": "BillOfLading.cdm.json/BillOfLading",
+						"Name": "DirectBillOfLadingIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "PrepaidShippingAmount",
+					"Description": "The amount that has been prepaid by the shipper. \nThis is usually the ocean freight price and any extra charges at origin.",
+					"BaseAttributeReference": {
+						"Entity": "BillOfLading.cdm.json/BillOfLading",
+						"Name": "PrepaidShippingAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "CargoCollectionAmountDue",
+					"Description": "The amount that needs to be paid for cargo collection. This can be the ocean freight price if it hasn't been prepaid, as well as the DTHC charges and other local charges that apply.",
+					"BaseAttributeReference": {
+						"Entity": "BillOfLading.cdm.json/BillOfLading",
+						"Name": "CargoCollectionAmountDue"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "BillOfLadingMovementTypeId",
+					"Description": "The unique identifier of a bill of lading movement type.",
+					"BaseAttributeReference": {
+						"Entity": "BillOfLading.cdm.json/BillOfLading",
+						"Name": "BillOfLadingMovementTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ShipperEmailAddress",
+					"Description": "The shipper's email address.",
+					"BaseAttributeReference": {
+						"Entity": "BillOfLading.cdm.json/BillOfLading",
+						"Name": "ShipperEmailAddress"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 256,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ShipperTelephoneNumber",
+					"Description": "The shipper's telephone number.",
+					"BaseAttributeReference": {
+						"Entity": "BillOfLading.cdm.json/BillOfLading",
+						"Name": "ShipperTelephoneNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 15,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "ConsigneeEmailAddress",
+					"Description": "The consignees email address.",
+					"BaseAttributeReference": {
+						"Entity": "BillOfLading.cdm.json/BillOfLading",
+						"Name": "ConsigneeEmailAddress"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 256,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ConsigneeTelephoneNumber",
+					"Description": "The consignees telephone number.",
+					"BaseAttributeReference": {
+						"Entity": "BillOfLading.cdm.json/BillOfLading",
+						"Name": "ConsigneeTelephoneNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 15,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "GrossShipmentWeightUnits",
+					"Description": "The gross weight of the shipment.",
+					"BaseAttributeReference": {
+						"Entity": "BillOfLading.cdm.json/BillOfLading",
+						"Name": "GrossShipmentWeightUnits"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "WeightUomId",
+					"Description": "The unique identifier of a Unit Of Measure.",
+					"BaseAttributeReference": {
+						"Entity": "BillOfLading.cdm.json/BillOfLading",
+						"Name": "WeightUomId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ShipperAccountNumber",
+					"Description": "The account number of the shipper.",
+					"BaseAttributeReference": {
+						"Entity": "BillOfLading.cdm.json/BillOfLading",
+						"Name": "ShipperAccountNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 16,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ShipperSignature",
+					"Description": "The shipper's signature.",
+					"BaseAttributeReference": {
+						"Entity": "BillOfLading.cdm.json/BillOfLading",
+						"Name": "ShipperSignature"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "binary",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "binary"
+						}
+					}
+				},
+				{
+					"Name": "ShipperSignatureLocationName",
+					"Description": "The name of the place of the shipper's signature.",
+					"BaseAttributeReference": {
+						"Entity": "BillOfLading.cdm.json/BillOfLading",
+						"Name": "ShipperSignatureLocationName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "DeclaredValueToCarriageAmount",
+					"Description": "The declared value limits the liability of carrier in case of loss, damage to cargo and the valuation charges are assessed on the amount of declared value.",
+					"BaseAttributeReference": {
+						"Entity": "BillOfLading.cdm.json/BillOfLading",
+						"Name": "DeclaredValueToCarriageAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "DeclaredValueForCustomerAmount",
+					"Description": "The declared value for customs usage.",
+					"BaseAttributeReference": {
+						"Entity": "BillOfLading.cdm.json/BillOfLading",
+						"Name": "DeclaredValueForCustomerAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "PrepaidFreightAmount",
+					"Description": "The amount that was prepaid for freight.",
+					"BaseAttributeReference": {
+						"Entity": "BillOfLading.cdm.json/BillOfLading",
+						"Name": "PrepaidFreightAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "TotalCollectChargesDueAmount",
+					"Description": "The total amount of collect charges due regarding the bill of lading,",
+					"BaseAttributeReference": {
+						"Entity": "BillOfLading.cdm.json/BillOfLading",
+						"Name": "TotalCollectChargesDueAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "ShippingCustomerAccountId",
+					"Description": "The unique identifier of a Customer Account.",
+					"BaseAttributeReference": {
+						"Entity": "BillOfLading.cdm.json/BillOfLading",
+						"Name": "ShippingCustomerAccountId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "IsoCurrencyCode",
+					"Description": "The ISO 4217 currency code.",
+					"BaseAttributeReference": {
+						"Entity": "BillOfLading.cdm.json/BillOfLading",
+						"Name": "IsoCurrencyCode"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 3,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "FromShippingLocationTimestamp",
+					"Description": "The timestamp that the shipment departs the from-shipping location.",
+					"BaseAttributeReference": {
+						"Entity": "BillOfLading.cdm.json/BillOfLading",
+						"Name": "FromShippingLocationTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "ToShippingLocationTimestamp",
+					"Description": "The timestamp that the shipment arrives at the ship-to location.",
+					"BaseAttributeReference": {
+						"Entity": "BillOfLading.cdm.json/BillOfLading",
+						"Name": "ToShippingLocationTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "ShipToLocationId",
+					"Description": "The unique identifier of a Shipping Location.",
+					"BaseAttributeReference": {
+						"Entity": "BillOfLading.cdm.json/BillOfLading",
+						"Name": "ShipToLocationId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "LocationOfInitialReceiptId",
+					"Description": "The unique identifier of a Shipping Location.",
+					"BaseAttributeReference": {
+						"Entity": "BillOfLading.cdm.json/BillOfLading",
+						"Name": "LocationOfInitialReceiptId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "FreightPayableLocationId",
+					"Description": "The unique identifier of a Shipping Location.",
+					"BaseAttributeReference": {
+						"Entity": "BillOfLading.cdm.json/BillOfLading",
+						"Name": "FreightPayableLocationId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "HazardSeverityCategoryId",
+					"Description": "The unique identifier of a Hazard Severity Category.",
+					"BaseAttributeReference": {
+						"Entity": "BillOfLading.cdm.json/BillOfLading",
+						"Name": "HazardSeverityCategoryId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ShipperPartyId",
+					"Description": "The unique identifier of a Party.",
+					"BaseAttributeReference": {
+						"Entity": "BillOfLading.cdm.json/BillOfLading",
+						"Name": "ShipperPartyId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "ReceiptOfGoodsShippingLocationId",
+					"Description": "The unique identifier of a Shipping Location.",
+					"BaseAttributeReference": {
+						"Entity": "BillOfLading.cdm.json/BillOfLading",
+						"Name": "ReceiptOfGoodsShippingLocationId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ConsigneePartyId",
+					"Description": "The unique identifier of a Party.",
+					"BaseAttributeReference": {
+						"Entity": "BillOfLading.cdm.json/BillOfLading",
+						"Name": "ConsigneePartyId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "ReceivingCustomerAccountId",
+					"Description": "The unique identifier of a Customer Account.",
+					"BaseAttributeReference": {
+						"Entity": "BillOfLading.cdm.json/BillOfLading",
+						"Name": "ReceivingCustomerAccountId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ShipmentId\":{\"entity\":\"BillOfLading.cdm.json/BillOfLading\",\"name\":\"ShipmentId\"},\"DocumentId\":{\"entity\":\"BillOfLading.cdm.json/BillOfLading\",\"name\":\"DocumentId\"},\"ShipperName\":{\"entity\":\"BillOfLading.cdm.json/BillOfLading\",\"name\":\"ShipperName\"},\"ShipperNumber\":{\"entity\":\"BillOfLading.cdm.json/BillOfLading\",\"name\":\"ShipperNumber\"},\"ShipFromLocationId\":{\"entity\":\"BillOfLading.cdm.json/BillOfLading\",\"name\":\"ShipFromLocationId\"},\"ShipFromDate\":{\"entity\":\"BillOfLading.cdm.json/BillOfLading\",\"name\":\"ShipFromDate\"},\"ConsigneeName\":{\"entity\":\"BillOfLading.cdm.json/BillOfLading\",\"name\":\"ConsigneeName\"},\"ConsigneeAddress\":{\"entity\":\"BillOfLading.cdm.json/BillOfLading\",\"name\":\"ConsigneeAddress\"},\"ConsigneeCity\":{\"entity\":\"BillOfLading.cdm.json/BillOfLading\",\"name\":\"ConsigneeCity\"},\"ConsigneeStateProvince\":{\"entity\":\"BillOfLading.cdm.json/BillOfLading\",\"name\":\"ConsigneeStateProvince\"},\"ConsigneeCountry\":{\"entity\":\"BillOfLading.cdm.json/BillOfLading\",\"name\":\"ConsigneeCountry\"},\"ShipmentDestinationAddress\":{\"entity\":\"BillOfLading.cdm.json/BillOfLading\",\"name\":\"ShipmentDestinationAddress\"},\"ShipmentDestinationCity\":{\"entity\":\"BillOfLading.cdm.json/BillOfLading\",\"name\":\"ShipmentDestinationCity\"},\"ShipmentDestinationCountry\":{\"entity\":\"BillOfLading.cdm.json/BillOfLading\",\"name\":\"ShipmentDestinationCountry\"},\"PrepaidChargedIndicator\":{\"entity\":\"BillOfLading.cdm.json/BillOfLading\",\"name\":\"PrepaidChargedIndicator\"},\"NonNegotiableBillOfLadingIndicator\":{\"entity\":\"BillOfLading.cdm.json/BillOfLading\",\"name\":\"NonNegotiableBillOfLadingIndicator\"},\"AmountToBeAppliedToCharges\":{\"entity\":\"BillOfLading.cdm.json/BillOfLading\",\"name\":\"AmountToBeAppliedToCharges\"},\"CodShipmentIndicator\":{\"entity\":\"BillOfLading.cdm.json/BillOfLading\",\"name\":\"CodShipmentIndicator\"},\"CodCollectionFee\":{\"entity\":\"BillOfLading.cdm.json/BillOfLading\",\"name\":\"CodCollectionFee\"},\"TotalCodChargesAmount\":{\"entity\":\"BillOfLading.cdm.json/BillOfLading\",\"name\":\"TotalCodChargesAmount\"},\"ShipperAgentId\":{\"entity\":\"BillOfLading.cdm.json/BillOfLading\",\"name\":\"ShipperAgentId\"},\"CarrierId\":{\"entity\":\"BillOfLading.cdm.json/BillOfLading\",\"name\":\"CarrierId\"},\"BillOfLadingTypeId\":{\"entity\":\"BillOfLading.cdm.json/BillOfLading\",\"name\":\"BillOfLadingTypeId\"},\"BillOfLadingCreatedTimestamp\":{\"entity\":\"BillOfLading.cdm.json/BillOfLading\",\"name\":\"BillOfLadingCreatedTimestamp\"},\"NegotiableBillOfLadingIndicator\":{\"entity\":\"BillOfLading.cdm.json/BillOfLading\",\"name\":\"NegotiableBillOfLadingIndicator\"},\"NumberOfDaysAfterShipmentPresentationMustBeMade\":{\"entity\":\"BillOfLading.cdm.json/BillOfLading\",\"name\":\"NumberOfDaysAfterShipmentPresentationMustBeMade\"},\"ConsigneePostalCode\":{\"entity\":\"BillOfLading.cdm.json/BillOfLading\",\"name\":\"ConsigneePostalCode\"},\"ShipmentDestinationState\":{\"entity\":\"BillOfLading.cdm.json/BillOfLading\",\"name\":\"ShipmentDestinationState\"},\"ShipmentDestinationPostalCode\":{\"entity\":\"BillOfLading.cdm.json/BillOfLading\",\"name\":\"ShipmentDestinationPostalCode\"},\"MaximumCarrierDeliveryChargeAmount\":{\"entity\":\"BillOfLading.cdm.json/BillOfLading\",\"name\":\"MaximumCarrierDeliveryChargeAmount\"},\"GuaranteedPickupTimestamp\":{\"entity\":\"BillOfLading.cdm.json/BillOfLading\",\"name\":\"GuaranteedPickupTimestamp\"},\"ActualPickupTimestamp\":{\"entity\":\"BillOfLading.cdm.json/BillOfLading\",\"name\":\"ActualPickupTimestamp\"},\"DeclaredShipmentValueAmount\":{\"entity\":\"BillOfLading.cdm.json/BillOfLading\",\"name\":\"DeclaredShipmentValueAmount\"},\"StaleBillOfLadingTimestamp\":{\"entity\":\"BillOfLading.cdm.json/BillOfLading\",\"name\":\"StaleBillOfLadingTimestamp\"},\"BillOfLadingPaymentMethodId\":{\"entity\":\"BillOfLading.cdm.json/BillOfLading\",\"name\":\"BillOfLadingPaymentMethodId\"},\"BillOfLadingMediaFormatId\":{\"entity\":\"BillOfLading.cdm.json/BillOfLading\",\"name\":\"BillOfLadingMediaFormatId\"},\"NonBindingCarrierCostToShipGoodsAmount\":{\"entity\":\"BillOfLading.cdm.json/BillOfLading\",\"name\":\"NonBindingCarrierCostToShipGoodsAmount\"},\"NumberOfShippingUnits\":{\"entity\":\"BillOfLading.cdm.json/BillOfLading\",\"name\":\"NumberOfShippingUnits\"},\"BillOfLadingNote\":{\"entity\":\"BillOfLading.cdm.json/BillOfLading\",\"name\":\"BillOfLadingNote\"},\"SwitchBillOfLadingIndicator\":{\"entity\":\"BillOfLading.cdm.json/BillOfLading\",\"name\":\"SwitchBillOfLadingIndicator\"},\"ReleaseViaTelegraphicTransferIndicator\":{\"entity\":\"BillOfLading.cdm.json/BillOfLading\",\"name\":\"ReleaseViaTelegraphicTransferIndicator\"},\"PickupInstructions\":{\"entity\":\"BillOfLading.cdm.json/BillOfLading\",\"name\":\"PickupInstructions\"},\"DeliveryInstructions\":{\"entity\":\"BillOfLading.cdm.json/BillOfLading\",\"name\":\"DeliveryInstructions\"},\"BillOfLadingReleaseMethodId\":{\"entity\":\"BillOfLading.cdm.json/BillOfLading\",\"name\":\"BillOfLadingReleaseMethodId\"},\"BillOfLadingClosedTimestamp\":{\"entity\":\"BillOfLading.cdm.json/BillOfLading\",\"name\":\"BillOfLadingClosedTimestamp\"},\"BillOfLadingIssuedToCarrierTimestamp\":{\"entity\":\"BillOfLading.cdm.json/BillOfLading\",\"name\":\"BillOfLadingIssuedToCarrierTimestamp\"},\"BillOfLadingReceivedByCarrierTimestamp\":{\"entity\":\"BillOfLading.cdm.json/BillOfLading\",\"name\":\"BillOfLadingReceivedByCarrierTimestamp\"},\"ShipperAddress\":{\"entity\":\"BillOfLading.cdm.json/BillOfLading\",\"name\":\"ShipperAddress\"},\"ShipperCity\":{\"entity\":\"BillOfLading.cdm.json/BillOfLading\",\"name\":\"ShipperCity\"},\"ShipperState\":{\"entity\":\"BillOfLading.cdm.json/BillOfLading\",\"name\":\"ShipperState\"},\"ShipperPostalCode\":{\"entity\":\"BillOfLading.cdm.json/BillOfLading\",\"name\":\"ShipperPostalCode\"},\"ShipperCountry\":{\"entity\":\"BillOfLading.cdm.json/BillOfLading\",\"name\":\"ShipperCountry\"},\"ShipmentLoadedTimestamp\":{\"entity\":\"BillOfLading.cdm.json/BillOfLading\",\"name\":\"ShipmentLoadedTimestamp\"},\"ShipmentReceivedTimestamp\":{\"entity\":\"BillOfLading.cdm.json/BillOfLading\",\"name\":\"ShipmentReceivedTimestamp\"},\"ShipmentTimestamp\":{\"entity\":\"BillOfLading.cdm.json/BillOfLading\",\"name\":\"ShipmentTimestamp\"},\"CargoDescription\":{\"entity\":\"BillOfLading.cdm.json/BillOfLading\",\"name\":\"CargoDescription\"},\"MasterBillOfLadingIndictor\":{\"entity\":\"BillOfLading.cdm.json/BillOfLading\",\"name\":\"MasterBillOfLadingIndictor\"},\"HouseBillOfLadingIndicator\":{\"entity\":\"BillOfLading.cdm.json/BillOfLading\",\"name\":\"HouseBillOfLadingIndicator\"},\"OriginalBillOfLadingIndicator\":{\"entity\":\"BillOfLading.cdm.json/BillOfLading\",\"name\":\"OriginalBillOfLadingIndicator\"},\"TelexReleaseBillOfLadingIndicator\":{\"entity\":\"BillOfLading.cdm.json/BillOfLading\",\"name\":\"TelexReleaseBillOfLadingIndicator\"},\"ExpressBillOfLadingIndicator\":{\"entity\":\"BillOfLading.cdm.json/BillOfLading\",\"name\":\"ExpressBillOfLadingIndicator\"},\"ShipmentRoutingInstructions\":{\"entity\":\"BillOfLading.cdm.json/BillOfLading\",\"name\":\"ShipmentRoutingInstructions\"},\"BookingNumber\":{\"entity\":\"BillOfLading.cdm.json/BillOfLading\",\"name\":\"BookingNumber\"},\"ThroughBillOfLadingIndicator\":{\"entity\":\"BillOfLading.cdm.json/BillOfLading\",\"name\":\"ThroughBillOfLadingIndicator\"},\"InlandBillOfLadingIndicator\":{\"entity\":\"BillOfLading.cdm.json/BillOfLading\",\"name\":\"InlandBillOfLadingIndicator\"},\"CombinedTransportBillOfLadingIndicator\":{\"entity\":\"BillOfLading.cdm.json/BillOfLading\",\"name\":\"CombinedTransportBillOfLadingIndicator\"},\"DirectBillOfLadingIndicator\":{\"entity\":\"BillOfLading.cdm.json/BillOfLading\",\"name\":\"DirectBillOfLadingIndicator\"},\"PrepaidShippingAmount\":{\"entity\":\"BillOfLading.cdm.json/BillOfLading\",\"name\":\"PrepaidShippingAmount\"},\"CargoCollectionAmountDue\":{\"entity\":\"BillOfLading.cdm.json/BillOfLading\",\"name\":\"CargoCollectionAmountDue\"},\"BillOfLadingMovementTypeId\":{\"entity\":\"BillOfLading.cdm.json/BillOfLading\",\"name\":\"BillOfLadingMovementTypeId\"},\"ShipperEmailAddress\":{\"entity\":\"BillOfLading.cdm.json/BillOfLading\",\"name\":\"ShipperEmailAddress\"},\"ShipperTelephoneNumber\":{\"entity\":\"BillOfLading.cdm.json/BillOfLading\",\"name\":\"ShipperTelephoneNumber\"},\"ConsigneeEmailAddress\":{\"entity\":\"BillOfLading.cdm.json/BillOfLading\",\"name\":\"ConsigneeEmailAddress\"},\"ConsigneeTelephoneNumber\":{\"entity\":\"BillOfLading.cdm.json/BillOfLading\",\"name\":\"ConsigneeTelephoneNumber\"},\"GrossShipmentWeightUnits\":{\"entity\":\"BillOfLading.cdm.json/BillOfLading\",\"name\":\"GrossShipmentWeightUnits\"},\"WeightUomId\":{\"entity\":\"BillOfLading.cdm.json/BillOfLading\",\"name\":\"WeightUomId\"},\"ShipperAccountNumber\":{\"entity\":\"BillOfLading.cdm.json/BillOfLading\",\"name\":\"ShipperAccountNumber\"},\"ShipperSignature\":{\"entity\":\"BillOfLading.cdm.json/BillOfLading\",\"name\":\"ShipperSignature\"},\"ShipperSignatureLocationName\":{\"entity\":\"BillOfLading.cdm.json/BillOfLading\",\"name\":\"ShipperSignatureLocationName\"},\"DeclaredValueToCarriageAmount\":{\"entity\":\"BillOfLading.cdm.json/BillOfLading\",\"name\":\"DeclaredValueToCarriageAmount\"},\"DeclaredValueForCustomerAmount\":{\"entity\":\"BillOfLading.cdm.json/BillOfLading\",\"name\":\"DeclaredValueForCustomerAmount\"},\"PrepaidFreightAmount\":{\"entity\":\"BillOfLading.cdm.json/BillOfLading\",\"name\":\"PrepaidFreightAmount\"},\"TotalCollectChargesDueAmount\":{\"entity\":\"BillOfLading.cdm.json/BillOfLading\",\"name\":\"TotalCollectChargesDueAmount\"},\"ShippingCustomerAccountId\":{\"entity\":\"BillOfLading.cdm.json/BillOfLading\",\"name\":\"ShippingCustomerAccountId\"},\"IsoCurrencyCode\":{\"entity\":\"BillOfLading.cdm.json/BillOfLading\",\"name\":\"IsoCurrencyCode\"},\"FromShippingLocationTimestamp\":{\"entity\":\"BillOfLading.cdm.json/BillOfLading\",\"name\":\"FromShippingLocationTimestamp\"},\"ToShippingLocationTimestamp\":{\"entity\":\"BillOfLading.cdm.json/BillOfLading\",\"name\":\"ToShippingLocationTimestamp\"},\"ShipToLocationId\":{\"entity\":\"BillOfLading.cdm.json/BillOfLading\",\"name\":\"ShipToLocationId\"},\"LocationOfInitialReceiptId\":{\"entity\":\"BillOfLading.cdm.json/BillOfLading\",\"name\":\"LocationOfInitialReceiptId\"},\"FreightPayableLocationId\":{\"entity\":\"BillOfLading.cdm.json/BillOfLading\",\"name\":\"FreightPayableLocationId\"},\"HazardSeverityCategoryId\":{\"entity\":\"BillOfLading.cdm.json/BillOfLading\",\"name\":\"HazardSeverityCategoryId\"},\"ShipperPartyId\":{\"entity\":\"BillOfLading.cdm.json/BillOfLading\",\"name\":\"ShipperPartyId\"},\"ReceiptOfGoodsShippingLocationId\":{\"entity\":\"BillOfLading.cdm.json/BillOfLading\",\"name\":\"ReceiptOfGoodsShippingLocationId\"},\"ConsigneePartyId\":{\"entity\":\"BillOfLading.cdm.json/BillOfLading\",\"name\":\"ConsigneePartyId\"},\"ReceivingCustomerAccountId\":{\"entity\":\"BillOfLading.cdm.json/BillOfLading\",\"name\":\"ReceivingCustomerAccountId\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"BillOfLading\",\"path\":\"BillOfLading.cdm.json/BillOfLading\"},\"description\":\"The Bill of Lading acts as evidence of a contract of carriage between the shipper and the shipping line to carry out the transportation of cargo under the terms and conditions agreed upon between the seller and buyer. \\n\\nIt proves the existence of a goods transportation contract.\\n\\n- RECEIPT OF THE GOODS.\\nThe BOL is issued by the carrier to the shipper in exchange for the receipt of the cargo. This is proof that the carrier has received the goods from the shipper in apparently good condition.\\n\\n- EVIDENCE OF THE CONTRACT BETWEEN CARRIER AND SHIPPER.\\nAs evidence of a contract, a BOL is the contract of carriage between the carrier and shipper in order to transport the freight.\\n\\n- DOCUMENT OF TITLE TO THE GOODS. \\nA document of title means the freight can be transferred to the holder of the BOL. Now, the holder of the BOL has the right to claim to transfer the goods to another.\\n\\nBill of Lading is one of the three crucial documents which is used excessively in international trade to ensure the exporters receive their payment and respective importers receive their merchandise. The other two important documents in international trade would be the policy of insurance and an invoice.\",\"primaryKey\":[\"ShipmentId\",\"DocumentId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"ShipmentId\",\"attributeReference\":{\"entity\":\"BillOfLading.cdm.json/BillOfLading\",\"name\":\"ShipmentId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"DocumentId\",\"attributeReference\":{\"entity\":\"BillOfLading.cdm.json/BillOfLading\",\"name\":\"DocumentId\"},\"dataType\":\"long\"},{\"type\":\"Existing\",\"name\":\"ShipperName\",\"attributeReference\":{\"entity\":\"BillOfLading.cdm.json/BillOfLading\",\"name\":\"ShipperName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"ShipperNumber\",\"attributeReference\":{\"entity\":\"BillOfLading.cdm.json/BillOfLading\",\"name\":\"ShipperNumber\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ShipFromLocationId\",\"attributeReference\":{\"entity\":\"BillOfLading.cdm.json/BillOfLading\",\"name\":\"ShipFromLocationId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ShipFromDate\",\"attributeReference\":{\"entity\":\"BillOfLading.cdm.json/BillOfLading\",\"name\":\"ShipFromDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\"},{\"type\":\"Existing\",\"name\":\"ConsigneeName\",\"attributeReference\":{\"entity\":\"BillOfLading.cdm.json/BillOfLading\",\"name\":\"ConsigneeName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"ConsigneeAddress\",\"attributeReference\":{\"entity\":\"BillOfLading.cdm.json/BillOfLading\",\"name\":\"ConsigneeAddress\"},\"dataType\":\"string\",\"dataTypeLength\":512},{\"type\":\"Existing\",\"name\":\"ConsigneeCity\",\"attributeReference\":{\"entity\":\"BillOfLading.cdm.json/BillOfLading\",\"name\":\"ConsigneeCity\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"ConsigneeStateProvince\",\"attributeReference\":{\"entity\":\"BillOfLading.cdm.json/BillOfLading\",\"name\":\"ConsigneeStateProvince\"},\"dataType\":\"string\",\"dataTypeLength\":64},{\"type\":\"Existing\",\"name\":\"ConsigneeCountry\",\"attributeReference\":{\"entity\":\"BillOfLading.cdm.json/BillOfLading\",\"name\":\"ConsigneeCountry\"},\"dataType\":\"string\",\"dataTypeLength\":64},{\"type\":\"Existing\",\"name\":\"ShipmentDestinationAddress\",\"attributeReference\":{\"entity\":\"BillOfLading.cdm.json/BillOfLading\",\"name\":\"ShipmentDestinationAddress\"},\"dataType\":\"string\",\"dataTypeLength\":512},{\"type\":\"Existing\",\"name\":\"ShipmentDestinationCity\",\"attributeReference\":{\"entity\":\"BillOfLading.cdm.json/BillOfLading\",\"name\":\"ShipmentDestinationCity\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"ShipmentDestinationCountry\",\"attributeReference\":{\"entity\":\"BillOfLading.cdm.json/BillOfLading\",\"name\":\"ShipmentDestinationCountry\"},\"dataType\":\"string\",\"dataTypeLength\":64},{\"type\":\"Existing\",\"name\":\"PrepaidChargedIndicator\",\"attributeReference\":{\"entity\":\"BillOfLading.cdm.json/BillOfLading\",\"name\":\"PrepaidChargedIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"NonNegotiableBillOfLadingIndicator\",\"attributeReference\":{\"entity\":\"BillOfLading.cdm.json/BillOfLading\",\"name\":\"NonNegotiableBillOfLadingIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"AmountToBeAppliedToCharges\",\"attributeReference\":{\"entity\":\"BillOfLading.cdm.json/BillOfLading\",\"name\":\"AmountToBeAppliedToCharges\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"CodShipmentIndicator\",\"attributeReference\":{\"entity\":\"BillOfLading.cdm.json/BillOfLading\",\"name\":\"CodShipmentIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"CodCollectionFee\",\"attributeReference\":{\"entity\":\"BillOfLading.cdm.json/BillOfLading\",\"name\":\"CodCollectionFee\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"TotalCodChargesAmount\",\"attributeReference\":{\"entity\":\"BillOfLading.cdm.json/BillOfLading\",\"name\":\"TotalCodChargesAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"ShipperAgentId\",\"attributeReference\":{\"entity\":\"BillOfLading.cdm.json/BillOfLading\",\"name\":\"ShipperAgentId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"CarrierId\",\"attributeReference\":{\"entity\":\"BillOfLading.cdm.json/BillOfLading\",\"name\":\"CarrierId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"BillOfLadingTypeId\",\"attributeReference\":{\"entity\":\"BillOfLading.cdm.json/BillOfLading\",\"name\":\"BillOfLadingTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"BillOfLadingCreatedTimestamp\",\"attributeReference\":{\"entity\":\"BillOfLading.cdm.json/BillOfLading\",\"name\":\"BillOfLadingCreatedTimestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"NegotiableBillOfLadingIndicator\",\"attributeReference\":{\"entity\":\"BillOfLading.cdm.json/BillOfLading\",\"name\":\"NegotiableBillOfLadingIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"NumberOfDaysAfterShipmentPresentationMustBeMade\",\"attributeReference\":{\"entity\":\"BillOfLading.cdm.json/BillOfLading\",\"name\":\"NumberOfDaysAfterShipmentPresentationMustBeMade\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ConsigneePostalCode\",\"attributeReference\":{\"entity\":\"BillOfLading.cdm.json/BillOfLading\",\"name\":\"ConsigneePostalCode\"},\"dataType\":\"string\",\"dataTypeLength\":6},{\"type\":\"Existing\",\"name\":\"ShipmentDestinationState\",\"attributeReference\":{\"entity\":\"BillOfLading.cdm.json/BillOfLading\",\"name\":\"ShipmentDestinationState\"},\"dataType\":\"string\",\"dataTypeLength\":64},{\"type\":\"Existing\",\"name\":\"ShipmentDestinationPostalCode\",\"attributeReference\":{\"entity\":\"BillOfLading.cdm.json/BillOfLading\",\"name\":\"ShipmentDestinationPostalCode\"},\"dataType\":\"string\",\"dataTypeLength\":6},{\"type\":\"Existing\",\"name\":\"MaximumCarrierDeliveryChargeAmount\",\"attributeReference\":{\"entity\":\"BillOfLading.cdm.json/BillOfLading\",\"name\":\"MaximumCarrierDeliveryChargeAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"GuaranteedPickupTimestamp\",\"attributeReference\":{\"entity\":\"BillOfLading.cdm.json/BillOfLading\",\"name\":\"GuaranteedPickupTimestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"ActualPickupTimestamp\",\"attributeReference\":{\"entity\":\"BillOfLading.cdm.json/BillOfLading\",\"name\":\"ActualPickupTimestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"DeclaredShipmentValueAmount\",\"attributeReference\":{\"entity\":\"BillOfLading.cdm.json/BillOfLading\",\"name\":\"DeclaredShipmentValueAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"StaleBillOfLadingTimestamp\",\"attributeReference\":{\"entity\":\"BillOfLading.cdm.json/BillOfLading\",\"name\":\"StaleBillOfLadingTimestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"BillOfLadingPaymentMethodId\",\"attributeReference\":{\"entity\":\"BillOfLading.cdm.json/BillOfLading\",\"name\":\"BillOfLadingPaymentMethodId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"BillOfLadingMediaFormatId\",\"attributeReference\":{\"entity\":\"BillOfLading.cdm.json/BillOfLading\",\"name\":\"BillOfLadingMediaFormatId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"NonBindingCarrierCostToShipGoodsAmount\",\"attributeReference\":{\"entity\":\"BillOfLading.cdm.json/BillOfLading\",\"name\":\"NonBindingCarrierCostToShipGoodsAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"NumberOfShippingUnits\",\"attributeReference\":{\"entity\":\"BillOfLading.cdm.json/BillOfLading\",\"name\":\"NumberOfShippingUnits\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"BillOfLadingNote\",\"attributeReference\":{\"entity\":\"BillOfLading.cdm.json/BillOfLading\",\"name\":\"BillOfLadingNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024},{\"type\":\"Existing\",\"name\":\"SwitchBillOfLadingIndicator\",\"attributeReference\":{\"entity\":\"BillOfLading.cdm.json/BillOfLading\",\"name\":\"SwitchBillOfLadingIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"ReleaseViaTelegraphicTransferIndicator\",\"attributeReference\":{\"entity\":\"BillOfLading.cdm.json/BillOfLading\",\"name\":\"ReleaseViaTelegraphicTransferIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"PickupInstructions\",\"attributeReference\":{\"entity\":\"BillOfLading.cdm.json/BillOfLading\",\"name\":\"PickupInstructions\"},\"dataType\":\"string\",\"dataTypeLength\":2048},{\"type\":\"Existing\",\"name\":\"DeliveryInstructions\",\"attributeReference\":{\"entity\":\"BillOfLading.cdm.json/BillOfLading\",\"name\":\"DeliveryInstructions\"},\"dataType\":\"string\",\"dataTypeLength\":2048},{\"type\":\"Existing\",\"name\":\"BillOfLadingReleaseMethodId\",\"attributeReference\":{\"entity\":\"BillOfLading.cdm.json/BillOfLading\",\"name\":\"BillOfLadingReleaseMethodId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"BillOfLadingClosedTimestamp\",\"attributeReference\":{\"entity\":\"BillOfLading.cdm.json/BillOfLading\",\"name\":\"BillOfLadingClosedTimestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"BillOfLadingIssuedToCarrierTimestamp\",\"attributeReference\":{\"entity\":\"BillOfLading.cdm.json/BillOfLading\",\"name\":\"BillOfLadingIssuedToCarrierTimestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"BillOfLadingReceivedByCarrierTimestamp\",\"attributeReference\":{\"entity\":\"BillOfLading.cdm.json/BillOfLading\",\"name\":\"BillOfLadingReceivedByCarrierTimestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"ShipperAddress\",\"attributeReference\":{\"entity\":\"BillOfLading.cdm.json/BillOfLading\",\"name\":\"ShipperAddress\"},\"dataType\":\"string\",\"dataTypeLength\":512},{\"type\":\"Existing\",\"name\":\"ShipperCity\",\"attributeReference\":{\"entity\":\"BillOfLading.cdm.json/BillOfLading\",\"name\":\"ShipperCity\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"ShipperState\",\"attributeReference\":{\"entity\":\"BillOfLading.cdm.json/BillOfLading\",\"name\":\"ShipperState\"},\"dataType\":\"string\",\"dataTypeLength\":64},{\"type\":\"Existing\",\"name\":\"ShipperPostalCode\",\"attributeReference\":{\"entity\":\"BillOfLading.cdm.json/BillOfLading\",\"name\":\"ShipperPostalCode\"},\"dataType\":\"string\",\"dataTypeLength\":6},{\"type\":\"Existing\",\"name\":\"ShipperCountry\",\"attributeReference\":{\"entity\":\"BillOfLading.cdm.json/BillOfLading\",\"name\":\"ShipperCountry\"},\"dataType\":\"string\",\"dataTypeLength\":64},{\"type\":\"Existing\",\"name\":\"ShipmentLoadedTimestamp\",\"attributeReference\":{\"entity\":\"BillOfLading.cdm.json/BillOfLading\",\"name\":\"ShipmentLoadedTimestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"ShipmentReceivedTimestamp\",\"attributeReference\":{\"entity\":\"BillOfLading.cdm.json/BillOfLading\",\"name\":\"ShipmentReceivedTimestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"ShipmentTimestamp\",\"attributeReference\":{\"entity\":\"BillOfLading.cdm.json/BillOfLading\",\"name\":\"ShipmentTimestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"CargoDescription\",\"attributeReference\":{\"entity\":\"BillOfLading.cdm.json/BillOfLading\",\"name\":\"CargoDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512},{\"type\":\"Existing\",\"name\":\"MasterBillOfLadingIndictor\",\"attributeReference\":{\"entity\":\"BillOfLading.cdm.json/BillOfLading\",\"name\":\"MasterBillOfLadingIndictor\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"HouseBillOfLadingIndicator\",\"attributeReference\":{\"entity\":\"BillOfLading.cdm.json/BillOfLading\",\"name\":\"HouseBillOfLadingIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"OriginalBillOfLadingIndicator\",\"attributeReference\":{\"entity\":\"BillOfLading.cdm.json/BillOfLading\",\"name\":\"OriginalBillOfLadingIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"TelexReleaseBillOfLadingIndicator\",\"attributeReference\":{\"entity\":\"BillOfLading.cdm.json/BillOfLading\",\"name\":\"TelexReleaseBillOfLadingIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"ExpressBillOfLadingIndicator\",\"attributeReference\":{\"entity\":\"BillOfLading.cdm.json/BillOfLading\",\"name\":\"ExpressBillOfLadingIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"ShipmentRoutingInstructions\",\"attributeReference\":{\"entity\":\"BillOfLading.cdm.json/BillOfLading\",\"name\":\"ShipmentRoutingInstructions\"},\"dataType\":\"string\",\"dataTypeLength\":2048},{\"type\":\"Existing\",\"name\":\"BookingNumber\",\"attributeReference\":{\"entity\":\"BillOfLading.cdm.json/BillOfLading\",\"name\":\"BookingNumber\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ThroughBillOfLadingIndicator\",\"attributeReference\":{\"entity\":\"BillOfLading.cdm.json/BillOfLading\",\"name\":\"ThroughBillOfLadingIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"InlandBillOfLadingIndicator\",\"attributeReference\":{\"entity\":\"BillOfLading.cdm.json/BillOfLading\",\"name\":\"InlandBillOfLadingIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"CombinedTransportBillOfLadingIndicator\",\"attributeReference\":{\"entity\":\"BillOfLading.cdm.json/BillOfLading\",\"name\":\"CombinedTransportBillOfLadingIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"DirectBillOfLadingIndicator\",\"attributeReference\":{\"entity\":\"BillOfLading.cdm.json/BillOfLading\",\"name\":\"DirectBillOfLadingIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"PrepaidShippingAmount\",\"attributeReference\":{\"entity\":\"BillOfLading.cdm.json/BillOfLading\",\"name\":\"PrepaidShippingAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"CargoCollectionAmountDue\",\"attributeReference\":{\"entity\":\"BillOfLading.cdm.json/BillOfLading\",\"name\":\"CargoCollectionAmountDue\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"BillOfLadingMovementTypeId\",\"attributeReference\":{\"entity\":\"BillOfLading.cdm.json/BillOfLading\",\"name\":\"BillOfLadingMovementTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ShipperEmailAddress\",\"attributeReference\":{\"entity\":\"BillOfLading.cdm.json/BillOfLading\",\"name\":\"ShipperEmailAddress\"},\"dataType\":\"string\",\"dataTypeLength\":256},{\"type\":\"Existing\",\"name\":\"ShipperTelephoneNumber\",\"attributeReference\":{\"entity\":\"BillOfLading.cdm.json/BillOfLading\",\"name\":\"ShipperTelephoneNumber\"},\"dataType\":\"decimal\",\"dataTypeLength\":15,\"scale\":0},{\"type\":\"Existing\",\"name\":\"ConsigneeEmailAddress\",\"attributeReference\":{\"entity\":\"BillOfLading.cdm.json/BillOfLading\",\"name\":\"ConsigneeEmailAddress\"},\"dataType\":\"string\",\"dataTypeLength\":256},{\"type\":\"Existing\",\"name\":\"ConsigneeTelephoneNumber\",\"attributeReference\":{\"entity\":\"BillOfLading.cdm.json/BillOfLading\",\"name\":\"ConsigneeTelephoneNumber\"},\"dataType\":\"decimal\",\"dataTypeLength\":15,\"scale\":0},{\"type\":\"Existing\",\"name\":\"GrossShipmentWeightUnits\",\"attributeReference\":{\"entity\":\"BillOfLading.cdm.json/BillOfLading\",\"name\":\"GrossShipmentWeightUnits\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"WeightUomId\",\"attributeReference\":{\"entity\":\"BillOfLading.cdm.json/BillOfLading\",\"name\":\"WeightUomId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ShipperAccountNumber\",\"attributeReference\":{\"entity\":\"BillOfLading.cdm.json/BillOfLading\",\"name\":\"ShipperAccountNumber\"},\"dataType\":\"string\",\"dataTypeLength\":16},{\"type\":\"Existing\",\"name\":\"ShipperSignature\",\"attributeReference\":{\"entity\":\"BillOfLading.cdm.json/BillOfLading\",\"name\":\"ShipperSignature\"},\"dataType\":\"binary\"},{\"type\":\"Existing\",\"name\":\"ShipperSignatureLocationName\",\"attributeReference\":{\"entity\":\"BillOfLading.cdm.json/BillOfLading\",\"name\":\"ShipperSignatureLocationName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"DeclaredValueToCarriageAmount\",\"attributeReference\":{\"entity\":\"BillOfLading.cdm.json/BillOfLading\",\"name\":\"DeclaredValueToCarriageAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"DeclaredValueForCustomerAmount\",\"attributeReference\":{\"entity\":\"BillOfLading.cdm.json/BillOfLading\",\"name\":\"DeclaredValueForCustomerAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"PrepaidFreightAmount\",\"attributeReference\":{\"entity\":\"BillOfLading.cdm.json/BillOfLading\",\"name\":\"PrepaidFreightAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"TotalCollectChargesDueAmount\",\"attributeReference\":{\"entity\":\"BillOfLading.cdm.json/BillOfLading\",\"name\":\"TotalCollectChargesDueAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"ShippingCustomerAccountId\",\"attributeReference\":{\"entity\":\"BillOfLading.cdm.json/BillOfLading\",\"name\":\"ShippingCustomerAccountId\"},\"dataType\":\"long\"},{\"type\":\"Existing\",\"name\":\"IsoCurrencyCode\",\"attributeReference\":{\"entity\":\"BillOfLading.cdm.json/BillOfLading\",\"name\":\"IsoCurrencyCode\"},\"dataType\":\"string\",\"dataTypeLength\":3},{\"type\":\"Existing\",\"name\":\"FromShippingLocationTimestamp\",\"attributeReference\":{\"entity\":\"BillOfLading.cdm.json/BillOfLading\",\"name\":\"FromShippingLocationTimestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"ToShippingLocationTimestamp\",\"attributeReference\":{\"entity\":\"BillOfLading.cdm.json/BillOfLading\",\"name\":\"ToShippingLocationTimestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"ShipToLocationId\",\"attributeReference\":{\"entity\":\"BillOfLading.cdm.json/BillOfLading\",\"name\":\"ShipToLocationId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"LocationOfInitialReceiptId\",\"attributeReference\":{\"entity\":\"BillOfLading.cdm.json/BillOfLading\",\"name\":\"LocationOfInitialReceiptId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"FreightPayableLocationId\",\"attributeReference\":{\"entity\":\"BillOfLading.cdm.json/BillOfLading\",\"name\":\"FreightPayableLocationId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"HazardSeverityCategoryId\",\"attributeReference\":{\"entity\":\"BillOfLading.cdm.json/BillOfLading\",\"name\":\"HazardSeverityCategoryId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ShipperPartyId\",\"attributeReference\":{\"entity\":\"BillOfLading.cdm.json/BillOfLading\",\"name\":\"ShipperPartyId\"},\"dataType\":\"long\"},{\"type\":\"Existing\",\"name\":\"ReceiptOfGoodsShippingLocationId\",\"attributeReference\":{\"entity\":\"BillOfLading.cdm.json/BillOfLading\",\"name\":\"ReceiptOfGoodsShippingLocationId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ConsigneePartyId\",\"attributeReference\":{\"entity\":\"BillOfLading.cdm.json/BillOfLading\",\"name\":\"ConsigneePartyId\"},\"dataType\":\"long\"},{\"type\":\"Existing\",\"name\":\"ReceivingCustomerAccountId\",\"attributeReference\":{\"entity\":\"BillOfLading.cdm.json/BillOfLading\",\"name\":\"ReceivingCustomerAccountId\"},\"dataType\":\"long\"}]}}}",
+			"Description": "The Bill of Lading acts as evidence of a contract of carriage between the shipper and the shipping line to carry out the transportation of cargo under the terms and conditions agreed upon between the seller and buyer. \n\nIt proves the existence of a goods transportation contract.\n\n- RECEIPT OF THE GOODS.\nThe BOL is issued by the carrier to the shipper in exchange for the receipt of the cargo. This is proof that the carrier has received the goods from the shipper in apparently good condition.\n\n- EVIDENCE OF THE CONTRACT BETWEEN CARRIER AND SHIPPER.\nAs evidence of a contract, a BOL is the contract of carriage between the carrier and shipper in order to transport the freight.\n\n- DOCUMENT OF TITLE TO THE GOODS. \nA document of title means the freight can be transferred to the holder of the BOL. Now, the holder of the BOL has the right to claim to transfer the goods to another.\n\nBill of Lading is one of the three crucial documents which is used excessively in international trade to ensure the exporters receive their payment and respective importers receive their merchandise. The other two important documents in international trade would be the policy of insurance and an invoice.",
+			"DisplayFolderInfo": "{\"name\":\"Shipping\",\"colorCode\":\"#000B42\"}",
+			"PrimaryKeys": "ShipmentId,DocumentId"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

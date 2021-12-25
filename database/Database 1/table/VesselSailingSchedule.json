@@ -1,0 +1,250 @@
+{
+	"name": "VesselSailingSchedule",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "VesselSailingSchedule",
+		"Description": "The schedule by which the vessel transits.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "VesselId",
+					"Description": "The unique identifier of a vessel/ship.",
+					"BaseAttributeReference": {
+						"Entity": "VesselSailingSchedule.cdm.json/VesselSailingSchedule",
+						"Name": "VesselId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "VesselScheduledDepartureTimestamp",
+					"Description": "The scheduled departure timestamp.",
+					"BaseAttributeReference": {
+						"Entity": "VesselSailingSchedule.cdm.json/VesselSailingSchedule",
+						"Name": "VesselScheduledDepartureTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "ScheduledArrivalTimestamp",
+					"Description": "The scheduled arrival timestamp at the next segment port on the schedule.",
+					"BaseAttributeReference": {
+						"Entity": "VesselSailingSchedule.cdm.json/VesselSailingSchedule",
+						"Name": "ScheduledArrivalTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "DepartureFromPortLocationId",
+					"Description": "The unique identifier of a Shipping Location.",
+					"BaseAttributeReference": {
+						"Entity": "VesselSailingSchedule.cdm.json/VesselSailingSchedule",
+						"Name": "DepartureFromPortLocationId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "DepartureToLocationId",
+					"Description": "The unique identifier of a Shipping Location.",
+					"BaseAttributeReference": {
+						"Entity": "VesselSailingSchedule.cdm.json/VesselSailingSchedule",
+						"Name": "DepartureToLocationId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "DepartureTerminalNumber",
+					"Description": "The scheduled terminal number from which the vessel is to depart.",
+					"BaseAttributeReference": {
+						"Entity": "VesselSailingSchedule.cdm.json/VesselSailingSchedule",
+						"Name": "DepartureTerminalNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "DepartureBerthNumber",
+					"Description": "The scheduled berth number from which the vessel is to depart.",
+					"BaseAttributeReference": {
+						"Entity": "VesselSailingSchedule.cdm.json/VesselSailingSchedule",
+						"Name": "DepartureBerthNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PlannedLoadingStartTimestamp",
+					"Description": "The planned loading timestamp.",
+					"BaseAttributeReference": {
+						"Entity": "VesselSailingSchedule.cdm.json/VesselSailingSchedule",
+						"Name": "PlannedLoadingStartTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "PlannedLoadingCompletionTimestamp",
+					"Description": "The planned loading completion timestamp.",
+					"BaseAttributeReference": {
+						"Entity": "VesselSailingSchedule.cdm.json/VesselSailingSchedule",
+						"Name": "PlannedLoadingCompletionTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "PlannedLoadingCutOffTimestamp",
+					"Description": "The planned last possible time when containers/cargoes may be delivered to a ship or designated point.",
+					"BaseAttributeReference": {
+						"Entity": "VesselSailingSchedule.cdm.json/VesselSailingSchedule",
+						"Name": "PlannedLoadingCutOffTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "ActualLoadingCutOffTimestamp",
+					"Description": "The actual last possible time when containers/cargoes may be delivered to a ship or designated point.",
+					"BaseAttributeReference": {
+						"Entity": "VesselSailingSchedule.cdm.json/VesselSailingSchedule",
+						"Name": "ActualLoadingCutOffTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "CarrierId",
+					"Description": "The unique identifier of a Carrier.",
+					"BaseAttributeReference": {
+						"Entity": "VesselSailingSchedule.cdm.json/VesselSailingSchedule",
+						"Name": "CarrierId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "CarrierRouteId",
+					"Description": "The unique identifier of a Carrier Route.",
+					"BaseAttributeReference": {
+						"Entity": "VesselSailingSchedule.cdm.json/VesselSailingSchedule",
+						"Name": "CarrierRouteId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"VesselId\":{\"entity\":\"VesselSailingSchedule.cdm.json/VesselSailingSchedule\",\"name\":\"VesselId\"},\"VesselScheduledDepartureTimestamp\":{\"entity\":\"VesselSailingSchedule.cdm.json/VesselSailingSchedule\",\"name\":\"VesselScheduledDepartureTimestamp\"},\"ScheduledArrivalTimestamp\":{\"entity\":\"VesselSailingSchedule.cdm.json/VesselSailingSchedule\",\"name\":\"ScheduledArrivalTimestamp\"},\"DepartureFromPortLocationId\":{\"entity\":\"VesselSailingSchedule.cdm.json/VesselSailingSchedule\",\"name\":\"DepartureFromPortLocationId\"},\"DepartureToLocationId\":{\"entity\":\"VesselSailingSchedule.cdm.json/VesselSailingSchedule\",\"name\":\"DepartureToLocationId\"},\"DepartureTerminalNumber\":{\"entity\":\"VesselSailingSchedule.cdm.json/VesselSailingSchedule\",\"name\":\"DepartureTerminalNumber\"},\"DepartureBerthNumber\":{\"entity\":\"VesselSailingSchedule.cdm.json/VesselSailingSchedule\",\"name\":\"DepartureBerthNumber\"},\"PlannedLoadingStartTimestamp\":{\"entity\":\"VesselSailingSchedule.cdm.json/VesselSailingSchedule\",\"name\":\"PlannedLoadingStartTimestamp\"},\"PlannedLoadingCompletionTimestamp\":{\"entity\":\"VesselSailingSchedule.cdm.json/VesselSailingSchedule\",\"name\":\"PlannedLoadingCompletionTimestamp\"},\"PlannedLoadingCutOffTimestamp\":{\"entity\":\"VesselSailingSchedule.cdm.json/VesselSailingSchedule\",\"name\":\"PlannedLoadingCutOffTimestamp\"},\"ActualLoadingCutOffTimestamp\":{\"entity\":\"VesselSailingSchedule.cdm.json/VesselSailingSchedule\",\"name\":\"ActualLoadingCutOffTimestamp\"},\"CarrierId\":{\"entity\":\"VesselSailingSchedule.cdm.json/VesselSailingSchedule\",\"name\":\"CarrierId\"},\"CarrierRouteId\":{\"entity\":\"VesselSailingSchedule.cdm.json/VesselSailingSchedule\",\"name\":\"CarrierRouteId\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"VesselSailingSchedule\",\"path\":\"VesselSailingSchedule.cdm.json/VesselSailingSchedule\"},\"description\":\"The schedule by which the vessel transits.\",\"primaryKey\":[\"VesselId\",\"VesselScheduledDepartureTimestamp\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"VesselId\",\"attributeReference\":{\"entity\":\"VesselSailingSchedule.cdm.json/VesselSailingSchedule\",\"name\":\"VesselId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"VesselScheduledDepartureTimestamp\",\"attributeReference\":{\"entity\":\"VesselSailingSchedule.cdm.json/VesselSailingSchedule\",\"name\":\"VesselScheduledDepartureTimestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"ScheduledArrivalTimestamp\",\"attributeReference\":{\"entity\":\"VesselSailingSchedule.cdm.json/VesselSailingSchedule\",\"name\":\"ScheduledArrivalTimestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"DepartureFromPortLocationId\",\"attributeReference\":{\"entity\":\"VesselSailingSchedule.cdm.json/VesselSailingSchedule\",\"name\":\"DepartureFromPortLocationId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"DepartureToLocationId\",\"attributeReference\":{\"entity\":\"VesselSailingSchedule.cdm.json/VesselSailingSchedule\",\"name\":\"DepartureToLocationId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"DepartureTerminalNumber\",\"attributeReference\":{\"entity\":\"VesselSailingSchedule.cdm.json/VesselSailingSchedule\",\"name\":\"DepartureTerminalNumber\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"DepartureBerthNumber\",\"attributeReference\":{\"entity\":\"VesselSailingSchedule.cdm.json/VesselSailingSchedule\",\"name\":\"DepartureBerthNumber\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"PlannedLoadingStartTimestamp\",\"attributeReference\":{\"entity\":\"VesselSailingSchedule.cdm.json/VesselSailingSchedule\",\"name\":\"PlannedLoadingStartTimestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"PlannedLoadingCompletionTimestamp\",\"attributeReference\":{\"entity\":\"VesselSailingSchedule.cdm.json/VesselSailingSchedule\",\"name\":\"PlannedLoadingCompletionTimestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"PlannedLoadingCutOffTimestamp\",\"attributeReference\":{\"entity\":\"VesselSailingSchedule.cdm.json/VesselSailingSchedule\",\"name\":\"PlannedLoadingCutOffTimestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"ActualLoadingCutOffTimestamp\",\"attributeReference\":{\"entity\":\"VesselSailingSchedule.cdm.json/VesselSailingSchedule\",\"name\":\"ActualLoadingCutOffTimestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"CarrierId\",\"attributeReference\":{\"entity\":\"VesselSailingSchedule.cdm.json/VesselSailingSchedule\",\"name\":\"CarrierId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"CarrierRouteId\",\"attributeReference\":{\"entity\":\"VesselSailingSchedule.cdm.json/VesselSailingSchedule\",\"name\":\"CarrierRouteId\"},\"dataType\":\"integer\"}]}}}",
+			"Description": "The schedule by which the vessel transits.",
+			"DisplayFolderInfo": "{\"name\":\"Shipping\",\"colorCode\":\"#000B42\"}",
+			"PrimaryKeys": "VesselId,VesselScheduledDepartureTimestamp"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

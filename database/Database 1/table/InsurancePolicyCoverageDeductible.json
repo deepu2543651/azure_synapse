@@ -1,0 +1,171 @@
+{
+	"name": "InsurancePolicyCoverageDeductible",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "InsurancePolicyCoverageDeductible",
+		"Description": "The deductible types and amounts associated with the insurance policy coverage type.\n\nDeductible is the amount an insurance policyholder pays first before insurance pays for any covered losses. Usually the deductible is stated as a certain dollar amount, or a certain percentage of the total claim amount.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "InsurancePolicyId",
+					"Description": "The unique identifier of an Insurance Policy.",
+					"BaseAttributeReference": {
+						"Entity": "InsurancePolicyCoverageDeductible.cdm.json/InsurancePolicyCoverageDeductible",
+						"Name": "InsurancePolicyId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "InsuranceCoverageTypeId",
+					"Description": "The unique identifier of an Insurance Coverage Type.",
+					"BaseAttributeReference": {
+						"Entity": "InsurancePolicyCoverageDeductible.cdm.json/InsurancePolicyCoverageDeductible",
+						"Name": "InsuranceCoverageTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "InsuranceDeductibleTypeId",
+					"Description": "The unique identifier of an Insurance Deductible Type.",
+					"BaseAttributeReference": {
+						"Entity": "InsurancePolicyCoverageDeductible.cdm.json/InsurancePolicyCoverageDeductible",
+						"Name": "InsuranceDeductibleTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PeriodStartDate",
+					"Description": "The period start date that the associated insurance policy deductible is in effect.",
+					"BaseAttributeReference": {
+						"Entity": "InsurancePolicyCoverageDeductible.cdm.json/InsurancePolicyCoverageDeductible",
+						"Name": "PeriodStartDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "PeriodEndDate",
+					"Description": "The period end date that the associated insurance policy deductible is in effect.",
+					"BaseAttributeReference": {
+						"Entity": "InsurancePolicyCoverageDeductible.cdm.json/InsurancePolicyCoverageDeductible",
+						"Name": "PeriodEndDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "DeductibleAmount",
+					"Description": "The amount of deductible that may be provided for the associated coverage.",
+					"BaseAttributeReference": {
+						"Entity": "InsurancePolicyCoverageDeductible.cdm.json/InsurancePolicyCoverageDeductible",
+						"Name": "DeductibleAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "PercentageDeductible",
+					"Description": "The percentage deductible provided for the associated coverage.",
+					"BaseAttributeReference": {
+						"Entity": "InsurancePolicyCoverageDeductible.cdm.json/InsurancePolicyCoverageDeductible",
+						"Name": "PercentageDeductible"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "InsurancePolicyCoverageDeductibleNote",
+					"Description": "The policy note detailing the terms and conditions related to the insurance deductible.",
+					"BaseAttributeReference": {
+						"Entity": "InsurancePolicyCoverageDeductible.cdm.json/InsurancePolicyCoverageDeductible",
+						"Name": "InsurancePolicyCoverageDeductibleNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"InsurancePolicyId\":{\"entity\":\"InsurancePolicyCoverageDeductible.cdm.json/InsurancePolicyCoverageDeductible\",\"name\":\"InsurancePolicyId\"},\"InsuranceCoverageTypeId\":{\"entity\":\"InsurancePolicyCoverageDeductible.cdm.json/InsurancePolicyCoverageDeductible\",\"name\":\"InsuranceCoverageTypeId\"},\"InsuranceDeductibleTypeId\":{\"entity\":\"InsurancePolicyCoverageDeductible.cdm.json/InsurancePolicyCoverageDeductible\",\"name\":\"InsuranceDeductibleTypeId\"},\"PeriodStartDate\":{\"entity\":\"InsurancePolicyCoverageDeductible.cdm.json/InsurancePolicyCoverageDeductible\",\"name\":\"PeriodStartDate\"},\"PeriodEndDate\":{\"entity\":\"InsurancePolicyCoverageDeductible.cdm.json/InsurancePolicyCoverageDeductible\",\"name\":\"PeriodEndDate\"},\"DeductibleAmount\":{\"entity\":\"InsurancePolicyCoverageDeductible.cdm.json/InsurancePolicyCoverageDeductible\",\"name\":\"DeductibleAmount\"},\"PercentageDeductible\":{\"entity\":\"InsurancePolicyCoverageDeductible.cdm.json/InsurancePolicyCoverageDeductible\",\"name\":\"PercentageDeductible\"},\"InsurancePolicyCoverageDeductibleNote\":{\"entity\":\"InsurancePolicyCoverageDeductible.cdm.json/InsurancePolicyCoverageDeductible\",\"name\":\"InsurancePolicyCoverageDeductibleNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"InsurancePolicyCoverageDeductible\",\"path\":\"InsurancePolicyCoverageDeductible.cdm.json/InsurancePolicyCoverageDeductible\"},\"description\":\"The deductible types and amounts associated with the insurance policy coverage type.\\n\\nDeductible is the amount an insurance policyholder pays first before insurance pays for any covered losses. Usually the deductible is stated as a certain dollar amount, or a certain percentage of the total claim amount.\",\"primaryKey\":[\"InsurancePolicyId\",\"InsuranceCoverageTypeId\",\"InsuranceDeductibleTypeId\",\"PeriodStartDate\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"InsurancePolicyId\",\"attributeReference\":{\"entity\":\"InsurancePolicyCoverageDeductible.cdm.json/InsurancePolicyCoverageDeductible\",\"name\":\"InsurancePolicyId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"InsuranceCoverageTypeId\",\"attributeReference\":{\"entity\":\"InsurancePolicyCoverageDeductible.cdm.json/InsurancePolicyCoverageDeductible\",\"name\":\"InsuranceCoverageTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"InsuranceDeductibleTypeId\",\"attributeReference\":{\"entity\":\"InsurancePolicyCoverageDeductible.cdm.json/InsurancePolicyCoverageDeductible\",\"name\":\"InsuranceDeductibleTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"PeriodStartDate\",\"attributeReference\":{\"entity\":\"InsurancePolicyCoverageDeductible.cdm.json/InsurancePolicyCoverageDeductible\",\"name\":\"PeriodStartDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\"},{\"type\":\"Existing\",\"name\":\"PeriodEndDate\",\"attributeReference\":{\"entity\":\"InsurancePolicyCoverageDeductible.cdm.json/InsurancePolicyCoverageDeductible\",\"name\":\"PeriodEndDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\"},{\"type\":\"Existing\",\"name\":\"DeductibleAmount\",\"attributeReference\":{\"entity\":\"InsurancePolicyCoverageDeductible.cdm.json/InsurancePolicyCoverageDeductible\",\"name\":\"DeductibleAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"PercentageDeductible\",\"attributeReference\":{\"entity\":\"InsurancePolicyCoverageDeductible.cdm.json/InsurancePolicyCoverageDeductible\",\"name\":\"PercentageDeductible\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":8},{\"type\":\"Existing\",\"name\":\"InsurancePolicyCoverageDeductibleNote\",\"attributeReference\":{\"entity\":\"InsurancePolicyCoverageDeductible.cdm.json/InsurancePolicyCoverageDeductible\",\"name\":\"InsurancePolicyCoverageDeductibleNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024}]}}}",
+			"Description": "The deductible types and amounts associated with the insurance policy coverage type.\n\nDeductible is the amount an insurance policyholder pays first before insurance pays for any covered losses. Usually the deductible is stated as a certain dollar amount, or a certain percentage of the total claim amount.",
+			"DisplayFolderInfo": "{\"name\":\"Policy\",\"colorCode\":\"#7D0F6C\"}",
+			"PrimaryKeys": "InsurancePolicyId,InsuranceCoverageTypeId,InsuranceDeductibleTypeId,PeriodStartDate"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

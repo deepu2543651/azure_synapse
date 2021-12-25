@@ -1,0 +1,150 @@
+{
+	"name": "ShipmentRouteRelatedParty",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "ShipmentRouteRelatedParty",
+		"Description": "A party related to a shipment route for the associated period.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ShipmentId",
+					"Description": "The unique identifier of a Shipment.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentRouteRelatedParty.cdm.json/ShipmentRouteRelatedParty",
+						"Name": "ShipmentId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PartyId",
+					"Description": "The unique identifier of a Party.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentRouteRelatedParty.cdm.json/ShipmentRouteRelatedParty",
+						"Name": "PartyId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "ShipmentRoutePartyRelationshipTypeId",
+					"Description": "The unique identifier of a shipment route party relationship type.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentRouteRelatedParty.cdm.json/ShipmentRouteRelatedParty",
+						"Name": "ShipmentRoutePartyRelationshipTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ShipmentLegNumber",
+					"Description": "The unique identifier of the Shipment Leg Number, which equals the shipment leg 'sequence number'.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentRouteRelatedParty.cdm.json/ShipmentRouteRelatedParty",
+						"Name": "ShipmentLegNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PeriodEndTimestamp",
+					"Description": "The period end timestamp associated with the shipment route - party relationship.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentRouteRelatedParty.cdm.json/ShipmentRouteRelatedParty",
+						"Name": "PeriodEndTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "ShippingLocationId",
+					"Description": "The unique identifier of a shipping location.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentRouteRelatedParty.cdm.json/ShipmentRouteRelatedParty",
+						"Name": "ShippingLocationId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ShipmentRouteRelatedPartyNote",
+					"Description": "A note, comment or additional information regarding the shipment route related party.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentRouteRelatedParty.cdm.json/ShipmentRouteRelatedParty",
+						"Name": "ShipmentRouteRelatedPartyNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ShipmentId\":{\"entity\":\"ShipmentRouteRelatedParty.cdm.json/ShipmentRouteRelatedParty\",\"name\":\"ShipmentId\"},\"PartyId\":{\"entity\":\"ShipmentRouteRelatedParty.cdm.json/ShipmentRouteRelatedParty\",\"name\":\"PartyId\"},\"ShipmentRoutePartyRelationshipTypeId\":{\"entity\":\"ShipmentRouteRelatedParty.cdm.json/ShipmentRouteRelatedParty\",\"name\":\"ShipmentRoutePartyRelationshipTypeId\"},\"ShipmentLegNumber\":{\"entity\":\"ShipmentRouteRelatedParty.cdm.json/ShipmentRouteRelatedParty\",\"name\":\"ShipmentLegNumber\"},\"PeriodEndTimestamp\":{\"entity\":\"ShipmentRouteRelatedParty.cdm.json/ShipmentRouteRelatedParty\",\"name\":\"PeriodEndTimestamp\"},\"ShippingLocationId\":{\"entity\":\"ShipmentRouteRelatedParty.cdm.json/ShipmentRouteRelatedParty\",\"name\":\"ShippingLocationId\"},\"ShipmentRouteRelatedPartyNote\":{\"entity\":\"ShipmentRouteRelatedParty.cdm.json/ShipmentRouteRelatedParty\",\"name\":\"ShipmentRouteRelatedPartyNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"ShipmentRouteRelatedParty\",\"path\":\"ShipmentRouteRelatedParty.cdm.json/ShipmentRouteRelatedParty\"},\"description\":\"A party related to a shipment route for the associated period.\",\"primaryKey\":[\"ShipmentId\",\"PartyId\",\"ShipmentRoutePartyRelationshipTypeId\",\"ShipmentLegNumber\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"ShipmentId\",\"attributeReference\":{\"entity\":\"ShipmentRouteRelatedParty.cdm.json/ShipmentRouteRelatedParty\",\"name\":\"ShipmentId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"PartyId\",\"attributeReference\":{\"entity\":\"ShipmentRouteRelatedParty.cdm.json/ShipmentRouteRelatedParty\",\"name\":\"PartyId\"},\"dataType\":\"long\"},{\"type\":\"Existing\",\"name\":\"ShipmentRoutePartyRelationshipTypeId\",\"attributeReference\":{\"entity\":\"ShipmentRouteRelatedParty.cdm.json/ShipmentRouteRelatedParty\",\"name\":\"ShipmentRoutePartyRelationshipTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ShipmentLegNumber\",\"attributeReference\":{\"entity\":\"ShipmentRouteRelatedParty.cdm.json/ShipmentRouteRelatedParty\",\"name\":\"ShipmentLegNumber\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"PeriodEndTimestamp\",\"attributeReference\":{\"entity\":\"ShipmentRouteRelatedParty.cdm.json/ShipmentRouteRelatedParty\",\"name\":\"PeriodEndTimestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"ShippingLocationId\",\"attributeReference\":{\"entity\":\"ShipmentRouteRelatedParty.cdm.json/ShipmentRouteRelatedParty\",\"name\":\"ShippingLocationId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ShipmentRouteRelatedPartyNote\",\"attributeReference\":{\"entity\":\"ShipmentRouteRelatedParty.cdm.json/ShipmentRouteRelatedParty\",\"name\":\"ShipmentRouteRelatedPartyNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024}]}}}",
+			"Description": "A party related to a shipment route for the associated period.",
+			"DisplayFolderInfo": "{\"name\":\"Shipping\",\"colorCode\":\"#000B42\"}",
+			"PrimaryKeys": "ShipmentId,PartyId,ShipmentRoutePartyRelationshipTypeId,ShipmentLegNumber"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

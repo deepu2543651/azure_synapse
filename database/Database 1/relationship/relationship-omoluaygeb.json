@@ -1,0 +1,34 @@
+{
+	"name": "relationship-omoluaygeb",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "relationship-omoluaygeb",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "TowScheduleLeg",
+		"ToTableName": "TowScheduleLegConfiguration",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "TowId",
+				"ToColumnName": "TowId"
+			},
+			{
+				"FromColumnName": "TowScheduleLegNumber",
+				"ToColumnName": "TowScheduleLegNumber"
+			},
+			{
+				"FromColumnName": "TowScheduledDepartureTimestamp",
+				"ToColumnName": "TowScheduledDepartureTimestamp"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"TowScheduleLeg.cdm.json/TowScheduleLeg\",\"toEntity\":\"TowScheduleLegConfiguration.cdm.json/TowScheduleLegConfiguration\",\"joinPairs\":[{\"fromAttribute\":\"TowId\",\"toAttribute\":\"TowId\"},{\"fromAttribute\":\"TowScheduleLegNumber\",\"toAttribute\":\"TowScheduleLegNumber\"},{\"fromAttribute\":\"TowScheduledDepartureTimestamp\",\"toAttribute\":\"TowScheduledDepartureTimestamp\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

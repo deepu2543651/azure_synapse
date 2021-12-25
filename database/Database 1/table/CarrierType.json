@@ -1,0 +1,86 @@
+{
+	"name": "CarrierType",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "CarrierType",
+		"Description": "The type of carrier.\n\nEx:\n- VOCC - Vessel Operating Common Carrier\n- NVOCC - Non-Vessel Operating Common Carrier\n- Freight Forwarder\n- BCO - Beneficial Cargo Owner\n- Common Carrier",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "CarrierTypeId",
+					"Description": "The unique identifier of a Carrier Type.",
+					"BaseAttributeReference": {
+						"Entity": "CarrierType.cdm.json/CarrierType",
+						"Name": "CarrierTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "CarrierTypeName",
+					"Description": "The name of a Carrier Type.",
+					"BaseAttributeReference": {
+						"Entity": "CarrierType.cdm.json/CarrierType",
+						"Name": "CarrierTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "CarrierTypeDescription",
+					"Description": "The description of a Carrier Type.",
+					"BaseAttributeReference": {
+						"Entity": "CarrierType.cdm.json/CarrierType",
+						"Name": "CarrierTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"CarrierTypeId\":{\"entity\":\"CarrierType.cdm.json/CarrierType\",\"name\":\"CarrierTypeId\"},\"CarrierTypeName\":{\"entity\":\"CarrierType.cdm.json/CarrierType\",\"name\":\"CarrierTypeName\"},\"CarrierTypeDescription\":{\"entity\":\"CarrierType.cdm.json/CarrierType\",\"name\":\"CarrierTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"CarrierType\",\"path\":\"CarrierType.cdm.json/CarrierType\"},\"description\":\"The type of carrier.\\n\\nEx:\\n- VOCC - Vessel Operating Common Carrier\\n- NVOCC - Non-Vessel Operating Common Carrier\\n- Freight Forwarder\\n- BCO - Beneficial Cargo Owner\\n- Common Carrier\",\"primaryKey\":[\"CarrierTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"CarrierTypeId\",\"attributeReference\":{\"entity\":\"CarrierType.cdm.json/CarrierType\",\"name\":\"CarrierTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"CarrierTypeName\",\"attributeReference\":{\"entity\":\"CarrierType.cdm.json/CarrierType\",\"name\":\"CarrierTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"CarrierTypeDescription\",\"attributeReference\":{\"entity\":\"CarrierType.cdm.json/CarrierType\",\"name\":\"CarrierTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512}]}}}",
+			"Description": "The type of carrier.\n\nEx:\n- VOCC - Vessel Operating Common Carrier\n- NVOCC - Non-Vessel Operating Common Carrier\n- Freight Forwarder\n- BCO - Beneficial Cargo Owner\n- Common Carrier",
+			"DisplayFolderInfo": "{\"name\":\"Shipping\",\"colorCode\":\"#000B42\"}",
+			"PrimaryKeys": "CarrierTypeId"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

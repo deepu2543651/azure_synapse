@@ -1,0 +1,26 @@
+{
+	"name": "relationship-tzjlvwqoio",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "relationship-tzjlvwqoio",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Vessel",
+		"ToTableName": "ShipmentRouteLegEquipmentSubstitution",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "VesselId",
+				"ToColumnName": "SubstitutionVesselId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Vessel.cdm.json/Vessel\",\"toEntity\":\"ShipmentRouteLegEquipmentSubstitution.cdm.json/ShipmentRouteLegEquipmentSubstitution\",\"joinPairs\":[{\"fromAttribute\":\"VesselId\",\"toAttribute\":\"SubstitutionVesselId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

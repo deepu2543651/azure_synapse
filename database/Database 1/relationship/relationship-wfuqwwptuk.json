@@ -1,0 +1,26 @@
+{
+	"name": "relationship-wfuqwwptuk",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "relationship-wfuqwwptuk",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "ShipmentServiceType",
+		"ToTableName": "CarrierRouteTariffSchedule",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ShipmentServiceTypeId",
+				"ToColumnName": "ShipmentServiceTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"ShipmentServiceType.cdm.json/ShipmentServiceType\",\"toEntity\":\"CarrierRouteTariffSchedule.cdm.json/CarrierRouteTariffSchedule\",\"joinPairs\":[{\"fromAttribute\":\"ShipmentServiceTypeId\",\"toAttribute\":\"ShipmentServiceTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

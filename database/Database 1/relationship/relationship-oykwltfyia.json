@@ -1,0 +1,26 @@
+{
+	"name": "relationship-oykwltfyia",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "relationship-oykwltfyia",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "ShipmentItemMovement",
+		"ToTableName": "ShipmentRouteLegShipmentItemMovement",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ShipmentItemMovementId",
+				"ToColumnName": "ShipmentItemMovementId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"ShipmentItemMovement.cdm.json/ShipmentItemMovement\",\"toEntity\":\"ShipmentRouteLegShipmentItemMovement.cdm.json/ShipmentRouteLegShipmentItemMovement\",\"joinPairs\":[{\"fromAttribute\":\"ShipmentItemMovementId\",\"toAttribute\":\"ShipmentItemMovementId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

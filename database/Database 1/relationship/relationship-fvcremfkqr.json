@@ -1,0 +1,26 @@
+{
+	"name": "relationship-fvcremfkqr",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "relationship-fvcremfkqr",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Vehicle",
+		"ToTableName": "ShipmentRouteLegEquipment",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "VehicleId",
+				"ToColumnName": "VehicleId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Vehicle.cdm.json/Vehicle\",\"toEntity\":\"ShipmentRouteLegEquipment.cdm.json/ShipmentRouteLegEquipment\",\"joinPairs\":[{\"fromAttribute\":\"VehicleId\",\"toAttribute\":\"VehicleId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

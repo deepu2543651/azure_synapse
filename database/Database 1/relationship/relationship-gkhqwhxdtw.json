@@ -1,0 +1,26 @@
+{
+	"name": "relationship-gkhqwhxdtw",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "relationship-gkhqwhxdtw",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Shipment",
+		"ToTableName": "ShipmentAllowance",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ShipmentId",
+				"ToColumnName": "ShipmentId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Shipment.cdm.json/Shipment\",\"toEntity\":\"ShipmentAllowance.cdm.json/ShipmentAllowance\",\"joinPairs\":[{\"fromAttribute\":\"ShipmentId\",\"toAttribute\":\"ShipmentId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

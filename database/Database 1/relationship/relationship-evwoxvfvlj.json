@@ -1,0 +1,26 @@
+{
+	"name": "relationship-evwoxvfvlj",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "relationship-evwoxvfvlj",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "InventoryLossType",
+		"ToTableName": "WarehouseItemInventoryLoss",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "InventoryLossTypeId",
+				"ToColumnName": "InventoryLossTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"InventoryLossType.cdm.json/InventoryLossType\",\"toEntity\":\"WarehouseItemInventoryLoss.cdm.json/WarehouseItemInventoryLoss\",\"joinPairs\":[{\"fromAttribute\":\"InventoryLossTypeId\",\"toAttribute\":\"InventoryLossTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

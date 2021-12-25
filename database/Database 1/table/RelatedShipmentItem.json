@@ -1,0 +1,167 @@
+{
+	"name": "RelatedShipmentItem",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "RelatedShipmentItem",
+		"Description": "The relationship of two or more shipment item(s) for a period.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ShipmentId",
+					"Description": "The unique identifier of a Shipment.",
+					"BaseAttributeReference": {
+						"Entity": "RelatedShipmentItem.cdm.json/RelatedShipmentItem",
+						"Name": "ShipmentId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ShipmentItemNumber",
+					"Description": "The shipment line number.",
+					"BaseAttributeReference": {
+						"Entity": "RelatedShipmentItem.cdm.json/RelatedShipmentItem",
+						"Name": "ShipmentItemNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "RelatedShipmentId",
+					"Description": "The unique identifier of a Shipment.",
+					"BaseAttributeReference": {
+						"Entity": "RelatedShipmentItem.cdm.json/RelatedShipmentItem",
+						"Name": "RelatedShipmentId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "RelatedShipmentItemNumber",
+					"Description": "The shipment line number.",
+					"BaseAttributeReference": {
+						"Entity": "RelatedShipmentItem.cdm.json/RelatedShipmentItem",
+						"Name": "RelatedShipmentItemNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PeriodStartTimestamp",
+					"Description": "The period start timestamp of the shipment(s) relationship.",
+					"BaseAttributeReference": {
+						"Entity": "RelatedShipmentItem.cdm.json/RelatedShipmentItem",
+						"Name": "PeriodStartTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "PeriodEndTimestamp",
+					"Description": "The period end timestamp of the shipment(s) relationship.",
+					"BaseAttributeReference": {
+						"Entity": "RelatedShipmentItem.cdm.json/RelatedShipmentItem",
+						"Name": "PeriodEndTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "RelatedShipmentItemNote",
+					"Description": "A note, comment or additional information regarding the related shipment item(s).",
+					"BaseAttributeReference": {
+						"Entity": "RelatedShipmentItem.cdm.json/RelatedShipmentItem",
+						"Name": "RelatedShipmentItemNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ShipmentItemRelationshipTypeId",
+					"Description": "The unique identifier of a Shipment Item Relationship Type.",
+					"BaseAttributeReference": {
+						"Entity": "RelatedShipmentItem.cdm.json/RelatedShipmentItem",
+						"Name": "ShipmentItemRelationshipTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ShipmentId\":{\"entity\":\"RelatedShipmentItem.cdm.json/RelatedShipmentItem\",\"name\":\"ShipmentId\"},\"ShipmentItemNumber\":{\"entity\":\"RelatedShipmentItem.cdm.json/RelatedShipmentItem\",\"name\":\"ShipmentItemNumber\"},\"RelatedShipmentId\":{\"entity\":\"RelatedShipmentItem.cdm.json/RelatedShipmentItem\",\"name\":\"RelatedShipmentId\"},\"RelatedShipmentItemNumber\":{\"entity\":\"RelatedShipmentItem.cdm.json/RelatedShipmentItem\",\"name\":\"RelatedShipmentItemNumber\"},\"PeriodStartTimestamp\":{\"entity\":\"RelatedShipmentItem.cdm.json/RelatedShipmentItem\",\"name\":\"PeriodStartTimestamp\"},\"PeriodEndTimestamp\":{\"entity\":\"RelatedShipmentItem.cdm.json/RelatedShipmentItem\",\"name\":\"PeriodEndTimestamp\"},\"RelatedShipmentItemNote\":{\"entity\":\"RelatedShipmentItem.cdm.json/RelatedShipmentItem\",\"name\":\"RelatedShipmentItemNote\"},\"ShipmentItemRelationshipTypeId\":{\"entity\":\"RelatedShipmentItem.cdm.json/RelatedShipmentItem\",\"name\":\"ShipmentItemRelationshipTypeId\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"RelatedShipmentItem\",\"path\":\"RelatedShipmentItem.cdm.json/RelatedShipmentItem\"},\"description\":\"The relationship of two or more shipment item(s) for a period.\",\"primaryKey\":[\"ShipmentId\",\"ShipmentItemNumber\",\"RelatedShipmentId\",\"RelatedShipmentItemNumber\",\"PeriodStartTimestamp\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"ShipmentId\",\"attributeReference\":{\"entity\":\"RelatedShipmentItem.cdm.json/RelatedShipmentItem\",\"name\":\"ShipmentId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ShipmentItemNumber\",\"attributeReference\":{\"entity\":\"RelatedShipmentItem.cdm.json/RelatedShipmentItem\",\"name\":\"ShipmentItemNumber\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"RelatedShipmentId\",\"attributeReference\":{\"entity\":\"RelatedShipmentItem.cdm.json/RelatedShipmentItem\",\"name\":\"RelatedShipmentId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"RelatedShipmentItemNumber\",\"attributeReference\":{\"entity\":\"RelatedShipmentItem.cdm.json/RelatedShipmentItem\",\"name\":\"RelatedShipmentItemNumber\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"PeriodStartTimestamp\",\"attributeReference\":{\"entity\":\"RelatedShipmentItem.cdm.json/RelatedShipmentItem\",\"name\":\"PeriodStartTimestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"PeriodEndTimestamp\",\"attributeReference\":{\"entity\":\"RelatedShipmentItem.cdm.json/RelatedShipmentItem\",\"name\":\"PeriodEndTimestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"RelatedShipmentItemNote\",\"attributeReference\":{\"entity\":\"RelatedShipmentItem.cdm.json/RelatedShipmentItem\",\"name\":\"RelatedShipmentItemNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024},{\"type\":\"Existing\",\"name\":\"ShipmentItemRelationshipTypeId\",\"attributeReference\":{\"entity\":\"RelatedShipmentItem.cdm.json/RelatedShipmentItem\",\"name\":\"ShipmentItemRelationshipTypeId\"},\"dataType\":\"integer\"}]}}}",
+			"Description": "The relationship of two or more shipment item(s) for a period.",
+			"DisplayFolderInfo": "{\"name\":\"Shipping\",\"colorCode\":\"#000B42\"}",
+			"PrimaryKeys": "ShipmentId,ShipmentItemNumber,RelatedShipmentId,RelatedShipmentItemNumber,PeriodStartTimestamp"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

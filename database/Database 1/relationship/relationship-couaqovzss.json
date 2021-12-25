@@ -1,0 +1,26 @@
+{
+	"name": "relationship-couaqovzss",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "relationship-couaqovzss",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Shipment",
+		"ToTableName": "ShipmentRelatedParty",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ShipmentId",
+				"ToColumnName": "ShipmentId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Shipment.cdm.json/Shipment\",\"toEntity\":\"ShipmentRelatedParty.cdm.json/ShipmentRelatedParty\",\"joinPairs\":[{\"fromAttribute\":\"ShipmentId\",\"toAttribute\":\"ShipmentId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

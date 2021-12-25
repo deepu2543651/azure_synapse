@@ -1,0 +1,26 @@
+{
+	"name": "relationship-rlsgjgbjjq",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "relationship-rlsgjgbjjq",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Communication",
+		"ToTableName": "ApplicationCommunication",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "CommunicationId",
+				"ToColumnName": "ApplicationCommunicationId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Communication.cdm.json/Communication\",\"toEntity\":\"ApplicationCommunication.cdm.json/ApplicationCommunication\",\"joinPairs\":[{\"fromAttribute\":\"CommunicationId\",\"toAttribute\":\"ApplicationCommunicationId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

@@ -1,0 +1,135 @@
+{
+	"name": "RelatedCustomerAccount",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "RelatedCustomerAccount",
+		"Description": "The relationship between two customer accounts for the associated period.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "CustomerAccountId",
+					"Description": "The unique identifier of a Customer Account.",
+					"BaseAttributeReference": {
+						"Entity": "RelatedCustomerAccount.cdm.json/RelatedCustomerAccount",
+						"Name": "CustomerAccountId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "RelatedCustomerAccountId",
+					"Description": "The unique identifier of a Customer Account.",
+					"BaseAttributeReference": {
+						"Entity": "RelatedCustomerAccount.cdm.json/RelatedCustomerAccount",
+						"Name": "RelatedCustomerAccountId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "CustomerAccountRelationshipTypeId",
+					"Description": "The unique identifier of a Customer Account Relationship Type.",
+					"BaseAttributeReference": {
+						"Entity": "RelatedCustomerAccount.cdm.json/RelatedCustomerAccount",
+						"Name": "CustomerAccountRelationshipTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PeriodStartTimestamp",
+					"Description": "The period start timestamp for which the associated Customer Account / Related Customer Account relationship is defined.",
+					"BaseAttributeReference": {
+						"Entity": "RelatedCustomerAccount.cdm.json/RelatedCustomerAccount",
+						"Name": "PeriodStartTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "PeriodEndTimestamp",
+					"Description": "The period end timestamp for which the associated Customer Account / Related Customer Account relationship is defined.",
+					"BaseAttributeReference": {
+						"Entity": "RelatedCustomerAccount.cdm.json/RelatedCustomerAccount",
+						"Name": "PeriodEndTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "RelatedCustomerAccountNote",
+					"Description": "A note, comment or additional information regarding the related customer account relationship.",
+					"BaseAttributeReference": {
+						"Entity": "RelatedCustomerAccount.cdm.json/RelatedCustomerAccount",
+						"Name": "RelatedCustomerAccountNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"CustomerAccountId\":{\"entity\":\"RelatedCustomerAccount.cdm.json/RelatedCustomerAccount\",\"name\":\"CustomerAccountId\"},\"RelatedCustomerAccountId\":{\"entity\":\"RelatedCustomerAccount.cdm.json/RelatedCustomerAccount\",\"name\":\"RelatedCustomerAccountId\"},\"CustomerAccountRelationshipTypeId\":{\"entity\":\"RelatedCustomerAccount.cdm.json/RelatedCustomerAccount\",\"name\":\"CustomerAccountRelationshipTypeId\"},\"PeriodStartTimestamp\":{\"entity\":\"RelatedCustomerAccount.cdm.json/RelatedCustomerAccount\",\"name\":\"PeriodStartTimestamp\"},\"PeriodEndTimestamp\":{\"entity\":\"RelatedCustomerAccount.cdm.json/RelatedCustomerAccount\",\"name\":\"PeriodEndTimestamp\"},\"RelatedCustomerAccountNote\":{\"entity\":\"RelatedCustomerAccount.cdm.json/RelatedCustomerAccount\",\"name\":\"RelatedCustomerAccountNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"RelatedCustomerAccount\",\"path\":\"RelatedCustomerAccount.cdm.json/RelatedCustomerAccount\"},\"description\":\"The relationship between two customer accounts for the associated period.\",\"primaryKey\":[\"CustomerAccountId\",\"RelatedCustomerAccountId\",\"CustomerAccountRelationshipTypeId\",\"PeriodStartTimestamp\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"CustomerAccountId\",\"attributeReference\":{\"entity\":\"RelatedCustomerAccount.cdm.json/RelatedCustomerAccount\",\"name\":\"CustomerAccountId\"},\"dataType\":\"long\"},{\"type\":\"Existing\",\"name\":\"RelatedCustomerAccountId\",\"attributeReference\":{\"entity\":\"RelatedCustomerAccount.cdm.json/RelatedCustomerAccount\",\"name\":\"RelatedCustomerAccountId\"},\"dataType\":\"long\"},{\"type\":\"Existing\",\"name\":\"CustomerAccountRelationshipTypeId\",\"attributeReference\":{\"entity\":\"RelatedCustomerAccount.cdm.json/RelatedCustomerAccount\",\"name\":\"CustomerAccountRelationshipTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"PeriodStartTimestamp\",\"attributeReference\":{\"entity\":\"RelatedCustomerAccount.cdm.json/RelatedCustomerAccount\",\"name\":\"PeriodStartTimestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"PeriodEndTimestamp\",\"attributeReference\":{\"entity\":\"RelatedCustomerAccount.cdm.json/RelatedCustomerAccount\",\"name\":\"PeriodEndTimestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"RelatedCustomerAccountNote\",\"attributeReference\":{\"entity\":\"RelatedCustomerAccount.cdm.json/RelatedCustomerAccount\",\"name\":\"RelatedCustomerAccountNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024}]}}}",
+			"Description": "The relationship between two customer accounts for the associated period.",
+			"DisplayFolderInfo": "{\"name\":\"Customer Account\",\"colorCode\":\"#022F22\"}",
+			"PrimaryKeys": "CustomerAccountId,RelatedCustomerAccountId,CustomerAccountRelationshipTypeId,PeriodStartTimestamp"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

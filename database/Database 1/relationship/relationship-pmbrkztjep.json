@@ -1,0 +1,30 @@
+{
+	"name": "relationship-pmbrkztjep",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "relationship-pmbrkztjep",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "PalletType",
+		"ToTableName": "ShipmentItemConsolidation",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ItemSku",
+				"ToColumnName": "ItemSku"
+			},
+			{
+				"FromColumnName": "PalletTypeId",
+				"ToColumnName": "PalletTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"PalletType.cdm.json/PalletType\",\"toEntity\":\"ShipmentItemConsolidation.cdm.json/ShipmentItemConsolidation\",\"joinPairs\":[{\"fromAttribute\":\"ItemSku\",\"toAttribute\":\"ItemSku\"},{\"fromAttribute\":\"PalletTypeId\",\"toAttribute\":\"PalletTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

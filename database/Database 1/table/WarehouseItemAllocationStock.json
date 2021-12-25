@@ -1,0 +1,121 @@
+{
+	"name": "WarehouseItemAllocationStock",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "WarehouseItemAllocationStock",
+		"Description": "Inventory stock/items at a Warehouse that have been reserved, but not yet withdrawn or issued from stock, and is thus not available for other purposes.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "WarehouseId",
+					"Description": "The unique identifier of a Warehouse.",
+					"BaseAttributeReference": {
+						"Entity": "WarehouseItemAllocationStock.cdm.json/WarehouseItemAllocationStock",
+						"Name": "WarehouseId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ItemSku",
+					"Description": "The Stock Keeping Unit identifier, which is typically used for inventory-related activities.",
+					"BaseAttributeReference": {
+						"Entity": "WarehouseItemAllocationStock.cdm.json/WarehouseItemAllocationStock",
+						"Name": "ItemSku"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Length": 20,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "Timestamp",
+					"Description": "The effective timestamp for which the Allocation Stock quantity is determined at the Warehouse.",
+					"BaseAttributeReference": {
+						"Entity": "WarehouseItemAllocationStock.cdm.json/WarehouseItemAllocationStock",
+						"Name": "Timestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "AllocationQuantity",
+					"Description": "The quantity of Allocation Stock at the Warehouse as of the associated date.",
+					"BaseAttributeReference": {
+						"Entity": "WarehouseItemAllocationStock.cdm.json/WarehouseItemAllocationStock",
+						"Name": "AllocationQuantity"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "Note",
+					"Description": "A note, comment or additional information regarding the Warehouse Allocation Stock.",
+					"BaseAttributeReference": {
+						"Entity": "WarehouseItemAllocationStock.cdm.json/WarehouseItemAllocationStock",
+						"Name": "Note"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"WarehouseId\":{\"entity\":\"WarehouseItemAllocationStock.cdm.json/WarehouseItemAllocationStock\",\"name\":\"WarehouseId\"},\"ItemSku\":{\"entity\":\"WarehouseItemAllocationStock.cdm.json/WarehouseItemAllocationStock\",\"name\":\"ItemSku\"},\"Timestamp\":{\"entity\":\"WarehouseItemAllocationStock.cdm.json/WarehouseItemAllocationStock\",\"name\":\"Timestamp\"},\"AllocationQuantity\":{\"entity\":\"WarehouseItemAllocationStock.cdm.json/WarehouseItemAllocationStock\",\"name\":\"AllocationQuantity\"},\"Note\":{\"entity\":\"WarehouseItemAllocationStock.cdm.json/WarehouseItemAllocationStock\",\"name\":\"Note\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"WarehouseItemAllocationStock\",\"path\":\"WarehouseItemAllocationStock.cdm.json/WarehouseItemAllocationStock\"},\"description\":\"Inventory stock/items at a Warehouse that have been reserved, but not yet withdrawn or issued from stock, and is thus not available for other purposes.\",\"primaryKey\":[\"WarehouseId\",\"ItemSku\",\"Timestamp\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"WarehouseId\",\"attributeReference\":{\"entity\":\"WarehouseItemAllocationStock.cdm.json/WarehouseItemAllocationStock\",\"name\":\"WarehouseId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ItemSku\",\"attributeReference\":{\"entity\":\"WarehouseItemAllocationStock.cdm.json/WarehouseItemAllocationStock\",\"name\":\"ItemSku\"},\"dataType\":\"string\",\"dataTypeLength\":20},{\"type\":\"Existing\",\"name\":\"Timestamp\",\"attributeReference\":{\"entity\":\"WarehouseItemAllocationStock.cdm.json/WarehouseItemAllocationStock\",\"name\":\"Timestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"AllocationQuantity\",\"attributeReference\":{\"entity\":\"WarehouseItemAllocationStock.cdm.json/WarehouseItemAllocationStock\",\"name\":\"AllocationQuantity\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"Note\",\"attributeReference\":{\"entity\":\"WarehouseItemAllocationStock.cdm.json/WarehouseItemAllocationStock\",\"name\":\"Note\"},\"dataType\":\"string\",\"dataTypeLength\":1024}]}}}",
+			"Description": "Inventory stock/items at a Warehouse that have been reserved, but not yet withdrawn or issued from stock, and is thus not available for other purposes.",
+			"DisplayFolderInfo": "{\"name\":\"Inventory\",\"colorCode\":\"#EA279F\"}",
+			"PrimaryKeys": "WarehouseId,ItemSku,Timestamp"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

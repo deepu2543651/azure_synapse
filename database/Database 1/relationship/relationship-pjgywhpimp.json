@@ -1,0 +1,26 @@
+{
+	"name": "relationship-pjgywhpimp",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "relationship-pjgywhpimp",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "BillOfLadingType",
+		"ToTableName": "BillOfLading",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "BillOfLadingTypeId",
+				"ToColumnName": "BillOfLadingTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"BillOfLadingType.cdm.json/BillOfLadingType\",\"toEntity\":\"BillOfLading.cdm.json/BillOfLading\",\"joinPairs\":[{\"fromAttribute\":\"BillOfLadingTypeId\",\"toAttribute\":\"BillOfLadingTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

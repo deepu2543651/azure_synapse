@@ -1,0 +1,42 @@
+{
+	"name": "relationship-uizfcpizct",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "relationship-uizfcpizct",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "ScheduledFlightLeg",
+		"ToTableName": "ShipmentRouteLeg",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "CarrierId",
+				"ToColumnName": "ActualCarrierId"
+			},
+			{
+				"FromColumnName": "FlightNumber",
+				"ToColumnName": "ActualFlightNumber"
+			},
+			{
+				"FromColumnName": "ScheduledFlightDate",
+				"ToColumnName": "ActualFlightDate"
+			},
+			{
+				"FromColumnName": "ScheduledFlightLegArrivalAirportCode",
+				"ToColumnName": "ActualFlightLegArrivalAirportCode"
+			},
+			{
+				"FromColumnName": "ScheduledFlightLegDepartureAirportCode",
+				"ToColumnName": "ActualFlightLegDepartureAirportCode"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"ScheduledFlightLeg.cdm.json/ScheduledFlightLeg\",\"toEntity\":\"ShipmentRouteLeg.cdm.json/ShipmentRouteLeg\",\"joinPairs\":[{\"fromAttribute\":\"CarrierId\",\"toAttribute\":\"ActualCarrierId\"},{\"fromAttribute\":\"FlightNumber\",\"toAttribute\":\"ActualFlightNumber\"},{\"fromAttribute\":\"ScheduledFlightDate\",\"toAttribute\":\"ActualFlightDate\"},{\"fromAttribute\":\"ScheduledFlightLegArrivalAirportCode\",\"toAttribute\":\"ActualFlightLegArrivalAirportCode\"},{\"fromAttribute\":\"ScheduledFlightLegDepartureAirportCode\",\"toAttribute\":\"ActualFlightLegDepartureAirportCode\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

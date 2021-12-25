@@ -1,0 +1,26 @@
+{
+	"name": "relationship-egvfqaxiqa",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "relationship-egvfqaxiqa",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "ShippingLocationType",
+		"ToTableName": "ShippingLocation",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ShippingLocationTypeId",
+				"ToColumnName": "ShippingLocationTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"ShippingLocationType.cdm.json/ShippingLocationType\",\"toEntity\":\"ShippingLocation.cdm.json/ShippingLocation\",\"joinPairs\":[{\"fromAttribute\":\"ShippingLocationTypeId\",\"toAttribute\":\"ShippingLocationTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

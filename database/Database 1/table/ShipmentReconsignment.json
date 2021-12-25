@@ -1,0 +1,102 @@
+{
+	"name": "ShipmentReconsignment",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "ShipmentReconsignment",
+		"Description": "Changing the consignee or destination on a bill of lading while shipment is still in transit. Diversion has substantially the same meaning.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ShipmentId",
+					"Description": "The unique identifier of a Shipment.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentReconsignment.cdm.json/ShipmentReconsignment",
+						"Name": "ShipmentId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "NewConsigneePartyId",
+					"Description": "The unique identifier of a Party.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentReconsignment.cdm.json/ShipmentReconsignment",
+						"Name": "NewConsigneePartyId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "ReconsignmentDate",
+					"Description": "The date of the reconsignment.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentReconsignment.cdm.json/ShipmentReconsignment",
+						"Name": "ReconsignmentDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "ReconsignmentNote",
+					"Description": "A note, comment or additional information regarding the shipment reconsignment.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentReconsignment.cdm.json/ShipmentReconsignment",
+						"Name": "ReconsignmentNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ShipmentId\":{\"entity\":\"ShipmentReconsignment.cdm.json/ShipmentReconsignment\",\"name\":\"ShipmentId\"},\"NewConsigneePartyId\":{\"entity\":\"ShipmentReconsignment.cdm.json/ShipmentReconsignment\",\"name\":\"NewConsigneePartyId\"},\"ReconsignmentDate\":{\"entity\":\"ShipmentReconsignment.cdm.json/ShipmentReconsignment\",\"name\":\"ReconsignmentDate\"},\"ReconsignmentNote\":{\"entity\":\"ShipmentReconsignment.cdm.json/ShipmentReconsignment\",\"name\":\"ReconsignmentNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"ShipmentReconsignment\",\"path\":\"ShipmentReconsignment.cdm.json/ShipmentReconsignment\"},\"description\":\"Changing the consignee or destination on a bill of lading while shipment is still in transit. Diversion has substantially the same meaning.\",\"primaryKey\":[\"ShipmentId\",\"NewConsigneePartyId\",\"ReconsignmentDate\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"ShipmentId\",\"attributeReference\":{\"entity\":\"ShipmentReconsignment.cdm.json/ShipmentReconsignment\",\"name\":\"ShipmentId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"NewConsigneePartyId\",\"attributeReference\":{\"entity\":\"ShipmentReconsignment.cdm.json/ShipmentReconsignment\",\"name\":\"NewConsigneePartyId\"},\"dataType\":\"long\"},{\"type\":\"Existing\",\"name\":\"ReconsignmentDate\",\"attributeReference\":{\"entity\":\"ShipmentReconsignment.cdm.json/ShipmentReconsignment\",\"name\":\"ReconsignmentDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\"},{\"type\":\"Existing\",\"name\":\"ReconsignmentNote\",\"attributeReference\":{\"entity\":\"ShipmentReconsignment.cdm.json/ShipmentReconsignment\",\"name\":\"ReconsignmentNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024}]}}}",
+			"Description": "Changing the consignee or destination on a bill of lading while shipment is still in transit. Diversion has substantially the same meaning.",
+			"DisplayFolderInfo": "{\"name\":\"Shipping\",\"colorCode\":\"#000B42\"}",
+			"PrimaryKeys": "ShipmentId,NewConsigneePartyId,ReconsignmentDate"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

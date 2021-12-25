@@ -1,0 +1,26 @@
+{
+	"name": "relationship-iyxekuvizu",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "relationship-iyxekuvizu",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Carrier",
+		"ToTableName": "Tow",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "CarrierId",
+				"ToColumnName": "CarrierId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Carrier.cdm.json/Carrier\",\"toEntity\":\"Tow.cdm.json/Tow\",\"joinPairs\":[{\"fromAttribute\":\"CarrierId\",\"toAttribute\":\"CarrierId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

@@ -1,0 +1,26 @@
+{
+	"name": "relationship-wraqsxyier",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "relationship-wraqsxyier",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Issue",
+		"ToTableName": "RelatedIssue",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "IssueId",
+				"ToColumnName": "IssueId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Issue.cdm.json/Issue\",\"toEntity\":\"RelatedIssue.cdm.json/RelatedIssue\",\"joinPairs\":[{\"fromAttribute\":\"IssueId\",\"toAttribute\":\"IssueId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

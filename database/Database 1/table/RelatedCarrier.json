@@ -1,0 +1,135 @@
+{
+	"name": "RelatedCarrier",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "RelatedCarrier",
+		"Description": "The relationship of Carriers/Airlines during the associated period.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "CarrierId",
+					"Description": "The unique identifier of a Carrier.",
+					"BaseAttributeReference": {
+						"Entity": "RelatedCarrier.cdm.json/RelatedCarrier",
+						"Name": "CarrierId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "RelatedCarrierId",
+					"Description": "The unique identifier of a Carrier.",
+					"BaseAttributeReference": {
+						"Entity": "RelatedCarrier.cdm.json/RelatedCarrier",
+						"Name": "RelatedCarrierId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PeriodStartTimestamp",
+					"Description": "The timestamp of the relationship start.",
+					"BaseAttributeReference": {
+						"Entity": "RelatedCarrier.cdm.json/RelatedCarrier",
+						"Name": "PeriodStartTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "CarrierRelationshipTypeId",
+					"Description": "The unique identifier of a Carrier Relationship Type.",
+					"BaseAttributeReference": {
+						"Entity": "RelatedCarrier.cdm.json/RelatedCarrier",
+						"Name": "CarrierRelationshipTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PeriodEndTimestamp",
+					"Description": "The timestamp of the relationship end.",
+					"BaseAttributeReference": {
+						"Entity": "RelatedCarrier.cdm.json/RelatedCarrier",
+						"Name": "PeriodEndTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "CarrierRelationshipNote",
+					"Description": "A note, comment or additional information regarding the related carrier.",
+					"BaseAttributeReference": {
+						"Entity": "RelatedCarrier.cdm.json/RelatedCarrier",
+						"Name": "CarrierRelationshipNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"CarrierId\":{\"entity\":\"RelatedCarrier.cdm.json/RelatedCarrier\",\"name\":\"CarrierId\"},\"RelatedCarrierId\":{\"entity\":\"RelatedCarrier.cdm.json/RelatedCarrier\",\"name\":\"RelatedCarrierId\"},\"PeriodStartTimestamp\":{\"entity\":\"RelatedCarrier.cdm.json/RelatedCarrier\",\"name\":\"PeriodStartTimestamp\"},\"CarrierRelationshipTypeId\":{\"entity\":\"RelatedCarrier.cdm.json/RelatedCarrier\",\"name\":\"CarrierRelationshipTypeId\"},\"PeriodEndTimestamp\":{\"entity\":\"RelatedCarrier.cdm.json/RelatedCarrier\",\"name\":\"PeriodEndTimestamp\"},\"CarrierRelationshipNote\":{\"entity\":\"RelatedCarrier.cdm.json/RelatedCarrier\",\"name\":\"CarrierRelationshipNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"RelatedCarrier\",\"path\":\"RelatedCarrier.cdm.json/RelatedCarrier\"},\"description\":\"The relationship of Carriers/Airlines during the associated period.\",\"primaryKey\":[\"CarrierId\",\"RelatedCarrierId\",\"PeriodStartTimestamp\",\"CarrierRelationshipTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"CarrierId\",\"attributeReference\":{\"entity\":\"RelatedCarrier.cdm.json/RelatedCarrier\",\"name\":\"CarrierId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"RelatedCarrierId\",\"attributeReference\":{\"entity\":\"RelatedCarrier.cdm.json/RelatedCarrier\",\"name\":\"RelatedCarrierId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"PeriodStartTimestamp\",\"attributeReference\":{\"entity\":\"RelatedCarrier.cdm.json/RelatedCarrier\",\"name\":\"PeriodStartTimestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"CarrierRelationshipTypeId\",\"attributeReference\":{\"entity\":\"RelatedCarrier.cdm.json/RelatedCarrier\",\"name\":\"CarrierRelationshipTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"PeriodEndTimestamp\",\"attributeReference\":{\"entity\":\"RelatedCarrier.cdm.json/RelatedCarrier\",\"name\":\"PeriodEndTimestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"CarrierRelationshipNote\",\"attributeReference\":{\"entity\":\"RelatedCarrier.cdm.json/RelatedCarrier\",\"name\":\"CarrierRelationshipNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024}]}}}",
+			"Description": "The relationship of Carriers/Airlines during the associated period.",
+			"DisplayFolderInfo": "{\"name\":\"Shipping\",\"colorCode\":\"#000B42\"}",
+			"PrimaryKeys": "CarrierId,RelatedCarrierId,PeriodStartTimestamp,CarrierRelationshipTypeId"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

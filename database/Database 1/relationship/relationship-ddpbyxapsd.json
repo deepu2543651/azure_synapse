@@ -1,0 +1,26 @@
+{
+	"name": "relationship-ddpbyxapsd",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "relationship-ddpbyxapsd",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "EmailType",
+		"ToTableName": "CustomerEmail",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "EmailTypeId",
+				"ToColumnName": "EmailTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"EmailType.cdm.json/EmailType\",\"toEntity\":\"CustomerEmail.cdm.json/CustomerEmail\",\"joinPairs\":[{\"fromAttribute\":\"EmailTypeId\",\"toAttribute\":\"EmailTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

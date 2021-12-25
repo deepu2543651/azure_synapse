@@ -1,0 +1,30 @@
+{
+	"name": "relationship-fejhysevyh",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "relationship-fejhysevyh",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "CarrierRoute",
+		"ToTableName": "CarrierRouteLeg",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "CarrierId",
+				"ToColumnName": "CarrierId"
+			},
+			{
+				"FromColumnName": "CarrierRouteId",
+				"ToColumnName": "CarrierRouteId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"CarrierRoute.cdm.json/CarrierRoute\",\"toEntity\":\"CarrierRouteLeg.cdm.json/CarrierRouteLeg\",\"joinPairs\":[{\"fromAttribute\":\"CarrierId\",\"toAttribute\":\"CarrierId\"},{\"fromAttribute\":\"CarrierRouteId\",\"toAttribute\":\"CarrierRouteId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

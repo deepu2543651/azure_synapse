@@ -1,0 +1,26 @@
+{
+	"name": "relationship-oavxcpmbug",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "relationship-oavxcpmbug",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Container",
+		"ToTableName": "Shipment",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ContainerId",
+				"ToColumnName": "ContainerId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Container.cdm.json/Container\",\"toEntity\":\"Shipment.cdm.json/Shipment\",\"joinPairs\":[{\"fromAttribute\":\"ContainerId\",\"toAttribute\":\"ContainerId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

@@ -1,0 +1,26 @@
+{
+	"name": "relationship-yuqubhxnwu",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "relationship-yuqubhxnwu",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "FlightSegmentType",
+		"ToTableName": "FlightSegment",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "FlightSegmentTypeId",
+				"ToColumnName": "FlightSegmentTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"FlightSegmentType.cdm.json/FlightSegmentType\",\"toEntity\":\"FlightSegment.cdm.json/FlightSegment\",\"joinPairs\":[{\"fromAttribute\":\"FlightSegmentTypeId\",\"toAttribute\":\"FlightSegmentTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

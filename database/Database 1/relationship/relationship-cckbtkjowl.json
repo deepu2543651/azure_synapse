@@ -1,0 +1,26 @@
+{
+	"name": "relationship-cckbtkjowl",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "relationship-cckbtkjowl",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "ContainerSecurityMethod",
+		"ToTableName": "Container",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ContainerSecurityMethodId",
+				"ToColumnName": "ContainerSecurityMethodId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"ContainerSecurityMethod.cdm.json/ContainerSecurityMethod\",\"toEntity\":\"Container.cdm.json/Container\",\"joinPairs\":[{\"fromAttribute\":\"ContainerSecurityMethodId\",\"toAttribute\":\"ContainerSecurityMethodId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

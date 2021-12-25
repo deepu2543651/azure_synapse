@@ -1,0 +1,86 @@
+{
+	"name": "ServiceRequestChargeType",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "ServiceRequestChargeType",
+		"Description": "A charge (fee) type that may be applied to a Service Request.\n\nEx:\n- Application Fee\n- Processing Charge\n- Third-party Information Charge\n- Additional Debit Card Charge\n- Shipping Charge \n- Order Surcharge \n- Customs Charge \n- Return Charge \n- Administrative Charge \n- Re-stocking Charge\n- Re-routing Charge",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ServiceRequestChargeTypeId",
+					"Description": "The unique identifier of a Service Request Charge Type.",
+					"BaseAttributeReference": {
+						"Entity": "ServiceRequestChargeType.cdm.json/ServiceRequestChargeType",
+						"Name": "ServiceRequestChargeTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ServiceRequestChargeTypeName",
+					"Description": "The name of a Service Request Charge Type.",
+					"BaseAttributeReference": {
+						"Entity": "ServiceRequestChargeType.cdm.json/ServiceRequestChargeType",
+						"Name": "ServiceRequestChargeTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ServiceRequestChargeTypeDescription",
+					"Description": "The description of a Service Request Charge Type.",
+					"BaseAttributeReference": {
+						"Entity": "ServiceRequestChargeType.cdm.json/ServiceRequestChargeType",
+						"Name": "ServiceRequestChargeTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ServiceRequestChargeTypeId\":{\"entity\":\"ServiceRequestChargeType.cdm.json/ServiceRequestChargeType\",\"name\":\"ServiceRequestChargeTypeId\"},\"ServiceRequestChargeTypeName\":{\"entity\":\"ServiceRequestChargeType.cdm.json/ServiceRequestChargeType\",\"name\":\"ServiceRequestChargeTypeName\"},\"ServiceRequestChargeTypeDescription\":{\"entity\":\"ServiceRequestChargeType.cdm.json/ServiceRequestChargeType\",\"name\":\"ServiceRequestChargeTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"ServiceRequestChargeType\",\"path\":\"ServiceRequestChargeType.cdm.json/ServiceRequestChargeType\"},\"description\":\"A charge (fee) type that may be applied to a Service Request.\\n\\nEx:\\n- Application Fee\\n- Processing Charge\\n- Third-party Information Charge\\n- Additional Debit Card Charge\\n- Shipping Charge \\n- Order Surcharge \\n- Customs Charge \\n- Return Charge \\n- Administrative Charge \\n- Re-stocking Charge\\n- Re-routing Charge\",\"primaryKey\":[\"ServiceRequestChargeTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"ServiceRequestChargeTypeId\",\"attributeReference\":{\"entity\":\"ServiceRequestChargeType.cdm.json/ServiceRequestChargeType\",\"name\":\"ServiceRequestChargeTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ServiceRequestChargeTypeName\",\"attributeReference\":{\"entity\":\"ServiceRequestChargeType.cdm.json/ServiceRequestChargeType\",\"name\":\"ServiceRequestChargeTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"ServiceRequestChargeTypeDescription\",\"attributeReference\":{\"entity\":\"ServiceRequestChargeType.cdm.json/ServiceRequestChargeType\",\"name\":\"ServiceRequestChargeTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512}]}}}",
+			"Description": "A charge (fee) type that may be applied to a Service Request.\n\nEx:\n- Application Fee\n- Processing Charge\n- Third-party Information Charge\n- Additional Debit Card Charge\n- Shipping Charge \n- Order Surcharge \n- Customs Charge \n- Return Charge \n- Administrative Charge \n- Re-stocking Charge\n- Re-routing Charge",
+			"DisplayFolderInfo": "{\"name\":\"Customer Service & Contact Management\",\"colorCode\":\"#502006\"}",
+			"PrimaryKeys": "ServiceRequestChargeTypeId"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

@@ -1,0 +1,26 @@
+{
+	"name": "relationship-prpjtjhplj",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "relationship-prpjtjhplj",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "TowboatType",
+		"ToTableName": "Towboat",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "TowboatTypeId",
+				"ToColumnName": "TowboatTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"TowboatType.cdm.json/TowboatType\",\"toEntity\":\"Towboat.cdm.json/Towboat\",\"joinPairs\":[{\"fromAttribute\":\"TowboatTypeId\",\"toAttribute\":\"TowboatTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

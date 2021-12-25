@@ -1,0 +1,135 @@
+{
+	"name": "ShipmentRelatedParty",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "ShipmentRelatedParty",
+		"Description": "A party having a relationship with a shipment during the associated period.\n\nFor example, this enables you to track various shippers and parties in involved in the shipment over time.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ShipmentId",
+					"Description": "The unique identifier of a Shipment.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentRelatedParty.cdm.json/ShipmentRelatedParty",
+						"Name": "ShipmentId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PartyId",
+					"Description": "The unique identifier of a Party.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentRelatedParty.cdm.json/ShipmentRelatedParty",
+						"Name": "PartyId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "ShipmentPartyRelationshipTypeId",
+					"Description": "The unique identifier of a Shipment-Party Relationship Type.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentRelatedParty.cdm.json/ShipmentRelatedParty",
+						"Name": "ShipmentPartyRelationshipTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PeriodStartDate",
+					"Description": "The period start date that the shipment party relationship is in effect or defined.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentRelatedParty.cdm.json/ShipmentRelatedParty",
+						"Name": "PeriodStartDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "PeriodEndDate",
+					"Description": "The period end date that the shipment party relationship is in effect or defined.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentRelatedParty.cdm.json/ShipmentRelatedParty",
+						"Name": "PeriodEndDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "ShipmentPartyRelationshipNote",
+					"Description": "A note, comment or additional information regarding the shipment-related party.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentRelatedParty.cdm.json/ShipmentRelatedParty",
+						"Name": "ShipmentPartyRelationshipNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ShipmentId\":{\"entity\":\"ShipmentRelatedParty.cdm.json/ShipmentRelatedParty\",\"name\":\"ShipmentId\"},\"PartyId\":{\"entity\":\"ShipmentRelatedParty.cdm.json/ShipmentRelatedParty\",\"name\":\"PartyId\"},\"ShipmentPartyRelationshipTypeId\":{\"entity\":\"ShipmentRelatedParty.cdm.json/ShipmentRelatedParty\",\"name\":\"ShipmentPartyRelationshipTypeId\"},\"PeriodStartDate\":{\"entity\":\"ShipmentRelatedParty.cdm.json/ShipmentRelatedParty\",\"name\":\"PeriodStartDate\"},\"PeriodEndDate\":{\"entity\":\"ShipmentRelatedParty.cdm.json/ShipmentRelatedParty\",\"name\":\"PeriodEndDate\"},\"ShipmentPartyRelationshipNote\":{\"entity\":\"ShipmentRelatedParty.cdm.json/ShipmentRelatedParty\",\"name\":\"ShipmentPartyRelationshipNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"ShipmentRelatedParty\",\"path\":\"ShipmentRelatedParty.cdm.json/ShipmentRelatedParty\"},\"description\":\"A party having a relationship with a shipment during the associated period.\\n\\nFor example, this enables you to track various shippers and parties in involved in the shipment over time.\",\"primaryKey\":[\"ShipmentId\",\"PartyId\",\"ShipmentPartyRelationshipTypeId\",\"PeriodStartDate\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"ShipmentId\",\"attributeReference\":{\"entity\":\"ShipmentRelatedParty.cdm.json/ShipmentRelatedParty\",\"name\":\"ShipmentId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"PartyId\",\"attributeReference\":{\"entity\":\"ShipmentRelatedParty.cdm.json/ShipmentRelatedParty\",\"name\":\"PartyId\"},\"dataType\":\"long\"},{\"type\":\"Existing\",\"name\":\"ShipmentPartyRelationshipTypeId\",\"attributeReference\":{\"entity\":\"ShipmentRelatedParty.cdm.json/ShipmentRelatedParty\",\"name\":\"ShipmentPartyRelationshipTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"PeriodStartDate\",\"attributeReference\":{\"entity\":\"ShipmentRelatedParty.cdm.json/ShipmentRelatedParty\",\"name\":\"PeriodStartDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\"},{\"type\":\"Existing\",\"name\":\"PeriodEndDate\",\"attributeReference\":{\"entity\":\"ShipmentRelatedParty.cdm.json/ShipmentRelatedParty\",\"name\":\"PeriodEndDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\"},{\"type\":\"Existing\",\"name\":\"ShipmentPartyRelationshipNote\",\"attributeReference\":{\"entity\":\"ShipmentRelatedParty.cdm.json/ShipmentRelatedParty\",\"name\":\"ShipmentPartyRelationshipNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024}]}}}",
+			"Description": "A party having a relationship with a shipment during the associated period.\n\nFor example, this enables you to track various shippers and parties in involved in the shipment over time.",
+			"DisplayFolderInfo": "{\"name\":\"Shipping\",\"colorCode\":\"#000B42\"}",
+			"PrimaryKeys": "ShipmentId,PartyId,ShipmentPartyRelationshipTypeId,PeriodStartDate"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

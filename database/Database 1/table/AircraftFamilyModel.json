@@ -1,0 +1,456 @@
+{
+	"name": "AircraftFamilyModel",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "AircraftFamilyModel",
+		"Description": "A specific configuration of a family of aircraft to achieve specific performance or functional objectives based upon or derived from the Family of Aircraft.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "AircraftFamilyModelId",
+					"Description": "The unique identifier of an Aircraft Family Model.",
+					"BaseAttributeReference": {
+						"Entity": "AircraftFamilyModel.cdm.json/AircraftFamilyModel",
+						"Name": "AircraftFamilyModelId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "AircraftFamilyId",
+					"Description": "The unique identifier of an Aircraft Family.",
+					"BaseAttributeReference": {
+						"Entity": "AircraftFamilyModel.cdm.json/AircraftFamilyModel",
+						"Name": "AircraftFamilyId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "AircraftFamilyModelIntroductionDate",
+					"Description": "The date that the aircraft family model was introduced.",
+					"BaseAttributeReference": {
+						"Entity": "AircraftFamilyModel.cdm.json/AircraftFamilyModel",
+						"Name": "AircraftFamilyModelIntroductionDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "NumberOfFlightdeckCrew",
+					"Description": "The number of flightdeck crew members.",
+					"BaseAttributeReference": {
+						"Entity": "AircraftFamilyModel.cdm.json/AircraftFamilyModel",
+						"Name": "NumberOfFlightdeckCrew"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "NumberOfServiceCrew",
+					"Description": "The number of service crew members.",
+					"BaseAttributeReference": {
+						"Entity": "AircraftFamilyModel.cdm.json/AircraftFamilyModel",
+						"Name": "NumberOfServiceCrew"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "Wingspan",
+					"Description": "The wingspan of the aircraft family model.",
+					"BaseAttributeReference": {
+						"Entity": "AircraftFamilyModel.cdm.json/AircraftFamilyModel",
+						"Name": "Wingspan"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "Length",
+					"Description": "The length of the aircraft family model",
+					"BaseAttributeReference": {
+						"Entity": "AircraftFamilyModel.cdm.json/AircraftFamilyModel",
+						"Name": "Length"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "WingArea",
+					"Description": "The wing area of the aircraft family model",
+					"BaseAttributeReference": {
+						"Entity": "AircraftFamilyModel.cdm.json/AircraftFamilyModel",
+						"Name": "WingArea"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "EmptyWeight",
+					"Description": "The empty weight of the aircraft family model",
+					"BaseAttributeReference": {
+						"Entity": "AircraftFamilyModel.cdm.json/AircraftFamilyModel",
+						"Name": "EmptyWeight"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "TakeoffWeight",
+					"Description": "The takeoff weight of the aircraft family model.",
+					"BaseAttributeReference": {
+						"Entity": "AircraftFamilyModel.cdm.json/AircraftFamilyModel",
+						"Name": "TakeoffWeight"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "GrossWeight",
+					"Description": "The aircraft gross weight (also known as the all-up weight (AUW)) is the total aircraft weight at any moment during the flight or ground operation.",
+					"BaseAttributeReference": {
+						"Entity": "AircraftFamilyModel.cdm.json/AircraftFamilyModel",
+						"Name": "GrossWeight"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "EngineManufacturer",
+					"Description": "The primary engine manufacturer of the aircraft family model",
+					"BaseAttributeReference": {
+						"Entity": "AircraftFamilyModel.cdm.json/AircraftFamilyModel",
+						"Name": "EngineManufacturer"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "CruiseSpeed",
+					"Description": "The cruising speed of the aircraft family model.",
+					"BaseAttributeReference": {
+						"Entity": "AircraftFamilyModel.cdm.json/AircraftFamilyModel",
+						"Name": "CruiseSpeed"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "CruiseAltitude",
+					"Description": "The recommended cruising altitude of the aircraft family model.",
+					"BaseAttributeReference": {
+						"Entity": "AircraftFamilyModel.cdm.json/AircraftFamilyModel",
+						"Name": "CruiseAltitude"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "MaximumOperationalAltitude",
+					"Description": "The maximum operational altitude of the aircraft family model.",
+					"BaseAttributeReference": {
+						"Entity": "AircraftFamilyModel.cdm.json/AircraftFamilyModel",
+						"Name": "MaximumOperationalAltitude"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "TakeoffRoll",
+					"Description": "The length of the runway required for takeoff of the aircraft family model.",
+					"BaseAttributeReference": {
+						"Entity": "AircraftFamilyModel.cdm.json/AircraftFamilyModel",
+						"Name": "TakeoffRoll"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "Range",
+					"Description": "The operational range of the aircraft family model.",
+					"BaseAttributeReference": {
+						"Entity": "AircraftFamilyModel.cdm.json/AircraftFamilyModel",
+						"Name": "Range"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "RangeWithMaximumPayload",
+					"Description": "The operational range with maximum payload of the aircraft family model.",
+					"BaseAttributeReference": {
+						"Entity": "AircraftFamilyModel.cdm.json/AircraftFamilyModel",
+						"Name": "RangeWithMaximumPayload"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "MaximumNumberOfPassengers",
+					"Description": "The maximum number of passengers in the associated aircraft family model.",
+					"BaseAttributeReference": {
+						"Entity": "AircraftFamilyModel.cdm.json/AircraftFamilyModel",
+						"Name": "MaximumNumberOfPassengers"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "MaximumDesignTaxiWeight",
+					"Description": "The maximum design taxi weight (also known as the maximum design ramp weight (MDRW)) is the maximum weight certificated for aircraft maneuvering on the ground (taxiing or towing) as limited by aircraft strength and airworthiness requirements.",
+					"BaseAttributeReference": {
+						"Entity": "AircraftFamilyModel.cdm.json/AircraftFamilyModel",
+						"Name": "MaximumDesignTaxiWeight"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "MaximumDesignTakeoffWeight",
+					"Description": "Is the maximum certificated design weight when the brakes are released for takeoff and is the greatest weight for which compliance with the relevant structural and engineering requirements has been demonstrated by the manufacturer.",
+					"BaseAttributeReference": {
+						"Entity": "AircraftFamilyModel.cdm.json/AircraftFamilyModel",
+						"Name": "MaximumDesignTakeoffWeight"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "MaximumDesignLandingWeight",
+					"Description": "The maximum certificated design weight at which the aircraft meets the appropriate landing certification requirements. It generally depends on the landing gear strength or the landing impact loads on certain parts of the wing structure.\n\nThe MDLW must not exceed the MDTOW.\n\nThe maximum landing weight is typically designed for 10 feet per second (600 feet per minute) sink rate at touch down with no structural damage.",
+					"BaseAttributeReference": {
+						"Entity": "AircraftFamilyModel.cdm.json/AircraftFamilyModel",
+						"Name": "MaximumDesignLandingWeight"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "MaximumDesignZeroFuelWeight",
+					"Description": "The maximum certificated design weight of the aircraft less all usable fuel and other specified usable agents (engine injection fluid, and other consumable propulsion agents). It is the maximum weight permitted before usable fuel and other specified usable fluids are loaded in specified sections of the airplane. The MDZFW is limited by strength and airworthiness requirements. At this weight, the subsequent addition of fuel will not result in the aircraft design strength being exceeded. The weight difference between the MDTOW and the MDZFW may be utilized only for the addition of fuel.",
+					"BaseAttributeReference": {
+						"Entity": "AircraftFamilyModel.cdm.json/AircraftFamilyModel",
+						"Name": "MaximumDesignZeroFuelWeight"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "MinimumFlightWeight",
+					"Description": "Minimum certificated weight for flight as limited by aircraft strength and airworthiness requirements.",
+					"BaseAttributeReference": {
+						"Entity": "AircraftFamilyModel.cdm.json/AircraftFamilyModel",
+						"Name": "MinimumFlightWeight"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "AircraftConfigurationTypeId",
+					"Description": "The unique identifier of an aircraft configuration type.",
+					"BaseAttributeReference": {
+						"Entity": "AircraftFamilyModel.cdm.json/AircraftFamilyModel",
+						"Name": "AircraftConfigurationTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"AircraftFamilyModelId\":{\"entity\":\"AircraftFamilyModel.cdm.json/AircraftFamilyModel\",\"name\":\"AircraftFamilyModelId\"},\"AircraftFamilyId\":{\"entity\":\"AircraftFamilyModel.cdm.json/AircraftFamilyModel\",\"name\":\"AircraftFamilyId\"},\"AircraftFamilyModelIntroductionDate\":{\"entity\":\"AircraftFamilyModel.cdm.json/AircraftFamilyModel\",\"name\":\"AircraftFamilyModelIntroductionDate\"},\"NumberOfFlightdeckCrew\":{\"entity\":\"AircraftFamilyModel.cdm.json/AircraftFamilyModel\",\"name\":\"NumberOfFlightdeckCrew\"},\"NumberOfServiceCrew\":{\"entity\":\"AircraftFamilyModel.cdm.json/AircraftFamilyModel\",\"name\":\"NumberOfServiceCrew\"},\"Wingspan\":{\"entity\":\"AircraftFamilyModel.cdm.json/AircraftFamilyModel\",\"name\":\"Wingspan\"},\"Length\":{\"entity\":\"AircraftFamilyModel.cdm.json/AircraftFamilyModel\",\"name\":\"Length\"},\"WingArea\":{\"entity\":\"AircraftFamilyModel.cdm.json/AircraftFamilyModel\",\"name\":\"WingArea\"},\"EmptyWeight\":{\"entity\":\"AircraftFamilyModel.cdm.json/AircraftFamilyModel\",\"name\":\"EmptyWeight\"},\"TakeoffWeight\":{\"entity\":\"AircraftFamilyModel.cdm.json/AircraftFamilyModel\",\"name\":\"TakeoffWeight\"},\"GrossWeight\":{\"entity\":\"AircraftFamilyModel.cdm.json/AircraftFamilyModel\",\"name\":\"GrossWeight\"},\"EngineManufacturer\":{\"entity\":\"AircraftFamilyModel.cdm.json/AircraftFamilyModel\",\"name\":\"EngineManufacturer\"},\"CruiseSpeed\":{\"entity\":\"AircraftFamilyModel.cdm.json/AircraftFamilyModel\",\"name\":\"CruiseSpeed\"},\"CruiseAltitude\":{\"entity\":\"AircraftFamilyModel.cdm.json/AircraftFamilyModel\",\"name\":\"CruiseAltitude\"},\"MaximumOperationalAltitude\":{\"entity\":\"AircraftFamilyModel.cdm.json/AircraftFamilyModel\",\"name\":\"MaximumOperationalAltitude\"},\"TakeoffRoll\":{\"entity\":\"AircraftFamilyModel.cdm.json/AircraftFamilyModel\",\"name\":\"TakeoffRoll\"},\"Range\":{\"entity\":\"AircraftFamilyModel.cdm.json/AircraftFamilyModel\",\"name\":\"Range\"},\"RangeWithMaximumPayload\":{\"entity\":\"AircraftFamilyModel.cdm.json/AircraftFamilyModel\",\"name\":\"RangeWithMaximumPayload\"},\"MaximumNumberOfPassengers\":{\"entity\":\"AircraftFamilyModel.cdm.json/AircraftFamilyModel\",\"name\":\"MaximumNumberOfPassengers\"},\"MaximumDesignTaxiWeight\":{\"entity\":\"AircraftFamilyModel.cdm.json/AircraftFamilyModel\",\"name\":\"MaximumDesignTaxiWeight\"},\"MaximumDesignTakeoffWeight\":{\"entity\":\"AircraftFamilyModel.cdm.json/AircraftFamilyModel\",\"name\":\"MaximumDesignTakeoffWeight\"},\"MaximumDesignLandingWeight\":{\"entity\":\"AircraftFamilyModel.cdm.json/AircraftFamilyModel\",\"name\":\"MaximumDesignLandingWeight\"},\"MaximumDesignZeroFuelWeight\":{\"entity\":\"AircraftFamilyModel.cdm.json/AircraftFamilyModel\",\"name\":\"MaximumDesignZeroFuelWeight\"},\"MinimumFlightWeight\":{\"entity\":\"AircraftFamilyModel.cdm.json/AircraftFamilyModel\",\"name\":\"MinimumFlightWeight\"},\"AircraftConfigurationTypeId\":{\"entity\":\"AircraftFamilyModel.cdm.json/AircraftFamilyModel\",\"name\":\"AircraftConfigurationTypeId\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"AircraftFamilyModel\",\"path\":\"AircraftFamilyModel.cdm.json/AircraftFamilyModel\"},\"description\":\"A specific configuration of a family of aircraft to achieve specific performance or functional objectives based upon or derived from the Family of Aircraft.\",\"primaryKey\":[\"AircraftFamilyModelId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"AircraftFamilyModelId\",\"attributeReference\":{\"entity\":\"AircraftFamilyModel.cdm.json/AircraftFamilyModel\",\"name\":\"AircraftFamilyModelId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"AircraftFamilyId\",\"attributeReference\":{\"entity\":\"AircraftFamilyModel.cdm.json/AircraftFamilyModel\",\"name\":\"AircraftFamilyId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"AircraftFamilyModelIntroductionDate\",\"attributeReference\":{\"entity\":\"AircraftFamilyModel.cdm.json/AircraftFamilyModel\",\"name\":\"AircraftFamilyModelIntroductionDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\"},{\"type\":\"Existing\",\"name\":\"NumberOfFlightdeckCrew\",\"attributeReference\":{\"entity\":\"AircraftFamilyModel.cdm.json/AircraftFamilyModel\",\"name\":\"NumberOfFlightdeckCrew\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"NumberOfServiceCrew\",\"attributeReference\":{\"entity\":\"AircraftFamilyModel.cdm.json/AircraftFamilyModel\",\"name\":\"NumberOfServiceCrew\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"Wingspan\",\"attributeReference\":{\"entity\":\"AircraftFamilyModel.cdm.json/AircraftFamilyModel\",\"name\":\"Wingspan\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"Length\",\"attributeReference\":{\"entity\":\"AircraftFamilyModel.cdm.json/AircraftFamilyModel\",\"name\":\"Length\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":8},{\"type\":\"Existing\",\"name\":\"WingArea\",\"attributeReference\":{\"entity\":\"AircraftFamilyModel.cdm.json/AircraftFamilyModel\",\"name\":\"WingArea\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"EmptyWeight\",\"attributeReference\":{\"entity\":\"AircraftFamilyModel.cdm.json/AircraftFamilyModel\",\"name\":\"EmptyWeight\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":8},{\"type\":\"Existing\",\"name\":\"TakeoffWeight\",\"attributeReference\":{\"entity\":\"AircraftFamilyModel.cdm.json/AircraftFamilyModel\",\"name\":\"TakeoffWeight\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":8},{\"type\":\"Existing\",\"name\":\"GrossWeight\",\"attributeReference\":{\"entity\":\"AircraftFamilyModel.cdm.json/AircraftFamilyModel\",\"name\":\"GrossWeight\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":8},{\"type\":\"Existing\",\"name\":\"EngineManufacturer\",\"attributeReference\":{\"entity\":\"AircraftFamilyModel.cdm.json/AircraftFamilyModel\",\"name\":\"EngineManufacturer\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"CruiseSpeed\",\"attributeReference\":{\"entity\":\"AircraftFamilyModel.cdm.json/AircraftFamilyModel\",\"name\":\"CruiseSpeed\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":8},{\"type\":\"Existing\",\"name\":\"CruiseAltitude\",\"attributeReference\":{\"entity\":\"AircraftFamilyModel.cdm.json/AircraftFamilyModel\",\"name\":\"CruiseAltitude\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":8},{\"type\":\"Existing\",\"name\":\"MaximumOperationalAltitude\",\"attributeReference\":{\"entity\":\"AircraftFamilyModel.cdm.json/AircraftFamilyModel\",\"name\":\"MaximumOperationalAltitude\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":8},{\"type\":\"Existing\",\"name\":\"TakeoffRoll\",\"attributeReference\":{\"entity\":\"AircraftFamilyModel.cdm.json/AircraftFamilyModel\",\"name\":\"TakeoffRoll\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"Range\",\"attributeReference\":{\"entity\":\"AircraftFamilyModel.cdm.json/AircraftFamilyModel\",\"name\":\"Range\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":8},{\"type\":\"Existing\",\"name\":\"RangeWithMaximumPayload\",\"attributeReference\":{\"entity\":\"AircraftFamilyModel.cdm.json/AircraftFamilyModel\",\"name\":\"RangeWithMaximumPayload\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":8},{\"type\":\"Existing\",\"name\":\"MaximumNumberOfPassengers\",\"attributeReference\":{\"entity\":\"AircraftFamilyModel.cdm.json/AircraftFamilyModel\",\"name\":\"MaximumNumberOfPassengers\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"MaximumDesignTaxiWeight\",\"attributeReference\":{\"entity\":\"AircraftFamilyModel.cdm.json/AircraftFamilyModel\",\"name\":\"MaximumDesignTaxiWeight\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"MaximumDesignTakeoffWeight\",\"attributeReference\":{\"entity\":\"AircraftFamilyModel.cdm.json/AircraftFamilyModel\",\"name\":\"MaximumDesignTakeoffWeight\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"MaximumDesignLandingWeight\",\"attributeReference\":{\"entity\":\"AircraftFamilyModel.cdm.json/AircraftFamilyModel\",\"name\":\"MaximumDesignLandingWeight\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"MaximumDesignZeroFuelWeight\",\"attributeReference\":{\"entity\":\"AircraftFamilyModel.cdm.json/AircraftFamilyModel\",\"name\":\"MaximumDesignZeroFuelWeight\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"MinimumFlightWeight\",\"attributeReference\":{\"entity\":\"AircraftFamilyModel.cdm.json/AircraftFamilyModel\",\"name\":\"MinimumFlightWeight\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"AircraftConfigurationTypeId\",\"attributeReference\":{\"entity\":\"AircraftFamilyModel.cdm.json/AircraftFamilyModel\",\"name\":\"AircraftConfigurationTypeId\"},\"dataType\":\"integer\"}]}}}",
+			"Description": "A specific configuration of a family of aircraft to achieve specific performance or functional objectives based upon or derived from the Family of Aircraft.",
+			"DisplayFolderInfo": "{\"name\":\"Shipping\",\"colorCode\":\"#000B42\"}",
+			"PrimaryKeys": "AircraftFamilyModelId"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

@@ -1,0 +1,26 @@
+{
+	"name": "relationship-vlfkhhusci",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "relationship-vlfkhhusci",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Aircraft",
+		"ToTableName": "ShipmentRouteLegEquipment",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "AircraftId",
+				"ToColumnName": "AircraftId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Aircraft.cdm.json/Aircraft\",\"toEntity\":\"ShipmentRouteLegEquipment.cdm.json/ShipmentRouteLegEquipment\",\"joinPairs\":[{\"fromAttribute\":\"AircraftId\",\"toAttribute\":\"AircraftId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

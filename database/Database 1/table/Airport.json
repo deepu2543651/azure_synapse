@@ -1,0 +1,185 @@
+{
+	"name": "Airport",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "Airport",
+		"Description": "The Airport and associated primary city associated with it.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "AirportCode",
+					"Description": "AKA Airport Code\n\nThree-letter codes used to identify airports.\n\nAirport Code \nThe airport code is a three letter designator for a commercial airport, or other travel point -- e.g. a large bus station. These are the codes that airlines and pilots use to identify airports and are used in timetables, baggage tags, tickets, advertisements, Airline and Global Reservation Systems. There are approximately 9,000 of them in use of a total of 17,576 available",
+					"BaseAttributeReference": {
+						"Entity": "Airport.cdm.json/Airport",
+						"Name": "AirportCode"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Length": 3,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "AirportName",
+					"Description": "The name of the airport associated with the airport code.",
+					"BaseAttributeReference": {
+						"Entity": "Airport.cdm.json/Airport",
+						"Name": "AirportName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "MajorCityServedName",
+					"Description": "The major city served by the associated airport (see Airport City Code).",
+					"BaseAttributeReference": {
+						"Entity": "Airport.cdm.json/Airport",
+						"Name": "MajorCityServedName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "MajorCityStateServer",
+					"Description": "The state in which the 'Major City Server' is located.",
+					"BaseAttributeReference": {
+						"Entity": "Airport.cdm.json/Airport",
+						"Name": "MajorCityStateServer"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 64,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "MajorCityServedCountry",
+					"Description": "The country in which the 'Major City Server' is located.",
+					"BaseAttributeReference": {
+						"Entity": "Airport.cdm.json/Airport",
+						"Name": "MajorCityServedCountry"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 64,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "HubAirportIndicator",
+					"Description": "Airport at which an airline has major operations and connecting flights to smaller destinations.",
+					"BaseAttributeReference": {
+						"Entity": "Airport.cdm.json/Airport",
+						"Name": "HubAirportIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "GatewayAirportIndicator",
+					"Description": "Domestic airports that are origination points for foreign destinations.",
+					"BaseAttributeReference": {
+						"Entity": "Airport.cdm.json/Airport",
+						"Name": "GatewayAirportIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "LocationId",
+					"Description": "The unique identifier of a Location.",
+					"BaseAttributeReference": {
+						"Entity": "Airport.cdm.json/Airport",
+						"Name": "LocationId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "WeatherStationId",
+					"Description": "The unique identifier of a Weather Station.",
+					"BaseAttributeReference": {
+						"Entity": "Airport.cdm.json/Airport",
+						"Name": "WeatherStationId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"AirportCode\":{\"entity\":\"Airport.cdm.json/Airport\",\"name\":\"AirportCode\"},\"AirportName\":{\"entity\":\"Airport.cdm.json/Airport\",\"name\":\"AirportName\"},\"MajorCityServedName\":{\"entity\":\"Airport.cdm.json/Airport\",\"name\":\"MajorCityServedName\"},\"MajorCityStateServer\":{\"entity\":\"Airport.cdm.json/Airport\",\"name\":\"MajorCityStateServer\"},\"MajorCityServedCountry\":{\"entity\":\"Airport.cdm.json/Airport\",\"name\":\"MajorCityServedCountry\"},\"HubAirportIndicator\":{\"entity\":\"Airport.cdm.json/Airport\",\"name\":\"HubAirportIndicator\"},\"GatewayAirportIndicator\":{\"entity\":\"Airport.cdm.json/Airport\",\"name\":\"GatewayAirportIndicator\"},\"LocationId\":{\"entity\":\"Airport.cdm.json/Airport\",\"name\":\"LocationId\"},\"WeatherStationId\":{\"entity\":\"Airport.cdm.json/Airport\",\"name\":\"WeatherStationId\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"Airport\",\"path\":\"Airport.cdm.json/Airport\"},\"description\":\"The Airport and associated primary city associated with it.\",\"primaryKey\":[\"AirportCode\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"AirportCode\",\"attributeReference\":{\"entity\":\"Airport.cdm.json/Airport\",\"name\":\"AirportCode\"},\"dataType\":\"string\",\"dataTypeLength\":3},{\"type\":\"Existing\",\"name\":\"AirportName\",\"attributeReference\":{\"entity\":\"Airport.cdm.json/Airport\",\"name\":\"AirportName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"MajorCityServedName\",\"attributeReference\":{\"entity\":\"Airport.cdm.json/Airport\",\"name\":\"MajorCityServedName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"MajorCityStateServer\",\"attributeReference\":{\"entity\":\"Airport.cdm.json/Airport\",\"name\":\"MajorCityStateServer\"},\"dataType\":\"string\",\"dataTypeLength\":64},{\"type\":\"Existing\",\"name\":\"MajorCityServedCountry\",\"attributeReference\":{\"entity\":\"Airport.cdm.json/Airport\",\"name\":\"MajorCityServedCountry\"},\"dataType\":\"string\",\"dataTypeLength\":64},{\"type\":\"Existing\",\"name\":\"HubAirportIndicator\",\"attributeReference\":{\"entity\":\"Airport.cdm.json/Airport\",\"name\":\"HubAirportIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"GatewayAirportIndicator\",\"attributeReference\":{\"entity\":\"Airport.cdm.json/Airport\",\"name\":\"GatewayAirportIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"LocationId\",\"attributeReference\":{\"entity\":\"Airport.cdm.json/Airport\",\"name\":\"LocationId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"WeatherStationId\",\"attributeReference\":{\"entity\":\"Airport.cdm.json/Airport\",\"name\":\"WeatherStationId\"},\"dataType\":\"integer\"}]}}}",
+			"Description": "The Airport and associated primary city associated with it.",
+			"DisplayFolderInfo": "{\"name\":\"Shipping\",\"colorCode\":\"#000B42\"}",
+			"PrimaryKeys": "AirportCode"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

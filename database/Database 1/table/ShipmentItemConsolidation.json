@@ -1,0 +1,486 @@
+{
+	"name": "ShipmentItemConsolidation",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "ShipmentItemConsolidation",
+		"Description": "The consolidation of shipment items for transfer.\n\nShipments Items are not breakable (SHIPMENT CONSOLIDATION)\n\nShipment Item Consolidation deals with Shipments that can be broken at the item level.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ShipmentId",
+					"Description": "The unique identifier of a Shipment.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentItemConsolidation.cdm.json/ShipmentItemConsolidation",
+						"Name": "ShipmentId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ShipmentItemNumber",
+					"Description": "The shipment line number.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentItemConsolidation.cdm.json/ShipmentItemConsolidation",
+						"Name": "ShipmentItemNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ConsolidatedShipmentId",
+					"Description": "The unique identifier of a Shipment.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentItemConsolidation.cdm.json/ShipmentItemConsolidation",
+						"Name": "ConsolidatedShipmentId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ConsolidatedShipmentItemNumber",
+					"Description": "The shipment line number.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentItemConsolidation.cdm.json/ShipmentItemConsolidation",
+						"Name": "ConsolidatedShipmentItemNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PackingInstructions",
+					"Description": "Packing instructions for the associated shipped items packed via the packaging type.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentItemConsolidation.cdm.json/ShipmentItemConsolidation",
+						"Name": "PackingInstructions"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 2048,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "Quantity",
+					"Description": "The quantity of shipped items in the associated lot.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentItemConsolidation.cdm.json/ShipmentItemConsolidation",
+						"Name": "Quantity"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "PackedLength",
+					"Description": "The length of the Packing Type in which the associated Lot of shipped items are packed.\n\nEx:\nLot 3 consisting of 35 cans are packed in a box of external length, external width and external height measurements.\n\nThis enables shipped to plan for containerizing shipped items.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentItemConsolidation.cdm.json/ShipmentItemConsolidation",
+						"Name": "PackedLength"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "PackedWidth",
+					"Description": "The width of the Packing Type in which the associated Lot of shipped items are packed.\n\nEx:\nLot 3 consisting of 35 cans are packed in a box of external length, external width and external height measurements.\n\nThis enables shipped to plan for containerizing shipped items.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentItemConsolidation.cdm.json/ShipmentItemConsolidation",
+						"Name": "PackedWidth"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "PackedHeight",
+					"Description": "The height of the Packing Type in which the associated Lot of shipped items are packed.\n\nEx:\nLot 3 consisting of 35 cans are packed in a box of external length, external width and external height measurements.\n\nThis enables shipped to plan for containerizing shipped items.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentItemConsolidation.cdm.json/ShipmentItemConsolidation",
+						"Name": "PackedHeight"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "LwhUnitOfMeasureId",
+					"Description": "The unique identifier of a Unit Of Measure.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentItemConsolidation.cdm.json/ShipmentItemConsolidation",
+						"Name": "LwhUnitOfMeasureId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PackedWeight",
+					"Description": "The weight of the Packing Type in which the associated Lot of shipped items are packed.\n\nEx:\nLot 3 consisting of 35 cans are packed in a box of external length, external width and external height measurements.\n\nThis enables shipped to plan for containerizing shipped items.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentItemConsolidation.cdm.json/ShipmentItemConsolidation",
+						"Name": "PackedWeight"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "WeightUnitOfMeasureId",
+					"Description": "The unique identifier of a Unit Of Measure.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentItemConsolidation.cdm.json/ShipmentItemConsolidation",
+						"Name": "WeightUnitOfMeasureId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PackedVolume",
+					"Description": "The volume of the Packing Type in which the associated Lot of shipped items are packed.\n\nEx:\nLot 3 consisting of 35 cans are packed in a box of external length, external width and external height measurements.\n\nThis enables shipped to plan for containerizing shipped items.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentItemConsolidation.cdm.json/ShipmentItemConsolidation",
+						"Name": "PackedVolume"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "VolumeUnitOfMeasureId",
+					"Description": "The unique identifier of a Unit Of Measure.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentItemConsolidation.cdm.json/ShipmentItemConsolidation",
+						"Name": "VolumeUnitOfMeasureId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PackingTypeId",
+					"Description": "The unique identifier of a Packing Type.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentItemConsolidation.cdm.json/ShipmentItemConsolidation",
+						"Name": "PackingTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PackageSerialNumber",
+					"Description": "The serial number of consolidating package.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentItemConsolidation.cdm.json/ShipmentItemConsolidation",
+						"Name": "PackageSerialNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 30,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ConsolidationTimestamp",
+					"Description": "The timestamp of the consolidation.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentItemConsolidation.cdm.json/ShipmentItemConsolidation",
+						"Name": "ConsolidationTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "ResponsibleForConsolidationPartyId",
+					"Description": "The unique identifier of a Party.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentItemConsolidation.cdm.json/ShipmentItemConsolidation",
+						"Name": "ResponsibleForConsolidationPartyId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "ConsolidationLocationId",
+					"Description": "The unique identifier of a Location.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentItemConsolidation.cdm.json/ShipmentItemConsolidation",
+						"Name": "ConsolidationLocationId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ConsolidationReasonId",
+					"Description": "The unique identifier of a consolidation reason.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentItemConsolidation.cdm.json/ShipmentItemConsolidation",
+						"Name": "ConsolidationReasonId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ConsolidationNote",
+					"Description": "A note, comment or additional description of the consolidation.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentItemConsolidation.cdm.json/ShipmentItemConsolidation",
+						"Name": "ConsolidationNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "LooseCargoIndicator",
+					"Description": "Air cargo delivered to an airline as separate packages and loaded and unloaded onto airplanes (or ULDs) by airline employees, and then delivered as separate pieces to the consigned.  See Bulk Cargo.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentItemConsolidation.cdm.json/ShipmentItemConsolidation",
+						"Name": "LooseCargoIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "BandedPackingIndicator",
+					"Description": "Cargo wrapped and/or secured with metal or plastic strips",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentItemConsolidation.cdm.json/ShipmentItemConsolidation",
+						"Name": "BandedPackingIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "ContainerId",
+					"Description": "The unique identifier of the container.\n\nThis would be the 'serial number' of the container if it is serialized.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentItemConsolidation.cdm.json/ShipmentItemConsolidation",
+						"Name": "ContainerId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PalletTypeId",
+					"Description": "The unique identifier of a Pallet Type.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentItemConsolidation.cdm.json/ShipmentItemConsolidation",
+						"Name": "PalletTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PalletSerialNumber",
+					"Description": "The serial number of the Pallet.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentItemConsolidation.cdm.json/ShipmentItemConsolidation",
+						"Name": "PalletSerialNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 30,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ItemSku",
+					"Description": "The Stock Keeping Unit identifier, which is typically used for inventory-related activities.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentItemConsolidation.cdm.json/ShipmentItemConsolidation",
+						"Name": "ItemSku"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 20,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ShipmentId\":{\"entity\":\"ShipmentItemConsolidation.cdm.json/ShipmentItemConsolidation\",\"name\":\"ShipmentId\"},\"ShipmentItemNumber\":{\"entity\":\"ShipmentItemConsolidation.cdm.json/ShipmentItemConsolidation\",\"name\":\"ShipmentItemNumber\"},\"ConsolidatedShipmentId\":{\"entity\":\"ShipmentItemConsolidation.cdm.json/ShipmentItemConsolidation\",\"name\":\"ConsolidatedShipmentId\"},\"ConsolidatedShipmentItemNumber\":{\"entity\":\"ShipmentItemConsolidation.cdm.json/ShipmentItemConsolidation\",\"name\":\"ConsolidatedShipmentItemNumber\"},\"PackingInstructions\":{\"entity\":\"ShipmentItemConsolidation.cdm.json/ShipmentItemConsolidation\",\"name\":\"PackingInstructions\"},\"Quantity\":{\"entity\":\"ShipmentItemConsolidation.cdm.json/ShipmentItemConsolidation\",\"name\":\"Quantity\"},\"PackedLength\":{\"entity\":\"ShipmentItemConsolidation.cdm.json/ShipmentItemConsolidation\",\"name\":\"PackedLength\"},\"PackedWidth\":{\"entity\":\"ShipmentItemConsolidation.cdm.json/ShipmentItemConsolidation\",\"name\":\"PackedWidth\"},\"PackedHeight\":{\"entity\":\"ShipmentItemConsolidation.cdm.json/ShipmentItemConsolidation\",\"name\":\"PackedHeight\"},\"LwhUnitOfMeasureId\":{\"entity\":\"ShipmentItemConsolidation.cdm.json/ShipmentItemConsolidation\",\"name\":\"LwhUnitOfMeasureId\"},\"PackedWeight\":{\"entity\":\"ShipmentItemConsolidation.cdm.json/ShipmentItemConsolidation\",\"name\":\"PackedWeight\"},\"WeightUnitOfMeasureId\":{\"entity\":\"ShipmentItemConsolidation.cdm.json/ShipmentItemConsolidation\",\"name\":\"WeightUnitOfMeasureId\"},\"PackedVolume\":{\"entity\":\"ShipmentItemConsolidation.cdm.json/ShipmentItemConsolidation\",\"name\":\"PackedVolume\"},\"VolumeUnitOfMeasureId\":{\"entity\":\"ShipmentItemConsolidation.cdm.json/ShipmentItemConsolidation\",\"name\":\"VolumeUnitOfMeasureId\"},\"PackingTypeId\":{\"entity\":\"ShipmentItemConsolidation.cdm.json/ShipmentItemConsolidation\",\"name\":\"PackingTypeId\"},\"PackageSerialNumber\":{\"entity\":\"ShipmentItemConsolidation.cdm.json/ShipmentItemConsolidation\",\"name\":\"PackageSerialNumber\"},\"ConsolidationTimestamp\":{\"entity\":\"ShipmentItemConsolidation.cdm.json/ShipmentItemConsolidation\",\"name\":\"ConsolidationTimestamp\"},\"ResponsibleForConsolidationPartyId\":{\"entity\":\"ShipmentItemConsolidation.cdm.json/ShipmentItemConsolidation\",\"name\":\"ResponsibleForConsolidationPartyId\"},\"ConsolidationLocationId\":{\"entity\":\"ShipmentItemConsolidation.cdm.json/ShipmentItemConsolidation\",\"name\":\"ConsolidationLocationId\"},\"ConsolidationReasonId\":{\"entity\":\"ShipmentItemConsolidation.cdm.json/ShipmentItemConsolidation\",\"name\":\"ConsolidationReasonId\"},\"ConsolidationNote\":{\"entity\":\"ShipmentItemConsolidation.cdm.json/ShipmentItemConsolidation\",\"name\":\"ConsolidationNote\"},\"LooseCargoIndicator\":{\"entity\":\"ShipmentItemConsolidation.cdm.json/ShipmentItemConsolidation\",\"name\":\"LooseCargoIndicator\"},\"BandedPackingIndicator\":{\"entity\":\"ShipmentItemConsolidation.cdm.json/ShipmentItemConsolidation\",\"name\":\"BandedPackingIndicator\"},\"ContainerId\":{\"entity\":\"ShipmentItemConsolidation.cdm.json/ShipmentItemConsolidation\",\"name\":\"ContainerId\"},\"PalletTypeId\":{\"entity\":\"ShipmentItemConsolidation.cdm.json/ShipmentItemConsolidation\",\"name\":\"PalletTypeId\"},\"PalletSerialNumber\":{\"entity\":\"ShipmentItemConsolidation.cdm.json/ShipmentItemConsolidation\",\"name\":\"PalletSerialNumber\"},\"ItemSku\":{\"entity\":\"ShipmentItemConsolidation.cdm.json/ShipmentItemConsolidation\",\"name\":\"ItemSku\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"ShipmentItemConsolidation\",\"path\":\"ShipmentItemConsolidation.cdm.json/ShipmentItemConsolidation\"},\"description\":\"The consolidation of shipment items for transfer.\\n\\nShipments Items are not breakable (SHIPMENT CONSOLIDATION)\\n\\nShipment Item Consolidation deals with Shipments that can be broken at the item level.\",\"primaryKey\":[\"ShipmentId\",\"ShipmentItemNumber\",\"ConsolidatedShipmentId\",\"ConsolidatedShipmentItemNumber\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"ShipmentId\",\"attributeReference\":{\"entity\":\"ShipmentItemConsolidation.cdm.json/ShipmentItemConsolidation\",\"name\":\"ShipmentId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ShipmentItemNumber\",\"attributeReference\":{\"entity\":\"ShipmentItemConsolidation.cdm.json/ShipmentItemConsolidation\",\"name\":\"ShipmentItemNumber\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ConsolidatedShipmentId\",\"attributeReference\":{\"entity\":\"ShipmentItemConsolidation.cdm.json/ShipmentItemConsolidation\",\"name\":\"ConsolidatedShipmentId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ConsolidatedShipmentItemNumber\",\"attributeReference\":{\"entity\":\"ShipmentItemConsolidation.cdm.json/ShipmentItemConsolidation\",\"name\":\"ConsolidatedShipmentItemNumber\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"PackingInstructions\",\"attributeReference\":{\"entity\":\"ShipmentItemConsolidation.cdm.json/ShipmentItemConsolidation\",\"name\":\"PackingInstructions\"},\"dataType\":\"string\",\"dataTypeLength\":2048},{\"type\":\"Existing\",\"name\":\"Quantity\",\"attributeReference\":{\"entity\":\"ShipmentItemConsolidation.cdm.json/ShipmentItemConsolidation\",\"name\":\"Quantity\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"PackedLength\",\"attributeReference\":{\"entity\":\"ShipmentItemConsolidation.cdm.json/ShipmentItemConsolidation\",\"name\":\"PackedLength\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":8},{\"type\":\"Existing\",\"name\":\"PackedWidth\",\"attributeReference\":{\"entity\":\"ShipmentItemConsolidation.cdm.json/ShipmentItemConsolidation\",\"name\":\"PackedWidth\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":8},{\"type\":\"Existing\",\"name\":\"PackedHeight\",\"attributeReference\":{\"entity\":\"ShipmentItemConsolidation.cdm.json/ShipmentItemConsolidation\",\"name\":\"PackedHeight\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":8},{\"type\":\"Existing\",\"name\":\"LwhUnitOfMeasureId\",\"attributeReference\":{\"entity\":\"ShipmentItemConsolidation.cdm.json/ShipmentItemConsolidation\",\"name\":\"LwhUnitOfMeasureId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"PackedWeight\",\"attributeReference\":{\"entity\":\"ShipmentItemConsolidation.cdm.json/ShipmentItemConsolidation\",\"name\":\"PackedWeight\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":8},{\"type\":\"Existing\",\"name\":\"WeightUnitOfMeasureId\",\"attributeReference\":{\"entity\":\"ShipmentItemConsolidation.cdm.json/ShipmentItemConsolidation\",\"name\":\"WeightUnitOfMeasureId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"PackedVolume\",\"attributeReference\":{\"entity\":\"ShipmentItemConsolidation.cdm.json/ShipmentItemConsolidation\",\"name\":\"PackedVolume\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":8},{\"type\":\"Existing\",\"name\":\"VolumeUnitOfMeasureId\",\"attributeReference\":{\"entity\":\"ShipmentItemConsolidation.cdm.json/ShipmentItemConsolidation\",\"name\":\"VolumeUnitOfMeasureId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"PackingTypeId\",\"attributeReference\":{\"entity\":\"ShipmentItemConsolidation.cdm.json/ShipmentItemConsolidation\",\"name\":\"PackingTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"PackageSerialNumber\",\"attributeReference\":{\"entity\":\"ShipmentItemConsolidation.cdm.json/ShipmentItemConsolidation\",\"name\":\"PackageSerialNumber\"},\"dataType\":\"string\",\"dataTypeLength\":30},{\"type\":\"Existing\",\"name\":\"ConsolidationTimestamp\",\"attributeReference\":{\"entity\":\"ShipmentItemConsolidation.cdm.json/ShipmentItemConsolidation\",\"name\":\"ConsolidationTimestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"ResponsibleForConsolidationPartyId\",\"attributeReference\":{\"entity\":\"ShipmentItemConsolidation.cdm.json/ShipmentItemConsolidation\",\"name\":\"ResponsibleForConsolidationPartyId\"},\"dataType\":\"long\"},{\"type\":\"Existing\",\"name\":\"ConsolidationLocationId\",\"attributeReference\":{\"entity\":\"ShipmentItemConsolidation.cdm.json/ShipmentItemConsolidation\",\"name\":\"ConsolidationLocationId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ConsolidationReasonId\",\"attributeReference\":{\"entity\":\"ShipmentItemConsolidation.cdm.json/ShipmentItemConsolidation\",\"name\":\"ConsolidationReasonId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ConsolidationNote\",\"attributeReference\":{\"entity\":\"ShipmentItemConsolidation.cdm.json/ShipmentItemConsolidation\",\"name\":\"ConsolidationNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024},{\"type\":\"Existing\",\"name\":\"LooseCargoIndicator\",\"attributeReference\":{\"entity\":\"ShipmentItemConsolidation.cdm.json/ShipmentItemConsolidation\",\"name\":\"LooseCargoIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"BandedPackingIndicator\",\"attributeReference\":{\"entity\":\"ShipmentItemConsolidation.cdm.json/ShipmentItemConsolidation\",\"name\":\"BandedPackingIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"ContainerId\",\"attributeReference\":{\"entity\":\"ShipmentItemConsolidation.cdm.json/ShipmentItemConsolidation\",\"name\":\"ContainerId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"PalletTypeId\",\"attributeReference\":{\"entity\":\"ShipmentItemConsolidation.cdm.json/ShipmentItemConsolidation\",\"name\":\"PalletTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"PalletSerialNumber\",\"attributeReference\":{\"entity\":\"ShipmentItemConsolidation.cdm.json/ShipmentItemConsolidation\",\"name\":\"PalletSerialNumber\"},\"dataType\":\"string\",\"dataTypeLength\":30},{\"type\":\"Existing\",\"name\":\"ItemSku\",\"attributeReference\":{\"entity\":\"ShipmentItemConsolidation.cdm.json/ShipmentItemConsolidation\",\"name\":\"ItemSku\"},\"dataType\":\"string\",\"dataTypeLength\":20}]}}}",
+			"Description": "The consolidation of shipment items for transfer.\n\nShipments Items are not breakable (SHIPMENT CONSOLIDATION)\n\nShipment Item Consolidation deals with Shipments that can be broken at the item level.",
+			"DisplayFolderInfo": "{\"name\":\"Shipping\",\"colorCode\":\"#000B42\"}",
+			"PrimaryKeys": "ShipmentId,ShipmentItemNumber,ConsolidatedShipmentId,ConsolidatedShipmentItemNumber"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

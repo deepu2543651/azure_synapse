@@ -1,0 +1,675 @@
+{
+	"name": "Vehicle",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "Vehicle",
+		"Description": "A physical manufactured vehicle of a particular model style.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "VehicleId",
+					"Description": "The unique identifier of a Vehicle.",
+					"BaseAttributeReference": {
+						"Entity": "Vehicle.cdm.json/Vehicle",
+						"Name": "VehicleId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "VehicleIdentificationNumber",
+					"Description": "The vehicle identification number (VIN) on your vehicle. \n\nThis number is usually found on the dashboard of your vehicle on the driver's side, and is usually listed on the vehicle registration and title. \nThe VIN number is a combination of letters and numbers 17 characters in length that can be used to identify the make, model, and year of your car.\n\nAssigned by the manufacturer, this number is unique to each vehicle and appears on the vehicle's registration and title.",
+					"BaseAttributeReference": {
+						"Entity": "Vehicle.cdm.json/Vehicle",
+						"Name": "VehicleIdentificationNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 17,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "VehicleTypeId",
+					"Description": "The unique identifier of a vehicle type.",
+					"BaseAttributeReference": {
+						"Entity": "Vehicle.cdm.json/Vehicle",
+						"Name": "VehicleTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "BbdDistance",
+					"Description": "Distance from a truck's front bumper to the back of its cab.",
+					"BaseAttributeReference": {
+						"Entity": "Vehicle.cdm.json/Vehicle",
+						"Name": "BbdDistance"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "GrossVehicleWeightRatingGvwr",
+					"Description": "Maximum weight an axle is rated to carry by the manufacturer. Includes both the weight of the axle and the portion of a vehicle's weight carried by the axle.",
+					"BaseAttributeReference": {
+						"Entity": "Vehicle.cdm.json/Vehicle",
+						"Name": "GrossVehicleWeightRatingGvwr"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ChassisWeight",
+					"Description": "Weight of the empty truck, without occupants or load.",
+					"BaseAttributeReference": {
+						"Entity": "Vehicle.cdm.json/Vehicle",
+						"Name": "ChassisWeight"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "MaximumAxleLoad",
+					"Description": "Maximum load permitted to be carried on each axle of a motor vehicle.",
+					"BaseAttributeReference": {
+						"Entity": "Vehicle.cdm.json/Vehicle",
+						"Name": "MaximumAxleLoad"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "HorsepowerFootPounds",
+					"Description": "Measure of power (the amount of work that can be done over a given amount of time). One horsepower is defined as 33,000 foot-pounds of work in one minute. Example: Lifting 33,000 pounds one foot in one minute, or lifting 3300 pounds ten feet in one minute.",
+					"BaseAttributeReference": {
+						"Entity": "Vehicle.cdm.json/Vehicle",
+						"Name": "HorsepowerFootPounds"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "NumberOfTires",
+					"Description": "The number of tires or wheels that the truck/tractor has.",
+					"BaseAttributeReference": {
+						"Entity": "Vehicle.cdm.json/Vehicle",
+						"Name": "NumberOfTires"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "OwnerOperatorIndicator",
+					"Description": "Indicates whether the vehicle is owned by the same person who is running day-to-day operations.",
+					"BaseAttributeReference": {
+						"Entity": "Vehicle.cdm.json/Vehicle",
+						"Name": "OwnerOperatorIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "AlternativeFueledVehicleIndicator",
+					"Description": "Vehicle powered by a fuel other than gasoline or diesel.",
+					"BaseAttributeReference": {
+						"Entity": "Vehicle.cdm.json/Vehicle",
+						"Name": "AlternativeFueledVehicleIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "AntiLockingBrakingSystemIndicator",
+					"Description": "Computer, sensors and solenoid valves which together monitor wheel speed and modulate braking force if wheel lockup is sensed during braking. Helps the driver retain control of the vehicle during heavy braking on slippery roads.",
+					"BaseAttributeReference": {
+						"Entity": "Vehicle.cdm.json/Vehicle",
+						"Name": "AntiLockingBrakingSystemIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "CabOverEngineIndicator",
+					"Description": "Truck or tractor design in which the cab sits over the engine on the chassis.",
+					"BaseAttributeReference": {
+						"Entity": "Vehicle.cdm.json/Vehicle",
+						"Name": "CabOverEngineIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "DaylightRunningLightsIndicator",
+					"Description": "System that automatically turns on a vehicle's low beam headlights when the parking brake is released and the ignition is on",
+					"BaseAttributeReference": {
+						"Entity": "Vehicle.cdm.json/Vehicle",
+						"Name": "DaylightRunningLightsIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "ConvertibleTruckIndicator",
+					"Description": "convertible: a truck or trailer that can be used either as a flatbed or open top by means of removing side panels.",
+					"BaseAttributeReference": {
+						"Entity": "Vehicle.cdm.json/Vehicle",
+						"Name": "ConvertibleTruckIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "SynchronizedTransmissionIndicator",
+					"Description": "Transmission with built-in mechanisms to automatically \"equalize\" the speed of its gears to allow smooth shifting without the need to double-clutch.",
+					"BaseAttributeReference": {
+						"Entity": "Vehicle.cdm.json/Vehicle",
+						"Name": "SynchronizedTransmissionIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "AutomaticTractionControlIndicator",
+					"Description": "Usually an optional feature based on ABS, it prevents spinning of the drive wheels under power on slippery surfaces by braking individual wheels and/or reducing engine throttle. Also called ASR, an acronym sometimes loosely translated from the German as anti-spin regulation.",
+					"BaseAttributeReference": {
+						"Entity": "Vehicle.cdm.json/Vehicle",
+						"Name": "AutomaticTractionControlIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "AutomaticVehicleIdentificationIndicator",
+					"Description": "System combining an on-board transponder with roadside receivers to automate identification of vehicles. Uses include electronic toll collection and stolen vehicle detection. (see IVHS)",
+					"BaseAttributeReference": {
+						"Entity": "Vehicle.cdm.json/Vehicle",
+						"Name": "AutomaticVehicleIdentificationIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "AlternativeFuelVehicleIndicator",
+					"Description": "Vehicle powered by a fuel other than gasoline or diesel.",
+					"BaseAttributeReference": {
+						"Entity": "Vehicle.cdm.json/Vehicle",
+						"Name": "AlternativeFuelVehicleIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "ContainerChassisIndicator",
+					"Description": "Single-purpose semi trailer designed to carry a shipping container.",
+					"BaseAttributeReference": {
+						"Entity": "Vehicle.cdm.json/Vehicle",
+						"Name": "ContainerChassisIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "SleeperIndicator",
+					"Description": "Sleeping compartment mounted behind a truck cab, sometimes attached to the cab or even designed to be an integral part of it.",
+					"BaseAttributeReference": {
+						"Entity": "Vehicle.cdm.json/Vehicle",
+						"Name": "SleeperIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "AvailabilityDate",
+					"Description": "The first date that the vehicle will be available for sale.",
+					"BaseAttributeReference": {
+						"Entity": "Vehicle.cdm.json/Vehicle",
+						"Name": "AvailabilityDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "DateManufactured",
+					"Description": "The date that the vehicle was delivered from manufacturing.",
+					"BaseAttributeReference": {
+						"Entity": "Vehicle.cdm.json/Vehicle",
+						"Name": "DateManufactured"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "DealershipId",
+					"Description": "The unique identifier of a Dealership at which the vehicle is located or will be available at.",
+					"BaseAttributeReference": {
+						"Entity": "Vehicle.cdm.json/Vehicle",
+						"Name": "DealershipId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "InteriorColorId",
+					"Description": "The unique identifier of a color.",
+					"BaseAttributeReference": {
+						"Entity": "Vehicle.cdm.json/Vehicle",
+						"Name": "InteriorColorId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ExteriorColorId",
+					"Description": "The unique identifier of a color.",
+					"BaseAttributeReference": {
+						"Entity": "Vehicle.cdm.json/Vehicle",
+						"Name": "ExteriorColorId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ItemSerialNumber",
+					"Description": "The serial number of the Item.",
+					"BaseAttributeReference": {
+						"Entity": "Vehicle.cdm.json/Vehicle",
+						"Name": "ItemSerialNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 30,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ItemSku",
+					"Description": "The Stock Keeping Unit identifier, which is typically used for inventory-related activities.",
+					"BaseAttributeReference": {
+						"Entity": "Vehicle.cdm.json/Vehicle",
+						"Name": "ItemSku"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 20,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "VehicleMsrpAmount",
+					"Description": "The Manufacturer's Suggested Retail Price (MSRP) is the retail price set by the manufacturer and posted on the federally required window sticker often referred to as the Monroney sticker. \n\nThe Monroney sticker may not be removed by anyone other than the purchaser. \n\nEach dealer is free to set the sale price of each vehicle. The Base Retail Price is the MSRP for a vehicle with no additional options included.",
+					"BaseAttributeReference": {
+						"Entity": "Vehicle.cdm.json/Vehicle",
+						"Name": "VehicleMsrpAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "VehicleTotalOptionsPriceAmount",
+					"Description": "The total price of all options.",
+					"BaseAttributeReference": {
+						"Entity": "Vehicle.cdm.json/Vehicle",
+						"Name": "VehicleTotalOptionsPriceAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "VehicleTotalAccessoriesPriceAmount",
+					"Description": "The total price of all accessories.",
+					"BaseAttributeReference": {
+						"Entity": "Vehicle.cdm.json/Vehicle",
+						"Name": "VehicleTotalAccessoriesPriceAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "VehicleTotalPackagesPriceAmount",
+					"Description": "The total price of all packages.",
+					"BaseAttributeReference": {
+						"Entity": "Vehicle.cdm.json/Vehicle",
+						"Name": "VehicleTotalPackagesPriceAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "VehicleModelStyleId",
+					"Description": "The unique identifier of a style.",
+					"BaseAttributeReference": {
+						"Entity": "Vehicle.cdm.json/Vehicle",
+						"Name": "VehicleModelStyleId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "ModelId",
+					"Description": "The unique identifier of a model.",
+					"BaseAttributeReference": {
+						"Entity": "Vehicle.cdm.json/Vehicle",
+						"Name": "ModelId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ModelYearId",
+					"Description": "The unique identifier of a model year.",
+					"BaseAttributeReference": {
+						"Entity": "Vehicle.cdm.json/Vehicle",
+						"Name": "ModelYearId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ModelYearTrimId",
+					"Description": "The unique identifier of a model year trim.",
+					"BaseAttributeReference": {
+						"Entity": "Vehicle.cdm.json/Vehicle",
+						"Name": "ModelYearTrimId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "VehicleOwnedByCarRentalAgencyId",
+					"Description": "The unique identifier of a Car Rental Agency.",
+					"BaseAttributeReference": {
+						"Entity": "Vehicle.cdm.json/Vehicle",
+						"Name": "VehicleOwnedByCarRentalAgencyId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "AssetId",
+					"Description": "The unique identifier of an Asset.",
+					"BaseAttributeReference": {
+						"Entity": "Vehicle.cdm.json/Vehicle",
+						"Name": "AssetId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "OwningPartyId",
+					"Description": "The unique identifier of a Party.",
+					"BaseAttributeReference": {
+						"Entity": "Vehicle.cdm.json/Vehicle",
+						"Name": "OwningPartyId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"VehicleId\":{\"entity\":\"Vehicle.cdm.json/Vehicle\",\"name\":\"VehicleId\"},\"VehicleIdentificationNumber\":{\"entity\":\"Vehicle.cdm.json/Vehicle\",\"name\":\"VehicleIdentificationNumber\"},\"VehicleTypeId\":{\"entity\":\"Vehicle.cdm.json/Vehicle\",\"name\":\"VehicleTypeId\"},\"BbdDistance\":{\"entity\":\"Vehicle.cdm.json/Vehicle\",\"name\":\"BbdDistance\"},\"GrossVehicleWeightRatingGvwr\":{\"entity\":\"Vehicle.cdm.json/Vehicle\",\"name\":\"GrossVehicleWeightRatingGvwr\"},\"ChassisWeight\":{\"entity\":\"Vehicle.cdm.json/Vehicle\",\"name\":\"ChassisWeight\"},\"MaximumAxleLoad\":{\"entity\":\"Vehicle.cdm.json/Vehicle\",\"name\":\"MaximumAxleLoad\"},\"HorsepowerFootPounds\":{\"entity\":\"Vehicle.cdm.json/Vehicle\",\"name\":\"HorsepowerFootPounds\"},\"NumberOfTires\":{\"entity\":\"Vehicle.cdm.json/Vehicle\",\"name\":\"NumberOfTires\"},\"OwnerOperatorIndicator\":{\"entity\":\"Vehicle.cdm.json/Vehicle\",\"name\":\"OwnerOperatorIndicator\"},\"AlternativeFueledVehicleIndicator\":{\"entity\":\"Vehicle.cdm.json/Vehicle\",\"name\":\"AlternativeFueledVehicleIndicator\"},\"AntiLockingBrakingSystemIndicator\":{\"entity\":\"Vehicle.cdm.json/Vehicle\",\"name\":\"AntiLockingBrakingSystemIndicator\"},\"CabOverEngineIndicator\":{\"entity\":\"Vehicle.cdm.json/Vehicle\",\"name\":\"CabOverEngineIndicator\"},\"DaylightRunningLightsIndicator\":{\"entity\":\"Vehicle.cdm.json/Vehicle\",\"name\":\"DaylightRunningLightsIndicator\"},\"ConvertibleTruckIndicator\":{\"entity\":\"Vehicle.cdm.json/Vehicle\",\"name\":\"ConvertibleTruckIndicator\"},\"SynchronizedTransmissionIndicator\":{\"entity\":\"Vehicle.cdm.json/Vehicle\",\"name\":\"SynchronizedTransmissionIndicator\"},\"AutomaticTractionControlIndicator\":{\"entity\":\"Vehicle.cdm.json/Vehicle\",\"name\":\"AutomaticTractionControlIndicator\"},\"AutomaticVehicleIdentificationIndicator\":{\"entity\":\"Vehicle.cdm.json/Vehicle\",\"name\":\"AutomaticVehicleIdentificationIndicator\"},\"AlternativeFuelVehicleIndicator\":{\"entity\":\"Vehicle.cdm.json/Vehicle\",\"name\":\"AlternativeFuelVehicleIndicator\"},\"ContainerChassisIndicator\":{\"entity\":\"Vehicle.cdm.json/Vehicle\",\"name\":\"ContainerChassisIndicator\"},\"SleeperIndicator\":{\"entity\":\"Vehicle.cdm.json/Vehicle\",\"name\":\"SleeperIndicator\"},\"AvailabilityDate\":{\"entity\":\"Vehicle.cdm.json/Vehicle\",\"name\":\"AvailabilityDate\"},\"DateManufactured\":{\"entity\":\"Vehicle.cdm.json/Vehicle\",\"name\":\"DateManufactured\"},\"DealershipId\":{\"entity\":\"Vehicle.cdm.json/Vehicle\",\"name\":\"DealershipId\"},\"InteriorColorId\":{\"entity\":\"Vehicle.cdm.json/Vehicle\",\"name\":\"InteriorColorId\"},\"ExteriorColorId\":{\"entity\":\"Vehicle.cdm.json/Vehicle\",\"name\":\"ExteriorColorId\"},\"ItemSerialNumber\":{\"entity\":\"Vehicle.cdm.json/Vehicle\",\"name\":\"ItemSerialNumber\"},\"ItemSku\":{\"entity\":\"Vehicle.cdm.json/Vehicle\",\"name\":\"ItemSku\"},\"VehicleMsrpAmount\":{\"entity\":\"Vehicle.cdm.json/Vehicle\",\"name\":\"VehicleMsrpAmount\"},\"VehicleTotalOptionsPriceAmount\":{\"entity\":\"Vehicle.cdm.json/Vehicle\",\"name\":\"VehicleTotalOptionsPriceAmount\"},\"VehicleTotalAccessoriesPriceAmount\":{\"entity\":\"Vehicle.cdm.json/Vehicle\",\"name\":\"VehicleTotalAccessoriesPriceAmount\"},\"VehicleTotalPackagesPriceAmount\":{\"entity\":\"Vehicle.cdm.json/Vehicle\",\"name\":\"VehicleTotalPackagesPriceAmount\"},\"VehicleModelStyleId\":{\"entity\":\"Vehicle.cdm.json/Vehicle\",\"name\":\"VehicleModelStyleId\"},\"ModelId\":{\"entity\":\"Vehicle.cdm.json/Vehicle\",\"name\":\"ModelId\"},\"ModelYearId\":{\"entity\":\"Vehicle.cdm.json/Vehicle\",\"name\":\"ModelYearId\"},\"ModelYearTrimId\":{\"entity\":\"Vehicle.cdm.json/Vehicle\",\"name\":\"ModelYearTrimId\"},\"VehicleOwnedByCarRentalAgencyId\":{\"entity\":\"Vehicle.cdm.json/Vehicle\",\"name\":\"VehicleOwnedByCarRentalAgencyId\"},\"AssetId\":{\"entity\":\"Vehicle.cdm.json/Vehicle\",\"name\":\"AssetId\"},\"OwningPartyId\":{\"entity\":\"Vehicle.cdm.json/Vehicle\",\"name\":\"OwningPartyId\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"Vehicle\",\"path\":\"Vehicle.cdm.json/Vehicle\"},\"description\":\"A physical manufactured vehicle of a particular model style.\",\"primaryKey\":[\"VehicleId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"VehicleId\",\"attributeReference\":{\"entity\":\"Vehicle.cdm.json/Vehicle\",\"name\":\"VehicleId\"},\"dataType\":\"long\"},{\"type\":\"Existing\",\"name\":\"VehicleIdentificationNumber\",\"attributeReference\":{\"entity\":\"Vehicle.cdm.json/Vehicle\",\"name\":\"VehicleIdentificationNumber\"},\"dataType\":\"string\",\"dataTypeLength\":17},{\"type\":\"Existing\",\"name\":\"VehicleTypeId\",\"attributeReference\":{\"entity\":\"Vehicle.cdm.json/Vehicle\",\"name\":\"VehicleTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"BbdDistance\",\"attributeReference\":{\"entity\":\"Vehicle.cdm.json/Vehicle\",\"name\":\"BbdDistance\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"GrossVehicleWeightRatingGvwr\",\"attributeReference\":{\"entity\":\"Vehicle.cdm.json/Vehicle\",\"name\":\"GrossVehicleWeightRatingGvwr\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ChassisWeight\",\"attributeReference\":{\"entity\":\"Vehicle.cdm.json/Vehicle\",\"name\":\"ChassisWeight\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":8},{\"type\":\"Existing\",\"name\":\"MaximumAxleLoad\",\"attributeReference\":{\"entity\":\"Vehicle.cdm.json/Vehicle\",\"name\":\"MaximumAxleLoad\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"HorsepowerFootPounds\",\"attributeReference\":{\"entity\":\"Vehicle.cdm.json/Vehicle\",\"name\":\"HorsepowerFootPounds\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"NumberOfTires\",\"attributeReference\":{\"entity\":\"Vehicle.cdm.json/Vehicle\",\"name\":\"NumberOfTires\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"OwnerOperatorIndicator\",\"attributeReference\":{\"entity\":\"Vehicle.cdm.json/Vehicle\",\"name\":\"OwnerOperatorIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"AlternativeFueledVehicleIndicator\",\"attributeReference\":{\"entity\":\"Vehicle.cdm.json/Vehicle\",\"name\":\"AlternativeFueledVehicleIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"AntiLockingBrakingSystemIndicator\",\"attributeReference\":{\"entity\":\"Vehicle.cdm.json/Vehicle\",\"name\":\"AntiLockingBrakingSystemIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"CabOverEngineIndicator\",\"attributeReference\":{\"entity\":\"Vehicle.cdm.json/Vehicle\",\"name\":\"CabOverEngineIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"DaylightRunningLightsIndicator\",\"attributeReference\":{\"entity\":\"Vehicle.cdm.json/Vehicle\",\"name\":\"DaylightRunningLightsIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"ConvertibleTruckIndicator\",\"attributeReference\":{\"entity\":\"Vehicle.cdm.json/Vehicle\",\"name\":\"ConvertibleTruckIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"SynchronizedTransmissionIndicator\",\"attributeReference\":{\"entity\":\"Vehicle.cdm.json/Vehicle\",\"name\":\"SynchronizedTransmissionIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"AutomaticTractionControlIndicator\",\"attributeReference\":{\"entity\":\"Vehicle.cdm.json/Vehicle\",\"name\":\"AutomaticTractionControlIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"AutomaticVehicleIdentificationIndicator\",\"attributeReference\":{\"entity\":\"Vehicle.cdm.json/Vehicle\",\"name\":\"AutomaticVehicleIdentificationIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"AlternativeFuelVehicleIndicator\",\"attributeReference\":{\"entity\":\"Vehicle.cdm.json/Vehicle\",\"name\":\"AlternativeFuelVehicleIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"ContainerChassisIndicator\",\"attributeReference\":{\"entity\":\"Vehicle.cdm.json/Vehicle\",\"name\":\"ContainerChassisIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"SleeperIndicator\",\"attributeReference\":{\"entity\":\"Vehicle.cdm.json/Vehicle\",\"name\":\"SleeperIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"AvailabilityDate\",\"attributeReference\":{\"entity\":\"Vehicle.cdm.json/Vehicle\",\"name\":\"AvailabilityDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\"},{\"type\":\"Existing\",\"name\":\"DateManufactured\",\"attributeReference\":{\"entity\":\"Vehicle.cdm.json/Vehicle\",\"name\":\"DateManufactured\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\"},{\"type\":\"Existing\",\"name\":\"DealershipId\",\"attributeReference\":{\"entity\":\"Vehicle.cdm.json/Vehicle\",\"name\":\"DealershipId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"InteriorColorId\",\"attributeReference\":{\"entity\":\"Vehicle.cdm.json/Vehicle\",\"name\":\"InteriorColorId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ExteriorColorId\",\"attributeReference\":{\"entity\":\"Vehicle.cdm.json/Vehicle\",\"name\":\"ExteriorColorId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ItemSerialNumber\",\"attributeReference\":{\"entity\":\"Vehicle.cdm.json/Vehicle\",\"name\":\"ItemSerialNumber\"},\"dataType\":\"string\",\"dataTypeLength\":30},{\"type\":\"Existing\",\"name\":\"ItemSku\",\"attributeReference\":{\"entity\":\"Vehicle.cdm.json/Vehicle\",\"name\":\"ItemSku\"},\"dataType\":\"string\",\"dataTypeLength\":20},{\"type\":\"Existing\",\"name\":\"VehicleMsrpAmount\",\"attributeReference\":{\"entity\":\"Vehicle.cdm.json/Vehicle\",\"name\":\"VehicleMsrpAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"VehicleTotalOptionsPriceAmount\",\"attributeReference\":{\"entity\":\"Vehicle.cdm.json/Vehicle\",\"name\":\"VehicleTotalOptionsPriceAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"VehicleTotalAccessoriesPriceAmount\",\"attributeReference\":{\"entity\":\"Vehicle.cdm.json/Vehicle\",\"name\":\"VehicleTotalAccessoriesPriceAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"VehicleTotalPackagesPriceAmount\",\"attributeReference\":{\"entity\":\"Vehicle.cdm.json/Vehicle\",\"name\":\"VehicleTotalPackagesPriceAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"VehicleModelStyleId\",\"attributeReference\":{\"entity\":\"Vehicle.cdm.json/Vehicle\",\"name\":\"VehicleModelStyleId\"},\"dataType\":\"long\"},{\"type\":\"Existing\",\"name\":\"ModelId\",\"attributeReference\":{\"entity\":\"Vehicle.cdm.json/Vehicle\",\"name\":\"ModelId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ModelYearId\",\"attributeReference\":{\"entity\":\"Vehicle.cdm.json/Vehicle\",\"name\":\"ModelYearId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ModelYearTrimId\",\"attributeReference\":{\"entity\":\"Vehicle.cdm.json/Vehicle\",\"name\":\"ModelYearTrimId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"VehicleOwnedByCarRentalAgencyId\",\"attributeReference\":{\"entity\":\"Vehicle.cdm.json/Vehicle\",\"name\":\"VehicleOwnedByCarRentalAgencyId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"AssetId\",\"attributeReference\":{\"entity\":\"Vehicle.cdm.json/Vehicle\",\"name\":\"AssetId\"},\"dataType\":\"long\"},{\"type\":\"Existing\",\"name\":\"OwningPartyId\",\"attributeReference\":{\"entity\":\"Vehicle.cdm.json/Vehicle\",\"name\":\"OwningPartyId\"},\"dataType\":\"long\"}]}}}",
+			"Description": "A physical manufactured vehicle of a particular model style.",
+			"DisplayFolderInfo": "{\"name\":\"Inventory\",\"colorCode\":\"#EA279F\"}",
+			"PrimaryKeys": "VehicleId"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

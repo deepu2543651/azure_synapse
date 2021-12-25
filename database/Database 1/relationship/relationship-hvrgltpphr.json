@@ -1,0 +1,26 @@
+{
+	"name": "relationship-hvrgltpphr",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "relationship-hvrgltpphr",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "CommunicationDevice",
+		"ToTableName": "ApplicationCommunication",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "DeviceId",
+				"ToColumnName": "DeviceId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"CommunicationDevice.cdm.json/CommunicationDevice\",\"toEntity\":\"ApplicationCommunication.cdm.json/ApplicationCommunication\",\"joinPairs\":[{\"fromAttribute\":\"DeviceId\",\"toAttribute\":\"DeviceId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

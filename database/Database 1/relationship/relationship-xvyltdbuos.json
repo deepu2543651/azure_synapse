@@ -1,0 +1,34 @@
+{
+	"name": "relationship-xvyltdbuos",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "relationship-xvyltdbuos",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "ScheduledFlight",
+		"ToTableName": "ScheduledFlightStatus",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "CarrierId",
+				"ToColumnName": "CarrierId"
+			},
+			{
+				"FromColumnName": "FlightNumber",
+				"ToColumnName": "FlightNumber"
+			},
+			{
+				"FromColumnName": "ScheduledFlightDate",
+				"ToColumnName": "ScheduledFlightDate"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"ScheduledFlight.cdm.json/ScheduledFlight\",\"toEntity\":\"ScheduledFlightStatus.cdm.json/ScheduledFlightStatus\",\"joinPairs\":[{\"fromAttribute\":\"CarrierId\",\"toAttribute\":\"CarrierId\"},{\"fromAttribute\":\"FlightNumber\",\"toAttribute\":\"FlightNumber\"},{\"fromAttribute\":\"ScheduledFlightDate\",\"toAttribute\":\"ScheduledFlightDate\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

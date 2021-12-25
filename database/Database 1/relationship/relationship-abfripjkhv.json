@@ -1,0 +1,26 @@
+{
+	"name": "relationship-abfripjkhv",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "relationship-abfripjkhv",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "CountryGroupLevel",
+		"ToTableName": "ExportControlClassificationNumber",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "CountryGroupLevelId",
+				"ToColumnName": "CountryGroupLevelId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"CountryGroupLevel.cdm.json/CountryGroupLevel\",\"toEntity\":\"ExportControlClassificationNumber.cdm.json/ExportControlClassificationNumber\",\"joinPairs\":[{\"fromAttribute\":\"CountryGroupLevelId\",\"toAttribute\":\"CountryGroupLevelId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

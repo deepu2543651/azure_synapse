@@ -1,0 +1,26 @@
+{
+	"name": "relationship-rcmjlnnhnp",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "relationship-rcmjlnnhnp",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "ServiceRequest",
+		"ToTableName": "RelatedServiceRequest",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ServiceRequestId",
+				"ToColumnName": "ServiceRequestId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"ServiceRequest.cdm.json/ServiceRequest\",\"toEntity\":\"RelatedServiceRequest.cdm.json/RelatedServiceRequest\",\"joinPairs\":[{\"fromAttribute\":\"ServiceRequestId\",\"toAttribute\":\"ServiceRequestId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

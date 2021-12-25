@@ -1,0 +1,86 @@
+{
+	"name": "FlightType",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "FlightType",
+		"Description": "The type of flight.\n\nEx:\n- Direct\n- Connecting\n- Nonstop",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "FlightTypeId",
+					"Description": "The unique identifier of a Flight Type.",
+					"BaseAttributeReference": {
+						"Entity": "FlightType.cdm.json/FlightType",
+						"Name": "FlightTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "FlightTypeName",
+					"Description": "The name of a Flight Type.",
+					"BaseAttributeReference": {
+						"Entity": "FlightType.cdm.json/FlightType",
+						"Name": "FlightTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "FlightTypeDescription",
+					"Description": "The description of a Flight Type.",
+					"BaseAttributeReference": {
+						"Entity": "FlightType.cdm.json/FlightType",
+						"Name": "FlightTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"FlightTypeId\":{\"entity\":\"FlightType.cdm.json/FlightType\",\"name\":\"FlightTypeId\"},\"FlightTypeName\":{\"entity\":\"FlightType.cdm.json/FlightType\",\"name\":\"FlightTypeName\"},\"FlightTypeDescription\":{\"entity\":\"FlightType.cdm.json/FlightType\",\"name\":\"FlightTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"FlightType\",\"path\":\"FlightType.cdm.json/FlightType\"},\"description\":\"The type of flight.\\n\\nEx:\\n- Direct\\n- Connecting\\n- Nonstop\",\"primaryKey\":[\"FlightTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"FlightTypeId\",\"attributeReference\":{\"entity\":\"FlightType.cdm.json/FlightType\",\"name\":\"FlightTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"FlightTypeName\",\"attributeReference\":{\"entity\":\"FlightType.cdm.json/FlightType\",\"name\":\"FlightTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"FlightTypeDescription\",\"attributeReference\":{\"entity\":\"FlightType.cdm.json/FlightType\",\"name\":\"FlightTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512}]}}}",
+			"Description": "The type of flight.\n\nEx:\n- Direct\n- Connecting\n- Nonstop",
+			"DisplayFolderInfo": "{\"name\":\"Shipping\",\"colorCode\":\"#000B42\"}",
+			"PrimaryKeys": "FlightTypeId"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

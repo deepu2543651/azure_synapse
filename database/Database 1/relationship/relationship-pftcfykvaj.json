@@ -1,0 +1,26 @@
+{
+	"name": "relationship-pftcfykvaj",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "relationship-pftcfykvaj",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "RouteLegType",
+		"ToTableName": "ShipmentRouteLeg",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "RouteLegTypeId",
+				"ToColumnName": "RouteLegTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"RouteLegType.cdm.json/RouteLegType\",\"toEntity\":\"ShipmentRouteLeg.cdm.json/ShipmentRouteLeg\",\"joinPairs\":[{\"fromAttribute\":\"RouteLegTypeId\",\"toAttribute\":\"RouteLegTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

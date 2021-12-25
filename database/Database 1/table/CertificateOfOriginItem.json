@@ -1,0 +1,221 @@
+{
+	"name": "CertificateOfOriginItem",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "CertificateOfOriginItem",
+		"Description": "The items identified on the Certificate Of Origin.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ShipmentId",
+					"Description": "The unique identifier of a Shipment.",
+					"BaseAttributeReference": {
+						"Entity": "CertificateOfOriginItem.cdm.json/CertificateOfOriginItem",
+						"Name": "ShipmentId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "DocumentId",
+					"Description": "The unique identifier of a Document.",
+					"BaseAttributeReference": {
+						"Entity": "CertificateOfOriginItem.cdm.json/CertificateOfOriginItem",
+						"Name": "DocumentId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "CertificateOfOriginLineItemNumber",
+					"Description": "The line numbers on a Certificate Of Origin.",
+					"BaseAttributeReference": {
+						"Entity": "CertificateOfOriginItem.cdm.json/CertificateOfOriginItem",
+						"Name": "CertificateOfOriginLineItemNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "NumberPackagesBoxesCases",
+					"Description": "The number of packages, boxes etc. comprising the line item.",
+					"BaseAttributeReference": {
+						"Entity": "CertificateOfOriginItem.cdm.json/CertificateOfOriginItem",
+						"Name": "NumberPackagesBoxesCases"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "Quantity",
+					"Description": "The quantity of shipment items identified on the Certificate Of Origin line item.",
+					"BaseAttributeReference": {
+						"Entity": "CertificateOfOriginItem.cdm.json/CertificateOfOriginItem",
+						"Name": "Quantity"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "Weight",
+					"Description": "The weight of the shipped items.",
+					"BaseAttributeReference": {
+						"Entity": "CertificateOfOriginItem.cdm.json/CertificateOfOriginItem",
+						"Name": "Weight"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "GrossWeight",
+					"Description": "The gross weight of the shipped items including packaging.",
+					"BaseAttributeReference": {
+						"Entity": "CertificateOfOriginItem.cdm.json/CertificateOfOriginItem",
+						"Name": "GrossWeight"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "DescriptionOfGoods",
+					"Description": "A description of the shipped items.",
+					"BaseAttributeReference": {
+						"Entity": "CertificateOfOriginItem.cdm.json/CertificateOfOriginItem",
+						"Name": "DescriptionOfGoods"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "Marks",
+					"Description": "Marks that identify the shipped items.",
+					"BaseAttributeReference": {
+						"Entity": "CertificateOfOriginItem.cdm.json/CertificateOfOriginItem",
+						"Name": "Marks"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ShipmentLineNumber",
+					"Description": "The shipment line number.",
+					"BaseAttributeReference": {
+						"Entity": "CertificateOfOriginItem.cdm.json/CertificateOfOriginItem",
+						"Name": "ShipmentLineNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ItemSku",
+					"Description": "The Stock Keeping Unit identifier, which is typically used for inventory-related activities.",
+					"BaseAttributeReference": {
+						"Entity": "CertificateOfOriginItem.cdm.json/CertificateOfOriginItem",
+						"Name": "ItemSku"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 20,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ShipmentId\":{\"entity\":\"CertificateOfOriginItem.cdm.json/CertificateOfOriginItem\",\"name\":\"ShipmentId\"},\"DocumentId\":{\"entity\":\"CertificateOfOriginItem.cdm.json/CertificateOfOriginItem\",\"name\":\"DocumentId\"},\"CertificateOfOriginLineItemNumber\":{\"entity\":\"CertificateOfOriginItem.cdm.json/CertificateOfOriginItem\",\"name\":\"CertificateOfOriginLineItemNumber\"},\"NumberPackagesBoxesCases\":{\"entity\":\"CertificateOfOriginItem.cdm.json/CertificateOfOriginItem\",\"name\":\"NumberPackagesBoxesCases\"},\"Quantity\":{\"entity\":\"CertificateOfOriginItem.cdm.json/CertificateOfOriginItem\",\"name\":\"Quantity\"},\"Weight\":{\"entity\":\"CertificateOfOriginItem.cdm.json/CertificateOfOriginItem\",\"name\":\"Weight\"},\"GrossWeight\":{\"entity\":\"CertificateOfOriginItem.cdm.json/CertificateOfOriginItem\",\"name\":\"GrossWeight\"},\"DescriptionOfGoods\":{\"entity\":\"CertificateOfOriginItem.cdm.json/CertificateOfOriginItem\",\"name\":\"DescriptionOfGoods\"},\"Marks\":{\"entity\":\"CertificateOfOriginItem.cdm.json/CertificateOfOriginItem\",\"name\":\"Marks\"},\"ShipmentLineNumber\":{\"entity\":\"CertificateOfOriginItem.cdm.json/CertificateOfOriginItem\",\"name\":\"ShipmentLineNumber\"},\"ItemSku\":{\"entity\":\"CertificateOfOriginItem.cdm.json/CertificateOfOriginItem\",\"name\":\"ItemSku\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"CertificateOfOriginItem\",\"path\":\"CertificateOfOriginItem.cdm.json/CertificateOfOriginItem\"},\"description\":\"The items identified on the Certificate Of Origin.\",\"primaryKey\":[\"ShipmentId\",\"DocumentId\",\"CertificateOfOriginLineItemNumber\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"ShipmentId\",\"attributeReference\":{\"entity\":\"CertificateOfOriginItem.cdm.json/CertificateOfOriginItem\",\"name\":\"ShipmentId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"DocumentId\",\"attributeReference\":{\"entity\":\"CertificateOfOriginItem.cdm.json/CertificateOfOriginItem\",\"name\":\"DocumentId\"},\"dataType\":\"long\"},{\"type\":\"Existing\",\"name\":\"CertificateOfOriginLineItemNumber\",\"attributeReference\":{\"entity\":\"CertificateOfOriginItem.cdm.json/CertificateOfOriginItem\",\"name\":\"CertificateOfOriginLineItemNumber\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"NumberPackagesBoxesCases\",\"attributeReference\":{\"entity\":\"CertificateOfOriginItem.cdm.json/CertificateOfOriginItem\",\"name\":\"NumberPackagesBoxesCases\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"Quantity\",\"attributeReference\":{\"entity\":\"CertificateOfOriginItem.cdm.json/CertificateOfOriginItem\",\"name\":\"Quantity\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"Weight\",\"attributeReference\":{\"entity\":\"CertificateOfOriginItem.cdm.json/CertificateOfOriginItem\",\"name\":\"Weight\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":8},{\"type\":\"Existing\",\"name\":\"GrossWeight\",\"attributeReference\":{\"entity\":\"CertificateOfOriginItem.cdm.json/CertificateOfOriginItem\",\"name\":\"GrossWeight\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":8},{\"type\":\"Existing\",\"name\":\"DescriptionOfGoods\",\"attributeReference\":{\"entity\":\"CertificateOfOriginItem.cdm.json/CertificateOfOriginItem\",\"name\":\"DescriptionOfGoods\"},\"dataType\":\"string\",\"dataTypeLength\":512},{\"type\":\"Existing\",\"name\":\"Marks\",\"attributeReference\":{\"entity\":\"CertificateOfOriginItem.cdm.json/CertificateOfOriginItem\",\"name\":\"Marks\"},\"dataType\":\"string\",\"dataTypeLength\":1024},{\"type\":\"Existing\",\"name\":\"ShipmentLineNumber\",\"attributeReference\":{\"entity\":\"CertificateOfOriginItem.cdm.json/CertificateOfOriginItem\",\"name\":\"ShipmentLineNumber\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ItemSku\",\"attributeReference\":{\"entity\":\"CertificateOfOriginItem.cdm.json/CertificateOfOriginItem\",\"name\":\"ItemSku\"},\"dataType\":\"string\",\"dataTypeLength\":20}]}}}",
+			"Description": "The items identified on the Certificate Of Origin.",
+			"DisplayFolderInfo": "{\"name\":\"Shipping\",\"colorCode\":\"#000B42\"}",
+			"PrimaryKeys": "ShipmentId,DocumentId,CertificateOfOriginLineItemNumber"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

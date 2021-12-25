@@ -1,0 +1,26 @@
+{
+	"name": "relationship-sdcmklgfal",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "relationship-sdcmklgfal",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "AllowanceType",
+		"ToTableName": "ShipmentItemAllowance",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "AllowanceTypeId",
+				"ToColumnName": "AllowanceTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"AllowanceType.cdm.json/AllowanceType\",\"toEntity\":\"ShipmentItemAllowance.cdm.json/ShipmentItemAllowance\",\"joinPairs\":[{\"fromAttribute\":\"AllowanceTypeId\",\"toAttribute\":\"AllowanceTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

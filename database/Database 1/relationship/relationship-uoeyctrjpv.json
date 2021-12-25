@@ -1,0 +1,26 @@
+{
+	"name": "relationship-uoeyctrjpv",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "relationship-uoeyctrjpv",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "ModulationMethod",
+		"ToTableName": "RfidTag",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ModulationMethodId",
+				"ToColumnName": "ModulationMethodId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"ModulationMethod.cdm.json/ModulationMethod\",\"toEntity\":\"RfidTag.cdm.json/RfidTag\",\"joinPairs\":[{\"fromAttribute\":\"ModulationMethodId\",\"toAttribute\":\"ModulationMethodId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

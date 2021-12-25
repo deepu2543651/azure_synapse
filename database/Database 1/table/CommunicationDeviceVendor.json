@@ -1,0 +1,119 @@
+{
+	"name": "CommunicationDeviceVendor",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "CommunicationDeviceVendor",
+		"Description": "The Communication Devices that are being tracked by a Vendor.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "VendorId",
+					"Description": "The unique identifier of a Vendor.",
+					"BaseAttributeReference": {
+						"Entity": "CommunicationDeviceVendor.cdm.json/CommunicationDeviceVendor",
+						"Name": "VendorId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "CommunicationDeviceVendorStartTimestamp",
+					"Description": "The start timestamp of the associated Communication Device Vendor relationship.",
+					"BaseAttributeReference": {
+						"Entity": "CommunicationDeviceVendor.cdm.json/CommunicationDeviceVendor",
+						"Name": "CommunicationDeviceVendorStartTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "DeviceId",
+					"Description": "The unique identifier of a Device.",
+					"BaseAttributeReference": {
+						"Entity": "CommunicationDeviceVendor.cdm.json/CommunicationDeviceVendor",
+						"Name": "DeviceId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "CommunicationDeviceVendorEndTimestamp",
+					"Description": "The end timestamp of the associated Communication Device Vendor relationship.",
+					"BaseAttributeReference": {
+						"Entity": "CommunicationDeviceVendor.cdm.json/CommunicationDeviceVendor",
+						"Name": "CommunicationDeviceVendorEndTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "CommunicationDeviceVendorNote",
+					"Description": "A note, comment or additional information regarding the Communication Device Vendor.",
+					"BaseAttributeReference": {
+						"Entity": "CommunicationDeviceVendor.cdm.json/CommunicationDeviceVendor",
+						"Name": "CommunicationDeviceVendorNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"VendorId\":{\"entity\":\"CommunicationDeviceVendor.cdm.json/CommunicationDeviceVendor\",\"name\":\"VendorId\"},\"CommunicationDeviceVendorStartTimestamp\":{\"entity\":\"CommunicationDeviceVendor.cdm.json/CommunicationDeviceVendor\",\"name\":\"CommunicationDeviceVendorStartTimestamp\"},\"DeviceId\":{\"entity\":\"CommunicationDeviceVendor.cdm.json/CommunicationDeviceVendor\",\"name\":\"DeviceId\"},\"CommunicationDeviceVendorEndTimestamp\":{\"entity\":\"CommunicationDeviceVendor.cdm.json/CommunicationDeviceVendor\",\"name\":\"CommunicationDeviceVendorEndTimestamp\"},\"CommunicationDeviceVendorNote\":{\"entity\":\"CommunicationDeviceVendor.cdm.json/CommunicationDeviceVendor\",\"name\":\"CommunicationDeviceVendorNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"CommunicationDeviceVendor\",\"path\":\"CommunicationDeviceVendor.cdm.json/CommunicationDeviceVendor\"},\"description\":\"The Communication Devices that are being tracked by a Vendor.\",\"primaryKey\":[\"VendorId\",\"CommunicationDeviceVendorStartTimestamp\",\"DeviceId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"VendorId\",\"attributeReference\":{\"entity\":\"CommunicationDeviceVendor.cdm.json/CommunicationDeviceVendor\",\"name\":\"VendorId\"},\"dataType\":\"long\"},{\"type\":\"Existing\",\"name\":\"CommunicationDeviceVendorStartTimestamp\",\"attributeReference\":{\"entity\":\"CommunicationDeviceVendor.cdm.json/CommunicationDeviceVendor\",\"name\":\"CommunicationDeviceVendorStartTimestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"DeviceId\",\"attributeReference\":{\"entity\":\"CommunicationDeviceVendor.cdm.json/CommunicationDeviceVendor\",\"name\":\"DeviceId\"},\"dataType\":\"long\"},{\"type\":\"Existing\",\"name\":\"CommunicationDeviceVendorEndTimestamp\",\"attributeReference\":{\"entity\":\"CommunicationDeviceVendor.cdm.json/CommunicationDeviceVendor\",\"name\":\"CommunicationDeviceVendorEndTimestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"CommunicationDeviceVendorNote\",\"attributeReference\":{\"entity\":\"CommunicationDeviceVendor.cdm.json/CommunicationDeviceVendor\",\"name\":\"CommunicationDeviceVendorNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024}]}}}",
+			"Description": "The Communication Devices that are being tracked by a Vendor.",
+			"DisplayFolderInfo": "{\"name\":\"Customer Service & Contact Management\",\"colorCode\":\"#502006\"}",
+			"PrimaryKeys": "VendorId,CommunicationDeviceVendorStartTimestamp,DeviceId"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

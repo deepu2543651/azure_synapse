@@ -1,0 +1,26 @@
+{
+	"name": "relationship-akjddslycm",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "relationship-akjddslycm",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "RfidStandard",
+		"ToTableName": "RfidTag",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "RfidStandardId",
+				"ToColumnName": "RfidStandardId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"RfidStandard.cdm.json/RfidStandard\",\"toEntity\":\"RfidTag.cdm.json/RfidTag\",\"joinPairs\":[{\"fromAttribute\":\"RfidStandardId\",\"toAttribute\":\"RfidStandardId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

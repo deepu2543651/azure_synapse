@@ -1,0 +1,26 @@
+{
+	"name": "relationship-qczfcznubf",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "relationship-qczfcznubf",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "AssetConditionRating",
+		"ToTableName": "AssetAssessment",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "AssetConditionRatingId",
+				"ToColumnName": "AssetConditionRatingId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"AssetConditionRating.cdm.json/AssetConditionRating\",\"toEntity\":\"AssetAssessment.cdm.json/AssetAssessment\",\"joinPairs\":[{\"fromAttribute\":\"AssetConditionRatingId\",\"toAttribute\":\"AssetConditionRatingId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

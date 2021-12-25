@@ -1,0 +1,86 @@
+{
+	"name": "CargoType",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "CargoType",
+		"Description": "The type of cargo that can be transported.\n\nEx.:\n- Bulk\n- Bulk Freight\n- Bulk Liquids\n- Breakbulk\n- Completed Knocked Down (CKD)\n- Build Solids\n- Dangerous Goods\n- Valuables\n- Live Stock\n- Luggage\n- Vehicles\n- Passengers\n- Mail\n- Small Packages\n- Batteries",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "CargoTypeId",
+					"Description": "The unique identifier of a Cargo Type.",
+					"BaseAttributeReference": {
+						"Entity": "CargoType.cdm.json/CargoType",
+						"Name": "CargoTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "CargoTypeName",
+					"Description": "The name of a Cargo Type.",
+					"BaseAttributeReference": {
+						"Entity": "CargoType.cdm.json/CargoType",
+						"Name": "CargoTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "CargoTypeDescription",
+					"Description": "The description of a Cargo Type.",
+					"BaseAttributeReference": {
+						"Entity": "CargoType.cdm.json/CargoType",
+						"Name": "CargoTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"CargoTypeId\":{\"entity\":\"CargoType.cdm.json/CargoType\",\"name\":\"CargoTypeId\"},\"CargoTypeName\":{\"entity\":\"CargoType.cdm.json/CargoType\",\"name\":\"CargoTypeName\"},\"CargoTypeDescription\":{\"entity\":\"CargoType.cdm.json/CargoType\",\"name\":\"CargoTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"CargoType\",\"path\":\"CargoType.cdm.json/CargoType\"},\"description\":\"The type of cargo that can be transported.\\n\\nEx.:\\n- Bulk\\n- Bulk Freight\\n- Bulk Liquids\\n- Breakbulk\\n- Completed Knocked Down (CKD)\\n- Build Solids\\n- Dangerous Goods\\n- Valuables\\n- Live Stock\\n- Luggage\\n- Vehicles\\n- Passengers\\n- Mail\\n- Small Packages\\n- Batteries\",\"primaryKey\":[\"CargoTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"CargoTypeId\",\"attributeReference\":{\"entity\":\"CargoType.cdm.json/CargoType\",\"name\":\"CargoTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"CargoTypeName\",\"attributeReference\":{\"entity\":\"CargoType.cdm.json/CargoType\",\"name\":\"CargoTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"CargoTypeDescription\",\"attributeReference\":{\"entity\":\"CargoType.cdm.json/CargoType\",\"name\":\"CargoTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512}]}}}",
+			"Description": "The type of cargo that can be transported.\n\nEx.:\n- Bulk\n- Bulk Freight\n- Bulk Liquids\n- Breakbulk\n- Completed Knocked Down (CKD)\n- Build Solids\n- Dangerous Goods\n- Valuables\n- Live Stock\n- Luggage\n- Vehicles\n- Passengers\n- Mail\n- Small Packages\n- Batteries",
+			"DisplayFolderInfo": "{\"name\":\"Shipping\",\"colorCode\":\"#000B42\"}",
+			"PrimaryKeys": "CargoTypeId"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

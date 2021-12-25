@@ -1,0 +1,166 @@
+{
+	"name": "VehicleSchedule",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "VehicleSchedule",
+		"Description": "The carrier schedule for truck operations between two cities.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "VehicleId",
+					"Description": "The unique identifier of a Vehicle.",
+					"BaseAttributeReference": {
+						"Entity": "VehicleSchedule.cdm.json/VehicleSchedule",
+						"Name": "VehicleId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "ScheduledDepartureTimestamp",
+					"Description": "The scheduled timestamp of the vehicle departure from the from-location to the to-location.",
+					"BaseAttributeReference": {
+						"Entity": "VehicleSchedule.cdm.json/VehicleSchedule",
+						"Name": "ScheduledDepartureTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "FromLocationId",
+					"Description": "The unique identifier of a Location.",
+					"BaseAttributeReference": {
+						"Entity": "VehicleSchedule.cdm.json/VehicleSchedule",
+						"Name": "FromLocationId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ToLocationId",
+					"Description": "The unique identifier of a Shipping Location.",
+					"BaseAttributeReference": {
+						"Entity": "VehicleSchedule.cdm.json/VehicleSchedule",
+						"Name": "ToLocationId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PlannedArrivalTimestamp",
+					"Description": "The planned arrival timestamp.",
+					"BaseAttributeReference": {
+						"Entity": "VehicleSchedule.cdm.json/VehicleSchedule",
+						"Name": "PlannedArrivalTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "PlannedDistanceMiles",
+					"Description": "The planned distance between the two locations expressed in miles.",
+					"BaseAttributeReference": {
+						"Entity": "VehicleSchedule.cdm.json/VehicleSchedule",
+						"Name": "PlannedDistanceMiles"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "CarrierId",
+					"Description": "The unique identifier of a Carrier.",
+					"BaseAttributeReference": {
+						"Entity": "VehicleSchedule.cdm.json/VehicleSchedule",
+						"Name": "CarrierId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "CarrierRouteId",
+					"Description": "The unique identifier of a Carrier Route.",
+					"BaseAttributeReference": {
+						"Entity": "VehicleSchedule.cdm.json/VehicleSchedule",
+						"Name": "CarrierRouteId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"VehicleId\":{\"entity\":\"VehicleSchedule.cdm.json/VehicleSchedule\",\"name\":\"VehicleId\"},\"ScheduledDepartureTimestamp\":{\"entity\":\"VehicleSchedule.cdm.json/VehicleSchedule\",\"name\":\"ScheduledDepartureTimestamp\"},\"FromLocationId\":{\"entity\":\"VehicleSchedule.cdm.json/VehicleSchedule\",\"name\":\"FromLocationId\"},\"ToLocationId\":{\"entity\":\"VehicleSchedule.cdm.json/VehicleSchedule\",\"name\":\"ToLocationId\"},\"PlannedArrivalTimestamp\":{\"entity\":\"VehicleSchedule.cdm.json/VehicleSchedule\",\"name\":\"PlannedArrivalTimestamp\"},\"PlannedDistanceMiles\":{\"entity\":\"VehicleSchedule.cdm.json/VehicleSchedule\",\"name\":\"PlannedDistanceMiles\"},\"CarrierId\":{\"entity\":\"VehicleSchedule.cdm.json/VehicleSchedule\",\"name\":\"CarrierId\"},\"CarrierRouteId\":{\"entity\":\"VehicleSchedule.cdm.json/VehicleSchedule\",\"name\":\"CarrierRouteId\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"VehicleSchedule\",\"path\":\"VehicleSchedule.cdm.json/VehicleSchedule\"},\"description\":\"The carrier schedule for truck operations between two cities.\",\"primaryKey\":[\"VehicleId\",\"ScheduledDepartureTimestamp\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"VehicleId\",\"attributeReference\":{\"entity\":\"VehicleSchedule.cdm.json/VehicleSchedule\",\"name\":\"VehicleId\"},\"dataType\":\"long\"},{\"type\":\"Existing\",\"name\":\"ScheduledDepartureTimestamp\",\"attributeReference\":{\"entity\":\"VehicleSchedule.cdm.json/VehicleSchedule\",\"name\":\"ScheduledDepartureTimestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"FromLocationId\",\"attributeReference\":{\"entity\":\"VehicleSchedule.cdm.json/VehicleSchedule\",\"name\":\"FromLocationId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ToLocationId\",\"attributeReference\":{\"entity\":\"VehicleSchedule.cdm.json/VehicleSchedule\",\"name\":\"ToLocationId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"PlannedArrivalTimestamp\",\"attributeReference\":{\"entity\":\"VehicleSchedule.cdm.json/VehicleSchedule\",\"name\":\"PlannedArrivalTimestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"PlannedDistanceMiles\",\"attributeReference\":{\"entity\":\"VehicleSchedule.cdm.json/VehicleSchedule\",\"name\":\"PlannedDistanceMiles\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"CarrierId\",\"attributeReference\":{\"entity\":\"VehicleSchedule.cdm.json/VehicleSchedule\",\"name\":\"CarrierId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"CarrierRouteId\",\"attributeReference\":{\"entity\":\"VehicleSchedule.cdm.json/VehicleSchedule\",\"name\":\"CarrierRouteId\"},\"dataType\":\"integer\"}]}}}",
+			"Description": "The carrier schedule for truck operations between two cities.",
+			"DisplayFolderInfo": "{\"name\":\"Shipping\",\"colorCode\":\"#000B42\"}",
+			"PrimaryKeys": "VehicleId,ScheduledDepartureTimestamp"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

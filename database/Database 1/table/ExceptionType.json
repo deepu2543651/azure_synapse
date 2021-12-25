@@ -1,0 +1,86 @@
+{
+	"name": "ExceptionType",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "ExceptionType",
+		"Description": "A type of exception that may be noted for a shipment at the associated location.\n\nEx:\n- Packaging exception\n- Suspected theft\n- Documentation exception",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ExceptionTypeId",
+					"Description": "The unique identifier of an Exception Type.",
+					"BaseAttributeReference": {
+						"Entity": "ExceptionType.cdm.json/ExceptionType",
+						"Name": "ExceptionTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ExceptionTypeName",
+					"Description": "The name of an Exception Type.",
+					"BaseAttributeReference": {
+						"Entity": "ExceptionType.cdm.json/ExceptionType",
+						"Name": "ExceptionTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ExceptionTypeDescription",
+					"Description": "The description of an Exception Type.",
+					"BaseAttributeReference": {
+						"Entity": "ExceptionType.cdm.json/ExceptionType",
+						"Name": "ExceptionTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ExceptionTypeId\":{\"entity\":\"ExceptionType.cdm.json/ExceptionType\",\"name\":\"ExceptionTypeId\"},\"ExceptionTypeName\":{\"entity\":\"ExceptionType.cdm.json/ExceptionType\",\"name\":\"ExceptionTypeName\"},\"ExceptionTypeDescription\":{\"entity\":\"ExceptionType.cdm.json/ExceptionType\",\"name\":\"ExceptionTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"ExceptionType\",\"path\":\"ExceptionType.cdm.json/ExceptionType\"},\"description\":\"A type of exception that may be noted for a shipment at the associated location.\\n\\nEx:\\n- Packaging exception\\n- Suspected theft\\n- Documentation exception\",\"primaryKey\":[\"ExceptionTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"ExceptionTypeId\",\"attributeReference\":{\"entity\":\"ExceptionType.cdm.json/ExceptionType\",\"name\":\"ExceptionTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ExceptionTypeName\",\"attributeReference\":{\"entity\":\"ExceptionType.cdm.json/ExceptionType\",\"name\":\"ExceptionTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"ExceptionTypeDescription\",\"attributeReference\":{\"entity\":\"ExceptionType.cdm.json/ExceptionType\",\"name\":\"ExceptionTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512}]}}}",
+			"Description": "A type of exception that may be noted for a shipment at the associated location.\n\nEx:\n- Packaging exception\n- Suspected theft\n- Documentation exception",
+			"DisplayFolderInfo": "{\"name\":\"Shipping\",\"colorCode\":\"#000B42\"}",
+			"PrimaryKeys": "ExceptionTypeId"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

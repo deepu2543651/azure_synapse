@@ -1,0 +1,230 @@
+{
+	"name": "RfidTag",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "RfidTag",
+		"Description": "RFID tags can be thought of as smart bar codes with communications abilities used to identify items.\n\nRFIDs contain a tiny transponder that, when it comes within distance of a reader, transmits its unique identifier, which can be matched to a database.\n\nRFID is short for \"radio frequency identification,\" and as such, RFID tags utilize radio frequency technology. These radio waves transmit data from the tag to a reader, which then transmits the information to an RFID computer program.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "RfidTagId",
+					"Description": "The unique identifier of a RFID Tag.\n\nThe transmitter/receiver pair or transceiver plus the information storage mechanism attached to the object is referred to as the tag, transponder, electronic label, code plate and various other terms. \n\nAlthough transponder is technically the most accurate, the most common term and the one preferred by the Automatic Identification Manufacturers is tag.",
+					"BaseAttributeReference": {
+						"Entity": "RfidTag.cdm.json/RfidTag",
+						"Name": "RfidTagId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "TagCapacity",
+					"Description": "The number of bits or bytes that can be programmed into a tag. This may represent the bits accessible to the user or the total number including those reserved to the manufacturer e.g. parity or control bits.",
+					"BaseAttributeReference": {
+						"Entity": "RfidTag.cdm.json/RfidTag",
+						"Name": "TagCapacity"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "BidirectionalTagIndicator",
+					"Description": "Capable of operating in either of two directions which are the opposite of each other. For example, a tag which can be read or written from either side is bi-directional.",
+					"BaseAttributeReference": {
+						"Entity": "RfidTag.cdm.json/RfidTag",
+						"Name": "BidirectionalTagIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "OmnidirectionalTagIndicator",
+					"Description": "Capability of a tag to operate in any orientation.",
+					"BaseAttributeReference": {
+						"Entity": "RfidTag.cdm.json/RfidTag",
+						"Name": "OmnidirectionalTagIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "InductiveCouplingSystemIndicator",
+					"Description": "Systems which use the inducing of a current in a coil as a means of transferring data or power are said to use inductive. coupling.",
+					"BaseAttributeReference": {
+						"Entity": "RfidTag.cdm.json/RfidTag",
+						"Name": "InductiveCouplingSystemIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "LifePeriod",
+					"Description": "Functional period expressed in days within which no maintenance, adjustment or repair is to be reasonably expected.",
+					"BaseAttributeReference": {
+						"Entity": "RfidTag.cdm.json/RfidTag",
+						"Name": "LifePeriod"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 3,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "NominalRange",
+					"Description": "The range at which a systems can assure reliable operation, considering the normal variability of the environment in which it is used.",
+					"BaseAttributeReference": {
+						"Entity": "RfidTag.cdm.json/RfidTag",
+						"Name": "NominalRange"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PowerLevelVoltsMeter",
+					"Description": "Levels of power radiated from a scanner or tag, usually measured in volts/meter.",
+					"BaseAttributeReference": {
+						"Entity": "RfidTag.cdm.json/RfidTag",
+						"Name": "PowerLevelVoltsMeter"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ProjectedLife",
+					"Description": "This is defined in terms of number of read and/or write cycles, or in active tags this may include shelf life.",
+					"BaseAttributeReference": {
+						"Entity": "RfidTag.cdm.json/RfidTag",
+						"Name": "ProjectedLife"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "RfidStandardId",
+					"Description": "The unique identifier of a RFID Standard.",
+					"BaseAttributeReference": {
+						"Entity": "RfidTag.cdm.json/RfidTag",
+						"Name": "RfidStandardId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "RfidTagTypeId",
+					"Description": "The unique identifier of a RFID Tag Type.",
+					"BaseAttributeReference": {
+						"Entity": "RfidTag.cdm.json/RfidTag",
+						"Name": "RfidTagTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ModulationMethodId",
+					"Description": "The unique identifier of a Modulation Method.",
+					"BaseAttributeReference": {
+						"Entity": "RfidTag.cdm.json/RfidTag",
+						"Name": "ModulationMethodId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"RfidTagId\":{\"entity\":\"RfidTag.cdm.json/RfidTag\",\"name\":\"RfidTagId\"},\"TagCapacity\":{\"entity\":\"RfidTag.cdm.json/RfidTag\",\"name\":\"TagCapacity\"},\"BidirectionalTagIndicator\":{\"entity\":\"RfidTag.cdm.json/RfidTag\",\"name\":\"BidirectionalTagIndicator\"},\"OmnidirectionalTagIndicator\":{\"entity\":\"RfidTag.cdm.json/RfidTag\",\"name\":\"OmnidirectionalTagIndicator\"},\"InductiveCouplingSystemIndicator\":{\"entity\":\"RfidTag.cdm.json/RfidTag\",\"name\":\"InductiveCouplingSystemIndicator\"},\"LifePeriod\":{\"entity\":\"RfidTag.cdm.json/RfidTag\",\"name\":\"LifePeriod\"},\"NominalRange\":{\"entity\":\"RfidTag.cdm.json/RfidTag\",\"name\":\"NominalRange\"},\"PowerLevelVoltsMeter\":{\"entity\":\"RfidTag.cdm.json/RfidTag\",\"name\":\"PowerLevelVoltsMeter\"},\"ProjectedLife\":{\"entity\":\"RfidTag.cdm.json/RfidTag\",\"name\":\"ProjectedLife\"},\"RfidStandardId\":{\"entity\":\"RfidTag.cdm.json/RfidTag\",\"name\":\"RfidStandardId\"},\"RfidTagTypeId\":{\"entity\":\"RfidTag.cdm.json/RfidTag\",\"name\":\"RfidTagTypeId\"},\"ModulationMethodId\":{\"entity\":\"RfidTag.cdm.json/RfidTag\",\"name\":\"ModulationMethodId\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"RfidTag\",\"path\":\"RfidTag.cdm.json/RfidTag\"},\"description\":\"RFID tags can be thought of as smart bar codes with communications abilities used to identify items.\\n\\nRFIDs contain a tiny transponder that, when it comes within distance of a reader, transmits its unique identifier, which can be matched to a database.\\n\\nRFID is short for \\\"radio frequency identification,\\\" and as such, RFID tags utilize radio frequency technology. These radio waves transmit data from the tag to a reader, which then transmits the information to an RFID computer program.\",\"primaryKey\":[\"RfidTagId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"RfidTagId\",\"attributeReference\":{\"entity\":\"RfidTag.cdm.json/RfidTag\",\"name\":\"RfidTagId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"TagCapacity\",\"attributeReference\":{\"entity\":\"RfidTag.cdm.json/RfidTag\",\"name\":\"TagCapacity\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"BidirectionalTagIndicator\",\"attributeReference\":{\"entity\":\"RfidTag.cdm.json/RfidTag\",\"name\":\"BidirectionalTagIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"OmnidirectionalTagIndicator\",\"attributeReference\":{\"entity\":\"RfidTag.cdm.json/RfidTag\",\"name\":\"OmnidirectionalTagIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"InductiveCouplingSystemIndicator\",\"attributeReference\":{\"entity\":\"RfidTag.cdm.json/RfidTag\",\"name\":\"InductiveCouplingSystemIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"LifePeriod\",\"attributeReference\":{\"entity\":\"RfidTag.cdm.json/RfidTag\",\"name\":\"LifePeriod\"},\"dataType\":\"decimal\",\"dataTypeLength\":3,\"scale\":0},{\"type\":\"Existing\",\"name\":\"NominalRange\",\"attributeReference\":{\"entity\":\"RfidTag.cdm.json/RfidTag\",\"name\":\"NominalRange\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"PowerLevelVoltsMeter\",\"attributeReference\":{\"entity\":\"RfidTag.cdm.json/RfidTag\",\"name\":\"PowerLevelVoltsMeter\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ProjectedLife\",\"attributeReference\":{\"entity\":\"RfidTag.cdm.json/RfidTag\",\"name\":\"ProjectedLife\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"RfidStandardId\",\"attributeReference\":{\"entity\":\"RfidTag.cdm.json/RfidTag\",\"name\":\"RfidStandardId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"RfidTagTypeId\",\"attributeReference\":{\"entity\":\"RfidTag.cdm.json/RfidTag\",\"name\":\"RfidTagTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ModulationMethodId\",\"attributeReference\":{\"entity\":\"RfidTag.cdm.json/RfidTag\",\"name\":\"ModulationMethodId\"},\"dataType\":\"integer\"}]}}}",
+			"Description": "RFID tags can be thought of as smart bar codes with communications abilities used to identify items.\n\nRFIDs contain a tiny transponder that, when it comes within distance of a reader, transmits its unique identifier, which can be matched to a database.\n\nRFID is short for \"radio frequency identification,\" and as such, RFID tags utilize radio frequency technology. These radio waves transmit data from the tag to a reader, which then transmits the information to an RFID computer program.",
+			"DisplayFolderInfo": "{\"name\":\"Inventory\",\"colorCode\":\"#EA279F\"}",
+			"PrimaryKeys": "RfidTagId"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

@@ -1,0 +1,86 @@
+{
+	"name": "InventoryLossType",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "InventoryLossType",
+		"Description": "A type of Inventory Loss that is used to calculated Inventory Losses over some period of time.\n\nEx:\n-  Destructive testing\n-  Lost in shipment\n-  Lost in handling\n-  Lost due to production process\n-  Lost due to theft\n-  Scrap\n-  Deterioration",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "InventoryLossTypeId",
+					"Description": "The unique identifier of an Inventory Loss Type.",
+					"BaseAttributeReference": {
+						"Entity": "InventoryLossType.cdm.json/InventoryLossType",
+						"Name": "InventoryLossTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "InventoryLossTypeName",
+					"Description": "The name of the Inventory Loss Type.",
+					"BaseAttributeReference": {
+						"Entity": "InventoryLossType.cdm.json/InventoryLossType",
+						"Name": "InventoryLossTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "InventoryLossTypeDescription",
+					"Description": "The description of the Inventory Loss Type.",
+					"BaseAttributeReference": {
+						"Entity": "InventoryLossType.cdm.json/InventoryLossType",
+						"Name": "InventoryLossTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"InventoryLossTypeId\":{\"entity\":\"InventoryLossType.cdm.json/InventoryLossType\",\"name\":\"InventoryLossTypeId\"},\"InventoryLossTypeName\":{\"entity\":\"InventoryLossType.cdm.json/InventoryLossType\",\"name\":\"InventoryLossTypeName\"},\"InventoryLossTypeDescription\":{\"entity\":\"InventoryLossType.cdm.json/InventoryLossType\",\"name\":\"InventoryLossTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"InventoryLossType\",\"path\":\"InventoryLossType.cdm.json/InventoryLossType\"},\"description\":\"A type of Inventory Loss that is used to calculated Inventory Losses over some period of time.\\n\\nEx:\\n-  Destructive testing\\n-  Lost in shipment\\n-  Lost in handling\\n-  Lost due to production process\\n-  Lost due to theft\\n-  Scrap\\n-  Deterioration\",\"primaryKey\":[\"InventoryLossTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"InventoryLossTypeId\",\"attributeReference\":{\"entity\":\"InventoryLossType.cdm.json/InventoryLossType\",\"name\":\"InventoryLossTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"InventoryLossTypeName\",\"attributeReference\":{\"entity\":\"InventoryLossType.cdm.json/InventoryLossType\",\"name\":\"InventoryLossTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"InventoryLossTypeDescription\",\"attributeReference\":{\"entity\":\"InventoryLossType.cdm.json/InventoryLossType\",\"name\":\"InventoryLossTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512}]}}}",
+			"Description": "A type of Inventory Loss that is used to calculated Inventory Losses over some period of time.\n\nEx:\n-  Destructive testing\n-  Lost in shipment\n-  Lost in handling\n-  Lost due to production process\n-  Lost due to theft\n-  Scrap\n-  Deterioration",
+			"DisplayFolderInfo": "{\"name\":\"Inventory\",\"colorCode\":\"#EA279F\"}",
+			"PrimaryKeys": "InventoryLossTypeId"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

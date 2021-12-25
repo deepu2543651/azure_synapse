@@ -1,0 +1,135 @@
+{
+	"name": "ShipmentItemDutyStatus",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "ShipmentItemDutyStatus",
+		"Description": "The duty status of a shipment item as of the associated period.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ShipmentId",
+					"Description": "The unique identifier of a Shipment.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentItemDutyStatus.cdm.json/ShipmentItemDutyStatus",
+						"Name": "ShipmentId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ShipmentItemNumber",
+					"Description": "The shipment line number.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentItemDutyStatus.cdm.json/ShipmentItemDutyStatus",
+						"Name": "ShipmentItemNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "DutyStatusTypeId",
+					"Description": "The unique identifier of a Duty Status Type.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentItemDutyStatus.cdm.json/ShipmentItemDutyStatus",
+						"Name": "DutyStatusTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PeriodStartTimestamp",
+					"Description": "The period start timestamp associated with the shipment item status.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentItemDutyStatus.cdm.json/ShipmentItemDutyStatus",
+						"Name": "PeriodStartTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "PeriodEndTimestamp",
+					"Description": "The period end timestamp associated with the shipment item status.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentItemDutyStatus.cdm.json/ShipmentItemDutyStatus",
+						"Name": "PeriodEndTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "ShipmentItemDutyStatusNote",
+					"Description": "A note, comment or additional information regarding the shipment item duty status.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentItemDutyStatus.cdm.json/ShipmentItemDutyStatus",
+						"Name": "ShipmentItemDutyStatusNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ShipmentId\":{\"entity\":\"ShipmentItemDutyStatus.cdm.json/ShipmentItemDutyStatus\",\"name\":\"ShipmentId\"},\"ShipmentItemNumber\":{\"entity\":\"ShipmentItemDutyStatus.cdm.json/ShipmentItemDutyStatus\",\"name\":\"ShipmentItemNumber\"},\"DutyStatusTypeId\":{\"entity\":\"ShipmentItemDutyStatus.cdm.json/ShipmentItemDutyStatus\",\"name\":\"DutyStatusTypeId\"},\"PeriodStartTimestamp\":{\"entity\":\"ShipmentItemDutyStatus.cdm.json/ShipmentItemDutyStatus\",\"name\":\"PeriodStartTimestamp\"},\"PeriodEndTimestamp\":{\"entity\":\"ShipmentItemDutyStatus.cdm.json/ShipmentItemDutyStatus\",\"name\":\"PeriodEndTimestamp\"},\"ShipmentItemDutyStatusNote\":{\"entity\":\"ShipmentItemDutyStatus.cdm.json/ShipmentItemDutyStatus\",\"name\":\"ShipmentItemDutyStatusNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"ShipmentItemDutyStatus\",\"path\":\"ShipmentItemDutyStatus.cdm.json/ShipmentItemDutyStatus\"},\"description\":\"The duty status of a shipment item as of the associated period.\",\"primaryKey\":[\"ShipmentId\",\"ShipmentItemNumber\",\"DutyStatusTypeId\",\"PeriodStartTimestamp\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"ShipmentId\",\"attributeReference\":{\"entity\":\"ShipmentItemDutyStatus.cdm.json/ShipmentItemDutyStatus\",\"name\":\"ShipmentId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ShipmentItemNumber\",\"attributeReference\":{\"entity\":\"ShipmentItemDutyStatus.cdm.json/ShipmentItemDutyStatus\",\"name\":\"ShipmentItemNumber\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"DutyStatusTypeId\",\"attributeReference\":{\"entity\":\"ShipmentItemDutyStatus.cdm.json/ShipmentItemDutyStatus\",\"name\":\"DutyStatusTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"PeriodStartTimestamp\",\"attributeReference\":{\"entity\":\"ShipmentItemDutyStatus.cdm.json/ShipmentItemDutyStatus\",\"name\":\"PeriodStartTimestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"PeriodEndTimestamp\",\"attributeReference\":{\"entity\":\"ShipmentItemDutyStatus.cdm.json/ShipmentItemDutyStatus\",\"name\":\"PeriodEndTimestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"ShipmentItemDutyStatusNote\",\"attributeReference\":{\"entity\":\"ShipmentItemDutyStatus.cdm.json/ShipmentItemDutyStatus\",\"name\":\"ShipmentItemDutyStatusNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024}]}}}",
+			"Description": "The duty status of a shipment item as of the associated period.",
+			"DisplayFolderInfo": "{\"name\":\"Shipping\",\"colorCode\":\"#000B42\"}",
+			"PrimaryKeys": "ShipmentId,ShipmentItemNumber,DutyStatusTypeId,PeriodStartTimestamp"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

@@ -1,0 +1,135 @@
+{
+	"name": "ShipmentLocationRelatedParty",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "ShipmentLocationRelatedParty",
+		"Description": "The party(s) having a relationship to the Shipment Location.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ShipmentId",
+					"Description": "The unique identifier of a Shipment.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentLocationRelatedParty.cdm.json/ShipmentLocationRelatedParty",
+						"Name": "ShipmentId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PartyId",
+					"Description": "The unique identifier of a Party.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentLocationRelatedParty.cdm.json/ShipmentLocationRelatedParty",
+						"Name": "PartyId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "ShipmentLocationPartyRelationshipTypeId",
+					"Description": "The unique identifier of a Shipment Relationship Type.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentLocationRelatedParty.cdm.json/ShipmentLocationRelatedParty",
+						"Name": "ShipmentLocationPartyRelationshipTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PeriodStartTimestamp",
+					"Description": "The period start timestamp that the shipment was at the shipping location.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentLocationRelatedParty.cdm.json/ShipmentLocationRelatedParty",
+						"Name": "PeriodStartTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "PeriodEndTimestamp",
+					"Description": "The period start timestamp.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentLocationRelatedParty.cdm.json/ShipmentLocationRelatedParty",
+						"Name": "PeriodEndTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "ShipmentLocationPartyRelationshipNote",
+					"Description": "A note, comment or additional information regarding the Shipment Location - Party Relationship.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentLocationRelatedParty.cdm.json/ShipmentLocationRelatedParty",
+						"Name": "ShipmentLocationPartyRelationshipNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ShipmentId\":{\"entity\":\"ShipmentLocationRelatedParty.cdm.json/ShipmentLocationRelatedParty\",\"name\":\"ShipmentId\"},\"PartyId\":{\"entity\":\"ShipmentLocationRelatedParty.cdm.json/ShipmentLocationRelatedParty\",\"name\":\"PartyId\"},\"ShipmentLocationPartyRelationshipTypeId\":{\"entity\":\"ShipmentLocationRelatedParty.cdm.json/ShipmentLocationRelatedParty\",\"name\":\"ShipmentLocationPartyRelationshipTypeId\"},\"PeriodStartTimestamp\":{\"entity\":\"ShipmentLocationRelatedParty.cdm.json/ShipmentLocationRelatedParty\",\"name\":\"PeriodStartTimestamp\"},\"PeriodEndTimestamp\":{\"entity\":\"ShipmentLocationRelatedParty.cdm.json/ShipmentLocationRelatedParty\",\"name\":\"PeriodEndTimestamp\"},\"ShipmentLocationPartyRelationshipNote\":{\"entity\":\"ShipmentLocationRelatedParty.cdm.json/ShipmentLocationRelatedParty\",\"name\":\"ShipmentLocationPartyRelationshipNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"ShipmentLocationRelatedParty\",\"path\":\"ShipmentLocationRelatedParty.cdm.json/ShipmentLocationRelatedParty\"},\"description\":\"The party(s) having a relationship to the Shipment Location.\",\"primaryKey\":[\"ShipmentId\",\"PartyId\",\"ShipmentLocationPartyRelationshipTypeId\",\"PeriodStartTimestamp\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"ShipmentId\",\"attributeReference\":{\"entity\":\"ShipmentLocationRelatedParty.cdm.json/ShipmentLocationRelatedParty\",\"name\":\"ShipmentId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"PartyId\",\"attributeReference\":{\"entity\":\"ShipmentLocationRelatedParty.cdm.json/ShipmentLocationRelatedParty\",\"name\":\"PartyId\"},\"dataType\":\"long\"},{\"type\":\"Existing\",\"name\":\"ShipmentLocationPartyRelationshipTypeId\",\"attributeReference\":{\"entity\":\"ShipmentLocationRelatedParty.cdm.json/ShipmentLocationRelatedParty\",\"name\":\"ShipmentLocationPartyRelationshipTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"PeriodStartTimestamp\",\"attributeReference\":{\"entity\":\"ShipmentLocationRelatedParty.cdm.json/ShipmentLocationRelatedParty\",\"name\":\"PeriodStartTimestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"PeriodEndTimestamp\",\"attributeReference\":{\"entity\":\"ShipmentLocationRelatedParty.cdm.json/ShipmentLocationRelatedParty\",\"name\":\"PeriodEndTimestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"ShipmentLocationPartyRelationshipNote\",\"attributeReference\":{\"entity\":\"ShipmentLocationRelatedParty.cdm.json/ShipmentLocationRelatedParty\",\"name\":\"ShipmentLocationPartyRelationshipNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024}]}}}",
+			"Description": "The party(s) having a relationship to the Shipment Location.",
+			"DisplayFolderInfo": "{\"name\":\"Shipping\",\"colorCode\":\"#000B42\"}",
+			"PrimaryKeys": "ShipmentId,PartyId,ShipmentLocationPartyRelationshipTypeId,PeriodStartTimestamp"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

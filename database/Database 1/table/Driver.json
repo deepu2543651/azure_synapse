@@ -1,0 +1,150 @@
+{
+	"name": "Driver",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "Driver",
+		"Description": "A driver that may be assigned to a vehicle.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "DriverId",
+					"Description": "The unique identifier of a Driver.",
+					"BaseAttributeReference": {
+						"Entity": "Driver.cdm.json/Driver",
+						"Name": "DriverId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "DriverName",
+					"Description": "The name of the driver.",
+					"BaseAttributeReference": {
+						"Entity": "Driver.cdm.json/Driver",
+						"Name": "DriverName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "CommercialDriversLicenseId",
+					"Description": "License which authorizes an individual to operate commercial motor vehicles and buses over 26,000 pounds gross vehicle weight. For operators of freight-hauling trucks, the maximum size which may be driven without a CDL is Class 6 (maximum 26,000 pounds gross vehicle weight).",
+					"BaseAttributeReference": {
+						"Entity": "Driver.cdm.json/Driver",
+						"Name": "CommercialDriversLicenseId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "CommercialDriversLicenseExpirationDate",
+					"Description": "The expiration date of the drivers commercial license.",
+					"BaseAttributeReference": {
+						"Entity": "Driver.cdm.json/Driver",
+						"Name": "CommercialDriversLicenseExpirationDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "OwnerOperatorDriverIndicator",
+					"Description": "Indicates whether the driver is also an owner/operator driver.",
+					"BaseAttributeReference": {
+						"Entity": "Driver.cdm.json/Driver",
+						"Name": "OwnerOperatorDriverIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "PartyId",
+					"Description": "The unique identifier of a Party.",
+					"BaseAttributeReference": {
+						"Entity": "Driver.cdm.json/Driver",
+						"Name": "PartyId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "EmployeeId",
+					"Description": "The unique identifier of an Employee.",
+					"BaseAttributeReference": {
+						"Entity": "Driver.cdm.json/Driver",
+						"Name": "EmployeeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"DriverId\":{\"entity\":\"Driver.cdm.json/Driver\",\"name\":\"DriverId\"},\"DriverName\":{\"entity\":\"Driver.cdm.json/Driver\",\"name\":\"DriverName\"},\"CommercialDriversLicenseId\":{\"entity\":\"Driver.cdm.json/Driver\",\"name\":\"CommercialDriversLicenseId\"},\"CommercialDriversLicenseExpirationDate\":{\"entity\":\"Driver.cdm.json/Driver\",\"name\":\"CommercialDriversLicenseExpirationDate\"},\"OwnerOperatorDriverIndicator\":{\"entity\":\"Driver.cdm.json/Driver\",\"name\":\"OwnerOperatorDriverIndicator\"},\"PartyId\":{\"entity\":\"Driver.cdm.json/Driver\",\"name\":\"PartyId\"},\"EmployeeId\":{\"entity\":\"Driver.cdm.json/Driver\",\"name\":\"EmployeeId\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"Driver\",\"path\":\"Driver.cdm.json/Driver\"},\"description\":\"A driver that may be assigned to a vehicle.\",\"primaryKey\":[\"DriverId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"DriverId\",\"attributeReference\":{\"entity\":\"Driver.cdm.json/Driver\",\"name\":\"DriverId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"DriverName\",\"attributeReference\":{\"entity\":\"Driver.cdm.json/Driver\",\"name\":\"DriverName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"CommercialDriversLicenseId\",\"attributeReference\":{\"entity\":\"Driver.cdm.json/Driver\",\"name\":\"CommercialDriversLicenseId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"CommercialDriversLicenseExpirationDate\",\"attributeReference\":{\"entity\":\"Driver.cdm.json/Driver\",\"name\":\"CommercialDriversLicenseExpirationDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\"},{\"type\":\"Existing\",\"name\":\"OwnerOperatorDriverIndicator\",\"attributeReference\":{\"entity\":\"Driver.cdm.json/Driver\",\"name\":\"OwnerOperatorDriverIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"PartyId\",\"attributeReference\":{\"entity\":\"Driver.cdm.json/Driver\",\"name\":\"PartyId\"},\"dataType\":\"long\"},{\"type\":\"Existing\",\"name\":\"EmployeeId\",\"attributeReference\":{\"entity\":\"Driver.cdm.json/Driver\",\"name\":\"EmployeeId\"},\"dataType\":\"integer\"}]}}}",
+			"Description": "A driver that may be assigned to a vehicle.",
+			"DisplayFolderInfo": "{\"name\":\"Shipping\",\"colorCode\":\"#000B42\"}",
+			"PrimaryKeys": "DriverId"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

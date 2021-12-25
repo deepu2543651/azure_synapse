@@ -1,0 +1,775 @@
+{
+	"name": "AirWaybill",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "AirWaybill",
+		"Description": "A shipping document used by the airlines for air freight. It serves as a contract for carriage and includes carrier conditions of carriage such as limits of liability and claims procedures. The air waybill also contains shipping instructions to the airline, a description of the commodity, and applicable transportation charges. The airline industry has adopted a standard formatted air waybill that accommodates both domestic and international traffic.\n\nAir Waybills are not negotiable. \n\nA air transport bill of lading covering both domestic and international flights transporting goods to a specific destination.\n\nIt is a contract for carriage that includes carrier conditions of carriage including such items as limits of liability and claims procedures.\n\nThe Air Way Bill contains shipping instructions to airlines, a description of the commodity and applicable transportation charges.\n\nThe Air Way Bill is a non-negotiable instrument that serves as a receipt for the shipper, which indicates that the Carrier has accepted the goods listed and obligating the Carrier to carry the consignment to the airport of destination according to the specified conditions.\n\nA shipping document used by the airlines for air freight.  It serves as a contract for carriage and includes carrier conditions of carriage such as limits of liability and claims procedures.  The air waybill also contains shipping instructions to the airline, a description of the commodity, and applicable transportation charges.  The airline industry has adopted a standard formatted air waybill that accommodates both domestic and international traffic.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ShipmentId",
+					"Description": "The unique identifier of a Shipment.",
+					"BaseAttributeReference": {
+						"Entity": "AirWaybill.cdm.json/AirWaybill",
+						"Name": "ShipmentId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "DocumentId",
+					"Description": "The unique identifier of a Document.",
+					"BaseAttributeReference": {
+						"Entity": "AirWaybill.cdm.json/AirWaybill",
+						"Name": "DocumentId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "ShippersName",
+					"Description": "The Shipper's name, which normally is the same as shown in Shipment.",
+					"BaseAttributeReference": {
+						"Entity": "AirWaybill.cdm.json/AirWaybill",
+						"Name": "ShippersName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ShippersAddress",
+					"Description": "The 'street' component of the Shipper's address, which is normally the same as that shown in the Shipment.",
+					"BaseAttributeReference": {
+						"Entity": "AirWaybill.cdm.json/AirWaybill",
+						"Name": "ShippersAddress"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ShippersCity",
+					"Description": "The 'city' component of the Shipper's address, which is normally the same as that shown in the Shipment.",
+					"BaseAttributeReference": {
+						"Entity": "AirWaybill.cdm.json/AirWaybill",
+						"Name": "ShippersCity"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ShippersStateProvince",
+					"Description": "The 'state/province' component of the Shipper's address, which is normally the same as that shown in the Shipment.",
+					"BaseAttributeReference": {
+						"Entity": "AirWaybill.cdm.json/AirWaybill",
+						"Name": "ShippersStateProvince"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 64,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ShippersZipPostalCode",
+					"Description": "The 'zip/postal code' component of the Shipper's address, which is normally the same as that shown in the Shipment.",
+					"BaseAttributeReference": {
+						"Entity": "AirWaybill.cdm.json/AirWaybill",
+						"Name": "ShippersZipPostalCode"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 11,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "ShippersCountry",
+					"Description": "The 'country' component of the Shipper's address, which is normally the same as that shown in the Shipment.",
+					"BaseAttributeReference": {
+						"Entity": "AirWaybill.cdm.json/AirWaybill",
+						"Name": "ShippersCountry"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 64,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ConsigneeName",
+					"Description": "The name of the Air Way Bill Consignee.",
+					"BaseAttributeReference": {
+						"Entity": "AirWaybill.cdm.json/AirWaybill",
+						"Name": "ConsigneeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ConsigneeAddress",
+					"Description": "The 'street' component of the Air Way Bill Consignee.",
+					"BaseAttributeReference": {
+						"Entity": "AirWaybill.cdm.json/AirWaybill",
+						"Name": "ConsigneeAddress"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ConsigneeCity",
+					"Description": "The 'city' component of the Air Way Bill Consignee.",
+					"BaseAttributeReference": {
+						"Entity": "AirWaybill.cdm.json/AirWaybill",
+						"Name": "ConsigneeCity"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ConsigneeStateProvince",
+					"Description": "The 'state/province' component of the Air Way Bill Consignee.",
+					"BaseAttributeReference": {
+						"Entity": "AirWaybill.cdm.json/AirWaybill",
+						"Name": "ConsigneeStateProvince"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 64,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ConsigneeZipPostalCode",
+					"Description": "The 'zip/postal code' component of the Air Way Bill Consignee.",
+					"BaseAttributeReference": {
+						"Entity": "AirWaybill.cdm.json/AirWaybill",
+						"Name": "ConsigneeZipPostalCode"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 11,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "ConsigneeCountry",
+					"Description": "The 'country' component of the Air Way Bill Consignee.",
+					"BaseAttributeReference": {
+						"Entity": "AirWaybill.cdm.json/AirWaybill",
+						"Name": "ConsigneeCountry"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 64,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "IssuingCarrierName",
+					"Description": "The name of the Carrier issuing the Air Waybill.",
+					"BaseAttributeReference": {
+						"Entity": "AirWaybill.cdm.json/AirWaybill",
+						"Name": "IssuingCarrierName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "IssuingCarrierAgentName",
+					"Description": "The name of the Carrier's Agent.",
+					"BaseAttributeReference": {
+						"Entity": "AirWaybill.cdm.json/AirWaybill",
+						"Name": "IssuingCarrierAgentName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "IssuingCarrierAgentAddress",
+					"Description": "The 'street' component of the Agent's address.",
+					"BaseAttributeReference": {
+						"Entity": "AirWaybill.cdm.json/AirWaybill",
+						"Name": "IssuingCarrierAgentAddress"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "IssuingCarrierAgentCity",
+					"Description": "The 'city' component of the Agent's address.",
+					"BaseAttributeReference": {
+						"Entity": "AirWaybill.cdm.json/AirWaybill",
+						"Name": "IssuingCarrierAgentCity"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "IssuingCarrierAgentStateProvince",
+					"Description": "The 'state/province' component of the Agent's address.",
+					"BaseAttributeReference": {
+						"Entity": "AirWaybill.cdm.json/AirWaybill",
+						"Name": "IssuingCarrierAgentStateProvince"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 64,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "IssuingCarrierAgentZipPostalCode",
+					"Description": "The 'zip/postal code' component of the Agent's address.",
+					"BaseAttributeReference": {
+						"Entity": "AirWaybill.cdm.json/AirWaybill",
+						"Name": "IssuingCarrierAgentZipPostalCode"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 11,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "IssuingCarrierAgentCountry",
+					"Description": "The 'country' component of the Agent's address.",
+					"BaseAttributeReference": {
+						"Entity": "AirWaybill.cdm.json/AirWaybill",
+						"Name": "IssuingCarrierAgentCountry"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 64,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "AirportOfDepartureName",
+					"Description": "The name of the airport from which the shipment is to depart.",
+					"BaseAttributeReference": {
+						"Entity": "AirWaybill.cdm.json/AirWaybill",
+						"Name": "AirportOfDepartureName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "AirportOfDestinationName",
+					"Description": "The name of the airport to which the shipment is to be shipped.",
+					"BaseAttributeReference": {
+						"Entity": "AirWaybill.cdm.json/AirWaybill",
+						"Name": "AirportOfDestinationName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "DepartingFlightNumber",
+					"Description": "The unique identifier of an Air Carrier flight.",
+					"BaseAttributeReference": {
+						"Entity": "AirWaybill.cdm.json/AirWaybill",
+						"Name": "DepartingFlightNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "HandlingInformation",
+					"Description": "Information regarding the handling of the shipment/shipment items.",
+					"BaseAttributeReference": {
+						"Entity": "AirWaybill.cdm.json/AirWaybill",
+						"Name": "HandlingInformation"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 2048,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ConditionsOfContract",
+					"Description": "The terms and conditions established by the air carriers for the carriage of goods. These conditions are printed on the Air Waybill and include such items as limits of liability, claims limitations, indemnity and dimensional weight rules.",
+					"BaseAttributeReference": {
+						"Entity": "AirWaybill.cdm.json/AirWaybill",
+						"Name": "ConditionsOfContract"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 2048,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "NeutralAirWaybillIndicator",
+					"Description": "A standard air waybill without identification of issuing carrier",
+					"BaseAttributeReference": {
+						"Entity": "AirWaybill.cdm.json/AirWaybill",
+						"Name": "NeutralAirWaybillIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "InsurancePolicyNumber",
+					"Description": "The unique identifier of an Insurance Policy.",
+					"BaseAttributeReference": {
+						"Entity": "AirWaybill.cdm.json/AirWaybill",
+						"Name": "InsurancePolicyNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "DeclaredValueForCarriageAmount",
+					"Description": "The maximum of transportation liability for any loss, damage, delay, misdelivery, nondelivery, misinformation or any failure to provide information.",
+					"BaseAttributeReference": {
+						"Entity": "AirWaybill.cdm.json/AirWaybill",
+						"Name": "DeclaredValueForCarriageAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "DeclaredValueForCustomsAmount",
+					"Description": "The total declared value of the Air Way Bill Items that are declared for Customs.",
+					"BaseAttributeReference": {
+						"Entity": "AirWaybill.cdm.json/AirWaybill",
+						"Name": "DeclaredValueForCustomsAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "TotalInsuranceChargeAmount",
+					"Description": "The total amount of insurance charges.",
+					"BaseAttributeReference": {
+						"Entity": "AirWaybill.cdm.json/AirWaybill",
+						"Name": "TotalInsuranceChargeAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "TotalChargesDueAgentAmount",
+					"Description": "The total amount due the Carrier's Agent.",
+					"BaseAttributeReference": {
+						"Entity": "AirWaybill.cdm.json/AirWaybill",
+						"Name": "TotalChargesDueAgentAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "TaxChargeAmount",
+					"Description": "The total amount of taxes due.",
+					"BaseAttributeReference": {
+						"Entity": "AirWaybill.cdm.json/AirWaybill",
+						"Name": "TaxChargeAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "TotalChargedDueCarrierAmount",
+					"Description": "The total amount due the Carrier.",
+					"BaseAttributeReference": {
+						"Entity": "AirWaybill.cdm.json/AirWaybill",
+						"Name": "TotalChargedDueCarrierAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "TotalPrepaidAmount",
+					"Description": "The total amount of prepaid charges.\n\nA freight term, which indicates that charges are to be paid by the shipper. Prepaid shipping charges may be added to the customer invoice, or the cost may be bundled into the pricing of the product.",
+					"BaseAttributeReference": {
+						"Entity": "AirWaybill.cdm.json/AirWaybill",
+						"Name": "TotalPrepaidAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "TotalCollectAmount",
+					"Description": "The total amount of collect shipping charges.",
+					"BaseAttributeReference": {
+						"Entity": "AirWaybill.cdm.json/AirWaybill",
+						"Name": "TotalCollectAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "TotalValuationChargeAmount",
+					"Description": "Transportation charges assessed shippers who declare a value of goods higher than value of carrier's' limits of liability.",
+					"BaseAttributeReference": {
+						"Entity": "AirWaybill.cdm.json/AirWaybill",
+						"Name": "TotalValuationChargeAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "CartageChargeAmount",
+					"Description": "The charges for cartage, which is for the transferring of goods by trucks, wagons, drays, etc., for short haul or transfer.",
+					"BaseAttributeReference": {
+						"Entity": "AirWaybill.cdm.json/AirWaybill",
+						"Name": "CartageChargeAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "ForwardingChargeAmount",
+					"Description": "The total amount of forwarding charges, which is for an individual, partnership, or corporation who engages in the business of transporting goods, but does not operate equipment.  The forwarder arranges transportation by using subcontracted operations and may issue bills of lading with its transportation services. (ex. NWII)",
+					"BaseAttributeReference": {
+						"Entity": "AirWaybill.cdm.json/AirWaybill",
+						"Name": "ForwardingChargeAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "CurrencyId",
+					"Description": "The unique identifier of a Currency.",
+					"BaseAttributeReference": {
+						"Entity": "AirWaybill.cdm.json/AirWaybill",
+						"Name": "CurrencyId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "TotalShipmentBilledWeight",
+					"Description": "The total weight shown in the Waybill for the quantity of items transported.",
+					"BaseAttributeReference": {
+						"Entity": "AirWaybill.cdm.json/AirWaybill",
+						"Name": "TotalShipmentBilledWeight"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "AirWaybillTypeId",
+					"Description": "The unique identifier of an Air Waybill Type.",
+					"BaseAttributeReference": {
+						"Entity": "AirWaybill.cdm.json/AirWaybill",
+						"Name": "AirWaybillTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "AirWaybillStatusId",
+					"Description": "The unique identifier of an Air Waybill Status.",
+					"BaseAttributeReference": {
+						"Entity": "AirWaybill.cdm.json/AirWaybill",
+						"Name": "AirWaybillStatusId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ShipmentId\":{\"entity\":\"AirWaybill.cdm.json/AirWaybill\",\"name\":\"ShipmentId\"},\"DocumentId\":{\"entity\":\"AirWaybill.cdm.json/AirWaybill\",\"name\":\"DocumentId\"},\"ShippersName\":{\"entity\":\"AirWaybill.cdm.json/AirWaybill\",\"name\":\"ShippersName\"},\"ShippersAddress\":{\"entity\":\"AirWaybill.cdm.json/AirWaybill\",\"name\":\"ShippersAddress\"},\"ShippersCity\":{\"entity\":\"AirWaybill.cdm.json/AirWaybill\",\"name\":\"ShippersCity\"},\"ShippersStateProvince\":{\"entity\":\"AirWaybill.cdm.json/AirWaybill\",\"name\":\"ShippersStateProvince\"},\"ShippersZipPostalCode\":{\"entity\":\"AirWaybill.cdm.json/AirWaybill\",\"name\":\"ShippersZipPostalCode\"},\"ShippersCountry\":{\"entity\":\"AirWaybill.cdm.json/AirWaybill\",\"name\":\"ShippersCountry\"},\"ConsigneeName\":{\"entity\":\"AirWaybill.cdm.json/AirWaybill\",\"name\":\"ConsigneeName\"},\"ConsigneeAddress\":{\"entity\":\"AirWaybill.cdm.json/AirWaybill\",\"name\":\"ConsigneeAddress\"},\"ConsigneeCity\":{\"entity\":\"AirWaybill.cdm.json/AirWaybill\",\"name\":\"ConsigneeCity\"},\"ConsigneeStateProvince\":{\"entity\":\"AirWaybill.cdm.json/AirWaybill\",\"name\":\"ConsigneeStateProvince\"},\"ConsigneeZipPostalCode\":{\"entity\":\"AirWaybill.cdm.json/AirWaybill\",\"name\":\"ConsigneeZipPostalCode\"},\"ConsigneeCountry\":{\"entity\":\"AirWaybill.cdm.json/AirWaybill\",\"name\":\"ConsigneeCountry\"},\"IssuingCarrierName\":{\"entity\":\"AirWaybill.cdm.json/AirWaybill\",\"name\":\"IssuingCarrierName\"},\"IssuingCarrierAgentName\":{\"entity\":\"AirWaybill.cdm.json/AirWaybill\",\"name\":\"IssuingCarrierAgentName\"},\"IssuingCarrierAgentAddress\":{\"entity\":\"AirWaybill.cdm.json/AirWaybill\",\"name\":\"IssuingCarrierAgentAddress\"},\"IssuingCarrierAgentCity\":{\"entity\":\"AirWaybill.cdm.json/AirWaybill\",\"name\":\"IssuingCarrierAgentCity\"},\"IssuingCarrierAgentStateProvince\":{\"entity\":\"AirWaybill.cdm.json/AirWaybill\",\"name\":\"IssuingCarrierAgentStateProvince\"},\"IssuingCarrierAgentZipPostalCode\":{\"entity\":\"AirWaybill.cdm.json/AirWaybill\",\"name\":\"IssuingCarrierAgentZipPostalCode\"},\"IssuingCarrierAgentCountry\":{\"entity\":\"AirWaybill.cdm.json/AirWaybill\",\"name\":\"IssuingCarrierAgentCountry\"},\"AirportOfDepartureName\":{\"entity\":\"AirWaybill.cdm.json/AirWaybill\",\"name\":\"AirportOfDepartureName\"},\"AirportOfDestinationName\":{\"entity\":\"AirWaybill.cdm.json/AirWaybill\",\"name\":\"AirportOfDestinationName\"},\"DepartingFlightNumber\":{\"entity\":\"AirWaybill.cdm.json/AirWaybill\",\"name\":\"DepartingFlightNumber\"},\"HandlingInformation\":{\"entity\":\"AirWaybill.cdm.json/AirWaybill\",\"name\":\"HandlingInformation\"},\"ConditionsOfContract\":{\"entity\":\"AirWaybill.cdm.json/AirWaybill\",\"name\":\"ConditionsOfContract\"},\"NeutralAirWaybillIndicator\":{\"entity\":\"AirWaybill.cdm.json/AirWaybill\",\"name\":\"NeutralAirWaybillIndicator\"},\"InsurancePolicyNumber\":{\"entity\":\"AirWaybill.cdm.json/AirWaybill\",\"name\":\"InsurancePolicyNumber\"},\"DeclaredValueForCarriageAmount\":{\"entity\":\"AirWaybill.cdm.json/AirWaybill\",\"name\":\"DeclaredValueForCarriageAmount\"},\"DeclaredValueForCustomsAmount\":{\"entity\":\"AirWaybill.cdm.json/AirWaybill\",\"name\":\"DeclaredValueForCustomsAmount\"},\"TotalInsuranceChargeAmount\":{\"entity\":\"AirWaybill.cdm.json/AirWaybill\",\"name\":\"TotalInsuranceChargeAmount\"},\"TotalChargesDueAgentAmount\":{\"entity\":\"AirWaybill.cdm.json/AirWaybill\",\"name\":\"TotalChargesDueAgentAmount\"},\"TaxChargeAmount\":{\"entity\":\"AirWaybill.cdm.json/AirWaybill\",\"name\":\"TaxChargeAmount\"},\"TotalChargedDueCarrierAmount\":{\"entity\":\"AirWaybill.cdm.json/AirWaybill\",\"name\":\"TotalChargedDueCarrierAmount\"},\"TotalPrepaidAmount\":{\"entity\":\"AirWaybill.cdm.json/AirWaybill\",\"name\":\"TotalPrepaidAmount\"},\"TotalCollectAmount\":{\"entity\":\"AirWaybill.cdm.json/AirWaybill\",\"name\":\"TotalCollectAmount\"},\"TotalValuationChargeAmount\":{\"entity\":\"AirWaybill.cdm.json/AirWaybill\",\"name\":\"TotalValuationChargeAmount\"},\"CartageChargeAmount\":{\"entity\":\"AirWaybill.cdm.json/AirWaybill\",\"name\":\"CartageChargeAmount\"},\"ForwardingChargeAmount\":{\"entity\":\"AirWaybill.cdm.json/AirWaybill\",\"name\":\"ForwardingChargeAmount\"},\"CurrencyId\":{\"entity\":\"AirWaybill.cdm.json/AirWaybill\",\"name\":\"CurrencyId\"},\"TotalShipmentBilledWeight\":{\"entity\":\"AirWaybill.cdm.json/AirWaybill\",\"name\":\"TotalShipmentBilledWeight\"},\"AirWaybillTypeId\":{\"entity\":\"AirWaybill.cdm.json/AirWaybill\",\"name\":\"AirWaybillTypeId\"},\"AirWaybillStatusId\":{\"entity\":\"AirWaybill.cdm.json/AirWaybill\",\"name\":\"AirWaybillStatusId\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"AirWaybill\",\"path\":\"AirWaybill.cdm.json/AirWaybill\"},\"description\":\"A shipping document used by the airlines for air freight. It serves as a contract for carriage and includes carrier conditions of carriage such as limits of liability and claims procedures. The air waybill also contains shipping instructions to the airline, a description of the commodity, and applicable transportation charges. The airline industry has adopted a standard formatted air waybill that accommodates both domestic and international traffic.\\n\\nAir Waybills are not negotiable. \\n\\nA air transport bill of lading covering both domestic and international flights transporting goods to a specific destination.\\n\\nIt is a contract for carriage that includes carrier conditions of carriage including such items as limits of liability and claims procedures.\\n\\nThe Air Way Bill contains shipping instructions to airlines, a description of the commodity and applicable transportation charges.\\n\\nThe Air Way Bill is a non-negotiable instrument that serves as a receipt for the shipper, which indicates that the Carrier has accepted the goods listed and obligating the Carrier to carry the consignment to the airport of destination according to the specified conditions.\\n\\nA shipping document used by the airlines for air freight.  It serves as a contract for carriage and includes carrier conditions of carriage such as limits of liability and claims procedures.  The air waybill also contains shipping instructions to the airline, a description of the commodity, and applicable transportation charges.  The airline industry has adopted a standard formatted air waybill that accommodates both domestic and international traffic.\",\"primaryKey\":[\"ShipmentId\",\"DocumentId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"ShipmentId\",\"attributeReference\":{\"entity\":\"AirWaybill.cdm.json/AirWaybill\",\"name\":\"ShipmentId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"DocumentId\",\"attributeReference\":{\"entity\":\"AirWaybill.cdm.json/AirWaybill\",\"name\":\"DocumentId\"},\"dataType\":\"long\"},{\"type\":\"Existing\",\"name\":\"ShippersName\",\"attributeReference\":{\"entity\":\"AirWaybill.cdm.json/AirWaybill\",\"name\":\"ShippersName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"ShippersAddress\",\"attributeReference\":{\"entity\":\"AirWaybill.cdm.json/AirWaybill\",\"name\":\"ShippersAddress\"},\"dataType\":\"string\",\"dataTypeLength\":512},{\"type\":\"Existing\",\"name\":\"ShippersCity\",\"attributeReference\":{\"entity\":\"AirWaybill.cdm.json/AirWaybill\",\"name\":\"ShippersCity\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"ShippersStateProvince\",\"attributeReference\":{\"entity\":\"AirWaybill.cdm.json/AirWaybill\",\"name\":\"ShippersStateProvince\"},\"dataType\":\"string\",\"dataTypeLength\":64},{\"type\":\"Existing\",\"name\":\"ShippersZipPostalCode\",\"attributeReference\":{\"entity\":\"AirWaybill.cdm.json/AirWaybill\",\"name\":\"ShippersZipPostalCode\"},\"dataType\":\"decimal\",\"dataTypeLength\":11,\"scale\":0},{\"type\":\"Existing\",\"name\":\"ShippersCountry\",\"attributeReference\":{\"entity\":\"AirWaybill.cdm.json/AirWaybill\",\"name\":\"ShippersCountry\"},\"dataType\":\"string\",\"dataTypeLength\":64},{\"type\":\"Existing\",\"name\":\"ConsigneeName\",\"attributeReference\":{\"entity\":\"AirWaybill.cdm.json/AirWaybill\",\"name\":\"ConsigneeName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"ConsigneeAddress\",\"attributeReference\":{\"entity\":\"AirWaybill.cdm.json/AirWaybill\",\"name\":\"ConsigneeAddress\"},\"dataType\":\"string\",\"dataTypeLength\":512},{\"type\":\"Existing\",\"name\":\"ConsigneeCity\",\"attributeReference\":{\"entity\":\"AirWaybill.cdm.json/AirWaybill\",\"name\":\"ConsigneeCity\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"ConsigneeStateProvince\",\"attributeReference\":{\"entity\":\"AirWaybill.cdm.json/AirWaybill\",\"name\":\"ConsigneeStateProvince\"},\"dataType\":\"string\",\"dataTypeLength\":64},{\"type\":\"Existing\",\"name\":\"ConsigneeZipPostalCode\",\"attributeReference\":{\"entity\":\"AirWaybill.cdm.json/AirWaybill\",\"name\":\"ConsigneeZipPostalCode\"},\"dataType\":\"decimal\",\"dataTypeLength\":11,\"scale\":0},{\"type\":\"Existing\",\"name\":\"ConsigneeCountry\",\"attributeReference\":{\"entity\":\"AirWaybill.cdm.json/AirWaybill\",\"name\":\"ConsigneeCountry\"},\"dataType\":\"string\",\"dataTypeLength\":64},{\"type\":\"Existing\",\"name\":\"IssuingCarrierName\",\"attributeReference\":{\"entity\":\"AirWaybill.cdm.json/AirWaybill\",\"name\":\"IssuingCarrierName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"IssuingCarrierAgentName\",\"attributeReference\":{\"entity\":\"AirWaybill.cdm.json/AirWaybill\",\"name\":\"IssuingCarrierAgentName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"IssuingCarrierAgentAddress\",\"attributeReference\":{\"entity\":\"AirWaybill.cdm.json/AirWaybill\",\"name\":\"IssuingCarrierAgentAddress\"},\"dataType\":\"string\",\"dataTypeLength\":512},{\"type\":\"Existing\",\"name\":\"IssuingCarrierAgentCity\",\"attributeReference\":{\"entity\":\"AirWaybill.cdm.json/AirWaybill\",\"name\":\"IssuingCarrierAgentCity\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"IssuingCarrierAgentStateProvince\",\"attributeReference\":{\"entity\":\"AirWaybill.cdm.json/AirWaybill\",\"name\":\"IssuingCarrierAgentStateProvince\"},\"dataType\":\"string\",\"dataTypeLength\":64},{\"type\":\"Existing\",\"name\":\"IssuingCarrierAgentZipPostalCode\",\"attributeReference\":{\"entity\":\"AirWaybill.cdm.json/AirWaybill\",\"name\":\"IssuingCarrierAgentZipPostalCode\"},\"dataType\":\"decimal\",\"dataTypeLength\":11,\"scale\":0},{\"type\":\"Existing\",\"name\":\"IssuingCarrierAgentCountry\",\"attributeReference\":{\"entity\":\"AirWaybill.cdm.json/AirWaybill\",\"name\":\"IssuingCarrierAgentCountry\"},\"dataType\":\"string\",\"dataTypeLength\":64},{\"type\":\"Existing\",\"name\":\"AirportOfDepartureName\",\"attributeReference\":{\"entity\":\"AirWaybill.cdm.json/AirWaybill\",\"name\":\"AirportOfDepartureName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"AirportOfDestinationName\",\"attributeReference\":{\"entity\":\"AirWaybill.cdm.json/AirWaybill\",\"name\":\"AirportOfDestinationName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"DepartingFlightNumber\",\"attributeReference\":{\"entity\":\"AirWaybill.cdm.json/AirWaybill\",\"name\":\"DepartingFlightNumber\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"HandlingInformation\",\"attributeReference\":{\"entity\":\"AirWaybill.cdm.json/AirWaybill\",\"name\":\"HandlingInformation\"},\"dataType\":\"string\",\"dataTypeLength\":2048},{\"type\":\"Existing\",\"name\":\"ConditionsOfContract\",\"attributeReference\":{\"entity\":\"AirWaybill.cdm.json/AirWaybill\",\"name\":\"ConditionsOfContract\"},\"dataType\":\"string\",\"dataTypeLength\":2048},{\"type\":\"Existing\",\"name\":\"NeutralAirWaybillIndicator\",\"attributeReference\":{\"entity\":\"AirWaybill.cdm.json/AirWaybill\",\"name\":\"NeutralAirWaybillIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"InsurancePolicyNumber\",\"attributeReference\":{\"entity\":\"AirWaybill.cdm.json/AirWaybill\",\"name\":\"InsurancePolicyNumber\"},\"dataType\":\"string\",\"dataTypeLength\":1024},{\"type\":\"Existing\",\"name\":\"DeclaredValueForCarriageAmount\",\"attributeReference\":{\"entity\":\"AirWaybill.cdm.json/AirWaybill\",\"name\":\"DeclaredValueForCarriageAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"DeclaredValueForCustomsAmount\",\"attributeReference\":{\"entity\":\"AirWaybill.cdm.json/AirWaybill\",\"name\":\"DeclaredValueForCustomsAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"TotalInsuranceChargeAmount\",\"attributeReference\":{\"entity\":\"AirWaybill.cdm.json/AirWaybill\",\"name\":\"TotalInsuranceChargeAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"TotalChargesDueAgentAmount\",\"attributeReference\":{\"entity\":\"AirWaybill.cdm.json/AirWaybill\",\"name\":\"TotalChargesDueAgentAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"TaxChargeAmount\",\"attributeReference\":{\"entity\":\"AirWaybill.cdm.json/AirWaybill\",\"name\":\"TaxChargeAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"TotalChargedDueCarrierAmount\",\"attributeReference\":{\"entity\":\"AirWaybill.cdm.json/AirWaybill\",\"name\":\"TotalChargedDueCarrierAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"TotalPrepaidAmount\",\"attributeReference\":{\"entity\":\"AirWaybill.cdm.json/AirWaybill\",\"name\":\"TotalPrepaidAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"TotalCollectAmount\",\"attributeReference\":{\"entity\":\"AirWaybill.cdm.json/AirWaybill\",\"name\":\"TotalCollectAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"TotalValuationChargeAmount\",\"attributeReference\":{\"entity\":\"AirWaybill.cdm.json/AirWaybill\",\"name\":\"TotalValuationChargeAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"CartageChargeAmount\",\"attributeReference\":{\"entity\":\"AirWaybill.cdm.json/AirWaybill\",\"name\":\"CartageChargeAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"ForwardingChargeAmount\",\"attributeReference\":{\"entity\":\"AirWaybill.cdm.json/AirWaybill\",\"name\":\"ForwardingChargeAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"CurrencyId\",\"attributeReference\":{\"entity\":\"AirWaybill.cdm.json/AirWaybill\",\"name\":\"CurrencyId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"TotalShipmentBilledWeight\",\"attributeReference\":{\"entity\":\"AirWaybill.cdm.json/AirWaybill\",\"name\":\"TotalShipmentBilledWeight\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":8},{\"type\":\"Existing\",\"name\":\"AirWaybillTypeId\",\"attributeReference\":{\"entity\":\"AirWaybill.cdm.json/AirWaybill\",\"name\":\"AirWaybillTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"AirWaybillStatusId\",\"attributeReference\":{\"entity\":\"AirWaybill.cdm.json/AirWaybill\",\"name\":\"AirWaybillStatusId\"},\"dataType\":\"integer\"}]}}}",
+			"Description": "A shipping document used by the airlines for air freight. It serves as a contract for carriage and includes carrier conditions of carriage such as limits of liability and claims procedures. The air waybill also contains shipping instructions to the airline, a description of the commodity, and applicable transportation charges. The airline industry has adopted a standard formatted air waybill that accommodates both domestic and international traffic.\n\nAir Waybills are not negotiable. \n\nA air transport bill of lading covering both domestic and international flights transporting goods to a specific destination.\n\nIt is a contract for carriage that includes carrier conditions of carriage including such items as limits of liability and claims procedures.\n\nThe Air Way Bill contains shipping instructions to airlines, a description of the commodity and applicable transportation charges.\n\nThe Air Way Bill is a non-negotiable instrument that serves as a receipt for the shipper, which indicates that the Carrier has accepted the goods listed and obligating the Carrier to carry the consignment to the airport of destination according to the specified conditions.\n\nA shipping document used by the airlines for air freight.  It serves as a contract for carriage and includes carrier conditions of carriage such as limits of liability and claims procedures.  The air waybill also contains shipping instructions to the airline, a description of the commodity, and applicable transportation charges.  The airline industry has adopted a standard formatted air waybill that accommodates both domestic and international traffic.",
+			"DisplayFolderInfo": "{\"name\":\"Shipping\",\"colorCode\":\"#000B42\"}",
+			"PrimaryKeys": "ShipmentId,DocumentId"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

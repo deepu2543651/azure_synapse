@@ -1,0 +1,26 @@
+{
+	"name": "relationship-zujnagwtfc",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "relationship-zujnagwtfc",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Shipment",
+		"ToTableName": "RelatedShipment",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ShipmentId",
+				"ToColumnName": "RelatedShipmentId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Shipment.cdm.json/Shipment\",\"toEntity\":\"RelatedShipment.cdm.json/RelatedShipment\",\"joinPairs\":[{\"fromAttribute\":\"ShipmentId\",\"toAttribute\":\"RelatedShipmentId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

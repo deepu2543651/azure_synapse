@@ -1,0 +1,26 @@
+{
+	"name": "relationship-ufhuovbqnx",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "relationship-ufhuovbqnx",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Container",
+		"ToTableName": "ContainerOwner",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ContainerId",
+				"ToColumnName": "ContainerId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Container.cdm.json/Container\",\"toEntity\":\"ContainerOwner.cdm.json/ContainerOwner\",\"joinPairs\":[{\"fromAttribute\":\"ContainerId\",\"toAttribute\":\"ContainerId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

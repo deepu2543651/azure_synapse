@@ -1,0 +1,26 @@
+{
+	"name": "relationship-hpghofgeti",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "relationship-hpghofgeti",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Barge",
+		"ToTableName": "ShipmentRouteLegEquipmentSubstitution",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "BargeId",
+				"ToColumnName": "SubstitutionBargeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Barge.cdm.json/Barge\",\"toEntity\":\"ShipmentRouteLegEquipmentSubstitution.cdm.json/ShipmentRouteLegEquipmentSubstitution\",\"joinPairs\":[{\"fromAttribute\":\"BargeId\",\"toAttribute\":\"SubstitutionBargeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

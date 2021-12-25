@@ -1,0 +1,121 @@
+{
+	"name": "WarehouseItemAnticipationStock",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "WarehouseItemAnticipationStock",
+		"Description": "Inventory held in order to be able to satisfy a demand with seasonal fluctuations with a production level that does not fluctuate at all or that varies to a lesser extent than the demand\n\nAnticipation is intended to cope with erratic production or deficiencies in production capacity",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "WarehouseId",
+					"Description": "The unique identifier of a Warehouse.",
+					"BaseAttributeReference": {
+						"Entity": "WarehouseItemAnticipationStock.cdm.json/WarehouseItemAnticipationStock",
+						"Name": "WarehouseId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ItemSku",
+					"Description": "The Stock Keeping Unit identifier, which is typically used for inventory-related activities.",
+					"BaseAttributeReference": {
+						"Entity": "WarehouseItemAnticipationStock.cdm.json/WarehouseItemAnticipationStock",
+						"Name": "ItemSku"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Length": 20,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "Timestamp",
+					"Description": "The effective timestamp for which the Anticipation Stock quantity is determined at the Warehouse.",
+					"BaseAttributeReference": {
+						"Entity": "WarehouseItemAnticipationStock.cdm.json/WarehouseItemAnticipationStock",
+						"Name": "Timestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "AnticipationStockQuantity",
+					"Description": "The Anticipation Stock quantity at the Warehouse as of the associated date.",
+					"BaseAttributeReference": {
+						"Entity": "WarehouseItemAnticipationStock.cdm.json/WarehouseItemAnticipationStock",
+						"Name": "AnticipationStockQuantity"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "Note",
+					"Description": "A note, comment or additional information regarding the Warehouse Item Anticipation Stock.",
+					"BaseAttributeReference": {
+						"Entity": "WarehouseItemAnticipationStock.cdm.json/WarehouseItemAnticipationStock",
+						"Name": "Note"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"WarehouseId\":{\"entity\":\"WarehouseItemAnticipationStock.cdm.json/WarehouseItemAnticipationStock\",\"name\":\"WarehouseId\"},\"ItemSku\":{\"entity\":\"WarehouseItemAnticipationStock.cdm.json/WarehouseItemAnticipationStock\",\"name\":\"ItemSku\"},\"Timestamp\":{\"entity\":\"WarehouseItemAnticipationStock.cdm.json/WarehouseItemAnticipationStock\",\"name\":\"Timestamp\"},\"AnticipationStockQuantity\":{\"entity\":\"WarehouseItemAnticipationStock.cdm.json/WarehouseItemAnticipationStock\",\"name\":\"AnticipationStockQuantity\"},\"Note\":{\"entity\":\"WarehouseItemAnticipationStock.cdm.json/WarehouseItemAnticipationStock\",\"name\":\"Note\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"WarehouseItemAnticipationStock\",\"path\":\"WarehouseItemAnticipationStock.cdm.json/WarehouseItemAnticipationStock\"},\"description\":\"Inventory held in order to be able to satisfy a demand with seasonal fluctuations with a production level that does not fluctuate at all or that varies to a lesser extent than the demand\\n\\nAnticipation is intended to cope with erratic production or deficiencies in production capacity\",\"primaryKey\":[\"WarehouseId\",\"ItemSku\",\"Timestamp\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"WarehouseId\",\"attributeReference\":{\"entity\":\"WarehouseItemAnticipationStock.cdm.json/WarehouseItemAnticipationStock\",\"name\":\"WarehouseId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ItemSku\",\"attributeReference\":{\"entity\":\"WarehouseItemAnticipationStock.cdm.json/WarehouseItemAnticipationStock\",\"name\":\"ItemSku\"},\"dataType\":\"string\",\"dataTypeLength\":20},{\"type\":\"Existing\",\"name\":\"Timestamp\",\"attributeReference\":{\"entity\":\"WarehouseItemAnticipationStock.cdm.json/WarehouseItemAnticipationStock\",\"name\":\"Timestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"AnticipationStockQuantity\",\"attributeReference\":{\"entity\":\"WarehouseItemAnticipationStock.cdm.json/WarehouseItemAnticipationStock\",\"name\":\"AnticipationStockQuantity\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"Note\",\"attributeReference\":{\"entity\":\"WarehouseItemAnticipationStock.cdm.json/WarehouseItemAnticipationStock\",\"name\":\"Note\"},\"dataType\":\"string\",\"dataTypeLength\":1024}]}}}",
+			"Description": "Inventory held in order to be able to satisfy a demand with seasonal fluctuations with a production level that does not fluctuate at all or that varies to a lesser extent than the demand\n\nAnticipation is intended to cope with erratic production or deficiencies in production capacity",
+			"DisplayFolderInfo": "{\"name\":\"Inventory\",\"colorCode\":\"#EA279F\"}",
+			"PrimaryKeys": "WarehouseId,ItemSku,Timestamp"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

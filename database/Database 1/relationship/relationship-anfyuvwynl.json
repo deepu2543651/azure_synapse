@@ -1,0 +1,26 @@
+{
+	"name": "relationship-anfyuvwynl",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "relationship-anfyuvwynl",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Vehicle",
+		"ToTableName": "DriverLog",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "VehicleId",
+				"ToColumnName": "VehicleId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Vehicle.cdm.json/Vehicle\",\"toEntity\":\"DriverLog.cdm.json/DriverLog\",\"joinPairs\":[{\"fromAttribute\":\"VehicleId\",\"toAttribute\":\"VehicleId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

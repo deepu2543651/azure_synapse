@@ -1,0 +1,26 @@
+{
+	"name": "relationship-tolzpenitz",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "relationship-tolzpenitz",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Bank",
+		"ToTableName": "LetterOfCreditDocument",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "BankId",
+				"ToColumnName": "ConfirmingBankId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Bank.cdm.json/Bank\",\"toEntity\":\"LetterOfCreditDocument.cdm.json/LetterOfCreditDocument\",\"joinPairs\":[{\"fromAttribute\":\"BankId\",\"toAttribute\":\"ConfirmingBankId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

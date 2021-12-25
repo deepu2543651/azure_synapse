@@ -1,0 +1,86 @@
+{
+	"name": "LetterOfCreditCharacteristicType",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "LetterOfCreditCharacteristicType",
+		"Description": "A characteristics feature of a Letter of Credit that describes in standard terms and conditions.\n\nEx:\n- ACCEPTANCE LETTER OF CREDIT\n- ADVISED CREDIT\n- BACK-TO-BACK\n- CLEAN\n- CONFIRMED\n- DEFERRED PAYMENT CREDIT\n- DOCUMENTARY\n- IRREVOCABLE\n- NON-CUMULATIVE\n- RESTRICTED\n- REVOLVING\n- STRAIGHT\n- TRANSFERRABLE\n- UNCONFIRMED\n\nwhere:\n\nACCEPTANCE LETTER OF CREDIT\nA Letter of Credit which, in addition to other required documents, requires presentation of a term draft drawn on the bank nominated as the accepting bank under the letter of credit.\n\nADVISED CREDIT\nA Letter of Credit whose terms and conditions have been confirmed by a bank.\n\nBACK-TO-BACK\nA new letter of credit issued to another beneficiary on the strength of a primary credit. The second L/C uses the first L/C as collateral for the bank. Used in a three-party transaction.\n\nCLEAN\nA letter of credit that requires the beneficiary to present only a draft or a receipt for specified funds before receiving payment.\n\nCONFIRMED\nA Letter of Credit which contains a guarantee on the part of both the issuing and advising banks of payment to the seller so long as the seller's documentation is in order and the terms of the letter of credit are met.\n\nConfirmation is only added to irrevocable letters of credit, usually available with the advising bank.\n\nDEFERRED PAYMENT CREDIT\nA type of Letter Of Credit that provides payment some time after presentation of shipping documentation by an exporter.\n\nDOCUMENTARY\nA Letter Of Credit where the issuing Bank defines the specific documents that must accompany a draft.\n\nThese documents assure that applicant/importer that the shipped items have been shipped and that the title of the goods have been transferred to the importer.\n\nIRREVOCABLE\nAn instrument that, once established, cannot be modified or cancelled without the agreement of all parties concerned.\n\nNON-CUMULATIVE\nA revolving letter of credit that prohibits the amount not used during the specific period from being available afterwards.\n\nRESTRICTED\nA condition within the letter of credit which restricts its negotiation to a named bank.\n\nREVOLVING\nAn irrevocable letter issued for a specific amount; renews itself for the same amount over a given period.\n\nSTRAIGHT\nA letter of credit that contains a limited engagement clause which states that the issuing bank promises to pay the beneficiary upon presentation of the required documents at its counters or the counters of the named bank.\n\nTRANSFERRABLE\nA letter of credit that allows the beneficiary to transfer in whole or in part to another beneficiary any amount which, in aggregate, of such transfers does not exceed the amount of the credit.  Used by middlemen.\n\nUNCONFIRMED\nA letter of credit forwarded to the beneficiary by the advising bank without engagement on the part of the advising bank.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "LetterOfCreditCharacteristicTypeId",
+					"Description": "The unique identifier of a Letter Of Credit Characteristic Type.",
+					"BaseAttributeReference": {
+						"Entity": "LetterOfCreditCharacteristicType.cdm.json/LetterOfCreditCharacteristicType",
+						"Name": "LetterOfCreditCharacteristicTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "LetterOfCreditCharacteristicTypeName",
+					"Description": "The name of a Letter Of Credit Characteristic Type.",
+					"BaseAttributeReference": {
+						"Entity": "LetterOfCreditCharacteristicType.cdm.json/LetterOfCreditCharacteristicType",
+						"Name": "LetterOfCreditCharacteristicTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "LetterOfCreditCharacteristicTypeDescription",
+					"Description": "The description of a Letter Of Credit Characteristic Type.",
+					"BaseAttributeReference": {
+						"Entity": "LetterOfCreditCharacteristicType.cdm.json/LetterOfCreditCharacteristicType",
+						"Name": "LetterOfCreditCharacteristicTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"LetterOfCreditCharacteristicTypeId\":{\"entity\":\"LetterOfCreditCharacteristicType.cdm.json/LetterOfCreditCharacteristicType\",\"name\":\"LetterOfCreditCharacteristicTypeId\"},\"LetterOfCreditCharacteristicTypeName\":{\"entity\":\"LetterOfCreditCharacteristicType.cdm.json/LetterOfCreditCharacteristicType\",\"name\":\"LetterOfCreditCharacteristicTypeName\"},\"LetterOfCreditCharacteristicTypeDescription\":{\"entity\":\"LetterOfCreditCharacteristicType.cdm.json/LetterOfCreditCharacteristicType\",\"name\":\"LetterOfCreditCharacteristicTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"LetterOfCreditCharacteristicType\",\"path\":\"LetterOfCreditCharacteristicType.cdm.json/LetterOfCreditCharacteristicType\"},\"description\":\"A characteristics feature of a Letter of Credit that describes in standard terms and conditions.\\n\\nEx:\\n- ACCEPTANCE LETTER OF CREDIT\\n- ADVISED CREDIT\\n- BACK-TO-BACK\\n- CLEAN\\n- CONFIRMED\\n- DEFERRED PAYMENT CREDIT\\n- DOCUMENTARY\\n- IRREVOCABLE\\n- NON-CUMULATIVE\\n- RESTRICTED\\n- REVOLVING\\n- STRAIGHT\\n- TRANSFERRABLE\\n- UNCONFIRMED\\n\\nwhere:\\n\\nACCEPTANCE LETTER OF CREDIT\\nA Letter of Credit which, in addition to other required documents, requires presentation of a term draft drawn on the bank nominated as the accepting bank under the letter of credit.\\n\\nADVISED CREDIT\\nA Letter of Credit whose terms and conditions have been confirmed by a bank.\\n\\nBACK-TO-BACK\\nA new letter of credit issued to another beneficiary on the strength of a primary credit. The second L/C uses the first L/C as collateral for the bank. Used in a three-party transaction.\\n\\nCLEAN\\nA letter of credit that requires the beneficiary to present only a draft or a receipt for specified funds before receiving payment.\\n\\nCONFIRMED\\nA Letter of Credit which contains a guarantee on the part of both the issuing and advising banks of payment to the seller so long as the seller's documentation is in order and the terms of the letter of credit are met.\\n\\nConfirmation is only added to irrevocable letters of credit, usually available with the advising bank.\\n\\nDEFERRED PAYMENT CREDIT\\nA type of Letter Of Credit that provides payment some time after presentation of shipping documentation by an exporter.\\n\\nDOCUMENTARY\\nA Letter Of Credit where the issuing Bank defines the specific documents that must accompany a draft.\\n\\nThese documents assure that applicant/importer that the shipped items have been shipped and that the title of the goods have been transferred to the importer.\\n\\nIRREVOCABLE\\nAn instrument that, once established, cannot be modified or cancelled without the agreement of all parties concerned.\\n\\nNON-CUMULATIVE\\nA revolving letter of credit that prohibits the amount not used during the specific period from being available afterwards.\\n\\nRESTRICTED\\nA condition within the letter of credit which restricts its negotiation to a named bank.\\n\\nREVOLVING\\nAn irrevocable letter issued for a specific amount; renews itself for the same amount over a given period.\\n\\nSTRAIGHT\\nA letter of credit that contains a limited engagement clause which states that the issuing bank promises to pay the beneficiary upon presentation of the required documents at its counters or the counters of the named bank.\\n\\nTRANSFERRABLE\\nA letter of credit that allows the beneficiary to transfer in whole or in part to another beneficiary any amount which, in aggregate, of such transfers does not exceed the amount of the credit.  Used by middlemen.\\n\\nUNCONFIRMED\\nA letter of credit forwarded to the beneficiary by the advising bank without engagement on the part of the advising bank.\",\"primaryKey\":[\"LetterOfCreditCharacteristicTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"LetterOfCreditCharacteristicTypeId\",\"attributeReference\":{\"entity\":\"LetterOfCreditCharacteristicType.cdm.json/LetterOfCreditCharacteristicType\",\"name\":\"LetterOfCreditCharacteristicTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"LetterOfCreditCharacteristicTypeName\",\"attributeReference\":{\"entity\":\"LetterOfCreditCharacteristicType.cdm.json/LetterOfCreditCharacteristicType\",\"name\":\"LetterOfCreditCharacteristicTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"LetterOfCreditCharacteristicTypeDescription\",\"attributeReference\":{\"entity\":\"LetterOfCreditCharacteristicType.cdm.json/LetterOfCreditCharacteristicType\",\"name\":\"LetterOfCreditCharacteristicTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512}]}}}",
+			"Description": "A characteristics feature of a Letter of Credit that describes in standard terms and conditions.\n\nEx:\n- ACCEPTANCE LETTER OF CREDIT\n- ADVISED CREDIT\n- BACK-TO-BACK\n- CLEAN\n- CONFIRMED\n- DEFERRED PAYMENT CREDIT\n- DOCUMENTARY\n- IRREVOCABLE\n- NON-CUMULATIVE\n- RESTRICTED\n- REVOLVING\n- STRAIGHT\n- TRANSFERRABLE\n- UNCONFIRMED\n\nwhere:\n\nACCEPTANCE LETTER OF CREDIT\nA Letter of Credit which, in addition to other required documents, requires presentation of a term draft drawn on the bank nominated as the accepting bank under the letter of credit.\n\nADVISED CREDIT\nA Letter of Credit whose terms and conditions have been confirmed by a bank.\n\nBACK-TO-BACK\nA new letter of credit issued to another beneficiary on the strength of a primary credit. The second L/C uses the first L/C as collateral for the bank. Used in a three-party transaction.\n\nCLEAN\nA letter of credit that requires the beneficiary to present only a draft or a receipt for specified funds before receiving payment.\n\nCONFIRMED\nA Letter of Credit which contains a guarantee on the part of both the issuing and advising banks of payment to the seller so long as the seller's documentation is in order and the terms of the letter of credit are met.\n\nConfirmation is only added to irrevocable letters of credit, usually available with the advising bank.\n\nDEFERRED PAYMENT CREDIT\nA type of Letter Of Credit that provides payment some time after presentation of shipping documentation by an exporter.\n\nDOCUMENTARY\nA Letter Of Credit where the issuing Bank defines the specific documents that must accompany a draft.\n\nThese documents assure that applicant/importer that the shipped items have been shipped and that the title of the goods have been transferred to the importer.\n\nIRREVOCABLE\nAn instrument that, once established, cannot be modified or cancelled without the agreement of all parties concerned.\n\nNON-CUMULATIVE\nA revolving letter of credit that prohibits the amount not used during the specific period from being available afterwards.\n\nRESTRICTED\nA condition within the letter of credit which restricts its negotiation to a named bank.\n\nREVOLVING\nAn irrevocable letter issued for a specific amount; renews itself for the same amount over a given period.\n\nSTRAIGHT\nA letter of credit that contains a limited engagement clause which states that the issuing bank promises to pay the beneficiary upon presentation of the required documents at its counters or the counters of the named bank.\n\nTRANSFERRABLE\nA letter of credit that allows the beneficiary to transfer in whole or in part to another beneficiary any amount which, in aggregate, of such transfers does not exceed the amount of the credit.  Used by middlemen.\n\nUNCONFIRMED\nA letter of credit forwarded to the beneficiary by the advising bank without engagement on the part of the advising bank.",
+			"DisplayFolderInfo": "{\"name\":\"Shipping\",\"colorCode\":\"#000B42\"}",
+			"PrimaryKeys": "LetterOfCreditCharacteristicTypeId"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

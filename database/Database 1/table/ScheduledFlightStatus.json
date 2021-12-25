@@ -1,0 +1,186 @@
+{
+	"name": "ScheduledFlightStatus",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "ScheduledFlightStatus",
+		"Description": "The status of the associated Scheduled Flight.\n\nEx:\n- Scheduled\n- On-time\n- Cancelled/Weather\n- Cancelled/Mechanical",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "CarrierId",
+					"Description": "The unique identifier of a Carrier.",
+					"BaseAttributeReference": {
+						"Entity": "ScheduledFlightStatus.cdm.json/ScheduledFlightStatus",
+						"Name": "CarrierId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "FlightNumber",
+					"Description": "The unique identifier of a Flight.",
+					"BaseAttributeReference": {
+						"Entity": "ScheduledFlightStatus.cdm.json/ScheduledFlightStatus",
+						"Name": "FlightNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ScheduledFlightDate",
+					"Description": "The date of the Flight.",
+					"BaseAttributeReference": {
+						"Entity": "ScheduledFlightStatus.cdm.json/ScheduledFlightStatus",
+						"Name": "ScheduledFlightDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "Timestamp",
+					"Description": "The date that the Flight Status was provided.",
+					"BaseAttributeReference": {
+						"Entity": "ScheduledFlightStatus.cdm.json/ScheduledFlightStatus",
+						"Name": "Timestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "FlightStatusId",
+					"Description": "The unique identifier of a Flight Status Type.",
+					"BaseAttributeReference": {
+						"Entity": "ScheduledFlightStatus.cdm.json/ScheduledFlightStatus",
+						"Name": "FlightStatusId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "NewEstimatedBoardingTimestamp",
+					"Description": "The 'as of timestamp' new estimated boarding timestamp.",
+					"BaseAttributeReference": {
+						"Entity": "ScheduledFlightStatus.cdm.json/ScheduledFlightStatus",
+						"Name": "NewEstimatedBoardingTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "NewEstimatedDepartureTimestamp",
+					"Description": "The 'as of timestamp' new estimated departure timestamp.",
+					"BaseAttributeReference": {
+						"Entity": "ScheduledFlightStatus.cdm.json/ScheduledFlightStatus",
+						"Name": "NewEstimatedDepartureTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "NewEstimatedArrivalTimestamp",
+					"Description": "The 'as of timestamp' new estimated arrival timestamp.",
+					"BaseAttributeReference": {
+						"Entity": "ScheduledFlightStatus.cdm.json/ScheduledFlightStatus",
+						"Name": "NewEstimatedArrivalTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "FlightStatusNote",
+					"Description": "A note, comment or additional information regarding the Flight Status.",
+					"BaseAttributeReference": {
+						"Entity": "ScheduledFlightStatus.cdm.json/ScheduledFlightStatus",
+						"Name": "FlightStatusNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"CarrierId\":{\"entity\":\"ScheduledFlightStatus.cdm.json/ScheduledFlightStatus\",\"name\":\"CarrierId\"},\"FlightNumber\":{\"entity\":\"ScheduledFlightStatus.cdm.json/ScheduledFlightStatus\",\"name\":\"FlightNumber\"},\"ScheduledFlightDate\":{\"entity\":\"ScheduledFlightStatus.cdm.json/ScheduledFlightStatus\",\"name\":\"ScheduledFlightDate\"},\"Timestamp\":{\"entity\":\"ScheduledFlightStatus.cdm.json/ScheduledFlightStatus\",\"name\":\"Timestamp\"},\"FlightStatusId\":{\"entity\":\"ScheduledFlightStatus.cdm.json/ScheduledFlightStatus\",\"name\":\"FlightStatusId\"},\"NewEstimatedBoardingTimestamp\":{\"entity\":\"ScheduledFlightStatus.cdm.json/ScheduledFlightStatus\",\"name\":\"NewEstimatedBoardingTimestamp\"},\"NewEstimatedDepartureTimestamp\":{\"entity\":\"ScheduledFlightStatus.cdm.json/ScheduledFlightStatus\",\"name\":\"NewEstimatedDepartureTimestamp\"},\"NewEstimatedArrivalTimestamp\":{\"entity\":\"ScheduledFlightStatus.cdm.json/ScheduledFlightStatus\",\"name\":\"NewEstimatedArrivalTimestamp\"},\"FlightStatusNote\":{\"entity\":\"ScheduledFlightStatus.cdm.json/ScheduledFlightStatus\",\"name\":\"FlightStatusNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"ScheduledFlightStatus\",\"path\":\"ScheduledFlightStatus.cdm.json/ScheduledFlightStatus\"},\"description\":\"The status of the associated Scheduled Flight.\\n\\nEx:\\n- Scheduled\\n- On-time\\n- Cancelled/Weather\\n- Cancelled/Mechanical\",\"primaryKey\":[\"CarrierId\",\"FlightNumber\",\"ScheduledFlightDate\",\"Timestamp\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"CarrierId\",\"attributeReference\":{\"entity\":\"ScheduledFlightStatus.cdm.json/ScheduledFlightStatus\",\"name\":\"CarrierId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"FlightNumber\",\"attributeReference\":{\"entity\":\"ScheduledFlightStatus.cdm.json/ScheduledFlightStatus\",\"name\":\"FlightNumber\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ScheduledFlightDate\",\"attributeReference\":{\"entity\":\"ScheduledFlightStatus.cdm.json/ScheduledFlightStatus\",\"name\":\"ScheduledFlightDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\"},{\"type\":\"Existing\",\"name\":\"Timestamp\",\"attributeReference\":{\"entity\":\"ScheduledFlightStatus.cdm.json/ScheduledFlightStatus\",\"name\":\"Timestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"FlightStatusId\",\"attributeReference\":{\"entity\":\"ScheduledFlightStatus.cdm.json/ScheduledFlightStatus\",\"name\":\"FlightStatusId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"NewEstimatedBoardingTimestamp\",\"attributeReference\":{\"entity\":\"ScheduledFlightStatus.cdm.json/ScheduledFlightStatus\",\"name\":\"NewEstimatedBoardingTimestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"NewEstimatedDepartureTimestamp\",\"attributeReference\":{\"entity\":\"ScheduledFlightStatus.cdm.json/ScheduledFlightStatus\",\"name\":\"NewEstimatedDepartureTimestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"NewEstimatedArrivalTimestamp\",\"attributeReference\":{\"entity\":\"ScheduledFlightStatus.cdm.json/ScheduledFlightStatus\",\"name\":\"NewEstimatedArrivalTimestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"FlightStatusNote\",\"attributeReference\":{\"entity\":\"ScheduledFlightStatus.cdm.json/ScheduledFlightStatus\",\"name\":\"FlightStatusNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024}]}}}",
+			"Description": "The status of the associated Scheduled Flight.\n\nEx:\n- Scheduled\n- On-time\n- Cancelled/Weather\n- Cancelled/Mechanical",
+			"DisplayFolderInfo": "{\"name\":\"Shipping\",\"colorCode\":\"#000B42\"}",
+			"PrimaryKeys": "CarrierId,FlightNumber,ScheduledFlightDate,Timestamp"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

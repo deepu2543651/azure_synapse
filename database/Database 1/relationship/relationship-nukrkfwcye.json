@@ -1,0 +1,26 @@
+{
+	"name": "relationship-nukrkfwcye",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "relationship-nukrkfwcye",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "DamageType",
+		"ToTableName": "ShipmentDamage",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "DamageTypeId",
+				"ToColumnName": "DamageTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"DamageType.cdm.json/DamageType\",\"toEntity\":\"ShipmentDamage.cdm.json/ShipmentDamage\",\"joinPairs\":[{\"fromAttribute\":\"DamageTypeId\",\"toAttribute\":\"DamageTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

@@ -1,0 +1,85 @@
+{
+	"name": "VehicleHoursOfService",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "VehicleHoursOfService",
+		"Description": "The number of hours in service of the vehicle as of the associated timestamp.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "VehicleId",
+					"Description": "The unique identifier of a Vehicle.",
+					"BaseAttributeReference": {
+						"Entity": "VehicleHoursOfService.cdm.json/VehicleHoursOfService",
+						"Name": "VehicleId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "Timestamp",
+					"Description": "The timestamp for which the associated hours of service for the vehicle are determined.",
+					"BaseAttributeReference": {
+						"Entity": "VehicleHoursOfService.cdm.json/VehicleHoursOfService",
+						"Name": "Timestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "HoursOfService",
+					"Description": "The number of vehicle hours of service  as of the associated timestamp.",
+					"BaseAttributeReference": {
+						"Entity": "VehicleHoursOfService.cdm.json/VehicleHoursOfService",
+						"Name": "HoursOfService"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"VehicleId\":{\"entity\":\"VehicleHoursOfService.cdm.json/VehicleHoursOfService\",\"name\":\"VehicleId\"},\"Timestamp\":{\"entity\":\"VehicleHoursOfService.cdm.json/VehicleHoursOfService\",\"name\":\"Timestamp\"},\"HoursOfService\":{\"entity\":\"VehicleHoursOfService.cdm.json/VehicleHoursOfService\",\"name\":\"HoursOfService\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"VehicleHoursOfService\",\"path\":\"VehicleHoursOfService.cdm.json/VehicleHoursOfService\"},\"description\":\"The number of hours in service of the vehicle as of the associated timestamp.\",\"primaryKey\":[\"VehicleId\",\"Timestamp\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"VehicleId\",\"attributeReference\":{\"entity\":\"VehicleHoursOfService.cdm.json/VehicleHoursOfService\",\"name\":\"VehicleId\"},\"dataType\":\"long\"},{\"type\":\"Existing\",\"name\":\"Timestamp\",\"attributeReference\":{\"entity\":\"VehicleHoursOfService.cdm.json/VehicleHoursOfService\",\"name\":\"Timestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"HoursOfService\",\"attributeReference\":{\"entity\":\"VehicleHoursOfService.cdm.json/VehicleHoursOfService\",\"name\":\"HoursOfService\"},\"dataType\":\"integer\"}]}}}",
+			"Description": "The number of hours in service of the vehicle as of the associated timestamp.",
+			"DisplayFolderInfo": "{\"name\":\"Shipping\",\"colorCode\":\"#000B42\"}",
+			"PrimaryKeys": "VehicleId,Timestamp"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

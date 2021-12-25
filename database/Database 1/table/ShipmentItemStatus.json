@@ -1,0 +1,135 @@
+{
+	"name": "ShipmentItemStatus",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "ShipmentItemStatus",
+		"Description": "The status of the associated shipment item.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ShipmentId",
+					"Description": "The unique identifier of a Shipment.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentItemStatus.cdm.json/ShipmentItemStatus",
+						"Name": "ShipmentId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ShipmentItemNumber",
+					"Description": "The shipment line number.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentItemStatus.cdm.json/ShipmentItemStatus",
+						"Name": "ShipmentItemNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ShipmentStatusTypeId",
+					"Description": "The unique identifier of a Shipment Status Type.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentItemStatus.cdm.json/ShipmentItemStatus",
+						"Name": "ShipmentStatusTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PeriodStartTimestamp",
+					"Description": "The period start timestamp associated with the shipment item status.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentItemStatus.cdm.json/ShipmentItemStatus",
+						"Name": "PeriodStartTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "PeriodEndTimestamp",
+					"Description": "The period end timestamp associated with the shipment item status.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentItemStatus.cdm.json/ShipmentItemStatus",
+						"Name": "PeriodEndTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "ShipmentItemStatusNote",
+					"Description": "A note, comment or additional information regarding the shipment item status.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentItemStatus.cdm.json/ShipmentItemStatus",
+						"Name": "ShipmentItemStatusNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ShipmentId\":{\"entity\":\"ShipmentItemStatus.cdm.json/ShipmentItemStatus\",\"name\":\"ShipmentId\"},\"ShipmentItemNumber\":{\"entity\":\"ShipmentItemStatus.cdm.json/ShipmentItemStatus\",\"name\":\"ShipmentItemNumber\"},\"ShipmentStatusTypeId\":{\"entity\":\"ShipmentItemStatus.cdm.json/ShipmentItemStatus\",\"name\":\"ShipmentStatusTypeId\"},\"PeriodStartTimestamp\":{\"entity\":\"ShipmentItemStatus.cdm.json/ShipmentItemStatus\",\"name\":\"PeriodStartTimestamp\"},\"PeriodEndTimestamp\":{\"entity\":\"ShipmentItemStatus.cdm.json/ShipmentItemStatus\",\"name\":\"PeriodEndTimestamp\"},\"ShipmentItemStatusNote\":{\"entity\":\"ShipmentItemStatus.cdm.json/ShipmentItemStatus\",\"name\":\"ShipmentItemStatusNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"ShipmentItemStatus\",\"path\":\"ShipmentItemStatus.cdm.json/ShipmentItemStatus\"},\"description\":\"The status of the associated shipment item.\",\"primaryKey\":[\"ShipmentId\",\"ShipmentItemNumber\",\"ShipmentStatusTypeId\",\"PeriodStartTimestamp\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"ShipmentId\",\"attributeReference\":{\"entity\":\"ShipmentItemStatus.cdm.json/ShipmentItemStatus\",\"name\":\"ShipmentId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ShipmentItemNumber\",\"attributeReference\":{\"entity\":\"ShipmentItemStatus.cdm.json/ShipmentItemStatus\",\"name\":\"ShipmentItemNumber\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ShipmentStatusTypeId\",\"attributeReference\":{\"entity\":\"ShipmentItemStatus.cdm.json/ShipmentItemStatus\",\"name\":\"ShipmentStatusTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"PeriodStartTimestamp\",\"attributeReference\":{\"entity\":\"ShipmentItemStatus.cdm.json/ShipmentItemStatus\",\"name\":\"PeriodStartTimestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"PeriodEndTimestamp\",\"attributeReference\":{\"entity\":\"ShipmentItemStatus.cdm.json/ShipmentItemStatus\",\"name\":\"PeriodEndTimestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"ShipmentItemStatusNote\",\"attributeReference\":{\"entity\":\"ShipmentItemStatus.cdm.json/ShipmentItemStatus\",\"name\":\"ShipmentItemStatusNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024}]}}}",
+			"Description": "The status of the associated shipment item.",
+			"DisplayFolderInfo": "{\"name\":\"Shipping\",\"colorCode\":\"#000B42\"}",
+			"PrimaryKeys": "ShipmentId,ShipmentItemNumber,ShipmentStatusTypeId,PeriodStartTimestamp"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

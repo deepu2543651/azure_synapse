@@ -1,0 +1,86 @@
+{
+	"name": "CommodityType",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "CommodityType",
+		"Description": "A categorization of Items based upon the commodity function performed.\n\nEx:\n- Abrasives\n- Accessories\n- Automobile Equipment and Supplies\n- Building Materials\n- Castings\n- Chemicals\n- Drafting Supplies\n- Electrical Materials and Parts\n- Electronic Parts\n- Fabricated Parts and Assemblies\n- Fasteners\n- Fuel\n- Glass and Glass Products\n- Hand Tools\n- Hardware\n- Instruments\n- Insulating Materials\n- Iron and Steel\n- Laboratory Equipment\n- Lubricants, Petroleum Products (except fuel)\n- Lumber\n- Machined Parts\n- Machinery and Plant Equipment\n- Maintenance, Repair and Operating Supplies (MRO)\n- Nonferrous Metals\n- Office Machines and Furniture\n- Office Supplies\n- Packaging Materials\n- Paint, Varnish, Lacquer, Finishing Materials\n- Paper and Paper Products\n- Plastic Parts\n- Printing\n- Refractories\n- Rubber Products (except Tires)\n- Safety Equipment\n- Screw Machine Products\n- Services\n- Shipping Room Supplies\n- Stampings\n- Subcontracting\n- Textiles\n- Welding Equipment and Supplies\n- Wood Products",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "CommodityTypeId",
+					"Description": "The unique identifier of a Commodity Type.",
+					"BaseAttributeReference": {
+						"Entity": "CommodityType.cdm.json/CommodityType",
+						"Name": "CommodityTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "CommodityTypeName",
+					"Description": "The name of a Commodity Type.",
+					"BaseAttributeReference": {
+						"Entity": "CommodityType.cdm.json/CommodityType",
+						"Name": "CommodityTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "CommodityTypeDescription",
+					"Description": "The description of a Commodity Type.",
+					"BaseAttributeReference": {
+						"Entity": "CommodityType.cdm.json/CommodityType",
+						"Name": "CommodityTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"CommodityTypeId\":{\"entity\":\"CommodityType.cdm.json/CommodityType\",\"name\":\"CommodityTypeId\"},\"CommodityTypeName\":{\"entity\":\"CommodityType.cdm.json/CommodityType\",\"name\":\"CommodityTypeName\"},\"CommodityTypeDescription\":{\"entity\":\"CommodityType.cdm.json/CommodityType\",\"name\":\"CommodityTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"CommodityType\",\"path\":\"CommodityType.cdm.json/CommodityType\"},\"description\":\"A categorization of Items based upon the commodity function performed.\\n\\nEx:\\n- Abrasives\\n- Accessories\\n- Automobile Equipment and Supplies\\n- Building Materials\\n- Castings\\n- Chemicals\\n- Drafting Supplies\\n- Electrical Materials and Parts\\n- Electronic Parts\\n- Fabricated Parts and Assemblies\\n- Fasteners\\n- Fuel\\n- Glass and Glass Products\\n- Hand Tools\\n- Hardware\\n- Instruments\\n- Insulating Materials\\n- Iron and Steel\\n- Laboratory Equipment\\n- Lubricants, Petroleum Products (except fuel)\\n- Lumber\\n- Machined Parts\\n- Machinery and Plant Equipment\\n- Maintenance, Repair and Operating Supplies (MRO)\\n- Nonferrous Metals\\n- Office Machines and Furniture\\n- Office Supplies\\n- Packaging Materials\\n- Paint, Varnish, Lacquer, Finishing Materials\\n- Paper and Paper Products\\n- Plastic Parts\\n- Printing\\n- Refractories\\n- Rubber Products (except Tires)\\n- Safety Equipment\\n- Screw Machine Products\\n- Services\\n- Shipping Room Supplies\\n- Stampings\\n- Subcontracting\\n- Textiles\\n- Welding Equipment and Supplies\\n- Wood Products\",\"primaryKey\":[\"CommodityTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"CommodityTypeId\",\"attributeReference\":{\"entity\":\"CommodityType.cdm.json/CommodityType\",\"name\":\"CommodityTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"CommodityTypeName\",\"attributeReference\":{\"entity\":\"CommodityType.cdm.json/CommodityType\",\"name\":\"CommodityTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"CommodityTypeDescription\",\"attributeReference\":{\"entity\":\"CommodityType.cdm.json/CommodityType\",\"name\":\"CommodityTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512}]}}}",
+			"Description": "A categorization of Items based upon the commodity function performed.\n\nEx:\n- Abrasives\n- Accessories\n- Automobile Equipment and Supplies\n- Building Materials\n- Castings\n- Chemicals\n- Drafting Supplies\n- Electrical Materials and Parts\n- Electronic Parts\n- Fabricated Parts and Assemblies\n- Fasteners\n- Fuel\n- Glass and Glass Products\n- Hand Tools\n- Hardware\n- Instruments\n- Insulating Materials\n- Iron and Steel\n- Laboratory Equipment\n- Lubricants, Petroleum Products (except fuel)\n- Lumber\n- Machined Parts\n- Machinery and Plant Equipment\n- Maintenance, Repair and Operating Supplies (MRO)\n- Nonferrous Metals\n- Office Machines and Furniture\n- Office Supplies\n- Packaging Materials\n- Paint, Varnish, Lacquer, Finishing Materials\n- Paper and Paper Products\n- Plastic Parts\n- Printing\n- Refractories\n- Rubber Products (except Tires)\n- Safety Equipment\n- Screw Machine Products\n- Services\n- Shipping Room Supplies\n- Stampings\n- Subcontracting\n- Textiles\n- Welding Equipment and Supplies\n- Wood Products",
+			"DisplayFolderInfo": "{\"name\":\"Inventory\",\"colorCode\":\"#EA279F\"}",
+			"PrimaryKeys": "CommodityTypeId"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

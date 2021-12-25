@@ -1,0 +1,121 @@
+{
+	"name": "WarehouseItemEconomicStock",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "WarehouseItemEconomicStock",
+		"Description": "The sum of the physical stock and the goods ordered but not yet received, minus the goods sold but not yet delivered for which a company carries risk in respect of a drop in price an marketability.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "WarehouseId",
+					"Description": "The unique identifier of a Warehouse.",
+					"BaseAttributeReference": {
+						"Entity": "WarehouseItemEconomicStock.cdm.json/WarehouseItemEconomicStock",
+						"Name": "WarehouseId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ItemSku",
+					"Description": "The Stock Keeping Unit identifier, which is typically used for inventory-related activities.",
+					"BaseAttributeReference": {
+						"Entity": "WarehouseItemEconomicStock.cdm.json/WarehouseItemEconomicStock",
+						"Name": "ItemSku"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Length": 20,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "Timestamp",
+					"Description": "The effective timestamp for which the Economic Item Stock quantity is determined at the Warehouse.",
+					"BaseAttributeReference": {
+						"Entity": "WarehouseItemEconomicStock.cdm.json/WarehouseItemEconomicStock",
+						"Name": "Timestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "EconomicStockQuantity",
+					"Description": "The economic item stock quantity at the Warehouse for the associated period.",
+					"BaseAttributeReference": {
+						"Entity": "WarehouseItemEconomicStock.cdm.json/WarehouseItemEconomicStock",
+						"Name": "EconomicStockQuantity"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "Note",
+					"Description": "A note, comment or additional information regarding the Warehouse Economic Item Stock.",
+					"BaseAttributeReference": {
+						"Entity": "WarehouseItemEconomicStock.cdm.json/WarehouseItemEconomicStock",
+						"Name": "Note"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"WarehouseId\":{\"entity\":\"WarehouseItemEconomicStock.cdm.json/WarehouseItemEconomicStock\",\"name\":\"WarehouseId\"},\"ItemSku\":{\"entity\":\"WarehouseItemEconomicStock.cdm.json/WarehouseItemEconomicStock\",\"name\":\"ItemSku\"},\"Timestamp\":{\"entity\":\"WarehouseItemEconomicStock.cdm.json/WarehouseItemEconomicStock\",\"name\":\"Timestamp\"},\"EconomicStockQuantity\":{\"entity\":\"WarehouseItemEconomicStock.cdm.json/WarehouseItemEconomicStock\",\"name\":\"EconomicStockQuantity\"},\"Note\":{\"entity\":\"WarehouseItemEconomicStock.cdm.json/WarehouseItemEconomicStock\",\"name\":\"Note\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"WarehouseItemEconomicStock\",\"path\":\"WarehouseItemEconomicStock.cdm.json/WarehouseItemEconomicStock\"},\"description\":\"The sum of the physical stock and the goods ordered but not yet received, minus the goods sold but not yet delivered for which a company carries risk in respect of a drop in price an marketability.\",\"primaryKey\":[\"WarehouseId\",\"ItemSku\",\"Timestamp\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"WarehouseId\",\"attributeReference\":{\"entity\":\"WarehouseItemEconomicStock.cdm.json/WarehouseItemEconomicStock\",\"name\":\"WarehouseId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ItemSku\",\"attributeReference\":{\"entity\":\"WarehouseItemEconomicStock.cdm.json/WarehouseItemEconomicStock\",\"name\":\"ItemSku\"},\"dataType\":\"string\",\"dataTypeLength\":20},{\"type\":\"Existing\",\"name\":\"Timestamp\",\"attributeReference\":{\"entity\":\"WarehouseItemEconomicStock.cdm.json/WarehouseItemEconomicStock\",\"name\":\"Timestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"EconomicStockQuantity\",\"attributeReference\":{\"entity\":\"WarehouseItemEconomicStock.cdm.json/WarehouseItemEconomicStock\",\"name\":\"EconomicStockQuantity\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"Note\",\"attributeReference\":{\"entity\":\"WarehouseItemEconomicStock.cdm.json/WarehouseItemEconomicStock\",\"name\":\"Note\"},\"dataType\":\"string\",\"dataTypeLength\":1024}]}}}",
+			"Description": "The sum of the physical stock and the goods ordered but not yet received, minus the goods sold but not yet delivered for which a company carries risk in respect of a drop in price an marketability.",
+			"DisplayFolderInfo": "{\"name\":\"Inventory\",\"colorCode\":\"#EA279F\"}",
+			"PrimaryKeys": "WarehouseId,ItemSku,Timestamp"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

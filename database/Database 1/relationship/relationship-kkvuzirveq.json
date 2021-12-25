@@ -1,0 +1,42 @@
+{
+	"name": "relationship-kkvuzirveq",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "relationship-kkvuzirveq",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "ScheduledFlightLeg",
+		"ToTableName": "ShipmentRouteLeg",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "CarrierId",
+				"ToColumnName": "PlannedCarrierId"
+			},
+			{
+				"FromColumnName": "FlightNumber",
+				"ToColumnName": "PlannedFlightNumber"
+			},
+			{
+				"FromColumnName": "ScheduledFlightDate",
+				"ToColumnName": "PlannedFlightDate"
+			},
+			{
+				"FromColumnName": "ScheduledFlightLegArrivalAirportCode",
+				"ToColumnName": "PlannedFlightLegArrivalAirportCode"
+			},
+			{
+				"FromColumnName": "ScheduledFlightLegDepartureAirportCode",
+				"ToColumnName": "PlannedFlightLegDepartureAirportCode"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"ScheduledFlightLeg.cdm.json/ScheduledFlightLeg\",\"toEntity\":\"ShipmentRouteLeg.cdm.json/ShipmentRouteLeg\",\"joinPairs\":[{\"fromAttribute\":\"CarrierId\",\"toAttribute\":\"PlannedCarrierId\"},{\"fromAttribute\":\"FlightNumber\",\"toAttribute\":\"PlannedFlightNumber\"},{\"fromAttribute\":\"ScheduledFlightDate\",\"toAttribute\":\"PlannedFlightDate\"},{\"fromAttribute\":\"ScheduledFlightLegArrivalAirportCode\",\"toAttribute\":\"PlannedFlightLegArrivalAirportCode\"},{\"fromAttribute\":\"ScheduledFlightLegDepartureAirportCode\",\"toAttribute\":\"PlannedFlightLegDepartureAirportCode\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

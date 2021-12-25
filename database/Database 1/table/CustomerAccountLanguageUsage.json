@@ -1,0 +1,135 @@
+{
+	"name": "CustomerAccountLanguageUsage",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "CustomerAccountLanguageUsage",
+		"Description": "The language to be used for the associated usage in regard to the Customer Account for the associated period.\n\nEx:\n- Customer Account billing language \n- Customer Account support language\n- Customer Account Marketing language\n- Customer Account Documentation Language",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "CustomerAccountId",
+					"Description": "The unique identifier of a Customer Account.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountLanguageUsage.cdm.json/CustomerAccountLanguageUsage",
+						"Name": "CustomerAccountId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "LanguageUsageId",
+					"Description": "The unique identifier of a Language Use.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountLanguageUsage.cdm.json/CustomerAccountLanguageUsage",
+						"Name": "LanguageUsageId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PeriodStartDate",
+					"Description": "The period start date for which the associated Customer Account Language Use is defined.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountLanguageUsage.cdm.json/CustomerAccountLanguageUsage",
+						"Name": "PeriodStartDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "PeriodEndDate",
+					"Description": "The period end date for which the associated Customer Account Language Use is defined.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountLanguageUsage.cdm.json/CustomerAccountLanguageUsage",
+						"Name": "PeriodEndDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "IsoLanguageId",
+					"Description": "The unique identifier of an ISO Language.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountLanguageUsage.cdm.json/CustomerAccountLanguageUsage",
+						"Name": "IsoLanguageId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "LanguageUseNote",
+					"Description": "A note, comment or additional information regarding the language use as applied to the Customer Account.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountLanguageUsage.cdm.json/CustomerAccountLanguageUsage",
+						"Name": "LanguageUseNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"CustomerAccountId\":{\"entity\":\"CustomerAccountLanguageUsage.cdm.json/CustomerAccountLanguageUsage\",\"name\":\"CustomerAccountId\"},\"LanguageUsageId\":{\"entity\":\"CustomerAccountLanguageUsage.cdm.json/CustomerAccountLanguageUsage\",\"name\":\"LanguageUsageId\"},\"PeriodStartDate\":{\"entity\":\"CustomerAccountLanguageUsage.cdm.json/CustomerAccountLanguageUsage\",\"name\":\"PeriodStartDate\"},\"PeriodEndDate\":{\"entity\":\"CustomerAccountLanguageUsage.cdm.json/CustomerAccountLanguageUsage\",\"name\":\"PeriodEndDate\"},\"IsoLanguageId\":{\"entity\":\"CustomerAccountLanguageUsage.cdm.json/CustomerAccountLanguageUsage\",\"name\":\"IsoLanguageId\"},\"LanguageUseNote\":{\"entity\":\"CustomerAccountLanguageUsage.cdm.json/CustomerAccountLanguageUsage\",\"name\":\"LanguageUseNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"CustomerAccountLanguageUsage\",\"path\":\"CustomerAccountLanguageUsage.cdm.json/CustomerAccountLanguageUsage\"},\"description\":\"The language to be used for the associated usage in regard to the Customer Account for the associated period.\\n\\nEx:\\n- Customer Account billing language \\n- Customer Account support language\\n- Customer Account Marketing language\\n- Customer Account Documentation Language\",\"primaryKey\":[\"CustomerAccountId\",\"LanguageUsageId\",\"PeriodStartDate\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"CustomerAccountId\",\"attributeReference\":{\"entity\":\"CustomerAccountLanguageUsage.cdm.json/CustomerAccountLanguageUsage\",\"name\":\"CustomerAccountId\"},\"dataType\":\"long\"},{\"type\":\"Existing\",\"name\":\"LanguageUsageId\",\"attributeReference\":{\"entity\":\"CustomerAccountLanguageUsage.cdm.json/CustomerAccountLanguageUsage\",\"name\":\"LanguageUsageId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"PeriodStartDate\",\"attributeReference\":{\"entity\":\"CustomerAccountLanguageUsage.cdm.json/CustomerAccountLanguageUsage\",\"name\":\"PeriodStartDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\"},{\"type\":\"Existing\",\"name\":\"PeriodEndDate\",\"attributeReference\":{\"entity\":\"CustomerAccountLanguageUsage.cdm.json/CustomerAccountLanguageUsage\",\"name\":\"PeriodEndDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\"},{\"type\":\"Existing\",\"name\":\"IsoLanguageId\",\"attributeReference\":{\"entity\":\"CustomerAccountLanguageUsage.cdm.json/CustomerAccountLanguageUsage\",\"name\":\"IsoLanguageId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"LanguageUseNote\",\"attributeReference\":{\"entity\":\"CustomerAccountLanguageUsage.cdm.json/CustomerAccountLanguageUsage\",\"name\":\"LanguageUseNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024}]}}}",
+			"Description": "The language to be used for the associated usage in regard to the Customer Account for the associated period.\n\nEx:\n- Customer Account billing language \n- Customer Account support language\n- Customer Account Marketing language\n- Customer Account Documentation Language",
+			"DisplayFolderInfo": "{\"name\":\"Customer Account\",\"colorCode\":\"#022F22\"}",
+			"PrimaryKeys": "CustomerAccountId,LanguageUsageId,PeriodStartDate"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

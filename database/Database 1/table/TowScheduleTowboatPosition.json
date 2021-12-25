@@ -1,0 +1,152 @@
+{
+	"name": "TowScheduleTowboatPosition",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "TowScheduleTowboatPosition",
+		"Description": "The one or more towboats assigned to the towboat tow for the associated period. Timestamps are used for the configuration as towboats may be added or removed during the journey.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "TowId",
+					"Description": "The unique identifier of a Train.",
+					"BaseAttributeReference": {
+						"Entity": "TowScheduleTowboatPosition.cdm.json/TowScheduleTowboatPosition",
+						"Name": "TowId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "TowScheduledDepartureTimestamp",
+					"Description": "The scheduled departure timestamp.",
+					"BaseAttributeReference": {
+						"Entity": "TowScheduleTowboatPosition.cdm.json/TowScheduleTowboatPosition",
+						"Name": "TowScheduledDepartureTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "TowboatId",
+					"Description": "The unique identifier of an engine.",
+					"BaseAttributeReference": {
+						"Entity": "TowScheduleTowboatPosition.cdm.json/TowScheduleTowboatPosition",
+						"Name": "TowboatId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PeriodStartTimestamp",
+					"Description": "The period start timestamp that the towboat is assigned to the towboat tow.",
+					"BaseAttributeReference": {
+						"Entity": "TowScheduleTowboatPosition.cdm.json/TowScheduleTowboatPosition",
+						"Name": "PeriodStartTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "PeriodEndTimestamp",
+					"Description": "The period end timestamp that the towboat is assigned to the towboat tow.",
+					"BaseAttributeReference": {
+						"Entity": "TowScheduleTowboatPosition.cdm.json/TowScheduleTowboatPosition",
+						"Name": "PeriodEndTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "TowScheduleTowboatPosition",
+					"Description": "The position of the towboat in the towboat tow.",
+					"BaseAttributeReference": {
+						"Entity": "TowScheduleTowboatPosition.cdm.json/TowScheduleTowboatPosition",
+						"Name": "TowScheduleTowboatPosition"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "TowScheduleTowboatPositionNote",
+					"Description": "A note, comment or additional information regarding the tow schedule towboat position.",
+					"BaseAttributeReference": {
+						"Entity": "TowScheduleTowboatPosition.cdm.json/TowScheduleTowboatPosition",
+						"Name": "TowScheduleTowboatPositionNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"TowId\":{\"entity\":\"TowScheduleTowboatPosition.cdm.json/TowScheduleTowboatPosition\",\"name\":\"TowId\"},\"TowScheduledDepartureTimestamp\":{\"entity\":\"TowScheduleTowboatPosition.cdm.json/TowScheduleTowboatPosition\",\"name\":\"TowScheduledDepartureTimestamp\"},\"TowboatId\":{\"entity\":\"TowScheduleTowboatPosition.cdm.json/TowScheduleTowboatPosition\",\"name\":\"TowboatId\"},\"PeriodStartTimestamp\":{\"entity\":\"TowScheduleTowboatPosition.cdm.json/TowScheduleTowboatPosition\",\"name\":\"PeriodStartTimestamp\"},\"PeriodEndTimestamp\":{\"entity\":\"TowScheduleTowboatPosition.cdm.json/TowScheduleTowboatPosition\",\"name\":\"PeriodEndTimestamp\"},\"TowScheduleTowboatPosition\":{\"entity\":\"TowScheduleTowboatPosition.cdm.json/TowScheduleTowboatPosition\",\"name\":\"TowScheduleTowboatPosition\"},\"TowScheduleTowboatPositionNote\":{\"entity\":\"TowScheduleTowboatPosition.cdm.json/TowScheduleTowboatPosition\",\"name\":\"TowScheduleTowboatPositionNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"TowScheduleTowboatPosition\",\"path\":\"TowScheduleTowboatPosition.cdm.json/TowScheduleTowboatPosition\"},\"description\":\"The one or more towboats assigned to the towboat tow for the associated period. Timestamps are used for the configuration as towboats may be added or removed during the journey.\",\"primaryKey\":[\"TowId\",\"TowScheduledDepartureTimestamp\",\"TowboatId\",\"PeriodStartTimestamp\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"TowId\",\"attributeReference\":{\"entity\":\"TowScheduleTowboatPosition.cdm.json/TowScheduleTowboatPosition\",\"name\":\"TowId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"TowScheduledDepartureTimestamp\",\"attributeReference\":{\"entity\":\"TowScheduleTowboatPosition.cdm.json/TowScheduleTowboatPosition\",\"name\":\"TowScheduledDepartureTimestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"TowboatId\",\"attributeReference\":{\"entity\":\"TowScheduleTowboatPosition.cdm.json/TowScheduleTowboatPosition\",\"name\":\"TowboatId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"PeriodStartTimestamp\",\"attributeReference\":{\"entity\":\"TowScheduleTowboatPosition.cdm.json/TowScheduleTowboatPosition\",\"name\":\"PeriodStartTimestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"PeriodEndTimestamp\",\"attributeReference\":{\"entity\":\"TowScheduleTowboatPosition.cdm.json/TowScheduleTowboatPosition\",\"name\":\"PeriodEndTimestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"TowScheduleTowboatPosition\",\"attributeReference\":{\"entity\":\"TowScheduleTowboatPosition.cdm.json/TowScheduleTowboatPosition\",\"name\":\"TowScheduleTowboatPosition\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"TowScheduleTowboatPositionNote\",\"attributeReference\":{\"entity\":\"TowScheduleTowboatPosition.cdm.json/TowScheduleTowboatPosition\",\"name\":\"TowScheduleTowboatPositionNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024}]}}}",
+			"Description": "The one or more towboats assigned to the towboat tow for the associated period. Timestamps are used for the configuration as towboats may be added or removed during the journey.",
+			"DisplayFolderInfo": "{\"name\":\"Shipping\",\"colorCode\":\"#000B42\"}",
+			"PrimaryKeys": "TowId,TowScheduledDepartureTimestamp,TowboatId,PeriodStartTimestamp"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

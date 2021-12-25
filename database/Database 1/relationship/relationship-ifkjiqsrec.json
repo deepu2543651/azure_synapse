@@ -1,0 +1,26 @@
+{
+	"name": "relationship-ifkjiqsrec",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "relationship-ifkjiqsrec",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Driver",
+		"ToTableName": "CommunicationDeviceDriver",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "DriverId",
+				"ToColumnName": "DriverId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Driver.cdm.json/Driver\",\"toEntity\":\"CommunicationDeviceDriver.cdm.json/CommunicationDeviceDriver\",\"joinPairs\":[{\"fromAttribute\":\"DriverId\",\"toAttribute\":\"DriverId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

@@ -1,0 +1,26 @@
+{
+	"name": "relationship-egdyrvbgvr",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "relationship-egdyrvbgvr",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "IssueType",
+		"ToTableName": "Issue",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "IssueTypeId",
+				"ToColumnName": "IssueTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"IssueType.cdm.json/IssueType\",\"toEntity\":\"Issue.cdm.json/Issue\",\"joinPairs\":[{\"fromAttribute\":\"IssueTypeId\",\"toAttribute\":\"IssueTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

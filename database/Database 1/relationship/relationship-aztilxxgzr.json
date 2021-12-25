@@ -1,0 +1,26 @@
+{
+	"name": "relationship-aztilxxgzr",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "relationship-aztilxxgzr",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "ServiceRequestRelationshipType",
+		"ToTableName": "RelatedServiceRequest",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ServiceRequestRelationshipTypeId",
+				"ToColumnName": "ServiceRequestRelationshipTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"ServiceRequestRelationshipType.cdm.json/ServiceRequestRelationshipType\",\"toEntity\":\"RelatedServiceRequest.cdm.json/RelatedServiceRequest\",\"joinPairs\":[{\"fromAttribute\":\"ServiceRequestRelationshipTypeId\",\"toAttribute\":\"ServiceRequestRelationshipTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

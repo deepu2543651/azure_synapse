@@ -1,0 +1,362 @@
+{
+	"name": "Flight",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "Flight",
+		"Description": "A planned flight from one airport to another that is then scheduled for a specific date as a Schedule Flight.\n\nThe scheduled flight may deviate in arrival/departure time on a given date but the from-airport and to-airport remain the same.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "CarrierId",
+					"Description": "The unique identifier of a Carrier.",
+					"BaseAttributeReference": {
+						"Entity": "Flight.cdm.json/Flight",
+						"Name": "CarrierId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "FlightNumber",
+					"Description": "The unique identifier of a Flight.",
+					"BaseAttributeReference": {
+						"Entity": "Flight.cdm.json/Flight",
+						"Name": "FlightNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "OriginatingAirportCode",
+					"Description": "AKA Airport Code\n\nThree-letter codes used to identify airports.\n\nAirport Code \nThe airport code is a three letter designator for a commercial airport, or other travel point -- e.g. a large bus station. These are the codes that airlines and pilots use to identify airports and are used in timetables, baggage tags, tickets, advertisements, Airline and Global Reservation Systems. There are approximately 9,000 of them in use of a total of 17,576 available",
+					"BaseAttributeReference": {
+						"Entity": "Flight.cdm.json/Flight",
+						"Name": "OriginatingAirportCode"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 3,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "DestinationAirportCode",
+					"Description": "AKA Airport Code\n\nThree-letter codes used to identify airports.\n\nAirport Code \nThe airport code is a three letter designator for a commercial airport, or other travel point -- e.g. a large bus station. These are the codes that airlines and pilots use to identify airports and are used in timetables, baggage tags, tickets, advertisements, Airline and Global Reservation Systems. There are approximately 9,000 of them in use of a total of 17,576 available",
+					"BaseAttributeReference": {
+						"Entity": "Flight.cdm.json/Flight",
+						"Name": "DestinationAirportCode"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 3,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "OperatingCarrierId",
+					"Description": "The unique identifier of the flight carrier.",
+					"BaseAttributeReference": {
+						"Entity": "Flight.cdm.json/Flight",
+						"Name": "OperatingCarrierId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PlannedCheckInTimestamp",
+					"Description": "The planned check-in time for the Flight.",
+					"BaseAttributeReference": {
+						"Entity": "Flight.cdm.json/Flight",
+						"Name": "PlannedCheckInTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "PlannedBoardingTimestamp",
+					"Description": "The planned boarding time for the Flight.",
+					"BaseAttributeReference": {
+						"Entity": "Flight.cdm.json/Flight",
+						"Name": "PlannedBoardingTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "PlannedDepartureTimestamp",
+					"Description": "The planned departure timestamp for the flight.",
+					"BaseAttributeReference": {
+						"Entity": "Flight.cdm.json/Flight",
+						"Name": "PlannedDepartureTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "PlannedArrivalTimestamp",
+					"Description": "The planned arrival time of the flight.",
+					"BaseAttributeReference": {
+						"Entity": "Flight.cdm.json/Flight",
+						"Name": "PlannedArrivalTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "EstimatedFlyingTimeInMinutes",
+					"Description": "Estimated flight time in minutes between departure airport and destination airport.",
+					"BaseAttributeReference": {
+						"Entity": "Flight.cdm.json/Flight",
+						"Name": "EstimatedFlyingTimeInMinutes"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "FrequentFlyerMileageDistance",
+					"Description": "The number of Frequent Flyer Airmiles that will be earned for this flight.",
+					"BaseAttributeReference": {
+						"Entity": "Flight.cdm.json/Flight",
+						"Name": "FrequentFlyerMileageDistance"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ActualMiles",
+					"Description": "The physical distance that a flight covers expressed in miles.\n\nWhen calculating actual miles, class of service, elite-level status and other bonuses are not included. To view the airmile distance between airports,",
+					"BaseAttributeReference": {
+						"Entity": "Flight.cdm.json/Flight",
+						"Name": "ActualMiles"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "MultiLegFlightIndicator",
+					"Description": "A journey from point A to point B to point C, and back to point A.",
+					"BaseAttributeReference": {
+						"Entity": "Flight.cdm.json/Flight",
+						"Name": "MultiLegFlightIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "PassportRequiredIndicator",
+					"Description": "Indicates that a passport is required by passengers for this flight.",
+					"BaseAttributeReference": {
+						"Entity": "Flight.cdm.json/Flight",
+						"Name": "PassportRequiredIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "UsDomesticFlightIndicator",
+					"Description": "Any flight within the continental U.S., Hawaii and Alaska and any flight from the continental U.S.",
+					"BaseAttributeReference": {
+						"Entity": "Flight.cdm.json/Flight",
+						"Name": "UsDomesticFlightIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "InternationalFlightIndicator",
+					"Description": "Indicates that the flight originates, ends or visits flights in countries other than the originating country.",
+					"BaseAttributeReference": {
+						"Entity": "Flight.cdm.json/Flight",
+						"Name": "InternationalFlightIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "PeakFlightIndicator",
+					"Description": "Time period designated by day, week month or year that is inside of peak periods of demand.",
+					"BaseAttributeReference": {
+						"Entity": "Flight.cdm.json/Flight",
+						"Name": "PeakFlightIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "OffPeakFlightIndicator",
+					"Description": "Time period designated by day, week month or year that is outside of peak periods of demand and therefore is generally discounted by a given percentage below the full price.",
+					"BaseAttributeReference": {
+						"Entity": "Flight.cdm.json/Flight",
+						"Name": "OffPeakFlightIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "FlightTypeId",
+					"Description": "The unique identifier of a Flight Type.",
+					"BaseAttributeReference": {
+						"Entity": "Flight.cdm.json/Flight",
+						"Name": "FlightTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "MarketingCarrierId",
+					"Description": "The unique identifier of a Carrier.",
+					"BaseAttributeReference": {
+						"Entity": "Flight.cdm.json/Flight",
+						"Name": "MarketingCarrierId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"CarrierId\":{\"entity\":\"Flight.cdm.json/Flight\",\"name\":\"CarrierId\"},\"FlightNumber\":{\"entity\":\"Flight.cdm.json/Flight\",\"name\":\"FlightNumber\"},\"OriginatingAirportCode\":{\"entity\":\"Flight.cdm.json/Flight\",\"name\":\"OriginatingAirportCode\"},\"DestinationAirportCode\":{\"entity\":\"Flight.cdm.json/Flight\",\"name\":\"DestinationAirportCode\"},\"OperatingCarrierId\":{\"entity\":\"Flight.cdm.json/Flight\",\"name\":\"OperatingCarrierId\"},\"PlannedCheckInTimestamp\":{\"entity\":\"Flight.cdm.json/Flight\",\"name\":\"PlannedCheckInTimestamp\"},\"PlannedBoardingTimestamp\":{\"entity\":\"Flight.cdm.json/Flight\",\"name\":\"PlannedBoardingTimestamp\"},\"PlannedDepartureTimestamp\":{\"entity\":\"Flight.cdm.json/Flight\",\"name\":\"PlannedDepartureTimestamp\"},\"PlannedArrivalTimestamp\":{\"entity\":\"Flight.cdm.json/Flight\",\"name\":\"PlannedArrivalTimestamp\"},\"EstimatedFlyingTimeInMinutes\":{\"entity\":\"Flight.cdm.json/Flight\",\"name\":\"EstimatedFlyingTimeInMinutes\"},\"FrequentFlyerMileageDistance\":{\"entity\":\"Flight.cdm.json/Flight\",\"name\":\"FrequentFlyerMileageDistance\"},\"ActualMiles\":{\"entity\":\"Flight.cdm.json/Flight\",\"name\":\"ActualMiles\"},\"MultiLegFlightIndicator\":{\"entity\":\"Flight.cdm.json/Flight\",\"name\":\"MultiLegFlightIndicator\"},\"PassportRequiredIndicator\":{\"entity\":\"Flight.cdm.json/Flight\",\"name\":\"PassportRequiredIndicator\"},\"UsDomesticFlightIndicator\":{\"entity\":\"Flight.cdm.json/Flight\",\"name\":\"UsDomesticFlightIndicator\"},\"InternationalFlightIndicator\":{\"entity\":\"Flight.cdm.json/Flight\",\"name\":\"InternationalFlightIndicator\"},\"PeakFlightIndicator\":{\"entity\":\"Flight.cdm.json/Flight\",\"name\":\"PeakFlightIndicator\"},\"OffPeakFlightIndicator\":{\"entity\":\"Flight.cdm.json/Flight\",\"name\":\"OffPeakFlightIndicator\"},\"FlightTypeId\":{\"entity\":\"Flight.cdm.json/Flight\",\"name\":\"FlightTypeId\"},\"MarketingCarrierId\":{\"entity\":\"Flight.cdm.json/Flight\",\"name\":\"MarketingCarrierId\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"Flight\",\"path\":\"Flight.cdm.json/Flight\"},\"description\":\"A planned flight from one airport to another that is then scheduled for a specific date as a Schedule Flight.\\n\\nThe scheduled flight may deviate in arrival/departure time on a given date but the from-airport and to-airport remain the same.\",\"primaryKey\":[\"CarrierId\",\"FlightNumber\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"CarrierId\",\"attributeReference\":{\"entity\":\"Flight.cdm.json/Flight\",\"name\":\"CarrierId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"FlightNumber\",\"attributeReference\":{\"entity\":\"Flight.cdm.json/Flight\",\"name\":\"FlightNumber\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"OriginatingAirportCode\",\"attributeReference\":{\"entity\":\"Flight.cdm.json/Flight\",\"name\":\"OriginatingAirportCode\"},\"dataType\":\"string\",\"dataTypeLength\":3},{\"type\":\"Existing\",\"name\":\"DestinationAirportCode\",\"attributeReference\":{\"entity\":\"Flight.cdm.json/Flight\",\"name\":\"DestinationAirportCode\"},\"dataType\":\"string\",\"dataTypeLength\":3},{\"type\":\"Existing\",\"name\":\"OperatingCarrierId\",\"attributeReference\":{\"entity\":\"Flight.cdm.json/Flight\",\"name\":\"OperatingCarrierId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"PlannedCheckInTimestamp\",\"attributeReference\":{\"entity\":\"Flight.cdm.json/Flight\",\"name\":\"PlannedCheckInTimestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"PlannedBoardingTimestamp\",\"attributeReference\":{\"entity\":\"Flight.cdm.json/Flight\",\"name\":\"PlannedBoardingTimestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"PlannedDepartureTimestamp\",\"attributeReference\":{\"entity\":\"Flight.cdm.json/Flight\",\"name\":\"PlannedDepartureTimestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"PlannedArrivalTimestamp\",\"attributeReference\":{\"entity\":\"Flight.cdm.json/Flight\",\"name\":\"PlannedArrivalTimestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"EstimatedFlyingTimeInMinutes\",\"attributeReference\":{\"entity\":\"Flight.cdm.json/Flight\",\"name\":\"EstimatedFlyingTimeInMinutes\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"FrequentFlyerMileageDistance\",\"attributeReference\":{\"entity\":\"Flight.cdm.json/Flight\",\"name\":\"FrequentFlyerMileageDistance\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ActualMiles\",\"attributeReference\":{\"entity\":\"Flight.cdm.json/Flight\",\"name\":\"ActualMiles\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"MultiLegFlightIndicator\",\"attributeReference\":{\"entity\":\"Flight.cdm.json/Flight\",\"name\":\"MultiLegFlightIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"PassportRequiredIndicator\",\"attributeReference\":{\"entity\":\"Flight.cdm.json/Flight\",\"name\":\"PassportRequiredIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"UsDomesticFlightIndicator\",\"attributeReference\":{\"entity\":\"Flight.cdm.json/Flight\",\"name\":\"UsDomesticFlightIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"InternationalFlightIndicator\",\"attributeReference\":{\"entity\":\"Flight.cdm.json/Flight\",\"name\":\"InternationalFlightIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"PeakFlightIndicator\",\"attributeReference\":{\"entity\":\"Flight.cdm.json/Flight\",\"name\":\"PeakFlightIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"OffPeakFlightIndicator\",\"attributeReference\":{\"entity\":\"Flight.cdm.json/Flight\",\"name\":\"OffPeakFlightIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"FlightTypeId\",\"attributeReference\":{\"entity\":\"Flight.cdm.json/Flight\",\"name\":\"FlightTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"MarketingCarrierId\",\"attributeReference\":{\"entity\":\"Flight.cdm.json/Flight\",\"name\":\"MarketingCarrierId\"},\"dataType\":\"integer\"}]}}}",
+			"Description": "A planned flight from one airport to another that is then scheduled for a specific date as a Schedule Flight.\n\nThe scheduled flight may deviate in arrival/departure time on a given date but the from-airport and to-airport remain the same.",
+			"DisplayFolderInfo": "{\"name\":\"Shipping\",\"colorCode\":\"#000B42\"}",
+			"PrimaryKeys": "CarrierId,FlightNumber"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

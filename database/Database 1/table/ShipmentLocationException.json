@@ -1,0 +1,135 @@
+{
+	"name": "ShipmentLocationException",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "ShipmentLocationException",
+		"Description": "Notations made when the cargo is at a  location.\n\nFor example when it is received at the carrier's terminal or loaded aboard a vessel. \n\nThey show any irregularities in packaging or actual or suspected damage to the cargo. Exceptions are then noted on the bill of lading.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ShipmentId",
+					"Description": "The unique identifier of a Shipment.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentLocationException.cdm.json/ShipmentLocationException",
+						"Name": "ShipmentId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ExceptionTypeId",
+					"Description": "The unique identifier of an Exception Type.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentLocationException.cdm.json/ShipmentLocationException",
+						"Name": "ExceptionTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PeriodStartTimestamp",
+					"Description": "The period start timestamp that the shipment was at the shipping location.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentLocationException.cdm.json/ShipmentLocationException",
+						"Name": "PeriodStartTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "PeriodEndTimestamp",
+					"Description": "The period end timestamp that the equipment is required at the shipment location.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentLocationException.cdm.json/ShipmentLocationException",
+						"Name": "PeriodEndTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "ExceptionConditionId",
+					"Description": "The unique identifier of an exception condition.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentLocationException.cdm.json/ShipmentLocationException",
+						"Name": "ExceptionConditionId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ExceptionNote",
+					"Description": "A note, comment or additional information regarding the exception.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentLocationException.cdm.json/ShipmentLocationException",
+						"Name": "ExceptionNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ShipmentId\":{\"entity\":\"ShipmentLocationException.cdm.json/ShipmentLocationException\",\"name\":\"ShipmentId\"},\"ExceptionTypeId\":{\"entity\":\"ShipmentLocationException.cdm.json/ShipmentLocationException\",\"name\":\"ExceptionTypeId\"},\"PeriodStartTimestamp\":{\"entity\":\"ShipmentLocationException.cdm.json/ShipmentLocationException\",\"name\":\"PeriodStartTimestamp\"},\"PeriodEndTimestamp\":{\"entity\":\"ShipmentLocationException.cdm.json/ShipmentLocationException\",\"name\":\"PeriodEndTimestamp\"},\"ExceptionConditionId\":{\"entity\":\"ShipmentLocationException.cdm.json/ShipmentLocationException\",\"name\":\"ExceptionConditionId\"},\"ExceptionNote\":{\"entity\":\"ShipmentLocationException.cdm.json/ShipmentLocationException\",\"name\":\"ExceptionNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"ShipmentLocationException\",\"path\":\"ShipmentLocationException.cdm.json/ShipmentLocationException\"},\"description\":\"Notations made when the cargo is at a  location.\\n\\nFor example when it is received at the carrier's terminal or loaded aboard a vessel. \\n\\nThey show any irregularities in packaging or actual or suspected damage to the cargo. Exceptions are then noted on the bill of lading.\",\"primaryKey\":[\"ShipmentId\",\"ExceptionTypeId\",\"PeriodStartTimestamp\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"ShipmentId\",\"attributeReference\":{\"entity\":\"ShipmentLocationException.cdm.json/ShipmentLocationException\",\"name\":\"ShipmentId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ExceptionTypeId\",\"attributeReference\":{\"entity\":\"ShipmentLocationException.cdm.json/ShipmentLocationException\",\"name\":\"ExceptionTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"PeriodStartTimestamp\",\"attributeReference\":{\"entity\":\"ShipmentLocationException.cdm.json/ShipmentLocationException\",\"name\":\"PeriodStartTimestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"PeriodEndTimestamp\",\"attributeReference\":{\"entity\":\"ShipmentLocationException.cdm.json/ShipmentLocationException\",\"name\":\"PeriodEndTimestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"ExceptionConditionId\",\"attributeReference\":{\"entity\":\"ShipmentLocationException.cdm.json/ShipmentLocationException\",\"name\":\"ExceptionConditionId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ExceptionNote\",\"attributeReference\":{\"entity\":\"ShipmentLocationException.cdm.json/ShipmentLocationException\",\"name\":\"ExceptionNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024}]}}}",
+			"Description": "Notations made when the cargo is at a  location.\n\nFor example when it is received at the carrier's terminal or loaded aboard a vessel. \n\nThey show any irregularities in packaging or actual or suspected damage to the cargo. Exceptions are then noted on the bill of lading.",
+			"DisplayFolderInfo": "{\"name\":\"Shipping\",\"colorCode\":\"#000B42\"}",
+			"PrimaryKeys": "ShipmentId,ExceptionTypeId,PeriodStartTimestamp"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

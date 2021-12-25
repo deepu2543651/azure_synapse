@@ -1,0 +1,26 @@
+{
+	"name": "relationship-ihlvishnii",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "relationship-ihlvishnii",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Container",
+		"ToTableName": "ShipmentContainer",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ContainerId",
+				"ToColumnName": "ContainerId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Container.cdm.json/Container\",\"toEntity\":\"ShipmentContainer.cdm.json/ShipmentContainer\",\"joinPairs\":[{\"fromAttribute\":\"ContainerId\",\"toAttribute\":\"ContainerId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

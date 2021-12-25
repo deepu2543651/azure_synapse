@@ -1,0 +1,34 @@
+{
+	"name": "relationship-nvmbmdmdqz",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "relationship-nvmbmdmdqz",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "InsurancePolicyCoverage",
+		"ToTableName": "InsurancePolicyCoverageLiability",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "InsuranceCoverageTypeId",
+				"ToColumnName": "InsuranceCoverageTypeId"
+			},
+			{
+				"FromColumnName": "InsurancePolicyId",
+				"ToColumnName": "InsurancePolicyId"
+			},
+			{
+				"FromColumnName": "PeriodStartDate",
+				"ToColumnName": "PeriodStartDate"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"InsurancePolicyCoverage.cdm.json/InsurancePolicyCoverage\",\"toEntity\":\"InsurancePolicyCoverageLiability.cdm.json/InsurancePolicyCoverageLiability\",\"joinPairs\":[{\"fromAttribute\":\"InsuranceCoverageTypeId\",\"toAttribute\":\"InsuranceCoverageTypeId\"},{\"fromAttribute\":\"InsurancePolicyId\",\"toAttribute\":\"InsurancePolicyId\"},{\"fromAttribute\":\"PeriodStartDate\",\"toAttribute\":\"PeriodStartDate\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

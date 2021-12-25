@@ -1,0 +1,85 @@
+{
+	"name": "CargoInsurancePolicy",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "CargoInsurancePolicy",
+		"Description": "A policy underwritten for the purpose of protecting cargo being shipped.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "InsurancePolicyId",
+					"Description": "The unique identifier of an Insurance Policy.",
+					"BaseAttributeReference": {
+						"Entity": "CargoInsurancePolicy.cdm.json/CargoInsurancePolicy",
+						"Name": "InsurancePolicyId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "WarehouseToWarehouseClause",
+					"Description": "The clause in the Cargo Policy that defines when coverage commences and terminates. It is the intent of the policy to attach at the time the goods leave the warehouse of origin named in the Policy, and to continue while the goods are in due course of transit until delivered to the warehouse of destination named in the Policy, where it terminates.",
+					"BaseAttributeReference": {
+						"Entity": "CargoInsurancePolicy.cdm.json/CargoInsurancePolicy",
+						"Name": "WarehouseToWarehouseClause"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 2048,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "AllRiskInsurancePolicyIndicator",
+					"Description": "This type of insurance offers the shipper the broadest coverage available, covering against all losses that may occur in transit.",
+					"BaseAttributeReference": {
+						"Entity": "CargoInsurancePolicy.cdm.json/CargoInsurancePolicy",
+						"Name": "AllRiskInsurancePolicyIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"InsurancePolicyId\":{\"entity\":\"CargoInsurancePolicy.cdm.json/CargoInsurancePolicy\",\"name\":\"InsurancePolicyId\"},\"WarehouseToWarehouseClause\":{\"entity\":\"CargoInsurancePolicy.cdm.json/CargoInsurancePolicy\",\"name\":\"WarehouseToWarehouseClause\"},\"AllRiskInsurancePolicyIndicator\":{\"entity\":\"CargoInsurancePolicy.cdm.json/CargoInsurancePolicy\",\"name\":\"AllRiskInsurancePolicyIndicator\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"CargoInsurancePolicy\",\"path\":\"CargoInsurancePolicy.cdm.json/CargoInsurancePolicy\"},\"description\":\"A policy underwritten for the purpose of protecting cargo being shipped.\",\"primaryKey\":[\"InsurancePolicyId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"InsurancePolicyId\",\"attributeReference\":{\"entity\":\"CargoInsurancePolicy.cdm.json/CargoInsurancePolicy\",\"name\":\"InsurancePolicyId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"WarehouseToWarehouseClause\",\"attributeReference\":{\"entity\":\"CargoInsurancePolicy.cdm.json/CargoInsurancePolicy\",\"name\":\"WarehouseToWarehouseClause\"},\"dataType\":\"string\",\"dataTypeLength\":2048},{\"type\":\"Existing\",\"name\":\"AllRiskInsurancePolicyIndicator\",\"attributeReference\":{\"entity\":\"CargoInsurancePolicy.cdm.json/CargoInsurancePolicy\",\"name\":\"AllRiskInsurancePolicyIndicator\"},\"dataType\":\"boolean\"}]}}}",
+			"Description": "A policy underwritten for the purpose of protecting cargo being shipped.",
+			"DisplayFolderInfo": "{\"name\":\"Shipping\",\"colorCode\":\"#000B42\"}",
+			"PrimaryKeys": "InsurancePolicyId"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

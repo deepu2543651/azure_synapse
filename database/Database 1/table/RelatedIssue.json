@@ -1,0 +1,101 @@
+{
+	"name": "RelatedIssue",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "RelatedIssue",
+		"Description": "The relationship of two or more issues.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "IssueId",
+					"Description": "The unique identifier of an Issue.",
+					"BaseAttributeReference": {
+						"Entity": "RelatedIssue.cdm.json/RelatedIssue",
+						"Name": "IssueId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "RelatedIssueId",
+					"Description": "The unique identifier of an Issue.",
+					"BaseAttributeReference": {
+						"Entity": "RelatedIssue.cdm.json/RelatedIssue",
+						"Name": "RelatedIssueId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "IssueRelationshipDescription",
+					"Description": "A description of the nature of relationship between the Issues.",
+					"BaseAttributeReference": {
+						"Entity": "RelatedIssue.cdm.json/RelatedIssue",
+						"Name": "IssueRelationshipDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "IssueRelationshipTypeId",
+					"Description": "The unique identifier of a Issue Relationship Type.",
+					"BaseAttributeReference": {
+						"Entity": "RelatedIssue.cdm.json/RelatedIssue",
+						"Name": "IssueRelationshipTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"IssueId\":{\"entity\":\"RelatedIssue.cdm.json/RelatedIssue\",\"name\":\"IssueId\"},\"RelatedIssueId\":{\"entity\":\"RelatedIssue.cdm.json/RelatedIssue\",\"name\":\"RelatedIssueId\"},\"IssueRelationshipDescription\":{\"entity\":\"RelatedIssue.cdm.json/RelatedIssue\",\"name\":\"IssueRelationshipDescription\"},\"IssueRelationshipTypeId\":{\"entity\":\"RelatedIssue.cdm.json/RelatedIssue\",\"name\":\"IssueRelationshipTypeId\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"RelatedIssue\",\"path\":\"RelatedIssue.cdm.json/RelatedIssue\"},\"description\":\"The relationship of two or more issues.\",\"primaryKey\":[\"IssueId\",\"RelatedIssueId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"IssueId\",\"attributeReference\":{\"entity\":\"RelatedIssue.cdm.json/RelatedIssue\",\"name\":\"IssueId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"RelatedIssueId\",\"attributeReference\":{\"entity\":\"RelatedIssue.cdm.json/RelatedIssue\",\"name\":\"RelatedIssueId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"IssueRelationshipDescription\",\"attributeReference\":{\"entity\":\"RelatedIssue.cdm.json/RelatedIssue\",\"name\":\"IssueRelationshipDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512},{\"type\":\"Existing\",\"name\":\"IssueRelationshipTypeId\",\"attributeReference\":{\"entity\":\"RelatedIssue.cdm.json/RelatedIssue\",\"name\":\"IssueRelationshipTypeId\"},\"dataType\":\"integer\"}]}}}",
+			"Description": "The relationship of two or more issues.",
+			"DisplayFolderInfo": "{\"name\":\"Customer Service & Contact Management\",\"colorCode\":\"#502006\"}",
+			"PrimaryKeys": "IssueId,RelatedIssueId"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

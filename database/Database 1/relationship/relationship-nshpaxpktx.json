@@ -1,0 +1,26 @@
+{
+	"name": "relationship-nshpaxpktx",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "relationship-nshpaxpktx",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Party",
+		"ToTableName": "Aircraft",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "PartyId",
+				"ToColumnName": "OwningPartyId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Party.cdm.json/Party\",\"toEntity\":\"Aircraft.cdm.json/Aircraft\",\"joinPairs\":[{\"fromAttribute\":\"PartyId\",\"toAttribute\":\"OwningPartyId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

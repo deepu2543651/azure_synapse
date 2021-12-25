@@ -1,0 +1,86 @@
+{
+	"name": "ShipmentStatusType",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "ShipmentStatusType",
+		"Description": "A status type that may be applied to a Shipment.\n\nEx:\n- Scheduled\n- Released to Shipper\n- Released to Carrier \n- In Transit\n- Delivered to Ship-To Address\n- At Consignee Location\n- In Customs\n- In Warehouse Storage\n- In Quarantine\n- Delayed\n- Re-Routed\n- Abandoned\n- Unknown",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ShipmentStatusTypeId",
+					"Description": "The unique identifier of a Shipment Status Type.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentStatusType.cdm.json/ShipmentStatusType",
+						"Name": "ShipmentStatusTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ShipmentStatusTypeName",
+					"Description": "The name of a Shipment Status Type.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentStatusType.cdm.json/ShipmentStatusType",
+						"Name": "ShipmentStatusTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ShipmentStatusTypeDescription",
+					"Description": "The description of a Shipment Status Type.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentStatusType.cdm.json/ShipmentStatusType",
+						"Name": "ShipmentStatusTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ShipmentStatusTypeId\":{\"entity\":\"ShipmentStatusType.cdm.json/ShipmentStatusType\",\"name\":\"ShipmentStatusTypeId\"},\"ShipmentStatusTypeName\":{\"entity\":\"ShipmentStatusType.cdm.json/ShipmentStatusType\",\"name\":\"ShipmentStatusTypeName\"},\"ShipmentStatusTypeDescription\":{\"entity\":\"ShipmentStatusType.cdm.json/ShipmentStatusType\",\"name\":\"ShipmentStatusTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"ShipmentStatusType\",\"path\":\"ShipmentStatusType.cdm.json/ShipmentStatusType\"},\"description\":\"A status type that may be applied to a Shipment.\\n\\nEx:\\n- Scheduled\\n- Released to Shipper\\n- Released to Carrier \\n- In Transit\\n- Delivered to Ship-To Address\\n- At Consignee Location\\n- In Customs\\n- In Warehouse Storage\\n- In Quarantine\\n- Delayed\\n- Re-Routed\\n- Abandoned\\n- Unknown\",\"primaryKey\":[\"ShipmentStatusTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"ShipmentStatusTypeId\",\"attributeReference\":{\"entity\":\"ShipmentStatusType.cdm.json/ShipmentStatusType\",\"name\":\"ShipmentStatusTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ShipmentStatusTypeName\",\"attributeReference\":{\"entity\":\"ShipmentStatusType.cdm.json/ShipmentStatusType\",\"name\":\"ShipmentStatusTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"ShipmentStatusTypeDescription\",\"attributeReference\":{\"entity\":\"ShipmentStatusType.cdm.json/ShipmentStatusType\",\"name\":\"ShipmentStatusTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512}]}}}",
+			"Description": "A status type that may be applied to a Shipment.\n\nEx:\n- Scheduled\n- Released to Shipper\n- Released to Carrier \n- In Transit\n- Delivered to Ship-To Address\n- At Consignee Location\n- In Customs\n- In Warehouse Storage\n- In Quarantine\n- Delayed\n- Re-Routed\n- Abandoned\n- Unknown",
+			"DisplayFolderInfo": "{\"name\":\"Shipping\",\"colorCode\":\"#000B42\"}",
+			"PrimaryKeys": "ShipmentStatusTypeId"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

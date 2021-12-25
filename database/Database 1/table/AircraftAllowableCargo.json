@@ -1,0 +1,119 @@
+{
+	"name": "AircraftAllowableCargo",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "AircraftAllowableCargo",
+		"Description": "The type of cargo that is allowed to be transported by the aircraft.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "AircraftId",
+					"Description": "The unique identifier of an Aircraft.",
+					"BaseAttributeReference": {
+						"Entity": "AircraftAllowableCargo.cdm.json/AircraftAllowableCargo",
+						"Name": "AircraftId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "CargoTypeId",
+					"Description": "The unique identifier of a Cargo Type.",
+					"BaseAttributeReference": {
+						"Entity": "AircraftAllowableCargo.cdm.json/AircraftAllowableCargo",
+						"Name": "CargoTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PeriodStartDate",
+					"Description": "The period start date for which the associated aircraft allowable cargo is effective.",
+					"BaseAttributeReference": {
+						"Entity": "AircraftAllowableCargo.cdm.json/AircraftAllowableCargo",
+						"Name": "PeriodStartDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "PeriodEndDate",
+					"Description": "The period end date for which the associated aircraft allowable cargo is effective.",
+					"BaseAttributeReference": {
+						"Entity": "AircraftAllowableCargo.cdm.json/AircraftAllowableCargo",
+						"Name": "PeriodEndDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "AircraftAllowableCargoNote",
+					"Description": "A note, comment or additional information regarding the aircraft allowable cargo.",
+					"BaseAttributeReference": {
+						"Entity": "AircraftAllowableCargo.cdm.json/AircraftAllowableCargo",
+						"Name": "AircraftAllowableCargoNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"AircraftId\":{\"entity\":\"AircraftAllowableCargo.cdm.json/AircraftAllowableCargo\",\"name\":\"AircraftId\"},\"CargoTypeId\":{\"entity\":\"AircraftAllowableCargo.cdm.json/AircraftAllowableCargo\",\"name\":\"CargoTypeId\"},\"PeriodStartDate\":{\"entity\":\"AircraftAllowableCargo.cdm.json/AircraftAllowableCargo\",\"name\":\"PeriodStartDate\"},\"PeriodEndDate\":{\"entity\":\"AircraftAllowableCargo.cdm.json/AircraftAllowableCargo\",\"name\":\"PeriodEndDate\"},\"AircraftAllowableCargoNote\":{\"entity\":\"AircraftAllowableCargo.cdm.json/AircraftAllowableCargo\",\"name\":\"AircraftAllowableCargoNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"AircraftAllowableCargo\",\"path\":\"AircraftAllowableCargo.cdm.json/AircraftAllowableCargo\"},\"description\":\"The type of cargo that is allowed to be transported by the aircraft.\",\"primaryKey\":[\"AircraftId\",\"CargoTypeId\",\"PeriodStartDate\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"AircraftId\",\"attributeReference\":{\"entity\":\"AircraftAllowableCargo.cdm.json/AircraftAllowableCargo\",\"name\":\"AircraftId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"CargoTypeId\",\"attributeReference\":{\"entity\":\"AircraftAllowableCargo.cdm.json/AircraftAllowableCargo\",\"name\":\"CargoTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"PeriodStartDate\",\"attributeReference\":{\"entity\":\"AircraftAllowableCargo.cdm.json/AircraftAllowableCargo\",\"name\":\"PeriodStartDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\"},{\"type\":\"Existing\",\"name\":\"PeriodEndDate\",\"attributeReference\":{\"entity\":\"AircraftAllowableCargo.cdm.json/AircraftAllowableCargo\",\"name\":\"PeriodEndDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\"},{\"type\":\"Existing\",\"name\":\"AircraftAllowableCargoNote\",\"attributeReference\":{\"entity\":\"AircraftAllowableCargo.cdm.json/AircraftAllowableCargo\",\"name\":\"AircraftAllowableCargoNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024}]}}}",
+			"Description": "The type of cargo that is allowed to be transported by the aircraft.",
+			"DisplayFolderInfo": "{\"name\":\"Shipping\",\"colorCode\":\"#000B42\"}",
+			"PrimaryKeys": "AircraftId,CargoTypeId,PeriodStartDate"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

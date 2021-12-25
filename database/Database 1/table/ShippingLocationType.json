@@ -1,0 +1,86 @@
+{
+	"name": "ShippingLocationType",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "ShippingLocationType",
+		"Description": "A classification of locations based upon common characteristics or functions performed there.\n\nEx:\n- AIRPORT MAIL FACILITY\n- APPRAISER WAREHOUSE\n- BASE PORT\n- BERTH\n- BOND PORT\n- BONDED TERMINAL\n- BONDED WAREHOUSE\n- BONDED WAREHOUSE\n- BRIDGE POINT\n- CLASSIFICATION YARD\n- CONTAINER DEPOT\n- CONTAINER DEPOT\n- CONTAINER FREIGHT STATION\n- CONTAINER FREIGHT STATION\n- CONTAINER YARD\n- CUSTOMS BONDED WAREHOUSE\n- DELIVERY\n- DESTINATION\n- DOCK\n- FOREIGN TRADE ZONE\n- PICKUP\n- POINT OF ORIGIN\n- PORT OF ENTRY\n- PORT\n- RAIL FREIGHT STATION\n- RAILHEAD\n- TERMINAL\n- TRAIN STATION\n- TRANSIT\n- WAREHOUSE\n- WHARF",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ShippingLocationTypeId",
+					"Description": "The unique identifier of a Shipping Location Type.",
+					"BaseAttributeReference": {
+						"Entity": "ShippingLocationType.cdm.json/ShippingLocationType",
+						"Name": "ShippingLocationTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ShippingLocationTypeName",
+					"Description": "The name of a Shipping Location Type.",
+					"BaseAttributeReference": {
+						"Entity": "ShippingLocationType.cdm.json/ShippingLocationType",
+						"Name": "ShippingLocationTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ShippingLocationTypeDescription",
+					"Description": "The description of a Shipping Location Type.",
+					"BaseAttributeReference": {
+						"Entity": "ShippingLocationType.cdm.json/ShippingLocationType",
+						"Name": "ShippingLocationTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ShippingLocationTypeId\":{\"entity\":\"ShippingLocationType.cdm.json/ShippingLocationType\",\"name\":\"ShippingLocationTypeId\"},\"ShippingLocationTypeName\":{\"entity\":\"ShippingLocationType.cdm.json/ShippingLocationType\",\"name\":\"ShippingLocationTypeName\"},\"ShippingLocationTypeDescription\":{\"entity\":\"ShippingLocationType.cdm.json/ShippingLocationType\",\"name\":\"ShippingLocationTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"ShippingLocationType\",\"path\":\"ShippingLocationType.cdm.json/ShippingLocationType\"},\"description\":\"A classification of locations based upon common characteristics or functions performed there.\\n\\nEx:\\n- AIRPORT MAIL FACILITY\\n- APPRAISER WAREHOUSE\\n- BASE PORT\\n- BERTH\\n- BOND PORT\\n- BONDED TERMINAL\\n- BONDED WAREHOUSE\\n- BONDED WAREHOUSE\\n- BRIDGE POINT\\n- CLASSIFICATION YARD\\n- CONTAINER DEPOT\\n- CONTAINER DEPOT\\n- CONTAINER FREIGHT STATION\\n- CONTAINER FREIGHT STATION\\n- CONTAINER YARD\\n- CUSTOMS BONDED WAREHOUSE\\n- DELIVERY\\n- DESTINATION\\n- DOCK\\n- FOREIGN TRADE ZONE\\n- PICKUP\\n- POINT OF ORIGIN\\n- PORT OF ENTRY\\n- PORT\\n- RAIL FREIGHT STATION\\n- RAILHEAD\\n- TERMINAL\\n- TRAIN STATION\\n- TRANSIT\\n- WAREHOUSE\\n- WHARF\",\"primaryKey\":[\"ShippingLocationTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"ShippingLocationTypeId\",\"attributeReference\":{\"entity\":\"ShippingLocationType.cdm.json/ShippingLocationType\",\"name\":\"ShippingLocationTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ShippingLocationTypeName\",\"attributeReference\":{\"entity\":\"ShippingLocationType.cdm.json/ShippingLocationType\",\"name\":\"ShippingLocationTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"ShippingLocationTypeDescription\",\"attributeReference\":{\"entity\":\"ShippingLocationType.cdm.json/ShippingLocationType\",\"name\":\"ShippingLocationTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512}]}}}",
+			"Description": "A classification of locations based upon common characteristics or functions performed there.\n\nEx:\n- AIRPORT MAIL FACILITY\n- APPRAISER WAREHOUSE\n- BASE PORT\n- BERTH\n- BOND PORT\n- BONDED TERMINAL\n- BONDED WAREHOUSE\n- BONDED WAREHOUSE\n- BRIDGE POINT\n- CLASSIFICATION YARD\n- CONTAINER DEPOT\n- CONTAINER DEPOT\n- CONTAINER FREIGHT STATION\n- CONTAINER FREIGHT STATION\n- CONTAINER YARD\n- CUSTOMS BONDED WAREHOUSE\n- DELIVERY\n- DESTINATION\n- DOCK\n- FOREIGN TRADE ZONE\n- PICKUP\n- POINT OF ORIGIN\n- PORT OF ENTRY\n- PORT\n- RAIL FREIGHT STATION\n- RAILHEAD\n- TERMINAL\n- TRAIN STATION\n- TRANSIT\n- WAREHOUSE\n- WHARF",
+			"DisplayFolderInfo": "{\"name\":\"Shipping\",\"colorCode\":\"#000B42\"}",
+			"PrimaryKeys": "ShippingLocationTypeId"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

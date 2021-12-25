@@ -1,0 +1,168 @@
+{
+	"name": "TrainScheduleLegRelatedParty",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "TrainScheduleLegRelatedParty",
+		"Description": "A party that has a relationship with the train schedule leg over the indicated period.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "TrainId",
+					"Description": "The unique identifier of a Train.",
+					"BaseAttributeReference": {
+						"Entity": "TrainScheduleLegRelatedParty.cdm.json/TrainScheduleLegRelatedParty",
+						"Name": "TrainId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "TrainScheduledDepartureTimestamp",
+					"Description": "The scheduled departure timestamp.",
+					"BaseAttributeReference": {
+						"Entity": "TrainScheduleLegRelatedParty.cdm.json/TrainScheduleLegRelatedParty",
+						"Name": "TrainScheduledDepartureTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "TrainScheduleLegNumber",
+					"Description": "The leg number of the train schedule.",
+					"BaseAttributeReference": {
+						"Entity": "TrainScheduleLegRelatedParty.cdm.json/TrainScheduleLegRelatedParty",
+						"Name": "TrainScheduleLegNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PartyId",
+					"Description": "The unique identifier of a Party.",
+					"BaseAttributeReference": {
+						"Entity": "TrainScheduleLegRelatedParty.cdm.json/TrainScheduleLegRelatedParty",
+						"Name": "PartyId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "TrainScheduleLegPartyRelationshipTypeId",
+					"Description": "The unique identifier of a customer relationship type.",
+					"BaseAttributeReference": {
+						"Entity": "TrainScheduleLegRelatedParty.cdm.json/TrainScheduleLegRelatedParty",
+						"Name": "TrainScheduleLegPartyRelationshipTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PeriodStartTimestamp",
+					"Description": "The period start timestamp for which the associated train schedule leg - party relationship is valid or in-effect.",
+					"BaseAttributeReference": {
+						"Entity": "TrainScheduleLegRelatedParty.cdm.json/TrainScheduleLegRelatedParty",
+						"Name": "PeriodStartTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "PeriodEndTimestamp",
+					"Description": "The period end timestamp for which the associated train schedule leg - party relationship is valid or in-effect.",
+					"BaseAttributeReference": {
+						"Entity": "TrainScheduleLegRelatedParty.cdm.json/TrainScheduleLegRelatedParty",
+						"Name": "PeriodEndTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "TrainScheduleLegRelatedPartyNote",
+					"Description": "A note, comment or additional information regarding the train schedule leg - party relationship.",
+					"BaseAttributeReference": {
+						"Entity": "TrainScheduleLegRelatedParty.cdm.json/TrainScheduleLegRelatedParty",
+						"Name": "TrainScheduleLegRelatedPartyNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"TrainId\":{\"entity\":\"TrainScheduleLegRelatedParty.cdm.json/TrainScheduleLegRelatedParty\",\"name\":\"TrainId\"},\"TrainScheduledDepartureTimestamp\":{\"entity\":\"TrainScheduleLegRelatedParty.cdm.json/TrainScheduleLegRelatedParty\",\"name\":\"TrainScheduledDepartureTimestamp\"},\"TrainScheduleLegNumber\":{\"entity\":\"TrainScheduleLegRelatedParty.cdm.json/TrainScheduleLegRelatedParty\",\"name\":\"TrainScheduleLegNumber\"},\"PartyId\":{\"entity\":\"TrainScheduleLegRelatedParty.cdm.json/TrainScheduleLegRelatedParty\",\"name\":\"PartyId\"},\"TrainScheduleLegPartyRelationshipTypeId\":{\"entity\":\"TrainScheduleLegRelatedParty.cdm.json/TrainScheduleLegRelatedParty\",\"name\":\"TrainScheduleLegPartyRelationshipTypeId\"},\"PeriodStartTimestamp\":{\"entity\":\"TrainScheduleLegRelatedParty.cdm.json/TrainScheduleLegRelatedParty\",\"name\":\"PeriodStartTimestamp\"},\"PeriodEndTimestamp\":{\"entity\":\"TrainScheduleLegRelatedParty.cdm.json/TrainScheduleLegRelatedParty\",\"name\":\"PeriodEndTimestamp\"},\"TrainScheduleLegRelatedPartyNote\":{\"entity\":\"TrainScheduleLegRelatedParty.cdm.json/TrainScheduleLegRelatedParty\",\"name\":\"TrainScheduleLegRelatedPartyNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"TrainScheduleLegRelatedParty\",\"path\":\"TrainScheduleLegRelatedParty.cdm.json/TrainScheduleLegRelatedParty\"},\"description\":\"A party that has a relationship with the train schedule leg over the indicated period.\",\"primaryKey\":[\"TrainId\",\"TrainScheduledDepartureTimestamp\",\"TrainScheduleLegNumber\",\"PartyId\",\"TrainScheduleLegPartyRelationshipTypeId\",\"PeriodStartTimestamp\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"TrainId\",\"attributeReference\":{\"entity\":\"TrainScheduleLegRelatedParty.cdm.json/TrainScheduleLegRelatedParty\",\"name\":\"TrainId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"TrainScheduledDepartureTimestamp\",\"attributeReference\":{\"entity\":\"TrainScheduleLegRelatedParty.cdm.json/TrainScheduleLegRelatedParty\",\"name\":\"TrainScheduledDepartureTimestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"TrainScheduleLegNumber\",\"attributeReference\":{\"entity\":\"TrainScheduleLegRelatedParty.cdm.json/TrainScheduleLegRelatedParty\",\"name\":\"TrainScheduleLegNumber\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"PartyId\",\"attributeReference\":{\"entity\":\"TrainScheduleLegRelatedParty.cdm.json/TrainScheduleLegRelatedParty\",\"name\":\"PartyId\"},\"dataType\":\"long\"},{\"type\":\"Existing\",\"name\":\"TrainScheduleLegPartyRelationshipTypeId\",\"attributeReference\":{\"entity\":\"TrainScheduleLegRelatedParty.cdm.json/TrainScheduleLegRelatedParty\",\"name\":\"TrainScheduleLegPartyRelationshipTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"PeriodStartTimestamp\",\"attributeReference\":{\"entity\":\"TrainScheduleLegRelatedParty.cdm.json/TrainScheduleLegRelatedParty\",\"name\":\"PeriodStartTimestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"PeriodEndTimestamp\",\"attributeReference\":{\"entity\":\"TrainScheduleLegRelatedParty.cdm.json/TrainScheduleLegRelatedParty\",\"name\":\"PeriodEndTimestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"TrainScheduleLegRelatedPartyNote\",\"attributeReference\":{\"entity\":\"TrainScheduleLegRelatedParty.cdm.json/TrainScheduleLegRelatedParty\",\"name\":\"TrainScheduleLegRelatedPartyNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024}]}}}",
+			"Description": "A party that has a relationship with the train schedule leg over the indicated period.",
+			"DisplayFolderInfo": "{\"name\":\"Shipping\",\"colorCode\":\"#000B42\"}",
+			"PrimaryKeys": "TrainId,TrainScheduledDepartureTimestamp,TrainScheduleLegNumber,PartyId,TrainScheduleLegPartyRelationshipTypeId,PeriodStartTimestamp"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

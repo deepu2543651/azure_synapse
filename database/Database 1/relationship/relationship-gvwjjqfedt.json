@@ -1,0 +1,26 @@
+{
+	"name": "relationship-gvwjjqfedt",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "relationship-gvwjjqfedt",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "ShippingDocumentType",
+		"ToTableName": "CustomerAccountShippingDocumentRequirement",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ShippingDocumentTypeId",
+				"ToColumnName": "ShippingDocumentTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"ShippingDocumentType.cdm.json/ShippingDocumentType\",\"toEntity\":\"CustomerAccountShippingDocumentRequirement.cdm.json/CustomerAccountShippingDocumentRequirement\",\"joinPairs\":[{\"fromAttribute\":\"ShippingDocumentTypeId\",\"toAttribute\":\"ShippingDocumentTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

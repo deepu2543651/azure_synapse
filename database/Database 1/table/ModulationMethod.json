@@ -1,0 +1,86 @@
+{
+	"name": "ModulationMethod",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "ModulationMethod",
+		"Description": "The methods of modulating or altering the carriers in order to carry the encoded information are quite varied. They include amplitude modulation (AM)/ phase modulation (PM), frequency modulation (FM), frequency shift keyed (FSK), pulse position (PPM), pulse duration (PDM) and continuous wave (CW). In some cases, different modulating techniques are used in each direction (to and from the tags).\n\nEx:\n\nAMPLITUDE MODULATION (AM) MODULATION.\nData is contained in changes in amplitude of the carrier.\n\nAMPLITUDE-SHIFT KEYING (ASK) MODULATION.\nData is contained in changes in amplitude of the carrier. Each amplitude is assigned a unique pattern of binary digits.\n\nPHASE MODULATION (PM) MODULATION.\nData is contained in the changes in the phase of the carrier.\n\nFREQUENCY MODULATION (FM) MODULATION.\nData is contained in the changes in the frequency of the carrier.\n\nPULSE DURATION (PDM).\nData is contained in the duration of pulses.\n\nCONTINUOUS WAVE (CW) MODULATION.\nData is contained in a carrier which is switched on and off.\n\nFREQUENCY SHIFT KEYED (FSK) MODULATION.\nData is contained in the changes between two frequencies of carrier.\n\nPULSE POSITION (PPM) MODULATION.\nData is contained in the position of pulses relative to a reference point.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ModulationMethodId",
+					"Description": "The unique identifier of a Modulation Method.",
+					"BaseAttributeReference": {
+						"Entity": "ModulationMethod.cdm.json/ModulationMethod",
+						"Name": "ModulationMethodId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ModulationMethodName",
+					"Description": "The name of a Modulation Method.",
+					"BaseAttributeReference": {
+						"Entity": "ModulationMethod.cdm.json/ModulationMethod",
+						"Name": "ModulationMethodName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ModulationMethodDescription",
+					"Description": "The description of a Modulation Method.",
+					"BaseAttributeReference": {
+						"Entity": "ModulationMethod.cdm.json/ModulationMethod",
+						"Name": "ModulationMethodDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ModulationMethodId\":{\"entity\":\"ModulationMethod.cdm.json/ModulationMethod\",\"name\":\"ModulationMethodId\"},\"ModulationMethodName\":{\"entity\":\"ModulationMethod.cdm.json/ModulationMethod\",\"name\":\"ModulationMethodName\"},\"ModulationMethodDescription\":{\"entity\":\"ModulationMethod.cdm.json/ModulationMethod\",\"name\":\"ModulationMethodDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"ModulationMethod\",\"path\":\"ModulationMethod.cdm.json/ModulationMethod\"},\"description\":\"The methods of modulating or altering the carriers in order to carry the encoded information are quite varied. They include amplitude modulation (AM)/ phase modulation (PM), frequency modulation (FM), frequency shift keyed (FSK), pulse position (PPM), pulse duration (PDM) and continuous wave (CW). In some cases, different modulating techniques are used in each direction (to and from the tags).\\n\\nEx:\\n\\nAMPLITUDE MODULATION (AM) MODULATION.\\nData is contained in changes in amplitude of the carrier.\\n\\nAMPLITUDE-SHIFT KEYING (ASK) MODULATION.\\nData is contained in changes in amplitude of the carrier. Each amplitude is assigned a unique pattern of binary digits.\\n\\nPHASE MODULATION (PM) MODULATION.\\nData is contained in the changes in the phase of the carrier.\\n\\nFREQUENCY MODULATION (FM) MODULATION.\\nData is contained in the changes in the frequency of the carrier.\\n\\nPULSE DURATION (PDM).\\nData is contained in the duration of pulses.\\n\\nCONTINUOUS WAVE (CW) MODULATION.\\nData is contained in a carrier which is switched on and off.\\n\\nFREQUENCY SHIFT KEYED (FSK) MODULATION.\\nData is contained in the changes between two frequencies of carrier.\\n\\nPULSE POSITION (PPM) MODULATION.\\nData is contained in the position of pulses relative to a reference point.\",\"primaryKey\":[\"ModulationMethodId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"ModulationMethodId\",\"attributeReference\":{\"entity\":\"ModulationMethod.cdm.json/ModulationMethod\",\"name\":\"ModulationMethodId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ModulationMethodName\",\"attributeReference\":{\"entity\":\"ModulationMethod.cdm.json/ModulationMethod\",\"name\":\"ModulationMethodName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"ModulationMethodDescription\",\"attributeReference\":{\"entity\":\"ModulationMethod.cdm.json/ModulationMethod\",\"name\":\"ModulationMethodDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512}]}}}",
+			"Description": "The methods of modulating or altering the carriers in order to carry the encoded information are quite varied. They include amplitude modulation (AM)/ phase modulation (PM), frequency modulation (FM), frequency shift keyed (FSK), pulse position (PPM), pulse duration (PDM) and continuous wave (CW). In some cases, different modulating techniques are used in each direction (to and from the tags).\n\nEx:\n\nAMPLITUDE MODULATION (AM) MODULATION.\nData is contained in changes in amplitude of the carrier.\n\nAMPLITUDE-SHIFT KEYING (ASK) MODULATION.\nData is contained in changes in amplitude of the carrier. Each amplitude is assigned a unique pattern of binary digits.\n\nPHASE MODULATION (PM) MODULATION.\nData is contained in the changes in the phase of the carrier.\n\nFREQUENCY MODULATION (FM) MODULATION.\nData is contained in the changes in the frequency of the carrier.\n\nPULSE DURATION (PDM).\nData is contained in the duration of pulses.\n\nCONTINUOUS WAVE (CW) MODULATION.\nData is contained in a carrier which is switched on and off.\n\nFREQUENCY SHIFT KEYED (FSK) MODULATION.\nData is contained in the changes between two frequencies of carrier.\n\nPULSE POSITION (PPM) MODULATION.\nData is contained in the position of pulses relative to a reference point.",
+			"DisplayFolderInfo": "{\"name\":\"Inventory\",\"colorCode\":\"#EA279F\"}",
+			"PrimaryKeys": "ModulationMethodId"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

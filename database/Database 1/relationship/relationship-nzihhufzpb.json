@@ -1,0 +1,26 @@
+{
+	"name": "relationship-nzihhufzpb",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "relationship-nzihhufzpb",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Communication",
+		"ToTableName": "ServiceRequestCommunication",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "CommunicationId",
+				"ToColumnName": "CommunicationId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Communication.cdm.json/Communication\",\"toEntity\":\"ServiceRequestCommunication.cdm.json/ServiceRequestCommunication\",\"joinPairs\":[{\"fromAttribute\":\"CommunicationId\",\"toAttribute\":\"CommunicationId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

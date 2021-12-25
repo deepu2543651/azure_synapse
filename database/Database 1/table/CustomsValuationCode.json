@@ -1,0 +1,87 @@
+{
+	"name": "CustomsValuationCode",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "CustomsValuationCode",
+		"Description": "The customs valuation code as developed by the Convention on the Valuation of Goods for Customs Purposes in Brussels in 1950.   This provides for more uniformity in the procedures of arriving at Import valuations for imposing duties.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "CustomsValuationCode",
+					"Description": "The unique identifier of the Customs Valuation Code.",
+					"BaseAttributeReference": {
+						"Entity": "CustomsValuationCode.cdm.json/CustomsValuationCode",
+						"Name": "CustomsValuationCode"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Length": 4,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "CustomsValuationName",
+					"Description": "The name of the Customs Valuation Code.",
+					"BaseAttributeReference": {
+						"Entity": "CustomsValuationCode.cdm.json/CustomsValuationCode",
+						"Name": "CustomsValuationName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "CustomsValuationDescription",
+					"Description": "The description of the Customs Valuation Code.",
+					"BaseAttributeReference": {
+						"Entity": "CustomsValuationCode.cdm.json/CustomsValuationCode",
+						"Name": "CustomsValuationDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"CustomsValuationCode\":{\"entity\":\"CustomsValuationCode.cdm.json/CustomsValuationCode\",\"name\":\"CustomsValuationCode\"},\"CustomsValuationName\":{\"entity\":\"CustomsValuationCode.cdm.json/CustomsValuationCode\",\"name\":\"CustomsValuationName\"},\"CustomsValuationDescription\":{\"entity\":\"CustomsValuationCode.cdm.json/CustomsValuationCode\",\"name\":\"CustomsValuationDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"CustomsValuationCode\",\"path\":\"CustomsValuationCode.cdm.json/CustomsValuationCode\"},\"description\":\"The customs valuation code as developed by the Convention on the Valuation of Goods for Customs Purposes in Brussels in 1950.   This provides for more uniformity in the procedures of arriving at Import valuations for imposing duties.\",\"primaryKey\":[\"CustomsValuationCode\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"CustomsValuationCode\",\"attributeReference\":{\"entity\":\"CustomsValuationCode.cdm.json/CustomsValuationCode\",\"name\":\"CustomsValuationCode\"},\"dataType\":\"string\",\"dataTypeLength\":4},{\"type\":\"Existing\",\"name\":\"CustomsValuationName\",\"attributeReference\":{\"entity\":\"CustomsValuationCode.cdm.json/CustomsValuationCode\",\"name\":\"CustomsValuationName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"CustomsValuationDescription\",\"attributeReference\":{\"entity\":\"CustomsValuationCode.cdm.json/CustomsValuationCode\",\"name\":\"CustomsValuationDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512}]}}}",
+			"Description": "The customs valuation code as developed by the Convention on the Valuation of Goods for Customs Purposes in Brussels in 1950.   This provides for more uniformity in the procedures of arriving at Import valuations for imposing duties.",
+			"DisplayFolderInfo": "{\"name\":\"Shipping\",\"colorCode\":\"#000B42\"}",
+			"PrimaryKeys": "CustomsValuationCode"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

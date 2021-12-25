@@ -1,0 +1,86 @@
+{
+	"name": "ShipmentChannelType",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "ShipmentChannelType",
+		"Description": "A categorization of relationships between shipments and channels.\n\nEx:\n- Primary\n- Managing\n- Generate",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ShipmentChannelTypeId",
+					"Description": "The unique identifier of a Shipment Channel Type.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentChannelType.cdm.json/ShipmentChannelType",
+						"Name": "ShipmentChannelTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ShipmentChannelTypeName",
+					"Description": "The name of a Shipment Channel Type.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentChannelType.cdm.json/ShipmentChannelType",
+						"Name": "ShipmentChannelTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ShipmentChannelTypeDescription",
+					"Description": "The description of a Shipment Channel Type.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentChannelType.cdm.json/ShipmentChannelType",
+						"Name": "ShipmentChannelTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ShipmentChannelTypeId\":{\"entity\":\"ShipmentChannelType.cdm.json/ShipmentChannelType\",\"name\":\"ShipmentChannelTypeId\"},\"ShipmentChannelTypeName\":{\"entity\":\"ShipmentChannelType.cdm.json/ShipmentChannelType\",\"name\":\"ShipmentChannelTypeName\"},\"ShipmentChannelTypeDescription\":{\"entity\":\"ShipmentChannelType.cdm.json/ShipmentChannelType\",\"name\":\"ShipmentChannelTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"ShipmentChannelType\",\"path\":\"ShipmentChannelType.cdm.json/ShipmentChannelType\"},\"description\":\"A categorization of relationships between shipments and channels.\\n\\nEx:\\n- Primary\\n- Managing\\n- Generate\",\"primaryKey\":[\"ShipmentChannelTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"ShipmentChannelTypeId\",\"attributeReference\":{\"entity\":\"ShipmentChannelType.cdm.json/ShipmentChannelType\",\"name\":\"ShipmentChannelTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ShipmentChannelTypeName\",\"attributeReference\":{\"entity\":\"ShipmentChannelType.cdm.json/ShipmentChannelType\",\"name\":\"ShipmentChannelTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"ShipmentChannelTypeDescription\",\"attributeReference\":{\"entity\":\"ShipmentChannelType.cdm.json/ShipmentChannelType\",\"name\":\"ShipmentChannelTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512}]}}}",
+			"Description": "A categorization of relationships between shipments and channels.\n\nEx:\n- Primary\n- Managing\n- Generate",
+			"DisplayFolderInfo": "{\"name\":\"Shipping\",\"colorCode\":\"#000B42\"}",
+			"PrimaryKeys": "ShipmentChannelTypeId"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

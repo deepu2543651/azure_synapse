@@ -1,0 +1,26 @@
+{
+	"name": "relationship-arbrrpqjnq",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "relationship-arbrrpqjnq",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Location",
+		"ToTableName": "Shipment",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "LocationId",
+				"ToColumnName": "ConsignorLocationId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Location.cdm.json/Location\",\"toEntity\":\"Shipment.cdm.json/Shipment\",\"joinPairs\":[{\"fromAttribute\":\"LocationId\",\"toAttribute\":\"ConsignorLocationId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

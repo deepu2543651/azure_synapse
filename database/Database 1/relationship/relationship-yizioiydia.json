@@ -1,0 +1,26 @@
+{
+	"name": "relationship-yizioiydia",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "relationship-yizioiydia",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "AssetConditionRating",
+		"ToTableName": "AssetCondition",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "AssetConditionRatingId",
+				"ToColumnName": "AssetConditionRatingId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"AssetConditionRating.cdm.json/AssetConditionRating\",\"toEntity\":\"AssetCondition.cdm.json/AssetCondition\",\"joinPairs\":[{\"fromAttribute\":\"AssetConditionRatingId\",\"toAttribute\":\"AssetConditionRatingId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

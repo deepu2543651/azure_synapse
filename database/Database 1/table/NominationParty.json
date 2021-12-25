@@ -1,0 +1,101 @@
+{
+	"name": "NominationParty",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "NominationParty",
+		"Description": "When an air carrier authorizes a bonded agent (forwarder, broker) to update Air Waybill information (master Air Waybill or house Air Waybill) directly to customs via Air Manifest System",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ShipmentId",
+					"Description": "The unique identifier of a Shipment.",
+					"BaseAttributeReference": {
+						"Entity": "NominationParty.cdm.json/NominationParty",
+						"Name": "ShipmentId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "DocumentId",
+					"Description": "The unique identifier of a Document.",
+					"BaseAttributeReference": {
+						"Entity": "NominationParty.cdm.json/NominationParty",
+						"Name": "DocumentId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "PartyId",
+					"Description": "The unique identifier of a Party.",
+					"BaseAttributeReference": {
+						"Entity": "NominationParty.cdm.json/NominationParty",
+						"Name": "PartyId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "NominationDate",
+					"Description": "The date that the nomination is in effect or declared.",
+					"BaseAttributeReference": {
+						"Entity": "NominationParty.cdm.json/NominationParty",
+						"Name": "NominationDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ShipmentId\":{\"entity\":\"NominationParty.cdm.json/NominationParty\",\"name\":\"ShipmentId\"},\"DocumentId\":{\"entity\":\"NominationParty.cdm.json/NominationParty\",\"name\":\"DocumentId\"},\"PartyId\":{\"entity\":\"NominationParty.cdm.json/NominationParty\",\"name\":\"PartyId\"},\"NominationDate\":{\"entity\":\"NominationParty.cdm.json/NominationParty\",\"name\":\"NominationDate\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"NominationParty\",\"path\":\"NominationParty.cdm.json/NominationParty\"},\"description\":\"When an air carrier authorizes a bonded agent (forwarder, broker) to update Air Waybill information (master Air Waybill or house Air Waybill) directly to customs via Air Manifest System\",\"primaryKey\":[\"ShipmentId\",\"DocumentId\",\"PartyId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"ShipmentId\",\"attributeReference\":{\"entity\":\"NominationParty.cdm.json/NominationParty\",\"name\":\"ShipmentId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"DocumentId\",\"attributeReference\":{\"entity\":\"NominationParty.cdm.json/NominationParty\",\"name\":\"DocumentId\"},\"dataType\":\"long\"},{\"type\":\"Existing\",\"name\":\"PartyId\",\"attributeReference\":{\"entity\":\"NominationParty.cdm.json/NominationParty\",\"name\":\"PartyId\"},\"dataType\":\"long\"},{\"type\":\"Existing\",\"name\":\"NominationDate\",\"attributeReference\":{\"entity\":\"NominationParty.cdm.json/NominationParty\",\"name\":\"NominationDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\"}]}}}",
+			"Description": "When an air carrier authorizes a bonded agent (forwarder, broker) to update Air Waybill information (master Air Waybill or house Air Waybill) directly to customs via Air Manifest System",
+			"DisplayFolderInfo": "{\"name\":\"Shipping\",\"colorCode\":\"#000B42\"}",
+			"PrimaryKeys": "ShipmentId,DocumentId,PartyId"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

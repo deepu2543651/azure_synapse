@@ -1,0 +1,26 @@
+{
+	"name": "relationship-imqszdueee",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "relationship-imqszdueee",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "DocumentPartyRelationshipType",
+		"ToTableName": "DocumentRelatedParty",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "DocumentPartyRelationshipTypeId",
+				"ToColumnName": "DocumentPartyRelationshipTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"DocumentPartyRelationshipType.cdm.json/DocumentPartyRelationshipType\",\"toEntity\":\"DocumentRelatedParty.cdm.json/DocumentRelatedParty\",\"joinPairs\":[{\"fromAttribute\":\"DocumentPartyRelationshipTypeId\",\"toAttribute\":\"DocumentPartyRelationshipTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

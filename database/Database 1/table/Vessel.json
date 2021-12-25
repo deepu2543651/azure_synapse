@@ -1,0 +1,660 @@
+{
+	"name": "Vessel",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "Vessel",
+		"Description": "A vessel or ship that is used to transfer cargo.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "VesselId",
+					"Description": "The unique identifier of a vessel/ship.",
+					"BaseAttributeReference": {
+						"Entity": "Vessel.cdm.json/Vessel",
+						"Name": "VesselId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "VesselName",
+					"Description": "The name of the vessel.",
+					"BaseAttributeReference": {
+						"Entity": "Vessel.cdm.json/Vessel",
+						"Name": "VesselName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "VesselTypeId",
+					"Description": "The unique identifier of a Vessel Type.",
+					"BaseAttributeReference": {
+						"Entity": "Vessel.cdm.json/Vessel",
+						"Name": "VesselTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "VesselIdentificationNumber",
+					"Description": "A The Vessel Identification Number (VIN) is a 6-8 character alphanumeric string that is assigned to uniquely identify a water vessel.",
+					"BaseAttributeReference": {
+						"Entity": "Vessel.cdm.json/Vessel",
+						"Name": "VesselIdentificationNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "HullIdentificationNumber",
+					"Description": "The Hull Identification Number (HIN) is a 12 character serial number that uniquely identifies a water vessel.",
+					"BaseAttributeReference": {
+						"Entity": "Vessel.cdm.json/Vessel",
+						"Name": "HullIdentificationNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "InternationalMaritimeOrganizationNumber",
+					"Description": "A unique 7-digit reference for ships, registered ship owners and management companies. These numbers are assigned under the International Convention for the Safety of Life at Sea (SOLAS).",
+					"BaseAttributeReference": {
+						"Entity": "Vessel.cdm.json/Vessel",
+						"Name": "InternationalMaritimeOrganizationNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "VesselCallSign",
+					"Description": "Call signs are assigned as unique identifiers to ships and boats.",
+					"BaseAttributeReference": {
+						"Entity": "Vessel.cdm.json/Vessel",
+						"Name": "VesselCallSign"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "FlagOfCountryId",
+					"Description": "The unique identifier of the Country.",
+					"BaseAttributeReference": {
+						"Entity": "Vessel.cdm.json/Vessel",
+						"Name": "FlagOfCountryId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "BuildTimestamp",
+					"Description": "The timestamp of when the build was completed.",
+					"BaseAttributeReference": {
+						"Entity": "Vessel.cdm.json/Vessel",
+						"Name": "BuildTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "InServiceTimestamp",
+					"Description": "The timestamp of when the vessel was first put into service.",
+					"BaseAttributeReference": {
+						"Entity": "Vessel.cdm.json/Vessel",
+						"Name": "InServiceTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "OutOfServiceTimestamp",
+					"Description": "The timestamp of when the vessel was permanently put out of service.",
+					"BaseAttributeReference": {
+						"Entity": "Vessel.cdm.json/Vessel",
+						"Name": "OutOfServiceTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "ShipbuilderName",
+					"Description": "The name of the vessels shipbuilder.",
+					"BaseAttributeReference": {
+						"Entity": "Vessel.cdm.json/Vessel",
+						"Name": "ShipbuilderName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "OwningPartyId",
+					"Description": "The unique identifier of a Party.",
+					"BaseAttributeReference": {
+						"Entity": "Vessel.cdm.json/Vessel",
+						"Name": "OwningPartyId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "ServiceSpeedKnots",
+					"Description": "The service speed of the vessel.",
+					"BaseAttributeReference": {
+						"Entity": "Vessel.cdm.json/Vessel",
+						"Name": "ServiceSpeedKnots"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "MaximumSpeedKnots",
+					"Description": "The vessels maximum speed.",
+					"BaseAttributeReference": {
+						"Entity": "Vessel.cdm.json/Vessel",
+						"Name": "MaximumSpeedKnots"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "VesselOverallLength",
+					"Description": "The overall length of the vessel.",
+					"BaseAttributeReference": {
+						"Entity": "Vessel.cdm.json/Vessel",
+						"Name": "VesselOverallLength"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "VesselBeam",
+					"Description": "The width of a vessel.",
+					"BaseAttributeReference": {
+						"Entity": "Vessel.cdm.json/Vessel",
+						"Name": "VesselBeam"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "VesselMaximumDraft",
+					"Description": "The maximum draft of the vessel.",
+					"BaseAttributeReference": {
+						"Entity": "Vessel.cdm.json/Vessel",
+						"Name": "VesselMaximumDraft"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "VesselMinimumDraft",
+					"Description": "The draft of the ship - without cargo.",
+					"BaseAttributeReference": {
+						"Entity": "Vessel.cdm.json/Vessel",
+						"Name": "VesselMinimumDraft"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "LwhUnitOfMeasureId",
+					"Description": "The unique identifier of a Unit Of Measure.",
+					"BaseAttributeReference": {
+						"Entity": "Vessel.cdm.json/Vessel",
+						"Name": "LwhUnitOfMeasureId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "VesselDisplacement",
+					"Description": "The maximum weight of the vessel and its contents.",
+					"BaseAttributeReference": {
+						"Entity": "Vessel.cdm.json/Vessel",
+						"Name": "VesselDisplacement"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "VesselGrossTonnage",
+					"Description": "The gross tonnage of the vessel.",
+					"BaseAttributeReference": {
+						"Entity": "Vessel.cdm.json/Vessel",
+						"Name": "VesselGrossTonnage"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "VesselDeadweight",
+					"Description": "The deadweight of the vessel.",
+					"BaseAttributeReference": {
+						"Entity": "Vessel.cdm.json/Vessel",
+						"Name": "VesselDeadweight"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "VesselBunkerCapacity",
+					"Description": "The bunker capacity.",
+					"BaseAttributeReference": {
+						"Entity": "Vessel.cdm.json/Vessel",
+						"Name": "VesselBunkerCapacity"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "WeightUnitOfMeasureId",
+					"Description": "The unique identifier of a Unit Of Measure.",
+					"BaseAttributeReference": {
+						"Entity": "Vessel.cdm.json/Vessel",
+						"Name": "WeightUnitOfMeasureId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "VesselDryCargoHoldsCapacity",
+					"Description": "The dry cargo holds capacity of the vessel.",
+					"BaseAttributeReference": {
+						"Entity": "Vessel.cdm.json/Vessel",
+						"Name": "VesselDryCargoHoldsCapacity"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "VolumeUnitOfMeasureId",
+					"Description": "The unique identifier of a Unit Of Measure.",
+					"BaseAttributeReference": {
+						"Entity": "Vessel.cdm.json/Vessel",
+						"Name": "VolumeUnitOfMeasureId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "VesselServiceSpeed",
+					"Description": "The service speed of the vessel.",
+					"BaseAttributeReference": {
+						"Entity": "Vessel.cdm.json/Vessel",
+						"Name": "VesselServiceSpeed"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "VesselMaximumSpeed",
+					"Description": "The vessels maximum speed.",
+					"BaseAttributeReference": {
+						"Entity": "Vessel.cdm.json/Vessel",
+						"Name": "VesselMaximumSpeed"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "SpeedUnitOfMeasureId",
+					"Description": "The unique identifier of a Unit Of Measure.",
+					"BaseAttributeReference": {
+						"Entity": "Vessel.cdm.json/Vessel",
+						"Name": "SpeedUnitOfMeasureId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "TotalHorsepower",
+					"Description": "The total horsepower of all engines installed on the vessel.",
+					"BaseAttributeReference": {
+						"Entity": "Vessel.cdm.json/Vessel",
+						"Name": "TotalHorsepower"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "MaximumContainersOnDeck",
+					"Description": "The maximum number of containers on deck.",
+					"BaseAttributeReference": {
+						"Entity": "Vessel.cdm.json/Vessel",
+						"Name": "MaximumContainersOnDeck"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "MaximumContainersInHold",
+					"Description": "The maximum number of containers in the hold.",
+					"BaseAttributeReference": {
+						"Entity": "Vessel.cdm.json/Vessel",
+						"Name": "MaximumContainersInHold"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "NumberOfCargoHolds",
+					"Description": "The total number of cargo holds.",
+					"BaseAttributeReference": {
+						"Entity": "Vessel.cdm.json/Vessel",
+						"Name": "NumberOfCargoHolds"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "NumberOfReeferPlugs",
+					"Description": "The number of reefer plugs.",
+					"BaseAttributeReference": {
+						"Entity": "Vessel.cdm.json/Vessel",
+						"Name": "NumberOfReeferPlugs"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "AlwaysAfloatVesselIndicator",
+					"Description": "Always Afloat (In some ports the ship aground when approaching, or at berth.)",
+					"BaseAttributeReference": {
+						"Entity": "Vessel.cdm.json/Vessel",
+						"Name": "AlwaysAfloatVesselIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "FreighterVesselIndicator",
+					"Description": "Indicates that the vessel is a freighter.",
+					"BaseAttributeReference": {
+						"Entity": "Vessel.cdm.json/Vessel",
+						"Name": "FreighterVesselIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "AssetId",
+					"Description": "The unique identifier of an Asset.",
+					"BaseAttributeReference": {
+						"Entity": "Vessel.cdm.json/Vessel",
+						"Name": "AssetId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"VesselId\":{\"entity\":\"Vessel.cdm.json/Vessel\",\"name\":\"VesselId\"},\"VesselName\":{\"entity\":\"Vessel.cdm.json/Vessel\",\"name\":\"VesselName\"},\"VesselTypeId\":{\"entity\":\"Vessel.cdm.json/Vessel\",\"name\":\"VesselTypeId\"},\"VesselIdentificationNumber\":{\"entity\":\"Vessel.cdm.json/Vessel\",\"name\":\"VesselIdentificationNumber\"},\"HullIdentificationNumber\":{\"entity\":\"Vessel.cdm.json/Vessel\",\"name\":\"HullIdentificationNumber\"},\"InternationalMaritimeOrganizationNumber\":{\"entity\":\"Vessel.cdm.json/Vessel\",\"name\":\"InternationalMaritimeOrganizationNumber\"},\"VesselCallSign\":{\"entity\":\"Vessel.cdm.json/Vessel\",\"name\":\"VesselCallSign\"},\"FlagOfCountryId\":{\"entity\":\"Vessel.cdm.json/Vessel\",\"name\":\"FlagOfCountryId\"},\"BuildTimestamp\":{\"entity\":\"Vessel.cdm.json/Vessel\",\"name\":\"BuildTimestamp\"},\"InServiceTimestamp\":{\"entity\":\"Vessel.cdm.json/Vessel\",\"name\":\"InServiceTimestamp\"},\"OutOfServiceTimestamp\":{\"entity\":\"Vessel.cdm.json/Vessel\",\"name\":\"OutOfServiceTimestamp\"},\"ShipbuilderName\":{\"entity\":\"Vessel.cdm.json/Vessel\",\"name\":\"ShipbuilderName\"},\"OwningPartyId\":{\"entity\":\"Vessel.cdm.json/Vessel\",\"name\":\"OwningPartyId\"},\"ServiceSpeedKnots\":{\"entity\":\"Vessel.cdm.json/Vessel\",\"name\":\"ServiceSpeedKnots\"},\"MaximumSpeedKnots\":{\"entity\":\"Vessel.cdm.json/Vessel\",\"name\":\"MaximumSpeedKnots\"},\"VesselOverallLength\":{\"entity\":\"Vessel.cdm.json/Vessel\",\"name\":\"VesselOverallLength\"},\"VesselBeam\":{\"entity\":\"Vessel.cdm.json/Vessel\",\"name\":\"VesselBeam\"},\"VesselMaximumDraft\":{\"entity\":\"Vessel.cdm.json/Vessel\",\"name\":\"VesselMaximumDraft\"},\"VesselMinimumDraft\":{\"entity\":\"Vessel.cdm.json/Vessel\",\"name\":\"VesselMinimumDraft\"},\"LwhUnitOfMeasureId\":{\"entity\":\"Vessel.cdm.json/Vessel\",\"name\":\"LwhUnitOfMeasureId\"},\"VesselDisplacement\":{\"entity\":\"Vessel.cdm.json/Vessel\",\"name\":\"VesselDisplacement\"},\"VesselGrossTonnage\":{\"entity\":\"Vessel.cdm.json/Vessel\",\"name\":\"VesselGrossTonnage\"},\"VesselDeadweight\":{\"entity\":\"Vessel.cdm.json/Vessel\",\"name\":\"VesselDeadweight\"},\"VesselBunkerCapacity\":{\"entity\":\"Vessel.cdm.json/Vessel\",\"name\":\"VesselBunkerCapacity\"},\"WeightUnitOfMeasureId\":{\"entity\":\"Vessel.cdm.json/Vessel\",\"name\":\"WeightUnitOfMeasureId\"},\"VesselDryCargoHoldsCapacity\":{\"entity\":\"Vessel.cdm.json/Vessel\",\"name\":\"VesselDryCargoHoldsCapacity\"},\"VolumeUnitOfMeasureId\":{\"entity\":\"Vessel.cdm.json/Vessel\",\"name\":\"VolumeUnitOfMeasureId\"},\"VesselServiceSpeed\":{\"entity\":\"Vessel.cdm.json/Vessel\",\"name\":\"VesselServiceSpeed\"},\"VesselMaximumSpeed\":{\"entity\":\"Vessel.cdm.json/Vessel\",\"name\":\"VesselMaximumSpeed\"},\"SpeedUnitOfMeasureId\":{\"entity\":\"Vessel.cdm.json/Vessel\",\"name\":\"SpeedUnitOfMeasureId\"},\"TotalHorsepower\":{\"entity\":\"Vessel.cdm.json/Vessel\",\"name\":\"TotalHorsepower\"},\"MaximumContainersOnDeck\":{\"entity\":\"Vessel.cdm.json/Vessel\",\"name\":\"MaximumContainersOnDeck\"},\"MaximumContainersInHold\":{\"entity\":\"Vessel.cdm.json/Vessel\",\"name\":\"MaximumContainersInHold\"},\"NumberOfCargoHolds\":{\"entity\":\"Vessel.cdm.json/Vessel\",\"name\":\"NumberOfCargoHolds\"},\"NumberOfReeferPlugs\":{\"entity\":\"Vessel.cdm.json/Vessel\",\"name\":\"NumberOfReeferPlugs\"},\"AlwaysAfloatVesselIndicator\":{\"entity\":\"Vessel.cdm.json/Vessel\",\"name\":\"AlwaysAfloatVesselIndicator\"},\"FreighterVesselIndicator\":{\"entity\":\"Vessel.cdm.json/Vessel\",\"name\":\"FreighterVesselIndicator\"},\"AssetId\":{\"entity\":\"Vessel.cdm.json/Vessel\",\"name\":\"AssetId\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"Vessel\",\"path\":\"Vessel.cdm.json/Vessel\"},\"description\":\"A vessel or ship that is used to transfer cargo.\",\"primaryKey\":[\"VesselId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"VesselId\",\"attributeReference\":{\"entity\":\"Vessel.cdm.json/Vessel\",\"name\":\"VesselId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"VesselName\",\"attributeReference\":{\"entity\":\"Vessel.cdm.json/Vessel\",\"name\":\"VesselName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"VesselTypeId\",\"attributeReference\":{\"entity\":\"Vessel.cdm.json/Vessel\",\"name\":\"VesselTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"VesselIdentificationNumber\",\"attributeReference\":{\"entity\":\"Vessel.cdm.json/Vessel\",\"name\":\"VesselIdentificationNumber\"},\"dataType\":\"string\",\"dataTypeLength\":1024},{\"type\":\"Existing\",\"name\":\"HullIdentificationNumber\",\"attributeReference\":{\"entity\":\"Vessel.cdm.json/Vessel\",\"name\":\"HullIdentificationNumber\"},\"dataType\":\"string\",\"dataTypeLength\":1024},{\"type\":\"Existing\",\"name\":\"InternationalMaritimeOrganizationNumber\",\"attributeReference\":{\"entity\":\"Vessel.cdm.json/Vessel\",\"name\":\"InternationalMaritimeOrganizationNumber\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"VesselCallSign\",\"attributeReference\":{\"entity\":\"Vessel.cdm.json/Vessel\",\"name\":\"VesselCallSign\"},\"dataType\":\"string\",\"dataTypeLength\":1024},{\"type\":\"Existing\",\"name\":\"FlagOfCountryId\",\"attributeReference\":{\"entity\":\"Vessel.cdm.json/Vessel\",\"name\":\"FlagOfCountryId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"BuildTimestamp\",\"attributeReference\":{\"entity\":\"Vessel.cdm.json/Vessel\",\"name\":\"BuildTimestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"InServiceTimestamp\",\"attributeReference\":{\"entity\":\"Vessel.cdm.json/Vessel\",\"name\":\"InServiceTimestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"OutOfServiceTimestamp\",\"attributeReference\":{\"entity\":\"Vessel.cdm.json/Vessel\",\"name\":\"OutOfServiceTimestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"ShipbuilderName\",\"attributeReference\":{\"entity\":\"Vessel.cdm.json/Vessel\",\"name\":\"ShipbuilderName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"OwningPartyId\",\"attributeReference\":{\"entity\":\"Vessel.cdm.json/Vessel\",\"name\":\"OwningPartyId\"},\"dataType\":\"long\"},{\"type\":\"Existing\",\"name\":\"ServiceSpeedKnots\",\"attributeReference\":{\"entity\":\"Vessel.cdm.json/Vessel\",\"name\":\"ServiceSpeedKnots\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"MaximumSpeedKnots\",\"attributeReference\":{\"entity\":\"Vessel.cdm.json/Vessel\",\"name\":\"MaximumSpeedKnots\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"VesselOverallLength\",\"attributeReference\":{\"entity\":\"Vessel.cdm.json/Vessel\",\"name\":\"VesselOverallLength\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":8},{\"type\":\"Existing\",\"name\":\"VesselBeam\",\"attributeReference\":{\"entity\":\"Vessel.cdm.json/Vessel\",\"name\":\"VesselBeam\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"VesselMaximumDraft\",\"attributeReference\":{\"entity\":\"Vessel.cdm.json/Vessel\",\"name\":\"VesselMaximumDraft\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"VesselMinimumDraft\",\"attributeReference\":{\"entity\":\"Vessel.cdm.json/Vessel\",\"name\":\"VesselMinimumDraft\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"LwhUnitOfMeasureId\",\"attributeReference\":{\"entity\":\"Vessel.cdm.json/Vessel\",\"name\":\"LwhUnitOfMeasureId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"VesselDisplacement\",\"attributeReference\":{\"entity\":\"Vessel.cdm.json/Vessel\",\"name\":\"VesselDisplacement\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"VesselGrossTonnage\",\"attributeReference\":{\"entity\":\"Vessel.cdm.json/Vessel\",\"name\":\"VesselGrossTonnage\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"VesselDeadweight\",\"attributeReference\":{\"entity\":\"Vessel.cdm.json/Vessel\",\"name\":\"VesselDeadweight\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":8},{\"type\":\"Existing\",\"name\":\"VesselBunkerCapacity\",\"attributeReference\":{\"entity\":\"Vessel.cdm.json/Vessel\",\"name\":\"VesselBunkerCapacity\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"WeightUnitOfMeasureId\",\"attributeReference\":{\"entity\":\"Vessel.cdm.json/Vessel\",\"name\":\"WeightUnitOfMeasureId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"VesselDryCargoHoldsCapacity\",\"attributeReference\":{\"entity\":\"Vessel.cdm.json/Vessel\",\"name\":\"VesselDryCargoHoldsCapacity\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"VolumeUnitOfMeasureId\",\"attributeReference\":{\"entity\":\"Vessel.cdm.json/Vessel\",\"name\":\"VolumeUnitOfMeasureId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"VesselServiceSpeed\",\"attributeReference\":{\"entity\":\"Vessel.cdm.json/Vessel\",\"name\":\"VesselServiceSpeed\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":8},{\"type\":\"Existing\",\"name\":\"VesselMaximumSpeed\",\"attributeReference\":{\"entity\":\"Vessel.cdm.json/Vessel\",\"name\":\"VesselMaximumSpeed\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":8},{\"type\":\"Existing\",\"name\":\"SpeedUnitOfMeasureId\",\"attributeReference\":{\"entity\":\"Vessel.cdm.json/Vessel\",\"name\":\"SpeedUnitOfMeasureId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"TotalHorsepower\",\"attributeReference\":{\"entity\":\"Vessel.cdm.json/Vessel\",\"name\":\"TotalHorsepower\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"MaximumContainersOnDeck\",\"attributeReference\":{\"entity\":\"Vessel.cdm.json/Vessel\",\"name\":\"MaximumContainersOnDeck\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"MaximumContainersInHold\",\"attributeReference\":{\"entity\":\"Vessel.cdm.json/Vessel\",\"name\":\"MaximumContainersInHold\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"NumberOfCargoHolds\",\"attributeReference\":{\"entity\":\"Vessel.cdm.json/Vessel\",\"name\":\"NumberOfCargoHolds\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"NumberOfReeferPlugs\",\"attributeReference\":{\"entity\":\"Vessel.cdm.json/Vessel\",\"name\":\"NumberOfReeferPlugs\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"AlwaysAfloatVesselIndicator\",\"attributeReference\":{\"entity\":\"Vessel.cdm.json/Vessel\",\"name\":\"AlwaysAfloatVesselIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"FreighterVesselIndicator\",\"attributeReference\":{\"entity\":\"Vessel.cdm.json/Vessel\",\"name\":\"FreighterVesselIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"AssetId\",\"attributeReference\":{\"entity\":\"Vessel.cdm.json/Vessel\",\"name\":\"AssetId\"},\"dataType\":\"long\"}]}}}",
+			"Description": "A vessel or ship that is used to transfer cargo.",
+			"DisplayFolderInfo": "{\"name\":\"Shipping\",\"colorCode\":\"#000B42\"}",
+			"PrimaryKeys": "VesselId"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

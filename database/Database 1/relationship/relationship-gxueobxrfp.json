@@ -1,0 +1,34 @@
+{
+	"name": "relationship-gxueobxrfp",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "relationship-gxueobxrfp",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "ShipmentCharge",
+		"ToTableName": "ShipmentChargeRelatedParty",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ShipmentChargeTimestamp",
+				"ToColumnName": "ShipmentChargeTimestamp"
+			},
+			{
+				"FromColumnName": "ShipmentChargeTypeId",
+				"ToColumnName": "ShipmentChargeTypeId"
+			},
+			{
+				"FromColumnName": "ShipmentId",
+				"ToColumnName": "ShipmentId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"ShipmentCharge.cdm.json/ShipmentCharge\",\"toEntity\":\"ShipmentChargeRelatedParty.cdm.json/ShipmentChargeRelatedParty\",\"joinPairs\":[{\"fromAttribute\":\"ShipmentChargeTimestamp\",\"toAttribute\":\"ShipmentChargeTimestamp\"},{\"fromAttribute\":\"ShipmentChargeTypeId\",\"toAttribute\":\"ShipmentChargeTypeId\"},{\"fromAttribute\":\"ShipmentId\",\"toAttribute\":\"ShipmentId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

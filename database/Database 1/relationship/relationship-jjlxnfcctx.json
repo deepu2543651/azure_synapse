@@ -1,0 +1,26 @@
+{
+	"name": "relationship-jjlxnfcctx",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "relationship-jjlxnfcctx",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Bank",
+		"ToTableName": "LetterOfCreditDocument",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "BankId",
+				"ToColumnName": "IssuingBankId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Bank.cdm.json/Bank\",\"toEntity\":\"LetterOfCreditDocument.cdm.json/LetterOfCreditDocument\",\"joinPairs\":[{\"fromAttribute\":\"BankId\",\"toAttribute\":\"IssuingBankId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

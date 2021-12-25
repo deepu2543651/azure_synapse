@@ -1,0 +1,135 @@
+{
+	"name": "CertificateOfInspectionRelatedParty",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "CertificateOfInspectionRelatedParty",
+		"Description": "A party related to a certificate of inspection.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "CertificateOfInspectionId",
+					"Description": "The number or unique identifier of the Certificate Of Inspection.",
+					"BaseAttributeReference": {
+						"Entity": "CertificateOfInspectionRelatedParty.cdm.json/CertificateOfInspectionRelatedParty",
+						"Name": "CertificateOfInspectionId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PartyId",
+					"Description": "The unique identifier of a Party.",
+					"BaseAttributeReference": {
+						"Entity": "CertificateOfInspectionRelatedParty.cdm.json/CertificateOfInspectionRelatedParty",
+						"Name": "PartyId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "CertificateOfInspectionPartyRelationshipTypeId",
+					"Description": "The unique identifier of a Certificate Of Inspection Party Relationship Type.",
+					"BaseAttributeReference": {
+						"Entity": "CertificateOfInspectionRelatedParty.cdm.json/CertificateOfInspectionRelatedParty",
+						"Name": "CertificateOfInspectionPartyRelationshipTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PeriodStartTimestamp",
+					"Description": "The period start timestamp which the associated information is valid or effective.",
+					"BaseAttributeReference": {
+						"Entity": "CertificateOfInspectionRelatedParty.cdm.json/CertificateOfInspectionRelatedParty",
+						"Name": "PeriodStartTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "PeriodEndTimestamp",
+					"Description": "The period end timestamp for which the associated information is valid or effective.",
+					"BaseAttributeReference": {
+						"Entity": "CertificateOfInspectionRelatedParty.cdm.json/CertificateOfInspectionRelatedParty",
+						"Name": "PeriodEndTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "CertificateOfInspectionRelatedPartyNote",
+					"Description": "A note, comment or additional information regarding the Certificate Of Inspection Related Party.",
+					"BaseAttributeReference": {
+						"Entity": "CertificateOfInspectionRelatedParty.cdm.json/CertificateOfInspectionRelatedParty",
+						"Name": "CertificateOfInspectionRelatedPartyNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"CertificateOfInspectionId\":{\"entity\":\"CertificateOfInspectionRelatedParty.cdm.json/CertificateOfInspectionRelatedParty\",\"name\":\"CertificateOfInspectionId\"},\"PartyId\":{\"entity\":\"CertificateOfInspectionRelatedParty.cdm.json/CertificateOfInspectionRelatedParty\",\"name\":\"PartyId\"},\"CertificateOfInspectionPartyRelationshipTypeId\":{\"entity\":\"CertificateOfInspectionRelatedParty.cdm.json/CertificateOfInspectionRelatedParty\",\"name\":\"CertificateOfInspectionPartyRelationshipTypeId\"},\"PeriodStartTimestamp\":{\"entity\":\"CertificateOfInspectionRelatedParty.cdm.json/CertificateOfInspectionRelatedParty\",\"name\":\"PeriodStartTimestamp\"},\"PeriodEndTimestamp\":{\"entity\":\"CertificateOfInspectionRelatedParty.cdm.json/CertificateOfInspectionRelatedParty\",\"name\":\"PeriodEndTimestamp\"},\"CertificateOfInspectionRelatedPartyNote\":{\"entity\":\"CertificateOfInspectionRelatedParty.cdm.json/CertificateOfInspectionRelatedParty\",\"name\":\"CertificateOfInspectionRelatedPartyNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"CertificateOfInspectionRelatedParty\",\"path\":\"CertificateOfInspectionRelatedParty.cdm.json/CertificateOfInspectionRelatedParty\"},\"description\":\"A party related to a certificate of inspection.\",\"primaryKey\":[\"CertificateOfInspectionId\",\"PartyId\",\"CertificateOfInspectionPartyRelationshipTypeId\",\"PeriodStartTimestamp\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"CertificateOfInspectionId\",\"attributeReference\":{\"entity\":\"CertificateOfInspectionRelatedParty.cdm.json/CertificateOfInspectionRelatedParty\",\"name\":\"CertificateOfInspectionId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"PartyId\",\"attributeReference\":{\"entity\":\"CertificateOfInspectionRelatedParty.cdm.json/CertificateOfInspectionRelatedParty\",\"name\":\"PartyId\"},\"dataType\":\"long\"},{\"type\":\"Existing\",\"name\":\"CertificateOfInspectionPartyRelationshipTypeId\",\"attributeReference\":{\"entity\":\"CertificateOfInspectionRelatedParty.cdm.json/CertificateOfInspectionRelatedParty\",\"name\":\"CertificateOfInspectionPartyRelationshipTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"PeriodStartTimestamp\",\"attributeReference\":{\"entity\":\"CertificateOfInspectionRelatedParty.cdm.json/CertificateOfInspectionRelatedParty\",\"name\":\"PeriodStartTimestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"PeriodEndTimestamp\",\"attributeReference\":{\"entity\":\"CertificateOfInspectionRelatedParty.cdm.json/CertificateOfInspectionRelatedParty\",\"name\":\"PeriodEndTimestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"CertificateOfInspectionRelatedPartyNote\",\"attributeReference\":{\"entity\":\"CertificateOfInspectionRelatedParty.cdm.json/CertificateOfInspectionRelatedParty\",\"name\":\"CertificateOfInspectionRelatedPartyNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024}]}}}",
+			"Description": "A party related to a certificate of inspection.",
+			"DisplayFolderInfo": "{\"name\":\"Shipping\",\"colorCode\":\"#000B42\"}",
+			"PrimaryKeys": "CertificateOfInspectionId,PartyId,CertificateOfInspectionPartyRelationshipTypeId,PeriodStartTimestamp"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

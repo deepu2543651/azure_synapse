@@ -1,0 +1,26 @@
+{
+	"name": "relationship-tuujebvstm",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "relationship-tuujebvstm",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "RailcarType",
+		"ToTableName": "Railcar",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "RailcarTypeId",
+				"ToColumnName": "RailcarTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"RailcarType.cdm.json/RailcarType\",\"toEntity\":\"Railcar.cdm.json/Railcar\",\"joinPairs\":[{\"fromAttribute\":\"RailcarTypeId\",\"toAttribute\":\"RailcarTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

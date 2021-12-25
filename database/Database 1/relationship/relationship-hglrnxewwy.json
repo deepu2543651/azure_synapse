@@ -1,0 +1,26 @@
+{
+	"name": "relationship-hglrnxewwy",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "relationship-hglrnxewwy",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "ExportCategory",
+		"ToTableName": "ExportControlClassificationNumber",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ExportCategoryId",
+				"ToColumnName": "ExportCategoryId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"ExportCategory.cdm.json/ExportCategory\",\"toEntity\":\"ExportControlClassificationNumber.cdm.json/ExportControlClassificationNumber\",\"joinPairs\":[{\"fromAttribute\":\"ExportCategoryId\",\"toAttribute\":\"ExportCategoryId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

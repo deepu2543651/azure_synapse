@@ -1,0 +1,199 @@
+{
+	"name": "DriverLog",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "DriverLog",
+		"Description": "A log of the driving activities of a driver.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "DriverId",
+					"Description": "The unique identifier of a Driver.",
+					"BaseAttributeReference": {
+						"Entity": "DriverLog.cdm.json/DriverLog",
+						"Name": "DriverId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "FromTimestamp",
+					"Description": "The start timestamp for which the associated hours of service for the driver are determined.",
+					"BaseAttributeReference": {
+						"Entity": "DriverLog.cdm.json/DriverLog",
+						"Name": "FromTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "ToTimestamp",
+					"Description": "The end timestamp for which the associated hours of service for the driver are determined.",
+					"BaseAttributeReference": {
+						"Entity": "DriverLog.cdm.json/DriverLog",
+						"Name": "ToTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "VehicleId",
+					"Description": "The unique identifier of a Vehicle.",
+					"BaseAttributeReference": {
+						"Entity": "DriverLog.cdm.json/DriverLog",
+						"Name": "VehicleId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "StartingOdometerReading",
+					"Description": "The odometer reading at the beginning of the log interval.",
+					"BaseAttributeReference": {
+						"Entity": "DriverLog.cdm.json/DriverLog",
+						"Name": "StartingOdometerReading"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "EndingOdometerReading",
+					"Description": "The odometer reading at the end of the log interval.",
+					"BaseAttributeReference": {
+						"Entity": "DriverLog.cdm.json/DriverLog",
+						"Name": "EndingOdometerReading"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PrimaryDriverIndicator",
+					"Description": "Indicates whether the driver was the primary driver of was the partner driver.",
+					"BaseAttributeReference": {
+						"Entity": "DriverLog.cdm.json/DriverLog",
+						"Name": "PrimaryDriverIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "PartnerDriverId",
+					"Description": "The unique identifier of a Driver.",
+					"BaseAttributeReference": {
+						"Entity": "DriverLog.cdm.json/DriverLog",
+						"Name": "PartnerDriverId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "SleepingIndicator",
+					"Description": "Indicates whether the driver was sleeping during the log interval.",
+					"BaseAttributeReference": {
+						"Entity": "DriverLog.cdm.json/DriverLog",
+						"Name": "SleepingIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "DriverLogNote",
+					"Description": "A note, comment or additional information regarding the driver log.",
+					"BaseAttributeReference": {
+						"Entity": "DriverLog.cdm.json/DriverLog",
+						"Name": "DriverLogNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"DriverId\":{\"entity\":\"DriverLog.cdm.json/DriverLog\",\"name\":\"DriverId\"},\"FromTimestamp\":{\"entity\":\"DriverLog.cdm.json/DriverLog\",\"name\":\"FromTimestamp\"},\"ToTimestamp\":{\"entity\":\"DriverLog.cdm.json/DriverLog\",\"name\":\"ToTimestamp\"},\"VehicleId\":{\"entity\":\"DriverLog.cdm.json/DriverLog\",\"name\":\"VehicleId\"},\"StartingOdometerReading\":{\"entity\":\"DriverLog.cdm.json/DriverLog\",\"name\":\"StartingOdometerReading\"},\"EndingOdometerReading\":{\"entity\":\"DriverLog.cdm.json/DriverLog\",\"name\":\"EndingOdometerReading\"},\"PrimaryDriverIndicator\":{\"entity\":\"DriverLog.cdm.json/DriverLog\",\"name\":\"PrimaryDriverIndicator\"},\"PartnerDriverId\":{\"entity\":\"DriverLog.cdm.json/DriverLog\",\"name\":\"PartnerDriverId\"},\"SleepingIndicator\":{\"entity\":\"DriverLog.cdm.json/DriverLog\",\"name\":\"SleepingIndicator\"},\"DriverLogNote\":{\"entity\":\"DriverLog.cdm.json/DriverLog\",\"name\":\"DriverLogNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"DriverLog\",\"path\":\"DriverLog.cdm.json/DriverLog\"},\"description\":\"A log of the driving activities of a driver.\",\"primaryKey\":[\"DriverId\",\"FromTimestamp\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"DriverId\",\"attributeReference\":{\"entity\":\"DriverLog.cdm.json/DriverLog\",\"name\":\"DriverId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"FromTimestamp\",\"attributeReference\":{\"entity\":\"DriverLog.cdm.json/DriverLog\",\"name\":\"FromTimestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"ToTimestamp\",\"attributeReference\":{\"entity\":\"DriverLog.cdm.json/DriverLog\",\"name\":\"ToTimestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"VehicleId\",\"attributeReference\":{\"entity\":\"DriverLog.cdm.json/DriverLog\",\"name\":\"VehicleId\"},\"dataType\":\"long\"},{\"type\":\"Existing\",\"name\":\"StartingOdometerReading\",\"attributeReference\":{\"entity\":\"DriverLog.cdm.json/DriverLog\",\"name\":\"StartingOdometerReading\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"EndingOdometerReading\",\"attributeReference\":{\"entity\":\"DriverLog.cdm.json/DriverLog\",\"name\":\"EndingOdometerReading\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"PrimaryDriverIndicator\",\"attributeReference\":{\"entity\":\"DriverLog.cdm.json/DriverLog\",\"name\":\"PrimaryDriverIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"PartnerDriverId\",\"attributeReference\":{\"entity\":\"DriverLog.cdm.json/DriverLog\",\"name\":\"PartnerDriverId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"SleepingIndicator\",\"attributeReference\":{\"entity\":\"DriverLog.cdm.json/DriverLog\",\"name\":\"SleepingIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"DriverLogNote\",\"attributeReference\":{\"entity\":\"DriverLog.cdm.json/DriverLog\",\"name\":\"DriverLogNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024}]}}}",
+			"Description": "A log of the driving activities of a driver.",
+			"DisplayFolderInfo": "{\"name\":\"Shipping\",\"colorCode\":\"#000B42\"}",
+			"PrimaryKeys": "DriverId,FromTimestamp"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

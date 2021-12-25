@@ -1,0 +1,26 @@
+{
+	"name": "relationship-pxdaungbfl",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "relationship-pxdaungbfl",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "FlightStatus",
+		"ToTableName": "ScheduledFlightStatus",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "FlightStatusId",
+				"ToColumnName": "FlightStatusId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"FlightStatus.cdm.json/FlightStatus\",\"toEntity\":\"ScheduledFlightStatus.cdm.json/ScheduledFlightStatus\",\"joinPairs\":[{\"fromAttribute\":\"FlightStatusId\",\"toAttribute\":\"FlightStatusId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

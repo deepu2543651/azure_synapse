@@ -1,0 +1,26 @@
+{
+	"name": "relationship-buzlzuwtrf",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "relationship-buzlzuwtrf",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "ServiceRequest",
+		"ToTableName": "ServiceRequestStatus",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ServiceRequestId",
+				"ToColumnName": "ServiceRequestId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"ServiceRequest.cdm.json/ServiceRequest\",\"toEntity\":\"ServiceRequestStatus.cdm.json/ServiceRequestStatus\",\"joinPairs\":[{\"fromAttribute\":\"ServiceRequestId\",\"toAttribute\":\"ServiceRequestId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

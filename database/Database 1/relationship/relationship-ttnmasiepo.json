@@ -1,0 +1,26 @@
+{
+	"name": "relationship-ttnmasiepo",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "relationship-ttnmasiepo",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "ShipmentTerm",
+		"ToTableName": "CarrierRouteTariffSchedule",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ShipmentTermId",
+				"ToColumnName": "ShipmentTermId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"ShipmentTerm.cdm.json/ShipmentTerm\",\"toEntity\":\"CarrierRouteTariffSchedule.cdm.json/CarrierRouteTariffSchedule\",\"joinPairs\":[{\"fromAttribute\":\"ShipmentTermId\",\"toAttribute\":\"ShipmentTermId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

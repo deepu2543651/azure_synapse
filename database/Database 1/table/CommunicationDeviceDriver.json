@@ -1,0 +1,119 @@
+{
+	"name": "CommunicationDeviceDriver",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "CommunicationDeviceDriver",
+		"Description": "The Communication Devices that are being used by a Driver.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "DriverId",
+					"Description": "The unique identifier of a Driver.",
+					"BaseAttributeReference": {
+						"Entity": "CommunicationDeviceDriver.cdm.json/CommunicationDeviceDriver",
+						"Name": "DriverId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "DeviceId",
+					"Description": "The unique identifier of a Device.",
+					"BaseAttributeReference": {
+						"Entity": "CommunicationDeviceDriver.cdm.json/CommunicationDeviceDriver",
+						"Name": "DeviceId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "CommunicationDeviceDriverStartTimestamp",
+					"Description": "The start timestamp of the associated Communication Device Driver relationship.",
+					"BaseAttributeReference": {
+						"Entity": "CommunicationDeviceDriver.cdm.json/CommunicationDeviceDriver",
+						"Name": "CommunicationDeviceDriverStartTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "CommunicationDeviceDriverEndTimestamp",
+					"Description": "The end timestamp of the associated Communication Device Driver relationship.",
+					"BaseAttributeReference": {
+						"Entity": "CommunicationDeviceDriver.cdm.json/CommunicationDeviceDriver",
+						"Name": "CommunicationDeviceDriverEndTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "CommunicationDeviceDriverNote",
+					"Description": "A note, comment or additional information regarding the Communication Device Driver.",
+					"BaseAttributeReference": {
+						"Entity": "CommunicationDeviceDriver.cdm.json/CommunicationDeviceDriver",
+						"Name": "CommunicationDeviceDriverNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"DriverId\":{\"entity\":\"CommunicationDeviceDriver.cdm.json/CommunicationDeviceDriver\",\"name\":\"DriverId\"},\"DeviceId\":{\"entity\":\"CommunicationDeviceDriver.cdm.json/CommunicationDeviceDriver\",\"name\":\"DeviceId\"},\"CommunicationDeviceDriverStartTimestamp\":{\"entity\":\"CommunicationDeviceDriver.cdm.json/CommunicationDeviceDriver\",\"name\":\"CommunicationDeviceDriverStartTimestamp\"},\"CommunicationDeviceDriverEndTimestamp\":{\"entity\":\"CommunicationDeviceDriver.cdm.json/CommunicationDeviceDriver\",\"name\":\"CommunicationDeviceDriverEndTimestamp\"},\"CommunicationDeviceDriverNote\":{\"entity\":\"CommunicationDeviceDriver.cdm.json/CommunicationDeviceDriver\",\"name\":\"CommunicationDeviceDriverNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"CommunicationDeviceDriver\",\"path\":\"CommunicationDeviceDriver.cdm.json/CommunicationDeviceDriver\"},\"description\":\"The Communication Devices that are being used by a Driver.\",\"primaryKey\":[\"DriverId\",\"DeviceId\",\"CommunicationDeviceDriverStartTimestamp\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"DriverId\",\"attributeReference\":{\"entity\":\"CommunicationDeviceDriver.cdm.json/CommunicationDeviceDriver\",\"name\":\"DriverId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"DeviceId\",\"attributeReference\":{\"entity\":\"CommunicationDeviceDriver.cdm.json/CommunicationDeviceDriver\",\"name\":\"DeviceId\"},\"dataType\":\"long\"},{\"type\":\"Existing\",\"name\":\"CommunicationDeviceDriverStartTimestamp\",\"attributeReference\":{\"entity\":\"CommunicationDeviceDriver.cdm.json/CommunicationDeviceDriver\",\"name\":\"CommunicationDeviceDriverStartTimestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"CommunicationDeviceDriverEndTimestamp\",\"attributeReference\":{\"entity\":\"CommunicationDeviceDriver.cdm.json/CommunicationDeviceDriver\",\"name\":\"CommunicationDeviceDriverEndTimestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"CommunicationDeviceDriverNote\",\"attributeReference\":{\"entity\":\"CommunicationDeviceDriver.cdm.json/CommunicationDeviceDriver\",\"name\":\"CommunicationDeviceDriverNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024}]}}}",
+			"Description": "The Communication Devices that are being used by a Driver.",
+			"DisplayFolderInfo": "{\"name\":\"Customer Service & Contact Management\",\"colorCode\":\"#502006\"}",
+			"PrimaryKeys": "DriverId,DeviceId,CommunicationDeviceDriverStartTimestamp"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

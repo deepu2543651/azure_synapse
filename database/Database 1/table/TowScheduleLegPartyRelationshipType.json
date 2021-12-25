@@ -1,0 +1,86 @@
+{
+	"name": "TowScheduleLegPartyRelationshipType",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "TowScheduleLegPartyRelationshipType",
+		"Description": "The nature of the relationship between a tow schedule leg and a related party.\n\nEx:\n- Captain\n- Crew Member",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "TowScheduleLegPartyRelationshipTypeId",
+					"Description": "The unique identifier of a Tow Schedule Leg Party relationship type.",
+					"BaseAttributeReference": {
+						"Entity": "TowScheduleLegPartyRelationshipType.cdm.json/TowScheduleLegPartyRelationshipType",
+						"Name": "TowScheduleLegPartyRelationshipTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "TowScheduleLegPartyRelationshipTypeName",
+					"Description": "The name of a Tow Schedule Leg Party relationship type.",
+					"BaseAttributeReference": {
+						"Entity": "TowScheduleLegPartyRelationshipType.cdm.json/TowScheduleLegPartyRelationshipType",
+						"Name": "TowScheduleLegPartyRelationshipTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "TowScheduleLegPartyRelationshipTypeDescription",
+					"Description": "The description of a Tow Schedule Leg Party relationship type.",
+					"BaseAttributeReference": {
+						"Entity": "TowScheduleLegPartyRelationshipType.cdm.json/TowScheduleLegPartyRelationshipType",
+						"Name": "TowScheduleLegPartyRelationshipTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"TowScheduleLegPartyRelationshipTypeId\":{\"entity\":\"TowScheduleLegPartyRelationshipType.cdm.json/TowScheduleLegPartyRelationshipType\",\"name\":\"TowScheduleLegPartyRelationshipTypeId\"},\"TowScheduleLegPartyRelationshipTypeName\":{\"entity\":\"TowScheduleLegPartyRelationshipType.cdm.json/TowScheduleLegPartyRelationshipType\",\"name\":\"TowScheduleLegPartyRelationshipTypeName\"},\"TowScheduleLegPartyRelationshipTypeDescription\":{\"entity\":\"TowScheduleLegPartyRelationshipType.cdm.json/TowScheduleLegPartyRelationshipType\",\"name\":\"TowScheduleLegPartyRelationshipTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"TowScheduleLegPartyRelationshipType\",\"path\":\"TowScheduleLegPartyRelationshipType.cdm.json/TowScheduleLegPartyRelationshipType\"},\"description\":\"The nature of the relationship between a tow schedule leg and a related party.\\n\\nEx:\\n- Captain\\n- Crew Member\",\"primaryKey\":[\"TowScheduleLegPartyRelationshipTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"TowScheduleLegPartyRelationshipTypeId\",\"attributeReference\":{\"entity\":\"TowScheduleLegPartyRelationshipType.cdm.json/TowScheduleLegPartyRelationshipType\",\"name\":\"TowScheduleLegPartyRelationshipTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"TowScheduleLegPartyRelationshipTypeName\",\"attributeReference\":{\"entity\":\"TowScheduleLegPartyRelationshipType.cdm.json/TowScheduleLegPartyRelationshipType\",\"name\":\"TowScheduleLegPartyRelationshipTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"TowScheduleLegPartyRelationshipTypeDescription\",\"attributeReference\":{\"entity\":\"TowScheduleLegPartyRelationshipType.cdm.json/TowScheduleLegPartyRelationshipType\",\"name\":\"TowScheduleLegPartyRelationshipTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512}]}}}",
+			"Description": "The nature of the relationship between a tow schedule leg and a related party.\n\nEx:\n- Captain\n- Crew Member",
+			"DisplayFolderInfo": "{\"name\":\"Shipping\",\"colorCode\":\"#000B42\"}",
+			"PrimaryKeys": "TowScheduleLegPartyRelationshipTypeId"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

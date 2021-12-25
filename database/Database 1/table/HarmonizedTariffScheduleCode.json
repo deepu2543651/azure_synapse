@@ -1,0 +1,69 @@
+{
+	"name": "HarmonizedTariffScheduleCode",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "HarmonizedTariffScheduleCode",
+		"Description": "A multi-purpose international goods-classification for manufacturers. Transporters, exporters, importers, customs officials, statisticians, and others in classifying goods moving in international trade under a single commodity code. Developed under the auspices of the Customs Cooperations Council (CCC), an international customs organization in Brussels, this code is a hierarchically structured product nomenclature containing approximately 5,000 headings and subheadings describing the articles moving in international trade. It is organized into 99 chapters arranged in 22 sections. Sections encompass an industry [ (e.g., Section XI, Textiles and Textile Articles); chapters encompass the various materials and products of the industry (e.g.: Chapter 50, Silk; Chapter 55, Manmade Staple Fibers; Chapter 57, Carpets).] The basic code contains four-digit headings and six-digit subheadings. (The U.S. will add digits for tariff and statistical purposes. In the U.S. duty rates will be the 8-digit level; statistical suffixes will be at the 10-digit level. )\n\nAll of the imports and export codes used by the United States are based on the Harmonized Tariff System (HTS). The HTS assigns 6-digit codes for general categories. Countries which use the HTS are allowed to define commodities at a more detailed level than 6-digits, but all definitions must be within that 6-digit framework. \n\nThe U.S. defines products using 10-digit HTS codes. Exports codes (which the U.S. calls Schedule B) are administered by the U.S. Census Bureau. Import codes are administered by the U.S. International Trade Commission (USITC).\n\nWhat's the difference between the Schedule B codes (for exports) and the Harmonized Tariff Schedule (HTS) codes (for imports)?\nAll of the imports and export codes used by the United States are based on the Harmonized Tariff System (HTS). The HTS assigns 6-digit codes for general categories. Countries which use the HTS are allowed to define commodities at a more detailed level than 6-digits, but all definitions must be within that 6-digit framework. \n\nThe U.S. defines products using 10-digit HTS codes. Exports codes (which the U.S. calls Schedule B) are administered by the U.S. Census Bureau. Import codes are administered by the U.S. International Trade Commission (USITC).",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "HarmonizedTariffScheduleCode",
+					"Description": "The unique identifier of an Harmonized Tariff Schedule (HTS) Code. An HTS Code is 10-digits in length.",
+					"BaseAttributeReference": {
+						"Entity": "HarmonizedTariffScheduleCode.cdm.json/HarmonizedTariffScheduleCode",
+						"Name": "HarmonizedTariffScheduleCode"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "HarmonizedTariffScheduleCodeDescription",
+					"Description": "The description of a Harmonized Tariff Schedule Code.",
+					"BaseAttributeReference": {
+						"Entity": "HarmonizedTariffScheduleCode.cdm.json/HarmonizedTariffScheduleCode",
+						"Name": "HarmonizedTariffScheduleCodeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"HarmonizedTariffScheduleCode\":{\"entity\":\"HarmonizedTariffScheduleCode.cdm.json/HarmonizedTariffScheduleCode\",\"name\":\"HarmonizedTariffScheduleCode\"},\"HarmonizedTariffScheduleCodeDescription\":{\"entity\":\"HarmonizedTariffScheduleCode.cdm.json/HarmonizedTariffScheduleCode\",\"name\":\"HarmonizedTariffScheduleCodeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"HarmonizedTariffScheduleCode\",\"path\":\"HarmonizedTariffScheduleCode.cdm.json/HarmonizedTariffScheduleCode\"},\"description\":\"A multi-purpose international goods-classification for manufacturers. Transporters, exporters, importers, customs officials, statisticians, and others in classifying goods moving in international trade under a single commodity code. Developed under the auspices of the Customs Cooperations Council (CCC), an international customs organization in Brussels, this code is a hierarchically structured product nomenclature containing approximately 5,000 headings and subheadings describing the articles moving in international trade. It is organized into 99 chapters arranged in 22 sections. Sections encompass an industry [ (e.g., Section XI, Textiles and Textile Articles); chapters encompass the various materials and products of the industry (e.g.: Chapter 50, Silk; Chapter 55, Manmade Staple Fibers; Chapter 57, Carpets).] The basic code contains four-digit headings and six-digit subheadings. (The U.S. will add digits for tariff and statistical purposes. In the U.S. duty rates will be the 8-digit level; statistical suffixes will be at the 10-digit level. )\\n\\nAll of the imports and export codes used by the United States are based on the Harmonized Tariff System (HTS). The HTS assigns 6-digit codes for general categories. Countries which use the HTS are allowed to define commodities at a more detailed level than 6-digits, but all definitions must be within that 6-digit framework. \\n\\nThe U.S. defines products using 10-digit HTS codes. Exports codes (which the U.S. calls Schedule B) are administered by the U.S. Census Bureau. Import codes are administered by the U.S. International Trade Commission (USITC).\\n\\nWhat's the difference between the Schedule B codes (for exports) and the Harmonized Tariff Schedule (HTS) codes (for imports)?\\nAll of the imports and export codes used by the United States are based on the Harmonized Tariff System (HTS). The HTS assigns 6-digit codes for general categories. Countries which use the HTS are allowed to define commodities at a more detailed level than 6-digits, but all definitions must be within that 6-digit framework. \\n\\nThe U.S. defines products using 10-digit HTS codes. Exports codes (which the U.S. calls Schedule B) are administered by the U.S. Census Bureau. Import codes are administered by the U.S. International Trade Commission (USITC).\",\"primaryKey\":[\"HarmonizedTariffScheduleCode\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"HarmonizedTariffScheduleCode\",\"attributeReference\":{\"entity\":\"HarmonizedTariffScheduleCode.cdm.json/HarmonizedTariffScheduleCode\",\"name\":\"HarmonizedTariffScheduleCode\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"HarmonizedTariffScheduleCodeDescription\",\"attributeReference\":{\"entity\":\"HarmonizedTariffScheduleCode.cdm.json/HarmonizedTariffScheduleCode\",\"name\":\"HarmonizedTariffScheduleCodeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512}]}}}",
+			"Description": "A multi-purpose international goods-classification for manufacturers. Transporters, exporters, importers, customs officials, statisticians, and others in classifying goods moving in international trade under a single commodity code. Developed under the auspices of the Customs Cooperations Council (CCC), an international customs organization in Brussels, this code is a hierarchically structured product nomenclature containing approximately 5,000 headings and subheadings describing the articles moving in international trade. It is organized into 99 chapters arranged in 22 sections. Sections encompass an industry [ (e.g., Section XI, Textiles and Textile Articles); chapters encompass the various materials and products of the industry (e.g.: Chapter 50, Silk; Chapter 55, Manmade Staple Fibers; Chapter 57, Carpets).] The basic code contains four-digit headings and six-digit subheadings. (The U.S. will add digits for tariff and statistical purposes. In the U.S. duty rates will be the 8-digit level; statistical suffixes will be at the 10-digit level. )\n\nAll of the imports and export codes used by the United States are based on the Harmonized Tariff System (HTS). The HTS assigns 6-digit codes for general categories. Countries which use the HTS are allowed to define commodities at a more detailed level than 6-digits, but all definitions must be within that 6-digit framework. \n\nThe U.S. defines products using 10-digit HTS codes. Exports codes (which the U.S. calls Schedule B) are administered by the U.S. Census Bureau. Import codes are administered by the U.S. International Trade Commission (USITC).\n\nWhat's the difference between the Schedule B codes (for exports) and the Harmonized Tariff Schedule (HTS) codes (for imports)?\nAll of the imports and export codes used by the United States are based on the Harmonized Tariff System (HTS). The HTS assigns 6-digit codes for general categories. Countries which use the HTS are allowed to define commodities at a more detailed level than 6-digits, but all definitions must be within that 6-digit framework. \n\nThe U.S. defines products using 10-digit HTS codes. Exports codes (which the U.S. calls Schedule B) are administered by the U.S. Census Bureau. Import codes are administered by the U.S. International Trade Commission (USITC).",
+			"DisplayFolderInfo": "{\"name\":\"Shipping\",\"colorCode\":\"#000B42\"}",
+			"PrimaryKeys": "HarmonizedTariffScheduleCode"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

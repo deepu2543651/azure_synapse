@@ -1,0 +1,34 @@
+{
+	"name": "relationship-dwoxtyzuga",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "relationship-dwoxtyzuga",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "CarrierRouteLeg",
+		"ToTableName": "ShipmentRouteLeg",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "CarrierId",
+				"ToColumnName": "CarrierId"
+			},
+			{
+				"FromColumnName": "CarrierRouteId",
+				"ToColumnName": "CarrierRouteId"
+			},
+			{
+				"FromColumnName": "CarrierRouteLegNumber",
+				"ToColumnName": "CarrierRouteLegNumber"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"CarrierRouteLeg.cdm.json/CarrierRouteLeg\",\"toEntity\":\"ShipmentRouteLeg.cdm.json/ShipmentRouteLeg\",\"joinPairs\":[{\"fromAttribute\":\"CarrierId\",\"toAttribute\":\"CarrierId\"},{\"fromAttribute\":\"CarrierRouteId\",\"toAttribute\":\"CarrierRouteId\"},{\"fromAttribute\":\"CarrierRouteLegNumber\",\"toAttribute\":\"CarrierRouteLegNumber\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

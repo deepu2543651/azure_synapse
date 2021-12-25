@@ -1,0 +1,136 @@
+{
+	"name": "ShipmentItemAllowance",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "ShipmentItemAllowance",
+		"Description": "An amount paid or credited by a shipper as a refund or reimbursement due to any one of a number of causes including:",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ShipmentId",
+					"Description": "The unique identifier of a Shipment.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentItemAllowance.cdm.json/ShipmentItemAllowance",
+						"Name": "ShipmentId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ShipmentItemNumber",
+					"Description": "The shipment line number.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentItemAllowance.cdm.json/ShipmentItemAllowance",
+						"Name": "ShipmentItemNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "AllowanceTypeId",
+					"Description": "The unique identifier of an Allowance Type.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentItemAllowance.cdm.json/ShipmentItemAllowance",
+						"Name": "AllowanceTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "AllowancePaidTimestamp",
+					"Description": "The timestamp that the allowance was paid.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentItemAllowance.cdm.json/ShipmentItemAllowance",
+						"Name": "AllowancePaidTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "AllowanceAmount",
+					"Description": "The amount of the allowance paid.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentItemAllowance.cdm.json/ShipmentItemAllowance",
+						"Name": "AllowanceAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "AllowanceNote",
+					"Description": "A note, comment or additional information regarding the shipment item allowance.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentItemAllowance.cdm.json/ShipmentItemAllowance",
+						"Name": "AllowanceNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ShipmentId\":{\"entity\":\"ShipmentItemAllowance.cdm.json/ShipmentItemAllowance\",\"name\":\"ShipmentId\"},\"ShipmentItemNumber\":{\"entity\":\"ShipmentItemAllowance.cdm.json/ShipmentItemAllowance\",\"name\":\"ShipmentItemNumber\"},\"AllowanceTypeId\":{\"entity\":\"ShipmentItemAllowance.cdm.json/ShipmentItemAllowance\",\"name\":\"AllowanceTypeId\"},\"AllowancePaidTimestamp\":{\"entity\":\"ShipmentItemAllowance.cdm.json/ShipmentItemAllowance\",\"name\":\"AllowancePaidTimestamp\"},\"AllowanceAmount\":{\"entity\":\"ShipmentItemAllowance.cdm.json/ShipmentItemAllowance\",\"name\":\"AllowanceAmount\"},\"AllowanceNote\":{\"entity\":\"ShipmentItemAllowance.cdm.json/ShipmentItemAllowance\",\"name\":\"AllowanceNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"ShipmentItemAllowance\",\"path\":\"ShipmentItemAllowance.cdm.json/ShipmentItemAllowance\"},\"description\":\"An amount paid or credited by a shipper as a refund or reimbursement due to any one of a number of causes including:\",\"primaryKey\":[\"ShipmentId\",\"ShipmentItemNumber\",\"AllowanceTypeId\",\"AllowancePaidTimestamp\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"ShipmentId\",\"attributeReference\":{\"entity\":\"ShipmentItemAllowance.cdm.json/ShipmentItemAllowance\",\"name\":\"ShipmentId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ShipmentItemNumber\",\"attributeReference\":{\"entity\":\"ShipmentItemAllowance.cdm.json/ShipmentItemAllowance\",\"name\":\"ShipmentItemNumber\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"AllowanceTypeId\",\"attributeReference\":{\"entity\":\"ShipmentItemAllowance.cdm.json/ShipmentItemAllowance\",\"name\":\"AllowanceTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"AllowancePaidTimestamp\",\"attributeReference\":{\"entity\":\"ShipmentItemAllowance.cdm.json/ShipmentItemAllowance\",\"name\":\"AllowancePaidTimestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"AllowanceAmount\",\"attributeReference\":{\"entity\":\"ShipmentItemAllowance.cdm.json/ShipmentItemAllowance\",\"name\":\"AllowanceAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"AllowanceNote\",\"attributeReference\":{\"entity\":\"ShipmentItemAllowance.cdm.json/ShipmentItemAllowance\",\"name\":\"AllowanceNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024}]}}}",
+			"Description": "An amount paid or credited by a shipper as a refund or reimbursement due to any one of a number of causes including:",
+			"DisplayFolderInfo": "{\"name\":\"Shipping\",\"colorCode\":\"#000B42\"}",
+			"PrimaryKeys": "ShipmentId,ShipmentItemNumber,AllowanceTypeId,AllowancePaidTimestamp"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

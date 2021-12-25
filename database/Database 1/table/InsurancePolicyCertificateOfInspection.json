@@ -1,0 +1,85 @@
+{
+	"name": "InsurancePolicyCertificateOfInspection",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "InsurancePolicyCertificateOfInspection",
+		"Description": "The insurance policy certificate(s) of inspection related to the insurance policy.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "InsurancePolicyId",
+					"Description": "The unique identifier of an Insurance Policy.",
+					"BaseAttributeReference": {
+						"Entity": "InsurancePolicyCertificateOfInspection.cdm.json/InsurancePolicyCertificateOfInspection",
+						"Name": "InsurancePolicyId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "CertificateOfInspectionId",
+					"Description": "The number or unique identifier of the Certificate Of Inspection.",
+					"BaseAttributeReference": {
+						"Entity": "InsurancePolicyCertificateOfInspection.cdm.json/InsurancePolicyCertificateOfInspection",
+						"Name": "CertificateOfInspectionId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "InsurancePolicyCertificateOfInspectionNote",
+					"Description": "A note, comment or additional information regarding the Insurance Policy Certificate Of Inspection.",
+					"BaseAttributeReference": {
+						"Entity": "InsurancePolicyCertificateOfInspection.cdm.json/InsurancePolicyCertificateOfInspection",
+						"Name": "InsurancePolicyCertificateOfInspectionNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"InsurancePolicyId\":{\"entity\":\"InsurancePolicyCertificateOfInspection.cdm.json/InsurancePolicyCertificateOfInspection\",\"name\":\"InsurancePolicyId\"},\"CertificateOfInspectionId\":{\"entity\":\"InsurancePolicyCertificateOfInspection.cdm.json/InsurancePolicyCertificateOfInspection\",\"name\":\"CertificateOfInspectionId\"},\"InsurancePolicyCertificateOfInspectionNote\":{\"entity\":\"InsurancePolicyCertificateOfInspection.cdm.json/InsurancePolicyCertificateOfInspection\",\"name\":\"InsurancePolicyCertificateOfInspectionNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"InsurancePolicyCertificateOfInspection\",\"path\":\"InsurancePolicyCertificateOfInspection.cdm.json/InsurancePolicyCertificateOfInspection\"},\"description\":\"The insurance policy certificate(s) of inspection related to the insurance policy.\",\"primaryKey\":[\"InsurancePolicyId\",\"CertificateOfInspectionId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"InsurancePolicyId\",\"attributeReference\":{\"entity\":\"InsurancePolicyCertificateOfInspection.cdm.json/InsurancePolicyCertificateOfInspection\",\"name\":\"InsurancePolicyId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"CertificateOfInspectionId\",\"attributeReference\":{\"entity\":\"InsurancePolicyCertificateOfInspection.cdm.json/InsurancePolicyCertificateOfInspection\",\"name\":\"CertificateOfInspectionId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"InsurancePolicyCertificateOfInspectionNote\",\"attributeReference\":{\"entity\":\"InsurancePolicyCertificateOfInspection.cdm.json/InsurancePolicyCertificateOfInspection\",\"name\":\"InsurancePolicyCertificateOfInspectionNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024}]}}}",
+			"Description": "The insurance policy certificate(s) of inspection related to the insurance policy.",
+			"DisplayFolderInfo": "{\"name\":\"Policy\",\"colorCode\":\"#7D0F6C\"}",
+			"PrimaryKeys": "InsurancePolicyId,CertificateOfInspectionId"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

@@ -1,0 +1,119 @@
+{
+	"name": "InsurancePolicyExclusion",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "InsurancePolicyExclusion",
+		"Description": "The exclusion(s) applicable to the associated Insurance Policy.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "InsurancePolicyId",
+					"Description": "The unique identifier of an Insurance Policy.",
+					"BaseAttributeReference": {
+						"Entity": "InsurancePolicyExclusion.cdm.json/InsurancePolicyExclusion",
+						"Name": "InsurancePolicyId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "InsuranceExclusionTypeId",
+					"Description": "The unique identifier of an Insurance Exclusion Type.",
+					"BaseAttributeReference": {
+						"Entity": "InsurancePolicyExclusion.cdm.json/InsurancePolicyExclusion",
+						"Name": "InsuranceExclusionTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PeriodStartDate",
+					"Description": "The period start date that the exclusion is written into the policy.",
+					"BaseAttributeReference": {
+						"Entity": "InsurancePolicyExclusion.cdm.json/InsurancePolicyExclusion",
+						"Name": "PeriodStartDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "PeriodEndDate",
+					"Description": "The period end date that the exclusion is written into the policy.",
+					"BaseAttributeReference": {
+						"Entity": "InsurancePolicyExclusion.cdm.json/InsurancePolicyExclusion",
+						"Name": "PeriodEndDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "InsurancePolicyExclusionNote",
+					"Description": "The exclusion note that is provided with the general Insurance Policy.",
+					"BaseAttributeReference": {
+						"Entity": "InsurancePolicyExclusion.cdm.json/InsurancePolicyExclusion",
+						"Name": "InsurancePolicyExclusionNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"InsurancePolicyId\":{\"entity\":\"InsurancePolicyExclusion.cdm.json/InsurancePolicyExclusion\",\"name\":\"InsurancePolicyId\"},\"InsuranceExclusionTypeId\":{\"entity\":\"InsurancePolicyExclusion.cdm.json/InsurancePolicyExclusion\",\"name\":\"InsuranceExclusionTypeId\"},\"PeriodStartDate\":{\"entity\":\"InsurancePolicyExclusion.cdm.json/InsurancePolicyExclusion\",\"name\":\"PeriodStartDate\"},\"PeriodEndDate\":{\"entity\":\"InsurancePolicyExclusion.cdm.json/InsurancePolicyExclusion\",\"name\":\"PeriodEndDate\"},\"InsurancePolicyExclusionNote\":{\"entity\":\"InsurancePolicyExclusion.cdm.json/InsurancePolicyExclusion\",\"name\":\"InsurancePolicyExclusionNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"InsurancePolicyExclusion\",\"path\":\"InsurancePolicyExclusion.cdm.json/InsurancePolicyExclusion\"},\"description\":\"The exclusion(s) applicable to the associated Insurance Policy.\",\"primaryKey\":[\"InsurancePolicyId\",\"InsuranceExclusionTypeId\",\"PeriodStartDate\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"InsurancePolicyId\",\"attributeReference\":{\"entity\":\"InsurancePolicyExclusion.cdm.json/InsurancePolicyExclusion\",\"name\":\"InsurancePolicyId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"InsuranceExclusionTypeId\",\"attributeReference\":{\"entity\":\"InsurancePolicyExclusion.cdm.json/InsurancePolicyExclusion\",\"name\":\"InsuranceExclusionTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"PeriodStartDate\",\"attributeReference\":{\"entity\":\"InsurancePolicyExclusion.cdm.json/InsurancePolicyExclusion\",\"name\":\"PeriodStartDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\"},{\"type\":\"Existing\",\"name\":\"PeriodEndDate\",\"attributeReference\":{\"entity\":\"InsurancePolicyExclusion.cdm.json/InsurancePolicyExclusion\",\"name\":\"PeriodEndDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\"},{\"type\":\"Existing\",\"name\":\"InsurancePolicyExclusionNote\",\"attributeReference\":{\"entity\":\"InsurancePolicyExclusion.cdm.json/InsurancePolicyExclusion\",\"name\":\"InsurancePolicyExclusionNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024}]}}}",
+			"Description": "The exclusion(s) applicable to the associated Insurance Policy.",
+			"DisplayFolderInfo": "{\"name\":\"Policy\",\"colorCode\":\"#7D0F6C\"}",
+			"PrimaryKeys": "InsurancePolicyId,InsuranceExclusionTypeId,PeriodStartDate"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

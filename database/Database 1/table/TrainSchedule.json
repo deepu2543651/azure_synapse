@@ -1,0 +1,214 @@
+{
+	"name": "TrainSchedule",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "TrainSchedule",
+		"Description": "The schedule for the associated train or railroad run.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "TrainId",
+					"Description": "The unique identifier of a Train.",
+					"BaseAttributeReference": {
+						"Entity": "TrainSchedule.cdm.json/TrainSchedule",
+						"Name": "TrainId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "TrainScheduledDepartureTimestamp",
+					"Description": "The scheduled departure timestamp.",
+					"BaseAttributeReference": {
+						"Entity": "TrainSchedule.cdm.json/TrainSchedule",
+						"Name": "TrainScheduledDepartureTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "TrainScheduledArrivalTimestamp",
+					"Description": "The scheduled arrival timestamp at the arrival-location.",
+					"BaseAttributeReference": {
+						"Entity": "TrainSchedule.cdm.json/TrainSchedule",
+						"Name": "TrainScheduledArrivalTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "FromLocationId",
+					"Description": "The unique identifier of a Shipping Location.",
+					"BaseAttributeReference": {
+						"Entity": "TrainSchedule.cdm.json/TrainSchedule",
+						"Name": "FromLocationId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ToLocationId",
+					"Description": "The unique identifier of a Shipping Location.",
+					"BaseAttributeReference": {
+						"Entity": "TrainSchedule.cdm.json/TrainSchedule",
+						"Name": "ToLocationId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "DepartingTerminalNumber",
+					"Description": "The unique identifier of the terminal at the departing location.",
+					"BaseAttributeReference": {
+						"Entity": "TrainSchedule.cdm.json/TrainSchedule",
+						"Name": "DepartingTerminalNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "DepartingTrackNumber",
+					"Description": "The unique identifier of the track at the departing location.",
+					"BaseAttributeReference": {
+						"Entity": "TrainSchedule.cdm.json/TrainSchedule",
+						"Name": "DepartingTrackNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ArrivingTerminalNumber",
+					"Description": "The unique identifier of the terminal at the arrival location.",
+					"BaseAttributeReference": {
+						"Entity": "TrainSchedule.cdm.json/TrainSchedule",
+						"Name": "ArrivingTerminalNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ArrivingTrackNumber",
+					"Description": "The unique identifier of the track at the arrival location.",
+					"BaseAttributeReference": {
+						"Entity": "TrainSchedule.cdm.json/TrainSchedule",
+						"Name": "ArrivingTrackNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "CarrierId",
+					"Description": "The unique identifier of a Carrier.",
+					"BaseAttributeReference": {
+						"Entity": "TrainSchedule.cdm.json/TrainSchedule",
+						"Name": "CarrierId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "CarrierRouteId",
+					"Description": "The unique identifier of a Carrier Route.",
+					"BaseAttributeReference": {
+						"Entity": "TrainSchedule.cdm.json/TrainSchedule",
+						"Name": "CarrierRouteId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"TrainId\":{\"entity\":\"TrainSchedule.cdm.json/TrainSchedule\",\"name\":\"TrainId\"},\"TrainScheduledDepartureTimestamp\":{\"entity\":\"TrainSchedule.cdm.json/TrainSchedule\",\"name\":\"TrainScheduledDepartureTimestamp\"},\"TrainScheduledArrivalTimestamp\":{\"entity\":\"TrainSchedule.cdm.json/TrainSchedule\",\"name\":\"TrainScheduledArrivalTimestamp\"},\"FromLocationId\":{\"entity\":\"TrainSchedule.cdm.json/TrainSchedule\",\"name\":\"FromLocationId\"},\"ToLocationId\":{\"entity\":\"TrainSchedule.cdm.json/TrainSchedule\",\"name\":\"ToLocationId\"},\"DepartingTerminalNumber\":{\"entity\":\"TrainSchedule.cdm.json/TrainSchedule\",\"name\":\"DepartingTerminalNumber\"},\"DepartingTrackNumber\":{\"entity\":\"TrainSchedule.cdm.json/TrainSchedule\",\"name\":\"DepartingTrackNumber\"},\"ArrivingTerminalNumber\":{\"entity\":\"TrainSchedule.cdm.json/TrainSchedule\",\"name\":\"ArrivingTerminalNumber\"},\"ArrivingTrackNumber\":{\"entity\":\"TrainSchedule.cdm.json/TrainSchedule\",\"name\":\"ArrivingTrackNumber\"},\"CarrierId\":{\"entity\":\"TrainSchedule.cdm.json/TrainSchedule\",\"name\":\"CarrierId\"},\"CarrierRouteId\":{\"entity\":\"TrainSchedule.cdm.json/TrainSchedule\",\"name\":\"CarrierRouteId\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"TrainSchedule\",\"path\":\"TrainSchedule.cdm.json/TrainSchedule\"},\"description\":\"The schedule for the associated train or railroad run.\",\"primaryKey\":[\"TrainId\",\"TrainScheduledDepartureTimestamp\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"TrainId\",\"attributeReference\":{\"entity\":\"TrainSchedule.cdm.json/TrainSchedule\",\"name\":\"TrainId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"TrainScheduledDepartureTimestamp\",\"attributeReference\":{\"entity\":\"TrainSchedule.cdm.json/TrainSchedule\",\"name\":\"TrainScheduledDepartureTimestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"TrainScheduledArrivalTimestamp\",\"attributeReference\":{\"entity\":\"TrainSchedule.cdm.json/TrainSchedule\",\"name\":\"TrainScheduledArrivalTimestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"FromLocationId\",\"attributeReference\":{\"entity\":\"TrainSchedule.cdm.json/TrainSchedule\",\"name\":\"FromLocationId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ToLocationId\",\"attributeReference\":{\"entity\":\"TrainSchedule.cdm.json/TrainSchedule\",\"name\":\"ToLocationId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"DepartingTerminalNumber\",\"attributeReference\":{\"entity\":\"TrainSchedule.cdm.json/TrainSchedule\",\"name\":\"DepartingTerminalNumber\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"DepartingTrackNumber\",\"attributeReference\":{\"entity\":\"TrainSchedule.cdm.json/TrainSchedule\",\"name\":\"DepartingTrackNumber\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ArrivingTerminalNumber\",\"attributeReference\":{\"entity\":\"TrainSchedule.cdm.json/TrainSchedule\",\"name\":\"ArrivingTerminalNumber\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ArrivingTrackNumber\",\"attributeReference\":{\"entity\":\"TrainSchedule.cdm.json/TrainSchedule\",\"name\":\"ArrivingTrackNumber\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"CarrierId\",\"attributeReference\":{\"entity\":\"TrainSchedule.cdm.json/TrainSchedule\",\"name\":\"CarrierId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"CarrierRouteId\",\"attributeReference\":{\"entity\":\"TrainSchedule.cdm.json/TrainSchedule\",\"name\":\"CarrierRouteId\"},\"dataType\":\"integer\"}]}}}",
+			"Description": "The schedule for the associated train or railroad run.",
+			"DisplayFolderInfo": "{\"name\":\"Shipping\",\"colorCode\":\"#000B42\"}",
+			"PrimaryKeys": "TrainId,TrainScheduledDepartureTimestamp"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

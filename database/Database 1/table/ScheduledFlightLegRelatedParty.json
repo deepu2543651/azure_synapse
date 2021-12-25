@@ -1,0 +1,202 @@
+{
+	"name": "ScheduledFlightLegRelatedParty",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "ScheduledFlightLegRelatedParty",
+		"Description": "A party that has a relationship with the scheduled flight leg over the indicated period.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "CarrierId",
+					"Description": "The unique identifier of a Carrier.",
+					"BaseAttributeReference": {
+						"Entity": "ScheduledFlightLegRelatedParty.cdm.json/ScheduledFlightLegRelatedParty",
+						"Name": "CarrierId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "FlightNumber",
+					"Description": "The unique identifier of a Flight.",
+					"BaseAttributeReference": {
+						"Entity": "ScheduledFlightLegRelatedParty.cdm.json/ScheduledFlightLegRelatedParty",
+						"Name": "FlightNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ScheduledFlightDate",
+					"Description": "The date of the Flight.",
+					"BaseAttributeReference": {
+						"Entity": "ScheduledFlightLegRelatedParty.cdm.json/ScheduledFlightLegRelatedParty",
+						"Name": "ScheduledFlightDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "ScheduledFlightLegDepartureAirportCode",
+					"Description": "AKA Airport Code\n\nThree-letter codes used to identify airports.\n\nAirport Code \nThe airport code is a three letter designator for a commercial airport, or other travel point -- e.g. a large bus station. These are the codes that airlines and pilots use to identify airports and are used in timetables, baggage tags, tickets, advertisements, Airline and Global Reservation Systems. There are approximately 9,000 of them in use of a total of 17,576 available",
+					"BaseAttributeReference": {
+						"Entity": "ScheduledFlightLegRelatedParty.cdm.json/ScheduledFlightLegRelatedParty",
+						"Name": "ScheduledFlightLegDepartureAirportCode"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Length": 3,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ScheduledFlightLegArrivalAirportCode",
+					"Description": "AKA Airport Code\n\nThree-letter codes used to identify airports.\n\nAirport Code \nThe airport code is a three letter designator for a commercial airport, or other travel point -- e.g. a large bus station. These are the codes that airlines and pilots use to identify airports and are used in timetables, baggage tags, tickets, advertisements, Airline and Global Reservation Systems. There are approximately 9,000 of them in use of a total of 17,576 available",
+					"BaseAttributeReference": {
+						"Entity": "ScheduledFlightLegRelatedParty.cdm.json/ScheduledFlightLegRelatedParty",
+						"Name": "ScheduledFlightLegArrivalAirportCode"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Length": 3,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "PartyId",
+					"Description": "The unique identifier of a Party.",
+					"BaseAttributeReference": {
+						"Entity": "ScheduledFlightLegRelatedParty.cdm.json/ScheduledFlightLegRelatedParty",
+						"Name": "PartyId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "ScheduledFlightLegPartyRelationshipTypeId",
+					"Description": "The unique identifier of a customer relationship type.",
+					"BaseAttributeReference": {
+						"Entity": "ScheduledFlightLegRelatedParty.cdm.json/ScheduledFlightLegRelatedParty",
+						"Name": "ScheduledFlightLegPartyRelationshipTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PeriodStartTimestamp",
+					"Description": "The period start timestamp for which the associated scheduled flight leg - party relationship is valid or in-effect.",
+					"BaseAttributeReference": {
+						"Entity": "ScheduledFlightLegRelatedParty.cdm.json/ScheduledFlightLegRelatedParty",
+						"Name": "PeriodStartTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "PeriodEndTimestamp",
+					"Description": "The period end timestamp for which the associated scheduled flight leg - party relationship is valid or in-effect.",
+					"BaseAttributeReference": {
+						"Entity": "ScheduledFlightLegRelatedParty.cdm.json/ScheduledFlightLegRelatedParty",
+						"Name": "PeriodEndTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "ScheduledFlightLegRelatedPartyNote",
+					"Description": "A note, comment or additional information regarding the scheduled flight leg - party relationship.",
+					"BaseAttributeReference": {
+						"Entity": "ScheduledFlightLegRelatedParty.cdm.json/ScheduledFlightLegRelatedParty",
+						"Name": "ScheduledFlightLegRelatedPartyNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"CarrierId\":{\"entity\":\"ScheduledFlightLegRelatedParty.cdm.json/ScheduledFlightLegRelatedParty\",\"name\":\"CarrierId\"},\"FlightNumber\":{\"entity\":\"ScheduledFlightLegRelatedParty.cdm.json/ScheduledFlightLegRelatedParty\",\"name\":\"FlightNumber\"},\"ScheduledFlightDate\":{\"entity\":\"ScheduledFlightLegRelatedParty.cdm.json/ScheduledFlightLegRelatedParty\",\"name\":\"ScheduledFlightDate\"},\"ScheduledFlightLegDepartureAirportCode\":{\"entity\":\"ScheduledFlightLegRelatedParty.cdm.json/ScheduledFlightLegRelatedParty\",\"name\":\"ScheduledFlightLegDepartureAirportCode\"},\"ScheduledFlightLegArrivalAirportCode\":{\"entity\":\"ScheduledFlightLegRelatedParty.cdm.json/ScheduledFlightLegRelatedParty\",\"name\":\"ScheduledFlightLegArrivalAirportCode\"},\"PartyId\":{\"entity\":\"ScheduledFlightLegRelatedParty.cdm.json/ScheduledFlightLegRelatedParty\",\"name\":\"PartyId\"},\"ScheduledFlightLegPartyRelationshipTypeId\":{\"entity\":\"ScheduledFlightLegRelatedParty.cdm.json/ScheduledFlightLegRelatedParty\",\"name\":\"ScheduledFlightLegPartyRelationshipTypeId\"},\"PeriodStartTimestamp\":{\"entity\":\"ScheduledFlightLegRelatedParty.cdm.json/ScheduledFlightLegRelatedParty\",\"name\":\"PeriodStartTimestamp\"},\"PeriodEndTimestamp\":{\"entity\":\"ScheduledFlightLegRelatedParty.cdm.json/ScheduledFlightLegRelatedParty\",\"name\":\"PeriodEndTimestamp\"},\"ScheduledFlightLegRelatedPartyNote\":{\"entity\":\"ScheduledFlightLegRelatedParty.cdm.json/ScheduledFlightLegRelatedParty\",\"name\":\"ScheduledFlightLegRelatedPartyNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"ScheduledFlightLegRelatedParty\",\"path\":\"ScheduledFlightLegRelatedParty.cdm.json/ScheduledFlightLegRelatedParty\"},\"description\":\"A party that has a relationship with the scheduled flight leg over the indicated period.\",\"primaryKey\":[\"CarrierId\",\"FlightNumber\",\"ScheduledFlightDate\",\"ScheduledFlightLegDepartureAirportCode\",\"ScheduledFlightLegArrivalAirportCode\",\"PartyId\",\"ScheduledFlightLegPartyRelationshipTypeId\",\"PeriodStartTimestamp\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"CarrierId\",\"attributeReference\":{\"entity\":\"ScheduledFlightLegRelatedParty.cdm.json/ScheduledFlightLegRelatedParty\",\"name\":\"CarrierId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"FlightNumber\",\"attributeReference\":{\"entity\":\"ScheduledFlightLegRelatedParty.cdm.json/ScheduledFlightLegRelatedParty\",\"name\":\"FlightNumber\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ScheduledFlightDate\",\"attributeReference\":{\"entity\":\"ScheduledFlightLegRelatedParty.cdm.json/ScheduledFlightLegRelatedParty\",\"name\":\"ScheduledFlightDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\"},{\"type\":\"Existing\",\"name\":\"ScheduledFlightLegDepartureAirportCode\",\"attributeReference\":{\"entity\":\"ScheduledFlightLegRelatedParty.cdm.json/ScheduledFlightLegRelatedParty\",\"name\":\"ScheduledFlightLegDepartureAirportCode\"},\"dataType\":\"string\",\"dataTypeLength\":3},{\"type\":\"Existing\",\"name\":\"ScheduledFlightLegArrivalAirportCode\",\"attributeReference\":{\"entity\":\"ScheduledFlightLegRelatedParty.cdm.json/ScheduledFlightLegRelatedParty\",\"name\":\"ScheduledFlightLegArrivalAirportCode\"},\"dataType\":\"string\",\"dataTypeLength\":3},{\"type\":\"Existing\",\"name\":\"PartyId\",\"attributeReference\":{\"entity\":\"ScheduledFlightLegRelatedParty.cdm.json/ScheduledFlightLegRelatedParty\",\"name\":\"PartyId\"},\"dataType\":\"long\"},{\"type\":\"Existing\",\"name\":\"ScheduledFlightLegPartyRelationshipTypeId\",\"attributeReference\":{\"entity\":\"ScheduledFlightLegRelatedParty.cdm.json/ScheduledFlightLegRelatedParty\",\"name\":\"ScheduledFlightLegPartyRelationshipTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"PeriodStartTimestamp\",\"attributeReference\":{\"entity\":\"ScheduledFlightLegRelatedParty.cdm.json/ScheduledFlightLegRelatedParty\",\"name\":\"PeriodStartTimestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"PeriodEndTimestamp\",\"attributeReference\":{\"entity\":\"ScheduledFlightLegRelatedParty.cdm.json/ScheduledFlightLegRelatedParty\",\"name\":\"PeriodEndTimestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"ScheduledFlightLegRelatedPartyNote\",\"attributeReference\":{\"entity\":\"ScheduledFlightLegRelatedParty.cdm.json/ScheduledFlightLegRelatedParty\",\"name\":\"ScheduledFlightLegRelatedPartyNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024}]}}}",
+			"Description": "A party that has a relationship with the scheduled flight leg over the indicated period.",
+			"DisplayFolderInfo": "{\"name\":\"Shipping\",\"colorCode\":\"#000B42\"}",
+			"PrimaryKeys": "CarrierId,FlightNumber,ScheduledFlightDate,ScheduledFlightLegDepartureAirportCode,ScheduledFlightLegArrivalAirportCode,PartyId,ScheduledFlightLegPartyRelationshipTypeId,PeriodStartTimestamp"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

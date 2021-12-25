@@ -1,0 +1,26 @@
+{
+	"name": "relationship-egcqrsvpay",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "relationship-egcqrsvpay",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "ShipmentCondition",
+		"ToTableName": "CertificateOfInspection",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ShipmentConditionId",
+				"ToColumnName": "ShipmentConditionId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"ShipmentCondition.cdm.json/ShipmentCondition\",\"toEntity\":\"CertificateOfInspection.cdm.json/CertificateOfInspection\",\"joinPairs\":[{\"fromAttribute\":\"ShipmentConditionId\",\"toAttribute\":\"ShipmentConditionId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

@@ -1,0 +1,26 @@
+{
+	"name": "relationship-jvmukklfyl",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "relationship-jvmukklfyl",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "IpAddressType",
+		"ToTableName": "IpAddress",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "IpAddressTypeId",
+				"ToColumnName": "IpAddressTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"IpAddressType.cdm.json/IpAddressType\",\"toEntity\":\"IpAddress.cdm.json/IpAddress\",\"joinPairs\":[{\"fromAttribute\":\"IpAddressTypeId\",\"toAttribute\":\"IpAddressTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

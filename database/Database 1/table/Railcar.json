@@ -1,0 +1,346 @@
+{
+	"name": "Railcar",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "Railcar",
+		"Description": "A physical railroad car which may be use on one or more trains.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "RailcarId",
+					"Description": "The unique identifier of a Railcar instance.",
+					"BaseAttributeReference": {
+						"Entity": "Railcar.cdm.json/Railcar",
+						"Name": "RailcarId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "BlockedRailcarIndicator",
+					"Description": "Railcars grouped in a train by destination so that segments (blocks) can be uncoupled and routed to different destinations as the train moves through various junctions. Eliminates the need to break up a train and sort individual railcars at each junction.",
+					"BaseAttributeReference": {
+						"Entity": "Railcar.cdm.json/Railcar",
+						"Name": "BlockedRailcarIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "RailcarTypeId",
+					"Description": "The unique identifier of a railcar type.",
+					"BaseAttributeReference": {
+						"Entity": "Railcar.cdm.json/Railcar",
+						"Name": "RailcarTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "InternalLengthDimension",
+					"Description": "The inner length dimensions of the railcar.",
+					"BaseAttributeReference": {
+						"Entity": "Railcar.cdm.json/Railcar",
+						"Name": "InternalLengthDimension"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "InternalWidthDimension",
+					"Description": "The inner width dimensions of the railcar.",
+					"BaseAttributeReference": {
+						"Entity": "Railcar.cdm.json/Railcar",
+						"Name": "InternalWidthDimension"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "InternalHeightDimension",
+					"Description": "The inner height dimensions of the railcar.",
+					"BaseAttributeReference": {
+						"Entity": "Railcar.cdm.json/Railcar",
+						"Name": "InternalHeightDimension"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ExternalLengthDimension",
+					"Description": "The outside length dimensions of the railcar.",
+					"BaseAttributeReference": {
+						"Entity": "Railcar.cdm.json/Railcar",
+						"Name": "ExternalLengthDimension"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ExternalWidthDimension",
+					"Description": "The outside width dimensions of the railcar.",
+					"BaseAttributeReference": {
+						"Entity": "Railcar.cdm.json/Railcar",
+						"Name": "ExternalWidthDimension"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ExternalHeightDimension",
+					"Description": "The outside height dimensions of the railcar.",
+					"BaseAttributeReference": {
+						"Entity": "Railcar.cdm.json/Railcar",
+						"Name": "ExternalHeightDimension"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "LwhUnitOfMeasureId",
+					"Description": "The unique identifier of a Unit Of Measure.",
+					"BaseAttributeReference": {
+						"Entity": "Railcar.cdm.json/Railcar",
+						"Name": "LwhUnitOfMeasureId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "InternalVolume",
+					"Description": "The internal volume of the railcar.",
+					"BaseAttributeReference": {
+						"Entity": "Railcar.cdm.json/Railcar",
+						"Name": "InternalVolume"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "RailcarCubicCapacity",
+					"Description": "The carrying capacity within a railcar expressed either in cubic feet, cubic inches, cubic centimeters or cubic meters.",
+					"BaseAttributeReference": {
+						"Entity": "Railcar.cdm.json/Railcar",
+						"Name": "RailcarCubicCapacity"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "VolumeUnitOfMeasureId",
+					"Description": "The unique identifier of a Unit Of Measure.",
+					"BaseAttributeReference": {
+						"Entity": "Railcar.cdm.json/Railcar",
+						"Name": "VolumeUnitOfMeasureId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "TareWeight",
+					"Description": "The actual weight of a railcar when empty, including all liners and/or fittings.",
+					"BaseAttributeReference": {
+						"Entity": "Railcar.cdm.json/Railcar",
+						"Name": "TareWeight"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "MaximumAcceptableWeight",
+					"Description": "The maximum weight that the railcar can hold or accommodate.",
+					"BaseAttributeReference": {
+						"Entity": "Railcar.cdm.json/Railcar",
+						"Name": "MaximumAcceptableWeight"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "WeightUnitOfMeasureId",
+					"Description": "The unique identifier of a Unit Of Measure.",
+					"BaseAttributeReference": {
+						"Entity": "Railcar.cdm.json/Railcar",
+						"Name": "WeightUnitOfMeasureId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "RefrigeratedContainerIndicator",
+					"Description": "Reefer / Refrigerated container.",
+					"BaseAttributeReference": {
+						"Entity": "Railcar.cdm.json/Railcar",
+						"Name": "RefrigeratedContainerIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "AssetId",
+					"Description": "The unique identifier of an Asset.",
+					"BaseAttributeReference": {
+						"Entity": "Railcar.cdm.json/Railcar",
+						"Name": "AssetId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "OwningPartyId",
+					"Description": "The unique identifier of a Party.",
+					"BaseAttributeReference": {
+						"Entity": "Railcar.cdm.json/Railcar",
+						"Name": "OwningPartyId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"RailcarId\":{\"entity\":\"Railcar.cdm.json/Railcar\",\"name\":\"RailcarId\"},\"BlockedRailcarIndicator\":{\"entity\":\"Railcar.cdm.json/Railcar\",\"name\":\"BlockedRailcarIndicator\"},\"RailcarTypeId\":{\"entity\":\"Railcar.cdm.json/Railcar\",\"name\":\"RailcarTypeId\"},\"InternalLengthDimension\":{\"entity\":\"Railcar.cdm.json/Railcar\",\"name\":\"InternalLengthDimension\"},\"InternalWidthDimension\":{\"entity\":\"Railcar.cdm.json/Railcar\",\"name\":\"InternalWidthDimension\"},\"InternalHeightDimension\":{\"entity\":\"Railcar.cdm.json/Railcar\",\"name\":\"InternalHeightDimension\"},\"ExternalLengthDimension\":{\"entity\":\"Railcar.cdm.json/Railcar\",\"name\":\"ExternalLengthDimension\"},\"ExternalWidthDimension\":{\"entity\":\"Railcar.cdm.json/Railcar\",\"name\":\"ExternalWidthDimension\"},\"ExternalHeightDimension\":{\"entity\":\"Railcar.cdm.json/Railcar\",\"name\":\"ExternalHeightDimension\"},\"LwhUnitOfMeasureId\":{\"entity\":\"Railcar.cdm.json/Railcar\",\"name\":\"LwhUnitOfMeasureId\"},\"InternalVolume\":{\"entity\":\"Railcar.cdm.json/Railcar\",\"name\":\"InternalVolume\"},\"RailcarCubicCapacity\":{\"entity\":\"Railcar.cdm.json/Railcar\",\"name\":\"RailcarCubicCapacity\"},\"VolumeUnitOfMeasureId\":{\"entity\":\"Railcar.cdm.json/Railcar\",\"name\":\"VolumeUnitOfMeasureId\"},\"TareWeight\":{\"entity\":\"Railcar.cdm.json/Railcar\",\"name\":\"TareWeight\"},\"MaximumAcceptableWeight\":{\"entity\":\"Railcar.cdm.json/Railcar\",\"name\":\"MaximumAcceptableWeight\"},\"WeightUnitOfMeasureId\":{\"entity\":\"Railcar.cdm.json/Railcar\",\"name\":\"WeightUnitOfMeasureId\"},\"RefrigeratedContainerIndicator\":{\"entity\":\"Railcar.cdm.json/Railcar\",\"name\":\"RefrigeratedContainerIndicator\"},\"AssetId\":{\"entity\":\"Railcar.cdm.json/Railcar\",\"name\":\"AssetId\"},\"OwningPartyId\":{\"entity\":\"Railcar.cdm.json/Railcar\",\"name\":\"OwningPartyId\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"Railcar\",\"path\":\"Railcar.cdm.json/Railcar\"},\"description\":\"A physical railroad car which may be use on one or more trains.\",\"primaryKey\":[\"RailcarId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"RailcarId\",\"attributeReference\":{\"entity\":\"Railcar.cdm.json/Railcar\",\"name\":\"RailcarId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"BlockedRailcarIndicator\",\"attributeReference\":{\"entity\":\"Railcar.cdm.json/Railcar\",\"name\":\"BlockedRailcarIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"RailcarTypeId\",\"attributeReference\":{\"entity\":\"Railcar.cdm.json/Railcar\",\"name\":\"RailcarTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"InternalLengthDimension\",\"attributeReference\":{\"entity\":\"Railcar.cdm.json/Railcar\",\"name\":\"InternalLengthDimension\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"InternalWidthDimension\",\"attributeReference\":{\"entity\":\"Railcar.cdm.json/Railcar\",\"name\":\"InternalWidthDimension\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"InternalHeightDimension\",\"attributeReference\":{\"entity\":\"Railcar.cdm.json/Railcar\",\"name\":\"InternalHeightDimension\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ExternalLengthDimension\",\"attributeReference\":{\"entity\":\"Railcar.cdm.json/Railcar\",\"name\":\"ExternalLengthDimension\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ExternalWidthDimension\",\"attributeReference\":{\"entity\":\"Railcar.cdm.json/Railcar\",\"name\":\"ExternalWidthDimension\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ExternalHeightDimension\",\"attributeReference\":{\"entity\":\"Railcar.cdm.json/Railcar\",\"name\":\"ExternalHeightDimension\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"LwhUnitOfMeasureId\",\"attributeReference\":{\"entity\":\"Railcar.cdm.json/Railcar\",\"name\":\"LwhUnitOfMeasureId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"InternalVolume\",\"attributeReference\":{\"entity\":\"Railcar.cdm.json/Railcar\",\"name\":\"InternalVolume\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":8},{\"type\":\"Existing\",\"name\":\"RailcarCubicCapacity\",\"attributeReference\":{\"entity\":\"Railcar.cdm.json/Railcar\",\"name\":\"RailcarCubicCapacity\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"VolumeUnitOfMeasureId\",\"attributeReference\":{\"entity\":\"Railcar.cdm.json/Railcar\",\"name\":\"VolumeUnitOfMeasureId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"TareWeight\",\"attributeReference\":{\"entity\":\"Railcar.cdm.json/Railcar\",\"name\":\"TareWeight\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":8},{\"type\":\"Existing\",\"name\":\"MaximumAcceptableWeight\",\"attributeReference\":{\"entity\":\"Railcar.cdm.json/Railcar\",\"name\":\"MaximumAcceptableWeight\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":8},{\"type\":\"Existing\",\"name\":\"WeightUnitOfMeasureId\",\"attributeReference\":{\"entity\":\"Railcar.cdm.json/Railcar\",\"name\":\"WeightUnitOfMeasureId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"RefrigeratedContainerIndicator\",\"attributeReference\":{\"entity\":\"Railcar.cdm.json/Railcar\",\"name\":\"RefrigeratedContainerIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"AssetId\",\"attributeReference\":{\"entity\":\"Railcar.cdm.json/Railcar\",\"name\":\"AssetId\"},\"dataType\":\"long\"},{\"type\":\"Existing\",\"name\":\"OwningPartyId\",\"attributeReference\":{\"entity\":\"Railcar.cdm.json/Railcar\",\"name\":\"OwningPartyId\"},\"dataType\":\"long\"}]}}}",
+			"Description": "A physical railroad car which may be use on one or more trains.",
+			"DisplayFolderInfo": "{\"name\":\"Shipping\",\"colorCode\":\"#000B42\"}",
+			"PrimaryKeys": "RailcarId"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

@@ -1,0 +1,26 @@
+{
+	"name": "relationship-lezosbibav",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "relationship-lezosbibav",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "CargoType",
+		"ToTableName": "VehicleAllowableCargo",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "CargoTypeId",
+				"ToColumnName": "CargoTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"CargoType.cdm.json/CargoType\",\"toEntity\":\"VehicleAllowableCargo.cdm.json/VehicleAllowableCargo\",\"joinPairs\":[{\"fromAttribute\":\"CargoTypeId\",\"toAttribute\":\"CargoTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

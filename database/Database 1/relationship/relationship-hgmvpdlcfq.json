@@ -1,0 +1,26 @@
+{
+	"name": "relationship-hgmvpdlcfq",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "relationship-hgmvpdlcfq",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "InsuranceLiabilityType",
+		"ToTableName": "InsurancePolicyCoverageLiability",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "InsuranceLiabilityTypeId",
+				"ToColumnName": "InsuranceLiabilityTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"InsuranceLiabilityType.cdm.json/InsuranceLiabilityType\",\"toEntity\":\"InsurancePolicyCoverageLiability.cdm.json/InsurancePolicyCoverageLiability\",\"joinPairs\":[{\"fromAttribute\":\"InsuranceLiabilityTypeId\",\"toAttribute\":\"InsuranceLiabilityTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

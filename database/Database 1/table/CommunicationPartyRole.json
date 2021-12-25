@@ -1,0 +1,86 @@
+{
+	"name": "CommunicationPartyRole",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "CommunicationPartyRole",
+		"Description": "The nature of the relationship between the party and communication.\n\nEx:\n- Sent-By Party\n- Received-By Party\n- Authorization Required-By Party\n- Authorized-By Party\n- Recorded-By Party\n- CC-To Party",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "CommunicationPartyRoleId",
+					"Description": "The unique identifier of a Communication Party Role.",
+					"BaseAttributeReference": {
+						"Entity": "CommunicationPartyRole.cdm.json/CommunicationPartyRole",
+						"Name": "CommunicationPartyRoleId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "CommunicationPartyRoleName",
+					"Description": "The name of a Communication Party Role.",
+					"BaseAttributeReference": {
+						"Entity": "CommunicationPartyRole.cdm.json/CommunicationPartyRole",
+						"Name": "CommunicationPartyRoleName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "CommunicationPartyRoleDescription",
+					"Description": "The description of a Communication Party Role.",
+					"BaseAttributeReference": {
+						"Entity": "CommunicationPartyRole.cdm.json/CommunicationPartyRole",
+						"Name": "CommunicationPartyRoleDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"CommunicationPartyRoleId\":{\"entity\":\"CommunicationPartyRole.cdm.json/CommunicationPartyRole\",\"name\":\"CommunicationPartyRoleId\"},\"CommunicationPartyRoleName\":{\"entity\":\"CommunicationPartyRole.cdm.json/CommunicationPartyRole\",\"name\":\"CommunicationPartyRoleName\"},\"CommunicationPartyRoleDescription\":{\"entity\":\"CommunicationPartyRole.cdm.json/CommunicationPartyRole\",\"name\":\"CommunicationPartyRoleDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"CommunicationPartyRole\",\"path\":\"CommunicationPartyRole.cdm.json/CommunicationPartyRole\"},\"description\":\"The nature of the relationship between the party and communication.\\n\\nEx:\\n- Sent-By Party\\n- Received-By Party\\n- Authorization Required-By Party\\n- Authorized-By Party\\n- Recorded-By Party\\n- CC-To Party\",\"primaryKey\":[\"CommunicationPartyRoleId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"CommunicationPartyRoleId\",\"attributeReference\":{\"entity\":\"CommunicationPartyRole.cdm.json/CommunicationPartyRole\",\"name\":\"CommunicationPartyRoleId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"CommunicationPartyRoleName\",\"attributeReference\":{\"entity\":\"CommunicationPartyRole.cdm.json/CommunicationPartyRole\",\"name\":\"CommunicationPartyRoleName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"CommunicationPartyRoleDescription\",\"attributeReference\":{\"entity\":\"CommunicationPartyRole.cdm.json/CommunicationPartyRole\",\"name\":\"CommunicationPartyRoleDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512}]}}}",
+			"Description": "The nature of the relationship between the party and communication.\n\nEx:\n- Sent-By Party\n- Received-By Party\n- Authorization Required-By Party\n- Authorized-By Party\n- Recorded-By Party\n- CC-To Party",
+			"DisplayFolderInfo": "{\"name\":\"Customer Service & Contact Management\",\"colorCode\":\"#502006\"}",
+			"PrimaryKeys": "CommunicationPartyRoleId"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

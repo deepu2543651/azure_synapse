@@ -1,0 +1,135 @@
+{
+	"name": "AircraftConfiguration",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "AircraftConfiguration",
+		"Description": "The configuration that was in use by the aircraft during the given period.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "AircraftId",
+					"Description": "The unique identifier of an Aircraft.",
+					"BaseAttributeReference": {
+						"Entity": "AircraftConfiguration.cdm.json/AircraftConfiguration",
+						"Name": "AircraftId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "AircraftFamilyModelId",
+					"Description": "The unique identifier of an Aircraft Family Model.",
+					"BaseAttributeReference": {
+						"Entity": "AircraftConfiguration.cdm.json/AircraftConfiguration",
+						"Name": "AircraftFamilyModelId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ConfigurationId",
+					"Description": "The unique identifier of a configuration.",
+					"BaseAttributeReference": {
+						"Entity": "AircraftConfiguration.cdm.json/AircraftConfiguration",
+						"Name": "ConfigurationId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PeriodStartDate",
+					"Description": "The period start date for which the associated configuration is effective.",
+					"BaseAttributeReference": {
+						"Entity": "AircraftConfiguration.cdm.json/AircraftConfiguration",
+						"Name": "PeriodStartDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "PeriodEndDate",
+					"Description": "The period end date for which the associated configuration is effective",
+					"BaseAttributeReference": {
+						"Entity": "AircraftConfiguration.cdm.json/AircraftConfiguration",
+						"Name": "PeriodEndDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "AircraftConfigurationNote",
+					"Description": "A note, comment or additional information regarding the aircraft configuration.",
+					"BaseAttributeReference": {
+						"Entity": "AircraftConfiguration.cdm.json/AircraftConfiguration",
+						"Name": "AircraftConfigurationNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"AircraftId\":{\"entity\":\"AircraftConfiguration.cdm.json/AircraftConfiguration\",\"name\":\"AircraftId\"},\"AircraftFamilyModelId\":{\"entity\":\"AircraftConfiguration.cdm.json/AircraftConfiguration\",\"name\":\"AircraftFamilyModelId\"},\"ConfigurationId\":{\"entity\":\"AircraftConfiguration.cdm.json/AircraftConfiguration\",\"name\":\"ConfigurationId\"},\"PeriodStartDate\":{\"entity\":\"AircraftConfiguration.cdm.json/AircraftConfiguration\",\"name\":\"PeriodStartDate\"},\"PeriodEndDate\":{\"entity\":\"AircraftConfiguration.cdm.json/AircraftConfiguration\",\"name\":\"PeriodEndDate\"},\"AircraftConfigurationNote\":{\"entity\":\"AircraftConfiguration.cdm.json/AircraftConfiguration\",\"name\":\"AircraftConfigurationNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"AircraftConfiguration\",\"path\":\"AircraftConfiguration.cdm.json/AircraftConfiguration\"},\"description\":\"The configuration that was in use by the aircraft during the given period.\",\"primaryKey\":[\"AircraftId\",\"AircraftFamilyModelId\",\"ConfigurationId\",\"PeriodStartDate\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"AircraftId\",\"attributeReference\":{\"entity\":\"AircraftConfiguration.cdm.json/AircraftConfiguration\",\"name\":\"AircraftId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"AircraftFamilyModelId\",\"attributeReference\":{\"entity\":\"AircraftConfiguration.cdm.json/AircraftConfiguration\",\"name\":\"AircraftFamilyModelId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ConfigurationId\",\"attributeReference\":{\"entity\":\"AircraftConfiguration.cdm.json/AircraftConfiguration\",\"name\":\"ConfigurationId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"PeriodStartDate\",\"attributeReference\":{\"entity\":\"AircraftConfiguration.cdm.json/AircraftConfiguration\",\"name\":\"PeriodStartDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\"},{\"type\":\"Existing\",\"name\":\"PeriodEndDate\",\"attributeReference\":{\"entity\":\"AircraftConfiguration.cdm.json/AircraftConfiguration\",\"name\":\"PeriodEndDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\"},{\"type\":\"Existing\",\"name\":\"AircraftConfigurationNote\",\"attributeReference\":{\"entity\":\"AircraftConfiguration.cdm.json/AircraftConfiguration\",\"name\":\"AircraftConfigurationNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024}]}}}",
+			"Description": "The configuration that was in use by the aircraft during the given period.",
+			"DisplayFolderInfo": "{\"name\":\"Shipping\",\"colorCode\":\"#000B42\"}",
+			"PrimaryKeys": "AircraftId,AircraftFamilyModelId,ConfigurationId,PeriodStartDate"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

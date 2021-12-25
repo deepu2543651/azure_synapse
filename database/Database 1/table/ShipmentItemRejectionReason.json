@@ -1,0 +1,86 @@
+{
+	"name": "ShipmentItemRejectionReason",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "ShipmentItemRejectionReason",
+		"Description": "The reasons for rejection of the shipment items.\n\nEx:\n- Moisture damage\n- Physical handling damage\n- To be determined by Insurer",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ShipmentItemRejectionReasonId",
+					"Description": "The unique identifier of a Shipment Item Rejection Reason.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentItemRejectionReason.cdm.json/ShipmentItemRejectionReason",
+						"Name": "ShipmentItemRejectionReasonId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ShipmentItemRejectionReasonName",
+					"Description": "The name of a Shipment Item Rejection Reason.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentItemRejectionReason.cdm.json/ShipmentItemRejectionReason",
+						"Name": "ShipmentItemRejectionReasonName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ShipmentItemRejectionReasonDescription",
+					"Description": "The description of a Shipment Item Rejection Reason.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentItemRejectionReason.cdm.json/ShipmentItemRejectionReason",
+						"Name": "ShipmentItemRejectionReasonDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ShipmentItemRejectionReasonId\":{\"entity\":\"ShipmentItemRejectionReason.cdm.json/ShipmentItemRejectionReason\",\"name\":\"ShipmentItemRejectionReasonId\"},\"ShipmentItemRejectionReasonName\":{\"entity\":\"ShipmentItemRejectionReason.cdm.json/ShipmentItemRejectionReason\",\"name\":\"ShipmentItemRejectionReasonName\"},\"ShipmentItemRejectionReasonDescription\":{\"entity\":\"ShipmentItemRejectionReason.cdm.json/ShipmentItemRejectionReason\",\"name\":\"ShipmentItemRejectionReasonDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"ShipmentItemRejectionReason\",\"path\":\"ShipmentItemRejectionReason.cdm.json/ShipmentItemRejectionReason\"},\"description\":\"The reasons for rejection of the shipment items.\\n\\nEx:\\n- Moisture damage\\n- Physical handling damage\\n- To be determined by Insurer\",\"primaryKey\":[\"ShipmentItemRejectionReasonId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"ShipmentItemRejectionReasonId\",\"attributeReference\":{\"entity\":\"ShipmentItemRejectionReason.cdm.json/ShipmentItemRejectionReason\",\"name\":\"ShipmentItemRejectionReasonId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ShipmentItemRejectionReasonName\",\"attributeReference\":{\"entity\":\"ShipmentItemRejectionReason.cdm.json/ShipmentItemRejectionReason\",\"name\":\"ShipmentItemRejectionReasonName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"ShipmentItemRejectionReasonDescription\",\"attributeReference\":{\"entity\":\"ShipmentItemRejectionReason.cdm.json/ShipmentItemRejectionReason\",\"name\":\"ShipmentItemRejectionReasonDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512}]}}}",
+			"Description": "The reasons for rejection of the shipment items.\n\nEx:\n- Moisture damage\n- Physical handling damage\n- To be determined by Insurer",
+			"DisplayFolderInfo": "{\"name\":\"Shipping\",\"colorCode\":\"#000B42\"}",
+			"PrimaryKeys": "ShipmentItemRejectionReasonId"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

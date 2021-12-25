@@ -1,0 +1,26 @@
+{
+	"name": "relationship-dohtokvqcm",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "relationship-dohtokvqcm",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "AirWaybillStatus",
+		"ToTableName": "AirWaybill",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "AirWaybillStatusId",
+				"ToColumnName": "AirWaybillStatusId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"AirWaybillStatus.cdm.json/AirWaybillStatus\",\"toEntity\":\"AirWaybill.cdm.json/AirWaybill\",\"joinPairs\":[{\"fromAttribute\":\"AirWaybillStatusId\",\"toAttribute\":\"AirWaybillStatusId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

@@ -1,0 +1,34 @@
+{
+	"name": "relationship-nthzldzcij",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "relationship-nthzldzcij",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "SerializedPallet",
+		"ToTableName": "ShipmentItem",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ItemSku",
+				"ToColumnName": "ItemSku"
+			},
+			{
+				"FromColumnName": "PalletSerialNumber",
+				"ToColumnName": "PalletSerialNumber"
+			},
+			{
+				"FromColumnName": "PalletTypeId",
+				"ToColumnName": "PalletTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"SerializedPallet.cdm.json/SerializedPallet\",\"toEntity\":\"ShipmentItem.cdm.json/ShipmentItem\",\"joinPairs\":[{\"fromAttribute\":\"ItemSku\",\"toAttribute\":\"ItemSku\"},{\"fromAttribute\":\"PalletSerialNumber\",\"toAttribute\":\"PalletSerialNumber\"},{\"fromAttribute\":\"PalletTypeId\",\"toAttribute\":\"PalletTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

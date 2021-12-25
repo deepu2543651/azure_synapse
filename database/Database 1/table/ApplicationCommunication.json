@@ -1,0 +1,249 @@
+{
+	"name": "ApplicationCommunication",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "ApplicationCommunication",
+		"Description": "A communication that takes place utilizing an application or software product.\n\nThe term application is commonly used to describe multi-functional software that used to be found primarily on desktop and laptop computers. The term app is commonly used to describe single function software that is found primarily on phones. Now it is possible to find both applications and apps on desktops, laptops and phones. The term software product can be used to describe both applications and apps.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ApplicationCommunicationId",
+					"Description": "The unique identifier of an Application Communication.",
+					"BaseAttributeReference": {
+						"Entity": "ApplicationCommunication.cdm.json/ApplicationCommunication",
+						"Name": "ApplicationCommunicationId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "ApplicationCommunicationSentTimestamp",
+					"Description": "The timestamp when the application communication was sent.",
+					"BaseAttributeReference": {
+						"Entity": "ApplicationCommunication.cdm.json/ApplicationCommunication",
+						"Name": "ApplicationCommunicationSentTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "ApplicationCommunicationReceivedTimestamp",
+					"Description": "The timestamp when the application communication was received.",
+					"BaseAttributeReference": {
+						"Entity": "ApplicationCommunication.cdm.json/ApplicationCommunication",
+						"Name": "ApplicationCommunicationReceivedTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "ApplicationCommunicationData",
+					"Description": "The data that was transmitted during the communication.",
+					"BaseAttributeReference": {
+						"Entity": "ApplicationCommunication.cdm.json/ApplicationCommunication",
+						"Name": "ApplicationCommunicationData"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "binary",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "binary"
+						}
+					}
+				},
+				{
+					"Name": "IpAddress",
+					"Description": "The IP address of the device accessing the www site during the visit.\n\nEvery device connected to the public Internet is assigned a unique number known as an Internet Protocol (IP) address. \n\nIP addresses consist of four numbers separated by periods (also called a 'dotted-quad') and look something like 127.0.0.1.\n\nSince these numbers are usually assigned to internet service providers within region-based blocks, an IP address can often be used to identify the region or country from which a computer is connecting to the Internet. \n\nAn IP address can sometimes be used to show the user's general location.",
+					"BaseAttributeReference": {
+						"Entity": "ApplicationCommunication.cdm.json/ApplicationCommunication",
+						"Name": "IpAddress"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 15,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ComputingDeviceTypeId",
+					"Description": "The unique identifier of a Computing Device Type.",
+					"BaseAttributeReference": {
+						"Entity": "ApplicationCommunication.cdm.json/ApplicationCommunication",
+						"Name": "ComputingDeviceTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "DeviceId",
+					"Description": "The unique identifier of a Device.",
+					"BaseAttributeReference": {
+						"Entity": "ApplicationCommunication.cdm.json/ApplicationCommunication",
+						"Name": "DeviceId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "MacAddress",
+					"Description": "A MAC address is a hardware identification number that uniquely identifies a device on a network.",
+					"BaseAttributeReference": {
+						"Entity": "ApplicationCommunication.cdm.json/ApplicationCommunication",
+						"Name": "MacAddress"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 20,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "CustomerId",
+					"Description": "The unique identifier of a Customer.",
+					"BaseAttributeReference": {
+						"Entity": "ApplicationCommunication.cdm.json/ApplicationCommunication",
+						"Name": "CustomerId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "OperatingSystemId",
+					"Description": "The unique identifier of an Operating System.",
+					"BaseAttributeReference": {
+						"Entity": "ApplicationCommunication.cdm.json/ApplicationCommunication",
+						"Name": "OperatingSystemId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "OperatingSystemVersion",
+					"Description": "The version of an operating system.",
+					"BaseAttributeReference": {
+						"Entity": "ApplicationCommunication.cdm.json/ApplicationCommunication",
+						"Name": "OperatingSystemVersion"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "SoftwareProductId",
+					"Description": "The unique identifier of a software product.",
+					"BaseAttributeReference": {
+						"Entity": "ApplicationCommunication.cdm.json/ApplicationCommunication",
+						"Name": "SoftwareProductId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "SoftwareProductVersionNumber",
+					"Description": "The version number of the software product.",
+					"BaseAttributeReference": {
+						"Entity": "ApplicationCommunication.cdm.json/ApplicationCommunication",
+						"Name": "SoftwareProductVersionNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ApplicationCommunicationId\":{\"entity\":\"ApplicationCommunication.cdm.json/ApplicationCommunication\",\"name\":\"ApplicationCommunicationId\"},\"ApplicationCommunicationSentTimestamp\":{\"entity\":\"ApplicationCommunication.cdm.json/ApplicationCommunication\",\"name\":\"ApplicationCommunicationSentTimestamp\"},\"ApplicationCommunicationReceivedTimestamp\":{\"entity\":\"ApplicationCommunication.cdm.json/ApplicationCommunication\",\"name\":\"ApplicationCommunicationReceivedTimestamp\"},\"ApplicationCommunicationData\":{\"entity\":\"ApplicationCommunication.cdm.json/ApplicationCommunication\",\"name\":\"ApplicationCommunicationData\"},\"IpAddress\":{\"entity\":\"ApplicationCommunication.cdm.json/ApplicationCommunication\",\"name\":\"IpAddress\"},\"ComputingDeviceTypeId\":{\"entity\":\"ApplicationCommunication.cdm.json/ApplicationCommunication\",\"name\":\"ComputingDeviceTypeId\"},\"DeviceId\":{\"entity\":\"ApplicationCommunication.cdm.json/ApplicationCommunication\",\"name\":\"DeviceId\"},\"MacAddress\":{\"entity\":\"ApplicationCommunication.cdm.json/ApplicationCommunication\",\"name\":\"MacAddress\"},\"CustomerId\":{\"entity\":\"ApplicationCommunication.cdm.json/ApplicationCommunication\",\"name\":\"CustomerId\"},\"OperatingSystemId\":{\"entity\":\"ApplicationCommunication.cdm.json/ApplicationCommunication\",\"name\":\"OperatingSystemId\"},\"OperatingSystemVersion\":{\"entity\":\"ApplicationCommunication.cdm.json/ApplicationCommunication\",\"name\":\"OperatingSystemVersion\"},\"SoftwareProductId\":{\"entity\":\"ApplicationCommunication.cdm.json/ApplicationCommunication\",\"name\":\"SoftwareProductId\"},\"SoftwareProductVersionNumber\":{\"entity\":\"ApplicationCommunication.cdm.json/ApplicationCommunication\",\"name\":\"SoftwareProductVersionNumber\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"ApplicationCommunication\",\"path\":\"ApplicationCommunication.cdm.json/ApplicationCommunication\"},\"description\":\"A communication that takes place utilizing an application or software product.\\n\\nThe term application is commonly used to describe multi-functional software that used to be found primarily on desktop and laptop computers. The term app is commonly used to describe single function software that is found primarily on phones. Now it is possible to find both applications and apps on desktops, laptops and phones. The term software product can be used to describe both applications and apps.\",\"primaryKey\":[\"ApplicationCommunicationId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"ApplicationCommunicationId\",\"attributeReference\":{\"entity\":\"ApplicationCommunication.cdm.json/ApplicationCommunication\",\"name\":\"ApplicationCommunicationId\"},\"dataType\":\"long\"},{\"type\":\"Existing\",\"name\":\"ApplicationCommunicationSentTimestamp\",\"attributeReference\":{\"entity\":\"ApplicationCommunication.cdm.json/ApplicationCommunication\",\"name\":\"ApplicationCommunicationSentTimestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"ApplicationCommunicationReceivedTimestamp\",\"attributeReference\":{\"entity\":\"ApplicationCommunication.cdm.json/ApplicationCommunication\",\"name\":\"ApplicationCommunicationReceivedTimestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"ApplicationCommunicationData\",\"attributeReference\":{\"entity\":\"ApplicationCommunication.cdm.json/ApplicationCommunication\",\"name\":\"ApplicationCommunicationData\"},\"dataType\":\"binary\"},{\"type\":\"Existing\",\"name\":\"IpAddress\",\"attributeReference\":{\"entity\":\"ApplicationCommunication.cdm.json/ApplicationCommunication\",\"name\":\"IpAddress\"},\"dataType\":\"string\",\"dataTypeLength\":15},{\"type\":\"Existing\",\"name\":\"ComputingDeviceTypeId\",\"attributeReference\":{\"entity\":\"ApplicationCommunication.cdm.json/ApplicationCommunication\",\"name\":\"ComputingDeviceTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"DeviceId\",\"attributeReference\":{\"entity\":\"ApplicationCommunication.cdm.json/ApplicationCommunication\",\"name\":\"DeviceId\"},\"dataType\":\"long\"},{\"type\":\"Existing\",\"name\":\"MacAddress\",\"attributeReference\":{\"entity\":\"ApplicationCommunication.cdm.json/ApplicationCommunication\",\"name\":\"MacAddress\"},\"dataType\":\"string\",\"dataTypeLength\":20},{\"type\":\"Existing\",\"name\":\"CustomerId\",\"attributeReference\":{\"entity\":\"ApplicationCommunication.cdm.json/ApplicationCommunication\",\"name\":\"CustomerId\"},\"dataType\":\"long\"},{\"type\":\"Existing\",\"name\":\"OperatingSystemId\",\"attributeReference\":{\"entity\":\"ApplicationCommunication.cdm.json/ApplicationCommunication\",\"name\":\"OperatingSystemId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"OperatingSystemVersion\",\"attributeReference\":{\"entity\":\"ApplicationCommunication.cdm.json/ApplicationCommunication\",\"name\":\"OperatingSystemVersion\"},\"dataType\":\"string\",\"dataTypeLength\":1024},{\"type\":\"Existing\",\"name\":\"SoftwareProductId\",\"attributeReference\":{\"entity\":\"ApplicationCommunication.cdm.json/ApplicationCommunication\",\"name\":\"SoftwareProductId\"},\"dataType\":\"long\"},{\"type\":\"Existing\",\"name\":\"SoftwareProductVersionNumber\",\"attributeReference\":{\"entity\":\"ApplicationCommunication.cdm.json/ApplicationCommunication\",\"name\":\"SoftwareProductVersionNumber\"},\"dataType\":\"integer\"}]}}}",
+			"Description": "A communication that takes place utilizing an application or software product.\n\nThe term application is commonly used to describe multi-functional software that used to be found primarily on desktop and laptop computers. The term app is commonly used to describe single function software that is found primarily on phones. Now it is possible to find both applications and apps on desktops, laptops and phones. The term software product can be used to describe both applications and apps.",
+			"DisplayFolderInfo": "{\"name\":\"Customer Service & Contact Management\",\"colorCode\":\"#502006\"}",
+			"PrimaryKeys": "ApplicationCommunicationId"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

@@ -1,0 +1,86 @@
+{
+	"name": "ItemSafetyClassification",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "ItemSafetyClassification",
+		"Description": "A classification of Items based upon storage safety considerations.\n\nEx:\n-  Flammable\n-  Toxic\n-  Radioactive\n-  Hazardous substance",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ItemSafetyClassificationId",
+					"Description": "The unique identifier of an Item Safety Classification.",
+					"BaseAttributeReference": {
+						"Entity": "ItemSafetyClassification.cdm.json/ItemSafetyClassification",
+						"Name": "ItemSafetyClassificationId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ItemSafetyClassificationName",
+					"Description": "The name of the Item Safety Classification.",
+					"BaseAttributeReference": {
+						"Entity": "ItemSafetyClassification.cdm.json/ItemSafetyClassification",
+						"Name": "ItemSafetyClassificationName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ItemSafetyClassificationDescription",
+					"Description": "The description of the Item Safety Classification.",
+					"BaseAttributeReference": {
+						"Entity": "ItemSafetyClassification.cdm.json/ItemSafetyClassification",
+						"Name": "ItemSafetyClassificationDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ItemSafetyClassificationId\":{\"entity\":\"ItemSafetyClassification.cdm.json/ItemSafetyClassification\",\"name\":\"ItemSafetyClassificationId\"},\"ItemSafetyClassificationName\":{\"entity\":\"ItemSafetyClassification.cdm.json/ItemSafetyClassification\",\"name\":\"ItemSafetyClassificationName\"},\"ItemSafetyClassificationDescription\":{\"entity\":\"ItemSafetyClassification.cdm.json/ItemSafetyClassification\",\"name\":\"ItemSafetyClassificationDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"ItemSafetyClassification\",\"path\":\"ItemSafetyClassification.cdm.json/ItemSafetyClassification\"},\"description\":\"A classification of Items based upon storage safety considerations.\\n\\nEx:\\n-  Flammable\\n-  Toxic\\n-  Radioactive\\n-  Hazardous substance\",\"primaryKey\":[\"ItemSafetyClassificationId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"ItemSafetyClassificationId\",\"attributeReference\":{\"entity\":\"ItemSafetyClassification.cdm.json/ItemSafetyClassification\",\"name\":\"ItemSafetyClassificationId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ItemSafetyClassificationName\",\"attributeReference\":{\"entity\":\"ItemSafetyClassification.cdm.json/ItemSafetyClassification\",\"name\":\"ItemSafetyClassificationName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"ItemSafetyClassificationDescription\",\"attributeReference\":{\"entity\":\"ItemSafetyClassification.cdm.json/ItemSafetyClassification\",\"name\":\"ItemSafetyClassificationDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512}]}}}",
+			"Description": "A classification of Items based upon storage safety considerations.\n\nEx:\n-  Flammable\n-  Toxic\n-  Radioactive\n-  Hazardous substance",
+			"DisplayFolderInfo": "{\"name\":\"Inventory\",\"colorCode\":\"#EA279F\"}",
+			"PrimaryKeys": "ItemSafetyClassificationId"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

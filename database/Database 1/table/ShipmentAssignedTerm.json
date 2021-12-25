@@ -1,0 +1,85 @@
+{
+	"name": "ShipmentAssignedTerm",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "ShipmentAssignedTerm",
+		"Description": "The one or more Shipment Term(s) assigned to or describing a Shipment.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ShipmentId",
+					"Description": "The unique identifier of a Shipment.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentAssignedTerm.cdm.json/ShipmentAssignedTerm",
+						"Name": "ShipmentId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ShipmentTermTypeId",
+					"Description": "The unique identifier of a Shipment Term.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentAssignedTerm.cdm.json/ShipmentAssignedTerm",
+						"Name": "ShipmentTermTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ShipmentAssignedTermNote",
+					"Description": "Notes, comments or additional information regarding the shipment assigned term(s).",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentAssignedTerm.cdm.json/ShipmentAssignedTerm",
+						"Name": "ShipmentAssignedTermNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ShipmentId\":{\"entity\":\"ShipmentAssignedTerm.cdm.json/ShipmentAssignedTerm\",\"name\":\"ShipmentId\"},\"ShipmentTermTypeId\":{\"entity\":\"ShipmentAssignedTerm.cdm.json/ShipmentAssignedTerm\",\"name\":\"ShipmentTermTypeId\"},\"ShipmentAssignedTermNote\":{\"entity\":\"ShipmentAssignedTerm.cdm.json/ShipmentAssignedTerm\",\"name\":\"ShipmentAssignedTermNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"ShipmentAssignedTerm\",\"path\":\"ShipmentAssignedTerm.cdm.json/ShipmentAssignedTerm\"},\"description\":\"The one or more Shipment Term(s) assigned to or describing a Shipment.\",\"primaryKey\":[\"ShipmentId\",\"ShipmentTermTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"ShipmentId\",\"attributeReference\":{\"entity\":\"ShipmentAssignedTerm.cdm.json/ShipmentAssignedTerm\",\"name\":\"ShipmentId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ShipmentTermTypeId\",\"attributeReference\":{\"entity\":\"ShipmentAssignedTerm.cdm.json/ShipmentAssignedTerm\",\"name\":\"ShipmentTermTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ShipmentAssignedTermNote\",\"attributeReference\":{\"entity\":\"ShipmentAssignedTerm.cdm.json/ShipmentAssignedTerm\",\"name\":\"ShipmentAssignedTermNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024}]}}}",
+			"Description": "The one or more Shipment Term(s) assigned to or describing a Shipment.",
+			"DisplayFolderInfo": "{\"name\":\"Shipping\",\"colorCode\":\"#000B42\"}",
+			"PrimaryKeys": "ShipmentId,ShipmentTermTypeId"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

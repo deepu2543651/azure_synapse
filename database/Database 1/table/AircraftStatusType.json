@@ -1,0 +1,86 @@
+{
+	"name": "AircraftStatusType",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "AircraftStatusType",
+		"Description": "A status type that may be associated with an aircraft for a period of time.\n\nEx:\n- Operational\n- In maintenance\n- Non-operational",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "AircraftStatusTypeId",
+					"Description": "The unique identifier of an Aircraft Status Type.",
+					"BaseAttributeReference": {
+						"Entity": "AircraftStatusType.cdm.json/AircraftStatusType",
+						"Name": "AircraftStatusTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "AircraftStatusTypeName",
+					"Description": "The name of an Aircraft Status Type.",
+					"BaseAttributeReference": {
+						"Entity": "AircraftStatusType.cdm.json/AircraftStatusType",
+						"Name": "AircraftStatusTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "AircraftStatusTypeDescription",
+					"Description": "The description of an Aircraft Status Type.",
+					"BaseAttributeReference": {
+						"Entity": "AircraftStatusType.cdm.json/AircraftStatusType",
+						"Name": "AircraftStatusTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"AircraftStatusTypeId\":{\"entity\":\"AircraftStatusType.cdm.json/AircraftStatusType\",\"name\":\"AircraftStatusTypeId\"},\"AircraftStatusTypeName\":{\"entity\":\"AircraftStatusType.cdm.json/AircraftStatusType\",\"name\":\"AircraftStatusTypeName\"},\"AircraftStatusTypeDescription\":{\"entity\":\"AircraftStatusType.cdm.json/AircraftStatusType\",\"name\":\"AircraftStatusTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"AircraftStatusType\",\"path\":\"AircraftStatusType.cdm.json/AircraftStatusType\"},\"description\":\"A status type that may be associated with an aircraft for a period of time.\\n\\nEx:\\n- Operational\\n- In maintenance\\n- Non-operational\",\"primaryKey\":[\"AircraftStatusTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"AircraftStatusTypeId\",\"attributeReference\":{\"entity\":\"AircraftStatusType.cdm.json/AircraftStatusType\",\"name\":\"AircraftStatusTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"AircraftStatusTypeName\",\"attributeReference\":{\"entity\":\"AircraftStatusType.cdm.json/AircraftStatusType\",\"name\":\"AircraftStatusTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"AircraftStatusTypeDescription\",\"attributeReference\":{\"entity\":\"AircraftStatusType.cdm.json/AircraftStatusType\",\"name\":\"AircraftStatusTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512}]}}}",
+			"Description": "A status type that may be associated with an aircraft for a period of time.\n\nEx:\n- Operational\n- In maintenance\n- Non-operational",
+			"DisplayFolderInfo": "{\"name\":\"Shipping\",\"colorCode\":\"#000B42\"}",
+			"PrimaryKeys": "AircraftStatusTypeId"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

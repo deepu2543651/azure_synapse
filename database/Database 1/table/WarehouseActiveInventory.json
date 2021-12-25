@@ -1,0 +1,152 @@
+{
+	"name": "WarehouseActiveInventory",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "WarehouseActiveInventory",
+		"Description": "Any item or element of inventory which has been shipped from the Warehouse within the period of time.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "WarehouseId",
+					"Description": "The unique identifier of a Warehouse.",
+					"BaseAttributeReference": {
+						"Entity": "WarehouseActiveInventory.cdm.json/WarehouseActiveInventory",
+						"Name": "WarehouseId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ItemSku",
+					"Description": "The Stock Keeping Unit identifier, which is typically used for inventory-related activities.",
+					"BaseAttributeReference": {
+						"Entity": "WarehouseActiveInventory.cdm.json/WarehouseActiveInventory",
+						"Name": "ItemSku"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Length": 20,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "PeriodStartTimestamp",
+					"Description": "The period starting timestamp for which the active inventory shipments are recorded.",
+					"BaseAttributeReference": {
+						"Entity": "WarehouseActiveInventory.cdm.json/WarehouseActiveInventory",
+						"Name": "PeriodStartTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "PeriodEndTimestamp",
+					"Description": "The period ending timestamp for which the active inventory shipments are recorded.",
+					"BaseAttributeReference": {
+						"Entity": "WarehouseActiveInventory.cdm.json/WarehouseActiveInventory",
+						"Name": "PeriodEndTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "QuantityShipped",
+					"Description": "The actual quantity of Items shipped from the Warehouse during the associated period.",
+					"BaseAttributeReference": {
+						"Entity": "WarehouseActiveInventory.cdm.json/WarehouseActiveInventory",
+						"Name": "QuantityShipped"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "InventoryActivePeriod",
+					"Description": "The number of days that are used to determine the window for identifying active Item inventory.\n\nFor example, a value of 120 means that if an Item has not been shipped within 120 days it is considered 'inactive'.",
+					"BaseAttributeReference": {
+						"Entity": "WarehouseActiveInventory.cdm.json/WarehouseActiveInventory",
+						"Name": "InventoryActivePeriod"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "WarehouseInventoryNote",
+					"Description": "A note, comment or additional information regarding the Warehouse Active Item inventory.",
+					"BaseAttributeReference": {
+						"Entity": "WarehouseActiveInventory.cdm.json/WarehouseActiveInventory",
+						"Name": "WarehouseInventoryNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"WarehouseId\":{\"entity\":\"WarehouseActiveInventory.cdm.json/WarehouseActiveInventory\",\"name\":\"WarehouseId\"},\"ItemSku\":{\"entity\":\"WarehouseActiveInventory.cdm.json/WarehouseActiveInventory\",\"name\":\"ItemSku\"},\"PeriodStartTimestamp\":{\"entity\":\"WarehouseActiveInventory.cdm.json/WarehouseActiveInventory\",\"name\":\"PeriodStartTimestamp\"},\"PeriodEndTimestamp\":{\"entity\":\"WarehouseActiveInventory.cdm.json/WarehouseActiveInventory\",\"name\":\"PeriodEndTimestamp\"},\"QuantityShipped\":{\"entity\":\"WarehouseActiveInventory.cdm.json/WarehouseActiveInventory\",\"name\":\"QuantityShipped\"},\"InventoryActivePeriod\":{\"entity\":\"WarehouseActiveInventory.cdm.json/WarehouseActiveInventory\",\"name\":\"InventoryActivePeriod\"},\"WarehouseInventoryNote\":{\"entity\":\"WarehouseActiveInventory.cdm.json/WarehouseActiveInventory\",\"name\":\"WarehouseInventoryNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"WarehouseActiveInventory\",\"path\":\"WarehouseActiveInventory.cdm.json/WarehouseActiveInventory\"},\"description\":\"Any item or element of inventory which has been shipped from the Warehouse within the period of time.\",\"primaryKey\":[\"WarehouseId\",\"ItemSku\",\"PeriodStartTimestamp\",\"PeriodEndTimestamp\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"WarehouseId\",\"attributeReference\":{\"entity\":\"WarehouseActiveInventory.cdm.json/WarehouseActiveInventory\",\"name\":\"WarehouseId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ItemSku\",\"attributeReference\":{\"entity\":\"WarehouseActiveInventory.cdm.json/WarehouseActiveInventory\",\"name\":\"ItemSku\"},\"dataType\":\"string\",\"dataTypeLength\":20},{\"type\":\"Existing\",\"name\":\"PeriodStartTimestamp\",\"attributeReference\":{\"entity\":\"WarehouseActiveInventory.cdm.json/WarehouseActiveInventory\",\"name\":\"PeriodStartTimestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"PeriodEndTimestamp\",\"attributeReference\":{\"entity\":\"WarehouseActiveInventory.cdm.json/WarehouseActiveInventory\",\"name\":\"PeriodEndTimestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"QuantityShipped\",\"attributeReference\":{\"entity\":\"WarehouseActiveInventory.cdm.json/WarehouseActiveInventory\",\"name\":\"QuantityShipped\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"InventoryActivePeriod\",\"attributeReference\":{\"entity\":\"WarehouseActiveInventory.cdm.json/WarehouseActiveInventory\",\"name\":\"InventoryActivePeriod\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"WarehouseInventoryNote\",\"attributeReference\":{\"entity\":\"WarehouseActiveInventory.cdm.json/WarehouseActiveInventory\",\"name\":\"WarehouseInventoryNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024}]}}}",
+			"Description": "Any item or element of inventory which has been shipped from the Warehouse within the period of time.",
+			"DisplayFolderInfo": "{\"name\":\"Inventory\",\"colorCode\":\"#EA279F\"}",
+			"PrimaryKeys": "WarehouseId,ItemSku,PeriodStartTimestamp,PeriodEndTimestamp"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

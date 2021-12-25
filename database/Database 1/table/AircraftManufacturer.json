@@ -1,0 +1,103 @@
+{
+	"name": "AircraftManufacturer",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "AircraftManufacturer",
+		"Description": "The manufacturer of an aircraft family of planes.\n\nEx:\n- Boeing\n- Airbus",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "AircraftManufacturerId",
+					"Description": "The unique identifier of an Aircraft Manufacturer.",
+					"BaseAttributeReference": {
+						"Entity": "AircraftManufacturer.cdm.json/AircraftManufacturer",
+						"Name": "AircraftManufacturerId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "AircraftManufacturerName",
+					"Description": "The name of an Aircraft Manufacturer.",
+					"BaseAttributeReference": {
+						"Entity": "AircraftManufacturer.cdm.json/AircraftManufacturer",
+						"Name": "AircraftManufacturerName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "DunsNumber",
+					"Description": "An exclusive nine-digit Dun & Bradstreet D-U-N-S Number is assigned to each business location in a global database, it is widely used as a tool for identifying, organizing and consolidating information about businesses. Companies worldwide use it to link information about suppliers, customers and trading partners, providing them a more complete picture of risks and opportunities in their business relationships.\n\nD&B D-U-N-S Numbers are the key to building corporate family relationships in the D&B file. Since each location of a business may have its own unique D&B D-U-N-S Number, a large organization is likely to have many different D&B D-U-N-S Numbers within its corporate \"family tree\". D&B links the D&B D-U-N-S Numbers of parents, subsidiaries, headquarters and branches on more than 6.0 million corporate family members around the world.",
+					"BaseAttributeReference": {
+						"Entity": "AircraftManufacturer.cdm.json/AircraftManufacturer",
+						"Name": "DunsNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 9,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "PartyId",
+					"Description": "The unique identifier of a Party.",
+					"BaseAttributeReference": {
+						"Entity": "AircraftManufacturer.cdm.json/AircraftManufacturer",
+						"Name": "PartyId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"AircraftManufacturerId\":{\"entity\":\"AircraftManufacturer.cdm.json/AircraftManufacturer\",\"name\":\"AircraftManufacturerId\"},\"AircraftManufacturerName\":{\"entity\":\"AircraftManufacturer.cdm.json/AircraftManufacturer\",\"name\":\"AircraftManufacturerName\"},\"DunsNumber\":{\"entity\":\"AircraftManufacturer.cdm.json/AircraftManufacturer\",\"name\":\"DunsNumber\"},\"PartyId\":{\"entity\":\"AircraftManufacturer.cdm.json/AircraftManufacturer\",\"name\":\"PartyId\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"AircraftManufacturer\",\"path\":\"AircraftManufacturer.cdm.json/AircraftManufacturer\"},\"description\":\"The manufacturer of an aircraft family of planes.\\n\\nEx:\\n- Boeing\\n- Airbus\",\"primaryKey\":[\"AircraftManufacturerId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"AircraftManufacturerId\",\"attributeReference\":{\"entity\":\"AircraftManufacturer.cdm.json/AircraftManufacturer\",\"name\":\"AircraftManufacturerId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"AircraftManufacturerName\",\"attributeReference\":{\"entity\":\"AircraftManufacturer.cdm.json/AircraftManufacturer\",\"name\":\"AircraftManufacturerName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"DunsNumber\",\"attributeReference\":{\"entity\":\"AircraftManufacturer.cdm.json/AircraftManufacturer\",\"name\":\"DunsNumber\"},\"dataType\":\"decimal\",\"dataTypeLength\":9,\"scale\":0},{\"type\":\"Existing\",\"name\":\"PartyId\",\"attributeReference\":{\"entity\":\"AircraftManufacturer.cdm.json/AircraftManufacturer\",\"name\":\"PartyId\"},\"dataType\":\"long\"}]}}}",
+			"Description": "The manufacturer of an aircraft family of planes.\n\nEx:\n- Boeing\n- Airbus",
+			"DisplayFolderInfo": "{\"name\":\"Shipping\",\"colorCode\":\"#000B42\"}",
+			"PrimaryKeys": "AircraftManufacturerId"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

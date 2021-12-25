@@ -1,0 +1,86 @@
+{
+	"name": "RouteLegType",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "RouteLegType",
+		"Description": "A categorization of route legs based on their arrangement in the route sequence.\n\nEx:\n- Starting location\n- In-transit location\n- Destination",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "RouteLegTypeId",
+					"Description": "The unique identifier of a Route Leg Type.",
+					"BaseAttributeReference": {
+						"Entity": "RouteLegType.cdm.json/RouteLegType",
+						"Name": "RouteLegTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "RouteLegTypeName",
+					"Description": "The name of a Route Leg Type.",
+					"BaseAttributeReference": {
+						"Entity": "RouteLegType.cdm.json/RouteLegType",
+						"Name": "RouteLegTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "RouteLegTypeDescription",
+					"Description": "The description of a Route Leg Type.",
+					"BaseAttributeReference": {
+						"Entity": "RouteLegType.cdm.json/RouteLegType",
+						"Name": "RouteLegTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"RouteLegTypeId\":{\"entity\":\"RouteLegType.cdm.json/RouteLegType\",\"name\":\"RouteLegTypeId\"},\"RouteLegTypeName\":{\"entity\":\"RouteLegType.cdm.json/RouteLegType\",\"name\":\"RouteLegTypeName\"},\"RouteLegTypeDescription\":{\"entity\":\"RouteLegType.cdm.json/RouteLegType\",\"name\":\"RouteLegTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"RouteLegType\",\"path\":\"RouteLegType.cdm.json/RouteLegType\"},\"description\":\"A categorization of route legs based on their arrangement in the route sequence.\\n\\nEx:\\n- Starting location\\n- In-transit location\\n- Destination\",\"primaryKey\":[\"RouteLegTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"RouteLegTypeId\",\"attributeReference\":{\"entity\":\"RouteLegType.cdm.json/RouteLegType\",\"name\":\"RouteLegTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"RouteLegTypeName\",\"attributeReference\":{\"entity\":\"RouteLegType.cdm.json/RouteLegType\",\"name\":\"RouteLegTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"RouteLegTypeDescription\",\"attributeReference\":{\"entity\":\"RouteLegType.cdm.json/RouteLegType\",\"name\":\"RouteLegTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512}]}}}",
+			"Description": "A categorization of route legs based on their arrangement in the route sequence.\n\nEx:\n- Starting location\n- In-transit location\n- Destination",
+			"DisplayFolderInfo": "{\"name\":\"Shipping\",\"colorCode\":\"#000B42\"}",
+			"PrimaryKeys": "RouteLegTypeId"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

@@ -1,0 +1,26 @@
+{
+	"name": "relationship-pohkwxyamv",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "relationship-pohkwxyamv",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "ProtocolType",
+		"ToTableName": "SoftwareProductVersion",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ProtocolTypeId",
+				"ToColumnName": "ProtocolTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"ProtocolType.cdm.json/ProtocolType\",\"toEntity\":\"SoftwareProductVersion.cdm.json/SoftwareProductVersion\",\"joinPairs\":[{\"fromAttribute\":\"ProtocolTypeId\",\"toAttribute\":\"ProtocolTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

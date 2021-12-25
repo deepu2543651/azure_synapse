@@ -1,0 +1,149 @@
+{
+	"name": "BarCode",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "BarCode",
+		"Description": "The bar code.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "BarCodeId",
+					"Description": "The unique identifier of a Bar Code.",
+					"BaseAttributeReference": {
+						"Entity": "BarCode.cdm.json/BarCode",
+						"Name": "BarCodeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "BarCodeStandardId",
+					"Description": "The unique identifier of a Bar Code Standard.",
+					"BaseAttributeReference": {
+						"Entity": "BarCode.cdm.json/BarCode",
+						"Name": "BarCodeStandardId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "BarCodeImage",
+					"Description": "A small image composed of bars and spaces that is used to represent the Bar Code.",
+					"BaseAttributeReference": {
+						"Entity": "BarCode.cdm.json/BarCode",
+						"Name": "BarCodeImage"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "binary",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "binary"
+						}
+					}
+				},
+				{
+					"Name": "ItemSku",
+					"Description": "The Stock Keeping Unit identifier, which is typically used for inventory-related activities.",
+					"BaseAttributeReference": {
+						"Entity": "BarCode.cdm.json/BarCode",
+						"Name": "ItemSku"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 20,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ProductId",
+					"Description": "The unique identifier of a Product.",
+					"BaseAttributeReference": {
+						"Entity": "BarCode.cdm.json/BarCode",
+						"Name": "ProductId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "AssetId",
+					"Description": "The unique identifier of an Asset.",
+					"BaseAttributeReference": {
+						"Entity": "BarCode.cdm.json/BarCode",
+						"Name": "AssetId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "CouponId",
+					"Description": "The unique identifier of a coupon.",
+					"BaseAttributeReference": {
+						"Entity": "BarCode.cdm.json/BarCode",
+						"Name": "CouponId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"BarCodeId\":{\"entity\":\"BarCode.cdm.json/BarCode\",\"name\":\"BarCodeId\"},\"BarCodeStandardId\":{\"entity\":\"BarCode.cdm.json/BarCode\",\"name\":\"BarCodeStandardId\"},\"BarCodeImage\":{\"entity\":\"BarCode.cdm.json/BarCode\",\"name\":\"BarCodeImage\"},\"ItemSku\":{\"entity\":\"BarCode.cdm.json/BarCode\",\"name\":\"ItemSku\"},\"ProductId\":{\"entity\":\"BarCode.cdm.json/BarCode\",\"name\":\"ProductId\"},\"AssetId\":{\"entity\":\"BarCode.cdm.json/BarCode\",\"name\":\"AssetId\"},\"CouponId\":{\"entity\":\"BarCode.cdm.json/BarCode\",\"name\":\"CouponId\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"BarCode\",\"path\":\"BarCode.cdm.json/BarCode\"},\"description\":\"The bar code.\",\"primaryKey\":[\"BarCodeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"BarCodeId\",\"attributeReference\":{\"entity\":\"BarCode.cdm.json/BarCode\",\"name\":\"BarCodeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"BarCodeStandardId\",\"attributeReference\":{\"entity\":\"BarCode.cdm.json/BarCode\",\"name\":\"BarCodeStandardId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"BarCodeImage\",\"attributeReference\":{\"entity\":\"BarCode.cdm.json/BarCode\",\"name\":\"BarCodeImage\"},\"dataType\":\"binary\"},{\"type\":\"Existing\",\"name\":\"ItemSku\",\"attributeReference\":{\"entity\":\"BarCode.cdm.json/BarCode\",\"name\":\"ItemSku\"},\"dataType\":\"string\",\"dataTypeLength\":20},{\"type\":\"Existing\",\"name\":\"ProductId\",\"attributeReference\":{\"entity\":\"BarCode.cdm.json/BarCode\",\"name\":\"ProductId\"},\"dataType\":\"long\"},{\"type\":\"Existing\",\"name\":\"AssetId\",\"attributeReference\":{\"entity\":\"BarCode.cdm.json/BarCode\",\"name\":\"AssetId\"},\"dataType\":\"long\"},{\"type\":\"Existing\",\"name\":\"CouponId\",\"attributeReference\":{\"entity\":\"BarCode.cdm.json/BarCode\",\"name\":\"CouponId\"},\"dataType\":\"integer\"}]}}}",
+			"Description": "The bar code.",
+			"DisplayFolderInfo": "{\"name\":\"Inventory\",\"colorCode\":\"#EA279F\"}",
+			"PrimaryKeys": "BarCodeId"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

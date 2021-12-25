@@ -1,0 +1,86 @@
+{
+	"name": "CustomerAccountType",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "CustomerAccountType",
+		"Description": "A categorization of customer accounts based upon common characteristics, objectives, legal status, marketing objectives or similar criteria. Types may be industry-specific.\n\nEx:\n- Family \n- Individual  \n- Business\n- Government\n- Residential \n- Prepay   \n- Escrow\n- Subaccount\n- Checking \n- Credit Card\n- Loyalty card\n- On-line account\n- Store account",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "CustomerAccountTypeId",
+					"Description": "The unique identifier of a Customer Account Type.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountType.cdm.json/CustomerAccountType",
+						"Name": "CustomerAccountTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "CustomerAccountTypeName",
+					"Description": "The name of a Customer Account Type.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountType.cdm.json/CustomerAccountType",
+						"Name": "CustomerAccountTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "CustomerAccountTypeDescription",
+					"Description": "The description of a Customer Account Type.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountType.cdm.json/CustomerAccountType",
+						"Name": "CustomerAccountTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"CustomerAccountTypeId\":{\"entity\":\"CustomerAccountType.cdm.json/CustomerAccountType\",\"name\":\"CustomerAccountTypeId\"},\"CustomerAccountTypeName\":{\"entity\":\"CustomerAccountType.cdm.json/CustomerAccountType\",\"name\":\"CustomerAccountTypeName\"},\"CustomerAccountTypeDescription\":{\"entity\":\"CustomerAccountType.cdm.json/CustomerAccountType\",\"name\":\"CustomerAccountTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"CustomerAccountType\",\"path\":\"CustomerAccountType.cdm.json/CustomerAccountType\"},\"description\":\"A categorization of customer accounts based upon common characteristics, objectives, legal status, marketing objectives or similar criteria. Types may be industry-specific.\\n\\nEx:\\n- Family \\n- Individual  \\n- Business\\n- Government\\n- Residential \\n- Prepay   \\n- Escrow\\n- Subaccount\\n- Checking \\n- Credit Card\\n- Loyalty card\\n- On-line account\\n- Store account\",\"primaryKey\":[\"CustomerAccountTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"CustomerAccountTypeId\",\"attributeReference\":{\"entity\":\"CustomerAccountType.cdm.json/CustomerAccountType\",\"name\":\"CustomerAccountTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"CustomerAccountTypeName\",\"attributeReference\":{\"entity\":\"CustomerAccountType.cdm.json/CustomerAccountType\",\"name\":\"CustomerAccountTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"CustomerAccountTypeDescription\",\"attributeReference\":{\"entity\":\"CustomerAccountType.cdm.json/CustomerAccountType\",\"name\":\"CustomerAccountTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512}]}}}",
+			"Description": "A categorization of customer accounts based upon common characteristics, objectives, legal status, marketing objectives or similar criteria. Types may be industry-specific.\n\nEx:\n- Family \n- Individual  \n- Business\n- Government\n- Residential \n- Prepay   \n- Escrow\n- Subaccount\n- Checking \n- Credit Card\n- Loyalty card\n- On-line account\n- Store account",
+			"DisplayFolderInfo": "{\"name\":\"Customer Account\",\"colorCode\":\"#022F22\"}",
+			"PrimaryKeys": "CustomerAccountTypeId"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

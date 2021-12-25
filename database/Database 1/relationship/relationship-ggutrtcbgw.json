@@ -1,0 +1,26 @@
+{
+	"name": "relationship-ggutrtcbgw",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "relationship-ggutrtcbgw",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "InsurancePolicy",
+		"ToTableName": "InsurancePolicyRelatedParty",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "InsurancePolicyId",
+				"ToColumnName": "InsurancePolicyId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"InsurancePolicy.cdm.json/InsurancePolicy\",\"toEntity\":\"InsurancePolicyRelatedParty.cdm.json/InsurancePolicyRelatedParty\",\"joinPairs\":[{\"fromAttribute\":\"InsurancePolicyId\",\"toAttribute\":\"InsurancePolicyId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

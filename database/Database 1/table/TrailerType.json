@@ -1,0 +1,86 @@
+{
+	"name": "TrailerType",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "TrailerType",
+		"Description": "A classification of trailers based on common characteristics or functionality.\n\nEx:\nCONTAINER CHASSIS\nSingle-purpose semitrailer designed to carry a shipping container.\n\nLOWBOY\nOpen flat-bed trailer with a deck height very low to the ground, used to haul construction equipment or bulky or heavy loads.\n\nPIGGYBACK\nSemitrailer built with reinforcements to withstand transport by a railroad flatcar.\n\nPULL TRAILER\nShort, full trailer (supported by axles front and rear) with an extended tongue.\n\nPUP TRAILER\nShort semitrailer, usually between 26 and 32 feet long, with a single axle.\n\nREEFER / REFRIGERATED TRAILER\nRefrigerated trailer with insulated walls and a self-powered refrigeration unit.\n\nROADRAILER\nSemitrailer specially designed to travel both on highway and on rails.\n\nTRAILER ON FLATCAR\nMethod of moving cargo which involves transporting semitrailers on railroad flat cars.\n\nTWIN TRAILERS\nCombination of a tractor and two semitrailers connected in tandem by a converter dolly.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "TrailerTypeId",
+					"Description": "The unique identifier of a Trailer Type.",
+					"BaseAttributeReference": {
+						"Entity": "TrailerType.cdm.json/TrailerType",
+						"Name": "TrailerTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "TrailerTypeName",
+					"Description": "The name of a Trailer Type.",
+					"BaseAttributeReference": {
+						"Entity": "TrailerType.cdm.json/TrailerType",
+						"Name": "TrailerTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "TrailerTypeDescription",
+					"Description": "The description of a Trailer Type.",
+					"BaseAttributeReference": {
+						"Entity": "TrailerType.cdm.json/TrailerType",
+						"Name": "TrailerTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"TrailerTypeId\":{\"entity\":\"TrailerType.cdm.json/TrailerType\",\"name\":\"TrailerTypeId\"},\"TrailerTypeName\":{\"entity\":\"TrailerType.cdm.json/TrailerType\",\"name\":\"TrailerTypeName\"},\"TrailerTypeDescription\":{\"entity\":\"TrailerType.cdm.json/TrailerType\",\"name\":\"TrailerTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"TrailerType\",\"path\":\"TrailerType.cdm.json/TrailerType\"},\"description\":\"A classification of trailers based on common characteristics or functionality.\\n\\nEx:\\nCONTAINER CHASSIS\\nSingle-purpose semitrailer designed to carry a shipping container.\\n\\nLOWBOY\\nOpen flat-bed trailer with a deck height very low to the ground, used to haul construction equipment or bulky or heavy loads.\\n\\nPIGGYBACK\\nSemitrailer built with reinforcements to withstand transport by a railroad flatcar.\\n\\nPULL TRAILER\\nShort, full trailer (supported by axles front and rear) with an extended tongue.\\n\\nPUP TRAILER\\nShort semitrailer, usually between 26 and 32 feet long, with a single axle.\\n\\nREEFER / REFRIGERATED TRAILER\\nRefrigerated trailer with insulated walls and a self-powered refrigeration unit.\\n\\nROADRAILER\\nSemitrailer specially designed to travel both on highway and on rails.\\n\\nTRAILER ON FLATCAR\\nMethod of moving cargo which involves transporting semitrailers on railroad flat cars.\\n\\nTWIN TRAILERS\\nCombination of a tractor and two semitrailers connected in tandem by a converter dolly.\",\"primaryKey\":[\"TrailerTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"TrailerTypeId\",\"attributeReference\":{\"entity\":\"TrailerType.cdm.json/TrailerType\",\"name\":\"TrailerTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"TrailerTypeName\",\"attributeReference\":{\"entity\":\"TrailerType.cdm.json/TrailerType\",\"name\":\"TrailerTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"TrailerTypeDescription\",\"attributeReference\":{\"entity\":\"TrailerType.cdm.json/TrailerType\",\"name\":\"TrailerTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512}]}}}",
+			"Description": "A classification of trailers based on common characteristics or functionality.\n\nEx:\nCONTAINER CHASSIS\nSingle-purpose semitrailer designed to carry a shipping container.\n\nLOWBOY\nOpen flat-bed trailer with a deck height very low to the ground, used to haul construction equipment or bulky or heavy loads.\n\nPIGGYBACK\nSemitrailer built with reinforcements to withstand transport by a railroad flatcar.\n\nPULL TRAILER\nShort, full trailer (supported by axles front and rear) with an extended tongue.\n\nPUP TRAILER\nShort semitrailer, usually between 26 and 32 feet long, with a single axle.\n\nREEFER / REFRIGERATED TRAILER\nRefrigerated trailer with insulated walls and a self-powered refrigeration unit.\n\nROADRAILER\nSemitrailer specially designed to travel both on highway and on rails.\n\nTRAILER ON FLATCAR\nMethod of moving cargo which involves transporting semitrailers on railroad flat cars.\n\nTWIN TRAILERS\nCombination of a tractor and two semitrailers connected in tandem by a converter dolly.",
+			"DisplayFolderInfo": "{\"name\":\"Shipping\",\"colorCode\":\"#000B42\"}",
+			"PrimaryKeys": "TrailerTypeId"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

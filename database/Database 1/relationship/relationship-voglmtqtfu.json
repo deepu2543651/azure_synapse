@@ -1,0 +1,26 @@
+{
+	"name": "relationship-voglmtqtfu",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "relationship-voglmtqtfu",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Aircraft",
+		"ToTableName": "AircraftStatus",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "AircraftId",
+				"ToColumnName": "AircraftId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Aircraft.cdm.json/Aircraft\",\"toEntity\":\"AircraftStatus.cdm.json/AircraftStatus\",\"joinPairs\":[{\"fromAttribute\":\"AircraftId\",\"toAttribute\":\"AircraftId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

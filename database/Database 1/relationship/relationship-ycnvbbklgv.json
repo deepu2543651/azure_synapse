@@ -1,0 +1,26 @@
+{
+	"name": "relationship-ycnvbbklgv",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "relationship-ycnvbbklgv",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "InsuranceCoverageCategory",
+		"ToTableName": "InsuranceCoverageType",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "InsuranceCoverageCategoryId",
+				"ToColumnName": "InsuranceCoverageCategoryId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"InsuranceCoverageCategory.cdm.json/InsuranceCoverageCategory\",\"toEntity\":\"InsuranceCoverageType.cdm.json/InsuranceCoverageType\",\"joinPairs\":[{\"fromAttribute\":\"InsuranceCoverageCategoryId\",\"toAttribute\":\"InsuranceCoverageCategoryId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

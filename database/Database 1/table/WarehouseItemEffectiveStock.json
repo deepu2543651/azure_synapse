@@ -1,0 +1,121 @@
+{
+	"name": "WarehouseItemEffectiveStock",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "WarehouseItemEffectiveStock",
+		"Description": "The sum of the physical stock of a particular product and the quantity of that product ordered for a particular period, but not yet received.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "WarehouseId",
+					"Description": "The unique identifier of a Warehouse.",
+					"BaseAttributeReference": {
+						"Entity": "WarehouseItemEffectiveStock.cdm.json/WarehouseItemEffectiveStock",
+						"Name": "WarehouseId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ItemSku",
+					"Description": "The Stock Keeping Unit identifier, which is typically used for inventory-related activities.",
+					"BaseAttributeReference": {
+						"Entity": "WarehouseItemEffectiveStock.cdm.json/WarehouseItemEffectiveStock",
+						"Name": "ItemSku"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Length": 20,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "Timestamp",
+					"Description": "The effective timestamp for which the Effective Item Stock quantity is determined at the Warehouse.",
+					"BaseAttributeReference": {
+						"Entity": "WarehouseItemEffectiveStock.cdm.json/WarehouseItemEffectiveStock",
+						"Name": "Timestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "EffectiveItemStockQuantity",
+					"Description": "The Effective Item Stock quantity at the Warehouse for the associated period.",
+					"BaseAttributeReference": {
+						"Entity": "WarehouseItemEffectiveStock.cdm.json/WarehouseItemEffectiveStock",
+						"Name": "EffectiveItemStockQuantity"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "Note",
+					"Description": "A note, comment or additional information regarding the Warehouse Effective Item Stock.",
+					"BaseAttributeReference": {
+						"Entity": "WarehouseItemEffectiveStock.cdm.json/WarehouseItemEffectiveStock",
+						"Name": "Note"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"WarehouseId\":{\"entity\":\"WarehouseItemEffectiveStock.cdm.json/WarehouseItemEffectiveStock\",\"name\":\"WarehouseId\"},\"ItemSku\":{\"entity\":\"WarehouseItemEffectiveStock.cdm.json/WarehouseItemEffectiveStock\",\"name\":\"ItemSku\"},\"Timestamp\":{\"entity\":\"WarehouseItemEffectiveStock.cdm.json/WarehouseItemEffectiveStock\",\"name\":\"Timestamp\"},\"EffectiveItemStockQuantity\":{\"entity\":\"WarehouseItemEffectiveStock.cdm.json/WarehouseItemEffectiveStock\",\"name\":\"EffectiveItemStockQuantity\"},\"Note\":{\"entity\":\"WarehouseItemEffectiveStock.cdm.json/WarehouseItemEffectiveStock\",\"name\":\"Note\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"WarehouseItemEffectiveStock\",\"path\":\"WarehouseItemEffectiveStock.cdm.json/WarehouseItemEffectiveStock\"},\"description\":\"The sum of the physical stock of a particular product and the quantity of that product ordered for a particular period, but not yet received.\",\"primaryKey\":[\"WarehouseId\",\"ItemSku\",\"Timestamp\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"WarehouseId\",\"attributeReference\":{\"entity\":\"WarehouseItemEffectiveStock.cdm.json/WarehouseItemEffectiveStock\",\"name\":\"WarehouseId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ItemSku\",\"attributeReference\":{\"entity\":\"WarehouseItemEffectiveStock.cdm.json/WarehouseItemEffectiveStock\",\"name\":\"ItemSku\"},\"dataType\":\"string\",\"dataTypeLength\":20},{\"type\":\"Existing\",\"name\":\"Timestamp\",\"attributeReference\":{\"entity\":\"WarehouseItemEffectiveStock.cdm.json/WarehouseItemEffectiveStock\",\"name\":\"Timestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"EffectiveItemStockQuantity\",\"attributeReference\":{\"entity\":\"WarehouseItemEffectiveStock.cdm.json/WarehouseItemEffectiveStock\",\"name\":\"EffectiveItemStockQuantity\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"Note\",\"attributeReference\":{\"entity\":\"WarehouseItemEffectiveStock.cdm.json/WarehouseItemEffectiveStock\",\"name\":\"Note\"},\"dataType\":\"string\",\"dataTypeLength\":1024}]}}}",
+			"Description": "The sum of the physical stock of a particular product and the quantity of that product ordered for a particular period, but not yet received.",
+			"DisplayFolderInfo": "{\"name\":\"Inventory\",\"colorCode\":\"#EA279F\"}",
+			"PrimaryKeys": "WarehouseId,ItemSku,Timestamp"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

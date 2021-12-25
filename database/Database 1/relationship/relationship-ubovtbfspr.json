@@ -1,0 +1,26 @@
+{
+	"name": "relationship-ubovtbfspr",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "relationship-ubovtbfspr",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "CommunicationPriority",
+		"ToTableName": "Communication",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "CommunicationPriorityId",
+				"ToColumnName": "CommunicationPriorityId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"CommunicationPriority.cdm.json/CommunicationPriority\",\"toEntity\":\"Communication.cdm.json/Communication\",\"joinPairs\":[{\"fromAttribute\":\"CommunicationPriorityId\",\"toAttribute\":\"CommunicationPriorityId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

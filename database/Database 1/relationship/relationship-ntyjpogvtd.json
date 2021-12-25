@@ -1,0 +1,30 @@
+{
+	"name": "relationship-ntyjpogvtd",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "relationship-ntyjpogvtd",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "ShipmentItem",
+		"ToTableName": "ShipmentItemSerializedItem",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ShipmentId",
+				"ToColumnName": "ShipmentId"
+			},
+			{
+				"FromColumnName": "ShipmentItemNumber",
+				"ToColumnName": "ShipmentItemNumber"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"ShipmentItem.cdm.json/ShipmentItem\",\"toEntity\":\"ShipmentItemSerializedItem.cdm.json/ShipmentItemSerializedItem\",\"joinPairs\":[{\"fromAttribute\":\"ShipmentId\",\"toAttribute\":\"ShipmentId\"},{\"fromAttribute\":\"ShipmentItemNumber\",\"toAttribute\":\"ShipmentItemNumber\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

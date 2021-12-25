@@ -1,0 +1,86 @@
+{
+	"name": "RfidStandard",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "RfidStandard",
+		"Description": "The RFID standard utilized by the Assets RFID tag device.\n\nRFID tags can be thought of as bar codes with communications abilities.\n\nRFID's contain a tiny transponder that, when it comes within distance of a reader, transmits its unique identifier, which can be matched to a database.\n\nEx:\n- Gen 2\n- ANSI/NCITS T6 256-2001 Radio Frequency Identification (RFID) Tech \n- TC 104 / SC 4 Identification and communication\n- ISO 6346 \n- JTC 1/SC 31 Automatic Identification and Data Capture Techniques\n- JTC 1/SC 17 Identification Cards and related devices",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "RfidStandardId",
+					"Description": "The unique identifier of a RFID Standard.",
+					"BaseAttributeReference": {
+						"Entity": "RfidStandard.cdm.json/RfidStandard",
+						"Name": "RfidStandardId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "RfidStandardName",
+					"Description": "The name of a RFID Standard.",
+					"BaseAttributeReference": {
+						"Entity": "RfidStandard.cdm.json/RfidStandard",
+						"Name": "RfidStandardName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "RfidStandardDescription",
+					"Description": "The description of a RFID Standard.",
+					"BaseAttributeReference": {
+						"Entity": "RfidStandard.cdm.json/RfidStandard",
+						"Name": "RfidStandardDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"RfidStandardId\":{\"entity\":\"RfidStandard.cdm.json/RfidStandard\",\"name\":\"RfidStandardId\"},\"RfidStandardName\":{\"entity\":\"RfidStandard.cdm.json/RfidStandard\",\"name\":\"RfidStandardName\"},\"RfidStandardDescription\":{\"entity\":\"RfidStandard.cdm.json/RfidStandard\",\"name\":\"RfidStandardDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"RfidStandard\",\"path\":\"RfidStandard.cdm.json/RfidStandard\"},\"description\":\"The RFID standard utilized by the Assets RFID tag device.\\n\\nRFID tags can be thought of as bar codes with communications abilities.\\n\\nRFID's contain a tiny transponder that, when it comes within distance of a reader, transmits its unique identifier, which can be matched to a database.\\n\\nEx:\\n- Gen 2\\n- ANSI/NCITS T6 256-2001 Radio Frequency Identification (RFID) Tech \\n- TC 104 / SC 4 Identification and communication\\n- ISO 6346 \\n- JTC 1/SC 31 Automatic Identification and Data Capture Techniques\\n- JTC 1/SC 17 Identification Cards and related devices\",\"primaryKey\":[\"RfidStandardId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"RfidStandardId\",\"attributeReference\":{\"entity\":\"RfidStandard.cdm.json/RfidStandard\",\"name\":\"RfidStandardId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"RfidStandardName\",\"attributeReference\":{\"entity\":\"RfidStandard.cdm.json/RfidStandard\",\"name\":\"RfidStandardName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"RfidStandardDescription\",\"attributeReference\":{\"entity\":\"RfidStandard.cdm.json/RfidStandard\",\"name\":\"RfidStandardDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512}]}}}",
+			"Description": "The RFID standard utilized by the Assets RFID tag device.\n\nRFID tags can be thought of as bar codes with communications abilities.\n\nRFID's contain a tiny transponder that, when it comes within distance of a reader, transmits its unique identifier, which can be matched to a database.\n\nEx:\n- Gen 2\n- ANSI/NCITS T6 256-2001 Radio Frequency Identification (RFID) Tech \n- TC 104 / SC 4 Identification and communication\n- ISO 6346 \n- JTC 1/SC 31 Automatic Identification and Data Capture Techniques\n- JTC 1/SC 17 Identification Cards and related devices",
+			"DisplayFolderInfo": "{\"name\":\"Inventory\",\"colorCode\":\"#EA279F\"}",
+			"PrimaryKeys": "RfidStandardId"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

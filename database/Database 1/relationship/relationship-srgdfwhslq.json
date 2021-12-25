@@ -1,0 +1,26 @@
+{
+	"name": "relationship-srgdfwhslq",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "relationship-srgdfwhslq",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "WatercraftEngine",
+		"ToTableName": "VesselEngine",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "EngineId",
+				"ToColumnName": "EngineId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"WatercraftEngine.cdm.json/WatercraftEngine\",\"toEntity\":\"VesselEngine.cdm.json/VesselEngine\",\"joinPairs\":[{\"fromAttribute\":\"EngineId\",\"toAttribute\":\"EngineId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

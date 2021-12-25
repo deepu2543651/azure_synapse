@@ -1,0 +1,119 @@
+{
+	"name": "SoftwareProduct",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "SoftwareProduct",
+		"Description": "A Software 'product' is a good, service or item capable of satisfying a need or a want that is offered to a target market for attention, acquisition, use or consumption.    \n\nEach product has its own benefits, styling, quality, brand name, and packaging that gives it its own identity and distinguishing characteristics.  \n\nA product may or may not have a selling price associated with it or be provided for a fee.   \n\nEvery business or organization has business rules that define precisely what a product is.    While we intuitively know what a product is, we must quantify that knowledge and associated business rules so that consistent applications can be developed.\n\nHowever, 'what we provide to the consumer to justify the existence of our organization' is usually a good place to begin the investigation of 'product'.   \n\nA product typically goes through five stages of development:\n\n(1)  Idea Stage - involving a thorough evaluation of the potential product\n\n(2)  Concept Stage - determines customer acceptance by testing and presentation to consumers and distribution channel members.   Specific aspects regarding quality, dependability, reliability, warranty, packaging, service, pricing, terms of sale, sales and distribution channels, advertising and promotions are evaluated.\n\n(3)  Product Development Stage - transforms the prototype product into an actual product for mass sale.   This stage requires close interaction between both marketing and manufacturing.\n\n(4)  Test Marketing Stage - may or may not be used since it is an expensive and time-consuming process.  Test marketing involves evaluating various product options and alternatives.\n\n(5)  Commercialization - It is very expensive to launch a new product so commercialization only applies to those specific products that are actually going to be sold to the market.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "SoftwareProductId",
+					"Description": "The unique identifier of a software product.",
+					"BaseAttributeReference": {
+						"Entity": "SoftwareProduct.cdm.json/SoftwareProduct",
+						"Name": "SoftwareProductId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "SoftwareProductName",
+					"Description": "The name of a software product.",
+					"BaseAttributeReference": {
+						"Entity": "SoftwareProduct.cdm.json/SoftwareProduct",
+						"Name": "SoftwareProductName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "SoftwareProductDescription",
+					"Description": "The description of a software product.",
+					"BaseAttributeReference": {
+						"Entity": "SoftwareProduct.cdm.json/SoftwareProduct",
+						"Name": "SoftwareProductDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "SoftwareTypeId",
+					"Description": "The unique identifier of a software type.",
+					"BaseAttributeReference": {
+						"Entity": "SoftwareProduct.cdm.json/SoftwareProduct",
+						"Name": "SoftwareTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "SoftwareProductNote",
+					"Description": "A note, comment or additional information regarding the software product.",
+					"BaseAttributeReference": {
+						"Entity": "SoftwareProduct.cdm.json/SoftwareProduct",
+						"Name": "SoftwareProductNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"SoftwareProductId\":{\"entity\":\"SoftwareProduct.cdm.json/SoftwareProduct\",\"name\":\"SoftwareProductId\"},\"SoftwareProductName\":{\"entity\":\"SoftwareProduct.cdm.json/SoftwareProduct\",\"name\":\"SoftwareProductName\"},\"SoftwareProductDescription\":{\"entity\":\"SoftwareProduct.cdm.json/SoftwareProduct\",\"name\":\"SoftwareProductDescription\"},\"SoftwareTypeId\":{\"entity\":\"SoftwareProduct.cdm.json/SoftwareProduct\",\"name\":\"SoftwareTypeId\"},\"SoftwareProductNote\":{\"entity\":\"SoftwareProduct.cdm.json/SoftwareProduct\",\"name\":\"SoftwareProductNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"SoftwareProduct\",\"path\":\"SoftwareProduct.cdm.json/SoftwareProduct\"},\"description\":\"A Software 'product' is a good, service or item capable of satisfying a need or a want that is offered to a target market for attention, acquisition, use or consumption.    \\n\\nEach product has its own benefits, styling, quality, brand name, and packaging that gives it its own identity and distinguishing characteristics.  \\n\\nA product may or may not have a selling price associated with it or be provided for a fee.   \\n\\nEvery business or organization has business rules that define precisely what a product is.    While we intuitively know what a product is, we must quantify that knowledge and associated business rules so that consistent applications can be developed.\\n\\nHowever, 'what we provide to the consumer to justify the existence of our organization' is usually a good place to begin the investigation of 'product'.   \\n\\nA product typically goes through five stages of development:\\n\\n(1)  Idea Stage - involving a thorough evaluation of the potential product\\n\\n(2)  Concept Stage - determines customer acceptance by testing and presentation to consumers and distribution channel members.   Specific aspects regarding quality, dependability, reliability, warranty, packaging, service, pricing, terms of sale, sales and distribution channels, advertising and promotions are evaluated.\\n\\n(3)  Product Development Stage - transforms the prototype product into an actual product for mass sale.   This stage requires close interaction between both marketing and manufacturing.\\n\\n(4)  Test Marketing Stage - may or may not be used since it is an expensive and time-consuming process.  Test marketing involves evaluating various product options and alternatives.\\n\\n(5)  Commercialization - It is very expensive to launch a new product so commercialization only applies to those specific products that are actually going to be sold to the market.\",\"primaryKey\":[\"SoftwareProductId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"SoftwareProductId\",\"attributeReference\":{\"entity\":\"SoftwareProduct.cdm.json/SoftwareProduct\",\"name\":\"SoftwareProductId\"},\"dataType\":\"long\"},{\"type\":\"Existing\",\"name\":\"SoftwareProductName\",\"attributeReference\":{\"entity\":\"SoftwareProduct.cdm.json/SoftwareProduct\",\"name\":\"SoftwareProductName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"SoftwareProductDescription\",\"attributeReference\":{\"entity\":\"SoftwareProduct.cdm.json/SoftwareProduct\",\"name\":\"SoftwareProductDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512},{\"type\":\"Existing\",\"name\":\"SoftwareTypeId\",\"attributeReference\":{\"entity\":\"SoftwareProduct.cdm.json/SoftwareProduct\",\"name\":\"SoftwareTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"SoftwareProductNote\",\"attributeReference\":{\"entity\":\"SoftwareProduct.cdm.json/SoftwareProduct\",\"name\":\"SoftwareProductNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024}]}}}",
+			"Description": "A Software 'product' is a good, service or item capable of satisfying a need or a want that is offered to a target market for attention, acquisition, use or consumption.    \n\nEach product has its own benefits, styling, quality, brand name, and packaging that gives it its own identity and distinguishing characteristics.  \n\nA product may or may not have a selling price associated with it or be provided for a fee.   \n\nEvery business or organization has business rules that define precisely what a product is.    While we intuitively know what a product is, we must quantify that knowledge and associated business rules so that consistent applications can be developed.\n\nHowever, 'what we provide to the consumer to justify the existence of our organization' is usually a good place to begin the investigation of 'product'.   \n\nA product typically goes through five stages of development:\n\n(1)  Idea Stage - involving a thorough evaluation of the potential product\n\n(2)  Concept Stage - determines customer acceptance by testing and presentation to consumers and distribution channel members.   Specific aspects regarding quality, dependability, reliability, warranty, packaging, service, pricing, terms of sale, sales and distribution channels, advertising and promotions are evaluated.\n\n(3)  Product Development Stage - transforms the prototype product into an actual product for mass sale.   This stage requires close interaction between both marketing and manufacturing.\n\n(4)  Test Marketing Stage - may or may not be used since it is an expensive and time-consuming process.  Test marketing involves evaluating various product options and alternatives.\n\n(5)  Commercialization - It is very expensive to launch a new product so commercialization only applies to those specific products that are actually going to be sold to the market.",
+			"DisplayFolderInfo": "{\"name\":\"Transaction\",\"colorCode\":\"#1C508C\"}",
+			"PrimaryKeys": "SoftwareProductId"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

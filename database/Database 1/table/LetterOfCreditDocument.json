@@ -1,0 +1,218 @@
+{
+	"name": "LetterOfCreditDocument",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "LetterOfCreditDocument",
+		"Description": "A document issued by a bank stipulating that a certain sum shall be paid to the beneficiary named under clearly stated conditions. It is a method of paying for goods where a buyer establishes credit with a local bank, clearly describing goods to be purchased. Upon receipt of documentation, the bank either is paid by the buyer or takes title to goods and transfers funds to seller. NOTE: On such occasions, the airline cannot release goods to the ultimate consignee until a written release is produced by the bank named on the Air Waybill.\n\nNote:\nThis document is broken out from the other documents because of its importance.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ShipmentId",
+					"Description": "The unique identifier of a Shipment.",
+					"BaseAttributeReference": {
+						"Entity": "LetterOfCreditDocument.cdm.json/LetterOfCreditDocument",
+						"Name": "ShipmentId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "DocumentId",
+					"Description": "The unique identifier of a Document.",
+					"BaseAttributeReference": {
+						"Entity": "LetterOfCreditDocument.cdm.json/LetterOfCreditDocument",
+						"Name": "DocumentId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "IssuingBankId",
+					"Description": "The unique identifier of a Bank.",
+					"BaseAttributeReference": {
+						"Entity": "LetterOfCreditDocument.cdm.json/LetterOfCreditDocument",
+						"Name": "IssuingBankId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ConfirmingBankId",
+					"Description": "The unique identifier of a Bank.",
+					"BaseAttributeReference": {
+						"Entity": "LetterOfCreditDocument.cdm.json/LetterOfCreditDocument",
+						"Name": "ConfirmingBankId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "LetterOfCreditCreatedDate",
+					"Description": "The date that the Letter of Credit was created.",
+					"BaseAttributeReference": {
+						"Entity": "LetterOfCreditDocument.cdm.json/LetterOfCreditDocument",
+						"Name": "LetterOfCreditCreatedDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "LetterOfCreditPresentedDate",
+					"Description": "The date that the Letter of Credit was presented for payment.",
+					"BaseAttributeReference": {
+						"Entity": "LetterOfCreditDocument.cdm.json/LetterOfCreditDocument",
+						"Name": "LetterOfCreditPresentedDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "LetterOfCreditPaymentDate",
+					"Description": "The date that the Letter of Credit was paid.",
+					"BaseAttributeReference": {
+						"Entity": "LetterOfCreditDocument.cdm.json/LetterOfCreditDocument",
+						"Name": "LetterOfCreditPaymentDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "LetterOfCreditAmount",
+					"Description": "The amount of the Letter of Credit.",
+					"BaseAttributeReference": {
+						"Entity": "LetterOfCreditDocument.cdm.json/LetterOfCreditDocument",
+						"Name": "LetterOfCreditAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "LetterOfCreditBeneficiaryName",
+					"Description": "The name of individual or legal entity in whose favor a letter of credit is opened.",
+					"BaseAttributeReference": {
+						"Entity": "LetterOfCreditDocument.cdm.json/LetterOfCreditDocument",
+						"Name": "LetterOfCreditBeneficiaryName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "AtSightLetterOfCreditIndicator",
+					"Description": "Indicates that the Letter Of Credit is payable upon presentation or demand.",
+					"BaseAttributeReference": {
+						"Entity": "LetterOfCreditDocument.cdm.json/LetterOfCreditDocument",
+						"Name": "AtSightLetterOfCreditIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "DemandPeriod",
+					"Description": "A Letter Of Credit may be payable upon presentation/demand or within a particular period after demand is made.",
+					"BaseAttributeReference": {
+						"Entity": "LetterOfCreditDocument.cdm.json/LetterOfCreditDocument",
+						"Name": "DemandPeriod"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ShipmentId\":{\"entity\":\"LetterOfCreditDocument.cdm.json/LetterOfCreditDocument\",\"name\":\"ShipmentId\"},\"DocumentId\":{\"entity\":\"LetterOfCreditDocument.cdm.json/LetterOfCreditDocument\",\"name\":\"DocumentId\"},\"IssuingBankId\":{\"entity\":\"LetterOfCreditDocument.cdm.json/LetterOfCreditDocument\",\"name\":\"IssuingBankId\"},\"ConfirmingBankId\":{\"entity\":\"LetterOfCreditDocument.cdm.json/LetterOfCreditDocument\",\"name\":\"ConfirmingBankId\"},\"LetterOfCreditCreatedDate\":{\"entity\":\"LetterOfCreditDocument.cdm.json/LetterOfCreditDocument\",\"name\":\"LetterOfCreditCreatedDate\"},\"LetterOfCreditPresentedDate\":{\"entity\":\"LetterOfCreditDocument.cdm.json/LetterOfCreditDocument\",\"name\":\"LetterOfCreditPresentedDate\"},\"LetterOfCreditPaymentDate\":{\"entity\":\"LetterOfCreditDocument.cdm.json/LetterOfCreditDocument\",\"name\":\"LetterOfCreditPaymentDate\"},\"LetterOfCreditAmount\":{\"entity\":\"LetterOfCreditDocument.cdm.json/LetterOfCreditDocument\",\"name\":\"LetterOfCreditAmount\"},\"LetterOfCreditBeneficiaryName\":{\"entity\":\"LetterOfCreditDocument.cdm.json/LetterOfCreditDocument\",\"name\":\"LetterOfCreditBeneficiaryName\"},\"AtSightLetterOfCreditIndicator\":{\"entity\":\"LetterOfCreditDocument.cdm.json/LetterOfCreditDocument\",\"name\":\"AtSightLetterOfCreditIndicator\"},\"DemandPeriod\":{\"entity\":\"LetterOfCreditDocument.cdm.json/LetterOfCreditDocument\",\"name\":\"DemandPeriod\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"LetterOfCreditDocument\",\"path\":\"LetterOfCreditDocument.cdm.json/LetterOfCreditDocument\"},\"description\":\"A document issued by a bank stipulating that a certain sum shall be paid to the beneficiary named under clearly stated conditions. It is a method of paying for goods where a buyer establishes credit with a local bank, clearly describing goods to be purchased. Upon receipt of documentation, the bank either is paid by the buyer or takes title to goods and transfers funds to seller. NOTE: On such occasions, the airline cannot release goods to the ultimate consignee until a written release is produced by the bank named on the Air Waybill.\\n\\nNote:\\nThis document is broken out from the other documents because of its importance.\",\"primaryKey\":[\"ShipmentId\",\"DocumentId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"ShipmentId\",\"attributeReference\":{\"entity\":\"LetterOfCreditDocument.cdm.json/LetterOfCreditDocument\",\"name\":\"ShipmentId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"DocumentId\",\"attributeReference\":{\"entity\":\"LetterOfCreditDocument.cdm.json/LetterOfCreditDocument\",\"name\":\"DocumentId\"},\"dataType\":\"long\"},{\"type\":\"Existing\",\"name\":\"IssuingBankId\",\"attributeReference\":{\"entity\":\"LetterOfCreditDocument.cdm.json/LetterOfCreditDocument\",\"name\":\"IssuingBankId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ConfirmingBankId\",\"attributeReference\":{\"entity\":\"LetterOfCreditDocument.cdm.json/LetterOfCreditDocument\",\"name\":\"ConfirmingBankId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"LetterOfCreditCreatedDate\",\"attributeReference\":{\"entity\":\"LetterOfCreditDocument.cdm.json/LetterOfCreditDocument\",\"name\":\"LetterOfCreditCreatedDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\"},{\"type\":\"Existing\",\"name\":\"LetterOfCreditPresentedDate\",\"attributeReference\":{\"entity\":\"LetterOfCreditDocument.cdm.json/LetterOfCreditDocument\",\"name\":\"LetterOfCreditPresentedDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\"},{\"type\":\"Existing\",\"name\":\"LetterOfCreditPaymentDate\",\"attributeReference\":{\"entity\":\"LetterOfCreditDocument.cdm.json/LetterOfCreditDocument\",\"name\":\"LetterOfCreditPaymentDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\"},{\"type\":\"Existing\",\"name\":\"LetterOfCreditAmount\",\"attributeReference\":{\"entity\":\"LetterOfCreditDocument.cdm.json/LetterOfCreditDocument\",\"name\":\"LetterOfCreditAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"LetterOfCreditBeneficiaryName\",\"attributeReference\":{\"entity\":\"LetterOfCreditDocument.cdm.json/LetterOfCreditDocument\",\"name\":\"LetterOfCreditBeneficiaryName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"AtSightLetterOfCreditIndicator\",\"attributeReference\":{\"entity\":\"LetterOfCreditDocument.cdm.json/LetterOfCreditDocument\",\"name\":\"AtSightLetterOfCreditIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"DemandPeriod\",\"attributeReference\":{\"entity\":\"LetterOfCreditDocument.cdm.json/LetterOfCreditDocument\",\"name\":\"DemandPeriod\"},\"dataType\":\"integer\"}]}}}",
+			"Description": "A document issued by a bank stipulating that a certain sum shall be paid to the beneficiary named under clearly stated conditions. It is a method of paying for goods where a buyer establishes credit with a local bank, clearly describing goods to be purchased. Upon receipt of documentation, the bank either is paid by the buyer or takes title to goods and transfers funds to seller. NOTE: On such occasions, the airline cannot release goods to the ultimate consignee until a written release is produced by the bank named on the Air Waybill.\n\nNote:\nThis document is broken out from the other documents because of its importance.",
+			"DisplayFolderInfo": "{\"name\":\"Shipping\",\"colorCode\":\"#000B42\"}",
+			"PrimaryKeys": "ShipmentId,DocumentId"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

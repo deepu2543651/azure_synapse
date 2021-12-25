@@ -1,0 +1,26 @@
+{
+	"name": "relationship-crkizfuhuz",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "relationship-crkizfuhuz",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Communication",
+		"ToTableName": "CommunicationRelatedParty",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "CommunicationId",
+				"ToColumnName": "CommunicationId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Communication.cdm.json/Communication\",\"toEntity\":\"CommunicationRelatedParty.cdm.json/CommunicationRelatedParty\",\"joinPairs\":[{\"fromAttribute\":\"CommunicationId\",\"toAttribute\":\"CommunicationId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

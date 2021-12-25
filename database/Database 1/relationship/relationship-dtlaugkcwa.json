@@ -1,0 +1,26 @@
+{
+	"name": "relationship-dtlaugkcwa",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "relationship-dtlaugkcwa",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "ShippingInsurancePolicyType",
+		"ToTableName": "InsurancePolicy",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "InsurancePolicyTypeId",
+				"ToColumnName": "InsurancePolicyTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"ShippingInsurancePolicyType.cdm.json/ShippingInsurancePolicyType\",\"toEntity\":\"InsurancePolicy.cdm.json/InsurancePolicy\",\"joinPairs\":[{\"fromAttribute\":\"InsurancePolicyTypeId\",\"toAttribute\":\"InsurancePolicyTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

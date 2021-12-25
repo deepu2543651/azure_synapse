@@ -1,0 +1,26 @@
+{
+	"name": "relationship-gscggacfcr",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "relationship-gscggacfcr",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Carrier",
+		"ToTableName": "RelatedCarrier",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "CarrierId",
+				"ToColumnName": "RelatedCarrierId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Carrier.cdm.json/Carrier\",\"toEntity\":\"RelatedCarrier.cdm.json/RelatedCarrier\",\"joinPairs\":[{\"fromAttribute\":\"CarrierId\",\"toAttribute\":\"RelatedCarrierId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

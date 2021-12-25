@@ -1,0 +1,86 @@
+{
+	"name": "ShipmentLocationPartyRelationshipType",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "ShipmentLocationPartyRelationshipType",
+		"Description": "The nature of the relationship between the Shipment Location and Party.\n\nEx:\n- Maintenance Provided-by Party\n- Supervising Party\n- Emergency Contact Party",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ShipmentLocationPartyRelationshipTypeId",
+					"Description": "The unique identifier of a Shipment Location - Party Relationship Type.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentLocationPartyRelationshipType.cdm.json/ShipmentLocationPartyRelationshipType",
+						"Name": "ShipmentLocationPartyRelationshipTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ShipmentLocationPartyRelationshipTypeName",
+					"Description": "The name of a Shipment Location - Party Relationship Type.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentLocationPartyRelationshipType.cdm.json/ShipmentLocationPartyRelationshipType",
+						"Name": "ShipmentLocationPartyRelationshipTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ShipmentLocationPartyRelationshipTypeDescription",
+					"Description": "The description of a Shipment Location - Party Relationship Type.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentLocationPartyRelationshipType.cdm.json/ShipmentLocationPartyRelationshipType",
+						"Name": "ShipmentLocationPartyRelationshipTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ShipmentLocationPartyRelationshipTypeId\":{\"entity\":\"ShipmentLocationPartyRelationshipType.cdm.json/ShipmentLocationPartyRelationshipType\",\"name\":\"ShipmentLocationPartyRelationshipTypeId\"},\"ShipmentLocationPartyRelationshipTypeName\":{\"entity\":\"ShipmentLocationPartyRelationshipType.cdm.json/ShipmentLocationPartyRelationshipType\",\"name\":\"ShipmentLocationPartyRelationshipTypeName\"},\"ShipmentLocationPartyRelationshipTypeDescription\":{\"entity\":\"ShipmentLocationPartyRelationshipType.cdm.json/ShipmentLocationPartyRelationshipType\",\"name\":\"ShipmentLocationPartyRelationshipTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"ShipmentLocationPartyRelationshipType\",\"path\":\"ShipmentLocationPartyRelationshipType.cdm.json/ShipmentLocationPartyRelationshipType\"},\"description\":\"The nature of the relationship between the Shipment Location and Party.\\n\\nEx:\\n- Maintenance Provided-by Party\\n- Supervising Party\\n- Emergency Contact Party\",\"primaryKey\":[\"ShipmentLocationPartyRelationshipTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"ShipmentLocationPartyRelationshipTypeId\",\"attributeReference\":{\"entity\":\"ShipmentLocationPartyRelationshipType.cdm.json/ShipmentLocationPartyRelationshipType\",\"name\":\"ShipmentLocationPartyRelationshipTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ShipmentLocationPartyRelationshipTypeName\",\"attributeReference\":{\"entity\":\"ShipmentLocationPartyRelationshipType.cdm.json/ShipmentLocationPartyRelationshipType\",\"name\":\"ShipmentLocationPartyRelationshipTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"ShipmentLocationPartyRelationshipTypeDescription\",\"attributeReference\":{\"entity\":\"ShipmentLocationPartyRelationshipType.cdm.json/ShipmentLocationPartyRelationshipType\",\"name\":\"ShipmentLocationPartyRelationshipTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512}]}}}",
+			"Description": "The nature of the relationship between the Shipment Location and Party.\n\nEx:\n- Maintenance Provided-by Party\n- Supervising Party\n- Emergency Contact Party",
+			"DisplayFolderInfo": "{\"name\":\"Shipping\",\"colorCode\":\"#000B42\"}",
+			"PrimaryKeys": "ShipmentLocationPartyRelationshipTypeId"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

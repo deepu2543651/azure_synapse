@@ -1,0 +1,101 @@
+{
+	"name": "LetterOfCreditCharacteristic",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "LetterOfCreditCharacteristic",
+		"Description": "The one or more Letter Of Credit Characteristic(s) that describe or qualify the associated Letter Of Credit.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "LetterOfCreditCharacteristicTypeId",
+					"Description": "The unique identifier of a Letter Of Credit Characteristic.",
+					"BaseAttributeReference": {
+						"Entity": "LetterOfCreditCharacteristic.cdm.json/LetterOfCreditCharacteristic",
+						"Name": "LetterOfCreditCharacteristicTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "DocumentId",
+					"Description": "The unique identifier of a Document.",
+					"BaseAttributeReference": {
+						"Entity": "LetterOfCreditCharacteristic.cdm.json/LetterOfCreditCharacteristic",
+						"Name": "DocumentId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "ShipmentId",
+					"Description": "The unique identifier of a Shipment.",
+					"BaseAttributeReference": {
+						"Entity": "LetterOfCreditCharacteristic.cdm.json/LetterOfCreditCharacteristic",
+						"Name": "ShipmentId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "Note",
+					"Description": "A note, comment or additional information regarding the Letter Of Credit characteristic.",
+					"BaseAttributeReference": {
+						"Entity": "LetterOfCreditCharacteristic.cdm.json/LetterOfCreditCharacteristic",
+						"Name": "Note"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"LetterOfCreditCharacteristicTypeId\":{\"entity\":\"LetterOfCreditCharacteristic.cdm.json/LetterOfCreditCharacteristic\",\"name\":\"LetterOfCreditCharacteristicTypeId\"},\"DocumentId\":{\"entity\":\"LetterOfCreditCharacteristic.cdm.json/LetterOfCreditCharacteristic\",\"name\":\"DocumentId\"},\"ShipmentId\":{\"entity\":\"LetterOfCreditCharacteristic.cdm.json/LetterOfCreditCharacteristic\",\"name\":\"ShipmentId\"},\"Note\":{\"entity\":\"LetterOfCreditCharacteristic.cdm.json/LetterOfCreditCharacteristic\",\"name\":\"Note\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"LetterOfCreditCharacteristic\",\"path\":\"LetterOfCreditCharacteristic.cdm.json/LetterOfCreditCharacteristic\"},\"description\":\"The one or more Letter Of Credit Characteristic(s) that describe or qualify the associated Letter Of Credit.\",\"primaryKey\":[\"LetterOfCreditCharacteristicTypeId\",\"DocumentId\",\"ShipmentId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"LetterOfCreditCharacteristicTypeId\",\"attributeReference\":{\"entity\":\"LetterOfCreditCharacteristic.cdm.json/LetterOfCreditCharacteristic\",\"name\":\"LetterOfCreditCharacteristicTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"DocumentId\",\"attributeReference\":{\"entity\":\"LetterOfCreditCharacteristic.cdm.json/LetterOfCreditCharacteristic\",\"name\":\"DocumentId\"},\"dataType\":\"long\"},{\"type\":\"Existing\",\"name\":\"ShipmentId\",\"attributeReference\":{\"entity\":\"LetterOfCreditCharacteristic.cdm.json/LetterOfCreditCharacteristic\",\"name\":\"ShipmentId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"Note\",\"attributeReference\":{\"entity\":\"LetterOfCreditCharacteristic.cdm.json/LetterOfCreditCharacteristic\",\"name\":\"Note\"},\"dataType\":\"string\",\"dataTypeLength\":1024}]}}}",
+			"Description": "The one or more Letter Of Credit Characteristic(s) that describe or qualify the associated Letter Of Credit.",
+			"DisplayFolderInfo": "{\"name\":\"Shipping\",\"colorCode\":\"#000B42\"}",
+			"PrimaryKeys": "LetterOfCreditCharacteristicTypeId,DocumentId,ShipmentId"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

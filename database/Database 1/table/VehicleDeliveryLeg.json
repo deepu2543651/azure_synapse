@@ -1,0 +1,231 @@
+{
+	"name": "VehicleDeliveryLeg",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "VehicleDeliveryLeg",
+		"Description": "An actual delivery run performed by a vehicle, which may be scheduled or unscheduled.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "VehicleId",
+					"Description": "The unique identifier of a Vehicle.",
+					"BaseAttributeReference": {
+						"Entity": "VehicleDeliveryLeg.cdm.json/VehicleDeliveryLeg",
+						"Name": "VehicleId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "ScheduledDepartureTimestamp",
+					"Description": "The scheduled timestamp of the vehicle departure from the from-location to the to-location.",
+					"BaseAttributeReference": {
+						"Entity": "VehicleDeliveryLeg.cdm.json/VehicleDeliveryLeg",
+						"Name": "ScheduledDepartureTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "VehicleDeliveryLegNumber",
+					"Description": "The ordered leg number associated with this leg of the vehicle schedule.",
+					"BaseAttributeReference": {
+						"Entity": "VehicleDeliveryLeg.cdm.json/VehicleDeliveryLeg",
+						"Name": "VehicleDeliveryLegNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "DeliverFromLocation",
+					"Description": "The unique identifier of a Shipping Location.",
+					"BaseAttributeReference": {
+						"Entity": "VehicleDeliveryLeg.cdm.json/VehicleDeliveryLeg",
+						"Name": "DeliverFromLocation"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "DepartureTimestamp",
+					"Description": "The timestamp of departure from the From Location.",
+					"BaseAttributeReference": {
+						"Entity": "VehicleDeliveryLeg.cdm.json/VehicleDeliveryLeg",
+						"Name": "DepartureTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "DeliverToLocation",
+					"Description": "The unique identifier of a Shipping Location.",
+					"BaseAttributeReference": {
+						"Entity": "VehicleDeliveryLeg.cdm.json/VehicleDeliveryLeg",
+						"Name": "DeliverToLocation"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ArrivalTimestamp",
+					"Description": "The timestamp of arrival at the To Location.",
+					"BaseAttributeReference": {
+						"Entity": "VehicleDeliveryLeg.cdm.json/VehicleDeliveryLeg",
+						"Name": "ArrivalTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "RouteSegmentLengthMiles",
+					"Description": "The total length of the route segment.",
+					"BaseAttributeReference": {
+						"Entity": "VehicleDeliveryLeg.cdm.json/VehicleDeliveryLeg",
+						"Name": "RouteSegmentLengthMiles"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "TotalRouteLengthMiles",
+					"Description": "The total length of all route segments.",
+					"BaseAttributeReference": {
+						"Entity": "VehicleDeliveryLeg.cdm.json/VehicleDeliveryLeg",
+						"Name": "TotalRouteLengthMiles"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "CarrierId",
+					"Description": "The unique identifier of a Carrier.",
+					"BaseAttributeReference": {
+						"Entity": "VehicleDeliveryLeg.cdm.json/VehicleDeliveryLeg",
+						"Name": "CarrierId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "CarrierRouteId",
+					"Description": "The unique identifier of a Carrier Route.",
+					"BaseAttributeReference": {
+						"Entity": "VehicleDeliveryLeg.cdm.json/VehicleDeliveryLeg",
+						"Name": "CarrierRouteId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "CarrierRouteLegNumber",
+					"Description": "The assigned to the Carrier Route Leg.",
+					"BaseAttributeReference": {
+						"Entity": "VehicleDeliveryLeg.cdm.json/VehicleDeliveryLeg",
+						"Name": "CarrierRouteLegNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"VehicleId\":{\"entity\":\"VehicleDeliveryLeg.cdm.json/VehicleDeliveryLeg\",\"name\":\"VehicleId\"},\"ScheduledDepartureTimestamp\":{\"entity\":\"VehicleDeliveryLeg.cdm.json/VehicleDeliveryLeg\",\"name\":\"ScheduledDepartureTimestamp\"},\"VehicleDeliveryLegNumber\":{\"entity\":\"VehicleDeliveryLeg.cdm.json/VehicleDeliveryLeg\",\"name\":\"VehicleDeliveryLegNumber\"},\"DeliverFromLocation\":{\"entity\":\"VehicleDeliveryLeg.cdm.json/VehicleDeliveryLeg\",\"name\":\"DeliverFromLocation\"},\"DepartureTimestamp\":{\"entity\":\"VehicleDeliveryLeg.cdm.json/VehicleDeliveryLeg\",\"name\":\"DepartureTimestamp\"},\"DeliverToLocation\":{\"entity\":\"VehicleDeliveryLeg.cdm.json/VehicleDeliveryLeg\",\"name\":\"DeliverToLocation\"},\"ArrivalTimestamp\":{\"entity\":\"VehicleDeliveryLeg.cdm.json/VehicleDeliveryLeg\",\"name\":\"ArrivalTimestamp\"},\"RouteSegmentLengthMiles\":{\"entity\":\"VehicleDeliveryLeg.cdm.json/VehicleDeliveryLeg\",\"name\":\"RouteSegmentLengthMiles\"},\"TotalRouteLengthMiles\":{\"entity\":\"VehicleDeliveryLeg.cdm.json/VehicleDeliveryLeg\",\"name\":\"TotalRouteLengthMiles\"},\"CarrierId\":{\"entity\":\"VehicleDeliveryLeg.cdm.json/VehicleDeliveryLeg\",\"name\":\"CarrierId\"},\"CarrierRouteId\":{\"entity\":\"VehicleDeliveryLeg.cdm.json/VehicleDeliveryLeg\",\"name\":\"CarrierRouteId\"},\"CarrierRouteLegNumber\":{\"entity\":\"VehicleDeliveryLeg.cdm.json/VehicleDeliveryLeg\",\"name\":\"CarrierRouteLegNumber\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"VehicleDeliveryLeg\",\"path\":\"VehicleDeliveryLeg.cdm.json/VehicleDeliveryLeg\"},\"description\":\"An actual delivery run performed by a vehicle, which may be scheduled or unscheduled.\",\"primaryKey\":[\"VehicleId\",\"ScheduledDepartureTimestamp\",\"VehicleDeliveryLegNumber\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"VehicleId\",\"attributeReference\":{\"entity\":\"VehicleDeliveryLeg.cdm.json/VehicleDeliveryLeg\",\"name\":\"VehicleId\"},\"dataType\":\"long\"},{\"type\":\"Existing\",\"name\":\"ScheduledDepartureTimestamp\",\"attributeReference\":{\"entity\":\"VehicleDeliveryLeg.cdm.json/VehicleDeliveryLeg\",\"name\":\"ScheduledDepartureTimestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"VehicleDeliveryLegNumber\",\"attributeReference\":{\"entity\":\"VehicleDeliveryLeg.cdm.json/VehicleDeliveryLeg\",\"name\":\"VehicleDeliveryLegNumber\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"DeliverFromLocation\",\"attributeReference\":{\"entity\":\"VehicleDeliveryLeg.cdm.json/VehicleDeliveryLeg\",\"name\":\"DeliverFromLocation\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"DepartureTimestamp\",\"attributeReference\":{\"entity\":\"VehicleDeliveryLeg.cdm.json/VehicleDeliveryLeg\",\"name\":\"DepartureTimestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"DeliverToLocation\",\"attributeReference\":{\"entity\":\"VehicleDeliveryLeg.cdm.json/VehicleDeliveryLeg\",\"name\":\"DeliverToLocation\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ArrivalTimestamp\",\"attributeReference\":{\"entity\":\"VehicleDeliveryLeg.cdm.json/VehicleDeliveryLeg\",\"name\":\"ArrivalTimestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"RouteSegmentLengthMiles\",\"attributeReference\":{\"entity\":\"VehicleDeliveryLeg.cdm.json/VehicleDeliveryLeg\",\"name\":\"RouteSegmentLengthMiles\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"TotalRouteLengthMiles\",\"attributeReference\":{\"entity\":\"VehicleDeliveryLeg.cdm.json/VehicleDeliveryLeg\",\"name\":\"TotalRouteLengthMiles\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"CarrierId\",\"attributeReference\":{\"entity\":\"VehicleDeliveryLeg.cdm.json/VehicleDeliveryLeg\",\"name\":\"CarrierId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"CarrierRouteId\",\"attributeReference\":{\"entity\":\"VehicleDeliveryLeg.cdm.json/VehicleDeliveryLeg\",\"name\":\"CarrierRouteId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"CarrierRouteLegNumber\",\"attributeReference\":{\"entity\":\"VehicleDeliveryLeg.cdm.json/VehicleDeliveryLeg\",\"name\":\"CarrierRouteLegNumber\"},\"dataType\":\"integer\"}]}}}",
+			"Description": "An actual delivery run performed by a vehicle, which may be scheduled or unscheduled.",
+			"DisplayFolderInfo": "{\"name\":\"Shipping\",\"colorCode\":\"#000B42\"}",
+			"PrimaryKeys": "VehicleId,ScheduledDepartureTimestamp,VehicleDeliveryLegNumber"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

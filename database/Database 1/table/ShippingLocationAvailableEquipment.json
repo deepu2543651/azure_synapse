@@ -1,0 +1,151 @@
+{
+	"name": "ShippingLocationAvailableEquipment",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "ShippingLocationAvailableEquipment",
+		"Description": "The available equipment at a shipping location.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ShippingLocationId",
+					"Description": "The unique identifier of a Shipping Location.",
+					"BaseAttributeReference": {
+						"Entity": "ShippingLocationAvailableEquipment.cdm.json/ShippingLocationAvailableEquipment",
+						"Name": "ShippingLocationId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "EquipmentTypeId",
+					"Description": "The unique identifier of an Equipment Type.",
+					"BaseAttributeReference": {
+						"Entity": "ShippingLocationAvailableEquipment.cdm.json/ShippingLocationAvailableEquipment",
+						"Name": "EquipmentTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PeriodStartTimestamp",
+					"Description": "The period start timestamp that the equipment is available at the shipping location.",
+					"BaseAttributeReference": {
+						"Entity": "ShippingLocationAvailableEquipment.cdm.json/ShippingLocationAvailableEquipment",
+						"Name": "PeriodStartTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "PeriodEndTimestamp",
+					"Description": "The period end timestamp that the equipment is available at the shipping location.",
+					"BaseAttributeReference": {
+						"Entity": "ShippingLocationAvailableEquipment.cdm.json/ShippingLocationAvailableEquipment",
+						"Name": "PeriodEndTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "EquipmentAvailabilityStatusTypeId",
+					"Description": "The unique identifier of an Equipment Availability Status Type.",
+					"BaseAttributeReference": {
+						"Entity": "ShippingLocationAvailableEquipment.cdm.json/ShippingLocationAvailableEquipment",
+						"Name": "EquipmentAvailabilityStatusTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "EquipmentAvailabilityNote",
+					"Description": "A note, comment or additional information regarding the equipment availability at the associated location.",
+					"BaseAttributeReference": {
+						"Entity": "ShippingLocationAvailableEquipment.cdm.json/ShippingLocationAvailableEquipment",
+						"Name": "EquipmentAvailabilityNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "OwningPartyId",
+					"Description": "The unique identifier of a Party.",
+					"BaseAttributeReference": {
+						"Entity": "ShippingLocationAvailableEquipment.cdm.json/ShippingLocationAvailableEquipment",
+						"Name": "OwningPartyId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ShippingLocationId\":{\"entity\":\"ShippingLocationAvailableEquipment.cdm.json/ShippingLocationAvailableEquipment\",\"name\":\"ShippingLocationId\"},\"EquipmentTypeId\":{\"entity\":\"ShippingLocationAvailableEquipment.cdm.json/ShippingLocationAvailableEquipment\",\"name\":\"EquipmentTypeId\"},\"PeriodStartTimestamp\":{\"entity\":\"ShippingLocationAvailableEquipment.cdm.json/ShippingLocationAvailableEquipment\",\"name\":\"PeriodStartTimestamp\"},\"PeriodEndTimestamp\":{\"entity\":\"ShippingLocationAvailableEquipment.cdm.json/ShippingLocationAvailableEquipment\",\"name\":\"PeriodEndTimestamp\"},\"EquipmentAvailabilityStatusTypeId\":{\"entity\":\"ShippingLocationAvailableEquipment.cdm.json/ShippingLocationAvailableEquipment\",\"name\":\"EquipmentAvailabilityStatusTypeId\"},\"EquipmentAvailabilityNote\":{\"entity\":\"ShippingLocationAvailableEquipment.cdm.json/ShippingLocationAvailableEquipment\",\"name\":\"EquipmentAvailabilityNote\"},\"OwningPartyId\":{\"entity\":\"ShippingLocationAvailableEquipment.cdm.json/ShippingLocationAvailableEquipment\",\"name\":\"OwningPartyId\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"ShippingLocationAvailableEquipment\",\"path\":\"ShippingLocationAvailableEquipment.cdm.json/ShippingLocationAvailableEquipment\"},\"description\":\"The available equipment at a shipping location.\",\"primaryKey\":[\"ShippingLocationId\",\"EquipmentTypeId\",\"PeriodStartTimestamp\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"ShippingLocationId\",\"attributeReference\":{\"entity\":\"ShippingLocationAvailableEquipment.cdm.json/ShippingLocationAvailableEquipment\",\"name\":\"ShippingLocationId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"EquipmentTypeId\",\"attributeReference\":{\"entity\":\"ShippingLocationAvailableEquipment.cdm.json/ShippingLocationAvailableEquipment\",\"name\":\"EquipmentTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"PeriodStartTimestamp\",\"attributeReference\":{\"entity\":\"ShippingLocationAvailableEquipment.cdm.json/ShippingLocationAvailableEquipment\",\"name\":\"PeriodStartTimestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"PeriodEndTimestamp\",\"attributeReference\":{\"entity\":\"ShippingLocationAvailableEquipment.cdm.json/ShippingLocationAvailableEquipment\",\"name\":\"PeriodEndTimestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"EquipmentAvailabilityStatusTypeId\",\"attributeReference\":{\"entity\":\"ShippingLocationAvailableEquipment.cdm.json/ShippingLocationAvailableEquipment\",\"name\":\"EquipmentAvailabilityStatusTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"EquipmentAvailabilityNote\",\"attributeReference\":{\"entity\":\"ShippingLocationAvailableEquipment.cdm.json/ShippingLocationAvailableEquipment\",\"name\":\"EquipmentAvailabilityNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024},{\"type\":\"Existing\",\"name\":\"OwningPartyId\",\"attributeReference\":{\"entity\":\"ShippingLocationAvailableEquipment.cdm.json/ShippingLocationAvailableEquipment\",\"name\":\"OwningPartyId\"},\"dataType\":\"long\"}]}}}",
+			"Description": "The available equipment at a shipping location.",
+			"DisplayFolderInfo": "{\"name\":\"Shipping\",\"colorCode\":\"#000B42\"}",
+			"PrimaryKeys": "ShippingLocationId,EquipmentTypeId,PeriodStartTimestamp"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

@@ -1,0 +1,86 @@
+{
+	"name": "ConsolidationReason",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "ConsolidationReason",
+		"Description": "The reason for consolidation of shipments.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ConsolidationReasonId",
+					"Description": "The unique identifier of a consolidation reason.",
+					"BaseAttributeReference": {
+						"Entity": "ConsolidationReason.cdm.json/ConsolidationReason",
+						"Name": "ConsolidationReasonId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ConsolidationReasonName",
+					"Description": "The name of a consolidation reason.",
+					"BaseAttributeReference": {
+						"Entity": "ConsolidationReason.cdm.json/ConsolidationReason",
+						"Name": "ConsolidationReasonName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ConsolidationReasonDescription",
+					"Description": "The description of a consolidation reason.",
+					"BaseAttributeReference": {
+						"Entity": "ConsolidationReason.cdm.json/ConsolidationReason",
+						"Name": "ConsolidationReasonDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ConsolidationReasonId\":{\"entity\":\"ConsolidationReason.cdm.json/ConsolidationReason\",\"name\":\"ConsolidationReasonId\"},\"ConsolidationReasonName\":{\"entity\":\"ConsolidationReason.cdm.json/ConsolidationReason\",\"name\":\"ConsolidationReasonName\"},\"ConsolidationReasonDescription\":{\"entity\":\"ConsolidationReason.cdm.json/ConsolidationReason\",\"name\":\"ConsolidationReasonDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"ConsolidationReason\",\"path\":\"ConsolidationReason.cdm.json/ConsolidationReason\"},\"description\":\"The reason for consolidation of shipments.\",\"primaryKey\":[\"ConsolidationReasonId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"ConsolidationReasonId\",\"attributeReference\":{\"entity\":\"ConsolidationReason.cdm.json/ConsolidationReason\",\"name\":\"ConsolidationReasonId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ConsolidationReasonName\",\"attributeReference\":{\"entity\":\"ConsolidationReason.cdm.json/ConsolidationReason\",\"name\":\"ConsolidationReasonName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"ConsolidationReasonDescription\",\"attributeReference\":{\"entity\":\"ConsolidationReason.cdm.json/ConsolidationReason\",\"name\":\"ConsolidationReasonDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512}]}}}",
+			"Description": "The reason for consolidation of shipments.",
+			"DisplayFolderInfo": "{\"name\":\"Shipping\",\"colorCode\":\"#000B42\"}",
+			"PrimaryKeys": "ConsolidationReasonId"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

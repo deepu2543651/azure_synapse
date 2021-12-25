@@ -1,0 +1,426 @@
+{
+	"name": "CertificateOfOrigin",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "CertificateOfOrigin",
+		"Description": "A document to prove the place of origin for specified goods, required by certain foreign countries for tariff purposes, which is normally issued or signed by a Chamber of Commerce or Embassy.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ShipmentId",
+					"Description": "The unique identifier of a Shipment.",
+					"BaseAttributeReference": {
+						"Entity": "CertificateOfOrigin.cdm.json/CertificateOfOrigin",
+						"Name": "ShipmentId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "DocumentId",
+					"Description": "The unique identifier of a Document.",
+					"BaseAttributeReference": {
+						"Entity": "CertificateOfOrigin.cdm.json/CertificateOfOrigin",
+						"Name": "DocumentId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "CertificateOfOriginCertificationDate",
+					"Description": "The date that the Certificate of Origin was certified.",
+					"BaseAttributeReference": {
+						"Entity": "CertificateOfOrigin.cdm.json/CertificateOfOrigin",
+						"Name": "CertificateOfOriginCertificationDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "ShipperName",
+					"Description": "The name of the Shipper.",
+					"BaseAttributeReference": {
+						"Entity": "CertificateOfOrigin.cdm.json/CertificateOfOrigin",
+						"Name": "ShipperName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ShipperAddress",
+					"Description": "The 'street/po box' component of the Shipper's address.",
+					"BaseAttributeReference": {
+						"Entity": "CertificateOfOrigin.cdm.json/CertificateOfOrigin",
+						"Name": "ShipperAddress"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ShipperCity",
+					"Description": "The 'city' component of the Shipper's address.",
+					"BaseAttributeReference": {
+						"Entity": "CertificateOfOrigin.cdm.json/CertificateOfOrigin",
+						"Name": "ShipperCity"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ShipperStateProvince",
+					"Description": "The 'state/province' component of the Shipper's address.",
+					"BaseAttributeReference": {
+						"Entity": "CertificateOfOrigin.cdm.json/CertificateOfOrigin",
+						"Name": "ShipperStateProvince"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 64,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ShipperZipPostalCode",
+					"Description": "The 'zip/postal code' component of the Shipper's address.",
+					"BaseAttributeReference": {
+						"Entity": "CertificateOfOrigin.cdm.json/CertificateOfOrigin",
+						"Name": "ShipperZipPostalCode"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 11,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "ShipperCountry",
+					"Description": "The 'country' component of the Shipper's address.",
+					"BaseAttributeReference": {
+						"Entity": "CertificateOfOrigin.cdm.json/CertificateOfOrigin",
+						"Name": "ShipperCountry"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 64,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ShipmentVesselName",
+					"Description": "The name of the Vessel upon which the Shipment was transported (if any).",
+					"BaseAttributeReference": {
+						"Entity": "CertificateOfOrigin.cdm.json/CertificateOfOrigin",
+						"Name": "ShipmentVesselName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ShipmentDate",
+					"Description": "The date of the associated Shipment.",
+					"BaseAttributeReference": {
+						"Entity": "CertificateOfOrigin.cdm.json/CertificateOfOrigin",
+						"Name": "ShipmentDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "ConsigneeName",
+					"Description": "The name of the Consignee.",
+					"BaseAttributeReference": {
+						"Entity": "CertificateOfOrigin.cdm.json/CertificateOfOrigin",
+						"Name": "ConsigneeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ConsigneeAddress",
+					"Description": "The 'street/po box' component of the Consignee's address.",
+					"BaseAttributeReference": {
+						"Entity": "CertificateOfOrigin.cdm.json/CertificateOfOrigin",
+						"Name": "ConsigneeAddress"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ConsigneeCity",
+					"Description": "The 'city' component of the Consignee's address.",
+					"BaseAttributeReference": {
+						"Entity": "CertificateOfOrigin.cdm.json/CertificateOfOrigin",
+						"Name": "ConsigneeCity"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ConsigneeStateProvince",
+					"Description": "The 'state/province' component of the Consignee's address.",
+					"BaseAttributeReference": {
+						"Entity": "CertificateOfOrigin.cdm.json/CertificateOfOrigin",
+						"Name": "ConsigneeStateProvince"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 64,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ConsigneeZipPostalCode",
+					"Description": "The 'zip/postal code' component of the Consignee's address.",
+					"BaseAttributeReference": {
+						"Entity": "CertificateOfOrigin.cdm.json/CertificateOfOrigin",
+						"Name": "ConsigneeZipPostalCode"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 11,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "ConsigneeCountry",
+					"Description": "The 'country' component of the Consignee's address.",
+					"BaseAttributeReference": {
+						"Entity": "CertificateOfOrigin.cdm.json/CertificateOfOrigin",
+						"Name": "ConsigneeCountry"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 64,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "CertificateDatedAtLocationId",
+					"Description": "The location at which the Certificate of Origin was signed.",
+					"BaseAttributeReference": {
+						"Entity": "CertificateOfOrigin.cdm.json/CertificateOfOrigin",
+						"Name": "CertificateDatedAtLocationId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "OfficialName",
+					"Description": "The name of the official certifying the Certificate of Origin.",
+					"BaseAttributeReference": {
+						"Entity": "CertificateOfOrigin.cdm.json/CertificateOfOrigin",
+						"Name": "OfficialName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "OfficialTitle",
+					"Description": "The title of the official certifying the Certificate of Origin.",
+					"BaseAttributeReference": {
+						"Entity": "CertificateOfOrigin.cdm.json/CertificateOfOrigin",
+						"Name": "OfficialTitle"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 16,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "OfficialCommissionExpiresDate",
+					"Description": "The date that the certifying officials commission expires.",
+					"BaseAttributeReference": {
+						"Entity": "CertificateOfOrigin.cdm.json/CertificateOfOrigin",
+						"Name": "OfficialCommissionExpiresDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "CarrierName",
+					"Description": "The name of a Carrier.",
+					"BaseAttributeReference": {
+						"Entity": "CertificateOfOrigin.cdm.json/CertificateOfOrigin",
+						"Name": "CarrierName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "SalesAgentName",
+					"Description": "The name of an Agent.",
+					"BaseAttributeReference": {
+						"Entity": "CertificateOfOrigin.cdm.json/CertificateOfOrigin",
+						"Name": "SalesAgentName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ShipmentId\":{\"entity\":\"CertificateOfOrigin.cdm.json/CertificateOfOrigin\",\"name\":\"ShipmentId\"},\"DocumentId\":{\"entity\":\"CertificateOfOrigin.cdm.json/CertificateOfOrigin\",\"name\":\"DocumentId\"},\"CertificateOfOriginCertificationDate\":{\"entity\":\"CertificateOfOrigin.cdm.json/CertificateOfOrigin\",\"name\":\"CertificateOfOriginCertificationDate\"},\"ShipperName\":{\"entity\":\"CertificateOfOrigin.cdm.json/CertificateOfOrigin\",\"name\":\"ShipperName\"},\"ShipperAddress\":{\"entity\":\"CertificateOfOrigin.cdm.json/CertificateOfOrigin\",\"name\":\"ShipperAddress\"},\"ShipperCity\":{\"entity\":\"CertificateOfOrigin.cdm.json/CertificateOfOrigin\",\"name\":\"ShipperCity\"},\"ShipperStateProvince\":{\"entity\":\"CertificateOfOrigin.cdm.json/CertificateOfOrigin\",\"name\":\"ShipperStateProvince\"},\"ShipperZipPostalCode\":{\"entity\":\"CertificateOfOrigin.cdm.json/CertificateOfOrigin\",\"name\":\"ShipperZipPostalCode\"},\"ShipperCountry\":{\"entity\":\"CertificateOfOrigin.cdm.json/CertificateOfOrigin\",\"name\":\"ShipperCountry\"},\"ShipmentVesselName\":{\"entity\":\"CertificateOfOrigin.cdm.json/CertificateOfOrigin\",\"name\":\"ShipmentVesselName\"},\"ShipmentDate\":{\"entity\":\"CertificateOfOrigin.cdm.json/CertificateOfOrigin\",\"name\":\"ShipmentDate\"},\"ConsigneeName\":{\"entity\":\"CertificateOfOrigin.cdm.json/CertificateOfOrigin\",\"name\":\"ConsigneeName\"},\"ConsigneeAddress\":{\"entity\":\"CertificateOfOrigin.cdm.json/CertificateOfOrigin\",\"name\":\"ConsigneeAddress\"},\"ConsigneeCity\":{\"entity\":\"CertificateOfOrigin.cdm.json/CertificateOfOrigin\",\"name\":\"ConsigneeCity\"},\"ConsigneeStateProvince\":{\"entity\":\"CertificateOfOrigin.cdm.json/CertificateOfOrigin\",\"name\":\"ConsigneeStateProvince\"},\"ConsigneeZipPostalCode\":{\"entity\":\"CertificateOfOrigin.cdm.json/CertificateOfOrigin\",\"name\":\"ConsigneeZipPostalCode\"},\"ConsigneeCountry\":{\"entity\":\"CertificateOfOrigin.cdm.json/CertificateOfOrigin\",\"name\":\"ConsigneeCountry\"},\"CertificateDatedAtLocationId\":{\"entity\":\"CertificateOfOrigin.cdm.json/CertificateOfOrigin\",\"name\":\"CertificateDatedAtLocationId\"},\"OfficialName\":{\"entity\":\"CertificateOfOrigin.cdm.json/CertificateOfOrigin\",\"name\":\"OfficialName\"},\"OfficialTitle\":{\"entity\":\"CertificateOfOrigin.cdm.json/CertificateOfOrigin\",\"name\":\"OfficialTitle\"},\"OfficialCommissionExpiresDate\":{\"entity\":\"CertificateOfOrigin.cdm.json/CertificateOfOrigin\",\"name\":\"OfficialCommissionExpiresDate\"},\"CarrierName\":{\"entity\":\"CertificateOfOrigin.cdm.json/CertificateOfOrigin\",\"name\":\"CarrierName\"},\"SalesAgentName\":{\"entity\":\"CertificateOfOrigin.cdm.json/CertificateOfOrigin\",\"name\":\"SalesAgentName\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"CertificateOfOrigin\",\"path\":\"CertificateOfOrigin.cdm.json/CertificateOfOrigin\"},\"description\":\"A document to prove the place of origin for specified goods, required by certain foreign countries for tariff purposes, which is normally issued or signed by a Chamber of Commerce or Embassy.\",\"primaryKey\":[\"ShipmentId\",\"DocumentId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"ShipmentId\",\"attributeReference\":{\"entity\":\"CertificateOfOrigin.cdm.json/CertificateOfOrigin\",\"name\":\"ShipmentId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"DocumentId\",\"attributeReference\":{\"entity\":\"CertificateOfOrigin.cdm.json/CertificateOfOrigin\",\"name\":\"DocumentId\"},\"dataType\":\"long\"},{\"type\":\"Existing\",\"name\":\"CertificateOfOriginCertificationDate\",\"attributeReference\":{\"entity\":\"CertificateOfOrigin.cdm.json/CertificateOfOrigin\",\"name\":\"CertificateOfOriginCertificationDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\"},{\"type\":\"Existing\",\"name\":\"ShipperName\",\"attributeReference\":{\"entity\":\"CertificateOfOrigin.cdm.json/CertificateOfOrigin\",\"name\":\"ShipperName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"ShipperAddress\",\"attributeReference\":{\"entity\":\"CertificateOfOrigin.cdm.json/CertificateOfOrigin\",\"name\":\"ShipperAddress\"},\"dataType\":\"string\",\"dataTypeLength\":512},{\"type\":\"Existing\",\"name\":\"ShipperCity\",\"attributeReference\":{\"entity\":\"CertificateOfOrigin.cdm.json/CertificateOfOrigin\",\"name\":\"ShipperCity\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"ShipperStateProvince\",\"attributeReference\":{\"entity\":\"CertificateOfOrigin.cdm.json/CertificateOfOrigin\",\"name\":\"ShipperStateProvince\"},\"dataType\":\"string\",\"dataTypeLength\":64},{\"type\":\"Existing\",\"name\":\"ShipperZipPostalCode\",\"attributeReference\":{\"entity\":\"CertificateOfOrigin.cdm.json/CertificateOfOrigin\",\"name\":\"ShipperZipPostalCode\"},\"dataType\":\"decimal\",\"dataTypeLength\":11,\"scale\":0},{\"type\":\"Existing\",\"name\":\"ShipperCountry\",\"attributeReference\":{\"entity\":\"CertificateOfOrigin.cdm.json/CertificateOfOrigin\",\"name\":\"ShipperCountry\"},\"dataType\":\"string\",\"dataTypeLength\":64},{\"type\":\"Existing\",\"name\":\"ShipmentVesselName\",\"attributeReference\":{\"entity\":\"CertificateOfOrigin.cdm.json/CertificateOfOrigin\",\"name\":\"ShipmentVesselName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"ShipmentDate\",\"attributeReference\":{\"entity\":\"CertificateOfOrigin.cdm.json/CertificateOfOrigin\",\"name\":\"ShipmentDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\"},{\"type\":\"Existing\",\"name\":\"ConsigneeName\",\"attributeReference\":{\"entity\":\"CertificateOfOrigin.cdm.json/CertificateOfOrigin\",\"name\":\"ConsigneeName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"ConsigneeAddress\",\"attributeReference\":{\"entity\":\"CertificateOfOrigin.cdm.json/CertificateOfOrigin\",\"name\":\"ConsigneeAddress\"},\"dataType\":\"string\",\"dataTypeLength\":512},{\"type\":\"Existing\",\"name\":\"ConsigneeCity\",\"attributeReference\":{\"entity\":\"CertificateOfOrigin.cdm.json/CertificateOfOrigin\",\"name\":\"ConsigneeCity\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"ConsigneeStateProvince\",\"attributeReference\":{\"entity\":\"CertificateOfOrigin.cdm.json/CertificateOfOrigin\",\"name\":\"ConsigneeStateProvince\"},\"dataType\":\"string\",\"dataTypeLength\":64},{\"type\":\"Existing\",\"name\":\"ConsigneeZipPostalCode\",\"attributeReference\":{\"entity\":\"CertificateOfOrigin.cdm.json/CertificateOfOrigin\",\"name\":\"ConsigneeZipPostalCode\"},\"dataType\":\"decimal\",\"dataTypeLength\":11,\"scale\":0},{\"type\":\"Existing\",\"name\":\"ConsigneeCountry\",\"attributeReference\":{\"entity\":\"CertificateOfOrigin.cdm.json/CertificateOfOrigin\",\"name\":\"ConsigneeCountry\"},\"dataType\":\"string\",\"dataTypeLength\":64},{\"type\":\"Existing\",\"name\":\"CertificateDatedAtLocationId\",\"attributeReference\":{\"entity\":\"CertificateOfOrigin.cdm.json/CertificateOfOrigin\",\"name\":\"CertificateDatedAtLocationId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"OfficialName\",\"attributeReference\":{\"entity\":\"CertificateOfOrigin.cdm.json/CertificateOfOrigin\",\"name\":\"OfficialName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"OfficialTitle\",\"attributeReference\":{\"entity\":\"CertificateOfOrigin.cdm.json/CertificateOfOrigin\",\"name\":\"OfficialTitle\"},\"dataType\":\"string\",\"dataTypeLength\":16},{\"type\":\"Existing\",\"name\":\"OfficialCommissionExpiresDate\",\"attributeReference\":{\"entity\":\"CertificateOfOrigin.cdm.json/CertificateOfOrigin\",\"name\":\"OfficialCommissionExpiresDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\"},{\"type\":\"Existing\",\"name\":\"CarrierName\",\"attributeReference\":{\"entity\":\"CertificateOfOrigin.cdm.json/CertificateOfOrigin\",\"name\":\"CarrierName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"SalesAgentName\",\"attributeReference\":{\"entity\":\"CertificateOfOrigin.cdm.json/CertificateOfOrigin\",\"name\":\"SalesAgentName\"},\"dataType\":\"string\",\"dataTypeLength\":128}]}}}",
+			"Description": "A document to prove the place of origin for specified goods, required by certain foreign countries for tariff purposes, which is normally issued or signed by a Chamber of Commerce or Embassy.",
+			"DisplayFolderInfo": "{\"name\":\"Shipping\",\"colorCode\":\"#000B42\"}",
+			"PrimaryKeys": "ShipmentId,DocumentId"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

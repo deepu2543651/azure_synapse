@@ -1,0 +1,151 @@
+{
+	"name": "RelatedShipment",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "RelatedShipment",
+		"Description": "The relationship of two or more shipments for a period.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ShipmentId",
+					"Description": "The unique identifier of a Shipment.",
+					"BaseAttributeReference": {
+						"Entity": "RelatedShipment.cdm.json/RelatedShipment",
+						"Name": "ShipmentId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "RelatedShipmentId",
+					"Description": "The unique identifier of a Shipment.",
+					"BaseAttributeReference": {
+						"Entity": "RelatedShipment.cdm.json/RelatedShipment",
+						"Name": "RelatedShipmentId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PeriodStartTimestamp",
+					"Description": "The period start timestamp of the shipment(s) relationship.",
+					"BaseAttributeReference": {
+						"Entity": "RelatedShipment.cdm.json/RelatedShipment",
+						"Name": "PeriodStartTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "PeriodEndTimestamp",
+					"Description": "The period end timestamp of the shipment(s) relationship.",
+					"BaseAttributeReference": {
+						"Entity": "RelatedShipment.cdm.json/RelatedShipment",
+						"Name": "PeriodEndTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "ShipmentRelationshipTypeId",
+					"Description": "The unique identifier of a Shipment Relationship Type.",
+					"BaseAttributeReference": {
+						"Entity": "RelatedShipment.cdm.json/RelatedShipment",
+						"Name": "ShipmentRelationshipTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ContainerFreightStationLocationId",
+					"Description": "The unique identifier of a Container Freight Station Location.",
+					"BaseAttributeReference": {
+						"Entity": "RelatedShipment.cdm.json/RelatedShipment",
+						"Name": "ContainerFreightStationLocationId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "RelatedShipmentNote",
+					"Description": "A note, comment or additional information regarding the related shipment(s).",
+					"BaseAttributeReference": {
+						"Entity": "RelatedShipment.cdm.json/RelatedShipment",
+						"Name": "RelatedShipmentNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ShipmentId\":{\"entity\":\"RelatedShipment.cdm.json/RelatedShipment\",\"name\":\"ShipmentId\"},\"RelatedShipmentId\":{\"entity\":\"RelatedShipment.cdm.json/RelatedShipment\",\"name\":\"RelatedShipmentId\"},\"PeriodStartTimestamp\":{\"entity\":\"RelatedShipment.cdm.json/RelatedShipment\",\"name\":\"PeriodStartTimestamp\"},\"PeriodEndTimestamp\":{\"entity\":\"RelatedShipment.cdm.json/RelatedShipment\",\"name\":\"PeriodEndTimestamp\"},\"ShipmentRelationshipTypeId\":{\"entity\":\"RelatedShipment.cdm.json/RelatedShipment\",\"name\":\"ShipmentRelationshipTypeId\"},\"ContainerFreightStationLocationId\":{\"entity\":\"RelatedShipment.cdm.json/RelatedShipment\",\"name\":\"ContainerFreightStationLocationId\"},\"RelatedShipmentNote\":{\"entity\":\"RelatedShipment.cdm.json/RelatedShipment\",\"name\":\"RelatedShipmentNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"RelatedShipment\",\"path\":\"RelatedShipment.cdm.json/RelatedShipment\"},\"description\":\"The relationship of two or more shipments for a period.\",\"primaryKey\":[\"ShipmentId\",\"RelatedShipmentId\",\"PeriodStartTimestamp\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"ShipmentId\",\"attributeReference\":{\"entity\":\"RelatedShipment.cdm.json/RelatedShipment\",\"name\":\"ShipmentId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"RelatedShipmentId\",\"attributeReference\":{\"entity\":\"RelatedShipment.cdm.json/RelatedShipment\",\"name\":\"RelatedShipmentId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"PeriodStartTimestamp\",\"attributeReference\":{\"entity\":\"RelatedShipment.cdm.json/RelatedShipment\",\"name\":\"PeriodStartTimestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"PeriodEndTimestamp\",\"attributeReference\":{\"entity\":\"RelatedShipment.cdm.json/RelatedShipment\",\"name\":\"PeriodEndTimestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"ShipmentRelationshipTypeId\",\"attributeReference\":{\"entity\":\"RelatedShipment.cdm.json/RelatedShipment\",\"name\":\"ShipmentRelationshipTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ContainerFreightStationLocationId\",\"attributeReference\":{\"entity\":\"RelatedShipment.cdm.json/RelatedShipment\",\"name\":\"ContainerFreightStationLocationId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"RelatedShipmentNote\",\"attributeReference\":{\"entity\":\"RelatedShipment.cdm.json/RelatedShipment\",\"name\":\"RelatedShipmentNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024}]}}}",
+			"Description": "The relationship of two or more shipments for a period.",
+			"DisplayFolderInfo": "{\"name\":\"Shipping\",\"colorCode\":\"#000B42\"}",
+			"PrimaryKeys": "ShipmentId,RelatedShipmentId,PeriodStartTimestamp"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

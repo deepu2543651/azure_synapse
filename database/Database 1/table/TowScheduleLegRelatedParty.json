@@ -1,0 +1,168 @@
+{
+	"name": "TowScheduleLegRelatedParty",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "TowScheduleLegRelatedParty",
+		"Description": "A party that has a relationship with the tow schedule leg over the indicated period.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "TowId",
+					"Description": "The unique identifier of a Train.",
+					"BaseAttributeReference": {
+						"Entity": "TowScheduleLegRelatedParty.cdm.json/TowScheduleLegRelatedParty",
+						"Name": "TowId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "TowScheduledDepartureTimestamp",
+					"Description": "The scheduled departure timestamp.",
+					"BaseAttributeReference": {
+						"Entity": "TowScheduleLegRelatedParty.cdm.json/TowScheduleLegRelatedParty",
+						"Name": "TowScheduledDepartureTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "TowScheduleLegNumber",
+					"Description": "The leg number of the tow schedule.",
+					"BaseAttributeReference": {
+						"Entity": "TowScheduleLegRelatedParty.cdm.json/TowScheduleLegRelatedParty",
+						"Name": "TowScheduleLegNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PartyId",
+					"Description": "The unique identifier of a Party.",
+					"BaseAttributeReference": {
+						"Entity": "TowScheduleLegRelatedParty.cdm.json/TowScheduleLegRelatedParty",
+						"Name": "PartyId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "TowScheduleLegPartyRelationshipTypeId",
+					"Description": "The unique identifier of a customer relationship type.",
+					"BaseAttributeReference": {
+						"Entity": "TowScheduleLegRelatedParty.cdm.json/TowScheduleLegRelatedParty",
+						"Name": "TowScheduleLegPartyRelationshipTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PeriodStartTimestamp",
+					"Description": "The period start timestamp for which the associated tow schedule leg - party relationship is valid or in-effect.",
+					"BaseAttributeReference": {
+						"Entity": "TowScheduleLegRelatedParty.cdm.json/TowScheduleLegRelatedParty",
+						"Name": "PeriodStartTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "PeriodEndTimestamp",
+					"Description": "The period end timestamp for which the associated tow schedule leg - party relationship is valid or in-effect.",
+					"BaseAttributeReference": {
+						"Entity": "TowScheduleLegRelatedParty.cdm.json/TowScheduleLegRelatedParty",
+						"Name": "PeriodEndTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "TowScheduleLegRelatedPartyNote",
+					"Description": "A note, comment or additional information regarding the tow schedule leg - party relationship.",
+					"BaseAttributeReference": {
+						"Entity": "TowScheduleLegRelatedParty.cdm.json/TowScheduleLegRelatedParty",
+						"Name": "TowScheduleLegRelatedPartyNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"TowId\":{\"entity\":\"TowScheduleLegRelatedParty.cdm.json/TowScheduleLegRelatedParty\",\"name\":\"TowId\"},\"TowScheduledDepartureTimestamp\":{\"entity\":\"TowScheduleLegRelatedParty.cdm.json/TowScheduleLegRelatedParty\",\"name\":\"TowScheduledDepartureTimestamp\"},\"TowScheduleLegNumber\":{\"entity\":\"TowScheduleLegRelatedParty.cdm.json/TowScheduleLegRelatedParty\",\"name\":\"TowScheduleLegNumber\"},\"PartyId\":{\"entity\":\"TowScheduleLegRelatedParty.cdm.json/TowScheduleLegRelatedParty\",\"name\":\"PartyId\"},\"TowScheduleLegPartyRelationshipTypeId\":{\"entity\":\"TowScheduleLegRelatedParty.cdm.json/TowScheduleLegRelatedParty\",\"name\":\"TowScheduleLegPartyRelationshipTypeId\"},\"PeriodStartTimestamp\":{\"entity\":\"TowScheduleLegRelatedParty.cdm.json/TowScheduleLegRelatedParty\",\"name\":\"PeriodStartTimestamp\"},\"PeriodEndTimestamp\":{\"entity\":\"TowScheduleLegRelatedParty.cdm.json/TowScheduleLegRelatedParty\",\"name\":\"PeriodEndTimestamp\"},\"TowScheduleLegRelatedPartyNote\":{\"entity\":\"TowScheduleLegRelatedParty.cdm.json/TowScheduleLegRelatedParty\",\"name\":\"TowScheduleLegRelatedPartyNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"TowScheduleLegRelatedParty\",\"path\":\"TowScheduleLegRelatedParty.cdm.json/TowScheduleLegRelatedParty\"},\"description\":\"A party that has a relationship with the tow schedule leg over the indicated period.\",\"primaryKey\":[\"TowId\",\"TowScheduledDepartureTimestamp\",\"TowScheduleLegNumber\",\"PartyId\",\"TowScheduleLegPartyRelationshipTypeId\",\"PeriodStartTimestamp\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"TowId\",\"attributeReference\":{\"entity\":\"TowScheduleLegRelatedParty.cdm.json/TowScheduleLegRelatedParty\",\"name\":\"TowId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"TowScheduledDepartureTimestamp\",\"attributeReference\":{\"entity\":\"TowScheduleLegRelatedParty.cdm.json/TowScheduleLegRelatedParty\",\"name\":\"TowScheduledDepartureTimestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"TowScheduleLegNumber\",\"attributeReference\":{\"entity\":\"TowScheduleLegRelatedParty.cdm.json/TowScheduleLegRelatedParty\",\"name\":\"TowScheduleLegNumber\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"PartyId\",\"attributeReference\":{\"entity\":\"TowScheduleLegRelatedParty.cdm.json/TowScheduleLegRelatedParty\",\"name\":\"PartyId\"},\"dataType\":\"long\"},{\"type\":\"Existing\",\"name\":\"TowScheduleLegPartyRelationshipTypeId\",\"attributeReference\":{\"entity\":\"TowScheduleLegRelatedParty.cdm.json/TowScheduleLegRelatedParty\",\"name\":\"TowScheduleLegPartyRelationshipTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"PeriodStartTimestamp\",\"attributeReference\":{\"entity\":\"TowScheduleLegRelatedParty.cdm.json/TowScheduleLegRelatedParty\",\"name\":\"PeriodStartTimestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"PeriodEndTimestamp\",\"attributeReference\":{\"entity\":\"TowScheduleLegRelatedParty.cdm.json/TowScheduleLegRelatedParty\",\"name\":\"PeriodEndTimestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"TowScheduleLegRelatedPartyNote\",\"attributeReference\":{\"entity\":\"TowScheduleLegRelatedParty.cdm.json/TowScheduleLegRelatedParty\",\"name\":\"TowScheduleLegRelatedPartyNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024}]}}}",
+			"Description": "A party that has a relationship with the tow schedule leg over the indicated period.",
+			"DisplayFolderInfo": "{\"name\":\"Shipping\",\"colorCode\":\"#000B42\"}",
+			"PrimaryKeys": "TowId,TowScheduledDepartureTimestamp,TowScheduleLegNumber,PartyId,TowScheduleLegPartyRelationshipTypeId,PeriodStartTimestamp"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

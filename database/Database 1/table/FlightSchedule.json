@@ -1,0 +1,151 @@
+{
+	"name": "FlightSchedule",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "FlightSchedule",
+		"Description": "A posted schedule for a Flight.\n\nThis is different from a Scheduled Flight, which is a specific implementation of the Flight that occurs on a specific date.\n\nFlight Schedule is the published schedule of flights and Scheduled Flight is the actual flight occurring on a day, each of which is different.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "CarrierId",
+					"Description": "The unique identifier of a Carrier.",
+					"BaseAttributeReference": {
+						"Entity": "FlightSchedule.cdm.json/FlightSchedule",
+						"Name": "CarrierId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "FlightNumber",
+					"Description": "The unique identifier of a Flight.",
+					"BaseAttributeReference": {
+						"Entity": "FlightSchedule.cdm.json/FlightSchedule",
+						"Name": "FlightNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "DayOfWeekId",
+					"Description": "The unique identifier of a Day Of Week.",
+					"BaseAttributeReference": {
+						"Entity": "FlightSchedule.cdm.json/FlightSchedule",
+						"Name": "DayOfWeekId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "FromDate",
+					"Description": "The date of the associated Flight.",
+					"BaseAttributeReference": {
+						"Entity": "FlightSchedule.cdm.json/FlightSchedule",
+						"Name": "FromDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "ToDate",
+					"Description": "The end date of the associated Flight.",
+					"BaseAttributeReference": {
+						"Entity": "FlightSchedule.cdm.json/FlightSchedule",
+						"Name": "ToDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "ScheduledDepartureTime",
+					"Description": "The scheduled departure time of the Flight.",
+					"BaseAttributeReference": {
+						"Entity": "FlightSchedule.cdm.json/FlightSchedule",
+						"Name": "ScheduledDepartureTime"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 256,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "BlackoutDateIndicator",
+					"Description": "Indicates that the associated Flight Schedule day is a blackout date defined by the Carrier.\n\nBlackout dates are certain days during high-traffic seasons and holidays when airline and hotel-award travel is restricted or not available. \n\nIntroduced in 1989, blackout dates help protect travel dates when the airlines have the most revenue to gain. For instance, blackout dates for some international partners extend all summer long.",
+					"BaseAttributeReference": {
+						"Entity": "FlightSchedule.cdm.json/FlightSchedule",
+						"Name": "BlackoutDateIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"CarrierId\":{\"entity\":\"FlightSchedule.cdm.json/FlightSchedule\",\"name\":\"CarrierId\"},\"FlightNumber\":{\"entity\":\"FlightSchedule.cdm.json/FlightSchedule\",\"name\":\"FlightNumber\"},\"DayOfWeekId\":{\"entity\":\"FlightSchedule.cdm.json/FlightSchedule\",\"name\":\"DayOfWeekId\"},\"FromDate\":{\"entity\":\"FlightSchedule.cdm.json/FlightSchedule\",\"name\":\"FromDate\"},\"ToDate\":{\"entity\":\"FlightSchedule.cdm.json/FlightSchedule\",\"name\":\"ToDate\"},\"ScheduledDepartureTime\":{\"entity\":\"FlightSchedule.cdm.json/FlightSchedule\",\"name\":\"ScheduledDepartureTime\"},\"BlackoutDateIndicator\":{\"entity\":\"FlightSchedule.cdm.json/FlightSchedule\",\"name\":\"BlackoutDateIndicator\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"FlightSchedule\",\"path\":\"FlightSchedule.cdm.json/FlightSchedule\"},\"description\":\"A posted schedule for a Flight.\\n\\nThis is different from a Scheduled Flight, which is a specific implementation of the Flight that occurs on a specific date.\\n\\nFlight Schedule is the published schedule of flights and Scheduled Flight is the actual flight occurring on a day, each of which is different.\",\"primaryKey\":[\"CarrierId\",\"FlightNumber\",\"DayOfWeekId\",\"FromDate\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"CarrierId\",\"attributeReference\":{\"entity\":\"FlightSchedule.cdm.json/FlightSchedule\",\"name\":\"CarrierId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"FlightNumber\",\"attributeReference\":{\"entity\":\"FlightSchedule.cdm.json/FlightSchedule\",\"name\":\"FlightNumber\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"DayOfWeekId\",\"attributeReference\":{\"entity\":\"FlightSchedule.cdm.json/FlightSchedule\",\"name\":\"DayOfWeekId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"FromDate\",\"attributeReference\":{\"entity\":\"FlightSchedule.cdm.json/FlightSchedule\",\"name\":\"FromDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\"},{\"type\":\"Existing\",\"name\":\"ToDate\",\"attributeReference\":{\"entity\":\"FlightSchedule.cdm.json/FlightSchedule\",\"name\":\"ToDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\"},{\"type\":\"Existing\",\"name\":\"ScheduledDepartureTime\",\"attributeReference\":{\"entity\":\"FlightSchedule.cdm.json/FlightSchedule\",\"name\":\"ScheduledDepartureTime\"},\"dataType\":\"string\",\"dataTypeLength\":256},{\"type\":\"Existing\",\"name\":\"BlackoutDateIndicator\",\"attributeReference\":{\"entity\":\"FlightSchedule.cdm.json/FlightSchedule\",\"name\":\"BlackoutDateIndicator\"},\"dataType\":\"boolean\"}]}}}",
+			"Description": "A posted schedule for a Flight.\n\nThis is different from a Scheduled Flight, which is a specific implementation of the Flight that occurs on a specific date.\n\nFlight Schedule is the published schedule of flights and Scheduled Flight is the actual flight occurring on a day, each of which is different.",
+			"DisplayFolderInfo": "{\"name\":\"Shipping\",\"colorCode\":\"#000B42\"}",
+			"PrimaryKeys": "CarrierId,FlightNumber,DayOfWeekId,FromDate"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

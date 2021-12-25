@@ -1,0 +1,26 @@
+{
+	"name": "relationship-rssdmuezej",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "relationship-rssdmuezej",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "ShipmentChargeType",
+		"ToTableName": "ShipmentCharge",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ShipmentChargeTypeId",
+				"ToColumnName": "ShipmentChargeTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"ShipmentChargeType.cdm.json/ShipmentChargeType\",\"toEntity\":\"ShipmentCharge.cdm.json/ShipmentCharge\",\"joinPairs\":[{\"fromAttribute\":\"ShipmentChargeTypeId\",\"toAttribute\":\"ShipmentChargeTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

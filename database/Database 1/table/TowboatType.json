@@ -1,0 +1,86 @@
+{
+	"name": "TowboatType",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "TowboatType",
+		"Description": "A categorization of towboat based on common characteristics or functionality.\n\nEx:\n- Harbor Boat\n- Line Haul Boat\n- Trip Boat\n- Utility Boat",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "TowboatTypeId",
+					"Description": "The unique identifier of a towboat type.",
+					"BaseAttributeReference": {
+						"Entity": "TowboatType.cdm.json/TowboatType",
+						"Name": "TowboatTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "TowboatTypeName",
+					"Description": "The name of a towboat type.",
+					"BaseAttributeReference": {
+						"Entity": "TowboatType.cdm.json/TowboatType",
+						"Name": "TowboatTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "TowboatTypeDescription",
+					"Description": "The description of a towboat type.",
+					"BaseAttributeReference": {
+						"Entity": "TowboatType.cdm.json/TowboatType",
+						"Name": "TowboatTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"TowboatTypeId\":{\"entity\":\"TowboatType.cdm.json/TowboatType\",\"name\":\"TowboatTypeId\"},\"TowboatTypeName\":{\"entity\":\"TowboatType.cdm.json/TowboatType\",\"name\":\"TowboatTypeName\"},\"TowboatTypeDescription\":{\"entity\":\"TowboatType.cdm.json/TowboatType\",\"name\":\"TowboatTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"TowboatType\",\"path\":\"TowboatType.cdm.json/TowboatType\"},\"description\":\"A categorization of towboat based on common characteristics or functionality.\\n\\nEx:\\n- Harbor Boat\\n- Line Haul Boat\\n- Trip Boat\\n- Utility Boat\",\"primaryKey\":[\"TowboatTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"TowboatTypeId\",\"attributeReference\":{\"entity\":\"TowboatType.cdm.json/TowboatType\",\"name\":\"TowboatTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"TowboatTypeName\",\"attributeReference\":{\"entity\":\"TowboatType.cdm.json/TowboatType\",\"name\":\"TowboatTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"TowboatTypeDescription\",\"attributeReference\":{\"entity\":\"TowboatType.cdm.json/TowboatType\",\"name\":\"TowboatTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512}]}}}",
+			"Description": "A categorization of towboat based on common characteristics or functionality.\n\nEx:\n- Harbor Boat\n- Line Haul Boat\n- Trip Boat\n- Utility Boat",
+			"DisplayFolderInfo": "{\"name\":\"Shipping\",\"colorCode\":\"#000B42\"}",
+			"PrimaryKeys": "TowboatTypeId"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

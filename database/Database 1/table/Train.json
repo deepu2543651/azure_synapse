@@ -1,0 +1,85 @@
+{
+	"name": "Train",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "Train",
+		"Description": "A recurring departure of one or more railcars to a destination.\n\nEx:\n- Hiawatha Express from Chicago to Minneapolis",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "TrainId",
+					"Description": "The unique identifier of a Train.",
+					"BaseAttributeReference": {
+						"Entity": "Train.cdm.json/Train",
+						"Name": "TrainId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "TrainName",
+					"Description": "The name of the train.\n\nEx:\n- Baltimore to Chicago Express Freight",
+					"BaseAttributeReference": {
+						"Entity": "Train.cdm.json/Train",
+						"Name": "TrainName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "CarrierId",
+					"Description": "The unique identifier of a Carrier.",
+					"BaseAttributeReference": {
+						"Entity": "Train.cdm.json/Train",
+						"Name": "CarrierId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"TrainId\":{\"entity\":\"Train.cdm.json/Train\",\"name\":\"TrainId\"},\"TrainName\":{\"entity\":\"Train.cdm.json/Train\",\"name\":\"TrainName\"},\"CarrierId\":{\"entity\":\"Train.cdm.json/Train\",\"name\":\"CarrierId\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"Train\",\"path\":\"Train.cdm.json/Train\"},\"description\":\"A recurring departure of one or more railcars to a destination.\\n\\nEx:\\n- Hiawatha Express from Chicago to Minneapolis\",\"primaryKey\":[\"TrainId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"TrainId\",\"attributeReference\":{\"entity\":\"Train.cdm.json/Train\",\"name\":\"TrainId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"TrainName\",\"attributeReference\":{\"entity\":\"Train.cdm.json/Train\",\"name\":\"TrainName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"CarrierId\",\"attributeReference\":{\"entity\":\"Train.cdm.json/Train\",\"name\":\"CarrierId\"},\"dataType\":\"integer\"}]}}}",
+			"Description": "A recurring departure of one or more railcars to a destination.\n\nEx:\n- Hiawatha Express from Chicago to Minneapolis",
+			"DisplayFolderInfo": "{\"name\":\"Shipping\",\"colorCode\":\"#000B42\"}",
+			"PrimaryKeys": "TrainId"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

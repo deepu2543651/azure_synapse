@@ -1,0 +1,86 @@
+{
+	"name": "KnownLossType",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "KnownLossType",
+		"Description": "Known Loss is loss discovered before or at the time of delivery of a shipment.\n\nEx: \n- An evident loss\n- Concealed loss (as opposed to a concealed loss or damage to contents",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "KnownLossTypeId",
+					"Description": "The unique identifier of a Known Loss Type.",
+					"BaseAttributeReference": {
+						"Entity": "KnownLossType.cdm.json/KnownLossType",
+						"Name": "KnownLossTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "KnownLossTypeName",
+					"Description": "The name of a Known Loss Type.",
+					"BaseAttributeReference": {
+						"Entity": "KnownLossType.cdm.json/KnownLossType",
+						"Name": "KnownLossTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "KnownLossTypeDescription",
+					"Description": "The description of a Known Loss Type.",
+					"BaseAttributeReference": {
+						"Entity": "KnownLossType.cdm.json/KnownLossType",
+						"Name": "KnownLossTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"KnownLossTypeId\":{\"entity\":\"KnownLossType.cdm.json/KnownLossType\",\"name\":\"KnownLossTypeId\"},\"KnownLossTypeName\":{\"entity\":\"KnownLossType.cdm.json/KnownLossType\",\"name\":\"KnownLossTypeName\"},\"KnownLossTypeDescription\":{\"entity\":\"KnownLossType.cdm.json/KnownLossType\",\"name\":\"KnownLossTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"KnownLossType\",\"path\":\"KnownLossType.cdm.json/KnownLossType\"},\"description\":\"Known Loss is loss discovered before or at the time of delivery of a shipment.\\n\\nEx: \\n- An evident loss\\n- Concealed loss (as opposed to a concealed loss or damage to contents\",\"primaryKey\":[\"KnownLossTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"KnownLossTypeId\",\"attributeReference\":{\"entity\":\"KnownLossType.cdm.json/KnownLossType\",\"name\":\"KnownLossTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"KnownLossTypeName\",\"attributeReference\":{\"entity\":\"KnownLossType.cdm.json/KnownLossType\",\"name\":\"KnownLossTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"KnownLossTypeDescription\",\"attributeReference\":{\"entity\":\"KnownLossType.cdm.json/KnownLossType\",\"name\":\"KnownLossTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512}]}}}",
+			"Description": "Known Loss is loss discovered before or at the time of delivery of a shipment.\n\nEx: \n- An evident loss\n- Concealed loss (as opposed to a concealed loss or damage to contents",
+			"DisplayFolderInfo": "{\"name\":\"Shipping\",\"colorCode\":\"#000B42\"}",
+			"PrimaryKeys": "KnownLossTypeId"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

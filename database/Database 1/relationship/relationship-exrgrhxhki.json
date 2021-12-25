@@ -1,0 +1,26 @@
+{
+	"name": "relationship-exrgrhxhki",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "relationship-exrgrhxhki",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Trailer",
+		"ToTableName": "TrailerAllowableCargo",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "TrailerId",
+				"ToColumnName": "TrailerId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Trailer.cdm.json/Trailer\",\"toEntity\":\"TrailerAllowableCargo.cdm.json/TrailerAllowableCargo\",\"joinPairs\":[{\"fromAttribute\":\"TrailerId\",\"toAttribute\":\"TrailerId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

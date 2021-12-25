@@ -1,0 +1,26 @@
+{
+	"name": "relationship-rkznfdsiee",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "relationship-rkznfdsiee",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Issue",
+		"ToTableName": "ServiceRequest",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "IssueId",
+				"ToColumnName": "IssueId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Issue.cdm.json/Issue\",\"toEntity\":\"ServiceRequest.cdm.json/ServiceRequest\",\"joinPairs\":[{\"fromAttribute\":\"IssueId\",\"toAttribute\":\"IssueId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

@@ -1,0 +1,26 @@
+{
+	"name": "relationship-hlawdovocd",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "relationship-hlawdovocd",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "InsurancePolicy",
+		"ToTableName": "InsurancePolicyClaim",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "InsurancePolicyId",
+				"ToColumnName": "InsurancePolicyId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"InsurancePolicy.cdm.json/InsurancePolicy\",\"toEntity\":\"InsurancePolicyClaim.cdm.json/InsurancePolicyClaim\",\"joinPairs\":[{\"fromAttribute\":\"InsurancePolicyId\",\"toAttribute\":\"InsurancePolicyId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

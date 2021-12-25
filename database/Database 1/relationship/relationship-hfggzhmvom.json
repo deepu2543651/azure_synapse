@@ -1,0 +1,30 @@
+{
+	"name": "relationship-hfggzhmvom",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "relationship-hfggzhmvom",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "CarrierRoute",
+		"ToTableName": "TrainSchedule",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "CarrierId",
+				"ToColumnName": "CarrierId"
+			},
+			{
+				"FromColumnName": "CarrierRouteId",
+				"ToColumnName": "CarrierRouteId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"CarrierRoute.cdm.json/CarrierRoute\",\"toEntity\":\"TrainSchedule.cdm.json/TrainSchedule\",\"joinPairs\":[{\"fromAttribute\":\"CarrierId\",\"toAttribute\":\"CarrierId\"},{\"fromAttribute\":\"CarrierRouteId\",\"toAttribute\":\"CarrierRouteId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

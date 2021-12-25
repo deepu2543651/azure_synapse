@@ -1,0 +1,86 @@
+{
+	"name": "FlightSegmentType",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "FlightSegmentType",
+		"Description": "A classification of flight legs or segments based on common characteristics or functions.\n\nEx:\n- Stopover\n- Connection\n- Surface Segment\n\nwhere:\nSTOPOVER\nA stopover at an intermediate point in your journey when the time difference between your arrival and scheduled departure time is greater than 24 hours. There may be additional charges related to voluntary stopovers.\n\nCONNECTION\n A flight that requires a passenger to change planes before arriving at the destination.\n\nA transfer from one flight to another, within 4 hours of arrival at transfer point or via the first available flight of the carrier and class of service of passenger's choice. Stopovers are voluntary and usually will be no more than 45 minutes to 1 hour.\n\nSURFACE SECTOR\nA segment that is completed by other than air.\nEx:   A land transit between two airports in the same city.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "FlightSegmentTypeId",
+					"Description": "The unique identifier of a Flight Segment Type.",
+					"BaseAttributeReference": {
+						"Entity": "FlightSegmentType.cdm.json/FlightSegmentType",
+						"Name": "FlightSegmentTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "FlightSegmentTypeName",
+					"Description": "The name of a Flight Segment Type.",
+					"BaseAttributeReference": {
+						"Entity": "FlightSegmentType.cdm.json/FlightSegmentType",
+						"Name": "FlightSegmentTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "FlightSegmentTypeDescription",
+					"Description": "The description of a Flight Segment Type.",
+					"BaseAttributeReference": {
+						"Entity": "FlightSegmentType.cdm.json/FlightSegmentType",
+						"Name": "FlightSegmentTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"FlightSegmentTypeId\":{\"entity\":\"FlightSegmentType.cdm.json/FlightSegmentType\",\"name\":\"FlightSegmentTypeId\"},\"FlightSegmentTypeName\":{\"entity\":\"FlightSegmentType.cdm.json/FlightSegmentType\",\"name\":\"FlightSegmentTypeName\"},\"FlightSegmentTypeDescription\":{\"entity\":\"FlightSegmentType.cdm.json/FlightSegmentType\",\"name\":\"FlightSegmentTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"FlightSegmentType\",\"path\":\"FlightSegmentType.cdm.json/FlightSegmentType\"},\"description\":\"A classification of flight legs or segments based on common characteristics or functions.\\n\\nEx:\\n- Stopover\\n- Connection\\n- Surface Segment\\n\\nwhere:\\nSTOPOVER\\nA stopover at an intermediate point in your journey when the time difference between your arrival and scheduled departure time is greater than 24 hours. There may be additional charges related to voluntary stopovers.\\n\\nCONNECTION\\n A flight that requires a passenger to change planes before arriving at the destination.\\n\\nA transfer from one flight to another, within 4 hours of arrival at transfer point or via the first available flight of the carrier and class of service of passenger's choice. Stopovers are voluntary and usually will be no more than 45 minutes to 1 hour.\\n\\nSURFACE SECTOR\\nA segment that is completed by other than air.\\nEx:   A land transit between two airports in the same city.\",\"primaryKey\":[\"FlightSegmentTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"FlightSegmentTypeId\",\"attributeReference\":{\"entity\":\"FlightSegmentType.cdm.json/FlightSegmentType\",\"name\":\"FlightSegmentTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"FlightSegmentTypeName\",\"attributeReference\":{\"entity\":\"FlightSegmentType.cdm.json/FlightSegmentType\",\"name\":\"FlightSegmentTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"FlightSegmentTypeDescription\",\"attributeReference\":{\"entity\":\"FlightSegmentType.cdm.json/FlightSegmentType\",\"name\":\"FlightSegmentTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512}]}}}",
+			"Description": "A classification of flight legs or segments based on common characteristics or functions.\n\nEx:\n- Stopover\n- Connection\n- Surface Segment\n\nwhere:\nSTOPOVER\nA stopover at an intermediate point in your journey when the time difference between your arrival and scheduled departure time is greater than 24 hours. There may be additional charges related to voluntary stopovers.\n\nCONNECTION\n A flight that requires a passenger to change planes before arriving at the destination.\n\nA transfer from one flight to another, within 4 hours of arrival at transfer point or via the first available flight of the carrier and class of service of passenger's choice. Stopovers are voluntary and usually will be no more than 45 minutes to 1 hour.\n\nSURFACE SECTOR\nA segment that is completed by other than air.\nEx:   A land transit between two airports in the same city.",
+			"DisplayFolderInfo": "{\"name\":\"Shipping\",\"colorCode\":\"#000B42\"}",
+			"PrimaryKeys": "FlightSegmentTypeId"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

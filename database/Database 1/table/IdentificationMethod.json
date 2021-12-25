@@ -1,0 +1,86 @@
+{
+	"name": "IdentificationMethod",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "IdentificationMethod",
+		"Description": "The means used to physically identify or track a shipment item.\n\nEx\n- Bar Code\n- Optical Character Recognition\n- Radio Frequency Identification (tag)\n- Magnetic Strip\n- Magnetic Ink Character Recognition\n- Cauzin Strip",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "IdentificationMethodId",
+					"Description": "The unique identifier of the Identification Method.",
+					"BaseAttributeReference": {
+						"Entity": "IdentificationMethod.cdm.json/IdentificationMethod",
+						"Name": "IdentificationMethodId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "IdentificationMethodName",
+					"Description": "The name of the Identification Method.",
+					"BaseAttributeReference": {
+						"Entity": "IdentificationMethod.cdm.json/IdentificationMethod",
+						"Name": "IdentificationMethodName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "IdentificationMethodDescription",
+					"Description": "The description of the Identification Method.",
+					"BaseAttributeReference": {
+						"Entity": "IdentificationMethod.cdm.json/IdentificationMethod",
+						"Name": "IdentificationMethodDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"IdentificationMethodId\":{\"entity\":\"IdentificationMethod.cdm.json/IdentificationMethod\",\"name\":\"IdentificationMethodId\"},\"IdentificationMethodName\":{\"entity\":\"IdentificationMethod.cdm.json/IdentificationMethod\",\"name\":\"IdentificationMethodName\"},\"IdentificationMethodDescription\":{\"entity\":\"IdentificationMethod.cdm.json/IdentificationMethod\",\"name\":\"IdentificationMethodDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"IdentificationMethod\",\"path\":\"IdentificationMethod.cdm.json/IdentificationMethod\"},\"description\":\"The means used to physically identify or track a shipment item.\\n\\nEx\\n- Bar Code\\n- Optical Character Recognition\\n- Radio Frequency Identification (tag)\\n- Magnetic Strip\\n- Magnetic Ink Character Recognition\\n- Cauzin Strip\",\"primaryKey\":[\"IdentificationMethodId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"IdentificationMethodId\",\"attributeReference\":{\"entity\":\"IdentificationMethod.cdm.json/IdentificationMethod\",\"name\":\"IdentificationMethodId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"IdentificationMethodName\",\"attributeReference\":{\"entity\":\"IdentificationMethod.cdm.json/IdentificationMethod\",\"name\":\"IdentificationMethodName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"IdentificationMethodDescription\",\"attributeReference\":{\"entity\":\"IdentificationMethod.cdm.json/IdentificationMethod\",\"name\":\"IdentificationMethodDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512}]}}}",
+			"Description": "The means used to physically identify or track a shipment item.\n\nEx\n- Bar Code\n- Optical Character Recognition\n- Radio Frequency Identification (tag)\n- Magnetic Strip\n- Magnetic Ink Character Recognition\n- Cauzin Strip",
+			"DisplayFolderInfo": "{\"name\":\"Shipping\",\"colorCode\":\"#000B42\"}",
+			"PrimaryKeys": "IdentificationMethodId"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

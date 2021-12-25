@@ -1,0 +1,197 @@
+{
+	"name": "ShipmentItemRejection",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "ShipmentItemRejection",
+		"Description": "Shipped items rejected at an intermediary or receiving location as a result of final inspection or an intermediary inspection.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ShipmentId",
+					"Description": "The unique identifier of a Shipment.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentItemRejection.cdm.json/ShipmentItemRejection",
+						"Name": "ShipmentId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "RejectionTimestamp",
+					"Description": "The timestamp of the rejections.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentItemRejection.cdm.json/ShipmentItemRejection",
+						"Name": "RejectionTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "ShipmentItemNumber",
+					"Description": "The shipment line number.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentItemRejection.cdm.json/ShipmentItemRejection",
+						"Name": "ShipmentItemNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "QuantityRejected",
+					"Description": "The quantity of Shipment Items rejected.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentItemRejection.cdm.json/ShipmentItemRejection",
+						"Name": "QuantityRejected"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "TotalShipmentRejectedIndicator",
+					"Description": "A flag or indicator indicating the total shipment, all items/all quantity, was rejected.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentItemRejection.cdm.json/ShipmentItemRejection",
+						"Name": "TotalShipmentRejectedIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "ShipmentInspectionTypeId",
+					"Description": "The unique identifier of a Shipment Inspection Type.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentItemRejection.cdm.json/ShipmentItemRejection",
+						"Name": "ShipmentInspectionTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "RejectedItemConditionId",
+					"Description": "The unique identifier of a Rejected Item Condition.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentItemRejection.cdm.json/ShipmentItemRejection",
+						"Name": "RejectedItemConditionId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ShipmentItemRejectionReasonId",
+					"Description": "The unique identifier of a Rejection Reason.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentItemRejection.cdm.json/ShipmentItemRejection",
+						"Name": "ShipmentItemRejectionReasonId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "RejectionPartyId",
+					"Description": "The unique identifier of a Party.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentItemRejection.cdm.json/ShipmentItemRejection",
+						"Name": "RejectionPartyId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "LocationId",
+					"Description": "The unique identifier of a Location.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentItemRejection.cdm.json/ShipmentItemRejection",
+						"Name": "LocationId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ShipmentId\":{\"entity\":\"ShipmentItemRejection.cdm.json/ShipmentItemRejection\",\"name\":\"ShipmentId\"},\"RejectionTimestamp\":{\"entity\":\"ShipmentItemRejection.cdm.json/ShipmentItemRejection\",\"name\":\"RejectionTimestamp\"},\"ShipmentItemNumber\":{\"entity\":\"ShipmentItemRejection.cdm.json/ShipmentItemRejection\",\"name\":\"ShipmentItemNumber\"},\"QuantityRejected\":{\"entity\":\"ShipmentItemRejection.cdm.json/ShipmentItemRejection\",\"name\":\"QuantityRejected\"},\"TotalShipmentRejectedIndicator\":{\"entity\":\"ShipmentItemRejection.cdm.json/ShipmentItemRejection\",\"name\":\"TotalShipmentRejectedIndicator\"},\"ShipmentInspectionTypeId\":{\"entity\":\"ShipmentItemRejection.cdm.json/ShipmentItemRejection\",\"name\":\"ShipmentInspectionTypeId\"},\"RejectedItemConditionId\":{\"entity\":\"ShipmentItemRejection.cdm.json/ShipmentItemRejection\",\"name\":\"RejectedItemConditionId\"},\"ShipmentItemRejectionReasonId\":{\"entity\":\"ShipmentItemRejection.cdm.json/ShipmentItemRejection\",\"name\":\"ShipmentItemRejectionReasonId\"},\"RejectionPartyId\":{\"entity\":\"ShipmentItemRejection.cdm.json/ShipmentItemRejection\",\"name\":\"RejectionPartyId\"},\"LocationId\":{\"entity\":\"ShipmentItemRejection.cdm.json/ShipmentItemRejection\",\"name\":\"LocationId\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"ShipmentItemRejection\",\"path\":\"ShipmentItemRejection.cdm.json/ShipmentItemRejection\"},\"description\":\"Shipped items rejected at an intermediary or receiving location as a result of final inspection or an intermediary inspection.\",\"primaryKey\":[\"ShipmentId\",\"RejectionTimestamp\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"ShipmentId\",\"attributeReference\":{\"entity\":\"ShipmentItemRejection.cdm.json/ShipmentItemRejection\",\"name\":\"ShipmentId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"RejectionTimestamp\",\"attributeReference\":{\"entity\":\"ShipmentItemRejection.cdm.json/ShipmentItemRejection\",\"name\":\"RejectionTimestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"ShipmentItemNumber\",\"attributeReference\":{\"entity\":\"ShipmentItemRejection.cdm.json/ShipmentItemRejection\",\"name\":\"ShipmentItemNumber\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"QuantityRejected\",\"attributeReference\":{\"entity\":\"ShipmentItemRejection.cdm.json/ShipmentItemRejection\",\"name\":\"QuantityRejected\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"TotalShipmentRejectedIndicator\",\"attributeReference\":{\"entity\":\"ShipmentItemRejection.cdm.json/ShipmentItemRejection\",\"name\":\"TotalShipmentRejectedIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"ShipmentInspectionTypeId\",\"attributeReference\":{\"entity\":\"ShipmentItemRejection.cdm.json/ShipmentItemRejection\",\"name\":\"ShipmentInspectionTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"RejectedItemConditionId\",\"attributeReference\":{\"entity\":\"ShipmentItemRejection.cdm.json/ShipmentItemRejection\",\"name\":\"RejectedItemConditionId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ShipmentItemRejectionReasonId\",\"attributeReference\":{\"entity\":\"ShipmentItemRejection.cdm.json/ShipmentItemRejection\",\"name\":\"ShipmentItemRejectionReasonId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"RejectionPartyId\",\"attributeReference\":{\"entity\":\"ShipmentItemRejection.cdm.json/ShipmentItemRejection\",\"name\":\"RejectionPartyId\"},\"dataType\":\"long\"},{\"type\":\"Existing\",\"name\":\"LocationId\",\"attributeReference\":{\"entity\":\"ShipmentItemRejection.cdm.json/ShipmentItemRejection\",\"name\":\"LocationId\"},\"dataType\":\"integer\"}]}}}",
+			"Description": "Shipped items rejected at an intermediary or receiving location as a result of final inspection or an intermediary inspection.",
+			"DisplayFolderInfo": "{\"name\":\"Shipping\",\"colorCode\":\"#000B42\"}",
+			"PrimaryKeys": "ShipmentId,RejectionTimestamp"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

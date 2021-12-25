@@ -1,0 +1,168 @@
+{
+	"name": "ShipmentDamageRelatedParty",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "ShipmentDamageRelatedParty",
+		"Description": "A party related to shipment damage.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ShipmentId",
+					"Description": "The unique identifier of a Shipment.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentDamageRelatedParty.cdm.json/ShipmentDamageRelatedParty",
+						"Name": "ShipmentId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ShipmentItemNumber",
+					"Description": "The shipment line number.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentDamageRelatedParty.cdm.json/ShipmentDamageRelatedParty",
+						"Name": "ShipmentItemNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "DamageReportedTimestamp",
+					"Description": "The timestamp of the damage report.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentDamageRelatedParty.cdm.json/ShipmentDamageRelatedParty",
+						"Name": "DamageReportedTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "PartyId",
+					"Description": "The unique identifier of a Party.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentDamageRelatedParty.cdm.json/ShipmentDamageRelatedParty",
+						"Name": "PartyId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "ShipmentDamagePartyRelationshipTypeId",
+					"Description": "The unique identifier of a Shipment Damage Party Relationship Type.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentDamageRelatedParty.cdm.json/ShipmentDamageRelatedParty",
+						"Name": "ShipmentDamagePartyRelationshipTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PeriodStartTimestamp",
+					"Description": "The period start timestamp which the associated information is valid or effective.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentDamageRelatedParty.cdm.json/ShipmentDamageRelatedParty",
+						"Name": "PeriodStartTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "PeriodEndTimestamp",
+					"Description": "The period end timestamp for which the associated information is valid or effective.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentDamageRelatedParty.cdm.json/ShipmentDamageRelatedParty",
+						"Name": "PeriodEndTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "ShipmentDamageRelatedPartyNote",
+					"Description": "A note, comment or additional information regarding the shipment damage related party.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentDamageRelatedParty.cdm.json/ShipmentDamageRelatedParty",
+						"Name": "ShipmentDamageRelatedPartyNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ShipmentId\":{\"entity\":\"ShipmentDamageRelatedParty.cdm.json/ShipmentDamageRelatedParty\",\"name\":\"ShipmentId\"},\"ShipmentItemNumber\":{\"entity\":\"ShipmentDamageRelatedParty.cdm.json/ShipmentDamageRelatedParty\",\"name\":\"ShipmentItemNumber\"},\"DamageReportedTimestamp\":{\"entity\":\"ShipmentDamageRelatedParty.cdm.json/ShipmentDamageRelatedParty\",\"name\":\"DamageReportedTimestamp\"},\"PartyId\":{\"entity\":\"ShipmentDamageRelatedParty.cdm.json/ShipmentDamageRelatedParty\",\"name\":\"PartyId\"},\"ShipmentDamagePartyRelationshipTypeId\":{\"entity\":\"ShipmentDamageRelatedParty.cdm.json/ShipmentDamageRelatedParty\",\"name\":\"ShipmentDamagePartyRelationshipTypeId\"},\"PeriodStartTimestamp\":{\"entity\":\"ShipmentDamageRelatedParty.cdm.json/ShipmentDamageRelatedParty\",\"name\":\"PeriodStartTimestamp\"},\"PeriodEndTimestamp\":{\"entity\":\"ShipmentDamageRelatedParty.cdm.json/ShipmentDamageRelatedParty\",\"name\":\"PeriodEndTimestamp\"},\"ShipmentDamageRelatedPartyNote\":{\"entity\":\"ShipmentDamageRelatedParty.cdm.json/ShipmentDamageRelatedParty\",\"name\":\"ShipmentDamageRelatedPartyNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"ShipmentDamageRelatedParty\",\"path\":\"ShipmentDamageRelatedParty.cdm.json/ShipmentDamageRelatedParty\"},\"description\":\"A party related to shipment damage.\",\"primaryKey\":[\"ShipmentId\",\"ShipmentItemNumber\",\"DamageReportedTimestamp\",\"PartyId\",\"ShipmentDamagePartyRelationshipTypeId\",\"PeriodStartTimestamp\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"ShipmentId\",\"attributeReference\":{\"entity\":\"ShipmentDamageRelatedParty.cdm.json/ShipmentDamageRelatedParty\",\"name\":\"ShipmentId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ShipmentItemNumber\",\"attributeReference\":{\"entity\":\"ShipmentDamageRelatedParty.cdm.json/ShipmentDamageRelatedParty\",\"name\":\"ShipmentItemNumber\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"DamageReportedTimestamp\",\"attributeReference\":{\"entity\":\"ShipmentDamageRelatedParty.cdm.json/ShipmentDamageRelatedParty\",\"name\":\"DamageReportedTimestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"PartyId\",\"attributeReference\":{\"entity\":\"ShipmentDamageRelatedParty.cdm.json/ShipmentDamageRelatedParty\",\"name\":\"PartyId\"},\"dataType\":\"long\"},{\"type\":\"Existing\",\"name\":\"ShipmentDamagePartyRelationshipTypeId\",\"attributeReference\":{\"entity\":\"ShipmentDamageRelatedParty.cdm.json/ShipmentDamageRelatedParty\",\"name\":\"ShipmentDamagePartyRelationshipTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"PeriodStartTimestamp\",\"attributeReference\":{\"entity\":\"ShipmentDamageRelatedParty.cdm.json/ShipmentDamageRelatedParty\",\"name\":\"PeriodStartTimestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"PeriodEndTimestamp\",\"attributeReference\":{\"entity\":\"ShipmentDamageRelatedParty.cdm.json/ShipmentDamageRelatedParty\",\"name\":\"PeriodEndTimestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"ShipmentDamageRelatedPartyNote\",\"attributeReference\":{\"entity\":\"ShipmentDamageRelatedParty.cdm.json/ShipmentDamageRelatedParty\",\"name\":\"ShipmentDamageRelatedPartyNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024}]}}}",
+			"Description": "A party related to shipment damage.",
+			"DisplayFolderInfo": "{\"name\":\"Shipping\",\"colorCode\":\"#000B42\"}",
+			"PrimaryKeys": "ShipmentId,ShipmentItemNumber,DamageReportedTimestamp,PartyId,ShipmentDamagePartyRelationshipTypeId,PeriodStartTimestamp"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

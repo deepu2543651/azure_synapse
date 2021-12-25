@@ -1,0 +1,26 @@
+{
+	"name": "relationship-qypbycleon",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "relationship-qypbycleon",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Locomotive",
+		"ToTableName": "TrainScheduleLegConfiguration",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "EngineId",
+				"ToColumnName": "EngineId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Locomotive.cdm.json/Locomotive\",\"toEntity\":\"TrainScheduleLegConfiguration.cdm.json/TrainScheduleLegConfiguration\",\"joinPairs\":[{\"fromAttribute\":\"EngineId\",\"toAttribute\":\"EngineId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

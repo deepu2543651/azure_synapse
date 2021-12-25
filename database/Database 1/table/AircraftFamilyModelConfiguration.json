@@ -1,0 +1,309 @@
+{
+	"name": "AircraftFamilyModelConfiguration",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "AircraftFamilyModelConfiguration",
+		"Description": "An Aircraft Family Model Configuration of specific seat, amenity etc. configurations.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "AircraftFamilyModelId",
+					"Description": "The unique identifier of an Aircraft Family Model.",
+					"BaseAttributeReference": {
+						"Entity": "AircraftFamilyModelConfiguration.cdm.json/AircraftFamilyModelConfiguration",
+						"Name": "AircraftFamilyModelId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ConfigurationId",
+					"Description": "The unique identifier of a configuration.",
+					"BaseAttributeReference": {
+						"Entity": "AircraftFamilyModelConfiguration.cdm.json/AircraftFamilyModelConfiguration",
+						"Name": "ConfigurationId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "EmptyWeight",
+					"Description": "The empty weight of the aircraft family model configuration.",
+					"BaseAttributeReference": {
+						"Entity": "AircraftFamilyModelConfiguration.cdm.json/AircraftFamilyModelConfiguration",
+						"Name": "EmptyWeight"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "TakeoffWeight",
+					"Description": "The takeoff weight of the aircraft family model configuration.",
+					"BaseAttributeReference": {
+						"Entity": "AircraftFamilyModelConfiguration.cdm.json/AircraftFamilyModelConfiguration",
+						"Name": "TakeoffWeight"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "GrossWeight",
+					"Description": "The gross weight of the aircraft family model configuration.",
+					"BaseAttributeReference": {
+						"Entity": "AircraftFamilyModelConfiguration.cdm.json/AircraftFamilyModelConfiguration",
+						"Name": "GrossWeight"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "CruiseSpeed",
+					"Description": "The cruising speed of the aircraft family model configuration.",
+					"BaseAttributeReference": {
+						"Entity": "AircraftFamilyModelConfiguration.cdm.json/AircraftFamilyModelConfiguration",
+						"Name": "CruiseSpeed"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "CruiseAltitude",
+					"Description": "The recommended cruising altitude of the aircraft family model configuration.",
+					"BaseAttributeReference": {
+						"Entity": "AircraftFamilyModelConfiguration.cdm.json/AircraftFamilyModelConfiguration",
+						"Name": "CruiseAltitude"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "MaximumOperationalAltitude",
+					"Description": "The maximum operating altitude of the aircraft family model configuration.",
+					"BaseAttributeReference": {
+						"Entity": "AircraftFamilyModelConfiguration.cdm.json/AircraftFamilyModelConfiguration",
+						"Name": "MaximumOperationalAltitude"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "TakeoffRoll",
+					"Description": "The length of runway required for the aircraft family model configuration to takeoff.",
+					"BaseAttributeReference": {
+						"Entity": "AircraftFamilyModelConfiguration.cdm.json/AircraftFamilyModelConfiguration",
+						"Name": "TakeoffRoll"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "Range",
+					"Description": "Distance an aircraft family model configuration can fly or is permitted to fly with a specified load and (usually) after making allowances for specified maneuvers such as diversions, stand-off, go-around.",
+					"BaseAttributeReference": {
+						"Entity": "AircraftFamilyModelConfiguration.cdm.json/AircraftFamilyModelConfiguration",
+						"Name": "Range"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "RangeWithMaximumPayload",
+					"Description": "The range of the aircraft family model configuration with a maximum payload.",
+					"BaseAttributeReference": {
+						"Entity": "AircraftFamilyModelConfiguration.cdm.json/AircraftFamilyModelConfiguration",
+						"Name": "RangeWithMaximumPayload"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "MaximumNumberOfPassengers",
+					"Description": "The maximum number of passengers in the associated aircraft family model configuration.",
+					"BaseAttributeReference": {
+						"Entity": "AircraftFamilyModelConfiguration.cdm.json/AircraftFamilyModelConfiguration",
+						"Name": "MaximumNumberOfPassengers"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "MaximumNumberOfFirstClassPassengers",
+					"Description": "The maximum number of first class passengers that may be carried by the aircraft family model configuration.",
+					"BaseAttributeReference": {
+						"Entity": "AircraftFamilyModelConfiguration.cdm.json/AircraftFamilyModelConfiguration",
+						"Name": "MaximumNumberOfFirstClassPassengers"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "MaximumNumberOfBusinessClassPassengers",
+					"Description": "The maximum number of business class passengers that may be carried by the aircraft family model configuration.",
+					"BaseAttributeReference": {
+						"Entity": "AircraftFamilyModelConfiguration.cdm.json/AircraftFamilyModelConfiguration",
+						"Name": "MaximumNumberOfBusinessClassPassengers"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "MaximumNumberOfEconomyPassengers",
+					"Description": "The maximum number of economy class passengers that may be carried by the aircraft family model configuration.",
+					"BaseAttributeReference": {
+						"Entity": "AircraftFamilyModelConfiguration.cdm.json/AircraftFamilyModelConfiguration",
+						"Name": "MaximumNumberOfEconomyPassengers"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "AircraftFamilyModelConfigurationNote",
+					"Description": "A note, comment or additional information regarding the aircraft family model configuration.",
+					"BaseAttributeReference": {
+						"Entity": "AircraftFamilyModelConfiguration.cdm.json/AircraftFamilyModelConfiguration",
+						"Name": "AircraftFamilyModelConfigurationNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"AircraftFamilyModelId\":{\"entity\":\"AircraftFamilyModelConfiguration.cdm.json/AircraftFamilyModelConfiguration\",\"name\":\"AircraftFamilyModelId\"},\"ConfigurationId\":{\"entity\":\"AircraftFamilyModelConfiguration.cdm.json/AircraftFamilyModelConfiguration\",\"name\":\"ConfigurationId\"},\"EmptyWeight\":{\"entity\":\"AircraftFamilyModelConfiguration.cdm.json/AircraftFamilyModelConfiguration\",\"name\":\"EmptyWeight\"},\"TakeoffWeight\":{\"entity\":\"AircraftFamilyModelConfiguration.cdm.json/AircraftFamilyModelConfiguration\",\"name\":\"TakeoffWeight\"},\"GrossWeight\":{\"entity\":\"AircraftFamilyModelConfiguration.cdm.json/AircraftFamilyModelConfiguration\",\"name\":\"GrossWeight\"},\"CruiseSpeed\":{\"entity\":\"AircraftFamilyModelConfiguration.cdm.json/AircraftFamilyModelConfiguration\",\"name\":\"CruiseSpeed\"},\"CruiseAltitude\":{\"entity\":\"AircraftFamilyModelConfiguration.cdm.json/AircraftFamilyModelConfiguration\",\"name\":\"CruiseAltitude\"},\"MaximumOperationalAltitude\":{\"entity\":\"AircraftFamilyModelConfiguration.cdm.json/AircraftFamilyModelConfiguration\",\"name\":\"MaximumOperationalAltitude\"},\"TakeoffRoll\":{\"entity\":\"AircraftFamilyModelConfiguration.cdm.json/AircraftFamilyModelConfiguration\",\"name\":\"TakeoffRoll\"},\"Range\":{\"entity\":\"AircraftFamilyModelConfiguration.cdm.json/AircraftFamilyModelConfiguration\",\"name\":\"Range\"},\"RangeWithMaximumPayload\":{\"entity\":\"AircraftFamilyModelConfiguration.cdm.json/AircraftFamilyModelConfiguration\",\"name\":\"RangeWithMaximumPayload\"},\"MaximumNumberOfPassengers\":{\"entity\":\"AircraftFamilyModelConfiguration.cdm.json/AircraftFamilyModelConfiguration\",\"name\":\"MaximumNumberOfPassengers\"},\"MaximumNumberOfFirstClassPassengers\":{\"entity\":\"AircraftFamilyModelConfiguration.cdm.json/AircraftFamilyModelConfiguration\",\"name\":\"MaximumNumberOfFirstClassPassengers\"},\"MaximumNumberOfBusinessClassPassengers\":{\"entity\":\"AircraftFamilyModelConfiguration.cdm.json/AircraftFamilyModelConfiguration\",\"name\":\"MaximumNumberOfBusinessClassPassengers\"},\"MaximumNumberOfEconomyPassengers\":{\"entity\":\"AircraftFamilyModelConfiguration.cdm.json/AircraftFamilyModelConfiguration\",\"name\":\"MaximumNumberOfEconomyPassengers\"},\"AircraftFamilyModelConfigurationNote\":{\"entity\":\"AircraftFamilyModelConfiguration.cdm.json/AircraftFamilyModelConfiguration\",\"name\":\"AircraftFamilyModelConfigurationNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"AircraftFamilyModelConfiguration\",\"path\":\"AircraftFamilyModelConfiguration.cdm.json/AircraftFamilyModelConfiguration\"},\"description\":\"An Aircraft Family Model Configuration of specific seat, amenity etc. configurations.\",\"primaryKey\":[\"AircraftFamilyModelId\",\"ConfigurationId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"AircraftFamilyModelId\",\"attributeReference\":{\"entity\":\"AircraftFamilyModelConfiguration.cdm.json/AircraftFamilyModelConfiguration\",\"name\":\"AircraftFamilyModelId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ConfigurationId\",\"attributeReference\":{\"entity\":\"AircraftFamilyModelConfiguration.cdm.json/AircraftFamilyModelConfiguration\",\"name\":\"ConfigurationId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"EmptyWeight\",\"attributeReference\":{\"entity\":\"AircraftFamilyModelConfiguration.cdm.json/AircraftFamilyModelConfiguration\",\"name\":\"EmptyWeight\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":8},{\"type\":\"Existing\",\"name\":\"TakeoffWeight\",\"attributeReference\":{\"entity\":\"AircraftFamilyModelConfiguration.cdm.json/AircraftFamilyModelConfiguration\",\"name\":\"TakeoffWeight\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":8},{\"type\":\"Existing\",\"name\":\"GrossWeight\",\"attributeReference\":{\"entity\":\"AircraftFamilyModelConfiguration.cdm.json/AircraftFamilyModelConfiguration\",\"name\":\"GrossWeight\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":8},{\"type\":\"Existing\",\"name\":\"CruiseSpeed\",\"attributeReference\":{\"entity\":\"AircraftFamilyModelConfiguration.cdm.json/AircraftFamilyModelConfiguration\",\"name\":\"CruiseSpeed\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":8},{\"type\":\"Existing\",\"name\":\"CruiseAltitude\",\"attributeReference\":{\"entity\":\"AircraftFamilyModelConfiguration.cdm.json/AircraftFamilyModelConfiguration\",\"name\":\"CruiseAltitude\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":8},{\"type\":\"Existing\",\"name\":\"MaximumOperationalAltitude\",\"attributeReference\":{\"entity\":\"AircraftFamilyModelConfiguration.cdm.json/AircraftFamilyModelConfiguration\",\"name\":\"MaximumOperationalAltitude\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":8},{\"type\":\"Existing\",\"name\":\"TakeoffRoll\",\"attributeReference\":{\"entity\":\"AircraftFamilyModelConfiguration.cdm.json/AircraftFamilyModelConfiguration\",\"name\":\"TakeoffRoll\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"Range\",\"attributeReference\":{\"entity\":\"AircraftFamilyModelConfiguration.cdm.json/AircraftFamilyModelConfiguration\",\"name\":\"Range\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":8},{\"type\":\"Existing\",\"name\":\"RangeWithMaximumPayload\",\"attributeReference\":{\"entity\":\"AircraftFamilyModelConfiguration.cdm.json/AircraftFamilyModelConfiguration\",\"name\":\"RangeWithMaximumPayload\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":8},{\"type\":\"Existing\",\"name\":\"MaximumNumberOfPassengers\",\"attributeReference\":{\"entity\":\"AircraftFamilyModelConfiguration.cdm.json/AircraftFamilyModelConfiguration\",\"name\":\"MaximumNumberOfPassengers\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"MaximumNumberOfFirstClassPassengers\",\"attributeReference\":{\"entity\":\"AircraftFamilyModelConfiguration.cdm.json/AircraftFamilyModelConfiguration\",\"name\":\"MaximumNumberOfFirstClassPassengers\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"MaximumNumberOfBusinessClassPassengers\",\"attributeReference\":{\"entity\":\"AircraftFamilyModelConfiguration.cdm.json/AircraftFamilyModelConfiguration\",\"name\":\"MaximumNumberOfBusinessClassPassengers\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"MaximumNumberOfEconomyPassengers\",\"attributeReference\":{\"entity\":\"AircraftFamilyModelConfiguration.cdm.json/AircraftFamilyModelConfiguration\",\"name\":\"MaximumNumberOfEconomyPassengers\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"AircraftFamilyModelConfigurationNote\",\"attributeReference\":{\"entity\":\"AircraftFamilyModelConfiguration.cdm.json/AircraftFamilyModelConfiguration\",\"name\":\"AircraftFamilyModelConfigurationNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024}]}}}",
+			"Description": "An Aircraft Family Model Configuration of specific seat, amenity etc. configurations.",
+			"DisplayFolderInfo": "{\"name\":\"Shipping\",\"colorCode\":\"#000B42\"}",
+			"PrimaryKeys": "AircraftFamilyModelId,ConfigurationId"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

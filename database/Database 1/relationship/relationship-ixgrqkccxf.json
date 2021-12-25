@@ -1,0 +1,26 @@
+{
+	"name": "relationship-ixgrqkccxf",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "relationship-ixgrqkccxf",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "ItemSafetyClassification",
+		"ToTableName": "Item",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ItemSafetyClassificationId",
+				"ToColumnName": "ItemSafetyClassificationId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"ItemSafetyClassification.cdm.json/ItemSafetyClassification\",\"toEntity\":\"Item.cdm.json/Item\",\"joinPairs\":[{\"fromAttribute\":\"ItemSafetyClassificationId\",\"toAttribute\":\"ItemSafetyClassificationId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

@@ -1,0 +1,26 @@
+{
+	"name": "relationship-jhgreknyum",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "relationship-jhgreknyum",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "CarrierRelationshipType",
+		"ToTableName": "RelatedCarrier",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "CarrierRelationshipTypeId",
+				"ToColumnName": "CarrierRelationshipTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"CarrierRelationshipType.cdm.json/CarrierRelationshipType\",\"toEntity\":\"RelatedCarrier.cdm.json/RelatedCarrier\",\"joinPairs\":[{\"fromAttribute\":\"CarrierRelationshipTypeId\",\"toAttribute\":\"CarrierRelationshipTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

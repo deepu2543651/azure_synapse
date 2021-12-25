@@ -1,0 +1,230 @@
+{
+	"name": "WarehouseItemAging",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "WarehouseItemAging",
+		"Description": "The quantity of Warehouse Items that have been stored in Inventory Locations for the associated period of days.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "WarehouseId",
+					"Description": "The unique identifier of a Warehouse.",
+					"BaseAttributeReference": {
+						"Entity": "WarehouseItemAging.cdm.json/WarehouseItemAging",
+						"Name": "WarehouseId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ItemSku",
+					"Description": "The Stock Keeping Unit identifier, which is typically used for inventory-related activities.",
+					"BaseAttributeReference": {
+						"Entity": "WarehouseItemAging.cdm.json/WarehouseItemAging",
+						"Name": "ItemSku"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Length": 20,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "Timestamp",
+					"Description": "The timestamp that the associated information is reported, recorded or effective as-of.",
+					"BaseAttributeReference": {
+						"Entity": "WarehouseItemAging.cdm.json/WarehouseItemAging",
+						"Name": "Timestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "Actual30DayInventoryQuantity",
+					"Description": "The quantity of Items that have been inventoried at the Warehouse for 30-59 days from the associated reference date.",
+					"BaseAttributeReference": {
+						"Entity": "WarehouseItemAging.cdm.json/WarehouseItemAging",
+						"Name": "Actual30DayInventoryQuantity"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "Actual60DayInventoryQuantity",
+					"Description": "The quantity of Items that have been inventoried at the Warehouse for 60-89 days from the associated reference date.",
+					"BaseAttributeReference": {
+						"Entity": "WarehouseItemAging.cdm.json/WarehouseItemAging",
+						"Name": "Actual60DayInventoryQuantity"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "Actual90DayInventoryQuantity",
+					"Description": "The quantity of Items that have been inventoried at the Warehouse for 90-119 days from the associated reference date.",
+					"BaseAttributeReference": {
+						"Entity": "WarehouseItemAging.cdm.json/WarehouseItemAging",
+						"Name": "Actual90DayInventoryQuantity"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "Actual120DayInventoryQuantity",
+					"Description": "The quantity of Items that have been inventoried at the Warehouse for 120 days or more from the associated reference date.",
+					"BaseAttributeReference": {
+						"Entity": "WarehouseItemAging.cdm.json/WarehouseItemAging",
+						"Name": "Actual120DayInventoryQuantity"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "Planned30DayInventoryQuantity",
+					"Description": "The planned quantity of Items to be inventoried at the Warehouse for 30 days or more from the associated reference date.",
+					"BaseAttributeReference": {
+						"Entity": "WarehouseItemAging.cdm.json/WarehouseItemAging",
+						"Name": "Planned30DayInventoryQuantity"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "Planned60DayInventoryQuantity",
+					"Description": "The planned quantity of Items to be inventoried at the Warehouse for 60 days or more from the associated reference date.",
+					"BaseAttributeReference": {
+						"Entity": "WarehouseItemAging.cdm.json/WarehouseItemAging",
+						"Name": "Planned60DayInventoryQuantity"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "Planned90DayInventoryQuantity",
+					"Description": "The planned quantity of Items to be inventoried at the Warehouse for 90 days or more from the associated reference date.",
+					"BaseAttributeReference": {
+						"Entity": "WarehouseItemAging.cdm.json/WarehouseItemAging",
+						"Name": "Planned90DayInventoryQuantity"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "Planned120DayInventoryQuantity",
+					"Description": "The planned quantity of Items to be inventoried at the Warehouse for 120 days or more from the associated reference date.",
+					"BaseAttributeReference": {
+						"Entity": "WarehouseItemAging.cdm.json/WarehouseItemAging",
+						"Name": "Planned120DayInventoryQuantity"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"WarehouseId\":{\"entity\":\"WarehouseItemAging.cdm.json/WarehouseItemAging\",\"name\":\"WarehouseId\"},\"ItemSku\":{\"entity\":\"WarehouseItemAging.cdm.json/WarehouseItemAging\",\"name\":\"ItemSku\"},\"Timestamp\":{\"entity\":\"WarehouseItemAging.cdm.json/WarehouseItemAging\",\"name\":\"Timestamp\"},\"Actual30DayInventoryQuantity\":{\"entity\":\"WarehouseItemAging.cdm.json/WarehouseItemAging\",\"name\":\"Actual30DayInventoryQuantity\"},\"Actual60DayInventoryQuantity\":{\"entity\":\"WarehouseItemAging.cdm.json/WarehouseItemAging\",\"name\":\"Actual60DayInventoryQuantity\"},\"Actual90DayInventoryQuantity\":{\"entity\":\"WarehouseItemAging.cdm.json/WarehouseItemAging\",\"name\":\"Actual90DayInventoryQuantity\"},\"Actual120DayInventoryQuantity\":{\"entity\":\"WarehouseItemAging.cdm.json/WarehouseItemAging\",\"name\":\"Actual120DayInventoryQuantity\"},\"Planned30DayInventoryQuantity\":{\"entity\":\"WarehouseItemAging.cdm.json/WarehouseItemAging\",\"name\":\"Planned30DayInventoryQuantity\"},\"Planned60DayInventoryQuantity\":{\"entity\":\"WarehouseItemAging.cdm.json/WarehouseItemAging\",\"name\":\"Planned60DayInventoryQuantity\"},\"Planned90DayInventoryQuantity\":{\"entity\":\"WarehouseItemAging.cdm.json/WarehouseItemAging\",\"name\":\"Planned90DayInventoryQuantity\"},\"Planned120DayInventoryQuantity\":{\"entity\":\"WarehouseItemAging.cdm.json/WarehouseItemAging\",\"name\":\"Planned120DayInventoryQuantity\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"WarehouseItemAging\",\"path\":\"WarehouseItemAging.cdm.json/WarehouseItemAging\"},\"description\":\"The quantity of Warehouse Items that have been stored in Inventory Locations for the associated period of days.\",\"primaryKey\":[\"WarehouseId\",\"ItemSku\",\"Timestamp\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"WarehouseId\",\"attributeReference\":{\"entity\":\"WarehouseItemAging.cdm.json/WarehouseItemAging\",\"name\":\"WarehouseId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ItemSku\",\"attributeReference\":{\"entity\":\"WarehouseItemAging.cdm.json/WarehouseItemAging\",\"name\":\"ItemSku\"},\"dataType\":\"string\",\"dataTypeLength\":20},{\"type\":\"Existing\",\"name\":\"Timestamp\",\"attributeReference\":{\"entity\":\"WarehouseItemAging.cdm.json/WarehouseItemAging\",\"name\":\"Timestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"Actual30DayInventoryQuantity\",\"attributeReference\":{\"entity\":\"WarehouseItemAging.cdm.json/WarehouseItemAging\",\"name\":\"Actual30DayInventoryQuantity\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"Actual60DayInventoryQuantity\",\"attributeReference\":{\"entity\":\"WarehouseItemAging.cdm.json/WarehouseItemAging\",\"name\":\"Actual60DayInventoryQuantity\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"Actual90DayInventoryQuantity\",\"attributeReference\":{\"entity\":\"WarehouseItemAging.cdm.json/WarehouseItemAging\",\"name\":\"Actual90DayInventoryQuantity\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"Actual120DayInventoryQuantity\",\"attributeReference\":{\"entity\":\"WarehouseItemAging.cdm.json/WarehouseItemAging\",\"name\":\"Actual120DayInventoryQuantity\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"Planned30DayInventoryQuantity\",\"attributeReference\":{\"entity\":\"WarehouseItemAging.cdm.json/WarehouseItemAging\",\"name\":\"Planned30DayInventoryQuantity\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"Planned60DayInventoryQuantity\",\"attributeReference\":{\"entity\":\"WarehouseItemAging.cdm.json/WarehouseItemAging\",\"name\":\"Planned60DayInventoryQuantity\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"Planned90DayInventoryQuantity\",\"attributeReference\":{\"entity\":\"WarehouseItemAging.cdm.json/WarehouseItemAging\",\"name\":\"Planned90DayInventoryQuantity\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"Planned120DayInventoryQuantity\",\"attributeReference\":{\"entity\":\"WarehouseItemAging.cdm.json/WarehouseItemAging\",\"name\":\"Planned120DayInventoryQuantity\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2}]}}}",
+			"Description": "The quantity of Warehouse Items that have been stored in Inventory Locations for the associated period of days.",
+			"DisplayFolderInfo": "{\"name\":\"Inventory\",\"colorCode\":\"#EA279F\"}",
+			"PrimaryKeys": "WarehouseId,ItemSku,Timestamp"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

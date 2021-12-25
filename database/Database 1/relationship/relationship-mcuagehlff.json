@@ -1,0 +1,26 @@
+{
+	"name": "relationship-mcuagehlff",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "relationship-mcuagehlff",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Vehicle",
+		"ToTableName": "VehicleHoursOfService",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "VehicleId",
+				"ToColumnName": "VehicleId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Vehicle.cdm.json/Vehicle\",\"toEntity\":\"VehicleHoursOfService.cdm.json/VehicleHoursOfService\",\"joinPairs\":[{\"fromAttribute\":\"VehicleId\",\"toAttribute\":\"VehicleId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

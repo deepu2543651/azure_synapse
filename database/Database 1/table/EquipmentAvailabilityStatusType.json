@@ -1,0 +1,86 @@
+{
+	"name": "EquipmentAvailabilityStatusType",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "EquipmentAvailabilityStatusType",
+		"Description": "The availability status of the equipment.\n\nEx:\n- Available at location\n- Unavailable at location\n- Unknown\n- N/A",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "EquipmentAvailabilityStatusTypeId",
+					"Description": "The unique identifier of an Equipment Availability Status Type.",
+					"BaseAttributeReference": {
+						"Entity": "EquipmentAvailabilityStatusType.cdm.json/EquipmentAvailabilityStatusType",
+						"Name": "EquipmentAvailabilityStatusTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "EquipmentAvailabilityStatusTypeName",
+					"Description": "The name of an Equipment Availability Status Type.",
+					"BaseAttributeReference": {
+						"Entity": "EquipmentAvailabilityStatusType.cdm.json/EquipmentAvailabilityStatusType",
+						"Name": "EquipmentAvailabilityStatusTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "EquipmentAvailabilityStatusTypeDescription",
+					"Description": "The description of an Equipment Availability Status Type.",
+					"BaseAttributeReference": {
+						"Entity": "EquipmentAvailabilityStatusType.cdm.json/EquipmentAvailabilityStatusType",
+						"Name": "EquipmentAvailabilityStatusTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"EquipmentAvailabilityStatusTypeId\":{\"entity\":\"EquipmentAvailabilityStatusType.cdm.json/EquipmentAvailabilityStatusType\",\"name\":\"EquipmentAvailabilityStatusTypeId\"},\"EquipmentAvailabilityStatusTypeName\":{\"entity\":\"EquipmentAvailabilityStatusType.cdm.json/EquipmentAvailabilityStatusType\",\"name\":\"EquipmentAvailabilityStatusTypeName\"},\"EquipmentAvailabilityStatusTypeDescription\":{\"entity\":\"EquipmentAvailabilityStatusType.cdm.json/EquipmentAvailabilityStatusType\",\"name\":\"EquipmentAvailabilityStatusTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"EquipmentAvailabilityStatusType\",\"path\":\"EquipmentAvailabilityStatusType.cdm.json/EquipmentAvailabilityStatusType\"},\"description\":\"The availability status of the equipment.\\n\\nEx:\\n- Available at location\\n- Unavailable at location\\n- Unknown\\n- N/A\",\"primaryKey\":[\"EquipmentAvailabilityStatusTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"EquipmentAvailabilityStatusTypeId\",\"attributeReference\":{\"entity\":\"EquipmentAvailabilityStatusType.cdm.json/EquipmentAvailabilityStatusType\",\"name\":\"EquipmentAvailabilityStatusTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"EquipmentAvailabilityStatusTypeName\",\"attributeReference\":{\"entity\":\"EquipmentAvailabilityStatusType.cdm.json/EquipmentAvailabilityStatusType\",\"name\":\"EquipmentAvailabilityStatusTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"EquipmentAvailabilityStatusTypeDescription\",\"attributeReference\":{\"entity\":\"EquipmentAvailabilityStatusType.cdm.json/EquipmentAvailabilityStatusType\",\"name\":\"EquipmentAvailabilityStatusTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512}]}}}",
+			"Description": "The availability status of the equipment.\n\nEx:\n- Available at location\n- Unavailable at location\n- Unknown\n- N/A",
+			"DisplayFolderInfo": "{\"name\":\"Shipping\",\"colorCode\":\"#000B42\"}",
+			"PrimaryKeys": "EquipmentAvailabilityStatusTypeId"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

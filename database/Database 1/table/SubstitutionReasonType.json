@@ -1,0 +1,86 @@
+{
+	"name": "SubstitutionReasonType",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "SubstitutionReasonType",
+		"Description": "A reason for substituting one shipment mode for another.\n\nEx:\n- Planned Substitution\n- No Substitution (End Of Line)\n- Equipment Failure\n- Weather\n- Accident\n- Theft",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "SubstitutionReasonTypeId",
+					"Description": "The unique identifier of a Substitution Reason Type.",
+					"BaseAttributeReference": {
+						"Entity": "SubstitutionReasonType.cdm.json/SubstitutionReasonType",
+						"Name": "SubstitutionReasonTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "SubstitutionReasonTypeName",
+					"Description": "The name of a Substitution Reason Type.",
+					"BaseAttributeReference": {
+						"Entity": "SubstitutionReasonType.cdm.json/SubstitutionReasonType",
+						"Name": "SubstitutionReasonTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "SubstitutionReasonTypeDescription",
+					"Description": "The description of a Substitution Reason Type.",
+					"BaseAttributeReference": {
+						"Entity": "SubstitutionReasonType.cdm.json/SubstitutionReasonType",
+						"Name": "SubstitutionReasonTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"SubstitutionReasonTypeId\":{\"entity\":\"SubstitutionReasonType.cdm.json/SubstitutionReasonType\",\"name\":\"SubstitutionReasonTypeId\"},\"SubstitutionReasonTypeName\":{\"entity\":\"SubstitutionReasonType.cdm.json/SubstitutionReasonType\",\"name\":\"SubstitutionReasonTypeName\"},\"SubstitutionReasonTypeDescription\":{\"entity\":\"SubstitutionReasonType.cdm.json/SubstitutionReasonType\",\"name\":\"SubstitutionReasonTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"SubstitutionReasonType\",\"path\":\"SubstitutionReasonType.cdm.json/SubstitutionReasonType\"},\"description\":\"A reason for substituting one shipment mode for another.\\n\\nEx:\\n- Planned Substitution\\n- No Substitution (End Of Line)\\n- Equipment Failure\\n- Weather\\n- Accident\\n- Theft\",\"primaryKey\":[\"SubstitutionReasonTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"SubstitutionReasonTypeId\",\"attributeReference\":{\"entity\":\"SubstitutionReasonType.cdm.json/SubstitutionReasonType\",\"name\":\"SubstitutionReasonTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"SubstitutionReasonTypeName\",\"attributeReference\":{\"entity\":\"SubstitutionReasonType.cdm.json/SubstitutionReasonType\",\"name\":\"SubstitutionReasonTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"SubstitutionReasonTypeDescription\",\"attributeReference\":{\"entity\":\"SubstitutionReasonType.cdm.json/SubstitutionReasonType\",\"name\":\"SubstitutionReasonTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512}]}}}",
+			"Description": "A reason for substituting one shipment mode for another.\n\nEx:\n- Planned Substitution\n- No Substitution (End Of Line)\n- Equipment Failure\n- Weather\n- Accident\n- Theft",
+			"DisplayFolderInfo": "{\"name\":\"Shipping\",\"colorCode\":\"#000B42\"}",
+			"PrimaryKeys": "SubstitutionReasonTypeId"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

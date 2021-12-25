@@ -1,0 +1,86 @@
+{
+	"name": "RejectedItemCondition",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "RejectedItemCondition",
+		"Description": "The condition of the rejected items.\n\nEx:\n- Total write off\n- Scrap value\n- To be determined by Insurer",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "RejectedItemConditionId",
+					"Description": "The unique identifier of a Rejected Item Condition.",
+					"BaseAttributeReference": {
+						"Entity": "RejectedItemCondition.cdm.json/RejectedItemCondition",
+						"Name": "RejectedItemConditionId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "RejectedItemConditionName",
+					"Description": "The name of a Rejected Item Condition.",
+					"BaseAttributeReference": {
+						"Entity": "RejectedItemCondition.cdm.json/RejectedItemCondition",
+						"Name": "RejectedItemConditionName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "RejectedItemConditionDescription",
+					"Description": "The description of a Rejected Item Condition.",
+					"BaseAttributeReference": {
+						"Entity": "RejectedItemCondition.cdm.json/RejectedItemCondition",
+						"Name": "RejectedItemConditionDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"RejectedItemConditionId\":{\"entity\":\"RejectedItemCondition.cdm.json/RejectedItemCondition\",\"name\":\"RejectedItemConditionId\"},\"RejectedItemConditionName\":{\"entity\":\"RejectedItemCondition.cdm.json/RejectedItemCondition\",\"name\":\"RejectedItemConditionName\"},\"RejectedItemConditionDescription\":{\"entity\":\"RejectedItemCondition.cdm.json/RejectedItemCondition\",\"name\":\"RejectedItemConditionDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"RejectedItemCondition\",\"path\":\"RejectedItemCondition.cdm.json/RejectedItemCondition\"},\"description\":\"The condition of the rejected items.\\n\\nEx:\\n- Total write off\\n- Scrap value\\n- To be determined by Insurer\",\"primaryKey\":[\"RejectedItemConditionId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"RejectedItemConditionId\",\"attributeReference\":{\"entity\":\"RejectedItemCondition.cdm.json/RejectedItemCondition\",\"name\":\"RejectedItemConditionId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"RejectedItemConditionName\",\"attributeReference\":{\"entity\":\"RejectedItemCondition.cdm.json/RejectedItemCondition\",\"name\":\"RejectedItemConditionName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"RejectedItemConditionDescription\",\"attributeReference\":{\"entity\":\"RejectedItemCondition.cdm.json/RejectedItemCondition\",\"name\":\"RejectedItemConditionDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512}]}}}",
+			"Description": "The condition of the rejected items.\n\nEx:\n- Total write off\n- Scrap value\n- To be determined by Insurer",
+			"DisplayFolderInfo": "{\"name\":\"Shipping\",\"colorCode\":\"#000B42\"}",
+			"PrimaryKeys": "RejectedItemConditionId"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

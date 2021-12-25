@@ -1,0 +1,34 @@
+{
+	"name": "relationship-gjqymxrwod",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "relationship-gjqymxrwod",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "CarrierRouteLeg",
+		"ToTableName": "VehicleDeliveryLeg",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "CarrierId",
+				"ToColumnName": "CarrierId"
+			},
+			{
+				"FromColumnName": "CarrierRouteId",
+				"ToColumnName": "CarrierRouteId"
+			},
+			{
+				"FromColumnName": "CarrierRouteLegNumber",
+				"ToColumnName": "CarrierRouteLegNumber"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"CarrierRouteLeg.cdm.json/CarrierRouteLeg\",\"toEntity\":\"VehicleDeliveryLeg.cdm.json/VehicleDeliveryLeg\",\"joinPairs\":[{\"fromAttribute\":\"CarrierId\",\"toAttribute\":\"CarrierId\"},{\"fromAttribute\":\"CarrierRouteId\",\"toAttribute\":\"CarrierRouteId\"},{\"fromAttribute\":\"CarrierRouteLegNumber\",\"toAttribute\":\"CarrierRouteLegNumber\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

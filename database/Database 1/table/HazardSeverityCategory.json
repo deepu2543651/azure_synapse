@@ -1,0 +1,86 @@
+{
+	"name": "HazardSeverityCategory",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "HazardSeverityCategory",
+		"Description": "The Hazard Severity Category potentially associated with an inventory Item.\n\na. Category I, Catastrophic--Hazard may cause death or total loss of a bodily system. \n\nb. Category II, Critical--Hazard may cause severe bodily injury, severe occupational illness, or major damage to a bodily system. \n\nc. Category III, Marginal--Hazard may cause minor bodily injury, minor occupational illness, or minor damage to a bodily system. \n\nd. Category IV, Negligible--Hazard would cause less than minor bodily injury, minor occupational illness, or minor bodily system damage.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "HazardSeverityCategoryId",
+					"Description": "The unique identifier of a Hazard Severity Category.",
+					"BaseAttributeReference": {
+						"Entity": "HazardSeverityCategory.cdm.json/HazardSeverityCategory",
+						"Name": "HazardSeverityCategoryId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "HazardSeverityCategoryName",
+					"Description": "The name of a Hazard Severity Category.",
+					"BaseAttributeReference": {
+						"Entity": "HazardSeverityCategory.cdm.json/HazardSeverityCategory",
+						"Name": "HazardSeverityCategoryName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "HazardSeverityCategoryDescription",
+					"Description": "The description of a Hazard Severity Category.",
+					"BaseAttributeReference": {
+						"Entity": "HazardSeverityCategory.cdm.json/HazardSeverityCategory",
+						"Name": "HazardSeverityCategoryDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"HazardSeverityCategoryId\":{\"entity\":\"HazardSeverityCategory.cdm.json/HazardSeverityCategory\",\"name\":\"HazardSeverityCategoryId\"},\"HazardSeverityCategoryName\":{\"entity\":\"HazardSeverityCategory.cdm.json/HazardSeverityCategory\",\"name\":\"HazardSeverityCategoryName\"},\"HazardSeverityCategoryDescription\":{\"entity\":\"HazardSeverityCategory.cdm.json/HazardSeverityCategory\",\"name\":\"HazardSeverityCategoryDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"HazardSeverityCategory\",\"path\":\"HazardSeverityCategory.cdm.json/HazardSeverityCategory\"},\"description\":\"The Hazard Severity Category potentially associated with an inventory Item.\\n\\na. Category I, Catastrophic--Hazard may cause death or total loss of a bodily system. \\n\\nb. Category II, Critical--Hazard may cause severe bodily injury, severe occupational illness, or major damage to a bodily system. \\n\\nc. Category III, Marginal--Hazard may cause minor bodily injury, minor occupational illness, or minor damage to a bodily system. \\n\\nd. Category IV, Negligible--Hazard would cause less than minor bodily injury, minor occupational illness, or minor bodily system damage.\",\"primaryKey\":[\"HazardSeverityCategoryId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"HazardSeverityCategoryId\",\"attributeReference\":{\"entity\":\"HazardSeverityCategory.cdm.json/HazardSeverityCategory\",\"name\":\"HazardSeverityCategoryId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"HazardSeverityCategoryName\",\"attributeReference\":{\"entity\":\"HazardSeverityCategory.cdm.json/HazardSeverityCategory\",\"name\":\"HazardSeverityCategoryName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"HazardSeverityCategoryDescription\",\"attributeReference\":{\"entity\":\"HazardSeverityCategory.cdm.json/HazardSeverityCategory\",\"name\":\"HazardSeverityCategoryDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512}]}}}",
+			"Description": "The Hazard Severity Category potentially associated with an inventory Item.\n\na. Category I, Catastrophic--Hazard may cause death or total loss of a bodily system. \n\nb. Category II, Critical--Hazard may cause severe bodily injury, severe occupational illness, or major damage to a bodily system. \n\nc. Category III, Marginal--Hazard may cause minor bodily injury, minor occupational illness, or minor damage to a bodily system. \n\nd. Category IV, Negligible--Hazard would cause less than minor bodily injury, minor occupational illness, or minor bodily system damage.",
+			"DisplayFolderInfo": "{\"name\":\"Inventory\",\"colorCode\":\"#EA279F\"}",
+			"PrimaryKeys": "HazardSeverityCategoryId"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

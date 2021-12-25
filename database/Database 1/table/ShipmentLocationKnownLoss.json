@@ -1,0 +1,137 @@
+{
+	"name": "ShipmentLocationKnownLoss",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "ShipmentLocationKnownLoss",
+		"Description": "Known losses that are known to have occurred to the shipment at the associated location.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ShipmentId",
+					"Description": "The unique identifier of a Shipment.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentLocationKnownLoss.cdm.json/ShipmentLocationKnownLoss",
+						"Name": "ShipmentId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "KnownLossTypeId",
+					"Description": "The unique identifier of a Known Loss Type.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentLocationKnownLoss.cdm.json/ShipmentLocationKnownLoss",
+						"Name": "KnownLossTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PeriodStartTimestamp",
+					"Description": "The period start timestamp that the shipment was at the shipping location.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentLocationKnownLoss.cdm.json/ShipmentLocationKnownLoss",
+						"Name": "PeriodStartTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "PeriodEndTimestamp",
+					"Description": "The period end timestamp associated with the shipment route/leg.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentLocationKnownLoss.cdm.json/ShipmentLocationKnownLoss",
+						"Name": "PeriodEndTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "KnownLossValuationAmount",
+					"Description": "The amount of the known loss.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentLocationKnownLoss.cdm.json/ShipmentLocationKnownLoss",
+						"Name": "KnownLossValuationAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "KnownLossNote",
+					"Description": "A note, comment or additional information regarding the known loss.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentLocationKnownLoss.cdm.json/ShipmentLocationKnownLoss",
+						"Name": "KnownLossNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ShipmentId\":{\"entity\":\"ShipmentLocationKnownLoss.cdm.json/ShipmentLocationKnownLoss\",\"name\":\"ShipmentId\"},\"KnownLossTypeId\":{\"entity\":\"ShipmentLocationKnownLoss.cdm.json/ShipmentLocationKnownLoss\",\"name\":\"KnownLossTypeId\"},\"PeriodStartTimestamp\":{\"entity\":\"ShipmentLocationKnownLoss.cdm.json/ShipmentLocationKnownLoss\",\"name\":\"PeriodStartTimestamp\"},\"PeriodEndTimestamp\":{\"entity\":\"ShipmentLocationKnownLoss.cdm.json/ShipmentLocationKnownLoss\",\"name\":\"PeriodEndTimestamp\"},\"KnownLossValuationAmount\":{\"entity\":\"ShipmentLocationKnownLoss.cdm.json/ShipmentLocationKnownLoss\",\"name\":\"KnownLossValuationAmount\"},\"KnownLossNote\":{\"entity\":\"ShipmentLocationKnownLoss.cdm.json/ShipmentLocationKnownLoss\",\"name\":\"KnownLossNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"ShipmentLocationKnownLoss\",\"path\":\"ShipmentLocationKnownLoss.cdm.json/ShipmentLocationKnownLoss\"},\"description\":\"Known losses that are known to have occurred to the shipment at the associated location.\",\"primaryKey\":[\"ShipmentId\",\"KnownLossTypeId\",\"PeriodStartTimestamp\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"ShipmentId\",\"attributeReference\":{\"entity\":\"ShipmentLocationKnownLoss.cdm.json/ShipmentLocationKnownLoss\",\"name\":\"ShipmentId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"KnownLossTypeId\",\"attributeReference\":{\"entity\":\"ShipmentLocationKnownLoss.cdm.json/ShipmentLocationKnownLoss\",\"name\":\"KnownLossTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"PeriodStartTimestamp\",\"attributeReference\":{\"entity\":\"ShipmentLocationKnownLoss.cdm.json/ShipmentLocationKnownLoss\",\"name\":\"PeriodStartTimestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"PeriodEndTimestamp\",\"attributeReference\":{\"entity\":\"ShipmentLocationKnownLoss.cdm.json/ShipmentLocationKnownLoss\",\"name\":\"PeriodEndTimestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"KnownLossValuationAmount\",\"attributeReference\":{\"entity\":\"ShipmentLocationKnownLoss.cdm.json/ShipmentLocationKnownLoss\",\"name\":\"KnownLossValuationAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"KnownLossNote\",\"attributeReference\":{\"entity\":\"ShipmentLocationKnownLoss.cdm.json/ShipmentLocationKnownLoss\",\"name\":\"KnownLossNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024}]}}}",
+			"Description": "Known losses that are known to have occurred to the shipment at the associated location.",
+			"DisplayFolderInfo": "{\"name\":\"Shipping\",\"colorCode\":\"#000B42\"}",
+			"PrimaryKeys": "ShipmentId,KnownLossTypeId,PeriodStartTimestamp"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

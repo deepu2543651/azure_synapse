@@ -1,0 +1,86 @@
+{
+	"name": "FlightStatus",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "FlightStatus",
+		"Description": "The status of a Flight.\n\nEx:\n- Cancelled\n- Cancelled (Weather)\n- Cancelled (Mechanical)\n- Delayed\n- Late\n- On-Time\n- Overbooked\n\nWhere:\n\nCANCELLED\nThe flight has been cancelled.\n\nDELAYED\nThe flight has been delayed at take-off or originating airport.\n\nLATE\nThe flight is airborne and expected to be late in arrival.\n\nON-TIME\nThe flight is on-time.\n\nOVERBOOKED\nThe flight has been overbooked. Overbooking is the practice by airlines and hotels of confirming more seats on an aircraft or rooms in a hotel than are actually available. Overbooking is designed to protect the airlines and hotels from no-shows.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "FlightStatusId",
+					"Description": "The unique identifier of a Flight Status.",
+					"BaseAttributeReference": {
+						"Entity": "FlightStatus.cdm.json/FlightStatus",
+						"Name": "FlightStatusId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "FlightStatusName",
+					"Description": "The name of a Flight Status.",
+					"BaseAttributeReference": {
+						"Entity": "FlightStatus.cdm.json/FlightStatus",
+						"Name": "FlightStatusName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "FlightStatusDescription",
+					"Description": "The description of a Flight Status.",
+					"BaseAttributeReference": {
+						"Entity": "FlightStatus.cdm.json/FlightStatus",
+						"Name": "FlightStatusDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"FlightStatusId\":{\"entity\":\"FlightStatus.cdm.json/FlightStatus\",\"name\":\"FlightStatusId\"},\"FlightStatusName\":{\"entity\":\"FlightStatus.cdm.json/FlightStatus\",\"name\":\"FlightStatusName\"},\"FlightStatusDescription\":{\"entity\":\"FlightStatus.cdm.json/FlightStatus\",\"name\":\"FlightStatusDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"FlightStatus\",\"path\":\"FlightStatus.cdm.json/FlightStatus\"},\"description\":\"The status of a Flight.\\n\\nEx:\\n- Cancelled\\n- Cancelled (Weather)\\n- Cancelled (Mechanical)\\n- Delayed\\n- Late\\n- On-Time\\n- Overbooked\\n\\nWhere:\\n\\nCANCELLED\\nThe flight has been cancelled.\\n\\nDELAYED\\nThe flight has been delayed at take-off or originating airport.\\n\\nLATE\\nThe flight is airborne and expected to be late in arrival.\\n\\nON-TIME\\nThe flight is on-time.\\n\\nOVERBOOKED\\nThe flight has been overbooked. Overbooking is the practice by airlines and hotels of confirming more seats on an aircraft or rooms in a hotel than are actually available. Overbooking is designed to protect the airlines and hotels from no-shows.\",\"primaryKey\":[\"FlightStatusId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"FlightStatusId\",\"attributeReference\":{\"entity\":\"FlightStatus.cdm.json/FlightStatus\",\"name\":\"FlightStatusId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"FlightStatusName\",\"attributeReference\":{\"entity\":\"FlightStatus.cdm.json/FlightStatus\",\"name\":\"FlightStatusName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"FlightStatusDescription\",\"attributeReference\":{\"entity\":\"FlightStatus.cdm.json/FlightStatus\",\"name\":\"FlightStatusDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512}]}}}",
+			"Description": "The status of a Flight.\n\nEx:\n- Cancelled\n- Cancelled (Weather)\n- Cancelled (Mechanical)\n- Delayed\n- Late\n- On-Time\n- Overbooked\n\nWhere:\n\nCANCELLED\nThe flight has been cancelled.\n\nDELAYED\nThe flight has been delayed at take-off or originating airport.\n\nLATE\nThe flight is airborne and expected to be late in arrival.\n\nON-TIME\nThe flight is on-time.\n\nOVERBOOKED\nThe flight has been overbooked. Overbooking is the practice by airlines and hotels of confirming more seats on an aircraft or rooms in a hotel than are actually available. Overbooking is designed to protect the airlines and hotels from no-shows.",
+			"DisplayFolderInfo": "{\"name\":\"Shipping\",\"colorCode\":\"#000B42\"}",
+			"PrimaryKeys": "FlightStatusId"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

@@ -1,0 +1,102 @@
+{
+	"name": "AlternateShipmentIdentifier",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "AlternateShipmentIdentifier",
+		"Description": "An alternate identifier for the associated shipment.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ShipmentId",
+					"Description": "The unique identifier of a Shipment.",
+					"BaseAttributeReference": {
+						"Entity": "AlternateShipmentIdentifier.cdm.json/AlternateShipmentIdentifier",
+						"Name": "ShipmentId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "AlternateShipmentIdentifierSequenceNumber",
+					"Description": "The sequence number of an alternate shipment identifier.",
+					"BaseAttributeReference": {
+						"Entity": "AlternateShipmentIdentifier.cdm.json/AlternateShipmentIdentifier",
+						"Name": "AlternateShipmentIdentifierSequenceNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "AlternateShipmentIdentifier",
+					"Description": "An alternate identifier that is used to identify a shipment.",
+					"BaseAttributeReference": {
+						"Entity": "AlternateShipmentIdentifier.cdm.json/AlternateShipmentIdentifier",
+						"Name": "AlternateShipmentIdentifier"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "AlternateShipmentIdentifierNote",
+					"Description": "A note, comment or additional information regarding the alternate shipment identifier.",
+					"BaseAttributeReference": {
+						"Entity": "AlternateShipmentIdentifier.cdm.json/AlternateShipmentIdentifier",
+						"Name": "AlternateShipmentIdentifierNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ShipmentId\":{\"entity\":\"AlternateShipmentIdentifier.cdm.json/AlternateShipmentIdentifier\",\"name\":\"ShipmentId\"},\"AlternateShipmentIdentifierSequenceNumber\":{\"entity\":\"AlternateShipmentIdentifier.cdm.json/AlternateShipmentIdentifier\",\"name\":\"AlternateShipmentIdentifierSequenceNumber\"},\"AlternateShipmentIdentifier\":{\"entity\":\"AlternateShipmentIdentifier.cdm.json/AlternateShipmentIdentifier\",\"name\":\"AlternateShipmentIdentifier\"},\"AlternateShipmentIdentifierNote\":{\"entity\":\"AlternateShipmentIdentifier.cdm.json/AlternateShipmentIdentifier\",\"name\":\"AlternateShipmentIdentifierNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"AlternateShipmentIdentifier\",\"path\":\"AlternateShipmentIdentifier.cdm.json/AlternateShipmentIdentifier\"},\"description\":\"An alternate identifier for the associated shipment.\",\"primaryKey\":[\"ShipmentId\",\"AlternateShipmentIdentifierSequenceNumber\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"ShipmentId\",\"attributeReference\":{\"entity\":\"AlternateShipmentIdentifier.cdm.json/AlternateShipmentIdentifier\",\"name\":\"ShipmentId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"AlternateShipmentIdentifierSequenceNumber\",\"attributeReference\":{\"entity\":\"AlternateShipmentIdentifier.cdm.json/AlternateShipmentIdentifier\",\"name\":\"AlternateShipmentIdentifierSequenceNumber\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"AlternateShipmentIdentifier\",\"attributeReference\":{\"entity\":\"AlternateShipmentIdentifier.cdm.json/AlternateShipmentIdentifier\",\"name\":\"AlternateShipmentIdentifier\"},\"dataType\":\"string\",\"dataTypeLength\":1024},{\"type\":\"Existing\",\"name\":\"AlternateShipmentIdentifierNote\",\"attributeReference\":{\"entity\":\"AlternateShipmentIdentifier.cdm.json/AlternateShipmentIdentifier\",\"name\":\"AlternateShipmentIdentifierNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024}]}}}",
+			"Description": "An alternate identifier for the associated shipment.",
+			"DisplayFolderInfo": "{\"name\":\"Shipping\",\"colorCode\":\"#000B42\"}",
+			"PrimaryKeys": "ShipmentId,AlternateShipmentIdentifierSequenceNumber"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

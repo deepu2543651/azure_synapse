@@ -1,0 +1,86 @@
+{
+	"name": "ShipmentPriority",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "ShipmentPriority",
+		"Description": "The priority assigned to the associated Shipment.\n\nEx:\n- Expedite\n- Standard",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ShipmentPriorityId",
+					"Description": "The unique identifier of a Shipment Priority.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentPriority.cdm.json/ShipmentPriority",
+						"Name": "ShipmentPriorityId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ShipmentPriorityName",
+					"Description": "The name of a Shipment Priority.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentPriority.cdm.json/ShipmentPriority",
+						"Name": "ShipmentPriorityName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ShipmentPriorityDescription",
+					"Description": "The description of a Shipment Priority.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentPriority.cdm.json/ShipmentPriority",
+						"Name": "ShipmentPriorityDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ShipmentPriorityId\":{\"entity\":\"ShipmentPriority.cdm.json/ShipmentPriority\",\"name\":\"ShipmentPriorityId\"},\"ShipmentPriorityName\":{\"entity\":\"ShipmentPriority.cdm.json/ShipmentPriority\",\"name\":\"ShipmentPriorityName\"},\"ShipmentPriorityDescription\":{\"entity\":\"ShipmentPriority.cdm.json/ShipmentPriority\",\"name\":\"ShipmentPriorityDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"ShipmentPriority\",\"path\":\"ShipmentPriority.cdm.json/ShipmentPriority\"},\"description\":\"The priority assigned to the associated Shipment.\\n\\nEx:\\n- Expedite\\n- Standard\",\"primaryKey\":[\"ShipmentPriorityId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"ShipmentPriorityId\",\"attributeReference\":{\"entity\":\"ShipmentPriority.cdm.json/ShipmentPriority\",\"name\":\"ShipmentPriorityId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ShipmentPriorityName\",\"attributeReference\":{\"entity\":\"ShipmentPriority.cdm.json/ShipmentPriority\",\"name\":\"ShipmentPriorityName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"ShipmentPriorityDescription\",\"attributeReference\":{\"entity\":\"ShipmentPriority.cdm.json/ShipmentPriority\",\"name\":\"ShipmentPriorityDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512}]}}}",
+			"Description": "The priority assigned to the associated Shipment.\n\nEx:\n- Expedite\n- Standard",
+			"DisplayFolderInfo": "{\"name\":\"Shipping\",\"colorCode\":\"#000B42\"}",
+			"PrimaryKeys": "ShipmentPriorityId"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

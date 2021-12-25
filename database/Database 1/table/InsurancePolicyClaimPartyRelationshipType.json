@@ -1,0 +1,86 @@
+{
+	"name": "InsurancePolicyClaimPartyRelationshipType",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "InsurancePolicyClaimPartyRelationshipType",
+		"Description": "The nature of the relationship between the insurance policy claim and the party.\n\nEx:\n- Insurance Claim Submitted-By Party\n- Insurance Claim  Authorized-By Party\n- Insurance Claim Paid-By Party\n- Insurance Claim Rejected-By Party",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "InsurancePolicyClaimPartyRelationshipTypeId",
+					"Description": "The unique identifier of an Insurance Policy Claim - Party Relationship Type.",
+					"BaseAttributeReference": {
+						"Entity": "InsurancePolicyClaimPartyRelationshipType.cdm.json/InsurancePolicyClaimPartyRelationshipType",
+						"Name": "InsurancePolicyClaimPartyRelationshipTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "InsurancePolicyClaimPartyRelationshipTypeName",
+					"Description": "The name of an Insurance Policy Claim - Party Relationship Type.",
+					"BaseAttributeReference": {
+						"Entity": "InsurancePolicyClaimPartyRelationshipType.cdm.json/InsurancePolicyClaimPartyRelationshipType",
+						"Name": "InsurancePolicyClaimPartyRelationshipTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "InsurancePolicyClaimPartyRelationshipTypeDescription",
+					"Description": "The description of an Insurance Policy Claim - Party Relationship Type.",
+					"BaseAttributeReference": {
+						"Entity": "InsurancePolicyClaimPartyRelationshipType.cdm.json/InsurancePolicyClaimPartyRelationshipType",
+						"Name": "InsurancePolicyClaimPartyRelationshipTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"InsurancePolicyClaimPartyRelationshipTypeId\":{\"entity\":\"InsurancePolicyClaimPartyRelationshipType.cdm.json/InsurancePolicyClaimPartyRelationshipType\",\"name\":\"InsurancePolicyClaimPartyRelationshipTypeId\"},\"InsurancePolicyClaimPartyRelationshipTypeName\":{\"entity\":\"InsurancePolicyClaimPartyRelationshipType.cdm.json/InsurancePolicyClaimPartyRelationshipType\",\"name\":\"InsurancePolicyClaimPartyRelationshipTypeName\"},\"InsurancePolicyClaimPartyRelationshipTypeDescription\":{\"entity\":\"InsurancePolicyClaimPartyRelationshipType.cdm.json/InsurancePolicyClaimPartyRelationshipType\",\"name\":\"InsurancePolicyClaimPartyRelationshipTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"InsurancePolicyClaimPartyRelationshipType\",\"path\":\"InsurancePolicyClaimPartyRelationshipType.cdm.json/InsurancePolicyClaimPartyRelationshipType\"},\"description\":\"The nature of the relationship between the insurance policy claim and the party.\\n\\nEx:\\n- Insurance Claim Submitted-By Party\\n- Insurance Claim  Authorized-By Party\\n- Insurance Claim Paid-By Party\\n- Insurance Claim Rejected-By Party\",\"primaryKey\":[\"InsurancePolicyClaimPartyRelationshipTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"InsurancePolicyClaimPartyRelationshipTypeId\",\"attributeReference\":{\"entity\":\"InsurancePolicyClaimPartyRelationshipType.cdm.json/InsurancePolicyClaimPartyRelationshipType\",\"name\":\"InsurancePolicyClaimPartyRelationshipTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"InsurancePolicyClaimPartyRelationshipTypeName\",\"attributeReference\":{\"entity\":\"InsurancePolicyClaimPartyRelationshipType.cdm.json/InsurancePolicyClaimPartyRelationshipType\",\"name\":\"InsurancePolicyClaimPartyRelationshipTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"InsurancePolicyClaimPartyRelationshipTypeDescription\",\"attributeReference\":{\"entity\":\"InsurancePolicyClaimPartyRelationshipType.cdm.json/InsurancePolicyClaimPartyRelationshipType\",\"name\":\"InsurancePolicyClaimPartyRelationshipTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512}]}}}",
+			"Description": "The nature of the relationship between the insurance policy claim and the party.\n\nEx:\n- Insurance Claim Submitted-By Party\n- Insurance Claim  Authorized-By Party\n- Insurance Claim Paid-By Party\n- Insurance Claim Rejected-By Party",
+			"DisplayFolderInfo": "{\"name\":\"Policy\",\"colorCode\":\"#7D0F6C\"}",
+			"PrimaryKeys": "InsurancePolicyClaimPartyRelationshipTypeId"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

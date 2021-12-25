@@ -1,0 +1,119 @@
+{
+	"name": "CertificateOfInspection",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "CertificateOfInspection",
+		"Description": "A document that is prepared by the Shipment insurer or insurance company that is evidence of insurance to the buyer or bank for an Import/Export shipment.\n\nIt may also certify that the merchandise was in good condition immediately prior to shipment.\n\nPreshipment inspection is a requirement for various countries.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "CertificateOfInspectionId",
+					"Description": "The number or unique identifier of the Certificate Of Inspection.",
+					"BaseAttributeReference": {
+						"Entity": "CertificateOfInspection.cdm.json/CertificateOfInspection",
+						"Name": "CertificateOfInspectionId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "InspectionTimestamp",
+					"Description": "The timestamp of inspection of the shipment.",
+					"BaseAttributeReference": {
+						"Entity": "CertificateOfInspection.cdm.json/CertificateOfInspection",
+						"Name": "InspectionTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "CertificateOfInspectionText",
+					"Description": "The text of the Certificate of Inspection.",
+					"BaseAttributeReference": {
+						"Entity": "CertificateOfInspection.cdm.json/CertificateOfInspection",
+						"Name": "CertificateOfInspectionText"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ShipmentConditionId",
+					"Description": "The unique identifier of a Shipment Condition.",
+					"BaseAttributeReference": {
+						"Entity": "CertificateOfInspection.cdm.json/CertificateOfInspection",
+						"Name": "ShipmentConditionId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "InspectionCommentsNote",
+					"Description": "A note, comment or additional information regarding the Certificate Of Inspection.",
+					"BaseAttributeReference": {
+						"Entity": "CertificateOfInspection.cdm.json/CertificateOfInspection",
+						"Name": "InspectionCommentsNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"CertificateOfInspectionId\":{\"entity\":\"CertificateOfInspection.cdm.json/CertificateOfInspection\",\"name\":\"CertificateOfInspectionId\"},\"InspectionTimestamp\":{\"entity\":\"CertificateOfInspection.cdm.json/CertificateOfInspection\",\"name\":\"InspectionTimestamp\"},\"CertificateOfInspectionText\":{\"entity\":\"CertificateOfInspection.cdm.json/CertificateOfInspection\",\"name\":\"CertificateOfInspectionText\"},\"ShipmentConditionId\":{\"entity\":\"CertificateOfInspection.cdm.json/CertificateOfInspection\",\"name\":\"ShipmentConditionId\"},\"InspectionCommentsNote\":{\"entity\":\"CertificateOfInspection.cdm.json/CertificateOfInspection\",\"name\":\"InspectionCommentsNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"CertificateOfInspection\",\"path\":\"CertificateOfInspection.cdm.json/CertificateOfInspection\"},\"description\":\"A document that is prepared by the Shipment insurer or insurance company that is evidence of insurance to the buyer or bank for an Import/Export shipment.\\n\\nIt may also certify that the merchandise was in good condition immediately prior to shipment.\\n\\nPreshipment inspection is a requirement for various countries.\",\"primaryKey\":[\"CertificateOfInspectionId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"CertificateOfInspectionId\",\"attributeReference\":{\"entity\":\"CertificateOfInspection.cdm.json/CertificateOfInspection\",\"name\":\"CertificateOfInspectionId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"InspectionTimestamp\",\"attributeReference\":{\"entity\":\"CertificateOfInspection.cdm.json/CertificateOfInspection\",\"name\":\"InspectionTimestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"CertificateOfInspectionText\",\"attributeReference\":{\"entity\":\"CertificateOfInspection.cdm.json/CertificateOfInspection\",\"name\":\"CertificateOfInspectionText\"},\"dataType\":\"string\",\"dataTypeLength\":1024},{\"type\":\"Existing\",\"name\":\"ShipmentConditionId\",\"attributeReference\":{\"entity\":\"CertificateOfInspection.cdm.json/CertificateOfInspection\",\"name\":\"ShipmentConditionId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"InspectionCommentsNote\",\"attributeReference\":{\"entity\":\"CertificateOfInspection.cdm.json/CertificateOfInspection\",\"name\":\"InspectionCommentsNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024}]}}}",
+			"Description": "A document that is prepared by the Shipment insurer or insurance company that is evidence of insurance to the buyer or bank for an Import/Export shipment.\n\nIt may also certify that the merchandise was in good condition immediately prior to shipment.\n\nPreshipment inspection is a requirement for various countries.",
+			"DisplayFolderInfo": "{\"name\":\"Shipping\",\"colorCode\":\"#000B42\"}",
+			"PrimaryKeys": "CertificateOfInspectionId"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

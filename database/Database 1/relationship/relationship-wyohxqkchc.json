@@ -1,0 +1,26 @@
+{
+	"name": "relationship-wyohxqkchc",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "relationship-wyohxqkchc",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "ShipmentRoutePartyRelationshipType",
+		"ToTableName": "ShipmentRouteRelatedParty",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ShipmentRoutePartyRelationshipTypeId",
+				"ToColumnName": "ShipmentRoutePartyRelationshipTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"ShipmentRoutePartyRelationshipType.cdm.json/ShipmentRoutePartyRelationshipType\",\"toEntity\":\"ShipmentRouteRelatedParty.cdm.json/ShipmentRouteRelatedParty\",\"joinPairs\":[{\"fromAttribute\":\"ShipmentRoutePartyRelationshipTypeId\",\"toAttribute\":\"ShipmentRoutePartyRelationshipTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

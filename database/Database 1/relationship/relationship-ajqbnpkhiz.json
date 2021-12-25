@@ -1,0 +1,26 @@
+{
+	"name": "relationship-ajqbnpkhiz",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "relationship-ajqbnpkhiz",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "InsuranceProductType",
+		"ToTableName": "InsuranceLiabilityType",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ProductTypeId",
+				"ToColumnName": "ProductTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"InsuranceProductType.cdm.json/InsuranceProductType\",\"toEntity\":\"InsuranceLiabilityType.cdm.json/InsuranceLiabilityType\",\"joinPairs\":[{\"fromAttribute\":\"ProductTypeId\",\"toAttribute\":\"ProductTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

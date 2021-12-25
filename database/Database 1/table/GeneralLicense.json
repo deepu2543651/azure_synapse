@@ -1,0 +1,103 @@
+{
+	"name": "GeneralLicense",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "GeneralLicense",
+		"Description": "U.S. Licenses that are authorized by the US Bureau of Export Administration permitting the export of non-strategic goods to specific countries without the need for a validated license. \n\nNo written authorization is required and no individual license is issued.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "GeneralLicenseNumber",
+					"Description": "The unique identifier of a General License.",
+					"BaseAttributeReference": {
+						"Entity": "GeneralLicense.cdm.json/GeneralLicense",
+						"Name": "GeneralLicenseNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "GeneralLicenseGrantedDate",
+					"Description": "The date that the General License was granted or effective as-of.",
+					"BaseAttributeReference": {
+						"Entity": "GeneralLicense.cdm.json/GeneralLicense",
+						"Name": "GeneralLicenseGrantedDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "GeneralLicenseExpirationDate",
+					"Description": "The date that the General License expires.",
+					"BaseAttributeReference": {
+						"Entity": "GeneralLicense.cdm.json/GeneralLicense",
+						"Name": "GeneralLicenseExpirationDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "Commentary",
+					"Description": "Notes, details or additional information regarding the General License.",
+					"BaseAttributeReference": {
+						"Entity": "GeneralLicense.cdm.json/GeneralLicense",
+						"Name": "Commentary"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 2048,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"GeneralLicenseNumber\":{\"entity\":\"GeneralLicense.cdm.json/GeneralLicense\",\"name\":\"GeneralLicenseNumber\"},\"GeneralLicenseGrantedDate\":{\"entity\":\"GeneralLicense.cdm.json/GeneralLicense\",\"name\":\"GeneralLicenseGrantedDate\"},\"GeneralLicenseExpirationDate\":{\"entity\":\"GeneralLicense.cdm.json/GeneralLicense\",\"name\":\"GeneralLicenseExpirationDate\"},\"Commentary\":{\"entity\":\"GeneralLicense.cdm.json/GeneralLicense\",\"name\":\"Commentary\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"GeneralLicense\",\"path\":\"GeneralLicense.cdm.json/GeneralLicense\"},\"description\":\"U.S. Licenses that are authorized by the US Bureau of Export Administration permitting the export of non-strategic goods to specific countries without the need for a validated license. \\n\\nNo written authorization is required and no individual license is issued.\",\"primaryKey\":[\"GeneralLicenseNumber\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"GeneralLicenseNumber\",\"attributeReference\":{\"entity\":\"GeneralLicense.cdm.json/GeneralLicense\",\"name\":\"GeneralLicenseNumber\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"GeneralLicenseGrantedDate\",\"attributeReference\":{\"entity\":\"GeneralLicense.cdm.json/GeneralLicense\",\"name\":\"GeneralLicenseGrantedDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\"},{\"type\":\"Existing\",\"name\":\"GeneralLicenseExpirationDate\",\"attributeReference\":{\"entity\":\"GeneralLicense.cdm.json/GeneralLicense\",\"name\":\"GeneralLicenseExpirationDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\"},{\"type\":\"Existing\",\"name\":\"Commentary\",\"attributeReference\":{\"entity\":\"GeneralLicense.cdm.json/GeneralLicense\",\"name\":\"Commentary\"},\"dataType\":\"string\",\"dataTypeLength\":2048}]}}}",
+			"Description": "U.S. Licenses that are authorized by the US Bureau of Export Administration permitting the export of non-strategic goods to specific countries without the need for a validated license. \n\nNo written authorization is required and no individual license is issued.",
+			"DisplayFolderInfo": "{\"name\":\"Shipping\",\"colorCode\":\"#000B42\"}",
+			"PrimaryKeys": "GeneralLicenseNumber"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

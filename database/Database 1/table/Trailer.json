@@ -1,0 +1,667 @@
+{
+	"name": "Trailer",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "Trailer",
+		"Description": "A trailer that is used to transfer cargo.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "TrailerId",
+					"Description": "The unique identifier of a trailer.",
+					"BaseAttributeReference": {
+						"Entity": "Trailer.cdm.json/Trailer",
+						"Name": "TrailerId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "TrailerModelName",
+					"Description": "The name of the trailer model.",
+					"BaseAttributeReference": {
+						"Entity": "Trailer.cdm.json/Trailer",
+						"Name": "TrailerModelName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "NumberOfAxles",
+					"Description": "The number of axles that the trailer has.",
+					"BaseAttributeReference": {
+						"Entity": "Trailer.cdm.json/Trailer",
+						"Name": "NumberOfAxles"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "NumberOfTires",
+					"Description": "The number of tires or wheels that the trailer has.",
+					"BaseAttributeReference": {
+						"Entity": "Trailer.cdm.json/Trailer",
+						"Name": "NumberOfTires"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "InternalLengthDimension",
+					"Description": "The inner length dimensions of the trailer.",
+					"BaseAttributeReference": {
+						"Entity": "Trailer.cdm.json/Trailer",
+						"Name": "InternalLengthDimension"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "InternalWidthDimension",
+					"Description": "The inner width dimensions of the trailer.",
+					"BaseAttributeReference": {
+						"Entity": "Trailer.cdm.json/Trailer",
+						"Name": "InternalWidthDimension"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "InternalHeightDimension",
+					"Description": "The inner height dimensions of the trailer.",
+					"BaseAttributeReference": {
+						"Entity": "Trailer.cdm.json/Trailer",
+						"Name": "InternalHeightDimension"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ExternalLengthDimension",
+					"Description": "The outside length dimensions of the trailer.",
+					"BaseAttributeReference": {
+						"Entity": "Trailer.cdm.json/Trailer",
+						"Name": "ExternalLengthDimension"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ExternalWidthDimension",
+					"Description": "The outside width dimensions of the trailer.",
+					"BaseAttributeReference": {
+						"Entity": "Trailer.cdm.json/Trailer",
+						"Name": "ExternalWidthDimension"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ExternalHeightDimension",
+					"Description": "The outside height dimensions of the trailer.",
+					"BaseAttributeReference": {
+						"Entity": "Trailer.cdm.json/Trailer",
+						"Name": "ExternalHeightDimension"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "LwhUnitOfMeasureId",
+					"Description": "The unique identifier of a Unit Of Measure.",
+					"BaseAttributeReference": {
+						"Entity": "Trailer.cdm.json/Trailer",
+						"Name": "LwhUnitOfMeasureId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "InternalVolume",
+					"Description": "The internal volume of the trailer.",
+					"BaseAttributeReference": {
+						"Entity": "Trailer.cdm.json/Trailer",
+						"Name": "InternalVolume"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "TrailerCubicCapacity",
+					"Description": "The carrying capacity within a trailer expressed either in cubic feet, cubic inches, cubic centimeters or cubic meters.",
+					"BaseAttributeReference": {
+						"Entity": "Trailer.cdm.json/Trailer",
+						"Name": "TrailerCubicCapacity"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "VolumeUnitOfMeasureId",
+					"Description": "The unique identifier of a Unit Of Measure.",
+					"BaseAttributeReference": {
+						"Entity": "Trailer.cdm.json/Trailer",
+						"Name": "VolumeUnitOfMeasureId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "TareWeight",
+					"Description": "The actual weight of a trailer when empty, including all liners and/or fittings.",
+					"BaseAttributeReference": {
+						"Entity": "Trailer.cdm.json/Trailer",
+						"Name": "TareWeight"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "MaximumAcceptableWeight",
+					"Description": "The maximum weight that the trailer can hold or accommodate.",
+					"BaseAttributeReference": {
+						"Entity": "Trailer.cdm.json/Trailer",
+						"Name": "MaximumAcceptableWeight"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "WeightUnitOfMeasureId",
+					"Description": "The unique identifier of a Unit Of Measure.",
+					"BaseAttributeReference": {
+						"Entity": "Trailer.cdm.json/Trailer",
+						"Name": "WeightUnitOfMeasureId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "GrossAxleWeightRating",
+					"Description": "Maximum weight an axle is rated to carry by the manufacturer. Includes both the weight of the axle and the portion of a vehicle's weight carried by the axle.",
+					"BaseAttributeReference": {
+						"Entity": "Trailer.cdm.json/Trailer",
+						"Name": "GrossAxleWeightRating"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "MaximumLoadCapacityPounds",
+					"Description": "The maximum load capacity of the trailer.",
+					"BaseAttributeReference": {
+						"Entity": "Trailer.cdm.json/Trailer",
+						"Name": "MaximumLoadCapacityPounds"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ChassisWeightPounds",
+					"Description": "Weight of the empty trailer, without occupants or load.",
+					"BaseAttributeReference": {
+						"Entity": "Trailer.cdm.json/Trailer",
+						"Name": "ChassisWeightPounds"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "TrailerMaximumCapacityWeightPounds",
+					"Description": "The maximum capacity weight of the trailer.",
+					"BaseAttributeReference": {
+						"Entity": "Trailer.cdm.json/Trailer",
+						"Name": "TrailerMaximumCapacityWeightPounds"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "TrailerCubicCapacitySqFt",
+					"Description": "The cubic capacity of the trailer.",
+					"BaseAttributeReference": {
+						"Entity": "Trailer.cdm.json/Trailer",
+						"Name": "TrailerCubicCapacitySqFt"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "LongCombinationVehicleIndicator",
+					"Description": "In general, vehicles longer than a standard doubles rig (tractor and two 28-foot semitrailers). Examples of LCVs which are permitted in some U.S. western states and eastern toll roads: Twin 48-foot trailers; triple 28-foot trailers.",
+					"BaseAttributeReference": {
+						"Entity": "Trailer.cdm.json/Trailer",
+						"Name": "LongCombinationVehicleIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "ContainerChassisIndicator",
+					"Description": "Single-purpose semi trailer designed to carry a shipping container.",
+					"BaseAttributeReference": {
+						"Entity": "Trailer.cdm.json/Trailer",
+						"Name": "ContainerChassisIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "LowboyTrailerIndicator",
+					"Description": "Open flat-bed trailer with a deck height very low to the ground, used to haul construction equipment or bulky or heavy loads.",
+					"BaseAttributeReference": {
+						"Entity": "Trailer.cdm.json/Trailer",
+						"Name": "LowboyTrailerIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "AbsBrakesIndicator",
+					"Description": "Indicates that the trailer has ABS brakes.",
+					"BaseAttributeReference": {
+						"Entity": "Trailer.cdm.json/Trailer",
+						"Name": "AbsBrakesIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "PintleHookRequiredIndicator",
+					"Description": "Coupling device used in double trailer, triple trailer and truck-trailer combinations. It has a curved, fixed towing horn and an upper latch that opens to accept the drawbar eye of a trailer or dolly.",
+					"BaseAttributeReference": {
+						"Entity": "Trailer.cdm.json/Trailer",
+						"Name": "PintleHookRequiredIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "AirRideSuspensionIndicator",
+					"Description": "Suspension which supports the load on air-filled rubber bags rather than steel springs. Compressed air is supplied by the same engine-driven air compressor and reservoir tanks which provide air to the air brake system.",
+					"BaseAttributeReference": {
+						"Entity": "Trailer.cdm.json/Trailer",
+						"Name": "AirRideSuspensionIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "LiftAxleIndicator",
+					"Description": "Extra, unpowered axle needed only when the vehicle is loaded, allowing it to meet federal and state vehicle weight standards. The lift axle is mounted to an air spring suspension that raises the axle when it is not required.",
+					"BaseAttributeReference": {
+						"Entity": "Trailer.cdm.json/Trailer",
+						"Name": "LiftAxleIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "PullTrailerIndicator",
+					"Description": "Short, full trailer (supported by axles front and rear) with an extended tongue.",
+					"BaseAttributeReference": {
+						"Entity": "Trailer.cdm.json/Trailer",
+						"Name": "PullTrailerIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "PupTrailerIndicator",
+					"Description": "Short semi trailer, usually between 26 and 32 feet long, with a single axle.",
+					"BaseAttributeReference": {
+						"Entity": "Trailer.cdm.json/Trailer",
+						"Name": "PupTrailerIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "ReeferTrailerIndicator",
+					"Description": "Refrigerated trailer with insulated walls and a self-powered refrigeration unit. Most commonly used for transporting food.",
+					"BaseAttributeReference": {
+						"Entity": "Trailer.cdm.json/Trailer",
+						"Name": "ReeferTrailerIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "RoadRailerIndicator",
+					"Description": "Semi trailer specially designed to travel both on highway and on rails",
+					"BaseAttributeReference": {
+						"Entity": "Trailer.cdm.json/Trailer",
+						"Name": "RoadRailerIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "FixedTandemIndicator",
+					"Description": "Assembly of two axles and suspension that is attached to the chassis in one place, and cannot be moved fore and aft. (see Sliding Tandem)",
+					"BaseAttributeReference": {
+						"Entity": "Trailer.cdm.json/Trailer",
+						"Name": "FixedTandemIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "ConvertibleTrailerIndicator",
+					"Description": "convertible: a truck or trailer that can be used either as a flatbed or open top by means of removing side panels.",
+					"BaseAttributeReference": {
+						"Entity": "Trailer.cdm.json/Trailer",
+						"Name": "ConvertibleTrailerIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "RefrigeratedContainerIndicator",
+					"Description": "Reefer / Refrigerated container.",
+					"BaseAttributeReference": {
+						"Entity": "Trailer.cdm.json/Trailer",
+						"Name": "RefrigeratedContainerIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "TrailerTypeId",
+					"Description": "The unique identifier of a Trailer Type.",
+					"BaseAttributeReference": {
+						"Entity": "Trailer.cdm.json/Trailer",
+						"Name": "TrailerTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "AssetId",
+					"Description": "The unique identifier of an Asset.",
+					"BaseAttributeReference": {
+						"Entity": "Trailer.cdm.json/Trailer",
+						"Name": "AssetId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "OwningPartyId",
+					"Description": "The unique identifier of a Party.",
+					"BaseAttributeReference": {
+						"Entity": "Trailer.cdm.json/Trailer",
+						"Name": "OwningPartyId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"TrailerId\":{\"entity\":\"Trailer.cdm.json/Trailer\",\"name\":\"TrailerId\"},\"TrailerModelName\":{\"entity\":\"Trailer.cdm.json/Trailer\",\"name\":\"TrailerModelName\"},\"NumberOfAxles\":{\"entity\":\"Trailer.cdm.json/Trailer\",\"name\":\"NumberOfAxles\"},\"NumberOfTires\":{\"entity\":\"Trailer.cdm.json/Trailer\",\"name\":\"NumberOfTires\"},\"InternalLengthDimension\":{\"entity\":\"Trailer.cdm.json/Trailer\",\"name\":\"InternalLengthDimension\"},\"InternalWidthDimension\":{\"entity\":\"Trailer.cdm.json/Trailer\",\"name\":\"InternalWidthDimension\"},\"InternalHeightDimension\":{\"entity\":\"Trailer.cdm.json/Trailer\",\"name\":\"InternalHeightDimension\"},\"ExternalLengthDimension\":{\"entity\":\"Trailer.cdm.json/Trailer\",\"name\":\"ExternalLengthDimension\"},\"ExternalWidthDimension\":{\"entity\":\"Trailer.cdm.json/Trailer\",\"name\":\"ExternalWidthDimension\"},\"ExternalHeightDimension\":{\"entity\":\"Trailer.cdm.json/Trailer\",\"name\":\"ExternalHeightDimension\"},\"LwhUnitOfMeasureId\":{\"entity\":\"Trailer.cdm.json/Trailer\",\"name\":\"LwhUnitOfMeasureId\"},\"InternalVolume\":{\"entity\":\"Trailer.cdm.json/Trailer\",\"name\":\"InternalVolume\"},\"TrailerCubicCapacity\":{\"entity\":\"Trailer.cdm.json/Trailer\",\"name\":\"TrailerCubicCapacity\"},\"VolumeUnitOfMeasureId\":{\"entity\":\"Trailer.cdm.json/Trailer\",\"name\":\"VolumeUnitOfMeasureId\"},\"TareWeight\":{\"entity\":\"Trailer.cdm.json/Trailer\",\"name\":\"TareWeight\"},\"MaximumAcceptableWeight\":{\"entity\":\"Trailer.cdm.json/Trailer\",\"name\":\"MaximumAcceptableWeight\"},\"WeightUnitOfMeasureId\":{\"entity\":\"Trailer.cdm.json/Trailer\",\"name\":\"WeightUnitOfMeasureId\"},\"GrossAxleWeightRating\":{\"entity\":\"Trailer.cdm.json/Trailer\",\"name\":\"GrossAxleWeightRating\"},\"MaximumLoadCapacityPounds\":{\"entity\":\"Trailer.cdm.json/Trailer\",\"name\":\"MaximumLoadCapacityPounds\"},\"ChassisWeightPounds\":{\"entity\":\"Trailer.cdm.json/Trailer\",\"name\":\"ChassisWeightPounds\"},\"TrailerMaximumCapacityWeightPounds\":{\"entity\":\"Trailer.cdm.json/Trailer\",\"name\":\"TrailerMaximumCapacityWeightPounds\"},\"TrailerCubicCapacitySqFt\":{\"entity\":\"Trailer.cdm.json/Trailer\",\"name\":\"TrailerCubicCapacitySqFt\"},\"LongCombinationVehicleIndicator\":{\"entity\":\"Trailer.cdm.json/Trailer\",\"name\":\"LongCombinationVehicleIndicator\"},\"ContainerChassisIndicator\":{\"entity\":\"Trailer.cdm.json/Trailer\",\"name\":\"ContainerChassisIndicator\"},\"LowboyTrailerIndicator\":{\"entity\":\"Trailer.cdm.json/Trailer\",\"name\":\"LowboyTrailerIndicator\"},\"AbsBrakesIndicator\":{\"entity\":\"Trailer.cdm.json/Trailer\",\"name\":\"AbsBrakesIndicator\"},\"PintleHookRequiredIndicator\":{\"entity\":\"Trailer.cdm.json/Trailer\",\"name\":\"PintleHookRequiredIndicator\"},\"AirRideSuspensionIndicator\":{\"entity\":\"Trailer.cdm.json/Trailer\",\"name\":\"AirRideSuspensionIndicator\"},\"LiftAxleIndicator\":{\"entity\":\"Trailer.cdm.json/Trailer\",\"name\":\"LiftAxleIndicator\"},\"PullTrailerIndicator\":{\"entity\":\"Trailer.cdm.json/Trailer\",\"name\":\"PullTrailerIndicator\"},\"PupTrailerIndicator\":{\"entity\":\"Trailer.cdm.json/Trailer\",\"name\":\"PupTrailerIndicator\"},\"ReeferTrailerIndicator\":{\"entity\":\"Trailer.cdm.json/Trailer\",\"name\":\"ReeferTrailerIndicator\"},\"RoadRailerIndicator\":{\"entity\":\"Trailer.cdm.json/Trailer\",\"name\":\"RoadRailerIndicator\"},\"FixedTandemIndicator\":{\"entity\":\"Trailer.cdm.json/Trailer\",\"name\":\"FixedTandemIndicator\"},\"ConvertibleTrailerIndicator\":{\"entity\":\"Trailer.cdm.json/Trailer\",\"name\":\"ConvertibleTrailerIndicator\"},\"RefrigeratedContainerIndicator\":{\"entity\":\"Trailer.cdm.json/Trailer\",\"name\":\"RefrigeratedContainerIndicator\"},\"TrailerTypeId\":{\"entity\":\"Trailer.cdm.json/Trailer\",\"name\":\"TrailerTypeId\"},\"AssetId\":{\"entity\":\"Trailer.cdm.json/Trailer\",\"name\":\"AssetId\"},\"OwningPartyId\":{\"entity\":\"Trailer.cdm.json/Trailer\",\"name\":\"OwningPartyId\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"Trailer\",\"path\":\"Trailer.cdm.json/Trailer\"},\"description\":\"A trailer that is used to transfer cargo.\",\"primaryKey\":[\"TrailerId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"TrailerId\",\"attributeReference\":{\"entity\":\"Trailer.cdm.json/Trailer\",\"name\":\"TrailerId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"TrailerModelName\",\"attributeReference\":{\"entity\":\"Trailer.cdm.json/Trailer\",\"name\":\"TrailerModelName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"NumberOfAxles\",\"attributeReference\":{\"entity\":\"Trailer.cdm.json/Trailer\",\"name\":\"NumberOfAxles\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"NumberOfTires\",\"attributeReference\":{\"entity\":\"Trailer.cdm.json/Trailer\",\"name\":\"NumberOfTires\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"InternalLengthDimension\",\"attributeReference\":{\"entity\":\"Trailer.cdm.json/Trailer\",\"name\":\"InternalLengthDimension\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"InternalWidthDimension\",\"attributeReference\":{\"entity\":\"Trailer.cdm.json/Trailer\",\"name\":\"InternalWidthDimension\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"InternalHeightDimension\",\"attributeReference\":{\"entity\":\"Trailer.cdm.json/Trailer\",\"name\":\"InternalHeightDimension\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ExternalLengthDimension\",\"attributeReference\":{\"entity\":\"Trailer.cdm.json/Trailer\",\"name\":\"ExternalLengthDimension\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ExternalWidthDimension\",\"attributeReference\":{\"entity\":\"Trailer.cdm.json/Trailer\",\"name\":\"ExternalWidthDimension\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ExternalHeightDimension\",\"attributeReference\":{\"entity\":\"Trailer.cdm.json/Trailer\",\"name\":\"ExternalHeightDimension\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"LwhUnitOfMeasureId\",\"attributeReference\":{\"entity\":\"Trailer.cdm.json/Trailer\",\"name\":\"LwhUnitOfMeasureId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"InternalVolume\",\"attributeReference\":{\"entity\":\"Trailer.cdm.json/Trailer\",\"name\":\"InternalVolume\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":8},{\"type\":\"Existing\",\"name\":\"TrailerCubicCapacity\",\"attributeReference\":{\"entity\":\"Trailer.cdm.json/Trailer\",\"name\":\"TrailerCubicCapacity\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"VolumeUnitOfMeasureId\",\"attributeReference\":{\"entity\":\"Trailer.cdm.json/Trailer\",\"name\":\"VolumeUnitOfMeasureId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"TareWeight\",\"attributeReference\":{\"entity\":\"Trailer.cdm.json/Trailer\",\"name\":\"TareWeight\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":8},{\"type\":\"Existing\",\"name\":\"MaximumAcceptableWeight\",\"attributeReference\":{\"entity\":\"Trailer.cdm.json/Trailer\",\"name\":\"MaximumAcceptableWeight\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":8},{\"type\":\"Existing\",\"name\":\"WeightUnitOfMeasureId\",\"attributeReference\":{\"entity\":\"Trailer.cdm.json/Trailer\",\"name\":\"WeightUnitOfMeasureId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"GrossAxleWeightRating\",\"attributeReference\":{\"entity\":\"Trailer.cdm.json/Trailer\",\"name\":\"GrossAxleWeightRating\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"MaximumLoadCapacityPounds\",\"attributeReference\":{\"entity\":\"Trailer.cdm.json/Trailer\",\"name\":\"MaximumLoadCapacityPounds\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ChassisWeightPounds\",\"attributeReference\":{\"entity\":\"Trailer.cdm.json/Trailer\",\"name\":\"ChassisWeightPounds\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"TrailerMaximumCapacityWeightPounds\",\"attributeReference\":{\"entity\":\"Trailer.cdm.json/Trailer\",\"name\":\"TrailerMaximumCapacityWeightPounds\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"TrailerCubicCapacitySqFt\",\"attributeReference\":{\"entity\":\"Trailer.cdm.json/Trailer\",\"name\":\"TrailerCubicCapacitySqFt\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"LongCombinationVehicleIndicator\",\"attributeReference\":{\"entity\":\"Trailer.cdm.json/Trailer\",\"name\":\"LongCombinationVehicleIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"ContainerChassisIndicator\",\"attributeReference\":{\"entity\":\"Trailer.cdm.json/Trailer\",\"name\":\"ContainerChassisIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"LowboyTrailerIndicator\",\"attributeReference\":{\"entity\":\"Trailer.cdm.json/Trailer\",\"name\":\"LowboyTrailerIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"AbsBrakesIndicator\",\"attributeReference\":{\"entity\":\"Trailer.cdm.json/Trailer\",\"name\":\"AbsBrakesIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"PintleHookRequiredIndicator\",\"attributeReference\":{\"entity\":\"Trailer.cdm.json/Trailer\",\"name\":\"PintleHookRequiredIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"AirRideSuspensionIndicator\",\"attributeReference\":{\"entity\":\"Trailer.cdm.json/Trailer\",\"name\":\"AirRideSuspensionIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"LiftAxleIndicator\",\"attributeReference\":{\"entity\":\"Trailer.cdm.json/Trailer\",\"name\":\"LiftAxleIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"PullTrailerIndicator\",\"attributeReference\":{\"entity\":\"Trailer.cdm.json/Trailer\",\"name\":\"PullTrailerIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"PupTrailerIndicator\",\"attributeReference\":{\"entity\":\"Trailer.cdm.json/Trailer\",\"name\":\"PupTrailerIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"ReeferTrailerIndicator\",\"attributeReference\":{\"entity\":\"Trailer.cdm.json/Trailer\",\"name\":\"ReeferTrailerIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"RoadRailerIndicator\",\"attributeReference\":{\"entity\":\"Trailer.cdm.json/Trailer\",\"name\":\"RoadRailerIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"FixedTandemIndicator\",\"attributeReference\":{\"entity\":\"Trailer.cdm.json/Trailer\",\"name\":\"FixedTandemIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"ConvertibleTrailerIndicator\",\"attributeReference\":{\"entity\":\"Trailer.cdm.json/Trailer\",\"name\":\"ConvertibleTrailerIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"RefrigeratedContainerIndicator\",\"attributeReference\":{\"entity\":\"Trailer.cdm.json/Trailer\",\"name\":\"RefrigeratedContainerIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"TrailerTypeId\",\"attributeReference\":{\"entity\":\"Trailer.cdm.json/Trailer\",\"name\":\"TrailerTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"AssetId\",\"attributeReference\":{\"entity\":\"Trailer.cdm.json/Trailer\",\"name\":\"AssetId\"},\"dataType\":\"long\"},{\"type\":\"Existing\",\"name\":\"OwningPartyId\",\"attributeReference\":{\"entity\":\"Trailer.cdm.json/Trailer\",\"name\":\"OwningPartyId\"},\"dataType\":\"long\"}]}}}",
+			"Description": "A trailer that is used to transfer cargo.",
+			"DisplayFolderInfo": "{\"name\":\"Shipping\",\"colorCode\":\"#000B42\"}",
+			"PrimaryKeys": "TrailerId"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

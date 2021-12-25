@@ -1,0 +1,26 @@
+{
+	"name": "relationship-tjclwfzfkz",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "relationship-tjclwfzfkz",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "ExceptionCondition",
+		"ToTableName": "ShipmentLocationException",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ExceptionConditionId",
+				"ToColumnName": "ExceptionConditionId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"ExceptionCondition.cdm.json/ExceptionCondition\",\"toEntity\":\"ShipmentLocationException.cdm.json/ShipmentLocationException\",\"joinPairs\":[{\"fromAttribute\":\"ExceptionConditionId\",\"toAttribute\":\"ExceptionConditionId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

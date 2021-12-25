@@ -1,0 +1,86 @@
+{
+	"name": "LocationGeographicAreaRelationshipType",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "LocationGeographicAreaRelationshipType",
+		"Description": "The nature of the relationship between two or more Locations.\n\nEx:\n- contains\n- located within\n- borders\n- has weather of\n- has environment of",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "LocationGeographicAreaRelationshipTypeId",
+					"Description": "The unique identifier of a Location Geographic Area Relationship Type.",
+					"BaseAttributeReference": {
+						"Entity": "LocationGeographicAreaRelationshipType.cdm.json/LocationGeographicAreaRelationshipType",
+						"Name": "LocationGeographicAreaRelationshipTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "LocationGeographicAreaRelationshipTypeName",
+					"Description": "The name of a Location Geographic Area Relationship Type.",
+					"BaseAttributeReference": {
+						"Entity": "LocationGeographicAreaRelationshipType.cdm.json/LocationGeographicAreaRelationshipType",
+						"Name": "LocationGeographicAreaRelationshipTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "LocationGeographicAreaRelationshipTypeDescription",
+					"Description": "The description of a Location Geographic Area Relationship Type.",
+					"BaseAttributeReference": {
+						"Entity": "LocationGeographicAreaRelationshipType.cdm.json/LocationGeographicAreaRelationshipType",
+						"Name": "LocationGeographicAreaRelationshipTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"LocationGeographicAreaRelationshipTypeId\":{\"entity\":\"LocationGeographicAreaRelationshipType.cdm.json/LocationGeographicAreaRelationshipType\",\"name\":\"LocationGeographicAreaRelationshipTypeId\"},\"LocationGeographicAreaRelationshipTypeName\":{\"entity\":\"LocationGeographicAreaRelationshipType.cdm.json/LocationGeographicAreaRelationshipType\",\"name\":\"LocationGeographicAreaRelationshipTypeName\"},\"LocationGeographicAreaRelationshipTypeDescription\":{\"entity\":\"LocationGeographicAreaRelationshipType.cdm.json/LocationGeographicAreaRelationshipType\",\"name\":\"LocationGeographicAreaRelationshipTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"LocationGeographicAreaRelationshipType\",\"path\":\"LocationGeographicAreaRelationshipType.cdm.json/LocationGeographicAreaRelationshipType\"},\"description\":\"The nature of the relationship between two or more Locations.\\n\\nEx:\\n- contains\\n- located within\\n- borders\\n- has weather of\\n- has environment of\",\"primaryKey\":[\"LocationGeographicAreaRelationshipTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"LocationGeographicAreaRelationshipTypeId\",\"attributeReference\":{\"entity\":\"LocationGeographicAreaRelationshipType.cdm.json/LocationGeographicAreaRelationshipType\",\"name\":\"LocationGeographicAreaRelationshipTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"LocationGeographicAreaRelationshipTypeName\",\"attributeReference\":{\"entity\":\"LocationGeographicAreaRelationshipType.cdm.json/LocationGeographicAreaRelationshipType\",\"name\":\"LocationGeographicAreaRelationshipTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"LocationGeographicAreaRelationshipTypeDescription\",\"attributeReference\":{\"entity\":\"LocationGeographicAreaRelationshipType.cdm.json/LocationGeographicAreaRelationshipType\",\"name\":\"LocationGeographicAreaRelationshipTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512}]}}}",
+			"Description": "The nature of the relationship between two or more Locations.\n\nEx:\n- contains\n- located within\n- borders\n- has weather of\n- has environment of",
+			"DisplayFolderInfo": "{\"name\":\"Geography\",\"colorCode\":\"#8170C2\"}",
+			"PrimaryKeys": "LocationGeographicAreaRelationshipTypeId"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

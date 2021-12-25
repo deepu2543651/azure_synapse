@@ -1,0 +1,86 @@
+{
+	"name": "FamilyGroup",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "FamilyGroup",
+		"Description": "A group of related products for which demand can be aggregated in order to assess overall demand for the material or parts which make up the family group products.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "FamilyGroupId",
+					"Description": "The unique identifier of a Family Group.",
+					"BaseAttributeReference": {
+						"Entity": "FamilyGroup.cdm.json/FamilyGroup",
+						"Name": "FamilyGroupId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "FamilyGroupName",
+					"Description": "The name of a Family Group.",
+					"BaseAttributeReference": {
+						"Entity": "FamilyGroup.cdm.json/FamilyGroup",
+						"Name": "FamilyGroupName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "FamilyGroupDescription",
+					"Description": "The description of a Family Group.",
+					"BaseAttributeReference": {
+						"Entity": "FamilyGroup.cdm.json/FamilyGroup",
+						"Name": "FamilyGroupDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"FamilyGroupId\":{\"entity\":\"FamilyGroup.cdm.json/FamilyGroup\",\"name\":\"FamilyGroupId\"},\"FamilyGroupName\":{\"entity\":\"FamilyGroup.cdm.json/FamilyGroup\",\"name\":\"FamilyGroupName\"},\"FamilyGroupDescription\":{\"entity\":\"FamilyGroup.cdm.json/FamilyGroup\",\"name\":\"FamilyGroupDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"FamilyGroup\",\"path\":\"FamilyGroup.cdm.json/FamilyGroup\"},\"description\":\"A group of related products for which demand can be aggregated in order to assess overall demand for the material or parts which make up the family group products.\",\"primaryKey\":[\"FamilyGroupId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"FamilyGroupId\",\"attributeReference\":{\"entity\":\"FamilyGroup.cdm.json/FamilyGroup\",\"name\":\"FamilyGroupId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"FamilyGroupName\",\"attributeReference\":{\"entity\":\"FamilyGroup.cdm.json/FamilyGroup\",\"name\":\"FamilyGroupName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"FamilyGroupDescription\",\"attributeReference\":{\"entity\":\"FamilyGroup.cdm.json/FamilyGroup\",\"name\":\"FamilyGroupDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512}]}}}",
+			"Description": "A group of related products for which demand can be aggregated in order to assess overall demand for the material or parts which make up the family group products.",
+			"DisplayFolderInfo": "{\"name\":\"Inventory\",\"colorCode\":\"#EA279F\"}",
+			"PrimaryKeys": "FamilyGroupId"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

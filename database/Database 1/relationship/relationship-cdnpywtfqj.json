@@ -1,0 +1,26 @@
+{
+	"name": "relationship-cdnpywtfqj",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "relationship-cdnpywtfqj",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Train",
+		"ToTableName": "TrainSchedule",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "TrainId",
+				"ToColumnName": "TrainId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Train.cdm.json/Train\",\"toEntity\":\"TrainSchedule.cdm.json/TrainSchedule\",\"joinPairs\":[{\"fromAttribute\":\"TrainId\",\"toAttribute\":\"TrainId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

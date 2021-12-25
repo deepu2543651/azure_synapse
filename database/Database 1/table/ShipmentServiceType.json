@@ -1,0 +1,86 @@
+{
+	"name": "ShipmentServiceType",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "ShipmentServiceType",
+		"Description": "A service that can be assigned to a shipment or under which a shipment may be shipped.\n\nEx:\n- Advancement Of Charges Service\n- Air Truck Service\n- Airport-To-Airport Service\n- Assembly Service\n- Charter Service\n- Collect on Delivery\n- Deferred Air Freight Service\n- Delivery Confirmation\n- Distribution Service\n- Door-To-Door-Service\n- Excess Value Insurance\n- Express Service\n- Hazardous Materials\n- Hold For Pickup\n- Notification Services\n- Pickup / Delivery Service\n- Priority Air Freight Service\n- Proof Of Delivery\n- Protective Service\n- Returns\n- Saturday Delivery\n- Saturday Pickup\n- Shipment Break-bulk\n- Shipment Consolidation\n- Signature Service\n- Small Package Service\n- Storage\n- Verbal Confirmation\n\nwhere:\n\nADVANCEMENT OF CHARGES SERVICE\nA service under which airlines, in some instances, pay incidental charges arising before or after airhaul. Examples would include cartage and warehousing costs. These charges can be paid in advance for the convenience of either the Shipper or Consignee.\n\nAIR TRUCK SERVICE\nThe surface movement of cargo to and from airports, and origin and destination points beyond the radius of regular pick-up and delivery service.\n\nAIRPORT-TO-AIRPORT SERVICE\n\nAir cargo service from airport of origin to airport of destination, without pick-up and delivery service.\n\nFrom one airport facility to another airport facility. (No pick-up/delivery service applies.)\n\nASSEMBLY SERVICE\nA service by which an airline assembles shipments from one or many shippers and transports them as one shipment (not necessarily at one time or flight) to one Consignee.\n\nCHARTER SERVICE\nThe temporary hiring of an aircraft, usually on a trip basis, for the movement of cargo or passengers.\n\nDEFERRED AIR FREIGHT\nProperty received for air transportation at a level of service lower than standard service (e.g., space available) and transported at a lower charge than standard air freight.\n\nDEFERRED AIR FREIGHT SERVICE\nProperty received for air transportation at a level of service lower than standard service (e.g., space available) and transported at a lower charge than standard air freight.\n\nDISTRIBUTION SERVICE\nA service under which an airline accepts one shipment from one shipper and, after transporting it as a single shipment, separates it into a number of parts at destination and distributes them to numerous receivers. No time limit exists.\n\nDOOR-TO-DOOR SERVICE\nDoor to Door or Dock to Dock    Transportation of a shipment from the shipper's premises (factory, store, warehouse, etc.) to the consignee's premises (as opposed to airport to airport).\n\nEXPRESS SERVICE\nShipments for which the airline provides a guaranteed level of expedited service, such as overnight, at a premium charge. It may be restricted as to package weight and size.\n\nPICKUP/DELIVERY SERVICE\nAn optional service for the surface transport of shipments from the shipper's door to the originating cargo terminal and from the cargo terminal of destination to the consignee's door. Pick-up service at an additional charge is provided upon shipper's request. Delivery service at an additional charge is provided automatically unless the shipper requests otherwise on the Air Waybill. \"\"Regular\"\" pick-up/delivery service is provided during the business day. Special pick-up and delivery service is available any time of day with advance arrangements at a higher cost.\n\nPRIORITY AIR FREIGHT SERVICE\nThose shipments that have first claim on available air transport capacity, transported at a premium charge.\n\nPROTECTIVE SERVICE\nA protective service provided by airlines where shippers arrange to have a shipment under carrier surveillance tat each stage of transit from origin to destination.  The service may extend to pickup and delivery and may include armed guard protection.  See Signature Service.\n\nSIGNATURE SERVICE\nA service designed to provide continuous responsibility for the custody of shipments in transit, so named because a signature is required from each person handling the shipment at each stage of its transit form origin to destination.\n\nSMALL PACKAGE SERVICE\nA specialized service guaranteeing the delivery of small parcels within specified express time limits, e.g. same day or next day.  This traffic is subject to size and weight limitations.  Most passenger air carriers also provide this service at airport ticket counters with delivery at destination baggage claim area.  Often referred to as counter to counter.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ShipmentServiceTypeId",
+					"Description": "The unique identifier of a Shipment Service Type.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentServiceType.cdm.json/ShipmentServiceType",
+						"Name": "ShipmentServiceTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ShipmentServiceTypeName",
+					"Description": "The name of a Shipment Service Type.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentServiceType.cdm.json/ShipmentServiceType",
+						"Name": "ShipmentServiceTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ShipmentServiceTypeDescription",
+					"Description": "The description of a Shipment Service Type.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentServiceType.cdm.json/ShipmentServiceType",
+						"Name": "ShipmentServiceTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ShipmentServiceTypeId\":{\"entity\":\"ShipmentServiceType.cdm.json/ShipmentServiceType\",\"name\":\"ShipmentServiceTypeId\"},\"ShipmentServiceTypeName\":{\"entity\":\"ShipmentServiceType.cdm.json/ShipmentServiceType\",\"name\":\"ShipmentServiceTypeName\"},\"ShipmentServiceTypeDescription\":{\"entity\":\"ShipmentServiceType.cdm.json/ShipmentServiceType\",\"name\":\"ShipmentServiceTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"ShipmentServiceType\",\"path\":\"ShipmentServiceType.cdm.json/ShipmentServiceType\"},\"description\":\"A service that can be assigned to a shipment or under which a shipment may be shipped.\\n\\nEx:\\n- Advancement Of Charges Service\\n- Air Truck Service\\n- Airport-To-Airport Service\\n- Assembly Service\\n- Charter Service\\n- Collect on Delivery\\n- Deferred Air Freight Service\\n- Delivery Confirmation\\n- Distribution Service\\n- Door-To-Door-Service\\n- Excess Value Insurance\\n- Express Service\\n- Hazardous Materials\\n- Hold For Pickup\\n- Notification Services\\n- Pickup / Delivery Service\\n- Priority Air Freight Service\\n- Proof Of Delivery\\n- Protective Service\\n- Returns\\n- Saturday Delivery\\n- Saturday Pickup\\n- Shipment Break-bulk\\n- Shipment Consolidation\\n- Signature Service\\n- Small Package Service\\n- Storage\\n- Verbal Confirmation\\n\\nwhere:\\n\\nADVANCEMENT OF CHARGES SERVICE\\nA service under which airlines, in some instances, pay incidental charges arising before or after airhaul. Examples would include cartage and warehousing costs. These charges can be paid in advance for the convenience of either the Shipper or Consignee.\\n\\nAIR TRUCK SERVICE\\nThe surface movement of cargo to and from airports, and origin and destination points beyond the radius of regular pick-up and delivery service.\\n\\nAIRPORT-TO-AIRPORT SERVICE\\n\\nAir cargo service from airport of origin to airport of destination, without pick-up and delivery service.\\n\\nFrom one airport facility to another airport facility. (No pick-up/delivery service applies.)\\n\\nASSEMBLY SERVICE\\nA service by which an airline assembles shipments from one or many shippers and transports them as one shipment (not necessarily at one time or flight) to one Consignee.\\n\\nCHARTER SERVICE\\nThe temporary hiring of an aircraft, usually on a trip basis, for the movement of cargo or passengers.\\n\\nDEFERRED AIR FREIGHT\\nProperty received for air transportation at a level of service lower than standard service (e.g., space available) and transported at a lower charge than standard air freight.\\n\\nDEFERRED AIR FREIGHT SERVICE\\nProperty received for air transportation at a level of service lower than standard service (e.g., space available) and transported at a lower charge than standard air freight.\\n\\nDISTRIBUTION SERVICE\\nA service under which an airline accepts one shipment from one shipper and, after transporting it as a single shipment, separates it into a number of parts at destination and distributes them to numerous receivers. No time limit exists.\\n\\nDOOR-TO-DOOR SERVICE\\nDoor to Door or Dock to Dock    Transportation of a shipment from the shipper's premises (factory, store, warehouse, etc.) to the consignee's premises (as opposed to airport to airport).\\n\\nEXPRESS SERVICE\\nShipments for which the airline provides a guaranteed level of expedited service, such as overnight, at a premium charge. It may be restricted as to package weight and size.\\n\\nPICKUP/DELIVERY SERVICE\\nAn optional service for the surface transport of shipments from the shipper's door to the originating cargo terminal and from the cargo terminal of destination to the consignee's door. Pick-up service at an additional charge is provided upon shipper's request. Delivery service at an additional charge is provided automatically unless the shipper requests otherwise on the Air Waybill. \\\"\\\"Regular\\\"\\\" pick-up/delivery service is provided during the business day. Special pick-up and delivery service is available any time of day with advance arrangements at a higher cost.\\n\\nPRIORITY AIR FREIGHT SERVICE\\nThose shipments that have first claim on available air transport capacity, transported at a premium charge.\\n\\nPROTECTIVE SERVICE\\nA protective service provided by airlines where shippers arrange to have a shipment under carrier surveillance tat each stage of transit from origin to destination.  The service may extend to pickup and delivery and may include armed guard protection.  See Signature Service.\\n\\nSIGNATURE SERVICE\\nA service designed to provide continuous responsibility for the custody of shipments in transit, so named because a signature is required from each person handling the shipment at each stage of its transit form origin to destination.\\n\\nSMALL PACKAGE SERVICE\\nA specialized service guaranteeing the delivery of small parcels within specified express time limits, e.g. same day or next day.  This traffic is subject to size and weight limitations.  Most passenger air carriers also provide this service at airport ticket counters with delivery at destination baggage claim area.  Often referred to as counter to counter.\",\"primaryKey\":[\"ShipmentServiceTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"ShipmentServiceTypeId\",\"attributeReference\":{\"entity\":\"ShipmentServiceType.cdm.json/ShipmentServiceType\",\"name\":\"ShipmentServiceTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ShipmentServiceTypeName\",\"attributeReference\":{\"entity\":\"ShipmentServiceType.cdm.json/ShipmentServiceType\",\"name\":\"ShipmentServiceTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"ShipmentServiceTypeDescription\",\"attributeReference\":{\"entity\":\"ShipmentServiceType.cdm.json/ShipmentServiceType\",\"name\":\"ShipmentServiceTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512}]}}}",
+			"Description": "A service that can be assigned to a shipment or under which a shipment may be shipped.\n\nEx:\n- Advancement Of Charges Service\n- Air Truck Service\n- Airport-To-Airport Service\n- Assembly Service\n- Charter Service\n- Collect on Delivery\n- Deferred Air Freight Service\n- Delivery Confirmation\n- Distribution Service\n- Door-To-Door-Service\n- Excess Value Insurance\n- Express Service\n- Hazardous Materials\n- Hold For Pickup\n- Notification Services\n- Pickup / Delivery Service\n- Priority Air Freight Service\n- Proof Of Delivery\n- Protective Service\n- Returns\n- Saturday Delivery\n- Saturday Pickup\n- Shipment Break-bulk\n- Shipment Consolidation\n- Signature Service\n- Small Package Service\n- Storage\n- Verbal Confirmation\n\nwhere:\n\nADVANCEMENT OF CHARGES SERVICE\nA service under which airlines, in some instances, pay incidental charges arising before or after airhaul. Examples would include cartage and warehousing costs. These charges can be paid in advance for the convenience of either the Shipper or Consignee.\n\nAIR TRUCK SERVICE\nThe surface movement of cargo to and from airports, and origin and destination points beyond the radius of regular pick-up and delivery service.\n\nAIRPORT-TO-AIRPORT SERVICE\n\nAir cargo service from airport of origin to airport of destination, without pick-up and delivery service.\n\nFrom one airport facility to another airport facility. (No pick-up/delivery service applies.)\n\nASSEMBLY SERVICE\nA service by which an airline assembles shipments from one or many shippers and transports them as one shipment (not necessarily at one time or flight) to one Consignee.\n\nCHARTER SERVICE\nThe temporary hiring of an aircraft, usually on a trip basis, for the movement of cargo or passengers.\n\nDEFERRED AIR FREIGHT\nProperty received for air transportation at a level of service lower than standard service (e.g., space available) and transported at a lower charge than standard air freight.\n\nDEFERRED AIR FREIGHT SERVICE\nProperty received for air transportation at a level of service lower than standard service (e.g., space available) and transported at a lower charge than standard air freight.\n\nDISTRIBUTION SERVICE\nA service under which an airline accepts one shipment from one shipper and, after transporting it as a single shipment, separates it into a number of parts at destination and distributes them to numerous receivers. No time limit exists.\n\nDOOR-TO-DOOR SERVICE\nDoor to Door or Dock to Dock    Transportation of a shipment from the shipper's premises (factory, store, warehouse, etc.) to the consignee's premises (as opposed to airport to airport).\n\nEXPRESS SERVICE\nShipments for which the airline provides a guaranteed level of expedited service, such as overnight, at a premium charge. It may be restricted as to package weight and size.\n\nPICKUP/DELIVERY SERVICE\nAn optional service for the surface transport of shipments from the shipper's door to the originating cargo terminal and from the cargo terminal of destination to the consignee's door. Pick-up service at an additional charge is provided upon shipper's request. Delivery service at an additional charge is provided automatically unless the shipper requests otherwise on the Air Waybill. \"\"Regular\"\" pick-up/delivery service is provided during the business day. Special pick-up and delivery service is available any time of day with advance arrangements at a higher cost.\n\nPRIORITY AIR FREIGHT SERVICE\nThose shipments that have first claim on available air transport capacity, transported at a premium charge.\n\nPROTECTIVE SERVICE\nA protective service provided by airlines where shippers arrange to have a shipment under carrier surveillance tat each stage of transit from origin to destination.  The service may extend to pickup and delivery and may include armed guard protection.  See Signature Service.\n\nSIGNATURE SERVICE\nA service designed to provide continuous responsibility for the custody of shipments in transit, so named because a signature is required from each person handling the shipment at each stage of its transit form origin to destination.\n\nSMALL PACKAGE SERVICE\nA specialized service guaranteeing the delivery of small parcels within specified express time limits, e.g. same day or next day.  This traffic is subject to size and weight limitations.  Most passenger air carriers also provide this service at airport ticket counters with delivery at destination baggage claim area.  Often referred to as counter to counter.",
+			"DisplayFolderInfo": "{\"name\":\"Shipping\",\"colorCode\":\"#000B42\"}",
+			"PrimaryKeys": "ShipmentServiceTypeId"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

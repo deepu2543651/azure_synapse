@@ -1,0 +1,85 @@
+{
+	"name": "TrailerHoursOfService",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "TrailerHoursOfService",
+		"Description": "The number of hours in service of the trailer as of the associated timestamp.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "TrailerId",
+					"Description": "The unique identifier of a trailer.",
+					"BaseAttributeReference": {
+						"Entity": "TrailerHoursOfService.cdm.json/TrailerHoursOfService",
+						"Name": "TrailerId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "Timestamp",
+					"Description": "The timestamp for which the associated hours of service for the trailer are determined.",
+					"BaseAttributeReference": {
+						"Entity": "TrailerHoursOfService.cdm.json/TrailerHoursOfService",
+						"Name": "Timestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "HoursOfService",
+					"Description": "The number of trailer hours of service  as of the associated timestamp.",
+					"BaseAttributeReference": {
+						"Entity": "TrailerHoursOfService.cdm.json/TrailerHoursOfService",
+						"Name": "HoursOfService"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"TrailerId\":{\"entity\":\"TrailerHoursOfService.cdm.json/TrailerHoursOfService\",\"name\":\"TrailerId\"},\"Timestamp\":{\"entity\":\"TrailerHoursOfService.cdm.json/TrailerHoursOfService\",\"name\":\"Timestamp\"},\"HoursOfService\":{\"entity\":\"TrailerHoursOfService.cdm.json/TrailerHoursOfService\",\"name\":\"HoursOfService\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"TrailerHoursOfService\",\"path\":\"TrailerHoursOfService.cdm.json/TrailerHoursOfService\"},\"description\":\"The number of hours in service of the trailer as of the associated timestamp.\",\"primaryKey\":[\"TrailerId\",\"Timestamp\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"TrailerId\",\"attributeReference\":{\"entity\":\"TrailerHoursOfService.cdm.json/TrailerHoursOfService\",\"name\":\"TrailerId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"Timestamp\",\"attributeReference\":{\"entity\":\"TrailerHoursOfService.cdm.json/TrailerHoursOfService\",\"name\":\"Timestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"HoursOfService\",\"attributeReference\":{\"entity\":\"TrailerHoursOfService.cdm.json/TrailerHoursOfService\",\"name\":\"HoursOfService\"},\"dataType\":\"integer\"}]}}}",
+			"Description": "The number of hours in service of the trailer as of the associated timestamp.",
+			"DisplayFolderInfo": "{\"name\":\"Shipping\",\"colorCode\":\"#000B42\"}",
+			"PrimaryKeys": "TrailerId,Timestamp"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

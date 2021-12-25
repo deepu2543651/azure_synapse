@@ -1,0 +1,26 @@
+{
+	"name": "relationship-sobcvgbaqy",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "relationship-sobcvgbaqy",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "ShipmentTermType",
+		"ToTableName": "ShipmentAssignedTerm",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ShipmentTermTypeId",
+				"ToColumnName": "ShipmentTermTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"ShipmentTermType.cdm.json/ShipmentTermType\",\"toEntity\":\"ShipmentAssignedTerm.cdm.json/ShipmentAssignedTerm\",\"joinPairs\":[{\"fromAttribute\":\"ShipmentTermTypeId\",\"toAttribute\":\"ShipmentTermTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

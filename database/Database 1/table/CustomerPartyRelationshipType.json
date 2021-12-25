@@ -1,0 +1,86 @@
+{
+	"name": "CustomerPartyRelationshipType",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "CustomerPartyRelationshipType",
+		"Description": "The nature of the relationship between a customer and a related party.\n\nEx:\n- Company - parent company \n- Company - subsidiary company \n- Company - company Shipping Agent\n- Company - related-company\n- Individual - Employer\n- Individual - Family Member\n- Customer Referral\n- National Jurisdiction\n- State Jurisdiction\n- Provincial Jurisdiction\n- Customer - Travel Agent",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "CustomerPartyRelationshipTypeId",
+					"Description": "The unique identifier of a customer party relationship type.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerPartyRelationshipType.cdm.json/CustomerPartyRelationshipType",
+						"Name": "CustomerPartyRelationshipTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "CustomerPartyRelationshipTypeName",
+					"Description": "The name of a Customer Party relationship type.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerPartyRelationshipType.cdm.json/CustomerPartyRelationshipType",
+						"Name": "CustomerPartyRelationshipTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "CustomerPartyRelationshipTypeDescription",
+					"Description": "The description of a customer party relationship type.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerPartyRelationshipType.cdm.json/CustomerPartyRelationshipType",
+						"Name": "CustomerPartyRelationshipTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"CustomerPartyRelationshipTypeId\":{\"entity\":\"CustomerPartyRelationshipType.cdm.json/CustomerPartyRelationshipType\",\"name\":\"CustomerPartyRelationshipTypeId\"},\"CustomerPartyRelationshipTypeName\":{\"entity\":\"CustomerPartyRelationshipType.cdm.json/CustomerPartyRelationshipType\",\"name\":\"CustomerPartyRelationshipTypeName\"},\"CustomerPartyRelationshipTypeDescription\":{\"entity\":\"CustomerPartyRelationshipType.cdm.json/CustomerPartyRelationshipType\",\"name\":\"CustomerPartyRelationshipTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"CustomerPartyRelationshipType\",\"path\":\"CustomerPartyRelationshipType.cdm.json/CustomerPartyRelationshipType\"},\"description\":\"The nature of the relationship between a customer and a related party.\\n\\nEx:\\n- Company - parent company \\n- Company - subsidiary company \\n- Company - company Shipping Agent\\n- Company - related-company\\n- Individual - Employer\\n- Individual - Family Member\\n- Customer Referral\\n- National Jurisdiction\\n- State Jurisdiction\\n- Provincial Jurisdiction\\n- Customer - Travel Agent\",\"primaryKey\":[\"CustomerPartyRelationshipTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"CustomerPartyRelationshipTypeId\",\"attributeReference\":{\"entity\":\"CustomerPartyRelationshipType.cdm.json/CustomerPartyRelationshipType\",\"name\":\"CustomerPartyRelationshipTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"CustomerPartyRelationshipTypeName\",\"attributeReference\":{\"entity\":\"CustomerPartyRelationshipType.cdm.json/CustomerPartyRelationshipType\",\"name\":\"CustomerPartyRelationshipTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"CustomerPartyRelationshipTypeDescription\",\"attributeReference\":{\"entity\":\"CustomerPartyRelationshipType.cdm.json/CustomerPartyRelationshipType\",\"name\":\"CustomerPartyRelationshipTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512}]}}}",
+			"Description": "The nature of the relationship between a customer and a related party.\n\nEx:\n- Company - parent company \n- Company - subsidiary company \n- Company - company Shipping Agent\n- Company - related-company\n- Individual - Employer\n- Individual - Family Member\n- Customer Referral\n- National Jurisdiction\n- State Jurisdiction\n- Provincial Jurisdiction\n- Customer - Travel Agent",
+			"DisplayFolderInfo": "{\"name\":\"Customer\",\"colorCode\":\"#E3008C\"}",
+			"PrimaryKeys": "CustomerPartyRelationshipTypeId"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

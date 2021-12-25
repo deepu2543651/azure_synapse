@@ -1,0 +1,119 @@
+{
+	"name": "AircraftStatus",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "AircraftStatus",
+		"Description": "The status of the aircraft for the associated period.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "AircraftId",
+					"Description": "The unique identifier of an Aircraft.",
+					"BaseAttributeReference": {
+						"Entity": "AircraftStatus.cdm.json/AircraftStatus",
+						"Name": "AircraftId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PeriodStartTimestamp",
+					"Description": "The period start timestamp that the associated aircraft status is defined.",
+					"BaseAttributeReference": {
+						"Entity": "AircraftStatus.cdm.json/AircraftStatus",
+						"Name": "PeriodStartTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "AircraftStatusTypeId",
+					"Description": "The unique identifier of an Aircraft Status Type.",
+					"BaseAttributeReference": {
+						"Entity": "AircraftStatus.cdm.json/AircraftStatus",
+						"Name": "AircraftStatusTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PeriodEndTimestamp",
+					"Description": "The period end timestamp that the associated aircraft status is defined.",
+					"BaseAttributeReference": {
+						"Entity": "AircraftStatus.cdm.json/AircraftStatus",
+						"Name": "PeriodEndTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "AircraftStatusNote",
+					"Description": "A note, comment or additional information regarding the aircraft status.",
+					"BaseAttributeReference": {
+						"Entity": "AircraftStatus.cdm.json/AircraftStatus",
+						"Name": "AircraftStatusNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"AircraftId\":{\"entity\":\"AircraftStatus.cdm.json/AircraftStatus\",\"name\":\"AircraftId\"},\"PeriodStartTimestamp\":{\"entity\":\"AircraftStatus.cdm.json/AircraftStatus\",\"name\":\"PeriodStartTimestamp\"},\"AircraftStatusTypeId\":{\"entity\":\"AircraftStatus.cdm.json/AircraftStatus\",\"name\":\"AircraftStatusTypeId\"},\"PeriodEndTimestamp\":{\"entity\":\"AircraftStatus.cdm.json/AircraftStatus\",\"name\":\"PeriodEndTimestamp\"},\"AircraftStatusNote\":{\"entity\":\"AircraftStatus.cdm.json/AircraftStatus\",\"name\":\"AircraftStatusNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"AircraftStatus\",\"path\":\"AircraftStatus.cdm.json/AircraftStatus\"},\"description\":\"The status of the aircraft for the associated period.\",\"primaryKey\":[\"AircraftId\",\"PeriodStartTimestamp\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"AircraftId\",\"attributeReference\":{\"entity\":\"AircraftStatus.cdm.json/AircraftStatus\",\"name\":\"AircraftId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"PeriodStartTimestamp\",\"attributeReference\":{\"entity\":\"AircraftStatus.cdm.json/AircraftStatus\",\"name\":\"PeriodStartTimestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"AircraftStatusTypeId\",\"attributeReference\":{\"entity\":\"AircraftStatus.cdm.json/AircraftStatus\",\"name\":\"AircraftStatusTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"PeriodEndTimestamp\",\"attributeReference\":{\"entity\":\"AircraftStatus.cdm.json/AircraftStatus\",\"name\":\"PeriodEndTimestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"AircraftStatusNote\",\"attributeReference\":{\"entity\":\"AircraftStatus.cdm.json/AircraftStatus\",\"name\":\"AircraftStatusNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024}]}}}",
+			"Description": "The status of the aircraft for the associated period.",
+			"DisplayFolderInfo": "{\"name\":\"Shipping\",\"colorCode\":\"#000B42\"}",
+			"PrimaryKeys": "AircraftId,PeriodStartTimestamp"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

@@ -1,0 +1,26 @@
+{
+	"name": "relationship-bajtplxtkl",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "relationship-bajtplxtkl",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "VehicleSchedulePartyRelationshipType",
+		"ToTableName": "VehicleScheduleLegRelatedParty",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "VehicleSchedulePartyRelationshipTypeId",
+				"ToColumnName": "VehicleSchedulePartyRelationshipTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"VehicleSchedulePartyRelationshipType.cdm.json/VehicleSchedulePartyRelationshipType\",\"toEntity\":\"VehicleScheduleLegRelatedParty.cdm.json/VehicleScheduleLegRelatedParty\",\"joinPairs\":[{\"fromAttribute\":\"VehicleSchedulePartyRelationshipTypeId\",\"toAttribute\":\"VehicleSchedulePartyRelationshipTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

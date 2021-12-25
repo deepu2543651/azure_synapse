@@ -1,0 +1,478 @@
+{
+	"name": "PalletType",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "PalletType",
+		"Description": "A pallet is a flat transport structure that supports goods in a stable fashion while being lifted by a forklift, pallet jack, front loader, work saver or other jacking device. A pallet is the structural foundation of a unit load which allows handling and storage efficiencies. Goods or shipping containers are often placed on a pallet secured with strapping, stretch wrap or shrink wrap and shipped.\n\nEx.:\n- Block Pallet\n- Double-Face Pallet\n- Double-Wing Pallet\n- Flush Pallet\n- Four-way Stringer Pallet\n- Non-Reversible Pallet\n- Reversible Pallet\n- Single-Wing Pallet\n- Skid Pallet\n- Solid Deck Pallet\n- Two-Way Entry Pallet\n- Two-Way Stringer Pallet",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "PalletTypeId",
+					"Description": "The unique identifier of a Pallet Type.",
+					"BaseAttributeReference": {
+						"Entity": "PalletType.cdm.json/PalletType",
+						"Name": "PalletTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ItemSku",
+					"Description": "The Stock Keeping Unit identifier, which is typically used for inventory-related activities.",
+					"BaseAttributeReference": {
+						"Entity": "PalletType.cdm.json/PalletType",
+						"Name": "ItemSku"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Length": 20,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "PalletTypeName",
+					"Description": "The name of the Pallet Type.",
+					"BaseAttributeReference": {
+						"Entity": "PalletType.cdm.json/PalletType",
+						"Name": "PalletTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "PalletTypeDescription",
+					"Description": "The description of the Pallet Type.",
+					"BaseAttributeReference": {
+						"Entity": "PalletType.cdm.json/PalletType",
+						"Name": "PalletTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "InformationLabelText",
+					"Description": "The label text that identifies the care, use, preparation and handling or the pallet.\n\nExamples:\n- \"Keep out of direct sunlight...\"\n- \"Keep out of reach of children...\"",
+					"BaseAttributeReference": {
+						"Entity": "PalletType.cdm.json/PalletType",
+						"Name": "InformationLabelText"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "DescriptiveLabelText",
+					"Description": "The label text that describes significant characteristics and benefits.",
+					"BaseAttributeReference": {
+						"Entity": "PalletType.cdm.json/PalletType",
+						"Name": "DescriptiveLabelText"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "WarningInformationText",
+					"Description": "The text of the warning label, if any, appearing upon the pallet.",
+					"BaseAttributeReference": {
+						"Entity": "PalletType.cdm.json/PalletType",
+						"Name": "WarningInformationText"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "GradeLabelText",
+					"Description": "The label text that identifies pallet quality with letters, number or conditions.\n\nExamples:\n\n-  Grade A\n-  Prime\n-  #1",
+					"BaseAttributeReference": {
+						"Entity": "PalletType.cdm.json/PalletType",
+						"Name": "GradeLabelText"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "UniversalProductCode",
+					"Description": "A system that identifies products by type and by manufacturer.  \n\nA UPC consists of eleven (11) digits.  Six (6) indicate the Manufacturer and five (5) digits describe the product.\n\nUPCs appear on product packages as bar codes, which are graphic symbols that are read by optical scanner devices.   \n\nUPCs are assigned by the Uniform Code Council of Dayton, Ohio.",
+					"BaseAttributeReference": {
+						"Entity": "PalletType.cdm.json/PalletType",
+						"Name": "UniversalProductCode"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 12,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "EuropeanArticleNumber",
+					"Description": "A 13 digit barcoding standard which is a superset of the original 12-digit Universal Product Code (UPC).\n\naka International Article Number (abbreviation of EAN retained)",
+					"BaseAttributeReference": {
+						"Entity": "PalletType.cdm.json/PalletType",
+						"Name": "EuropeanArticleNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 13,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "GlobalTradeItemNumber",
+					"Description": "The Global Trade Item Number (GTIN) is an identifier for trade items that was developed by GS1.",
+					"BaseAttributeReference": {
+						"Entity": "PalletType.cdm.json/PalletType",
+						"Name": "GlobalTradeItemNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 14,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "ItemElectronicProductCode",
+					"Description": "EPC is the RFID version of the UPC barcode. \nEPC is intended to be used for specific product identification. However, EPC goes beyond UPC by not only identifying the product as an SKU, but also providing access to additional data about the origin and history of the specific units. \nThe EPC tag itself identifies the manufacturer, product, version, and serial number. It's the serial number that takes EPC to the next level. \nThis is the key to data related to specific lots/batches as well as potentially tracking the specific unit's history as it moves through the supply chain.",
+					"BaseAttributeReference": {
+						"Entity": "PalletType.cdm.json/PalletType",
+						"Name": "ItemElectronicProductCode"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 14,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "ComponentPartIdentifier",
+					"Description": "The Component / Part Identifier (CPID) is used to identify components or parts that are used in the assembly of a larger item. The CPID is part of the GS1 system of standards.",
+					"BaseAttributeReference": {
+						"Entity": "PalletType.cdm.json/PalletType",
+						"Name": "ComponentPartIdentifier"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 30,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "GlobalReturnableAssetIdentifier",
+					"Description": "The Global Returnable Asset Identifier (GRAI) was developed by GS1 to be used to identify assets by type. It can also be used to uniquely identify assets by including the serial number. \n\nThe GRAI is used to identify Returnable Transport Items (RTI) such as pallets, roll container, crates. The GRAI identifies the type of returnable asset.",
+					"BaseAttributeReference": {
+						"Entity": "PalletType.cdm.json/PalletType",
+						"Name": "GlobalReturnableAssetIdentifier"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 29,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "PalletNote",
+					"Description": "A note, comment or additional information regarding the pallet.",
+					"BaseAttributeReference": {
+						"Entity": "PalletType.cdm.json/PalletType",
+						"Name": "PalletNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "PalletLength",
+					"Description": "The length of the Pallet.",
+					"BaseAttributeReference": {
+						"Entity": "PalletType.cdm.json/PalletType",
+						"Name": "PalletLength"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "PalletWidth",
+					"Description": "The width of the Pallet.",
+					"BaseAttributeReference": {
+						"Entity": "PalletType.cdm.json/PalletType",
+						"Name": "PalletWidth"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "PalletHeight",
+					"Description": "The height of the Pallet.",
+					"BaseAttributeReference": {
+						"Entity": "PalletType.cdm.json/PalletType",
+						"Name": "PalletHeight"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "LwhUomId",
+					"Description": "The unique identifier of a Unit Of Measure.",
+					"BaseAttributeReference": {
+						"Entity": "PalletType.cdm.json/PalletType",
+						"Name": "LwhUomId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PalletWeight",
+					"Description": "The weight of the Pallet.",
+					"BaseAttributeReference": {
+						"Entity": "PalletType.cdm.json/PalletType",
+						"Name": "PalletWeight"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "WeightUomId",
+					"Description": "The unique identifier of a Unit Of Measure.",
+					"BaseAttributeReference": {
+						"Entity": "PalletType.cdm.json/PalletType",
+						"Name": "WeightUomId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "SerializedPalletIndicator",
+					"Description": "Indicates that the Pallet is serialized.",
+					"BaseAttributeReference": {
+						"Entity": "PalletType.cdm.json/PalletType",
+						"Name": "SerializedPalletIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "OwningPartyId",
+					"Description": "The unique identifier of a Party.",
+					"BaseAttributeReference": {
+						"Entity": "PalletType.cdm.json/PalletType",
+						"Name": "OwningPartyId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "DepositRequiredIndicator",
+					"Description": "Indicates that a deposit is required for using this type of pallet.",
+					"BaseAttributeReference": {
+						"Entity": "PalletType.cdm.json/PalletType",
+						"Name": "DepositRequiredIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "RentalIndicator",
+					"Description": "Indicates that a the pallet is to be rented.",
+					"BaseAttributeReference": {
+						"Entity": "PalletType.cdm.json/PalletType",
+						"Name": "RentalIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "SingleUseIndicator",
+					"Description": "Indicates that a the pallet is to be used one time / is not reusable.",
+					"BaseAttributeReference": {
+						"Entity": "PalletType.cdm.json/PalletType",
+						"Name": "SingleUseIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"PalletTypeId\":{\"entity\":\"PalletType.cdm.json/PalletType\",\"name\":\"PalletTypeId\"},\"ItemSku\":{\"entity\":\"PalletType.cdm.json/PalletType\",\"name\":\"ItemSku\"},\"PalletTypeName\":{\"entity\":\"PalletType.cdm.json/PalletType\",\"name\":\"PalletTypeName\"},\"PalletTypeDescription\":{\"entity\":\"PalletType.cdm.json/PalletType\",\"name\":\"PalletTypeDescription\"},\"InformationLabelText\":{\"entity\":\"PalletType.cdm.json/PalletType\",\"name\":\"InformationLabelText\"},\"DescriptiveLabelText\":{\"entity\":\"PalletType.cdm.json/PalletType\",\"name\":\"DescriptiveLabelText\"},\"WarningInformationText\":{\"entity\":\"PalletType.cdm.json/PalletType\",\"name\":\"WarningInformationText\"},\"GradeLabelText\":{\"entity\":\"PalletType.cdm.json/PalletType\",\"name\":\"GradeLabelText\"},\"UniversalProductCode\":{\"entity\":\"PalletType.cdm.json/PalletType\",\"name\":\"UniversalProductCode\"},\"EuropeanArticleNumber\":{\"entity\":\"PalletType.cdm.json/PalletType\",\"name\":\"EuropeanArticleNumber\"},\"GlobalTradeItemNumber\":{\"entity\":\"PalletType.cdm.json/PalletType\",\"name\":\"GlobalTradeItemNumber\"},\"ItemElectronicProductCode\":{\"entity\":\"PalletType.cdm.json/PalletType\",\"name\":\"ItemElectronicProductCode\"},\"ComponentPartIdentifier\":{\"entity\":\"PalletType.cdm.json/PalletType\",\"name\":\"ComponentPartIdentifier\"},\"GlobalReturnableAssetIdentifier\":{\"entity\":\"PalletType.cdm.json/PalletType\",\"name\":\"GlobalReturnableAssetIdentifier\"},\"PalletNote\":{\"entity\":\"PalletType.cdm.json/PalletType\",\"name\":\"PalletNote\"},\"PalletLength\":{\"entity\":\"PalletType.cdm.json/PalletType\",\"name\":\"PalletLength\"},\"PalletWidth\":{\"entity\":\"PalletType.cdm.json/PalletType\",\"name\":\"PalletWidth\"},\"PalletHeight\":{\"entity\":\"PalletType.cdm.json/PalletType\",\"name\":\"PalletHeight\"},\"LwhUomId\":{\"entity\":\"PalletType.cdm.json/PalletType\",\"name\":\"LwhUomId\"},\"PalletWeight\":{\"entity\":\"PalletType.cdm.json/PalletType\",\"name\":\"PalletWeight\"},\"WeightUomId\":{\"entity\":\"PalletType.cdm.json/PalletType\",\"name\":\"WeightUomId\"},\"SerializedPalletIndicator\":{\"entity\":\"PalletType.cdm.json/PalletType\",\"name\":\"SerializedPalletIndicator\"},\"OwningPartyId\":{\"entity\":\"PalletType.cdm.json/PalletType\",\"name\":\"OwningPartyId\"},\"DepositRequiredIndicator\":{\"entity\":\"PalletType.cdm.json/PalletType\",\"name\":\"DepositRequiredIndicator\"},\"RentalIndicator\":{\"entity\":\"PalletType.cdm.json/PalletType\",\"name\":\"RentalIndicator\"},\"SingleUseIndicator\":{\"entity\":\"PalletType.cdm.json/PalletType\",\"name\":\"SingleUseIndicator\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"PalletType\",\"path\":\"PalletType.cdm.json/PalletType\"},\"description\":\"A pallet is a flat transport structure that supports goods in a stable fashion while being lifted by a forklift, pallet jack, front loader, work saver or other jacking device. A pallet is the structural foundation of a unit load which allows handling and storage efficiencies. Goods or shipping containers are often placed on a pallet secured with strapping, stretch wrap or shrink wrap and shipped.\\n\\nEx.:\\n- Block Pallet\\n- Double-Face Pallet\\n- Double-Wing Pallet\\n- Flush Pallet\\n- Four-way Stringer Pallet\\n- Non-Reversible Pallet\\n- Reversible Pallet\\n- Single-Wing Pallet\\n- Skid Pallet\\n- Solid Deck Pallet\\n- Two-Way Entry Pallet\\n- Two-Way Stringer Pallet\",\"primaryKey\":[\"PalletTypeId\",\"ItemSku\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"PalletTypeId\",\"attributeReference\":{\"entity\":\"PalletType.cdm.json/PalletType\",\"name\":\"PalletTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ItemSku\",\"attributeReference\":{\"entity\":\"PalletType.cdm.json/PalletType\",\"name\":\"ItemSku\"},\"dataType\":\"string\",\"dataTypeLength\":20},{\"type\":\"Existing\",\"name\":\"PalletTypeName\",\"attributeReference\":{\"entity\":\"PalletType.cdm.json/PalletType\",\"name\":\"PalletTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"PalletTypeDescription\",\"attributeReference\":{\"entity\":\"PalletType.cdm.json/PalletType\",\"name\":\"PalletTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512},{\"type\":\"Existing\",\"name\":\"InformationLabelText\",\"attributeReference\":{\"entity\":\"PalletType.cdm.json/PalletType\",\"name\":\"InformationLabelText\"},\"dataType\":\"string\",\"dataTypeLength\":1024},{\"type\":\"Existing\",\"name\":\"DescriptiveLabelText\",\"attributeReference\":{\"entity\":\"PalletType.cdm.json/PalletType\",\"name\":\"DescriptiveLabelText\"},\"dataType\":\"string\",\"dataTypeLength\":1024},{\"type\":\"Existing\",\"name\":\"WarningInformationText\",\"attributeReference\":{\"entity\":\"PalletType.cdm.json/PalletType\",\"name\":\"WarningInformationText\"},\"dataType\":\"string\",\"dataTypeLength\":1024},{\"type\":\"Existing\",\"name\":\"GradeLabelText\",\"attributeReference\":{\"entity\":\"PalletType.cdm.json/PalletType\",\"name\":\"GradeLabelText\"},\"dataType\":\"string\",\"dataTypeLength\":1024},{\"type\":\"Existing\",\"name\":\"UniversalProductCode\",\"attributeReference\":{\"entity\":\"PalletType.cdm.json/PalletType\",\"name\":\"UniversalProductCode\"},\"dataType\":\"decimal\",\"dataTypeLength\":12,\"scale\":0},{\"type\":\"Existing\",\"name\":\"EuropeanArticleNumber\",\"attributeReference\":{\"entity\":\"PalletType.cdm.json/PalletType\",\"name\":\"EuropeanArticleNumber\"},\"dataType\":\"decimal\",\"dataTypeLength\":13,\"scale\":0},{\"type\":\"Existing\",\"name\":\"GlobalTradeItemNumber\",\"attributeReference\":{\"entity\":\"PalletType.cdm.json/PalletType\",\"name\":\"GlobalTradeItemNumber\"},\"dataType\":\"decimal\",\"dataTypeLength\":14,\"scale\":0},{\"type\":\"Existing\",\"name\":\"ItemElectronicProductCode\",\"attributeReference\":{\"entity\":\"PalletType.cdm.json/PalletType\",\"name\":\"ItemElectronicProductCode\"},\"dataType\":\"decimal\",\"dataTypeLength\":14,\"scale\":0},{\"type\":\"Existing\",\"name\":\"ComponentPartIdentifier\",\"attributeReference\":{\"entity\":\"PalletType.cdm.json/PalletType\",\"name\":\"ComponentPartIdentifier\"},\"dataType\":\"string\",\"dataTypeLength\":30},{\"type\":\"Existing\",\"name\":\"GlobalReturnableAssetIdentifier\",\"attributeReference\":{\"entity\":\"PalletType.cdm.json/PalletType\",\"name\":\"GlobalReturnableAssetIdentifier\"},\"dataType\":\"string\",\"dataTypeLength\":29},{\"type\":\"Existing\",\"name\":\"PalletNote\",\"attributeReference\":{\"entity\":\"PalletType.cdm.json/PalletType\",\"name\":\"PalletNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024},{\"type\":\"Existing\",\"name\":\"PalletLength\",\"attributeReference\":{\"entity\":\"PalletType.cdm.json/PalletType\",\"name\":\"PalletLength\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":8},{\"type\":\"Existing\",\"name\":\"PalletWidth\",\"attributeReference\":{\"entity\":\"PalletType.cdm.json/PalletType\",\"name\":\"PalletWidth\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":8},{\"type\":\"Existing\",\"name\":\"PalletHeight\",\"attributeReference\":{\"entity\":\"PalletType.cdm.json/PalletType\",\"name\":\"PalletHeight\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":8},{\"type\":\"Existing\",\"name\":\"LwhUomId\",\"attributeReference\":{\"entity\":\"PalletType.cdm.json/PalletType\",\"name\":\"LwhUomId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"PalletWeight\",\"attributeReference\":{\"entity\":\"PalletType.cdm.json/PalletType\",\"name\":\"PalletWeight\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":8},{\"type\":\"Existing\",\"name\":\"WeightUomId\",\"attributeReference\":{\"entity\":\"PalletType.cdm.json/PalletType\",\"name\":\"WeightUomId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"SerializedPalletIndicator\",\"attributeReference\":{\"entity\":\"PalletType.cdm.json/PalletType\",\"name\":\"SerializedPalletIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"OwningPartyId\",\"attributeReference\":{\"entity\":\"PalletType.cdm.json/PalletType\",\"name\":\"OwningPartyId\"},\"dataType\":\"long\"},{\"type\":\"Existing\",\"name\":\"DepositRequiredIndicator\",\"attributeReference\":{\"entity\":\"PalletType.cdm.json/PalletType\",\"name\":\"DepositRequiredIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"RentalIndicator\",\"attributeReference\":{\"entity\":\"PalletType.cdm.json/PalletType\",\"name\":\"RentalIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"SingleUseIndicator\",\"attributeReference\":{\"entity\":\"PalletType.cdm.json/PalletType\",\"name\":\"SingleUseIndicator\"},\"dataType\":\"boolean\"}]}}}",
+			"Description": "A pallet is a flat transport structure that supports goods in a stable fashion while being lifted by a forklift, pallet jack, front loader, work saver or other jacking device. A pallet is the structural foundation of a unit load which allows handling and storage efficiencies. Goods or shipping containers are often placed on a pallet secured with strapping, stretch wrap or shrink wrap and shipped.\n\nEx.:\n- Block Pallet\n- Double-Face Pallet\n- Double-Wing Pallet\n- Flush Pallet\n- Four-way Stringer Pallet\n- Non-Reversible Pallet\n- Reversible Pallet\n- Single-Wing Pallet\n- Skid Pallet\n- Solid Deck Pallet\n- Two-Way Entry Pallet\n- Two-Way Stringer Pallet",
+			"DisplayFolderInfo": "{\"name\":\"Shipping\",\"colorCode\":\"#000B42\"}",
+			"PrimaryKeys": "PalletTypeId,ItemSku"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

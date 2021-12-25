@@ -1,0 +1,150 @@
+{
+	"name": "ExportControlClassificationNumber",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "ExportControlClassificationNumber",
+		"Description": "A 5-character number for every export product identifying the category, product group, type of control and country group level of control specified in the US Commerce Control List.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "EccnNumber",
+					"Description": "The unique identifier of a ECCN.",
+					"BaseAttributeReference": {
+						"Entity": "ExportControlClassificationNumber.cdm.json/ExportControlClassificationNumber",
+						"Name": "EccnNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "EccnName",
+					"Description": "The name or trade name of a ECCN.",
+					"BaseAttributeReference": {
+						"Entity": "ExportControlClassificationNumber.cdm.json/ExportControlClassificationNumber",
+						"Name": "EccnName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "EccnDescription",
+					"Description": "The description of the ECCN.",
+					"BaseAttributeReference": {
+						"Entity": "ExportControlClassificationNumber.cdm.json/ExportControlClassificationNumber",
+						"Name": "EccnDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ExportCategoryId",
+					"Description": "The unique identifier of an Export Category.",
+					"BaseAttributeReference": {
+						"Entity": "ExportControlClassificationNumber.cdm.json/ExportControlClassificationNumber",
+						"Name": "ExportCategoryId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ExportControlTypeId",
+					"Description": "The unique identifier of an Export Control Type.",
+					"BaseAttributeReference": {
+						"Entity": "ExportControlClassificationNumber.cdm.json/ExportControlClassificationNumber",
+						"Name": "ExportControlTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ExportProductGroupId",
+					"Description": "The unique identifier of a Product Group.",
+					"BaseAttributeReference": {
+						"Entity": "ExportControlClassificationNumber.cdm.json/ExportControlClassificationNumber",
+						"Name": "ExportProductGroupId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "CountryGroupLevelId",
+					"Description": "The unique identifier of a Country Group Level.",
+					"BaseAttributeReference": {
+						"Entity": "ExportControlClassificationNumber.cdm.json/ExportControlClassificationNumber",
+						"Name": "CountryGroupLevelId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"EccnNumber\":{\"entity\":\"ExportControlClassificationNumber.cdm.json/ExportControlClassificationNumber\",\"name\":\"EccnNumber\"},\"EccnName\":{\"entity\":\"ExportControlClassificationNumber.cdm.json/ExportControlClassificationNumber\",\"name\":\"EccnName\"},\"EccnDescription\":{\"entity\":\"ExportControlClassificationNumber.cdm.json/ExportControlClassificationNumber\",\"name\":\"EccnDescription\"},\"ExportCategoryId\":{\"entity\":\"ExportControlClassificationNumber.cdm.json/ExportControlClassificationNumber\",\"name\":\"ExportCategoryId\"},\"ExportControlTypeId\":{\"entity\":\"ExportControlClassificationNumber.cdm.json/ExportControlClassificationNumber\",\"name\":\"ExportControlTypeId\"},\"ExportProductGroupId\":{\"entity\":\"ExportControlClassificationNumber.cdm.json/ExportControlClassificationNumber\",\"name\":\"ExportProductGroupId\"},\"CountryGroupLevelId\":{\"entity\":\"ExportControlClassificationNumber.cdm.json/ExportControlClassificationNumber\",\"name\":\"CountryGroupLevelId\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"ExportControlClassificationNumber\",\"path\":\"ExportControlClassificationNumber.cdm.json/ExportControlClassificationNumber\"},\"description\":\"A 5-character number for every export product identifying the category, product group, type of control and country group level of control specified in the US Commerce Control List.\",\"primaryKey\":[\"EccnNumber\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"EccnNumber\",\"attributeReference\":{\"entity\":\"ExportControlClassificationNumber.cdm.json/ExportControlClassificationNumber\",\"name\":\"EccnNumber\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"EccnName\",\"attributeReference\":{\"entity\":\"ExportControlClassificationNumber.cdm.json/ExportControlClassificationNumber\",\"name\":\"EccnName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"EccnDescription\",\"attributeReference\":{\"entity\":\"ExportControlClassificationNumber.cdm.json/ExportControlClassificationNumber\",\"name\":\"EccnDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512},{\"type\":\"Existing\",\"name\":\"ExportCategoryId\",\"attributeReference\":{\"entity\":\"ExportControlClassificationNumber.cdm.json/ExportControlClassificationNumber\",\"name\":\"ExportCategoryId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ExportControlTypeId\",\"attributeReference\":{\"entity\":\"ExportControlClassificationNumber.cdm.json/ExportControlClassificationNumber\",\"name\":\"ExportControlTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ExportProductGroupId\",\"attributeReference\":{\"entity\":\"ExportControlClassificationNumber.cdm.json/ExportControlClassificationNumber\",\"name\":\"ExportProductGroupId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"CountryGroupLevelId\",\"attributeReference\":{\"entity\":\"ExportControlClassificationNumber.cdm.json/ExportControlClassificationNumber\",\"name\":\"CountryGroupLevelId\"},\"dataType\":\"integer\"}]}}}",
+			"Description": "A 5-character number for every export product identifying the category, product group, type of control and country group level of control specified in the US Commerce Control List.",
+			"DisplayFolderInfo": "{\"name\":\"Shipping\",\"colorCode\":\"#000B42\"}",
+			"PrimaryKeys": "EccnNumber"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

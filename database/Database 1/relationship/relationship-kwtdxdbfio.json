@@ -1,0 +1,26 @@
+{
+	"name": "relationship-kwtdxdbfio",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "relationship-kwtdxdbfio",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "TowScheduleLegPartyRelationshipType",
+		"ToTableName": "TowScheduleLegRelatedParty",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "TowScheduleLegPartyRelationshipTypeId",
+				"ToColumnName": "TowScheduleLegPartyRelationshipTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"TowScheduleLegPartyRelationshipType.cdm.json/TowScheduleLegPartyRelationshipType\",\"toEntity\":\"TowScheduleLegRelatedParty.cdm.json/TowScheduleLegRelatedParty\",\"joinPairs\":[{\"fromAttribute\":\"TowScheduleLegPartyRelationshipTypeId\",\"toAttribute\":\"TowScheduleLegPartyRelationshipTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

@@ -1,0 +1,86 @@
+{
+	"name": "AirWaybillStatus",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "AirWaybillStatus",
+		"Description": "The status of the Air Waybill.\n\nB/L's Status: represents whether the bill of lading has been input, rated, reconciled, corrected, canceled, clean, duplicate, printed, or released to the customer. \n\nEx:\n\n-  Canceled B/L: B/L status; used to cancel a processed B/L; usually per shipper's request; different from voided B/L. \n\n-  Clean B/L: a clean B/L is one which bears no superimposed clause or notation which expressly declares a defective condition of the goods and/or the packaging. \n\n-  Corrected B/L: B/L requiring any update which results in money-or other financially-related changes. \n\n-  Duplicate B/L: Another original Bill of Lading set if first set is lost. Also known as reissued B/L. \n\n-  Voided B/L: Related to Consolidated B/L; those B/L's absorbed in the combining process. Different from Canceled B/L.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "AirWaybillStatusId",
+					"Description": "The unique identifier of an Air Waybill Status.",
+					"BaseAttributeReference": {
+						"Entity": "AirWaybillStatus.cdm.json/AirWaybillStatus",
+						"Name": "AirWaybillStatusId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "AirWaybillStatusName",
+					"Description": "The name of an Air Waybill Status.",
+					"BaseAttributeReference": {
+						"Entity": "AirWaybillStatus.cdm.json/AirWaybillStatus",
+						"Name": "AirWaybillStatusName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "AirWaybillStatusDescription",
+					"Description": "The description of an Air Waybill Status.",
+					"BaseAttributeReference": {
+						"Entity": "AirWaybillStatus.cdm.json/AirWaybillStatus",
+						"Name": "AirWaybillStatusDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"AirWaybillStatusId\":{\"entity\":\"AirWaybillStatus.cdm.json/AirWaybillStatus\",\"name\":\"AirWaybillStatusId\"},\"AirWaybillStatusName\":{\"entity\":\"AirWaybillStatus.cdm.json/AirWaybillStatus\",\"name\":\"AirWaybillStatusName\"},\"AirWaybillStatusDescription\":{\"entity\":\"AirWaybillStatus.cdm.json/AirWaybillStatus\",\"name\":\"AirWaybillStatusDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"AirWaybillStatus\",\"path\":\"AirWaybillStatus.cdm.json/AirWaybillStatus\"},\"description\":\"The status of the Air Waybill.\\n\\nB/L's Status: represents whether the bill of lading has been input, rated, reconciled, corrected, canceled, clean, duplicate, printed, or released to the customer. \\n\\nEx:\\n\\n-  Canceled B/L: B/L status; used to cancel a processed B/L; usually per shipper's request; different from voided B/L. \\n\\n-  Clean B/L: a clean B/L is one which bears no superimposed clause or notation which expressly declares a defective condition of the goods and/or the packaging. \\n\\n-  Corrected B/L: B/L requiring any update which results in money-or other financially-related changes. \\n\\n-  Duplicate B/L: Another original Bill of Lading set if first set is lost. Also known as reissued B/L. \\n\\n-  Voided B/L: Related to Consolidated B/L; those B/L's absorbed in the combining process. Different from Canceled B/L.\",\"primaryKey\":[\"AirWaybillStatusId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"AirWaybillStatusId\",\"attributeReference\":{\"entity\":\"AirWaybillStatus.cdm.json/AirWaybillStatus\",\"name\":\"AirWaybillStatusId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"AirWaybillStatusName\",\"attributeReference\":{\"entity\":\"AirWaybillStatus.cdm.json/AirWaybillStatus\",\"name\":\"AirWaybillStatusName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"AirWaybillStatusDescription\",\"attributeReference\":{\"entity\":\"AirWaybillStatus.cdm.json/AirWaybillStatus\",\"name\":\"AirWaybillStatusDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512}]}}}",
+			"Description": "The status of the Air Waybill.\n\nB/L's Status: represents whether the bill of lading has been input, rated, reconciled, corrected, canceled, clean, duplicate, printed, or released to the customer. \n\nEx:\n\n-  Canceled B/L: B/L status; used to cancel a processed B/L; usually per shipper's request; different from voided B/L. \n\n-  Clean B/L: a clean B/L is one which bears no superimposed clause or notation which expressly declares a defective condition of the goods and/or the packaging. \n\n-  Corrected B/L: B/L requiring any update which results in money-or other financially-related changes. \n\n-  Duplicate B/L: Another original Bill of Lading set if first set is lost. Also known as reissued B/L. \n\n-  Voided B/L: Related to Consolidated B/L; those B/L's absorbed in the combining process. Different from Canceled B/L.",
+			"DisplayFolderInfo": "{\"name\":\"Shipping\",\"colorCode\":\"#000B42\"}",
+			"PrimaryKeys": "AirWaybillStatusId"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

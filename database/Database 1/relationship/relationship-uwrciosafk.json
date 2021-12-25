@@ -1,0 +1,26 @@
+{
+	"name": "relationship-uwrciosafk",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "relationship-uwrciosafk",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "CargoType",
+		"ToTableName": "VesselAllowableCargo",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "CargoTypeId",
+				"ToColumnName": "CargoTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"CargoType.cdm.json/CargoType\",\"toEntity\":\"VesselAllowableCargo.cdm.json/VesselAllowableCargo\",\"joinPairs\":[{\"fromAttribute\":\"CargoTypeId\",\"toAttribute\":\"CargoTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

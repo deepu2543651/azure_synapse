@@ -1,0 +1,168 @@
+{
+	"name": "SailingScheduleSegmentRelatedParty",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "SailingScheduleSegmentRelatedParty",
+		"Description": "A party that has a relationship with the sailing schedule segment over the indicated period.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "VesselId",
+					"Description": "The unique identifier of a vessel/ship.",
+					"BaseAttributeReference": {
+						"Entity": "SailingScheduleSegmentRelatedParty.cdm.json/SailingScheduleSegmentRelatedParty",
+						"Name": "VesselId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "VesselScheduledDepartureTimestamp",
+					"Description": "The scheduled departure timestamp.",
+					"BaseAttributeReference": {
+						"Entity": "SailingScheduleSegmentRelatedParty.cdm.json/SailingScheduleSegmentRelatedParty",
+						"Name": "VesselScheduledDepartureTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "SailingScheduleSegmentNumber",
+					"Description": "The ordered segment number associated with this segment (leg) of the sailing schedule.",
+					"BaseAttributeReference": {
+						"Entity": "SailingScheduleSegmentRelatedParty.cdm.json/SailingScheduleSegmentRelatedParty",
+						"Name": "SailingScheduleSegmentNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PartyId",
+					"Description": "The unique identifier of a Party.",
+					"BaseAttributeReference": {
+						"Entity": "SailingScheduleSegmentRelatedParty.cdm.json/SailingScheduleSegmentRelatedParty",
+						"Name": "PartyId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "SailingScheduleSegmentPartyRelationshipTypeId",
+					"Description": "The unique identifier of a customer relationship type.",
+					"BaseAttributeReference": {
+						"Entity": "SailingScheduleSegmentRelatedParty.cdm.json/SailingScheduleSegmentRelatedParty",
+						"Name": "SailingScheduleSegmentPartyRelationshipTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PeriodStartTimestamp",
+					"Description": "The period start timestamp for which the associated sailing schedule segment - party relationship is valid or in-effect.",
+					"BaseAttributeReference": {
+						"Entity": "SailingScheduleSegmentRelatedParty.cdm.json/SailingScheduleSegmentRelatedParty",
+						"Name": "PeriodStartTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "PeriodEndTimestamp",
+					"Description": "The period end timestamp for which the associated sailing schedule segment - party relationship is valid or in-effect.",
+					"BaseAttributeReference": {
+						"Entity": "SailingScheduleSegmentRelatedParty.cdm.json/SailingScheduleSegmentRelatedParty",
+						"Name": "PeriodEndTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "SailingScheduleSegmentRelatedPartyNote",
+					"Description": "A note, comment or additional information regarding the sailing schedule segment - party relationship.",
+					"BaseAttributeReference": {
+						"Entity": "SailingScheduleSegmentRelatedParty.cdm.json/SailingScheduleSegmentRelatedParty",
+						"Name": "SailingScheduleSegmentRelatedPartyNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"VesselId\":{\"entity\":\"SailingScheduleSegmentRelatedParty.cdm.json/SailingScheduleSegmentRelatedParty\",\"name\":\"VesselId\"},\"VesselScheduledDepartureTimestamp\":{\"entity\":\"SailingScheduleSegmentRelatedParty.cdm.json/SailingScheduleSegmentRelatedParty\",\"name\":\"VesselScheduledDepartureTimestamp\"},\"SailingScheduleSegmentNumber\":{\"entity\":\"SailingScheduleSegmentRelatedParty.cdm.json/SailingScheduleSegmentRelatedParty\",\"name\":\"SailingScheduleSegmentNumber\"},\"PartyId\":{\"entity\":\"SailingScheduleSegmentRelatedParty.cdm.json/SailingScheduleSegmentRelatedParty\",\"name\":\"PartyId\"},\"SailingScheduleSegmentPartyRelationshipTypeId\":{\"entity\":\"SailingScheduleSegmentRelatedParty.cdm.json/SailingScheduleSegmentRelatedParty\",\"name\":\"SailingScheduleSegmentPartyRelationshipTypeId\"},\"PeriodStartTimestamp\":{\"entity\":\"SailingScheduleSegmentRelatedParty.cdm.json/SailingScheduleSegmentRelatedParty\",\"name\":\"PeriodStartTimestamp\"},\"PeriodEndTimestamp\":{\"entity\":\"SailingScheduleSegmentRelatedParty.cdm.json/SailingScheduleSegmentRelatedParty\",\"name\":\"PeriodEndTimestamp\"},\"SailingScheduleSegmentRelatedPartyNote\":{\"entity\":\"SailingScheduleSegmentRelatedParty.cdm.json/SailingScheduleSegmentRelatedParty\",\"name\":\"SailingScheduleSegmentRelatedPartyNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"SailingScheduleSegmentRelatedParty\",\"path\":\"SailingScheduleSegmentRelatedParty.cdm.json/SailingScheduleSegmentRelatedParty\"},\"description\":\"A party that has a relationship with the sailing schedule segment over the indicated period.\",\"primaryKey\":[\"VesselId\",\"VesselScheduledDepartureTimestamp\",\"SailingScheduleSegmentNumber\",\"PartyId\",\"SailingScheduleSegmentPartyRelationshipTypeId\",\"PeriodStartTimestamp\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"VesselId\",\"attributeReference\":{\"entity\":\"SailingScheduleSegmentRelatedParty.cdm.json/SailingScheduleSegmentRelatedParty\",\"name\":\"VesselId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"VesselScheduledDepartureTimestamp\",\"attributeReference\":{\"entity\":\"SailingScheduleSegmentRelatedParty.cdm.json/SailingScheduleSegmentRelatedParty\",\"name\":\"VesselScheduledDepartureTimestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"SailingScheduleSegmentNumber\",\"attributeReference\":{\"entity\":\"SailingScheduleSegmentRelatedParty.cdm.json/SailingScheduleSegmentRelatedParty\",\"name\":\"SailingScheduleSegmentNumber\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"PartyId\",\"attributeReference\":{\"entity\":\"SailingScheduleSegmentRelatedParty.cdm.json/SailingScheduleSegmentRelatedParty\",\"name\":\"PartyId\"},\"dataType\":\"long\"},{\"type\":\"Existing\",\"name\":\"SailingScheduleSegmentPartyRelationshipTypeId\",\"attributeReference\":{\"entity\":\"SailingScheduleSegmentRelatedParty.cdm.json/SailingScheduleSegmentRelatedParty\",\"name\":\"SailingScheduleSegmentPartyRelationshipTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"PeriodStartTimestamp\",\"attributeReference\":{\"entity\":\"SailingScheduleSegmentRelatedParty.cdm.json/SailingScheduleSegmentRelatedParty\",\"name\":\"PeriodStartTimestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"PeriodEndTimestamp\",\"attributeReference\":{\"entity\":\"SailingScheduleSegmentRelatedParty.cdm.json/SailingScheduleSegmentRelatedParty\",\"name\":\"PeriodEndTimestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"SailingScheduleSegmentRelatedPartyNote\",\"attributeReference\":{\"entity\":\"SailingScheduleSegmentRelatedParty.cdm.json/SailingScheduleSegmentRelatedParty\",\"name\":\"SailingScheduleSegmentRelatedPartyNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024}]}}}",
+			"Description": "A party that has a relationship with the sailing schedule segment over the indicated period.",
+			"DisplayFolderInfo": "{\"name\":\"Shipping\",\"colorCode\":\"#000B42\"}",
+			"PrimaryKeys": "VesselId,VesselScheduledDepartureTimestamp,SailingScheduleSegmentNumber,PartyId,SailingScheduleSegmentPartyRelationshipTypeId,PeriodStartTimestamp"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

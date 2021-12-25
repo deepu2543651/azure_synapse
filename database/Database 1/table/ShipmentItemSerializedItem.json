@@ -1,0 +1,102 @@
+{
+	"name": "ShipmentItemSerializedItem",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "ShipmentItemSerializedItem",
+		"Description": "A serialized item that is provided as part of a shipment.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ShipmentId",
+					"Description": "The unique identifier of a Shipment.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentItemSerializedItem.cdm.json/ShipmentItemSerializedItem",
+						"Name": "ShipmentId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ShipmentItemNumber",
+					"Description": "The shipment line number.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentItemSerializedItem.cdm.json/ShipmentItemSerializedItem",
+						"Name": "ShipmentItemNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ItemSku",
+					"Description": "The Stock Keeping Unit identifier, which is typically used for inventory-related activities.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentItemSerializedItem.cdm.json/ShipmentItemSerializedItem",
+						"Name": "ItemSku"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Length": 20,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ItemSerialNumber",
+					"Description": "The serial number of the Item.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentItemSerializedItem.cdm.json/ShipmentItemSerializedItem",
+						"Name": "ItemSerialNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Length": 30,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ShipmentId\":{\"entity\":\"ShipmentItemSerializedItem.cdm.json/ShipmentItemSerializedItem\",\"name\":\"ShipmentId\"},\"ShipmentItemNumber\":{\"entity\":\"ShipmentItemSerializedItem.cdm.json/ShipmentItemSerializedItem\",\"name\":\"ShipmentItemNumber\"},\"ItemSku\":{\"entity\":\"ShipmentItemSerializedItem.cdm.json/ShipmentItemSerializedItem\",\"name\":\"ItemSku\"},\"ItemSerialNumber\":{\"entity\":\"ShipmentItemSerializedItem.cdm.json/ShipmentItemSerializedItem\",\"name\":\"ItemSerialNumber\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"ShipmentItemSerializedItem\",\"path\":\"ShipmentItemSerializedItem.cdm.json/ShipmentItemSerializedItem\"},\"description\":\"A serialized item that is provided as part of a shipment.\",\"primaryKey\":[\"ShipmentId\",\"ShipmentItemNumber\",\"ItemSku\",\"ItemSerialNumber\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"ShipmentId\",\"attributeReference\":{\"entity\":\"ShipmentItemSerializedItem.cdm.json/ShipmentItemSerializedItem\",\"name\":\"ShipmentId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ShipmentItemNumber\",\"attributeReference\":{\"entity\":\"ShipmentItemSerializedItem.cdm.json/ShipmentItemSerializedItem\",\"name\":\"ShipmentItemNumber\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ItemSku\",\"attributeReference\":{\"entity\":\"ShipmentItemSerializedItem.cdm.json/ShipmentItemSerializedItem\",\"name\":\"ItemSku\"},\"dataType\":\"string\",\"dataTypeLength\":20},{\"type\":\"Existing\",\"name\":\"ItemSerialNumber\",\"attributeReference\":{\"entity\":\"ShipmentItemSerializedItem.cdm.json/ShipmentItemSerializedItem\",\"name\":\"ItemSerialNumber\"},\"dataType\":\"string\",\"dataTypeLength\":30}]}}}",
+			"Description": "A serialized item that is provided as part of a shipment.",
+			"DisplayFolderInfo": "{\"name\":\"Shipping\",\"colorCode\":\"#000B42\"}",
+			"PrimaryKeys": "ShipmentId,ShipmentItemNumber,ItemSku,ItemSerialNumber"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

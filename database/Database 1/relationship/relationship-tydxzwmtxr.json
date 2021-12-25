@@ -1,0 +1,26 @@
+{
+	"name": "relationship-tydxzwmtxr",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "relationship-tydxzwmtxr",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "HarmonizedTariffScheduleCode",
+		"ToTableName": "ShipmentItem",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "HarmonizedTariffScheduleCode",
+				"ToColumnName": "HarmonizedTariffScheduleCode"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"HarmonizedTariffScheduleCode.cdm.json/HarmonizedTariffScheduleCode\",\"toEntity\":\"ShipmentItem.cdm.json/ShipmentItem\",\"joinPairs\":[{\"fromAttribute\":\"HarmonizedTariffScheduleCode\",\"toAttribute\":\"HarmonizedTariffScheduleCode\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

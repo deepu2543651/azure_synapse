@@ -1,0 +1,26 @@
+{
+	"name": "relationship-irmzzvrjoc",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "relationship-irmzzvrjoc",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "RfidTag",
+		"ToTableName": "SerializedPalletRfidTag",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "RfidTagId",
+				"ToColumnName": "RfidTagId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"RfidTag.cdm.json/RfidTag\",\"toEntity\":\"SerializedPalletRfidTag.cdm.json/SerializedPalletRfidTag\",\"joinPairs\":[{\"fromAttribute\":\"RfidTagId\",\"toAttribute\":\"RfidTagId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

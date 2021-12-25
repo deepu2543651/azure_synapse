@@ -1,0 +1,137 @@
+{
+	"name": "AssetAppraisalAdjustment",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "AssetAppraisalAdjustment",
+		"Description": "The dollar value or percentage amounts that when added or subtracted from the purchase price indicates the current value of the Asset.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "AssetId",
+					"Description": "The unique identifier of an Asset.",
+					"BaseAttributeReference": {
+						"Entity": "AssetAppraisalAdjustment.cdm.json/AssetAppraisalAdjustment",
+						"Name": "AssetId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "AdjustmentDate",
+					"Description": "The date of the Asset appraisal adjustment.",
+					"BaseAttributeReference": {
+						"Entity": "AssetAppraisalAdjustment.cdm.json/AssetAppraisalAdjustment",
+						"Name": "AdjustmentDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "AdjustmentAmount",
+					"Description": "The amount of the Asset appraisal adjustment.",
+					"BaseAttributeReference": {
+						"Entity": "AssetAppraisalAdjustment.cdm.json/AssetAppraisalAdjustment",
+						"Name": "AdjustmentAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "AdjustmentStatement",
+					"Description": "A statement detailing the reasons for the Asset appraisal adjustment.",
+					"BaseAttributeReference": {
+						"Entity": "AssetAppraisalAdjustment.cdm.json/AssetAppraisalAdjustment",
+						"Name": "AdjustmentStatement"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 2048,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "AssetConditionRatingId",
+					"Description": "The unique identifier of an Asset Condition Rating.",
+					"BaseAttributeReference": {
+						"Entity": "AssetAppraisalAdjustment.cdm.json/AssetAppraisalAdjustment",
+						"Name": "AssetConditionRatingId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "IsoCurrencyCode",
+					"Description": "The ISO 4217 currency code.",
+					"BaseAttributeReference": {
+						"Entity": "AssetAppraisalAdjustment.cdm.json/AssetAppraisalAdjustment",
+						"Name": "IsoCurrencyCode"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 3,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"AssetId\":{\"entity\":\"AssetAppraisalAdjustment.cdm.json/AssetAppraisalAdjustment\",\"name\":\"AssetId\"},\"AdjustmentDate\":{\"entity\":\"AssetAppraisalAdjustment.cdm.json/AssetAppraisalAdjustment\",\"name\":\"AdjustmentDate\"},\"AdjustmentAmount\":{\"entity\":\"AssetAppraisalAdjustment.cdm.json/AssetAppraisalAdjustment\",\"name\":\"AdjustmentAmount\"},\"AdjustmentStatement\":{\"entity\":\"AssetAppraisalAdjustment.cdm.json/AssetAppraisalAdjustment\",\"name\":\"AdjustmentStatement\"},\"AssetConditionRatingId\":{\"entity\":\"AssetAppraisalAdjustment.cdm.json/AssetAppraisalAdjustment\",\"name\":\"AssetConditionRatingId\"},\"IsoCurrencyCode\":{\"entity\":\"AssetAppraisalAdjustment.cdm.json/AssetAppraisalAdjustment\",\"name\":\"IsoCurrencyCode\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"AssetAppraisalAdjustment\",\"path\":\"AssetAppraisalAdjustment.cdm.json/AssetAppraisalAdjustment\"},\"description\":\"The dollar value or percentage amounts that when added or subtracted from the purchase price indicates the current value of the Asset.\",\"primaryKey\":[\"AssetId\",\"AdjustmentDate\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"AssetId\",\"attributeReference\":{\"entity\":\"AssetAppraisalAdjustment.cdm.json/AssetAppraisalAdjustment\",\"name\":\"AssetId\"},\"dataType\":\"long\"},{\"type\":\"Existing\",\"name\":\"AdjustmentDate\",\"attributeReference\":{\"entity\":\"AssetAppraisalAdjustment.cdm.json/AssetAppraisalAdjustment\",\"name\":\"AdjustmentDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\"},{\"type\":\"Existing\",\"name\":\"AdjustmentAmount\",\"attributeReference\":{\"entity\":\"AssetAppraisalAdjustment.cdm.json/AssetAppraisalAdjustment\",\"name\":\"AdjustmentAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"AdjustmentStatement\",\"attributeReference\":{\"entity\":\"AssetAppraisalAdjustment.cdm.json/AssetAppraisalAdjustment\",\"name\":\"AdjustmentStatement\"},\"dataType\":\"string\",\"dataTypeLength\":2048},{\"type\":\"Existing\",\"name\":\"AssetConditionRatingId\",\"attributeReference\":{\"entity\":\"AssetAppraisalAdjustment.cdm.json/AssetAppraisalAdjustment\",\"name\":\"AssetConditionRatingId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"IsoCurrencyCode\",\"attributeReference\":{\"entity\":\"AssetAppraisalAdjustment.cdm.json/AssetAppraisalAdjustment\",\"name\":\"IsoCurrencyCode\"},\"dataType\":\"string\",\"dataTypeLength\":3}]}}}",
+			"Description": "The dollar value or percentage amounts that when added or subtracted from the purchase price indicates the current value of the Asset.",
+			"DisplayFolderInfo": "{\"name\":\"Property & Equipment\",\"colorCode\":\"#BD4B37\"}",
+			"PrimaryKeys": "AssetId,AdjustmentDate"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

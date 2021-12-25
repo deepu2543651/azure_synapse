@@ -1,0 +1,26 @@
+{
+	"name": "relationship-ewrgfaxcqd",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "relationship-ewrgfaxcqd",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "ExceptionCondition",
+		"ToTableName": "ShipmentRouteException",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ExceptionConditionId",
+				"ToColumnName": "ExceptionConditionId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"ExceptionCondition.cdm.json/ExceptionCondition\",\"toEntity\":\"ShipmentRouteException.cdm.json/ShipmentRouteException\",\"joinPairs\":[{\"fromAttribute\":\"ExceptionConditionId\",\"toAttribute\":\"ExceptionConditionId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

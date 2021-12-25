@@ -1,0 +1,86 @@
+{
+	"name": "BargeType",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "BargeType",
+		"Description": "A categorization of barge based on common characteristics or functionality.\n\nEx:\n -Articulated tug and barge\n- Car float\n- Crane barge\n- Deck Barge\n- Dutch barge\n- Dry bulk cargo barge\n- Hopper barge\n- Hot Oil barge\n- Jackup barge\n- Lighter\n- Liquid cargo barge\n- Log barge\n- Oil barge\n- Open Hopper barge\n- Power barge\n- Railcar barge\n- Sand barge\n- Single Skin Tank barge\n- Steam Coiled barge\n- Tank barge",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "BargeTypeId",
+					"Description": "The unique identifier of a barge type.",
+					"BaseAttributeReference": {
+						"Entity": "BargeType.cdm.json/BargeType",
+						"Name": "BargeTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "BargeTypeName",
+					"Description": "The name of a barge type.",
+					"BaseAttributeReference": {
+						"Entity": "BargeType.cdm.json/BargeType",
+						"Name": "BargeTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "BargeTypeDescription",
+					"Description": "The description of a barge type.",
+					"BaseAttributeReference": {
+						"Entity": "BargeType.cdm.json/BargeType",
+						"Name": "BargeTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"BargeTypeId\":{\"entity\":\"BargeType.cdm.json/BargeType\",\"name\":\"BargeTypeId\"},\"BargeTypeName\":{\"entity\":\"BargeType.cdm.json/BargeType\",\"name\":\"BargeTypeName\"},\"BargeTypeDescription\":{\"entity\":\"BargeType.cdm.json/BargeType\",\"name\":\"BargeTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"BargeType\",\"path\":\"BargeType.cdm.json/BargeType\"},\"description\":\"A categorization of barge based on common characteristics or functionality.\\n\\nEx:\\n -Articulated tug and barge\\n- Car float\\n- Crane barge\\n- Deck Barge\\n- Dutch barge\\n- Dry bulk cargo barge\\n- Hopper barge\\n- Hot Oil barge\\n- Jackup barge\\n- Lighter\\n- Liquid cargo barge\\n- Log barge\\n- Oil barge\\n- Open Hopper barge\\n- Power barge\\n- Railcar barge\\n- Sand barge\\n- Single Skin Tank barge\\n- Steam Coiled barge\\n- Tank barge\",\"primaryKey\":[\"BargeTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"BargeTypeId\",\"attributeReference\":{\"entity\":\"BargeType.cdm.json/BargeType\",\"name\":\"BargeTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"BargeTypeName\",\"attributeReference\":{\"entity\":\"BargeType.cdm.json/BargeType\",\"name\":\"BargeTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"BargeTypeDescription\",\"attributeReference\":{\"entity\":\"BargeType.cdm.json/BargeType\",\"name\":\"BargeTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512}]}}}",
+			"Description": "A categorization of barge based on common characteristics or functionality.\n\nEx:\n -Articulated tug and barge\n- Car float\n- Crane barge\n- Deck Barge\n- Dutch barge\n- Dry bulk cargo barge\n- Hopper barge\n- Hot Oil barge\n- Jackup barge\n- Lighter\n- Liquid cargo barge\n- Log barge\n- Oil barge\n- Open Hopper barge\n- Power barge\n- Railcar barge\n- Sand barge\n- Single Skin Tank barge\n- Steam Coiled barge\n- Tank barge",
+			"DisplayFolderInfo": "{\"name\":\"Shipping\",\"colorCode\":\"#000B42\"}",
+			"PrimaryKeys": "BargeTypeId"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

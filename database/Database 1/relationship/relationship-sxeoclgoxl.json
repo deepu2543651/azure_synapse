@@ -1,0 +1,26 @@
+{
+	"name": "relationship-sxeoclgoxl",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "relationship-sxeoclgoxl",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Airport",
+		"ToTableName": "ScheduledFlightLeg",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "AirportCode",
+				"ToColumnName": "ScheduledFlightLegDepartureAirportCode"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Airport.cdm.json/Airport\",\"toEntity\":\"ScheduledFlightLeg.cdm.json/ScheduledFlightLeg\",\"joinPairs\":[{\"fromAttribute\":\"AirportCode\",\"toAttribute\":\"ScheduledFlightLegDepartureAirportCode\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

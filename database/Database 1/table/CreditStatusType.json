@@ -1,0 +1,86 @@
+{
+	"name": "CreditStatusType",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "CreditStatusType",
+		"Description": "A credit status that may be applied for a period to reflect credit-worthiness.\n\nEx:\n- Excellent\n- Above Average\n- Average\n- Below Average\n- Poor\n- Unrated \n- Credit available for purchases\n- Credit purchases require management approval\n- Credit denied to future purchases\n- Requires management approval",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "CreditStatusTypeId",
+					"Description": "The unique identifier of a Credit Status Type.",
+					"BaseAttributeReference": {
+						"Entity": "CreditStatusType.cdm.json/CreditStatusType",
+						"Name": "CreditStatusTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "CreditStatusTypeName",
+					"Description": "The name of a Credit Status Type.",
+					"BaseAttributeReference": {
+						"Entity": "CreditStatusType.cdm.json/CreditStatusType",
+						"Name": "CreditStatusTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "CreditStatusTypeDescription",
+					"Description": "The description of a Credit Status Type.",
+					"BaseAttributeReference": {
+						"Entity": "CreditStatusType.cdm.json/CreditStatusType",
+						"Name": "CreditStatusTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"CreditStatusTypeId\":{\"entity\":\"CreditStatusType.cdm.json/CreditStatusType\",\"name\":\"CreditStatusTypeId\"},\"CreditStatusTypeName\":{\"entity\":\"CreditStatusType.cdm.json/CreditStatusType\",\"name\":\"CreditStatusTypeName\"},\"CreditStatusTypeDescription\":{\"entity\":\"CreditStatusType.cdm.json/CreditStatusType\",\"name\":\"CreditStatusTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"CreditStatusType\",\"path\":\"CreditStatusType.cdm.json/CreditStatusType\"},\"description\":\"A credit status that may be applied for a period to reflect credit-worthiness.\\n\\nEx:\\n- Excellent\\n- Above Average\\n- Average\\n- Below Average\\n- Poor\\n- Unrated \\n- Credit available for purchases\\n- Credit purchases require management approval\\n- Credit denied to future purchases\\n- Requires management approval\",\"primaryKey\":[\"CreditStatusTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"CreditStatusTypeId\",\"attributeReference\":{\"entity\":\"CreditStatusType.cdm.json/CreditStatusType\",\"name\":\"CreditStatusTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"CreditStatusTypeName\",\"attributeReference\":{\"entity\":\"CreditStatusType.cdm.json/CreditStatusType\",\"name\":\"CreditStatusTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"CreditStatusTypeDescription\",\"attributeReference\":{\"entity\":\"CreditStatusType.cdm.json/CreditStatusType\",\"name\":\"CreditStatusTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512}]}}}",
+			"Description": "A credit status that may be applied for a period to reflect credit-worthiness.\n\nEx:\n- Excellent\n- Above Average\n- Average\n- Below Average\n- Poor\n- Unrated \n- Credit available for purchases\n- Credit purchases require management approval\n- Credit denied to future purchases\n- Requires management approval",
+			"DisplayFolderInfo": "{\"name\":\"Customer Credit & Collections\",\"colorCode\":\"#Ef6950\"}",
+			"PrimaryKeys": "CreditStatusTypeId"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

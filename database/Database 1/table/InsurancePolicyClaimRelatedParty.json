@@ -1,0 +1,135 @@
+{
+	"name": "InsurancePolicyClaimRelatedParty",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "InsurancePolicyClaimRelatedParty",
+		"Description": "The relationship of a party(s) to an insurance policy claim during the associated period.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ClaimId",
+					"Description": "The unique identifier of a Claim.",
+					"BaseAttributeReference": {
+						"Entity": "InsurancePolicyClaimRelatedParty.cdm.json/InsurancePolicyClaimRelatedParty",
+						"Name": "ClaimId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "PartyId",
+					"Description": "The unique identifier of a Party.",
+					"BaseAttributeReference": {
+						"Entity": "InsurancePolicyClaimRelatedParty.cdm.json/InsurancePolicyClaimRelatedParty",
+						"Name": "PartyId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "InsurancePolicyClaimPartyRelationshipTypeId",
+					"Description": "The unique identifier of an Insurance Policy Claim - Party Relationship Type.",
+					"BaseAttributeReference": {
+						"Entity": "InsurancePolicyClaimRelatedParty.cdm.json/InsurancePolicyClaimRelatedParty",
+						"Name": "InsurancePolicyClaimPartyRelationshipTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PeriodStartTimestamp",
+					"Description": "The period start timestamp which the associated information is valid or effective.",
+					"BaseAttributeReference": {
+						"Entity": "InsurancePolicyClaimRelatedParty.cdm.json/InsurancePolicyClaimRelatedParty",
+						"Name": "PeriodStartTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "PeriodEndTimestamp",
+					"Description": "The period end timestamp for which the associated information is valid or effective.",
+					"BaseAttributeReference": {
+						"Entity": "InsurancePolicyClaimRelatedParty.cdm.json/InsurancePolicyClaimRelatedParty",
+						"Name": "PeriodEndTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "InsurancePolicyClaimRelatedPartyNote",
+					"Description": "A note, comment or additional information regarding the insurance policy claim related party.",
+					"BaseAttributeReference": {
+						"Entity": "InsurancePolicyClaimRelatedParty.cdm.json/InsurancePolicyClaimRelatedParty",
+						"Name": "InsurancePolicyClaimRelatedPartyNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ClaimId\":{\"entity\":\"InsurancePolicyClaimRelatedParty.cdm.json/InsurancePolicyClaimRelatedParty\",\"name\":\"ClaimId\"},\"PartyId\":{\"entity\":\"InsurancePolicyClaimRelatedParty.cdm.json/InsurancePolicyClaimRelatedParty\",\"name\":\"PartyId\"},\"InsurancePolicyClaimPartyRelationshipTypeId\":{\"entity\":\"InsurancePolicyClaimRelatedParty.cdm.json/InsurancePolicyClaimRelatedParty\",\"name\":\"InsurancePolicyClaimPartyRelationshipTypeId\"},\"PeriodStartTimestamp\":{\"entity\":\"InsurancePolicyClaimRelatedParty.cdm.json/InsurancePolicyClaimRelatedParty\",\"name\":\"PeriodStartTimestamp\"},\"PeriodEndTimestamp\":{\"entity\":\"InsurancePolicyClaimRelatedParty.cdm.json/InsurancePolicyClaimRelatedParty\",\"name\":\"PeriodEndTimestamp\"},\"InsurancePolicyClaimRelatedPartyNote\":{\"entity\":\"InsurancePolicyClaimRelatedParty.cdm.json/InsurancePolicyClaimRelatedParty\",\"name\":\"InsurancePolicyClaimRelatedPartyNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"InsurancePolicyClaimRelatedParty\",\"path\":\"InsurancePolicyClaimRelatedParty.cdm.json/InsurancePolicyClaimRelatedParty\"},\"description\":\"The relationship of a party(s) to an insurance policy claim during the associated period.\",\"primaryKey\":[\"ClaimId\",\"PartyId\",\"InsurancePolicyClaimPartyRelationshipTypeId\",\"PeriodStartTimestamp\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"ClaimId\",\"attributeReference\":{\"entity\":\"InsurancePolicyClaimRelatedParty.cdm.json/InsurancePolicyClaimRelatedParty\",\"name\":\"ClaimId\"},\"dataType\":\"long\"},{\"type\":\"Existing\",\"name\":\"PartyId\",\"attributeReference\":{\"entity\":\"InsurancePolicyClaimRelatedParty.cdm.json/InsurancePolicyClaimRelatedParty\",\"name\":\"PartyId\"},\"dataType\":\"long\"},{\"type\":\"Existing\",\"name\":\"InsurancePolicyClaimPartyRelationshipTypeId\",\"attributeReference\":{\"entity\":\"InsurancePolicyClaimRelatedParty.cdm.json/InsurancePolicyClaimRelatedParty\",\"name\":\"InsurancePolicyClaimPartyRelationshipTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"PeriodStartTimestamp\",\"attributeReference\":{\"entity\":\"InsurancePolicyClaimRelatedParty.cdm.json/InsurancePolicyClaimRelatedParty\",\"name\":\"PeriodStartTimestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"PeriodEndTimestamp\",\"attributeReference\":{\"entity\":\"InsurancePolicyClaimRelatedParty.cdm.json/InsurancePolicyClaimRelatedParty\",\"name\":\"PeriodEndTimestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"InsurancePolicyClaimRelatedPartyNote\",\"attributeReference\":{\"entity\":\"InsurancePolicyClaimRelatedParty.cdm.json/InsurancePolicyClaimRelatedParty\",\"name\":\"InsurancePolicyClaimRelatedPartyNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024}]}}}",
+			"Description": "The relationship of a party(s) to an insurance policy claim during the associated period.",
+			"DisplayFolderInfo": "{\"name\":\"Policy\",\"colorCode\":\"#7D0F6C\"}",
+			"PrimaryKeys": "ClaimId,PartyId,InsurancePolicyClaimPartyRelationshipTypeId,PeriodStartTimestamp"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

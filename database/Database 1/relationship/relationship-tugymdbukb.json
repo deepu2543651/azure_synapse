@@ -1,0 +1,26 @@
+{
+	"name": "relationship-tugymdbukb",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "relationship-tugymdbukb",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "GeneralLicense",
+		"ToTableName": "ExportDeclarationItem",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "GeneralLicenseNumber",
+				"ToColumnName": "GeneralLicenseNumber"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"GeneralLicense.cdm.json/GeneralLicense\",\"toEntity\":\"ExportDeclarationItem.cdm.json/ExportDeclarationItem\",\"joinPairs\":[{\"fromAttribute\":\"GeneralLicenseNumber\",\"toAttribute\":\"GeneralLicenseNumber\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

@@ -1,0 +1,134 @@
+{
+	"name": "ShipmentChargeRelatedParty",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "ShipmentChargeRelatedParty",
+		"Description": "The party(s) having a relationship to the Shipment Charge.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ShipmentId",
+					"Description": "The unique identifier of a Shipment.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentChargeRelatedParty.cdm.json/ShipmentChargeRelatedParty",
+						"Name": "ShipmentId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ShipmentChargeTypeId",
+					"Description": "The unique identifier of a shipment charge type.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentChargeRelatedParty.cdm.json/ShipmentChargeRelatedParty",
+						"Name": "ShipmentChargeTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ShipmentChargeTimestamp",
+					"Description": "The timestamp of the shipment charge.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentChargeRelatedParty.cdm.json/ShipmentChargeRelatedParty",
+						"Name": "ShipmentChargeTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "PartyId",
+					"Description": "The unique identifier of a Party.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentChargeRelatedParty.cdm.json/ShipmentChargeRelatedParty",
+						"Name": "PartyId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "ShipmentChargePartyRelationshipTypeId",
+					"Description": "The unique identifier of a Shipment Relationship Type.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentChargeRelatedParty.cdm.json/ShipmentChargeRelatedParty",
+						"Name": "ShipmentChargePartyRelationshipTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ShipmentChargePartyRelationshipNote",
+					"Description": "A note, comment or additional information regarding the Shipment Charge - Party Relationship.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentChargeRelatedParty.cdm.json/ShipmentChargeRelatedParty",
+						"Name": "ShipmentChargePartyRelationshipNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ShipmentId\":{\"entity\":\"ShipmentChargeRelatedParty.cdm.json/ShipmentChargeRelatedParty\",\"name\":\"ShipmentId\"},\"ShipmentChargeTypeId\":{\"entity\":\"ShipmentChargeRelatedParty.cdm.json/ShipmentChargeRelatedParty\",\"name\":\"ShipmentChargeTypeId\"},\"ShipmentChargeTimestamp\":{\"entity\":\"ShipmentChargeRelatedParty.cdm.json/ShipmentChargeRelatedParty\",\"name\":\"ShipmentChargeTimestamp\"},\"PartyId\":{\"entity\":\"ShipmentChargeRelatedParty.cdm.json/ShipmentChargeRelatedParty\",\"name\":\"PartyId\"},\"ShipmentChargePartyRelationshipTypeId\":{\"entity\":\"ShipmentChargeRelatedParty.cdm.json/ShipmentChargeRelatedParty\",\"name\":\"ShipmentChargePartyRelationshipTypeId\"},\"ShipmentChargePartyRelationshipNote\":{\"entity\":\"ShipmentChargeRelatedParty.cdm.json/ShipmentChargeRelatedParty\",\"name\":\"ShipmentChargePartyRelationshipNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"ShipmentChargeRelatedParty\",\"path\":\"ShipmentChargeRelatedParty.cdm.json/ShipmentChargeRelatedParty\"},\"description\":\"The party(s) having a relationship to the Shipment Charge.\",\"primaryKey\":[\"ShipmentId\",\"ShipmentChargeTypeId\",\"ShipmentChargeTimestamp\",\"PartyId\",\"ShipmentChargePartyRelationshipTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"ShipmentId\",\"attributeReference\":{\"entity\":\"ShipmentChargeRelatedParty.cdm.json/ShipmentChargeRelatedParty\",\"name\":\"ShipmentId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ShipmentChargeTypeId\",\"attributeReference\":{\"entity\":\"ShipmentChargeRelatedParty.cdm.json/ShipmentChargeRelatedParty\",\"name\":\"ShipmentChargeTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ShipmentChargeTimestamp\",\"attributeReference\":{\"entity\":\"ShipmentChargeRelatedParty.cdm.json/ShipmentChargeRelatedParty\",\"name\":\"ShipmentChargeTimestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"PartyId\",\"attributeReference\":{\"entity\":\"ShipmentChargeRelatedParty.cdm.json/ShipmentChargeRelatedParty\",\"name\":\"PartyId\"},\"dataType\":\"long\"},{\"type\":\"Existing\",\"name\":\"ShipmentChargePartyRelationshipTypeId\",\"attributeReference\":{\"entity\":\"ShipmentChargeRelatedParty.cdm.json/ShipmentChargeRelatedParty\",\"name\":\"ShipmentChargePartyRelationshipTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ShipmentChargePartyRelationshipNote\",\"attributeReference\":{\"entity\":\"ShipmentChargeRelatedParty.cdm.json/ShipmentChargeRelatedParty\",\"name\":\"ShipmentChargePartyRelationshipNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024}]}}}",
+			"Description": "The party(s) having a relationship to the Shipment Charge.",
+			"DisplayFolderInfo": "{\"name\":\"Shipping\",\"colorCode\":\"#000B42\"}",
+			"PrimaryKeys": "ShipmentId,ShipmentChargeTypeId,ShipmentChargeTimestamp,PartyId,ShipmentChargePartyRelationshipTypeId"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

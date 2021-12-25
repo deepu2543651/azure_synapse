@@ -1,0 +1,185 @@
+{
+	"name": "WarehouseItemInventoryTurns",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "WarehouseItemInventoryTurns",
+		"Description": "The planned number of times that an Item inventory is turned over, depleted and replenished, during the associated period.\n\nInventory Turns = (Annual Cost of Sales)/(Dollar Value Of Inventory)",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "WarehouseId",
+					"Description": "The unique identifier of a Warehouse.",
+					"BaseAttributeReference": {
+						"Entity": "WarehouseItemInventoryTurns.cdm.json/WarehouseItemInventoryTurns",
+						"Name": "WarehouseId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ItemSku",
+					"Description": "The Stock Keeping Unit identifier, which is typically used for inventory-related activities.",
+					"BaseAttributeReference": {
+						"Entity": "WarehouseItemInventoryTurns.cdm.json/WarehouseItemInventoryTurns",
+						"Name": "ItemSku"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Length": 20,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "PeriodStartTimestamp",
+					"Description": "The period start timestamp.",
+					"BaseAttributeReference": {
+						"Entity": "WarehouseItemInventoryTurns.cdm.json/WarehouseItemInventoryTurns",
+						"Name": "PeriodStartTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "PeriodEndTimestamp",
+					"Description": "The period end timestamp.",
+					"BaseAttributeReference": {
+						"Entity": "WarehouseItemInventoryTurns.cdm.json/WarehouseItemInventoryTurns",
+						"Name": "PeriodEndTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "StandardCostAmount",
+					"Description": "The Standard Cost, also known as the Cost Of Sales, is the total cost that is in a product when it is sold.   This Standard Cost represents those total costs as determined for the associated period.\n\nStandard cost is used to calculate Weeks On Hand inventory and Inventory Turns.",
+					"BaseAttributeReference": {
+						"Entity": "WarehouseItemInventoryTurns.cdm.json/WarehouseItemInventoryTurns",
+						"Name": "StandardCostAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "PlannedNumberInventoryTurns",
+					"Description": "The planned number of inventory turns for the associated period.",
+					"BaseAttributeReference": {
+						"Entity": "WarehouseItemInventoryTurns.cdm.json/WarehouseItemInventoryTurns",
+						"Name": "PlannedNumberInventoryTurns"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ActualNumberInventoryTurns",
+					"Description": "The actual number of inventory turns for the associated period.",
+					"BaseAttributeReference": {
+						"Entity": "WarehouseItemInventoryTurns.cdm.json/WarehouseItemInventoryTurns",
+						"Name": "ActualNumberInventoryTurns"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PlannedWeeksOnHandInventory",
+					"Description": "The planned number of Weeks On Hand inventory, which is a variation of Inventory Turns.\n\nWeeks On Hand is calculated from the inventory turns or from original-cost data:\n\nWOH = (Dollar Value of Inventory/Annual Cost of Sales) * 52",
+					"BaseAttributeReference": {
+						"Entity": "WarehouseItemInventoryTurns.cdm.json/WarehouseItemInventoryTurns",
+						"Name": "PlannedWeeksOnHandInventory"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ActualWeeksOnHandInventory",
+					"Description": "The actual number of Weeks On Hand inventory, which is a variation of Inventory Turns.\n\nWeeks On Hand is calculated from the inventory turns or from original-cost data:\n\nWOH = (Dollar Value of Inventory/Annual Cost of Sales) * 52",
+					"BaseAttributeReference": {
+						"Entity": "WarehouseItemInventoryTurns.cdm.json/WarehouseItemInventoryTurns",
+						"Name": "ActualWeeksOnHandInventory"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"WarehouseId\":{\"entity\":\"WarehouseItemInventoryTurns.cdm.json/WarehouseItemInventoryTurns\",\"name\":\"WarehouseId\"},\"ItemSku\":{\"entity\":\"WarehouseItemInventoryTurns.cdm.json/WarehouseItemInventoryTurns\",\"name\":\"ItemSku\"},\"PeriodStartTimestamp\":{\"entity\":\"WarehouseItemInventoryTurns.cdm.json/WarehouseItemInventoryTurns\",\"name\":\"PeriodStartTimestamp\"},\"PeriodEndTimestamp\":{\"entity\":\"WarehouseItemInventoryTurns.cdm.json/WarehouseItemInventoryTurns\",\"name\":\"PeriodEndTimestamp\"},\"StandardCostAmount\":{\"entity\":\"WarehouseItemInventoryTurns.cdm.json/WarehouseItemInventoryTurns\",\"name\":\"StandardCostAmount\"},\"PlannedNumberInventoryTurns\":{\"entity\":\"WarehouseItemInventoryTurns.cdm.json/WarehouseItemInventoryTurns\",\"name\":\"PlannedNumberInventoryTurns\"},\"ActualNumberInventoryTurns\":{\"entity\":\"WarehouseItemInventoryTurns.cdm.json/WarehouseItemInventoryTurns\",\"name\":\"ActualNumberInventoryTurns\"},\"PlannedWeeksOnHandInventory\":{\"entity\":\"WarehouseItemInventoryTurns.cdm.json/WarehouseItemInventoryTurns\",\"name\":\"PlannedWeeksOnHandInventory\"},\"ActualWeeksOnHandInventory\":{\"entity\":\"WarehouseItemInventoryTurns.cdm.json/WarehouseItemInventoryTurns\",\"name\":\"ActualWeeksOnHandInventory\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"WarehouseItemInventoryTurns\",\"path\":\"WarehouseItemInventoryTurns.cdm.json/WarehouseItemInventoryTurns\"},\"description\":\"The planned number of times that an Item inventory is turned over, depleted and replenished, during the associated period.\\n\\nInventory Turns = (Annual Cost of Sales)/(Dollar Value Of Inventory)\",\"primaryKey\":[\"WarehouseId\",\"ItemSku\",\"PeriodStartTimestamp\",\"PeriodEndTimestamp\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"WarehouseId\",\"attributeReference\":{\"entity\":\"WarehouseItemInventoryTurns.cdm.json/WarehouseItemInventoryTurns\",\"name\":\"WarehouseId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ItemSku\",\"attributeReference\":{\"entity\":\"WarehouseItemInventoryTurns.cdm.json/WarehouseItemInventoryTurns\",\"name\":\"ItemSku\"},\"dataType\":\"string\",\"dataTypeLength\":20},{\"type\":\"Existing\",\"name\":\"PeriodStartTimestamp\",\"attributeReference\":{\"entity\":\"WarehouseItemInventoryTurns.cdm.json/WarehouseItemInventoryTurns\",\"name\":\"PeriodStartTimestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"PeriodEndTimestamp\",\"attributeReference\":{\"entity\":\"WarehouseItemInventoryTurns.cdm.json/WarehouseItemInventoryTurns\",\"name\":\"PeriodEndTimestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"StandardCostAmount\",\"attributeReference\":{\"entity\":\"WarehouseItemInventoryTurns.cdm.json/WarehouseItemInventoryTurns\",\"name\":\"StandardCostAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"PlannedNumberInventoryTurns\",\"attributeReference\":{\"entity\":\"WarehouseItemInventoryTurns.cdm.json/WarehouseItemInventoryTurns\",\"name\":\"PlannedNumberInventoryTurns\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ActualNumberInventoryTurns\",\"attributeReference\":{\"entity\":\"WarehouseItemInventoryTurns.cdm.json/WarehouseItemInventoryTurns\",\"name\":\"ActualNumberInventoryTurns\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"PlannedWeeksOnHandInventory\",\"attributeReference\":{\"entity\":\"WarehouseItemInventoryTurns.cdm.json/WarehouseItemInventoryTurns\",\"name\":\"PlannedWeeksOnHandInventory\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ActualWeeksOnHandInventory\",\"attributeReference\":{\"entity\":\"WarehouseItemInventoryTurns.cdm.json/WarehouseItemInventoryTurns\",\"name\":\"ActualWeeksOnHandInventory\"},\"dataType\":\"integer\"}]}}}",
+			"Description": "The planned number of times that an Item inventory is turned over, depleted and replenished, during the associated period.\n\nInventory Turns = (Annual Cost of Sales)/(Dollar Value Of Inventory)",
+			"DisplayFolderInfo": "{\"name\":\"Inventory\",\"colorCode\":\"#EA279F\"}",
+			"PrimaryKeys": "WarehouseId,ItemSku,PeriodStartTimestamp,PeriodEndTimestamp"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

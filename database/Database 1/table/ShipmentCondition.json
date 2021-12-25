@@ -1,0 +1,86 @@
+{
+	"name": "ShipmentCondition",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "ShipmentCondition",
+		"Description": "The condition of merchandise immediately prior to shipment as indicated upon a Certificate of Inspection.\n\nEx:\n- Good\n- Damaged\n- Destroyed\n- Concealed damage\n- Apparent damage",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ShipmentConditionId",
+					"Description": "The unique identifier of a Shipment Condition.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentCondition.cdm.json/ShipmentCondition",
+						"Name": "ShipmentConditionId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ShipmentConditionName",
+					"Description": "The name of a Shipment Condition.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentCondition.cdm.json/ShipmentCondition",
+						"Name": "ShipmentConditionName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ShipmentConditionDescription",
+					"Description": "The description of a Shipment Condition.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentCondition.cdm.json/ShipmentCondition",
+						"Name": "ShipmentConditionDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ShipmentConditionId\":{\"entity\":\"ShipmentCondition.cdm.json/ShipmentCondition\",\"name\":\"ShipmentConditionId\"},\"ShipmentConditionName\":{\"entity\":\"ShipmentCondition.cdm.json/ShipmentCondition\",\"name\":\"ShipmentConditionName\"},\"ShipmentConditionDescription\":{\"entity\":\"ShipmentCondition.cdm.json/ShipmentCondition\",\"name\":\"ShipmentConditionDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"ShipmentCondition\",\"path\":\"ShipmentCondition.cdm.json/ShipmentCondition\"},\"description\":\"The condition of merchandise immediately prior to shipment as indicated upon a Certificate of Inspection.\\n\\nEx:\\n- Good\\n- Damaged\\n- Destroyed\\n- Concealed damage\\n- Apparent damage\",\"primaryKey\":[\"ShipmentConditionId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"ShipmentConditionId\",\"attributeReference\":{\"entity\":\"ShipmentCondition.cdm.json/ShipmentCondition\",\"name\":\"ShipmentConditionId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ShipmentConditionName\",\"attributeReference\":{\"entity\":\"ShipmentCondition.cdm.json/ShipmentCondition\",\"name\":\"ShipmentConditionName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"ShipmentConditionDescription\",\"attributeReference\":{\"entity\":\"ShipmentCondition.cdm.json/ShipmentCondition\",\"name\":\"ShipmentConditionDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512}]}}}",
+			"Description": "The condition of merchandise immediately prior to shipment as indicated upon a Certificate of Inspection.\n\nEx:\n- Good\n- Damaged\n- Destroyed\n- Concealed damage\n- Apparent damage",
+			"DisplayFolderInfo": "{\"name\":\"Shipping\",\"colorCode\":\"#000B42\"}",
+			"PrimaryKeys": "ShipmentConditionId"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

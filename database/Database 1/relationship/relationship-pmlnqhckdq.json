@@ -1,0 +1,30 @@
+{
+	"name": "relationship-pmlnqhckdq",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "relationship-pmlnqhckdq",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "AircraftFamilyModelConfiguration",
+		"ToTableName": "AircraftConfiguration",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "AircraftFamilyModelId",
+				"ToColumnName": "AircraftFamilyModelId"
+			},
+			{
+				"FromColumnName": "ConfigurationId",
+				"ToColumnName": "ConfigurationId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"AircraftFamilyModelConfiguration.cdm.json/AircraftFamilyModelConfiguration\",\"toEntity\":\"AircraftConfiguration.cdm.json/AircraftConfiguration\",\"joinPairs\":[{\"fromAttribute\":\"AircraftFamilyModelId\",\"toAttribute\":\"AircraftFamilyModelId\"},{\"fromAttribute\":\"ConfigurationId\",\"toAttribute\":\"ConfigurationId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

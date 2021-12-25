@@ -1,0 +1,26 @@
+{
+	"name": "relationship-hjjuvpoxce",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "relationship-hjjuvpoxce",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "SailingScheduleSegmentPartyRelationshipType",
+		"ToTableName": "SailingScheduleSegmentRelatedParty",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "SailingScheduleSegmentPartyRelationshipTypeId",
+				"ToColumnName": "SailingScheduleSegmentPartyRelationshipTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"SailingScheduleSegmentPartyRelationshipType.cdm.json/SailingScheduleSegmentPartyRelationshipType\",\"toEntity\":\"SailingScheduleSegmentRelatedParty.cdm.json/SailingScheduleSegmentRelatedParty\",\"joinPairs\":[{\"fromAttribute\":\"SailingScheduleSegmentPartyRelationshipTypeId\",\"toAttribute\":\"SailingScheduleSegmentPartyRelationshipTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

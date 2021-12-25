@@ -1,0 +1,119 @@
+{
+	"name": "TrailerAllowableCargo",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "TrailerAllowableCargo",
+		"Description": "The type of cargo that is allowed to be transported by the Trailer.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "TrailerId",
+					"Description": "The unique identifier of a trailer.",
+					"BaseAttributeReference": {
+						"Entity": "TrailerAllowableCargo.cdm.json/TrailerAllowableCargo",
+						"Name": "TrailerId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "CargoTypeId",
+					"Description": "The unique identifier of a Cargo Type.",
+					"BaseAttributeReference": {
+						"Entity": "TrailerAllowableCargo.cdm.json/TrailerAllowableCargo",
+						"Name": "CargoTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PeriodStartDate",
+					"Description": "The period start date for which the associated trailer allowable cargo is effective.",
+					"BaseAttributeReference": {
+						"Entity": "TrailerAllowableCargo.cdm.json/TrailerAllowableCargo",
+						"Name": "PeriodStartDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "PeriodEndDate",
+					"Description": "The period end date for which the associated aircraft trailer allowable cargo is effective.",
+					"BaseAttributeReference": {
+						"Entity": "TrailerAllowableCargo.cdm.json/TrailerAllowableCargo",
+						"Name": "PeriodEndDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "TrailerAllowableCargoNote",
+					"Description": "A note, comment or additional information regarding the trailer allowable cargo.",
+					"BaseAttributeReference": {
+						"Entity": "TrailerAllowableCargo.cdm.json/TrailerAllowableCargo",
+						"Name": "TrailerAllowableCargoNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"TrailerId\":{\"entity\":\"TrailerAllowableCargo.cdm.json/TrailerAllowableCargo\",\"name\":\"TrailerId\"},\"CargoTypeId\":{\"entity\":\"TrailerAllowableCargo.cdm.json/TrailerAllowableCargo\",\"name\":\"CargoTypeId\"},\"PeriodStartDate\":{\"entity\":\"TrailerAllowableCargo.cdm.json/TrailerAllowableCargo\",\"name\":\"PeriodStartDate\"},\"PeriodEndDate\":{\"entity\":\"TrailerAllowableCargo.cdm.json/TrailerAllowableCargo\",\"name\":\"PeriodEndDate\"},\"TrailerAllowableCargoNote\":{\"entity\":\"TrailerAllowableCargo.cdm.json/TrailerAllowableCargo\",\"name\":\"TrailerAllowableCargoNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"TrailerAllowableCargo\",\"path\":\"TrailerAllowableCargo.cdm.json/TrailerAllowableCargo\"},\"description\":\"The type of cargo that is allowed to be transported by the Trailer.\",\"primaryKey\":[\"TrailerId\",\"CargoTypeId\",\"PeriodStartDate\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"TrailerId\",\"attributeReference\":{\"entity\":\"TrailerAllowableCargo.cdm.json/TrailerAllowableCargo\",\"name\":\"TrailerId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"CargoTypeId\",\"attributeReference\":{\"entity\":\"TrailerAllowableCargo.cdm.json/TrailerAllowableCargo\",\"name\":\"CargoTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"PeriodStartDate\",\"attributeReference\":{\"entity\":\"TrailerAllowableCargo.cdm.json/TrailerAllowableCargo\",\"name\":\"PeriodStartDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\"},{\"type\":\"Existing\",\"name\":\"PeriodEndDate\",\"attributeReference\":{\"entity\":\"TrailerAllowableCargo.cdm.json/TrailerAllowableCargo\",\"name\":\"PeriodEndDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\"},{\"type\":\"Existing\",\"name\":\"TrailerAllowableCargoNote\",\"attributeReference\":{\"entity\":\"TrailerAllowableCargo.cdm.json/TrailerAllowableCargo\",\"name\":\"TrailerAllowableCargoNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024}]}}}",
+			"Description": "The type of cargo that is allowed to be transported by the Trailer.",
+			"DisplayFolderInfo": "{\"name\":\"Shipping\",\"colorCode\":\"#000B42\"}",
+			"PrimaryKeys": "TrailerId,CargoTypeId,PeriodStartDate"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

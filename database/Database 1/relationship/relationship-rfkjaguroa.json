@@ -1,0 +1,26 @@
+{
+	"name": "relationship-rfkjaguroa",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "relationship-rfkjaguroa",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "AircraftManufacturer",
+		"ToTableName": "AircraftFamily",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "AircraftManufacturerId",
+				"ToColumnName": "AircraftManufacturerId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"AircraftManufacturer.cdm.json/AircraftManufacturer\",\"toEntity\":\"AircraftFamily.cdm.json/AircraftFamily\",\"joinPairs\":[{\"fromAttribute\":\"AircraftManufacturerId\",\"toAttribute\":\"AircraftManufacturerId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

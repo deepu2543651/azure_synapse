@@ -1,0 +1,188 @@
+{
+	"name": "ShipmentDamage",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "ShipmentDamage",
+		"Description": "The damages reported for a shipment.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ShipmentId",
+					"Description": "The unique identifier of a Shipment.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentDamage.cdm.json/ShipmentDamage",
+						"Name": "ShipmentId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ShipmentItemNumber",
+					"Description": "The shipment line number.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentDamage.cdm.json/ShipmentDamage",
+						"Name": "ShipmentItemNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "DamageReportedTimestamp",
+					"Description": "The timestamp of the damage report.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentDamage.cdm.json/ShipmentDamage",
+						"Name": "DamageReportedTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "DamagedQuantity",
+					"Description": "The quantity of items damaged.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentDamage.cdm.json/ShipmentDamage",
+						"Name": "DamagedQuantity"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "DamageClaimedAmount",
+					"Description": "The amount of damage claimed.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentDamage.cdm.json/ShipmentDamage",
+						"Name": "DamageClaimedAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "DamagePaidAmount",
+					"Description": "The amount of damages paid.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentDamage.cdm.json/ShipmentDamage",
+						"Name": "DamagePaidAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "DamageNote",
+					"Description": "A note, comment or additional information regarding the shipment damages.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentDamage.cdm.json/ShipmentDamage",
+						"Name": "DamageNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "DamageTypeId",
+					"Description": "The unique identifier of a damage type.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentDamage.cdm.json/ShipmentDamage",
+						"Name": "DamageTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ClaimId",
+					"Description": "The unique identifier of a Claim.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentDamage.cdm.json/ShipmentDamage",
+						"Name": "ClaimId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ShipmentId\":{\"entity\":\"ShipmentDamage.cdm.json/ShipmentDamage\",\"name\":\"ShipmentId\"},\"ShipmentItemNumber\":{\"entity\":\"ShipmentDamage.cdm.json/ShipmentDamage\",\"name\":\"ShipmentItemNumber\"},\"DamageReportedTimestamp\":{\"entity\":\"ShipmentDamage.cdm.json/ShipmentDamage\",\"name\":\"DamageReportedTimestamp\"},\"DamagedQuantity\":{\"entity\":\"ShipmentDamage.cdm.json/ShipmentDamage\",\"name\":\"DamagedQuantity\"},\"DamageClaimedAmount\":{\"entity\":\"ShipmentDamage.cdm.json/ShipmentDamage\",\"name\":\"DamageClaimedAmount\"},\"DamagePaidAmount\":{\"entity\":\"ShipmentDamage.cdm.json/ShipmentDamage\",\"name\":\"DamagePaidAmount\"},\"DamageNote\":{\"entity\":\"ShipmentDamage.cdm.json/ShipmentDamage\",\"name\":\"DamageNote\"},\"DamageTypeId\":{\"entity\":\"ShipmentDamage.cdm.json/ShipmentDamage\",\"name\":\"DamageTypeId\"},\"ClaimId\":{\"entity\":\"ShipmentDamage.cdm.json/ShipmentDamage\",\"name\":\"ClaimId\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"ShipmentDamage\",\"path\":\"ShipmentDamage.cdm.json/ShipmentDamage\"},\"description\":\"The damages reported for a shipment.\",\"primaryKey\":[\"ShipmentId\",\"ShipmentItemNumber\",\"DamageReportedTimestamp\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"ShipmentId\",\"attributeReference\":{\"entity\":\"ShipmentDamage.cdm.json/ShipmentDamage\",\"name\":\"ShipmentId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ShipmentItemNumber\",\"attributeReference\":{\"entity\":\"ShipmentDamage.cdm.json/ShipmentDamage\",\"name\":\"ShipmentItemNumber\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"DamageReportedTimestamp\",\"attributeReference\":{\"entity\":\"ShipmentDamage.cdm.json/ShipmentDamage\",\"name\":\"DamageReportedTimestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"DamagedQuantity\",\"attributeReference\":{\"entity\":\"ShipmentDamage.cdm.json/ShipmentDamage\",\"name\":\"DamagedQuantity\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"DamageClaimedAmount\",\"attributeReference\":{\"entity\":\"ShipmentDamage.cdm.json/ShipmentDamage\",\"name\":\"DamageClaimedAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"DamagePaidAmount\",\"attributeReference\":{\"entity\":\"ShipmentDamage.cdm.json/ShipmentDamage\",\"name\":\"DamagePaidAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"DamageNote\",\"attributeReference\":{\"entity\":\"ShipmentDamage.cdm.json/ShipmentDamage\",\"name\":\"DamageNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024},{\"type\":\"Existing\",\"name\":\"DamageTypeId\",\"attributeReference\":{\"entity\":\"ShipmentDamage.cdm.json/ShipmentDamage\",\"name\":\"DamageTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ClaimId\",\"attributeReference\":{\"entity\":\"ShipmentDamage.cdm.json/ShipmentDamage\",\"name\":\"ClaimId\"},\"dataType\":\"long\"}]}}}",
+			"Description": "The damages reported for a shipment.",
+			"DisplayFolderInfo": "{\"name\":\"Shipping\",\"colorCode\":\"#000B42\"}",
+			"PrimaryKeys": "ShipmentId,ShipmentItemNumber,DamageReportedTimestamp"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

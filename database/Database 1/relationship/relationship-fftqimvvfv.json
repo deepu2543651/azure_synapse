@@ -1,0 +1,26 @@
+{
+	"name": "relationship-fftqimvvfv",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "relationship-fftqimvvfv",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "RfidTag",
+		"ToTableName": "AssetRfidTag",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "RfidTagId",
+				"ToColumnName": "RfidTagId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"RfidTag.cdm.json/RfidTag\",\"toEntity\":\"AssetRfidTag.cdm.json/AssetRfidTag\",\"joinPairs\":[{\"fromAttribute\":\"RfidTagId\",\"toAttribute\":\"RfidTagId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

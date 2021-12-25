@@ -1,0 +1,187 @@
+{
+	"name": "AssetAssessment",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "AssetAssessment",
+		"Description": "An assessment is performed to estimate the value of (property) for taxation and accounting purposes.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "AssetId",
+					"Description": "The unique identifier of an Asset.",
+					"BaseAttributeReference": {
+						"Entity": "AssetAssessment.cdm.json/AssetAssessment",
+						"Name": "AssetId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "AssessmentPeriodStartDate",
+					"Description": "The starting date for which the associated assessment is made.",
+					"BaseAttributeReference": {
+						"Entity": "AssetAssessment.cdm.json/AssetAssessment",
+						"Name": "AssessmentPeriodStartDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "AssessmentPeriodEndDate",
+					"Description": "The ending date for which the associated assessment is made.",
+					"BaseAttributeReference": {
+						"Entity": "AssetAssessment.cdm.json/AssetAssessment",
+						"Name": "AssessmentPeriodEndDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "AssessmentDate",
+					"Description": "The date that the assessment was performed.",
+					"BaseAttributeReference": {
+						"Entity": "AssetAssessment.cdm.json/AssetAssessment",
+						"Name": "AssessmentDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "AssessedByName",
+					"Description": "The name of the person or organization who made the assessment.",
+					"BaseAttributeReference": {
+						"Entity": "AssetAssessment.cdm.json/AssetAssessment",
+						"Name": "AssessedByName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "AssetConditionRatingId",
+					"Description": "The unique identifier of an Asset Condition Rating.",
+					"BaseAttributeReference": {
+						"Entity": "AssetAssessment.cdm.json/AssetAssessment",
+						"Name": "AssetConditionRatingId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "AssessedValue",
+					"Description": "The assessed value of the asset.",
+					"BaseAttributeReference": {
+						"Entity": "AssetAssessment.cdm.json/AssetAssessment",
+						"Name": "AssessedValue"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "IsoCurrencyCode",
+					"Description": "The ISO 4217 currency code.",
+					"BaseAttributeReference": {
+						"Entity": "AssetAssessment.cdm.json/AssetAssessment",
+						"Name": "IsoCurrencyCode"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 3,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "AssessedByPartyId",
+					"Description": "The unique identifier of a Party.",
+					"BaseAttributeReference": {
+						"Entity": "AssetAssessment.cdm.json/AssetAssessment",
+						"Name": "AssessedByPartyId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"AssetId\":{\"entity\":\"AssetAssessment.cdm.json/AssetAssessment\",\"name\":\"AssetId\"},\"AssessmentPeriodStartDate\":{\"entity\":\"AssetAssessment.cdm.json/AssetAssessment\",\"name\":\"AssessmentPeriodStartDate\"},\"AssessmentPeriodEndDate\":{\"entity\":\"AssetAssessment.cdm.json/AssetAssessment\",\"name\":\"AssessmentPeriodEndDate\"},\"AssessmentDate\":{\"entity\":\"AssetAssessment.cdm.json/AssetAssessment\",\"name\":\"AssessmentDate\"},\"AssessedByName\":{\"entity\":\"AssetAssessment.cdm.json/AssetAssessment\",\"name\":\"AssessedByName\"},\"AssetConditionRatingId\":{\"entity\":\"AssetAssessment.cdm.json/AssetAssessment\",\"name\":\"AssetConditionRatingId\"},\"AssessedValue\":{\"entity\":\"AssetAssessment.cdm.json/AssetAssessment\",\"name\":\"AssessedValue\"},\"IsoCurrencyCode\":{\"entity\":\"AssetAssessment.cdm.json/AssetAssessment\",\"name\":\"IsoCurrencyCode\"},\"AssessedByPartyId\":{\"entity\":\"AssetAssessment.cdm.json/AssetAssessment\",\"name\":\"AssessedByPartyId\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"AssetAssessment\",\"path\":\"AssetAssessment.cdm.json/AssetAssessment\"},\"description\":\"An assessment is performed to estimate the value of (property) for taxation and accounting purposes.\",\"primaryKey\":[\"AssetId\",\"AssessmentPeriodStartDate\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"AssetId\",\"attributeReference\":{\"entity\":\"AssetAssessment.cdm.json/AssetAssessment\",\"name\":\"AssetId\"},\"dataType\":\"long\"},{\"type\":\"Existing\",\"name\":\"AssessmentPeriodStartDate\",\"attributeReference\":{\"entity\":\"AssetAssessment.cdm.json/AssetAssessment\",\"name\":\"AssessmentPeriodStartDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\"},{\"type\":\"Existing\",\"name\":\"AssessmentPeriodEndDate\",\"attributeReference\":{\"entity\":\"AssetAssessment.cdm.json/AssetAssessment\",\"name\":\"AssessmentPeriodEndDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\"},{\"type\":\"Existing\",\"name\":\"AssessmentDate\",\"attributeReference\":{\"entity\":\"AssetAssessment.cdm.json/AssetAssessment\",\"name\":\"AssessmentDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\"},{\"type\":\"Existing\",\"name\":\"AssessedByName\",\"attributeReference\":{\"entity\":\"AssetAssessment.cdm.json/AssetAssessment\",\"name\":\"AssessedByName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"AssetConditionRatingId\",\"attributeReference\":{\"entity\":\"AssetAssessment.cdm.json/AssetAssessment\",\"name\":\"AssetConditionRatingId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"AssessedValue\",\"attributeReference\":{\"entity\":\"AssetAssessment.cdm.json/AssetAssessment\",\"name\":\"AssessedValue\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"IsoCurrencyCode\",\"attributeReference\":{\"entity\":\"AssetAssessment.cdm.json/AssetAssessment\",\"name\":\"IsoCurrencyCode\"},\"dataType\":\"string\",\"dataTypeLength\":3},{\"type\":\"Existing\",\"name\":\"AssessedByPartyId\",\"attributeReference\":{\"entity\":\"AssetAssessment.cdm.json/AssetAssessment\",\"name\":\"AssessedByPartyId\"},\"dataType\":\"long\"}]}}}",
+			"Description": "An assessment is performed to estimate the value of (property) for taxation and accounting purposes.",
+			"DisplayFolderInfo": "{\"name\":\"Property & Equipment\",\"colorCode\":\"#BD4B37\"}",
+			"PrimaryKeys": "AssetId,AssessmentPeriodStartDate"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

@@ -1,0 +1,662 @@
+{
+	"name": "Container",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "Container",
+		"Description": "A serialized or uniquely (Container ID) identified instance of a receptacle designed to transport cargo of many types in continuous transportation.\n\nThis is normally a weatherproof box designed for the shipment of freight, generally used for overseas shipments. The container is separable from the chassis when loaded onto vessels or rail cars. \n\nContainers are boxlike devices (containers) in which a number of packages are stored, protected, and handled as a single unit in transit.\n\nA rigid structure that performs the function of a ULD without the use of restraining net.\n\nNote:\nA CONTAINER is a specific instance of a container type or it is a physical container that exists and has a serial number etc.   A CONTAINER TYPE is an abstraction of a all containers of a similar type so that you can plan for specific containers of that type.\n\nA truck trailer body that can be detached from the chassis for loading into a vessel, a rail car or stacked in a container depot. Containers may be ventilated, insulated, refrigerated, flat rack, vehicle rack, open top, bulk liquid or equipped with interior devices. A container may be 20 feet, 40 feet, 45 feet, 48 feet or 53 feet in length, 8'0\" or 8'6\" in width, and 8'6\" or 9'6\" in height.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ContainerId",
+					"Description": "The unique identifier of the container.\n\nThis would be the 'serial number' of the container if it is serialized.",
+					"BaseAttributeReference": {
+						"Entity": "Container.cdm.json/Container",
+						"Name": "ContainerId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ContainerSerialNumber",
+					"Description": "The serial number of the container.",
+					"BaseAttributeReference": {
+						"Entity": "Container.cdm.json/Container",
+						"Name": "ContainerSerialNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 30,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ContainerConditionDescription",
+					"Description": "The current condition description of the container.",
+					"BaseAttributeReference": {
+						"Entity": "Container.cdm.json/Container",
+						"Name": "ContainerConditionDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "PackingInstructions",
+					"Description": "Packing instructions for the associated container shipment(s).",
+					"BaseAttributeReference": {
+						"Entity": "Container.cdm.json/Container",
+						"Name": "PackingInstructions"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 2048,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ContainerStuffingListText",
+					"Description": "List showing how cargo is stowed in each container.",
+					"BaseAttributeReference": {
+						"Entity": "Container.cdm.json/Container",
+						"Name": "ContainerStuffingListText"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "RecommendedPackingPatternInstructions",
+					"Description": "The recommended packing pattern instructions for the container.",
+					"BaseAttributeReference": {
+						"Entity": "Container.cdm.json/Container",
+						"Name": "RecommendedPackingPatternInstructions"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 2048,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ContainerFirstServiceDate",
+					"Description": "The date that the container was put in service.",
+					"BaseAttributeReference": {
+						"Entity": "Container.cdm.json/Container",
+						"Name": "ContainerFirstServiceDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "ContainerPlannedObsolescenceDate",
+					"Description": "The planned last or obsolescence date of the container.",
+					"BaseAttributeReference": {
+						"Entity": "Container.cdm.json/Container",
+						"Name": "ContainerPlannedObsolescenceDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "SerialShippingContainerCode",
+					"Description": "The Serial Shipping Container Code (SSCC) is an 18-digit number developed by GS1 to be used to identify logistics units. In order to automate the reading process, the SSCC is often encoded in a barcode or encoded in an RFID tag.\n\nThe SSCC enables the unique identification of any combination of items packaged together for storage and/or transport purposes.",
+					"BaseAttributeReference": {
+						"Entity": "Container.cdm.json/Container",
+						"Name": "SerialShippingContainerCode"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "GlobalReturnableAssetIdentifier",
+					"Description": "The Global Returnable Asset Identifier (GRAI) was developed by GS1 to be used to identify assets by type. It can also be used to uniquely identify assets by including the serial number. \n\nThe GRAI is used to identify Returnable Transport Items (RTI) such as pallets, roll container, crates. The GRAI identifies the type of returnable asset.",
+					"BaseAttributeReference": {
+						"Entity": "Container.cdm.json/Container",
+						"Name": "GlobalReturnableAssetIdentifier"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 29,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "InternalLengthDimension",
+					"Description": "The inner length dimensions of the container.",
+					"BaseAttributeReference": {
+						"Entity": "Container.cdm.json/Container",
+						"Name": "InternalLengthDimension"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "InternalWidthDimension",
+					"Description": "The inner width dimensions of the container.",
+					"BaseAttributeReference": {
+						"Entity": "Container.cdm.json/Container",
+						"Name": "InternalWidthDimension"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "InternalHeightDimension",
+					"Description": "The inner height dimensions of the container.",
+					"BaseAttributeReference": {
+						"Entity": "Container.cdm.json/Container",
+						"Name": "InternalHeightDimension"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ExternalLengthDimension",
+					"Description": "The outside length dimensions of the container.",
+					"BaseAttributeReference": {
+						"Entity": "Container.cdm.json/Container",
+						"Name": "ExternalLengthDimension"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ExternalWidthDimension",
+					"Description": "The outside width dimensions of the container.",
+					"BaseAttributeReference": {
+						"Entity": "Container.cdm.json/Container",
+						"Name": "ExternalWidthDimension"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ExternalHeightDimension",
+					"Description": "The outside height dimensions of the container.",
+					"BaseAttributeReference": {
+						"Entity": "Container.cdm.json/Container",
+						"Name": "ExternalHeightDimension"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "LwhUnitOfMeasureId",
+					"Description": "The unique identifier of a Unit Of Measure.",
+					"BaseAttributeReference": {
+						"Entity": "Container.cdm.json/Container",
+						"Name": "LwhUnitOfMeasureId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "InternalVolume",
+					"Description": "The internal volume of the container.",
+					"BaseAttributeReference": {
+						"Entity": "Container.cdm.json/Container",
+						"Name": "InternalVolume"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "ExternalVolume",
+					"Description": "The amount of space a ULD occupies in an airplane, calculated using the extreme external dimensions of the unit.",
+					"BaseAttributeReference": {
+						"Entity": "Container.cdm.json/Container",
+						"Name": "ExternalVolume"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "ContainerCubicCapacity",
+					"Description": "The carrying capacity within a container, expressed either in cubic feet, cubic inches, cubic centimeters or cubic meters.",
+					"BaseAttributeReference": {
+						"Entity": "Container.cdm.json/Container",
+						"Name": "ContainerCubicCapacity"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "VolumeUnitOfMeasureId",
+					"Description": "The unique identifier of a Unit Of Measure.",
+					"BaseAttributeReference": {
+						"Entity": "Container.cdm.json/Container",
+						"Name": "VolumeUnitOfMeasureId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "WeightUnitOfMeasureId",
+					"Description": "The unique identifier of a Unit Of Measure.",
+					"BaseAttributeReference": {
+						"Entity": "Container.cdm.json/Container",
+						"Name": "WeightUnitOfMeasureId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "TareWeight",
+					"Description": "The actual weight of a container or pallet when empty, including all liners and/or fittings.",
+					"BaseAttributeReference": {
+						"Entity": "Container.cdm.json/Container",
+						"Name": "TareWeight"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "MaximumAcceptableWeight",
+					"Description": "The maximum weight that the container can hold or accommodate.",
+					"BaseAttributeReference": {
+						"Entity": "Container.cdm.json/Container",
+						"Name": "MaximumAcceptableWeight"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "UnitLoadDeviceUldIndicator",
+					"Description": "Indicates that the container is a unit Load Device (ULD), which is a term commonly used when referring to containers, pallets and pallet nets.  The purpose of the ULD is to enable individual pieces of cargo to be assembled into standardized units to ease the rapid loading and unloading of airplanes and to facilitate the transfer of cargo between airplanes have compatible handling and restraint systems.",
+					"BaseAttributeReference": {
+						"Entity": "Container.cdm.json/Container",
+						"Name": "UnitLoadDeviceUldIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "HighCubeContainerIndicator",
+					"Description": "Any container which exceeds 8 feet 6 inches (102 inches) in height, usually 9 feet 6 inches.",
+					"BaseAttributeReference": {
+						"Entity": "Container.cdm.json/Container",
+						"Name": "HighCubeContainerIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "IntermodalContainerIndicator",
+					"Description": "A structural container designed for carriage on airplanes, trucks, rail cars, and ocean vessels and equipped with corner fittings for restraint on a truck chassis and/or for lifting by crane or other loading mechanism.",
+					"BaseAttributeReference": {
+						"Entity": "Container.cdm.json/Container",
+						"Name": "IntermodalContainerIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "BulkFreightContainerIndicator",
+					"Description": "Indicates that the container is intended for shipment of bulk-freight.",
+					"BaseAttributeReference": {
+						"Entity": "Container.cdm.json/Container",
+						"Name": "BulkFreightContainerIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "InsulatedContainerIndicator",
+					"Description": "A container insulated on the walls, roof, floor, and doors, to reduce the effect of external temperatures on the cargo.",
+					"BaseAttributeReference": {
+						"Entity": "Container.cdm.json/Container",
+						"Name": "InsulatedContainerIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "MechanicallyVentilatedContainerIndicator",
+					"Description": "Indicates that the container is mechanically-ventilated.",
+					"BaseAttributeReference": {
+						"Entity": "Container.cdm.json/Container",
+						"Name": "MechanicallyVentilatedContainerIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "MultitankContainerIndicator",
+					"Description": "A container frame fitted to accommodate two or more separate tanks for liquids.",
+					"BaseAttributeReference": {
+						"Entity": "Container.cdm.json/Container",
+						"Name": "MultitankContainerIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "OpenTopContainerIndicator",
+					"Description": "A container fitted with a solid removable roof, or with a tarpaulin roof so the container can be loaded or unloaded from the top.",
+					"BaseAttributeReference": {
+						"Entity": "Container.cdm.json/Container",
+						"Name": "OpenTopContainerIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "RefrigeratedContainerIndicator",
+					"Description": "Reefer / Refrigerated container.",
+					"BaseAttributeReference": {
+						"Entity": "Container.cdm.json/Container",
+						"Name": "RefrigeratedContainerIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "SideDoorContainerIndicator",
+					"Description": "A container fitted with a rear door and a minimum of one side door.",
+					"BaseAttributeReference": {
+						"Entity": "Container.cdm.json/Container",
+						"Name": "SideDoorContainerIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "LooseCargoIndicator",
+					"Description": "Air cargo delivered to an airline as separate packages and loaded and unloaded onto airplanes (or ULDs) by airline employees, and then delivered as separate pieces to the consigned.  See Bulk Cargo.",
+					"BaseAttributeReference": {
+						"Entity": "Container.cdm.json/Container",
+						"Name": "LooseCargoIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "VentilatedContainerIndicator",
+					"Description": "A container designed with openings in the side and/or end walls to permit the ingress of outside air when the doors are closed.",
+					"BaseAttributeReference": {
+						"Entity": "Container.cdm.json/Container",
+						"Name": "VentilatedContainerIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "ContainerTypeId",
+					"Description": "The unique identifier of a Container Type.",
+					"BaseAttributeReference": {
+						"Entity": "Container.cdm.json/Container",
+						"Name": "ContainerTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ContainerSecurityMethodId",
+					"Description": "The unique identifier of a Container Security Method.",
+					"BaseAttributeReference": {
+						"Entity": "Container.cdm.json/Container",
+						"Name": "ContainerSecurityMethodId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ContainerId\":{\"entity\":\"Container.cdm.json/Container\",\"name\":\"ContainerId\"},\"ContainerSerialNumber\":{\"entity\":\"Container.cdm.json/Container\",\"name\":\"ContainerSerialNumber\"},\"ContainerConditionDescription\":{\"entity\":\"Container.cdm.json/Container\",\"name\":\"ContainerConditionDescription\"},\"PackingInstructions\":{\"entity\":\"Container.cdm.json/Container\",\"name\":\"PackingInstructions\"},\"ContainerStuffingListText\":{\"entity\":\"Container.cdm.json/Container\",\"name\":\"ContainerStuffingListText\"},\"RecommendedPackingPatternInstructions\":{\"entity\":\"Container.cdm.json/Container\",\"name\":\"RecommendedPackingPatternInstructions\"},\"ContainerFirstServiceDate\":{\"entity\":\"Container.cdm.json/Container\",\"name\":\"ContainerFirstServiceDate\"},\"ContainerPlannedObsolescenceDate\":{\"entity\":\"Container.cdm.json/Container\",\"name\":\"ContainerPlannedObsolescenceDate\"},\"SerialShippingContainerCode\":{\"entity\":\"Container.cdm.json/Container\",\"name\":\"SerialShippingContainerCode\"},\"GlobalReturnableAssetIdentifier\":{\"entity\":\"Container.cdm.json/Container\",\"name\":\"GlobalReturnableAssetIdentifier\"},\"InternalLengthDimension\":{\"entity\":\"Container.cdm.json/Container\",\"name\":\"InternalLengthDimension\"},\"InternalWidthDimension\":{\"entity\":\"Container.cdm.json/Container\",\"name\":\"InternalWidthDimension\"},\"InternalHeightDimension\":{\"entity\":\"Container.cdm.json/Container\",\"name\":\"InternalHeightDimension\"},\"ExternalLengthDimension\":{\"entity\":\"Container.cdm.json/Container\",\"name\":\"ExternalLengthDimension\"},\"ExternalWidthDimension\":{\"entity\":\"Container.cdm.json/Container\",\"name\":\"ExternalWidthDimension\"},\"ExternalHeightDimension\":{\"entity\":\"Container.cdm.json/Container\",\"name\":\"ExternalHeightDimension\"},\"LwhUnitOfMeasureId\":{\"entity\":\"Container.cdm.json/Container\",\"name\":\"LwhUnitOfMeasureId\"},\"InternalVolume\":{\"entity\":\"Container.cdm.json/Container\",\"name\":\"InternalVolume\"},\"ExternalVolume\":{\"entity\":\"Container.cdm.json/Container\",\"name\":\"ExternalVolume\"},\"ContainerCubicCapacity\":{\"entity\":\"Container.cdm.json/Container\",\"name\":\"ContainerCubicCapacity\"},\"VolumeUnitOfMeasureId\":{\"entity\":\"Container.cdm.json/Container\",\"name\":\"VolumeUnitOfMeasureId\"},\"WeightUnitOfMeasureId\":{\"entity\":\"Container.cdm.json/Container\",\"name\":\"WeightUnitOfMeasureId\"},\"TareWeight\":{\"entity\":\"Container.cdm.json/Container\",\"name\":\"TareWeight\"},\"MaximumAcceptableWeight\":{\"entity\":\"Container.cdm.json/Container\",\"name\":\"MaximumAcceptableWeight\"},\"UnitLoadDeviceUldIndicator\":{\"entity\":\"Container.cdm.json/Container\",\"name\":\"UnitLoadDeviceUldIndicator\"},\"HighCubeContainerIndicator\":{\"entity\":\"Container.cdm.json/Container\",\"name\":\"HighCubeContainerIndicator\"},\"IntermodalContainerIndicator\":{\"entity\":\"Container.cdm.json/Container\",\"name\":\"IntermodalContainerIndicator\"},\"BulkFreightContainerIndicator\":{\"entity\":\"Container.cdm.json/Container\",\"name\":\"BulkFreightContainerIndicator\"},\"InsulatedContainerIndicator\":{\"entity\":\"Container.cdm.json/Container\",\"name\":\"InsulatedContainerIndicator\"},\"MechanicallyVentilatedContainerIndicator\":{\"entity\":\"Container.cdm.json/Container\",\"name\":\"MechanicallyVentilatedContainerIndicator\"},\"MultitankContainerIndicator\":{\"entity\":\"Container.cdm.json/Container\",\"name\":\"MultitankContainerIndicator\"},\"OpenTopContainerIndicator\":{\"entity\":\"Container.cdm.json/Container\",\"name\":\"OpenTopContainerIndicator\"},\"RefrigeratedContainerIndicator\":{\"entity\":\"Container.cdm.json/Container\",\"name\":\"RefrigeratedContainerIndicator\"},\"SideDoorContainerIndicator\":{\"entity\":\"Container.cdm.json/Container\",\"name\":\"SideDoorContainerIndicator\"},\"LooseCargoIndicator\":{\"entity\":\"Container.cdm.json/Container\",\"name\":\"LooseCargoIndicator\"},\"VentilatedContainerIndicator\":{\"entity\":\"Container.cdm.json/Container\",\"name\":\"VentilatedContainerIndicator\"},\"ContainerTypeId\":{\"entity\":\"Container.cdm.json/Container\",\"name\":\"ContainerTypeId\"},\"ContainerSecurityMethodId\":{\"entity\":\"Container.cdm.json/Container\",\"name\":\"ContainerSecurityMethodId\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"Container\",\"path\":\"Container.cdm.json/Container\"},\"description\":\"A serialized or uniquely (Container ID) identified instance of a receptacle designed to transport cargo of many types in continuous transportation.\\n\\nThis is normally a weatherproof box designed for the shipment of freight, generally used for overseas shipments. The container is separable from the chassis when loaded onto vessels or rail cars. \\n\\nContainers are boxlike devices (containers) in which a number of packages are stored, protected, and handled as a single unit in transit.\\n\\nA rigid structure that performs the function of a ULD without the use of restraining net.\\n\\nNote:\\nA CONTAINER is a specific instance of a container type or it is a physical container that exists and has a serial number etc.   A CONTAINER TYPE is an abstraction of a all containers of a similar type so that you can plan for specific containers of that type.\\n\\nA truck trailer body that can be detached from the chassis for loading into a vessel, a rail car or stacked in a container depot. Containers may be ventilated, insulated, refrigerated, flat rack, vehicle rack, open top, bulk liquid or equipped with interior devices. A container may be 20 feet, 40 feet, 45 feet, 48 feet or 53 feet in length, 8'0\\\" or 8'6\\\" in width, and 8'6\\\" or 9'6\\\" in height.\",\"primaryKey\":[\"ContainerId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"ContainerId\",\"attributeReference\":{\"entity\":\"Container.cdm.json/Container\",\"name\":\"ContainerId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ContainerSerialNumber\",\"attributeReference\":{\"entity\":\"Container.cdm.json/Container\",\"name\":\"ContainerSerialNumber\"},\"dataType\":\"string\",\"dataTypeLength\":30},{\"type\":\"Existing\",\"name\":\"ContainerConditionDescription\",\"attributeReference\":{\"entity\":\"Container.cdm.json/Container\",\"name\":\"ContainerConditionDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512},{\"type\":\"Existing\",\"name\":\"PackingInstructions\",\"attributeReference\":{\"entity\":\"Container.cdm.json/Container\",\"name\":\"PackingInstructions\"},\"dataType\":\"string\",\"dataTypeLength\":2048},{\"type\":\"Existing\",\"name\":\"ContainerStuffingListText\",\"attributeReference\":{\"entity\":\"Container.cdm.json/Container\",\"name\":\"ContainerStuffingListText\"},\"dataType\":\"string\",\"dataTypeLength\":1024},{\"type\":\"Existing\",\"name\":\"RecommendedPackingPatternInstructions\",\"attributeReference\":{\"entity\":\"Container.cdm.json/Container\",\"name\":\"RecommendedPackingPatternInstructions\"},\"dataType\":\"string\",\"dataTypeLength\":2048},{\"type\":\"Existing\",\"name\":\"ContainerFirstServiceDate\",\"attributeReference\":{\"entity\":\"Container.cdm.json/Container\",\"name\":\"ContainerFirstServiceDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\"},{\"type\":\"Existing\",\"name\":\"ContainerPlannedObsolescenceDate\",\"attributeReference\":{\"entity\":\"Container.cdm.json/Container\",\"name\":\"ContainerPlannedObsolescenceDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\"},{\"type\":\"Existing\",\"name\":\"SerialShippingContainerCode\",\"attributeReference\":{\"entity\":\"Container.cdm.json/Container\",\"name\":\"SerialShippingContainerCode\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":0},{\"type\":\"Existing\",\"name\":\"GlobalReturnableAssetIdentifier\",\"attributeReference\":{\"entity\":\"Container.cdm.json/Container\",\"name\":\"GlobalReturnableAssetIdentifier\"},\"dataType\":\"string\",\"dataTypeLength\":29},{\"type\":\"Existing\",\"name\":\"InternalLengthDimension\",\"attributeReference\":{\"entity\":\"Container.cdm.json/Container\",\"name\":\"InternalLengthDimension\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"InternalWidthDimension\",\"attributeReference\":{\"entity\":\"Container.cdm.json/Container\",\"name\":\"InternalWidthDimension\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"InternalHeightDimension\",\"attributeReference\":{\"entity\":\"Container.cdm.json/Container\",\"name\":\"InternalHeightDimension\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ExternalLengthDimension\",\"attributeReference\":{\"entity\":\"Container.cdm.json/Container\",\"name\":\"ExternalLengthDimension\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ExternalWidthDimension\",\"attributeReference\":{\"entity\":\"Container.cdm.json/Container\",\"name\":\"ExternalWidthDimension\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ExternalHeightDimension\",\"attributeReference\":{\"entity\":\"Container.cdm.json/Container\",\"name\":\"ExternalHeightDimension\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"LwhUnitOfMeasureId\",\"attributeReference\":{\"entity\":\"Container.cdm.json/Container\",\"name\":\"LwhUnitOfMeasureId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"InternalVolume\",\"attributeReference\":{\"entity\":\"Container.cdm.json/Container\",\"name\":\"InternalVolume\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":8},{\"type\":\"Existing\",\"name\":\"ExternalVolume\",\"attributeReference\":{\"entity\":\"Container.cdm.json/Container\",\"name\":\"ExternalVolume\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":8},{\"type\":\"Existing\",\"name\":\"ContainerCubicCapacity\",\"attributeReference\":{\"entity\":\"Container.cdm.json/Container\",\"name\":\"ContainerCubicCapacity\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"VolumeUnitOfMeasureId\",\"attributeReference\":{\"entity\":\"Container.cdm.json/Container\",\"name\":\"VolumeUnitOfMeasureId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"WeightUnitOfMeasureId\",\"attributeReference\":{\"entity\":\"Container.cdm.json/Container\",\"name\":\"WeightUnitOfMeasureId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"TareWeight\",\"attributeReference\":{\"entity\":\"Container.cdm.json/Container\",\"name\":\"TareWeight\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":8},{\"type\":\"Existing\",\"name\":\"MaximumAcceptableWeight\",\"attributeReference\":{\"entity\":\"Container.cdm.json/Container\",\"name\":\"MaximumAcceptableWeight\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":8},{\"type\":\"Existing\",\"name\":\"UnitLoadDeviceUldIndicator\",\"attributeReference\":{\"entity\":\"Container.cdm.json/Container\",\"name\":\"UnitLoadDeviceUldIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"HighCubeContainerIndicator\",\"attributeReference\":{\"entity\":\"Container.cdm.json/Container\",\"name\":\"HighCubeContainerIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"IntermodalContainerIndicator\",\"attributeReference\":{\"entity\":\"Container.cdm.json/Container\",\"name\":\"IntermodalContainerIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"BulkFreightContainerIndicator\",\"attributeReference\":{\"entity\":\"Container.cdm.json/Container\",\"name\":\"BulkFreightContainerIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"InsulatedContainerIndicator\",\"attributeReference\":{\"entity\":\"Container.cdm.json/Container\",\"name\":\"InsulatedContainerIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"MechanicallyVentilatedContainerIndicator\",\"attributeReference\":{\"entity\":\"Container.cdm.json/Container\",\"name\":\"MechanicallyVentilatedContainerIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"MultitankContainerIndicator\",\"attributeReference\":{\"entity\":\"Container.cdm.json/Container\",\"name\":\"MultitankContainerIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"OpenTopContainerIndicator\",\"attributeReference\":{\"entity\":\"Container.cdm.json/Container\",\"name\":\"OpenTopContainerIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"RefrigeratedContainerIndicator\",\"attributeReference\":{\"entity\":\"Container.cdm.json/Container\",\"name\":\"RefrigeratedContainerIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"SideDoorContainerIndicator\",\"attributeReference\":{\"entity\":\"Container.cdm.json/Container\",\"name\":\"SideDoorContainerIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"LooseCargoIndicator\",\"attributeReference\":{\"entity\":\"Container.cdm.json/Container\",\"name\":\"LooseCargoIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"VentilatedContainerIndicator\",\"attributeReference\":{\"entity\":\"Container.cdm.json/Container\",\"name\":\"VentilatedContainerIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"ContainerTypeId\",\"attributeReference\":{\"entity\":\"Container.cdm.json/Container\",\"name\":\"ContainerTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ContainerSecurityMethodId\",\"attributeReference\":{\"entity\":\"Container.cdm.json/Container\",\"name\":\"ContainerSecurityMethodId\"},\"dataType\":\"integer\"}]}}}",
+			"Description": "A serialized or uniquely (Container ID) identified instance of a receptacle designed to transport cargo of many types in continuous transportation.\n\nThis is normally a weatherproof box designed for the shipment of freight, generally used for overseas shipments. The container is separable from the chassis when loaded onto vessels or rail cars. \n\nContainers are boxlike devices (containers) in which a number of packages are stored, protected, and handled as a single unit in transit.\n\nA rigid structure that performs the function of a ULD without the use of restraining net.\n\nNote:\nA CONTAINER is a specific instance of a container type or it is a physical container that exists and has a serial number etc.   A CONTAINER TYPE is an abstraction of a all containers of a similar type so that you can plan for specific containers of that type.\n\nA truck trailer body that can be detached from the chassis for loading into a vessel, a rail car or stacked in a container depot. Containers may be ventilated, insulated, refrigerated, flat rack, vehicle rack, open top, bulk liquid or equipped with interior devices. A container may be 20 feet, 40 feet, 45 feet, 48 feet or 53 feet in length, 8'0\" or 8'6\" in width, and 8'6\" or 9'6\" in height.",
+			"DisplayFolderInfo": "{\"name\":\"Shipping\",\"colorCode\":\"#000B42\"}",
+			"PrimaryKeys": "ContainerId"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

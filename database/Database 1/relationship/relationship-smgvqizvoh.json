@@ -1,0 +1,26 @@
+{
+	"name": "relationship-smgvqizvoh",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "relationship-smgvqizvoh",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "ContainerType",
+		"ToTableName": "Container",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ContainerTypeId",
+				"ToColumnName": "ContainerTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"ContainerType.cdm.json/ContainerType\",\"toEntity\":\"Container.cdm.json/Container\",\"joinPairs\":[{\"fromAttribute\":\"ContainerTypeId\",\"toAttribute\":\"ContainerTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

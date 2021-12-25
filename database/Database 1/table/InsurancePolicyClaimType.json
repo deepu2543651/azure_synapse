@@ -1,0 +1,86 @@
+{
+	"name": "InsurancePolicyClaimType",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "InsurancePolicyClaimType",
+		"Description": "A categorization of claims based on common characteristics or coverages.\n\nEx:\n-  Concealed Damage\n-  General Average",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "InsurancePolicyClaimTypeId",
+					"Description": "The unique identifier of an Insurance Policy Claim Type.",
+					"BaseAttributeReference": {
+						"Entity": "InsurancePolicyClaimType.cdm.json/InsurancePolicyClaimType",
+						"Name": "InsurancePolicyClaimTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "InsurancePolicyClaimTypeName",
+					"Description": "The name of an Insurance Policy Claim Type.",
+					"BaseAttributeReference": {
+						"Entity": "InsurancePolicyClaimType.cdm.json/InsurancePolicyClaimType",
+						"Name": "InsurancePolicyClaimTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "InsurancePolicyClaimTypeDescription",
+					"Description": "The description of an Insurance Policy Claim Type.",
+					"BaseAttributeReference": {
+						"Entity": "InsurancePolicyClaimType.cdm.json/InsurancePolicyClaimType",
+						"Name": "InsurancePolicyClaimTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"InsurancePolicyClaimTypeId\":{\"entity\":\"InsurancePolicyClaimType.cdm.json/InsurancePolicyClaimType\",\"name\":\"InsurancePolicyClaimTypeId\"},\"InsurancePolicyClaimTypeName\":{\"entity\":\"InsurancePolicyClaimType.cdm.json/InsurancePolicyClaimType\",\"name\":\"InsurancePolicyClaimTypeName\"},\"InsurancePolicyClaimTypeDescription\":{\"entity\":\"InsurancePolicyClaimType.cdm.json/InsurancePolicyClaimType\",\"name\":\"InsurancePolicyClaimTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"InsurancePolicyClaimType\",\"path\":\"InsurancePolicyClaimType.cdm.json/InsurancePolicyClaimType\"},\"description\":\"A categorization of claims based on common characteristics or coverages.\\n\\nEx:\\n-  Concealed Damage\\n-  General Average\",\"primaryKey\":[\"InsurancePolicyClaimTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"InsurancePolicyClaimTypeId\",\"attributeReference\":{\"entity\":\"InsurancePolicyClaimType.cdm.json/InsurancePolicyClaimType\",\"name\":\"InsurancePolicyClaimTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"InsurancePolicyClaimTypeName\",\"attributeReference\":{\"entity\":\"InsurancePolicyClaimType.cdm.json/InsurancePolicyClaimType\",\"name\":\"InsurancePolicyClaimTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"InsurancePolicyClaimTypeDescription\",\"attributeReference\":{\"entity\":\"InsurancePolicyClaimType.cdm.json/InsurancePolicyClaimType\",\"name\":\"InsurancePolicyClaimTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512}]}}}",
+			"Description": "A categorization of claims based on common characteristics or coverages.\n\nEx:\n-  Concealed Damage\n-  General Average",
+			"DisplayFolderInfo": "{\"name\":\"Policy\",\"colorCode\":\"#7D0F6C\"}",
+			"PrimaryKeys": "InsurancePolicyClaimTypeId"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

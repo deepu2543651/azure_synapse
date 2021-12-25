@@ -1,0 +1,26 @@
+{
+	"name": "relationship-lewzbfiayo",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "relationship-lewzbfiayo",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Aircraft",
+		"ToTableName": "ScheduledFlight",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "AircraftId",
+				"ToColumnName": "AircraftId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Aircraft.cdm.json/Aircraft\",\"toEntity\":\"ScheduledFlight.cdm.json/ScheduledFlight\",\"joinPairs\":[{\"fromAttribute\":\"AircraftId\",\"toAttribute\":\"AircraftId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

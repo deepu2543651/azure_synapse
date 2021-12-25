@@ -1,0 +1,416 @@
+{
+	"name": "Aircraft",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "Aircraft",
+		"Description": "Most commonly used term for airplane.\n\nAn individual airplane or aircraft owned by the Carrier.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "AircraftId",
+					"Description": "The unique identifier of an Aircraft.",
+					"BaseAttributeReference": {
+						"Entity": "Aircraft.cdm.json/Aircraft",
+						"Name": "AircraftId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "AircraftSerialNumber",
+					"Description": "The serial number assigned to the aircraft.",
+					"BaseAttributeReference": {
+						"Entity": "Aircraft.cdm.json/Aircraft",
+						"Name": "AircraftSerialNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Length": 30,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "AircraftTypeId",
+					"Description": "The unique identifier of a Product.",
+					"BaseAttributeReference": {
+						"Entity": "Aircraft.cdm.json/Aircraft",
+						"Name": "AircraftTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "AircraftTypeConfigurationId",
+					"Description": "The unique identifier of an Aircraft Type Configuration.",
+					"BaseAttributeReference": {
+						"Entity": "Aircraft.cdm.json/Aircraft",
+						"Name": "AircraftTypeConfigurationId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "AircraftOrderDate",
+					"Description": "The date that the aircraft was ordered.",
+					"BaseAttributeReference": {
+						"Entity": "Aircraft.cdm.json/Aircraft",
+						"Name": "AircraftOrderDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "AircraftManufactureStartDate",
+					"Description": "The date that the aircraft manufacture process started.",
+					"BaseAttributeReference": {
+						"Entity": "Aircraft.cdm.json/Aircraft",
+						"Name": "AircraftManufactureStartDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "AircraftManufactureEndDate",
+					"Description": "The date that the aircraft manufacture process ended.",
+					"BaseAttributeReference": {
+						"Entity": "Aircraft.cdm.json/Aircraft",
+						"Name": "AircraftManufactureEndDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "AircraftDeliveryDate",
+					"Description": "The date that the aircraft was delivered.",
+					"BaseAttributeReference": {
+						"Entity": "Aircraft.cdm.json/Aircraft",
+						"Name": "AircraftDeliveryDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "AircraftCertificationDate",
+					"Description": "The date that the aircraft was certified.",
+					"BaseAttributeReference": {
+						"Entity": "Aircraft.cdm.json/Aircraft",
+						"Name": "AircraftCertificationDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "FirstOperationDate",
+					"Description": "The first operational date of the aircraft.",
+					"BaseAttributeReference": {
+						"Entity": "Aircraft.cdm.json/Aircraft",
+						"Name": "FirstOperationDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "LastLightMaintenanceDate",
+					"Description": "The last light maintenance performed date.",
+					"BaseAttributeReference": {
+						"Entity": "Aircraft.cdm.json/Aircraft",
+						"Name": "LastLightMaintenanceDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "LastHeavyMaintenanceDate",
+					"Description": "The last heavy maintenance performed date.",
+					"BaseAttributeReference": {
+						"Entity": "Aircraft.cdm.json/Aircraft",
+						"Name": "LastHeavyMaintenanceDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "LastAvionicsMaintenanceDate",
+					"Description": "The last avionics maintenance performed date.",
+					"BaseAttributeReference": {
+						"Entity": "Aircraft.cdm.json/Aircraft",
+						"Name": "LastAvionicsMaintenanceDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "LastRegularlyScheduledMaintenanceDate",
+					"Description": "The last regularly scheduled maintenance performed date.",
+					"BaseAttributeReference": {
+						"Entity": "Aircraft.cdm.json/Aircraft",
+						"Name": "LastRegularlyScheduledMaintenanceDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "NoiseCertificationType",
+					"Description": "The type of noise certification that the aircraft has",
+					"BaseAttributeReference": {
+						"Entity": "Aircraft.cdm.json/Aircraft",
+						"Name": "NoiseCertificationType"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "NumberOfFlightdeckCrewMembers",
+					"Description": "The number of flightdeck crew.",
+					"BaseAttributeReference": {
+						"Entity": "Aircraft.cdm.json/Aircraft",
+						"Name": "NumberOfFlightdeckCrewMembers"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "NumberOfServiceCrewMembers",
+					"Description": "The number of service crew.",
+					"BaseAttributeReference": {
+						"Entity": "Aircraft.cdm.json/Aircraft",
+						"Name": "NumberOfServiceCrewMembers"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "AllowableCabinLoad",
+					"Description": "The maximum payload weight that can be carried on an airplane on a specific route segment under a specific set of operation conditions.",
+					"BaseAttributeReference": {
+						"Entity": "Aircraft.cdm.json/Aircraft",
+						"Name": "AllowableCabinLoad"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "StretchAircraftIndicator",
+					"Description": "Aircraft like B-727-200 and B-737-300",
+					"BaseAttributeReference": {
+						"Entity": "Aircraft.cdm.json/Aircraft",
+						"Name": "StretchAircraftIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "HighCapacityAircraftIndicator",
+					"Description": "High Capacity Airplane    Equivalent to wide-bodied airplanes.  Specifically refers to B747, B767, B777, A300, A330, A340, DC10, MD-11, L-1011, IL-86 & IL-96.",
+					"BaseAttributeReference": {
+						"Entity": "Aircraft.cdm.json/Aircraft",
+						"Name": "HighCapacityAircraftIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "AirlineId",
+					"Description": "The unique identifier of an Airline.",
+					"BaseAttributeReference": {
+						"Entity": "Aircraft.cdm.json/Aircraft",
+						"Name": "AirlineId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "AssetId",
+					"Description": "The unique identifier of an Asset.",
+					"BaseAttributeReference": {
+						"Entity": "Aircraft.cdm.json/Aircraft",
+						"Name": "AssetId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "OwningPartyId",
+					"Description": "The unique identifier of a Party.",
+					"BaseAttributeReference": {
+						"Entity": "Aircraft.cdm.json/Aircraft",
+						"Name": "OwningPartyId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"AircraftId\":{\"entity\":\"Aircraft.cdm.json/Aircraft\",\"name\":\"AircraftId\"},\"AircraftSerialNumber\":{\"entity\":\"Aircraft.cdm.json/Aircraft\",\"name\":\"AircraftSerialNumber\"},\"AircraftTypeId\":{\"entity\":\"Aircraft.cdm.json/Aircraft\",\"name\":\"AircraftTypeId\"},\"AircraftTypeConfigurationId\":{\"entity\":\"Aircraft.cdm.json/Aircraft\",\"name\":\"AircraftTypeConfigurationId\"},\"AircraftOrderDate\":{\"entity\":\"Aircraft.cdm.json/Aircraft\",\"name\":\"AircraftOrderDate\"},\"AircraftManufactureStartDate\":{\"entity\":\"Aircraft.cdm.json/Aircraft\",\"name\":\"AircraftManufactureStartDate\"},\"AircraftManufactureEndDate\":{\"entity\":\"Aircraft.cdm.json/Aircraft\",\"name\":\"AircraftManufactureEndDate\"},\"AircraftDeliveryDate\":{\"entity\":\"Aircraft.cdm.json/Aircraft\",\"name\":\"AircraftDeliveryDate\"},\"AircraftCertificationDate\":{\"entity\":\"Aircraft.cdm.json/Aircraft\",\"name\":\"AircraftCertificationDate\"},\"FirstOperationDate\":{\"entity\":\"Aircraft.cdm.json/Aircraft\",\"name\":\"FirstOperationDate\"},\"LastLightMaintenanceDate\":{\"entity\":\"Aircraft.cdm.json/Aircraft\",\"name\":\"LastLightMaintenanceDate\"},\"LastHeavyMaintenanceDate\":{\"entity\":\"Aircraft.cdm.json/Aircraft\",\"name\":\"LastHeavyMaintenanceDate\"},\"LastAvionicsMaintenanceDate\":{\"entity\":\"Aircraft.cdm.json/Aircraft\",\"name\":\"LastAvionicsMaintenanceDate\"},\"LastRegularlyScheduledMaintenanceDate\":{\"entity\":\"Aircraft.cdm.json/Aircraft\",\"name\":\"LastRegularlyScheduledMaintenanceDate\"},\"NoiseCertificationType\":{\"entity\":\"Aircraft.cdm.json/Aircraft\",\"name\":\"NoiseCertificationType\"},\"NumberOfFlightdeckCrewMembers\":{\"entity\":\"Aircraft.cdm.json/Aircraft\",\"name\":\"NumberOfFlightdeckCrewMembers\"},\"NumberOfServiceCrewMembers\":{\"entity\":\"Aircraft.cdm.json/Aircraft\",\"name\":\"NumberOfServiceCrewMembers\"},\"AllowableCabinLoad\":{\"entity\":\"Aircraft.cdm.json/Aircraft\",\"name\":\"AllowableCabinLoad\"},\"StretchAircraftIndicator\":{\"entity\":\"Aircraft.cdm.json/Aircraft\",\"name\":\"StretchAircraftIndicator\"},\"HighCapacityAircraftIndicator\":{\"entity\":\"Aircraft.cdm.json/Aircraft\",\"name\":\"HighCapacityAircraftIndicator\"},\"AirlineId\":{\"entity\":\"Aircraft.cdm.json/Aircraft\",\"name\":\"AirlineId\"},\"AssetId\":{\"entity\":\"Aircraft.cdm.json/Aircraft\",\"name\":\"AssetId\"},\"OwningPartyId\":{\"entity\":\"Aircraft.cdm.json/Aircraft\",\"name\":\"OwningPartyId\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"Aircraft\",\"path\":\"Aircraft.cdm.json/Aircraft\"},\"description\":\"Most commonly used term for airplane.\\n\\nAn individual airplane or aircraft owned by the Carrier.\",\"primaryKey\":[\"AircraftId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"AircraftId\",\"attributeReference\":{\"entity\":\"Aircraft.cdm.json/Aircraft\",\"name\":\"AircraftId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"AircraftSerialNumber\",\"attributeReference\":{\"entity\":\"Aircraft.cdm.json/Aircraft\",\"name\":\"AircraftSerialNumber\"},\"dataType\":\"string\",\"dataTypeLength\":30},{\"type\":\"Existing\",\"name\":\"AircraftTypeId\",\"attributeReference\":{\"entity\":\"Aircraft.cdm.json/Aircraft\",\"name\":\"AircraftTypeId\"},\"dataType\":\"long\"},{\"type\":\"Existing\",\"name\":\"AircraftTypeConfigurationId\",\"attributeReference\":{\"entity\":\"Aircraft.cdm.json/Aircraft\",\"name\":\"AircraftTypeConfigurationId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"AircraftOrderDate\",\"attributeReference\":{\"entity\":\"Aircraft.cdm.json/Aircraft\",\"name\":\"AircraftOrderDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\"},{\"type\":\"Existing\",\"name\":\"AircraftManufactureStartDate\",\"attributeReference\":{\"entity\":\"Aircraft.cdm.json/Aircraft\",\"name\":\"AircraftManufactureStartDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\"},{\"type\":\"Existing\",\"name\":\"AircraftManufactureEndDate\",\"attributeReference\":{\"entity\":\"Aircraft.cdm.json/Aircraft\",\"name\":\"AircraftManufactureEndDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\"},{\"type\":\"Existing\",\"name\":\"AircraftDeliveryDate\",\"attributeReference\":{\"entity\":\"Aircraft.cdm.json/Aircraft\",\"name\":\"AircraftDeliveryDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\"},{\"type\":\"Existing\",\"name\":\"AircraftCertificationDate\",\"attributeReference\":{\"entity\":\"Aircraft.cdm.json/Aircraft\",\"name\":\"AircraftCertificationDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\"},{\"type\":\"Existing\",\"name\":\"FirstOperationDate\",\"attributeReference\":{\"entity\":\"Aircraft.cdm.json/Aircraft\",\"name\":\"FirstOperationDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\"},{\"type\":\"Existing\",\"name\":\"LastLightMaintenanceDate\",\"attributeReference\":{\"entity\":\"Aircraft.cdm.json/Aircraft\",\"name\":\"LastLightMaintenanceDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\"},{\"type\":\"Existing\",\"name\":\"LastHeavyMaintenanceDate\",\"attributeReference\":{\"entity\":\"Aircraft.cdm.json/Aircraft\",\"name\":\"LastHeavyMaintenanceDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\"},{\"type\":\"Existing\",\"name\":\"LastAvionicsMaintenanceDate\",\"attributeReference\":{\"entity\":\"Aircraft.cdm.json/Aircraft\",\"name\":\"LastAvionicsMaintenanceDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\"},{\"type\":\"Existing\",\"name\":\"LastRegularlyScheduledMaintenanceDate\",\"attributeReference\":{\"entity\":\"Aircraft.cdm.json/Aircraft\",\"name\":\"LastRegularlyScheduledMaintenanceDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\"},{\"type\":\"Existing\",\"name\":\"NoiseCertificationType\",\"attributeReference\":{\"entity\":\"Aircraft.cdm.json/Aircraft\",\"name\":\"NoiseCertificationType\"},\"dataType\":\"string\",\"dataTypeLength\":512},{\"type\":\"Existing\",\"name\":\"NumberOfFlightdeckCrewMembers\",\"attributeReference\":{\"entity\":\"Aircraft.cdm.json/Aircraft\",\"name\":\"NumberOfFlightdeckCrewMembers\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"NumberOfServiceCrewMembers\",\"attributeReference\":{\"entity\":\"Aircraft.cdm.json/Aircraft\",\"name\":\"NumberOfServiceCrewMembers\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"AllowableCabinLoad\",\"attributeReference\":{\"entity\":\"Aircraft.cdm.json/Aircraft\",\"name\":\"AllowableCabinLoad\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"StretchAircraftIndicator\",\"attributeReference\":{\"entity\":\"Aircraft.cdm.json/Aircraft\",\"name\":\"StretchAircraftIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"HighCapacityAircraftIndicator\",\"attributeReference\":{\"entity\":\"Aircraft.cdm.json/Aircraft\",\"name\":\"HighCapacityAircraftIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"AirlineId\",\"attributeReference\":{\"entity\":\"Aircraft.cdm.json/Aircraft\",\"name\":\"AirlineId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"AssetId\",\"attributeReference\":{\"entity\":\"Aircraft.cdm.json/Aircraft\",\"name\":\"AssetId\"},\"dataType\":\"long\"},{\"type\":\"Existing\",\"name\":\"OwningPartyId\",\"attributeReference\":{\"entity\":\"Aircraft.cdm.json/Aircraft\",\"name\":\"OwningPartyId\"},\"dataType\":\"long\"}]}}}",
+			"Description": "Most commonly used term for airplane.\n\nAn individual airplane or aircraft owned by the Carrier.",
+			"DisplayFolderInfo": "{\"name\":\"Shipping\",\"colorCode\":\"#000B42\"}",
+			"PrimaryKeys": "AircraftId"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

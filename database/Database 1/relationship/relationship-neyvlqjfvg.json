@@ -1,0 +1,26 @@
+{
+	"name": "relationship-neyvlqjfvg",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "relationship-neyvlqjfvg",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "ShipmentRouteStatusType",
+		"ToTableName": "ShipmentRouteStatus",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ShipmentRouteStatusTypeId",
+				"ToColumnName": "ShipmentRouteStatusTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"ShipmentRouteStatusType.cdm.json/ShipmentRouteStatusType\",\"toEntity\":\"ShipmentRouteStatus.cdm.json/ShipmentRouteStatus\",\"joinPairs\":[{\"fromAttribute\":\"ShipmentRouteStatusTypeId\",\"toAttribute\":\"ShipmentRouteStatusTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

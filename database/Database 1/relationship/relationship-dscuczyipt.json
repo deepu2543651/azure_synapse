@@ -1,0 +1,26 @@
+{
+	"name": "relationship-dscuczyipt",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "relationship-dscuczyipt",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "ShipmentMethod",
+		"ToTableName": "Order",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ShipmentMethodId",
+				"ToColumnName": "ShipmentMethodId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"ShipmentMethod.cdm.json/ShipmentMethod\",\"toEntity\":\"Order.cdm.json/Order\",\"joinPairs\":[{\"fromAttribute\":\"ShipmentMethodId\",\"toAttribute\":\"ShipmentMethodId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

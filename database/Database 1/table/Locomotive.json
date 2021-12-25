@@ -1,0 +1,101 @@
+{
+	"name": "Locomotive",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "Locomotive",
+		"Description": "A train locomotive or source of power.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "EngineId",
+					"Description": "The unique identifier of an engine.",
+					"BaseAttributeReference": {
+						"Entity": "Locomotive.cdm.json/Locomotive",
+						"Name": "EngineId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "EngineSerialNumber",
+					"Description": "The serial number of the engine.",
+					"BaseAttributeReference": {
+						"Entity": "Locomotive.cdm.json/Locomotive",
+						"Name": "EngineSerialNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 30,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "AssetId",
+					"Description": "The unique identifier of an Asset.",
+					"BaseAttributeReference": {
+						"Entity": "Locomotive.cdm.json/Locomotive",
+						"Name": "AssetId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "OwningPartyId",
+					"Description": "The unique identifier of a Party.",
+					"BaseAttributeReference": {
+						"Entity": "Locomotive.cdm.json/Locomotive",
+						"Name": "OwningPartyId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"EngineId\":{\"entity\":\"Locomotive.cdm.json/Locomotive\",\"name\":\"EngineId\"},\"EngineSerialNumber\":{\"entity\":\"Locomotive.cdm.json/Locomotive\",\"name\":\"EngineSerialNumber\"},\"AssetId\":{\"entity\":\"Locomotive.cdm.json/Locomotive\",\"name\":\"AssetId\"},\"OwningPartyId\":{\"entity\":\"Locomotive.cdm.json/Locomotive\",\"name\":\"OwningPartyId\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"Locomotive\",\"path\":\"Locomotive.cdm.json/Locomotive\"},\"description\":\"A train locomotive or source of power.\",\"primaryKey\":[\"EngineId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"EngineId\",\"attributeReference\":{\"entity\":\"Locomotive.cdm.json/Locomotive\",\"name\":\"EngineId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"EngineSerialNumber\",\"attributeReference\":{\"entity\":\"Locomotive.cdm.json/Locomotive\",\"name\":\"EngineSerialNumber\"},\"dataType\":\"string\",\"dataTypeLength\":30},{\"type\":\"Existing\",\"name\":\"AssetId\",\"attributeReference\":{\"entity\":\"Locomotive.cdm.json/Locomotive\",\"name\":\"AssetId\"},\"dataType\":\"long\"},{\"type\":\"Existing\",\"name\":\"OwningPartyId\",\"attributeReference\":{\"entity\":\"Locomotive.cdm.json/Locomotive\",\"name\":\"OwningPartyId\"},\"dataType\":\"long\"}]}}}",
+			"Description": "A train locomotive or source of power.",
+			"DisplayFolderInfo": "{\"name\":\"Shipping\",\"colorCode\":\"#000B42\"}",
+			"PrimaryKeys": "EngineId"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

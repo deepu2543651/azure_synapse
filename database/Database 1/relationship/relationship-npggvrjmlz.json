@@ -1,0 +1,30 @@
+{
+	"name": "relationship-npggvrjmlz",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "relationship-npggvrjmlz",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "TowSchedule",
+		"ToTableName": "TowScheduleTowboatPosition",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "TowId",
+				"ToColumnName": "TowId"
+			},
+			{
+				"FromColumnName": "TowScheduledDepartureTimestamp",
+				"ToColumnName": "TowScheduledDepartureTimestamp"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"TowSchedule.cdm.json/TowSchedule\",\"toEntity\":\"TowScheduleTowboatPosition.cdm.json/TowScheduleTowboatPosition\",\"joinPairs\":[{\"fromAttribute\":\"TowId\",\"toAttribute\":\"TowId\"},{\"fromAttribute\":\"TowScheduledDepartureTimestamp\",\"toAttribute\":\"TowScheduledDepartureTimestamp\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

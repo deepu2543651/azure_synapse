@@ -1,0 +1,118 @@
+{
+	"name": "ShipmentRelatedLocation",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "ShipmentRelatedLocation",
+		"Description": "The locations associated with a Shipment.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ShipmentId",
+					"Description": "The unique identifier of a Shipment.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentRelatedLocation.cdm.json/ShipmentRelatedLocation",
+						"Name": "ShipmentId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ShipmentLocationTypeId",
+					"Description": "The unique identifier of a Shipment Location Type.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentRelatedLocation.cdm.json/ShipmentRelatedLocation",
+						"Name": "ShipmentLocationTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ShipmentLocationTimestamp",
+					"Description": "The timestamp associated with the Shipment Location.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentRelatedLocation.cdm.json/ShipmentRelatedLocation",
+						"Name": "ShipmentLocationTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "LocationId",
+					"Description": "The unique identifier of a Location.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentRelatedLocation.cdm.json/ShipmentRelatedLocation",
+						"Name": "LocationId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ShipmentLocationNote",
+					"Description": "A note, comment or additional information regarding the Shipment Location.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentRelatedLocation.cdm.json/ShipmentRelatedLocation",
+						"Name": "ShipmentLocationNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ShipmentId\":{\"entity\":\"ShipmentRelatedLocation.cdm.json/ShipmentRelatedLocation\",\"name\":\"ShipmentId\"},\"ShipmentLocationTypeId\":{\"entity\":\"ShipmentRelatedLocation.cdm.json/ShipmentRelatedLocation\",\"name\":\"ShipmentLocationTypeId\"},\"ShipmentLocationTimestamp\":{\"entity\":\"ShipmentRelatedLocation.cdm.json/ShipmentRelatedLocation\",\"name\":\"ShipmentLocationTimestamp\"},\"LocationId\":{\"entity\":\"ShipmentRelatedLocation.cdm.json/ShipmentRelatedLocation\",\"name\":\"LocationId\"},\"ShipmentLocationNote\":{\"entity\":\"ShipmentRelatedLocation.cdm.json/ShipmentRelatedLocation\",\"name\":\"ShipmentLocationNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"ShipmentRelatedLocation\",\"path\":\"ShipmentRelatedLocation.cdm.json/ShipmentRelatedLocation\"},\"description\":\"The locations associated with a Shipment.\",\"primaryKey\":[\"ShipmentId\",\"ShipmentLocationTypeId\",\"ShipmentLocationTimestamp\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"ShipmentId\",\"attributeReference\":{\"entity\":\"ShipmentRelatedLocation.cdm.json/ShipmentRelatedLocation\",\"name\":\"ShipmentId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ShipmentLocationTypeId\",\"attributeReference\":{\"entity\":\"ShipmentRelatedLocation.cdm.json/ShipmentRelatedLocation\",\"name\":\"ShipmentLocationTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ShipmentLocationTimestamp\",\"attributeReference\":{\"entity\":\"ShipmentRelatedLocation.cdm.json/ShipmentRelatedLocation\",\"name\":\"ShipmentLocationTimestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"LocationId\",\"attributeReference\":{\"entity\":\"ShipmentRelatedLocation.cdm.json/ShipmentRelatedLocation\",\"name\":\"LocationId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ShipmentLocationNote\",\"attributeReference\":{\"entity\":\"ShipmentRelatedLocation.cdm.json/ShipmentRelatedLocation\",\"name\":\"ShipmentLocationNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024}]}}}",
+			"Description": "The locations associated with a Shipment.",
+			"DisplayFolderInfo": "{\"name\":\"Shipping\",\"colorCode\":\"#000B42\"}",
+			"PrimaryKeys": "ShipmentId,ShipmentLocationTypeId,ShipmentLocationTimestamp"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

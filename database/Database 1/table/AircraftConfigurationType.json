@@ -1,0 +1,86 @@
+{
+	"name": "AircraftConfigurationType",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "AircraftConfigurationType",
+		"Description": "The type of configuration of the associated aircraft.\n\nEx:\n\nCARGO AIRCRAFT\nAircraft for the carriage of cargo only, rather than the combination of passengers and cargo.  Cargo aircraft carry palletized or containerized traffic on the main deck and either unitized or bulk cargo on the lower deck.  Cargo aircraft are normally equipped with special cargo loading systems on the main deck.  Also referred to as freighters or all-cargo aircraft.\n\nCOMBI AIRCRAFT\nAn airplane configured to carry both passengers and unitized cargo on the main deck.\n\nCONVERTIBLE AIRCRAFT\nAn airplane which can be converted from an all-passenger configuration to an all-cargo configuration or vice-versa, or to various configurations of passengers and cargo.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "AircraftConfigurationTypeId",
+					"Description": "The unique identifier of an aircraft configuration type.",
+					"BaseAttributeReference": {
+						"Entity": "AircraftConfigurationType.cdm.json/AircraftConfigurationType",
+						"Name": "AircraftConfigurationTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "AircraftConfigurationTypeName",
+					"Description": "The name of an aircraft configuration type.",
+					"BaseAttributeReference": {
+						"Entity": "AircraftConfigurationType.cdm.json/AircraftConfigurationType",
+						"Name": "AircraftConfigurationTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "AircraftConfigurationTypeDescription",
+					"Description": "The description of an aircraft configuration type.",
+					"BaseAttributeReference": {
+						"Entity": "AircraftConfigurationType.cdm.json/AircraftConfigurationType",
+						"Name": "AircraftConfigurationTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"AircraftConfigurationTypeId\":{\"entity\":\"AircraftConfigurationType.cdm.json/AircraftConfigurationType\",\"name\":\"AircraftConfigurationTypeId\"},\"AircraftConfigurationTypeName\":{\"entity\":\"AircraftConfigurationType.cdm.json/AircraftConfigurationType\",\"name\":\"AircraftConfigurationTypeName\"},\"AircraftConfigurationTypeDescription\":{\"entity\":\"AircraftConfigurationType.cdm.json/AircraftConfigurationType\",\"name\":\"AircraftConfigurationTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"AircraftConfigurationType\",\"path\":\"AircraftConfigurationType.cdm.json/AircraftConfigurationType\"},\"description\":\"The type of configuration of the associated aircraft.\\n\\nEx:\\n\\nCARGO AIRCRAFT\\nAircraft for the carriage of cargo only, rather than the combination of passengers and cargo.  Cargo aircraft carry palletized or containerized traffic on the main deck and either unitized or bulk cargo on the lower deck.  Cargo aircraft are normally equipped with special cargo loading systems on the main deck.  Also referred to as freighters or all-cargo aircraft.\\n\\nCOMBI AIRCRAFT\\nAn airplane configured to carry both passengers and unitized cargo on the main deck.\\n\\nCONVERTIBLE AIRCRAFT\\nAn airplane which can be converted from an all-passenger configuration to an all-cargo configuration or vice-versa, or to various configurations of passengers and cargo.\",\"primaryKey\":[\"AircraftConfigurationTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"AircraftConfigurationTypeId\",\"attributeReference\":{\"entity\":\"AircraftConfigurationType.cdm.json/AircraftConfigurationType\",\"name\":\"AircraftConfigurationTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"AircraftConfigurationTypeName\",\"attributeReference\":{\"entity\":\"AircraftConfigurationType.cdm.json/AircraftConfigurationType\",\"name\":\"AircraftConfigurationTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"AircraftConfigurationTypeDescription\",\"attributeReference\":{\"entity\":\"AircraftConfigurationType.cdm.json/AircraftConfigurationType\",\"name\":\"AircraftConfigurationTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512}]}}}",
+			"Description": "The type of configuration of the associated aircraft.\n\nEx:\n\nCARGO AIRCRAFT\nAircraft for the carriage of cargo only, rather than the combination of passengers and cargo.  Cargo aircraft carry palletized or containerized traffic on the main deck and either unitized or bulk cargo on the lower deck.  Cargo aircraft are normally equipped with special cargo loading systems on the main deck.  Also referred to as freighters or all-cargo aircraft.\n\nCOMBI AIRCRAFT\nAn airplane configured to carry both passengers and unitized cargo on the main deck.\n\nCONVERTIBLE AIRCRAFT\nAn airplane which can be converted from an all-passenger configuration to an all-cargo configuration or vice-versa, or to various configurations of passengers and cargo.",
+			"DisplayFolderInfo": "{\"name\":\"Shipping\",\"colorCode\":\"#000B42\"}",
+			"PrimaryKeys": "AircraftConfigurationTypeId"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

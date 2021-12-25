@@ -1,0 +1,26 @@
+{
+	"name": "relationship-jnnzmchrhn",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "relationship-jnnzmchrhn",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "WatercraftEngine",
+		"ToTableName": "TowboatEngine",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "EngineId",
+				"ToColumnName": "EngineId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"WatercraftEngine.cdm.json/WatercraftEngine\",\"toEntity\":\"TowboatEngine.cdm.json/TowboatEngine\",\"joinPairs\":[{\"fromAttribute\":\"EngineId\",\"toAttribute\":\"EngineId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

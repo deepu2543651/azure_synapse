@@ -1,0 +1,86 @@
+{
+	"name": "ShipmentDamagePartyRelationshipType",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "ShipmentDamagePartyRelationshipType",
+		"Description": "The nature of the relationship between the Shipment Damage and the related party.\n\nEx:\n- Inspected-by Party\n- Authorized-By Party\n- Report-By Party",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ShipmentDamagePartyRelationshipTypeId",
+					"Description": "The unique identifier of a Shipment Damage Party Relationship Type.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentDamagePartyRelationshipType.cdm.json/ShipmentDamagePartyRelationshipType",
+						"Name": "ShipmentDamagePartyRelationshipTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ShipmentDamagePartyRelationshipTypeName",
+					"Description": "The name of a Shipment Damage Party Relationship Type.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentDamagePartyRelationshipType.cdm.json/ShipmentDamagePartyRelationshipType",
+						"Name": "ShipmentDamagePartyRelationshipTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ShipmentDamagePartyRelationshipTypeDescription",
+					"Description": "The description of a Shipment Damage Party Relationship Type.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentDamagePartyRelationshipType.cdm.json/ShipmentDamagePartyRelationshipType",
+						"Name": "ShipmentDamagePartyRelationshipTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ShipmentDamagePartyRelationshipTypeId\":{\"entity\":\"ShipmentDamagePartyRelationshipType.cdm.json/ShipmentDamagePartyRelationshipType\",\"name\":\"ShipmentDamagePartyRelationshipTypeId\"},\"ShipmentDamagePartyRelationshipTypeName\":{\"entity\":\"ShipmentDamagePartyRelationshipType.cdm.json/ShipmentDamagePartyRelationshipType\",\"name\":\"ShipmentDamagePartyRelationshipTypeName\"},\"ShipmentDamagePartyRelationshipTypeDescription\":{\"entity\":\"ShipmentDamagePartyRelationshipType.cdm.json/ShipmentDamagePartyRelationshipType\",\"name\":\"ShipmentDamagePartyRelationshipTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"ShipmentDamagePartyRelationshipType\",\"path\":\"ShipmentDamagePartyRelationshipType.cdm.json/ShipmentDamagePartyRelationshipType\"},\"description\":\"The nature of the relationship between the Shipment Damage and the related party.\\n\\nEx:\\n- Inspected-by Party\\n- Authorized-By Party\\n- Report-By Party\",\"primaryKey\":[\"ShipmentDamagePartyRelationshipTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"ShipmentDamagePartyRelationshipTypeId\",\"attributeReference\":{\"entity\":\"ShipmentDamagePartyRelationshipType.cdm.json/ShipmentDamagePartyRelationshipType\",\"name\":\"ShipmentDamagePartyRelationshipTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ShipmentDamagePartyRelationshipTypeName\",\"attributeReference\":{\"entity\":\"ShipmentDamagePartyRelationshipType.cdm.json/ShipmentDamagePartyRelationshipType\",\"name\":\"ShipmentDamagePartyRelationshipTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"ShipmentDamagePartyRelationshipTypeDescription\",\"attributeReference\":{\"entity\":\"ShipmentDamagePartyRelationshipType.cdm.json/ShipmentDamagePartyRelationshipType\",\"name\":\"ShipmentDamagePartyRelationshipTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512}]}}}",
+			"Description": "The nature of the relationship between the Shipment Damage and the related party.\n\nEx:\n- Inspected-by Party\n- Authorized-By Party\n- Report-By Party",
+			"DisplayFolderInfo": "{\"name\":\"Shipping\",\"colorCode\":\"#000B42\"}",
+			"PrimaryKeys": "ShipmentDamagePartyRelationshipTypeId"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

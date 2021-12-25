@@ -1,0 +1,26 @@
+{
+	"name": "relationship-odnvpyvspe",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "relationship-odnvpyvspe",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Vehicle",
+		"ToTableName": "ShipmentRouteLegEquipmentSubstitution",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "VehicleId",
+				"ToColumnName": "SubstitutionVehicleId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Vehicle.cdm.json/Vehicle\",\"toEntity\":\"ShipmentRouteLegEquipmentSubstitution.cdm.json/ShipmentRouteLegEquipmentSubstitution\",\"joinPairs\":[{\"fromAttribute\":\"VehicleId\",\"toAttribute\":\"SubstitutionVehicleId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

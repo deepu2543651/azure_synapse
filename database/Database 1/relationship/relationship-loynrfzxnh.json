@@ -1,0 +1,26 @@
+{
+	"name": "relationship-loynrfzxnh",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "relationship-loynrfzxnh",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "BarCodeStandard",
+		"ToTableName": "BarCode",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "BarCodeStandardId",
+				"ToColumnName": "BarCodeStandardId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"BarCodeStandard.cdm.json/BarCodeStandard\",\"toEntity\":\"BarCode.cdm.json/BarCode\",\"joinPairs\":[{\"fromAttribute\":\"BarCodeStandardId\",\"toAttribute\":\"BarCodeStandardId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

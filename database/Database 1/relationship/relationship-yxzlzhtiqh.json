@@ -1,0 +1,74 @@
+{
+	"name": "relationship-yxzlzhtiqh",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "relationship-yxzlzhtiqh",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "CarrierRouteTariffSchedule",
+		"ToTableName": "CarrierRouteCustomerTariffSchedule",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "CargoTypeId",
+				"ToColumnName": "CargoTypeId"
+			},
+			{
+				"FromColumnName": "CarrierId",
+				"ToColumnName": "CarrierId"
+			},
+			{
+				"FromColumnName": "CarrierRouteId",
+				"ToColumnName": "CarrierRouteId"
+			},
+			{
+				"FromColumnName": "InsuranceOptionId",
+				"ToColumnName": "InsuranceOptionId"
+			},
+			{
+				"FromColumnName": "IsoCurrencyCode",
+				"ToColumnName": "IsoCurrencyCode"
+			},
+			{
+				"FromColumnName": "MaximumUnitsOfMeasure",
+				"ToColumnName": "MaximumUnitsOfMeasure"
+			},
+			{
+				"FromColumnName": "MinimumUnitsOfMeasure",
+				"ToColumnName": "MinimumUnitsOfMeasure"
+			},
+			{
+				"FromColumnName": "PackingTypeId",
+				"ToColumnName": "PackingTypeId"
+			},
+			{
+				"FromColumnName": "PeriodStartTimestamp",
+				"ToColumnName": "PeriodStartTimestamp"
+			},
+			{
+				"FromColumnName": "ShipmentMethodId",
+				"ToColumnName": "ShipmentMethodId"
+			},
+			{
+				"FromColumnName": "ShipmentServiceTypeId",
+				"ToColumnName": "ShipmentServiceTypeId"
+			},
+			{
+				"FromColumnName": "ShipmentTermId",
+				"ToColumnName": "ShipmentTermId"
+			},
+			{
+				"FromColumnName": "UnitOfMeasureId",
+				"ToColumnName": "UnitOfMeasureId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"CarrierRouteTariffSchedule.cdm.json/CarrierRouteTariffSchedule\",\"toEntity\":\"CarrierRouteCustomerTariffSchedule.cdm.json/CarrierRouteCustomerTariffSchedule\",\"joinPairs\":[{\"fromAttribute\":\"CargoTypeId\",\"toAttribute\":\"CargoTypeId\"},{\"fromAttribute\":\"CarrierId\",\"toAttribute\":\"CarrierId\"},{\"fromAttribute\":\"CarrierRouteId\",\"toAttribute\":\"CarrierRouteId\"},{\"fromAttribute\":\"InsuranceOptionId\",\"toAttribute\":\"InsuranceOptionId\"},{\"fromAttribute\":\"IsoCurrencyCode\",\"toAttribute\":\"IsoCurrencyCode\"},{\"fromAttribute\":\"MaximumUnitsOfMeasure\",\"toAttribute\":\"MaximumUnitsOfMeasure\"},{\"fromAttribute\":\"MinimumUnitsOfMeasure\",\"toAttribute\":\"MinimumUnitsOfMeasure\"},{\"fromAttribute\":\"PackingTypeId\",\"toAttribute\":\"PackingTypeId\"},{\"fromAttribute\":\"PeriodStartTimestamp\",\"toAttribute\":\"PeriodStartTimestamp\"},{\"fromAttribute\":\"ShipmentMethodId\",\"toAttribute\":\"ShipmentMethodId\"},{\"fromAttribute\":\"ShipmentServiceTypeId\",\"toAttribute\":\"ShipmentServiceTypeId\"},{\"fromAttribute\":\"ShipmentTermId\",\"toAttribute\":\"ShipmentTermId\"},{\"fromAttribute\":\"UnitOfMeasureId\",\"toAttribute\":\"UnitOfMeasureId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

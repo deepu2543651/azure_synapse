@@ -1,0 +1,30 @@
+{
+	"name": "relationship-kwinzpwbhg",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "relationship-kwinzpwbhg",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "PalletType",
+		"ToTableName": "SerializedPallet",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ItemSku",
+				"ToColumnName": "ItemSku"
+			},
+			{
+				"FromColumnName": "PalletTypeId",
+				"ToColumnName": "PalletTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"PalletType.cdm.json/PalletType\",\"toEntity\":\"SerializedPallet.cdm.json/SerializedPallet\",\"joinPairs\":[{\"fromAttribute\":\"ItemSku\",\"toAttribute\":\"ItemSku\"},{\"fromAttribute\":\"PalletTypeId\",\"toAttribute\":\"PalletTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

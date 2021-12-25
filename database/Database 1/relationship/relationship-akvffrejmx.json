@@ -1,0 +1,26 @@
+{
+	"name": "relationship-akvffrejmx",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "relationship-akvffrejmx",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "VesselType",
+		"ToTableName": "Vessel",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "VesselTypeId",
+				"ToColumnName": "VesselTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"VesselType.cdm.json/VesselType\",\"toEntity\":\"Vessel.cdm.json/Vessel\",\"joinPairs\":[{\"fromAttribute\":\"VesselTypeId\",\"toAttribute\":\"VesselTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

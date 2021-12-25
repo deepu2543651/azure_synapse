@@ -1,0 +1,86 @@
+{
+	"name": "TrainScheduleLegPartyRelationshipType",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "TrainScheduleLegPartyRelationshipType",
+		"Description": "The nature of the relationship between a train schedule leg and a related party.\n\nEx:\n- Engineer\n- Brakeman",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "TrainScheduleLegPartyRelationshipTypeId",
+					"Description": "The unique identifier of a Train Schedule Leg Party relationship type.",
+					"BaseAttributeReference": {
+						"Entity": "TrainScheduleLegPartyRelationshipType.cdm.json/TrainScheduleLegPartyRelationshipType",
+						"Name": "TrainScheduleLegPartyRelationshipTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "TrainScheduleLegPartyRelationshipTypeName",
+					"Description": "The name of a Train Schedule Leg Party relationship type.",
+					"BaseAttributeReference": {
+						"Entity": "TrainScheduleLegPartyRelationshipType.cdm.json/TrainScheduleLegPartyRelationshipType",
+						"Name": "TrainScheduleLegPartyRelationshipTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "TrainScheduleLegPartyRelationshipTypeDescription",
+					"Description": "The description of a Train Schedule Leg Party relationship type.",
+					"BaseAttributeReference": {
+						"Entity": "TrainScheduleLegPartyRelationshipType.cdm.json/TrainScheduleLegPartyRelationshipType",
+						"Name": "TrainScheduleLegPartyRelationshipTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"TrainScheduleLegPartyRelationshipTypeId\":{\"entity\":\"TrainScheduleLegPartyRelationshipType.cdm.json/TrainScheduleLegPartyRelationshipType\",\"name\":\"TrainScheduleLegPartyRelationshipTypeId\"},\"TrainScheduleLegPartyRelationshipTypeName\":{\"entity\":\"TrainScheduleLegPartyRelationshipType.cdm.json/TrainScheduleLegPartyRelationshipType\",\"name\":\"TrainScheduleLegPartyRelationshipTypeName\"},\"TrainScheduleLegPartyRelationshipTypeDescription\":{\"entity\":\"TrainScheduleLegPartyRelationshipType.cdm.json/TrainScheduleLegPartyRelationshipType\",\"name\":\"TrainScheduleLegPartyRelationshipTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"TrainScheduleLegPartyRelationshipType\",\"path\":\"TrainScheduleLegPartyRelationshipType.cdm.json/TrainScheduleLegPartyRelationshipType\"},\"description\":\"The nature of the relationship between a train schedule leg and a related party.\\n\\nEx:\\n- Engineer\\n- Brakeman\",\"primaryKey\":[\"TrainScheduleLegPartyRelationshipTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"TrainScheduleLegPartyRelationshipTypeId\",\"attributeReference\":{\"entity\":\"TrainScheduleLegPartyRelationshipType.cdm.json/TrainScheduleLegPartyRelationshipType\",\"name\":\"TrainScheduleLegPartyRelationshipTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"TrainScheduleLegPartyRelationshipTypeName\",\"attributeReference\":{\"entity\":\"TrainScheduleLegPartyRelationshipType.cdm.json/TrainScheduleLegPartyRelationshipType\",\"name\":\"TrainScheduleLegPartyRelationshipTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"TrainScheduleLegPartyRelationshipTypeDescription\",\"attributeReference\":{\"entity\":\"TrainScheduleLegPartyRelationshipType.cdm.json/TrainScheduleLegPartyRelationshipType\",\"name\":\"TrainScheduleLegPartyRelationshipTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512}]}}}",
+			"Description": "The nature of the relationship between a train schedule leg and a related party.\n\nEx:\n- Engineer\n- Brakeman",
+			"DisplayFolderInfo": "{\"name\":\"Shipping\",\"colorCode\":\"#000B42\"}",
+			"PrimaryKeys": "TrainScheduleLegPartyRelationshipTypeId"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

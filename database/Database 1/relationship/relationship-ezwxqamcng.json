@@ -1,0 +1,26 @@
+{
+	"name": "relationship-ezwxqamcng",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "relationship-ezwxqamcng",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "AirWaybillType",
+		"ToTableName": "AirWaybill",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "AirWaybillTypeId",
+				"ToColumnName": "AirWaybillTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"AirWaybillType.cdm.json/AirWaybillType\",\"toEntity\":\"AirWaybill.cdm.json/AirWaybill\",\"joinPairs\":[{\"fromAttribute\":\"AirWaybillTypeId\",\"toAttribute\":\"AirWaybillTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

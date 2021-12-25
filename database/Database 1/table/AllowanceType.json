@@ -1,0 +1,86 @@
+{
+	"name": "AllowanceType",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "AllowanceType",
+		"Description": "The specific type of Allowances that may result in an Allowance be credited for a Shipment.\n\nEx:\n- Faulty packaging\n- Shipment of goods not meeting buyers specifications\n- Late Shipment\n- Concealed Damage",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "AllowanceTypeId",
+					"Description": "The unique identifier of an Allowance Type.",
+					"BaseAttributeReference": {
+						"Entity": "AllowanceType.cdm.json/AllowanceType",
+						"Name": "AllowanceTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "AllowanceTypeName",
+					"Description": "The name of an Allowance Type.",
+					"BaseAttributeReference": {
+						"Entity": "AllowanceType.cdm.json/AllowanceType",
+						"Name": "AllowanceTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "AllowanceTypeDescription",
+					"Description": "The description of an Allowance Type.",
+					"BaseAttributeReference": {
+						"Entity": "AllowanceType.cdm.json/AllowanceType",
+						"Name": "AllowanceTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"AllowanceTypeId\":{\"entity\":\"AllowanceType.cdm.json/AllowanceType\",\"name\":\"AllowanceTypeId\"},\"AllowanceTypeName\":{\"entity\":\"AllowanceType.cdm.json/AllowanceType\",\"name\":\"AllowanceTypeName\"},\"AllowanceTypeDescription\":{\"entity\":\"AllowanceType.cdm.json/AllowanceType\",\"name\":\"AllowanceTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"AllowanceType\",\"path\":\"AllowanceType.cdm.json/AllowanceType\"},\"description\":\"The specific type of Allowances that may result in an Allowance be credited for a Shipment.\\n\\nEx:\\n- Faulty packaging\\n- Shipment of goods not meeting buyers specifications\\n- Late Shipment\\n- Concealed Damage\",\"primaryKey\":[\"AllowanceTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"AllowanceTypeId\",\"attributeReference\":{\"entity\":\"AllowanceType.cdm.json/AllowanceType\",\"name\":\"AllowanceTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"AllowanceTypeName\",\"attributeReference\":{\"entity\":\"AllowanceType.cdm.json/AllowanceType\",\"name\":\"AllowanceTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"AllowanceTypeDescription\",\"attributeReference\":{\"entity\":\"AllowanceType.cdm.json/AllowanceType\",\"name\":\"AllowanceTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512}]}}}",
+			"Description": "The specific type of Allowances that may result in an Allowance be credited for a Shipment.\n\nEx:\n- Faulty packaging\n- Shipment of goods not meeting buyers specifications\n- Late Shipment\n- Concealed Damage",
+			"DisplayFolderInfo": "{\"name\":\"Shipping\",\"colorCode\":\"#000B42\"}",
+			"PrimaryKeys": "AllowanceTypeId"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

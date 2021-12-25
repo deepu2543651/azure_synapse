@@ -1,0 +1,86 @@
+{
+	"name": "InformationAcquisitionMethod",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "InformationAcquisitionMethod",
+		"Description": "The method for acquiring shipment location data.\n\nEx:\n- RFID \n- Visual inspection\n- Bar Code",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "InformationAcquisitionMethodId",
+					"Description": "The unique identifier of an Information Acquisition Method.",
+					"BaseAttributeReference": {
+						"Entity": "InformationAcquisitionMethod.cdm.json/InformationAcquisitionMethod",
+						"Name": "InformationAcquisitionMethodId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "InformationAcquisitionMethodName",
+					"Description": "The name of an Information Acquisition Method.",
+					"BaseAttributeReference": {
+						"Entity": "InformationAcquisitionMethod.cdm.json/InformationAcquisitionMethod",
+						"Name": "InformationAcquisitionMethodName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "InformationAcquisitionMethodDescription",
+					"Description": "The description of an Information Acquisition Method.",
+					"BaseAttributeReference": {
+						"Entity": "InformationAcquisitionMethod.cdm.json/InformationAcquisitionMethod",
+						"Name": "InformationAcquisitionMethodDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"InformationAcquisitionMethodId\":{\"entity\":\"InformationAcquisitionMethod.cdm.json/InformationAcquisitionMethod\",\"name\":\"InformationAcquisitionMethodId\"},\"InformationAcquisitionMethodName\":{\"entity\":\"InformationAcquisitionMethod.cdm.json/InformationAcquisitionMethod\",\"name\":\"InformationAcquisitionMethodName\"},\"InformationAcquisitionMethodDescription\":{\"entity\":\"InformationAcquisitionMethod.cdm.json/InformationAcquisitionMethod\",\"name\":\"InformationAcquisitionMethodDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"InformationAcquisitionMethod\",\"path\":\"InformationAcquisitionMethod.cdm.json/InformationAcquisitionMethod\"},\"description\":\"The method for acquiring shipment location data.\\n\\nEx:\\n- RFID \\n- Visual inspection\\n- Bar Code\",\"primaryKey\":[\"InformationAcquisitionMethodId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"InformationAcquisitionMethodId\",\"attributeReference\":{\"entity\":\"InformationAcquisitionMethod.cdm.json/InformationAcquisitionMethod\",\"name\":\"InformationAcquisitionMethodId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"InformationAcquisitionMethodName\",\"attributeReference\":{\"entity\":\"InformationAcquisitionMethod.cdm.json/InformationAcquisitionMethod\",\"name\":\"InformationAcquisitionMethodName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"InformationAcquisitionMethodDescription\",\"attributeReference\":{\"entity\":\"InformationAcquisitionMethod.cdm.json/InformationAcquisitionMethod\",\"name\":\"InformationAcquisitionMethodDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512}]}}}",
+			"Description": "The method for acquiring shipment location data.\n\nEx:\n- RFID \n- Visual inspection\n- Bar Code",
+			"DisplayFolderInfo": "{\"name\":\"Shipping\",\"colorCode\":\"#000B42\"}",
+			"PrimaryKeys": "InformationAcquisitionMethodId"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

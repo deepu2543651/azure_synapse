@@ -1,0 +1,26 @@
+{
+	"name": "relationship-ywcrcnvjhj",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "relationship-ywcrcnvjhj",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "ExportProductGroup",
+		"ToTableName": "ExportControlClassificationNumber",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ExportProductGroupId",
+				"ToColumnName": "ExportProductGroupId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"ExportProductGroup.cdm.json/ExportProductGroup\",\"toEntity\":\"ExportControlClassificationNumber.cdm.json/ExportControlClassificationNumber\",\"joinPairs\":[{\"fromAttribute\":\"ExportProductGroupId\",\"toAttribute\":\"ExportProductGroupId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

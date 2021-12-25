@@ -1,0 +1,30 @@
+{
+	"name": "relationship-vnkszvbcsi",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "relationship-vnkszvbcsi",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "ShipmentItem",
+		"ToTableName": "ShipmentItemConsolidation",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ShipmentId",
+				"ToColumnName": "ConsolidatedShipmentId"
+			},
+			{
+				"FromColumnName": "ShipmentItemNumber",
+				"ToColumnName": "ConsolidatedShipmentItemNumber"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"ShipmentItem.cdm.json/ShipmentItem\",\"toEntity\":\"ShipmentItemConsolidation.cdm.json/ShipmentItemConsolidation\",\"joinPairs\":[{\"fromAttribute\":\"ShipmentId\",\"toAttribute\":\"ConsolidatedShipmentId\"},{\"fromAttribute\":\"ShipmentItemNumber\",\"toAttribute\":\"ConsolidatedShipmentItemNumber\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

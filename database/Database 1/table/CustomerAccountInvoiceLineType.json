@@ -1,0 +1,86 @@
+{
+	"name": "CustomerAccountInvoiceLineType",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "CustomerAccountInvoiceLineType",
+		"Description": "The function of the associated Customer Account Invoice Line.\n\nEx:\n- Shipping Charge\n- Shipping Customs\n- Shipping Service\n- Shipping Insurance",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "CustomerAccountInvoiceLineTypeId",
+					"Description": "The unique identifier of a Customer Account Invoice Item Type.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountInvoiceLineType.cdm.json/CustomerAccountInvoiceLineType",
+						"Name": "CustomerAccountInvoiceLineTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "CustomerAccountInvoiceLineTypeName",
+					"Description": "The name of the Customer Account Invoice Item Type.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountInvoiceLineType.cdm.json/CustomerAccountInvoiceLineType",
+						"Name": "CustomerAccountInvoiceLineTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "CustomerAccountInvoiceLineTypeDescription",
+					"Description": "The description of the Customer Account Invoice Item Type.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountInvoiceLineType.cdm.json/CustomerAccountInvoiceLineType",
+						"Name": "CustomerAccountInvoiceLineTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"CustomerAccountInvoiceLineTypeId\":{\"entity\":\"CustomerAccountInvoiceLineType.cdm.json/CustomerAccountInvoiceLineType\",\"name\":\"CustomerAccountInvoiceLineTypeId\"},\"CustomerAccountInvoiceLineTypeName\":{\"entity\":\"CustomerAccountInvoiceLineType.cdm.json/CustomerAccountInvoiceLineType\",\"name\":\"CustomerAccountInvoiceLineTypeName\"},\"CustomerAccountInvoiceLineTypeDescription\":{\"entity\":\"CustomerAccountInvoiceLineType.cdm.json/CustomerAccountInvoiceLineType\",\"name\":\"CustomerAccountInvoiceLineTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"CustomerAccountInvoiceLineType\",\"path\":\"CustomerAccountInvoiceLineType.cdm.json/CustomerAccountInvoiceLineType\"},\"description\":\"The function of the associated Customer Account Invoice Line.\\n\\nEx:\\n- Shipping Charge\\n- Shipping Customs\\n- Shipping Service\\n- Shipping Insurance\",\"primaryKey\":[\"CustomerAccountInvoiceLineTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"CustomerAccountInvoiceLineTypeId\",\"attributeReference\":{\"entity\":\"CustomerAccountInvoiceLineType.cdm.json/CustomerAccountInvoiceLineType\",\"name\":\"CustomerAccountInvoiceLineTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"CustomerAccountInvoiceLineTypeName\",\"attributeReference\":{\"entity\":\"CustomerAccountInvoiceLineType.cdm.json/CustomerAccountInvoiceLineType\",\"name\":\"CustomerAccountInvoiceLineTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"CustomerAccountInvoiceLineTypeDescription\",\"attributeReference\":{\"entity\":\"CustomerAccountInvoiceLineType.cdm.json/CustomerAccountInvoiceLineType\",\"name\":\"CustomerAccountInvoiceLineTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512}]}}}",
+			"Description": "The function of the associated Customer Account Invoice Line.\n\nEx:\n- Shipping Charge\n- Shipping Customs\n- Shipping Service\n- Shipping Insurance",
+			"DisplayFolderInfo": "{\"name\":\"Customer Account\",\"colorCode\":\"#022F22\"}",
+			"PrimaryKeys": "CustomerAccountInvoiceLineTypeId"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

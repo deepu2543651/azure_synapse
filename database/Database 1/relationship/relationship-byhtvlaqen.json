@@ -1,0 +1,26 @@
+{
+	"name": "relationship-byhtvlaqen",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "relationship-byhtvlaqen",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Route",
+		"ToTableName": "CarrierRoute",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "RouteId",
+				"ToColumnName": "RouteId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Route.cdm.json/Route\",\"toEntity\":\"CarrierRoute.cdm.json/CarrierRoute\",\"joinPairs\":[{\"fromAttribute\":\"RouteId\",\"toAttribute\":\"RouteId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

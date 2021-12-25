@@ -1,0 +1,86 @@
+{
+	"name": "ExportProductGroup",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "ExportProductGroup",
+		"Description": "A U.S. Government grouping of products based upon common functions or characteristics.\n\nThe Product Group is used to build the 5-character number for every export product identifying the category, product group, type of control and country group level of control specified in the US Commerce Control List.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ExportProductGroupId",
+					"Description": "The unique identifier of an Export Product Group.",
+					"BaseAttributeReference": {
+						"Entity": "ExportProductGroup.cdm.json/ExportProductGroup",
+						"Name": "ExportProductGroupId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ExportProductGroupName",
+					"Description": "The name of an Export Product Group.",
+					"BaseAttributeReference": {
+						"Entity": "ExportProductGroup.cdm.json/ExportProductGroup",
+						"Name": "ExportProductGroupName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ExportProductGroupDescription",
+					"Description": "The description of an Export Product Group.",
+					"BaseAttributeReference": {
+						"Entity": "ExportProductGroup.cdm.json/ExportProductGroup",
+						"Name": "ExportProductGroupDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ExportProductGroupId\":{\"entity\":\"ExportProductGroup.cdm.json/ExportProductGroup\",\"name\":\"ExportProductGroupId\"},\"ExportProductGroupName\":{\"entity\":\"ExportProductGroup.cdm.json/ExportProductGroup\",\"name\":\"ExportProductGroupName\"},\"ExportProductGroupDescription\":{\"entity\":\"ExportProductGroup.cdm.json/ExportProductGroup\",\"name\":\"ExportProductGroupDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"ExportProductGroup\",\"path\":\"ExportProductGroup.cdm.json/ExportProductGroup\"},\"description\":\"A U.S. Government grouping of products based upon common functions or characteristics.\\n\\nThe Product Group is used to build the 5-character number for every export product identifying the category, product group, type of control and country group level of control specified in the US Commerce Control List.\",\"primaryKey\":[\"ExportProductGroupId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"ExportProductGroupId\",\"attributeReference\":{\"entity\":\"ExportProductGroup.cdm.json/ExportProductGroup\",\"name\":\"ExportProductGroupId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ExportProductGroupName\",\"attributeReference\":{\"entity\":\"ExportProductGroup.cdm.json/ExportProductGroup\",\"name\":\"ExportProductGroupName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"ExportProductGroupDescription\",\"attributeReference\":{\"entity\":\"ExportProductGroup.cdm.json/ExportProductGroup\",\"name\":\"ExportProductGroupDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512}]}}}",
+			"Description": "A U.S. Government grouping of products based upon common functions or characteristics.\n\nThe Product Group is used to build the 5-character number for every export product identifying the category, product group, type of control and country group level of control specified in the US Commerce Control List.",
+			"DisplayFolderInfo": "{\"name\":\"Shipping\",\"colorCode\":\"#000B42\"}",
+			"PrimaryKeys": "ExportProductGroupId"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

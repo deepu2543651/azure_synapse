@@ -1,0 +1,26 @@
+{
+	"name": "relationship-omrzfckkjv",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "relationship-omrzfckkjv",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "InsuranceCoverageType",
+		"ToTableName": "InsurancePolicyCoverage",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "InsuranceCoverageTypeId",
+				"ToColumnName": "InsuranceCoverageTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"InsuranceCoverageType.cdm.json/InsuranceCoverageType\",\"toEntity\":\"InsurancePolicyCoverage.cdm.json/InsurancePolicyCoverage\",\"joinPairs\":[{\"fromAttribute\":\"InsuranceCoverageTypeId\",\"toAttribute\":\"InsuranceCoverageTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

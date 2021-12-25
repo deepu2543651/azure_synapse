@@ -1,0 +1,86 @@
+{
+	"name": "CustomerAccountStatusType",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "CustomerAccountStatusType",
+		"Description": "A type of status that may be associated with a  Customer Account for a period of time.\n\nEx:\n- Active\n- Current\n- Dormant\n- Blocked\n- Exceeds requirements\n- Needs to be funded\n- Closed\n- Inactive\n- Frozen\n- Collection Suspended\n- Suspended\n- Delinquent\n- In Default\n- Unknown",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "CustomerAccountStatusTypeId",
+					"Description": "The unique identifier of a Customer Account Status Type.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountStatusType.cdm.json/CustomerAccountStatusType",
+						"Name": "CustomerAccountStatusTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "CustomerAccountStatusTypeName",
+					"Description": "The name of a Customer Account Status Type.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountStatusType.cdm.json/CustomerAccountStatusType",
+						"Name": "CustomerAccountStatusTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "CustomerAccountStatusTypeDescription",
+					"Description": "The description of a Customer Account Status Type.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountStatusType.cdm.json/CustomerAccountStatusType",
+						"Name": "CustomerAccountStatusTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"CustomerAccountStatusTypeId\":{\"entity\":\"CustomerAccountStatusType.cdm.json/CustomerAccountStatusType\",\"name\":\"CustomerAccountStatusTypeId\"},\"CustomerAccountStatusTypeName\":{\"entity\":\"CustomerAccountStatusType.cdm.json/CustomerAccountStatusType\",\"name\":\"CustomerAccountStatusTypeName\"},\"CustomerAccountStatusTypeDescription\":{\"entity\":\"CustomerAccountStatusType.cdm.json/CustomerAccountStatusType\",\"name\":\"CustomerAccountStatusTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"CustomerAccountStatusType\",\"path\":\"CustomerAccountStatusType.cdm.json/CustomerAccountStatusType\"},\"description\":\"A type of status that may be associated with a  Customer Account for a period of time.\\n\\nEx:\\n- Active\\n- Current\\n- Dormant\\n- Blocked\\n- Exceeds requirements\\n- Needs to be funded\\n- Closed\\n- Inactive\\n- Frozen\\n- Collection Suspended\\n- Suspended\\n- Delinquent\\n- In Default\\n- Unknown\",\"primaryKey\":[\"CustomerAccountStatusTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"CustomerAccountStatusTypeId\",\"attributeReference\":{\"entity\":\"CustomerAccountStatusType.cdm.json/CustomerAccountStatusType\",\"name\":\"CustomerAccountStatusTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"CustomerAccountStatusTypeName\",\"attributeReference\":{\"entity\":\"CustomerAccountStatusType.cdm.json/CustomerAccountStatusType\",\"name\":\"CustomerAccountStatusTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"CustomerAccountStatusTypeDescription\",\"attributeReference\":{\"entity\":\"CustomerAccountStatusType.cdm.json/CustomerAccountStatusType\",\"name\":\"CustomerAccountStatusTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512}]}}}",
+			"Description": "A type of status that may be associated with a  Customer Account for a period of time.\n\nEx:\n- Active\n- Current\n- Dormant\n- Blocked\n- Exceeds requirements\n- Needs to be funded\n- Closed\n- Inactive\n- Frozen\n- Collection Suspended\n- Suspended\n- Delinquent\n- In Default\n- Unknown",
+			"DisplayFolderInfo": "{\"name\":\"Customer Account\",\"colorCode\":\"#022F22\"}",
+			"PrimaryKeys": "CustomerAccountStatusTypeId"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

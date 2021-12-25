@@ -1,0 +1,26 @@
+{
+	"name": "relationship-rsbqppqmwv",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "relationship-rsbqppqmwv",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "LetterOfCreditCharacteristicType",
+		"ToTableName": "LetterOfCreditCharacteristic",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "LetterOfCreditCharacteristicTypeId",
+				"ToColumnName": "LetterOfCreditCharacteristicTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"LetterOfCreditCharacteristicType.cdm.json/LetterOfCreditCharacteristicType\",\"toEntity\":\"LetterOfCreditCharacteristic.cdm.json/LetterOfCreditCharacteristic\",\"joinPairs\":[{\"fromAttribute\":\"LetterOfCreditCharacteristicTypeId\",\"toAttribute\":\"LetterOfCreditCharacteristicTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

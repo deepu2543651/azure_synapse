@@ -1,0 +1,102 @@
+{
+	"name": "AircraftFamily",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "AircraftFamily",
+		"Description": "A family of aircrafts with similar design characteristics.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "AircraftFamilyId",
+					"Description": "The unique identifier of an Aircraft Family.",
+					"BaseAttributeReference": {
+						"Entity": "AircraftFamily.cdm.json/AircraftFamily",
+						"Name": "AircraftFamilyId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "AircraftFamilyName",
+					"Description": "The name of an Aircraft Family.",
+					"BaseAttributeReference": {
+						"Entity": "AircraftFamily.cdm.json/AircraftFamily",
+						"Name": "AircraftFamilyName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "AircraftFamilyDescription",
+					"Description": "The description of an Aircraft Family.",
+					"BaseAttributeReference": {
+						"Entity": "AircraftFamily.cdm.json/AircraftFamily",
+						"Name": "AircraftFamilyDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "AircraftManufacturerId",
+					"Description": "The unique identifier of an Aircraft Manufacturer.",
+					"BaseAttributeReference": {
+						"Entity": "AircraftFamily.cdm.json/AircraftFamily",
+						"Name": "AircraftManufacturerId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"AircraftFamilyId\":{\"entity\":\"AircraftFamily.cdm.json/AircraftFamily\",\"name\":\"AircraftFamilyId\"},\"AircraftFamilyName\":{\"entity\":\"AircraftFamily.cdm.json/AircraftFamily\",\"name\":\"AircraftFamilyName\"},\"AircraftFamilyDescription\":{\"entity\":\"AircraftFamily.cdm.json/AircraftFamily\",\"name\":\"AircraftFamilyDescription\"},\"AircraftManufacturerId\":{\"entity\":\"AircraftFamily.cdm.json/AircraftFamily\",\"name\":\"AircraftManufacturerId\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"AircraftFamily\",\"path\":\"AircraftFamily.cdm.json/AircraftFamily\"},\"description\":\"A family of aircrafts with similar design characteristics.\",\"primaryKey\":[\"AircraftFamilyId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"AircraftFamilyId\",\"attributeReference\":{\"entity\":\"AircraftFamily.cdm.json/AircraftFamily\",\"name\":\"AircraftFamilyId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"AircraftFamilyName\",\"attributeReference\":{\"entity\":\"AircraftFamily.cdm.json/AircraftFamily\",\"name\":\"AircraftFamilyName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"AircraftFamilyDescription\",\"attributeReference\":{\"entity\":\"AircraftFamily.cdm.json/AircraftFamily\",\"name\":\"AircraftFamilyDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512},{\"type\":\"Existing\",\"name\":\"AircraftManufacturerId\",\"attributeReference\":{\"entity\":\"AircraftFamily.cdm.json/AircraftFamily\",\"name\":\"AircraftManufacturerId\"},\"dataType\":\"integer\"}]}}}",
+			"Description": "A family of aircrafts with similar design characteristics.",
+			"DisplayFolderInfo": "{\"name\":\"Shipping\",\"colorCode\":\"#000B42\"}",
+			"PrimaryKeys": "AircraftFamilyId"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

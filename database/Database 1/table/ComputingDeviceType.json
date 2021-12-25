@@ -1,0 +1,86 @@
+{
+	"name": "ComputingDeviceType",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "ComputingDeviceType",
+		"Description": "The type of computing device used to connect to the web site.\n\nEx:\n- Desktop\n- Mobile\n- Tablet",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ComputingDeviceTypeId",
+					"Description": "The unique identifier of a Computing Device Type.",
+					"BaseAttributeReference": {
+						"Entity": "ComputingDeviceType.cdm.json/ComputingDeviceType",
+						"Name": "ComputingDeviceTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ComputingDeviceTypeName",
+					"Description": "The name of a Computing Device Type.",
+					"BaseAttributeReference": {
+						"Entity": "ComputingDeviceType.cdm.json/ComputingDeviceType",
+						"Name": "ComputingDeviceTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ComputingDeviceTypeDescription",
+					"Description": "The description of a Computing Device Type.",
+					"BaseAttributeReference": {
+						"Entity": "ComputingDeviceType.cdm.json/ComputingDeviceType",
+						"Name": "ComputingDeviceTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ComputingDeviceTypeId\":{\"entity\":\"ComputingDeviceType.cdm.json/ComputingDeviceType\",\"name\":\"ComputingDeviceTypeId\"},\"ComputingDeviceTypeName\":{\"entity\":\"ComputingDeviceType.cdm.json/ComputingDeviceType\",\"name\":\"ComputingDeviceTypeName\"},\"ComputingDeviceTypeDescription\":{\"entity\":\"ComputingDeviceType.cdm.json/ComputingDeviceType\",\"name\":\"ComputingDeviceTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"ComputingDeviceType\",\"path\":\"ComputingDeviceType.cdm.json/ComputingDeviceType\"},\"description\":\"The type of computing device used to connect to the web site.\\n\\nEx:\\n- Desktop\\n- Mobile\\n- Tablet\",\"primaryKey\":[\"ComputingDeviceTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"ComputingDeviceTypeId\",\"attributeReference\":{\"entity\":\"ComputingDeviceType.cdm.json/ComputingDeviceType\",\"name\":\"ComputingDeviceTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ComputingDeviceTypeName\",\"attributeReference\":{\"entity\":\"ComputingDeviceType.cdm.json/ComputingDeviceType\",\"name\":\"ComputingDeviceTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"ComputingDeviceTypeDescription\",\"attributeReference\":{\"entity\":\"ComputingDeviceType.cdm.json/ComputingDeviceType\",\"name\":\"ComputingDeviceTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512}]}}}",
+			"Description": "The type of computing device used to connect to the web site.\n\nEx:\n- Desktop\n- Mobile\n- Tablet",
+			"DisplayFolderInfo": "{\"name\":\"Customer Service & Contact Management\",\"colorCode\":\"#502006\"}",
+			"PrimaryKeys": "ComputingDeviceTypeId"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

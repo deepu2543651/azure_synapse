@@ -1,0 +1,596 @@
+{
+	"name": "Towboat",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "Towboat",
+		"Description": "A source of power that is used for towing barges.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "TowboatId",
+					"Description": "The unique identifier of a towboat.",
+					"BaseAttributeReference": {
+						"Entity": "Towboat.cdm.json/Towboat",
+						"Name": "TowboatId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "TowboatName",
+					"Description": "The name of the towboat.",
+					"BaseAttributeReference": {
+						"Entity": "Towboat.cdm.json/Towboat",
+						"Name": "TowboatName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "TowboatTypeId",
+					"Description": "The unique identifier of a towboat type.",
+					"BaseAttributeReference": {
+						"Entity": "Towboat.cdm.json/Towboat",
+						"Name": "TowboatTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "VesselIdentificationNumber",
+					"Description": "The Vessel Identification Number (VIN) is a 6-8 character alphanumeric string that is assigned to uniquely identify a water vessel.",
+					"BaseAttributeReference": {
+						"Entity": "Towboat.cdm.json/Towboat",
+						"Name": "VesselIdentificationNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "HullIdentificationNumber",
+					"Description": "The Hull Identification Number (HIN) is a 12 character serial number that uniquely identifies a water vessel.",
+					"BaseAttributeReference": {
+						"Entity": "Towboat.cdm.json/Towboat",
+						"Name": "HullIdentificationNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "InternationalMaritimeOrganizationNumber",
+					"Description": "A unique 7-digit reference for ships, registered ship owners and management companies. These numbers are assigned under the International Convention for the Safety of Life at Sea (SOLAS).",
+					"BaseAttributeReference": {
+						"Entity": "Towboat.cdm.json/Towboat",
+						"Name": "InternationalMaritimeOrganizationNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "VesselCallSign",
+					"Description": "Call signs are assigned as unique identifiers to ships and boats.",
+					"BaseAttributeReference": {
+						"Entity": "Towboat.cdm.json/Towboat",
+						"Name": "VesselCallSign"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "FlagOfCountryId",
+					"Description": "The unique identifier of the Country.",
+					"BaseAttributeReference": {
+						"Entity": "Towboat.cdm.json/Towboat",
+						"Name": "FlagOfCountryId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "BuildTimestamp",
+					"Description": "The timestamp of when the build was completed.",
+					"BaseAttributeReference": {
+						"Entity": "Towboat.cdm.json/Towboat",
+						"Name": "BuildTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "InServiceTimestamp",
+					"Description": "The timestamp of when the towboat was first put into service.",
+					"BaseAttributeReference": {
+						"Entity": "Towboat.cdm.json/Towboat",
+						"Name": "InServiceTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "OutOfServiceTimestamp",
+					"Description": "The timestamp of when the towboat was permanently put out of service.",
+					"BaseAttributeReference": {
+						"Entity": "Towboat.cdm.json/Towboat",
+						"Name": "OutOfServiceTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "ShipbuilderName",
+					"Description": "The name of the towboat's shipbuilder.",
+					"BaseAttributeReference": {
+						"Entity": "Towboat.cdm.json/Towboat",
+						"Name": "ShipbuilderName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "OwningPartyId",
+					"Description": "The unique identifier of a Party.",
+					"BaseAttributeReference": {
+						"Entity": "Towboat.cdm.json/Towboat",
+						"Name": "OwningPartyId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "TowboatOverallLength",
+					"Description": "The overall length of the towboat.",
+					"BaseAttributeReference": {
+						"Entity": "Towboat.cdm.json/Towboat",
+						"Name": "TowboatOverallLength"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "TowboatBeam",
+					"Description": "The width of a towboat.",
+					"BaseAttributeReference": {
+						"Entity": "Towboat.cdm.json/Towboat",
+						"Name": "TowboatBeam"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "TowboatMaximumDraft",
+					"Description": "The maximum draft of the towboat.",
+					"BaseAttributeReference": {
+						"Entity": "Towboat.cdm.json/Towboat",
+						"Name": "TowboatMaximumDraft"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "TowboatMinimumDraft",
+					"Description": "The draft of the towboat - without cargo.",
+					"BaseAttributeReference": {
+						"Entity": "Towboat.cdm.json/Towboat",
+						"Name": "TowboatMinimumDraft"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "LwhUnitOfMeasureId",
+					"Description": "The unique identifier of a Unit Of Measure.",
+					"BaseAttributeReference": {
+						"Entity": "Towboat.cdm.json/Towboat",
+						"Name": "LwhUnitOfMeasureId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "TowboatDisplacement",
+					"Description": "The maximum weight of the towboat and its contents.",
+					"BaseAttributeReference": {
+						"Entity": "Towboat.cdm.json/Towboat",
+						"Name": "TowboatDisplacement"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "TowboatGrossTonnage",
+					"Description": "The gross tonnage of the towboat.",
+					"BaseAttributeReference": {
+						"Entity": "Towboat.cdm.json/Towboat",
+						"Name": "TowboatGrossTonnage"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "TowboatDeadweight",
+					"Description": "The deadweight of the towboat.",
+					"BaseAttributeReference": {
+						"Entity": "Towboat.cdm.json/Towboat",
+						"Name": "TowboatDeadweight"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "TowboatBunkerCapacity",
+					"Description": "The bunker capacity.",
+					"BaseAttributeReference": {
+						"Entity": "Towboat.cdm.json/Towboat",
+						"Name": "TowboatBunkerCapacity"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "WeightUnitOfMeasureId",
+					"Description": "The unique identifier of a Unit Of Measure.",
+					"BaseAttributeReference": {
+						"Entity": "Towboat.cdm.json/Towboat",
+						"Name": "WeightUnitOfMeasureId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "TowboatDryCargoHoldsCapacity",
+					"Description": "The dry cargo holds capacity of the towboat.",
+					"BaseAttributeReference": {
+						"Entity": "Towboat.cdm.json/Towboat",
+						"Name": "TowboatDryCargoHoldsCapacity"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "VolumeUnitOfMeasureId",
+					"Description": "The unique identifier of a Unit Of Measure.",
+					"BaseAttributeReference": {
+						"Entity": "Towboat.cdm.json/Towboat",
+						"Name": "VolumeUnitOfMeasureId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "TowboatServiceSpeed",
+					"Description": "The service speed of the towboat.",
+					"BaseAttributeReference": {
+						"Entity": "Towboat.cdm.json/Towboat",
+						"Name": "TowboatServiceSpeed"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "TowboatMaximumSpeed",
+					"Description": "The towboat maximum speed.",
+					"BaseAttributeReference": {
+						"Entity": "Towboat.cdm.json/Towboat",
+						"Name": "TowboatMaximumSpeed"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "SpeedUnitOfMeasureId",
+					"Description": "The unique identifier of a Unit Of Measure.",
+					"BaseAttributeReference": {
+						"Entity": "Towboat.cdm.json/Towboat",
+						"Name": "SpeedUnitOfMeasureId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "TotalHorsepower",
+					"Description": "The total horsepower of all engines installed on the Towboat.",
+					"BaseAttributeReference": {
+						"Entity": "Towboat.cdm.json/Towboat",
+						"Name": "TotalHorsepower"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "MaximumContainersOnDeck",
+					"Description": "The maximum number of containers on deck.",
+					"BaseAttributeReference": {
+						"Entity": "Towboat.cdm.json/Towboat",
+						"Name": "MaximumContainersOnDeck"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "MaximumContainersInHold",
+					"Description": "The maximum number of containers in the hold.",
+					"BaseAttributeReference": {
+						"Entity": "Towboat.cdm.json/Towboat",
+						"Name": "MaximumContainersInHold"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "NumberOfCargoHolds",
+					"Description": "The total number of cargo holds.",
+					"BaseAttributeReference": {
+						"Entity": "Towboat.cdm.json/Towboat",
+						"Name": "NumberOfCargoHolds"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "NumberOfReeferPlugs",
+					"Description": "The number of reefer plugs.",
+					"BaseAttributeReference": {
+						"Entity": "Towboat.cdm.json/Towboat",
+						"Name": "NumberOfReeferPlugs"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "AssetId",
+					"Description": "The unique identifier of an Asset.",
+					"BaseAttributeReference": {
+						"Entity": "Towboat.cdm.json/Towboat",
+						"Name": "AssetId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"TowboatId\":{\"entity\":\"Towboat.cdm.json/Towboat\",\"name\":\"TowboatId\"},\"TowboatName\":{\"entity\":\"Towboat.cdm.json/Towboat\",\"name\":\"TowboatName\"},\"TowboatTypeId\":{\"entity\":\"Towboat.cdm.json/Towboat\",\"name\":\"TowboatTypeId\"},\"VesselIdentificationNumber\":{\"entity\":\"Towboat.cdm.json/Towboat\",\"name\":\"VesselIdentificationNumber\"},\"HullIdentificationNumber\":{\"entity\":\"Towboat.cdm.json/Towboat\",\"name\":\"HullIdentificationNumber\"},\"InternationalMaritimeOrganizationNumber\":{\"entity\":\"Towboat.cdm.json/Towboat\",\"name\":\"InternationalMaritimeOrganizationNumber\"},\"VesselCallSign\":{\"entity\":\"Towboat.cdm.json/Towboat\",\"name\":\"VesselCallSign\"},\"FlagOfCountryId\":{\"entity\":\"Towboat.cdm.json/Towboat\",\"name\":\"FlagOfCountryId\"},\"BuildTimestamp\":{\"entity\":\"Towboat.cdm.json/Towboat\",\"name\":\"BuildTimestamp\"},\"InServiceTimestamp\":{\"entity\":\"Towboat.cdm.json/Towboat\",\"name\":\"InServiceTimestamp\"},\"OutOfServiceTimestamp\":{\"entity\":\"Towboat.cdm.json/Towboat\",\"name\":\"OutOfServiceTimestamp\"},\"ShipbuilderName\":{\"entity\":\"Towboat.cdm.json/Towboat\",\"name\":\"ShipbuilderName\"},\"OwningPartyId\":{\"entity\":\"Towboat.cdm.json/Towboat\",\"name\":\"OwningPartyId\"},\"TowboatOverallLength\":{\"entity\":\"Towboat.cdm.json/Towboat\",\"name\":\"TowboatOverallLength\"},\"TowboatBeam\":{\"entity\":\"Towboat.cdm.json/Towboat\",\"name\":\"TowboatBeam\"},\"TowboatMaximumDraft\":{\"entity\":\"Towboat.cdm.json/Towboat\",\"name\":\"TowboatMaximumDraft\"},\"TowboatMinimumDraft\":{\"entity\":\"Towboat.cdm.json/Towboat\",\"name\":\"TowboatMinimumDraft\"},\"LwhUnitOfMeasureId\":{\"entity\":\"Towboat.cdm.json/Towboat\",\"name\":\"LwhUnitOfMeasureId\"},\"TowboatDisplacement\":{\"entity\":\"Towboat.cdm.json/Towboat\",\"name\":\"TowboatDisplacement\"},\"TowboatGrossTonnage\":{\"entity\":\"Towboat.cdm.json/Towboat\",\"name\":\"TowboatGrossTonnage\"},\"TowboatDeadweight\":{\"entity\":\"Towboat.cdm.json/Towboat\",\"name\":\"TowboatDeadweight\"},\"TowboatBunkerCapacity\":{\"entity\":\"Towboat.cdm.json/Towboat\",\"name\":\"TowboatBunkerCapacity\"},\"WeightUnitOfMeasureId\":{\"entity\":\"Towboat.cdm.json/Towboat\",\"name\":\"WeightUnitOfMeasureId\"},\"TowboatDryCargoHoldsCapacity\":{\"entity\":\"Towboat.cdm.json/Towboat\",\"name\":\"TowboatDryCargoHoldsCapacity\"},\"VolumeUnitOfMeasureId\":{\"entity\":\"Towboat.cdm.json/Towboat\",\"name\":\"VolumeUnitOfMeasureId\"},\"TowboatServiceSpeed\":{\"entity\":\"Towboat.cdm.json/Towboat\",\"name\":\"TowboatServiceSpeed\"},\"TowboatMaximumSpeed\":{\"entity\":\"Towboat.cdm.json/Towboat\",\"name\":\"TowboatMaximumSpeed\"},\"SpeedUnitOfMeasureId\":{\"entity\":\"Towboat.cdm.json/Towboat\",\"name\":\"SpeedUnitOfMeasureId\"},\"TotalHorsepower\":{\"entity\":\"Towboat.cdm.json/Towboat\",\"name\":\"TotalHorsepower\"},\"MaximumContainersOnDeck\":{\"entity\":\"Towboat.cdm.json/Towboat\",\"name\":\"MaximumContainersOnDeck\"},\"MaximumContainersInHold\":{\"entity\":\"Towboat.cdm.json/Towboat\",\"name\":\"MaximumContainersInHold\"},\"NumberOfCargoHolds\":{\"entity\":\"Towboat.cdm.json/Towboat\",\"name\":\"NumberOfCargoHolds\"},\"NumberOfReeferPlugs\":{\"entity\":\"Towboat.cdm.json/Towboat\",\"name\":\"NumberOfReeferPlugs\"},\"AssetId\":{\"entity\":\"Towboat.cdm.json/Towboat\",\"name\":\"AssetId\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"Towboat\",\"path\":\"Towboat.cdm.json/Towboat\"},\"description\":\"A source of power that is used for towing barges.\",\"primaryKey\":[\"TowboatId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"TowboatId\",\"attributeReference\":{\"entity\":\"Towboat.cdm.json/Towboat\",\"name\":\"TowboatId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"TowboatName\",\"attributeReference\":{\"entity\":\"Towboat.cdm.json/Towboat\",\"name\":\"TowboatName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"TowboatTypeId\",\"attributeReference\":{\"entity\":\"Towboat.cdm.json/Towboat\",\"name\":\"TowboatTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"VesselIdentificationNumber\",\"attributeReference\":{\"entity\":\"Towboat.cdm.json/Towboat\",\"name\":\"VesselIdentificationNumber\"},\"dataType\":\"string\",\"dataTypeLength\":1024},{\"type\":\"Existing\",\"name\":\"HullIdentificationNumber\",\"attributeReference\":{\"entity\":\"Towboat.cdm.json/Towboat\",\"name\":\"HullIdentificationNumber\"},\"dataType\":\"string\",\"dataTypeLength\":1024},{\"type\":\"Existing\",\"name\":\"InternationalMaritimeOrganizationNumber\",\"attributeReference\":{\"entity\":\"Towboat.cdm.json/Towboat\",\"name\":\"InternationalMaritimeOrganizationNumber\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"VesselCallSign\",\"attributeReference\":{\"entity\":\"Towboat.cdm.json/Towboat\",\"name\":\"VesselCallSign\"},\"dataType\":\"string\",\"dataTypeLength\":1024},{\"type\":\"Existing\",\"name\":\"FlagOfCountryId\",\"attributeReference\":{\"entity\":\"Towboat.cdm.json/Towboat\",\"name\":\"FlagOfCountryId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"BuildTimestamp\",\"attributeReference\":{\"entity\":\"Towboat.cdm.json/Towboat\",\"name\":\"BuildTimestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"InServiceTimestamp\",\"attributeReference\":{\"entity\":\"Towboat.cdm.json/Towboat\",\"name\":\"InServiceTimestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"OutOfServiceTimestamp\",\"attributeReference\":{\"entity\":\"Towboat.cdm.json/Towboat\",\"name\":\"OutOfServiceTimestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"ShipbuilderName\",\"attributeReference\":{\"entity\":\"Towboat.cdm.json/Towboat\",\"name\":\"ShipbuilderName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"OwningPartyId\",\"attributeReference\":{\"entity\":\"Towboat.cdm.json/Towboat\",\"name\":\"OwningPartyId\"},\"dataType\":\"long\"},{\"type\":\"Existing\",\"name\":\"TowboatOverallLength\",\"attributeReference\":{\"entity\":\"Towboat.cdm.json/Towboat\",\"name\":\"TowboatOverallLength\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":8},{\"type\":\"Existing\",\"name\":\"TowboatBeam\",\"attributeReference\":{\"entity\":\"Towboat.cdm.json/Towboat\",\"name\":\"TowboatBeam\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"TowboatMaximumDraft\",\"attributeReference\":{\"entity\":\"Towboat.cdm.json/Towboat\",\"name\":\"TowboatMaximumDraft\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"TowboatMinimumDraft\",\"attributeReference\":{\"entity\":\"Towboat.cdm.json/Towboat\",\"name\":\"TowboatMinimumDraft\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"LwhUnitOfMeasureId\",\"attributeReference\":{\"entity\":\"Towboat.cdm.json/Towboat\",\"name\":\"LwhUnitOfMeasureId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"TowboatDisplacement\",\"attributeReference\":{\"entity\":\"Towboat.cdm.json/Towboat\",\"name\":\"TowboatDisplacement\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"TowboatGrossTonnage\",\"attributeReference\":{\"entity\":\"Towboat.cdm.json/Towboat\",\"name\":\"TowboatGrossTonnage\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"TowboatDeadweight\",\"attributeReference\":{\"entity\":\"Towboat.cdm.json/Towboat\",\"name\":\"TowboatDeadweight\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":8},{\"type\":\"Existing\",\"name\":\"TowboatBunkerCapacity\",\"attributeReference\":{\"entity\":\"Towboat.cdm.json/Towboat\",\"name\":\"TowboatBunkerCapacity\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"WeightUnitOfMeasureId\",\"attributeReference\":{\"entity\":\"Towboat.cdm.json/Towboat\",\"name\":\"WeightUnitOfMeasureId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"TowboatDryCargoHoldsCapacity\",\"attributeReference\":{\"entity\":\"Towboat.cdm.json/Towboat\",\"name\":\"TowboatDryCargoHoldsCapacity\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"VolumeUnitOfMeasureId\",\"attributeReference\":{\"entity\":\"Towboat.cdm.json/Towboat\",\"name\":\"VolumeUnitOfMeasureId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"TowboatServiceSpeed\",\"attributeReference\":{\"entity\":\"Towboat.cdm.json/Towboat\",\"name\":\"TowboatServiceSpeed\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":8},{\"type\":\"Existing\",\"name\":\"TowboatMaximumSpeed\",\"attributeReference\":{\"entity\":\"Towboat.cdm.json/Towboat\",\"name\":\"TowboatMaximumSpeed\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":8},{\"type\":\"Existing\",\"name\":\"SpeedUnitOfMeasureId\",\"attributeReference\":{\"entity\":\"Towboat.cdm.json/Towboat\",\"name\":\"SpeedUnitOfMeasureId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"TotalHorsepower\",\"attributeReference\":{\"entity\":\"Towboat.cdm.json/Towboat\",\"name\":\"TotalHorsepower\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"MaximumContainersOnDeck\",\"attributeReference\":{\"entity\":\"Towboat.cdm.json/Towboat\",\"name\":\"MaximumContainersOnDeck\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"MaximumContainersInHold\",\"attributeReference\":{\"entity\":\"Towboat.cdm.json/Towboat\",\"name\":\"MaximumContainersInHold\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"NumberOfCargoHolds\",\"attributeReference\":{\"entity\":\"Towboat.cdm.json/Towboat\",\"name\":\"NumberOfCargoHolds\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"NumberOfReeferPlugs\",\"attributeReference\":{\"entity\":\"Towboat.cdm.json/Towboat\",\"name\":\"NumberOfReeferPlugs\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"AssetId\",\"attributeReference\":{\"entity\":\"Towboat.cdm.json/Towboat\",\"name\":\"AssetId\"},\"dataType\":\"long\"}]}}}",
+			"Description": "A source of power that is used for towing barges.",
+			"DisplayFolderInfo": "{\"name\":\"Shipping\",\"colorCode\":\"#000B42\"}",
+			"PrimaryKeys": "TowboatId"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

@@ -1,0 +1,30 @@
+{
+	"name": "relationship-hpxruwfemv",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "relationship-hpxruwfemv",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "PalletType",
+		"ToTableName": "ShipmentItem",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ItemSku",
+				"ToColumnName": "ItemSku"
+			},
+			{
+				"FromColumnName": "PalletTypeId",
+				"ToColumnName": "PalletTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"PalletType.cdm.json/PalletType\",\"toEntity\":\"ShipmentItem.cdm.json/ShipmentItem\",\"joinPairs\":[{\"fromAttribute\":\"ItemSku\",\"toAttribute\":\"ItemSku\"},{\"fromAttribute\":\"PalletTypeId\",\"toAttribute\":\"PalletTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

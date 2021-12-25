@@ -1,0 +1,26 @@
+{
+	"name": "relationship-gwlbsxsbkw",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "relationship-gwlbsxsbkw",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Aircraft",
+		"ToTableName": "ShipmentRouteLegEquipmentSubstitution",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "AircraftId",
+				"ToColumnName": "SubstitutionAircraftId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Aircraft.cdm.json/Aircraft\",\"toEntity\":\"ShipmentRouteLegEquipmentSubstitution.cdm.json/ShipmentRouteLegEquipmentSubstitution\",\"joinPairs\":[{\"fromAttribute\":\"AircraftId\",\"toAttribute\":\"SubstitutionAircraftId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

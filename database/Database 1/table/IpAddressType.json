@@ -1,0 +1,86 @@
+{
+	"name": "IpAddressType",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "IpAddressType",
+		"Description": "The Internet Protocol (IP) has two versions currently in use (see IP version history for details). Each version has its own definition of an IP address\n\nIPv4 uses 32-bit (4-byte) addresses, which limits the address space to 4,294,967,296 (232) possible unique addresses.  The IP version 4 address space is rapidly nearing exhaustion of available, officially assignable address blocks.\n\nIPv6 features a larger address space than that of IPv4: addresses in IPv6 are 128 bits long versus 32 bits in IPv4.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "IpAddressTypeId",
+					"Description": "The unique identifier of an IP Address Type.",
+					"BaseAttributeReference": {
+						"Entity": "IpAddressType.cdm.json/IpAddressType",
+						"Name": "IpAddressTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "IpAddressTypeName",
+					"Description": "The name of an IP Address Type.",
+					"BaseAttributeReference": {
+						"Entity": "IpAddressType.cdm.json/IpAddressType",
+						"Name": "IpAddressTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "IpAddressTypeDescription",
+					"Description": "The description of an IP Address Type.",
+					"BaseAttributeReference": {
+						"Entity": "IpAddressType.cdm.json/IpAddressType",
+						"Name": "IpAddressTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"IpAddressTypeId\":{\"entity\":\"IpAddressType.cdm.json/IpAddressType\",\"name\":\"IpAddressTypeId\"},\"IpAddressTypeName\":{\"entity\":\"IpAddressType.cdm.json/IpAddressType\",\"name\":\"IpAddressTypeName\"},\"IpAddressTypeDescription\":{\"entity\":\"IpAddressType.cdm.json/IpAddressType\",\"name\":\"IpAddressTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"IpAddressType\",\"path\":\"IpAddressType.cdm.json/IpAddressType\"},\"description\":\"The Internet Protocol (IP) has two versions currently in use (see IP version history for details). Each version has its own definition of an IP address\\n\\nIPv4 uses 32-bit (4-byte) addresses, which limits the address space to 4,294,967,296 (232) possible unique addresses.  The IP version 4 address space is rapidly nearing exhaustion of available, officially assignable address blocks.\\n\\nIPv6 features a larger address space than that of IPv4: addresses in IPv6 are 128 bits long versus 32 bits in IPv4.\",\"primaryKey\":[\"IpAddressTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"IpAddressTypeId\",\"attributeReference\":{\"entity\":\"IpAddressType.cdm.json/IpAddressType\",\"name\":\"IpAddressTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"IpAddressTypeName\",\"attributeReference\":{\"entity\":\"IpAddressType.cdm.json/IpAddressType\",\"name\":\"IpAddressTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"IpAddressTypeDescription\",\"attributeReference\":{\"entity\":\"IpAddressType.cdm.json/IpAddressType\",\"name\":\"IpAddressTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512}]}}}",
+			"Description": "The Internet Protocol (IP) has two versions currently in use (see IP version history for details). Each version has its own definition of an IP address\n\nIPv4 uses 32-bit (4-byte) addresses, which limits the address space to 4,294,967,296 (232) possible unique addresses.  The IP version 4 address space is rapidly nearing exhaustion of available, officially assignable address blocks.\n\nIPv6 features a larger address space than that of IPv4: addresses in IPv6 are 128 bits long versus 32 bits in IPv4.",
+			"DisplayFolderInfo": "{\"name\":\"Customer Service & Contact Management\",\"colorCode\":\"#502006\"}",
+			"PrimaryKeys": "IpAddressTypeId"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

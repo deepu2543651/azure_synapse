@@ -1,0 +1,26 @@
+{
+	"name": "relationship-yvvyqgunui",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "relationship-yvvyqgunui",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "CustomerAccountStatusType",
+		"ToTableName": "CustomerAccountStatus",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "CustomerAccountStatusTypeId",
+				"ToColumnName": "CustomerAccountStatusTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"CustomerAccountStatusType.cdm.json/CustomerAccountStatusType\",\"toEntity\":\"CustomerAccountStatus.cdm.json/CustomerAccountStatus\",\"joinPairs\":[{\"fromAttribute\":\"CustomerAccountStatusTypeId\",\"toAttribute\":\"CustomerAccountStatusTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

@@ -1,0 +1,34 @@
+{
+	"name": "relationship-ndydnfjjoj",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "relationship-ndydnfjjoj",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "TrainScheduleLeg",
+		"ToTableName": "ShipmentRouteLeg",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "TrainId",
+				"ToColumnName": "PlannedTrainId"
+			},
+			{
+				"FromColumnName": "TrainScheduleLegNumber",
+				"ToColumnName": "PlannedTrainLegNumber"
+			},
+			{
+				"FromColumnName": "TrainScheduledDepartureTimestamp",
+				"ToColumnName": "PlannedTrainDepartureTimestamp"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"TrainScheduleLeg.cdm.json/TrainScheduleLeg\",\"toEntity\":\"ShipmentRouteLeg.cdm.json/ShipmentRouteLeg\",\"joinPairs\":[{\"fromAttribute\":\"TrainId\",\"toAttribute\":\"PlannedTrainId\"},{\"fromAttribute\":\"TrainScheduleLegNumber\",\"toAttribute\":\"PlannedTrainLegNumber\"},{\"fromAttribute\":\"TrainScheduledDepartureTimestamp\",\"toAttribute\":\"PlannedTrainDepartureTimestamp\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

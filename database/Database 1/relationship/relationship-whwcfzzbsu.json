@@ -1,0 +1,26 @@
+{
+	"name": "relationship-whwcfzzbsu",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "relationship-whwcfzzbsu",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Barge",
+		"ToTableName": "TowScheduleLegConfiguration",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "BargeId",
+				"ToColumnName": "BargeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Barge.cdm.json/Barge\",\"toEntity\":\"TowScheduleLegConfiguration.cdm.json/TowScheduleLegConfiguration\",\"joinPairs\":[{\"fromAttribute\":\"BargeId\",\"toAttribute\":\"BargeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

@@ -1,0 +1,413 @@
+{
+	"name": "Barge",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "Barge",
+		"Description": "A physical barge which may be used.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "BargeId",
+					"Description": "The unique identifier of a Barge instance.",
+					"BaseAttributeReference": {
+						"Entity": "Barge.cdm.json/Barge",
+						"Name": "BargeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "BargeTypeId",
+					"Description": "The unique identifier of a barge type.",
+					"BaseAttributeReference": {
+						"Entity": "Barge.cdm.json/Barge",
+						"Name": "BargeTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "HullIdentificationNumber",
+					"Description": "The Hull Identification Number (HIN) is a 12 character serial number that uniquely identifies a water vessel.",
+					"BaseAttributeReference": {
+						"Entity": "Barge.cdm.json/Barge",
+						"Name": "HullIdentificationNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "BuildTimestamp",
+					"Description": "The timestamp of when the build was completed.",
+					"BaseAttributeReference": {
+						"Entity": "Barge.cdm.json/Barge",
+						"Name": "BuildTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "InServiceTimestamp",
+					"Description": "The timestamp of when the barge was first put into service.",
+					"BaseAttributeReference": {
+						"Entity": "Barge.cdm.json/Barge",
+						"Name": "InServiceTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "OutOfServiceTimestamp",
+					"Description": "The timestamp of when the barge was permanently put out of service.",
+					"BaseAttributeReference": {
+						"Entity": "Barge.cdm.json/Barge",
+						"Name": "OutOfServiceTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "ShipbuilderName",
+					"Description": "The name of the barge's shipbuilder.",
+					"BaseAttributeReference": {
+						"Entity": "Barge.cdm.json/Barge",
+						"Name": "ShipbuilderName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "OwningPartyId",
+					"Description": "The unique identifier of a Party.",
+					"BaseAttributeReference": {
+						"Entity": "Barge.cdm.json/Barge",
+						"Name": "OwningPartyId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "BargeOverallLength",
+					"Description": "The overall length of the Barge.",
+					"BaseAttributeReference": {
+						"Entity": "Barge.cdm.json/Barge",
+						"Name": "BargeOverallLength"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "BargeBeam",
+					"Description": "The width of a Barge.",
+					"BaseAttributeReference": {
+						"Entity": "Barge.cdm.json/Barge",
+						"Name": "BargeBeam"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "BargeMaximumDraft",
+					"Description": "The maximum draft of the Barge.",
+					"BaseAttributeReference": {
+						"Entity": "Barge.cdm.json/Barge",
+						"Name": "BargeMaximumDraft"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "BargeMinimumDraft",
+					"Description": "The draft of the barge - without cargo.",
+					"BaseAttributeReference": {
+						"Entity": "Barge.cdm.json/Barge",
+						"Name": "BargeMinimumDraft"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "LwhUnitOfMeasureId",
+					"Description": "The unique identifier of a Unit Of Measure.",
+					"BaseAttributeReference": {
+						"Entity": "Barge.cdm.json/Barge",
+						"Name": "LwhUnitOfMeasureId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "BargeDisplacement",
+					"Description": "The maximum weight of the Barge and its contents.",
+					"BaseAttributeReference": {
+						"Entity": "Barge.cdm.json/Barge",
+						"Name": "BargeDisplacement"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "BargeGrossTonnage",
+					"Description": "The gross tonnage of the Barge.",
+					"BaseAttributeReference": {
+						"Entity": "Barge.cdm.json/Barge",
+						"Name": "BargeGrossTonnage"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "BargeDeadweight",
+					"Description": "The deadweight of the barge.",
+					"BaseAttributeReference": {
+						"Entity": "Barge.cdm.json/Barge",
+						"Name": "BargeDeadweight"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "BargeBunkerCapacity",
+					"Description": "The bunker capacity.",
+					"BaseAttributeReference": {
+						"Entity": "Barge.cdm.json/Barge",
+						"Name": "BargeBunkerCapacity"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "WeightUnitOfMeasureId",
+					"Description": "The unique identifier of a Unit Of Measure.",
+					"BaseAttributeReference": {
+						"Entity": "Barge.cdm.json/Barge",
+						"Name": "WeightUnitOfMeasureId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "VesselDryCargoHoldsCapacity",
+					"Description": "The dry cargo holds capacity of the barge.",
+					"BaseAttributeReference": {
+						"Entity": "Barge.cdm.json/Barge",
+						"Name": "VesselDryCargoHoldsCapacity"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "VolumeUnitOfMeasureId",
+					"Description": "The unique identifier of a Unit Of Measure.",
+					"BaseAttributeReference": {
+						"Entity": "Barge.cdm.json/Barge",
+						"Name": "VolumeUnitOfMeasureId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "MaximumContainersOnDeck",
+					"Description": "The maximum number of containers on deck.",
+					"BaseAttributeReference": {
+						"Entity": "Barge.cdm.json/Barge",
+						"Name": "MaximumContainersOnDeck"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "MaximumContainersInHold",
+					"Description": "The maximum number of containers in the hold.",
+					"BaseAttributeReference": {
+						"Entity": "Barge.cdm.json/Barge",
+						"Name": "MaximumContainersInHold"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "AssetId",
+					"Description": "The unique identifier of an Asset.",
+					"BaseAttributeReference": {
+						"Entity": "Barge.cdm.json/Barge",
+						"Name": "AssetId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"BargeId\":{\"entity\":\"Barge.cdm.json/Barge\",\"name\":\"BargeId\"},\"BargeTypeId\":{\"entity\":\"Barge.cdm.json/Barge\",\"name\":\"BargeTypeId\"},\"HullIdentificationNumber\":{\"entity\":\"Barge.cdm.json/Barge\",\"name\":\"HullIdentificationNumber\"},\"BuildTimestamp\":{\"entity\":\"Barge.cdm.json/Barge\",\"name\":\"BuildTimestamp\"},\"InServiceTimestamp\":{\"entity\":\"Barge.cdm.json/Barge\",\"name\":\"InServiceTimestamp\"},\"OutOfServiceTimestamp\":{\"entity\":\"Barge.cdm.json/Barge\",\"name\":\"OutOfServiceTimestamp\"},\"ShipbuilderName\":{\"entity\":\"Barge.cdm.json/Barge\",\"name\":\"ShipbuilderName\"},\"OwningPartyId\":{\"entity\":\"Barge.cdm.json/Barge\",\"name\":\"OwningPartyId\"},\"BargeOverallLength\":{\"entity\":\"Barge.cdm.json/Barge\",\"name\":\"BargeOverallLength\"},\"BargeBeam\":{\"entity\":\"Barge.cdm.json/Barge\",\"name\":\"BargeBeam\"},\"BargeMaximumDraft\":{\"entity\":\"Barge.cdm.json/Barge\",\"name\":\"BargeMaximumDraft\"},\"BargeMinimumDraft\":{\"entity\":\"Barge.cdm.json/Barge\",\"name\":\"BargeMinimumDraft\"},\"LwhUnitOfMeasureId\":{\"entity\":\"Barge.cdm.json/Barge\",\"name\":\"LwhUnitOfMeasureId\"},\"BargeDisplacement\":{\"entity\":\"Barge.cdm.json/Barge\",\"name\":\"BargeDisplacement\"},\"BargeGrossTonnage\":{\"entity\":\"Barge.cdm.json/Barge\",\"name\":\"BargeGrossTonnage\"},\"BargeDeadweight\":{\"entity\":\"Barge.cdm.json/Barge\",\"name\":\"BargeDeadweight\"},\"BargeBunkerCapacity\":{\"entity\":\"Barge.cdm.json/Barge\",\"name\":\"BargeBunkerCapacity\"},\"WeightUnitOfMeasureId\":{\"entity\":\"Barge.cdm.json/Barge\",\"name\":\"WeightUnitOfMeasureId\"},\"VesselDryCargoHoldsCapacity\":{\"entity\":\"Barge.cdm.json/Barge\",\"name\":\"VesselDryCargoHoldsCapacity\"},\"VolumeUnitOfMeasureId\":{\"entity\":\"Barge.cdm.json/Barge\",\"name\":\"VolumeUnitOfMeasureId\"},\"MaximumContainersOnDeck\":{\"entity\":\"Barge.cdm.json/Barge\",\"name\":\"MaximumContainersOnDeck\"},\"MaximumContainersInHold\":{\"entity\":\"Barge.cdm.json/Barge\",\"name\":\"MaximumContainersInHold\"},\"AssetId\":{\"entity\":\"Barge.cdm.json/Barge\",\"name\":\"AssetId\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"Barge\",\"path\":\"Barge.cdm.json/Barge\"},\"description\":\"A physical barge which may be used.\",\"primaryKey\":[\"BargeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"BargeId\",\"attributeReference\":{\"entity\":\"Barge.cdm.json/Barge\",\"name\":\"BargeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"BargeTypeId\",\"attributeReference\":{\"entity\":\"Barge.cdm.json/Barge\",\"name\":\"BargeTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"HullIdentificationNumber\",\"attributeReference\":{\"entity\":\"Barge.cdm.json/Barge\",\"name\":\"HullIdentificationNumber\"},\"dataType\":\"string\",\"dataTypeLength\":1024},{\"type\":\"Existing\",\"name\":\"BuildTimestamp\",\"attributeReference\":{\"entity\":\"Barge.cdm.json/Barge\",\"name\":\"BuildTimestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"InServiceTimestamp\",\"attributeReference\":{\"entity\":\"Barge.cdm.json/Barge\",\"name\":\"InServiceTimestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"OutOfServiceTimestamp\",\"attributeReference\":{\"entity\":\"Barge.cdm.json/Barge\",\"name\":\"OutOfServiceTimestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"ShipbuilderName\",\"attributeReference\":{\"entity\":\"Barge.cdm.json/Barge\",\"name\":\"ShipbuilderName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"OwningPartyId\",\"attributeReference\":{\"entity\":\"Barge.cdm.json/Barge\",\"name\":\"OwningPartyId\"},\"dataType\":\"long\"},{\"type\":\"Existing\",\"name\":\"BargeOverallLength\",\"attributeReference\":{\"entity\":\"Barge.cdm.json/Barge\",\"name\":\"BargeOverallLength\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":8},{\"type\":\"Existing\",\"name\":\"BargeBeam\",\"attributeReference\":{\"entity\":\"Barge.cdm.json/Barge\",\"name\":\"BargeBeam\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"BargeMaximumDraft\",\"attributeReference\":{\"entity\":\"Barge.cdm.json/Barge\",\"name\":\"BargeMaximumDraft\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"BargeMinimumDraft\",\"attributeReference\":{\"entity\":\"Barge.cdm.json/Barge\",\"name\":\"BargeMinimumDraft\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"LwhUnitOfMeasureId\",\"attributeReference\":{\"entity\":\"Barge.cdm.json/Barge\",\"name\":\"LwhUnitOfMeasureId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"BargeDisplacement\",\"attributeReference\":{\"entity\":\"Barge.cdm.json/Barge\",\"name\":\"BargeDisplacement\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"BargeGrossTonnage\",\"attributeReference\":{\"entity\":\"Barge.cdm.json/Barge\",\"name\":\"BargeGrossTonnage\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"BargeDeadweight\",\"attributeReference\":{\"entity\":\"Barge.cdm.json/Barge\",\"name\":\"BargeDeadweight\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":8},{\"type\":\"Existing\",\"name\":\"BargeBunkerCapacity\",\"attributeReference\":{\"entity\":\"Barge.cdm.json/Barge\",\"name\":\"BargeBunkerCapacity\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"WeightUnitOfMeasureId\",\"attributeReference\":{\"entity\":\"Barge.cdm.json/Barge\",\"name\":\"WeightUnitOfMeasureId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"VesselDryCargoHoldsCapacity\",\"attributeReference\":{\"entity\":\"Barge.cdm.json/Barge\",\"name\":\"VesselDryCargoHoldsCapacity\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"VolumeUnitOfMeasureId\",\"attributeReference\":{\"entity\":\"Barge.cdm.json/Barge\",\"name\":\"VolumeUnitOfMeasureId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"MaximumContainersOnDeck\",\"attributeReference\":{\"entity\":\"Barge.cdm.json/Barge\",\"name\":\"MaximumContainersOnDeck\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"MaximumContainersInHold\",\"attributeReference\":{\"entity\":\"Barge.cdm.json/Barge\",\"name\":\"MaximumContainersInHold\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"AssetId\",\"attributeReference\":{\"entity\":\"Barge.cdm.json/Barge\",\"name\":\"AssetId\"},\"dataType\":\"long\"}]}}}",
+			"Description": "A physical barge which may be used.",
+			"DisplayFolderInfo": "{\"name\":\"Shipping\",\"colorCode\":\"#000B42\"}",
+			"PrimaryKeys": "BargeId"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

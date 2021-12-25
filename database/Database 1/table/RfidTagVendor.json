@@ -1,0 +1,119 @@
+{
+	"name": "RfidTagVendor",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "RfidTagVendor",
+		"Description": "The RFID Tags that are being tracked by a Vendor.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "RfidTagId",
+					"Description": "The unique identifier of a RFID Tag.\n\nThe transmitter/receiver pair or transceiver plus the information storage mechanism attached to the object is referred to as the tag, transponder, electronic label, code plate and various other terms. \n\nAlthough transponder is technically the most accurate, the most common term and the one preferred by the Automatic Identification Manufacturers is tag.",
+					"BaseAttributeReference": {
+						"Entity": "RfidTagVendor.cdm.json/RfidTagVendor",
+						"Name": "RfidTagId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "VendorId",
+					"Description": "The unique identifier of a Vendor.",
+					"BaseAttributeReference": {
+						"Entity": "RfidTagVendor.cdm.json/RfidTagVendor",
+						"Name": "VendorId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "RfidTagVendorStartTimestamp",
+					"Description": "The start timestamp of the associated RFID Tag Vendor relationship.",
+					"BaseAttributeReference": {
+						"Entity": "RfidTagVendor.cdm.json/RfidTagVendor",
+						"Name": "RfidTagVendorStartTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "RfidTagVendorEndTimestamp",
+					"Description": "The end timestamp of the associated RFID Tag Vendor relationship.",
+					"BaseAttributeReference": {
+						"Entity": "RfidTagVendor.cdm.json/RfidTagVendor",
+						"Name": "RfidTagVendorEndTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "RfidTagVendorNote",
+					"Description": "A note, comment or additional information regarding the RFID Tag Vendor.",
+					"BaseAttributeReference": {
+						"Entity": "RfidTagVendor.cdm.json/RfidTagVendor",
+						"Name": "RfidTagVendorNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"RfidTagId\":{\"entity\":\"RfidTagVendor.cdm.json/RfidTagVendor\",\"name\":\"RfidTagId\"},\"VendorId\":{\"entity\":\"RfidTagVendor.cdm.json/RfidTagVendor\",\"name\":\"VendorId\"},\"RfidTagVendorStartTimestamp\":{\"entity\":\"RfidTagVendor.cdm.json/RfidTagVendor\",\"name\":\"RfidTagVendorStartTimestamp\"},\"RfidTagVendorEndTimestamp\":{\"entity\":\"RfidTagVendor.cdm.json/RfidTagVendor\",\"name\":\"RfidTagVendorEndTimestamp\"},\"RfidTagVendorNote\":{\"entity\":\"RfidTagVendor.cdm.json/RfidTagVendor\",\"name\":\"RfidTagVendorNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"RfidTagVendor\",\"path\":\"RfidTagVendor.cdm.json/RfidTagVendor\"},\"description\":\"The RFID Tags that are being tracked by a Vendor.\",\"primaryKey\":[\"RfidTagId\",\"VendorId\",\"RfidTagVendorStartTimestamp\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"RfidTagId\",\"attributeReference\":{\"entity\":\"RfidTagVendor.cdm.json/RfidTagVendor\",\"name\":\"RfidTagId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"VendorId\",\"attributeReference\":{\"entity\":\"RfidTagVendor.cdm.json/RfidTagVendor\",\"name\":\"VendorId\"},\"dataType\":\"long\"},{\"type\":\"Existing\",\"name\":\"RfidTagVendorStartTimestamp\",\"attributeReference\":{\"entity\":\"RfidTagVendor.cdm.json/RfidTagVendor\",\"name\":\"RfidTagVendorStartTimestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"RfidTagVendorEndTimestamp\",\"attributeReference\":{\"entity\":\"RfidTagVendor.cdm.json/RfidTagVendor\",\"name\":\"RfidTagVendorEndTimestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"RfidTagVendorNote\",\"attributeReference\":{\"entity\":\"RfidTagVendor.cdm.json/RfidTagVendor\",\"name\":\"RfidTagVendorNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024}]}}}",
+			"Description": "The RFID Tags that are being tracked by a Vendor.",
+			"DisplayFolderInfo": "{\"name\":\"Property & Equipment\",\"colorCode\":\"#BD4B37\"}",
+			"PrimaryKeys": "RfidTagId,VendorId,RfidTagVendorStartTimestamp"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

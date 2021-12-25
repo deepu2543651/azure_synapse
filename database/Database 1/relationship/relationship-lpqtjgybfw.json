@@ -1,0 +1,26 @@
+{
+	"name": "relationship-lpqtjgybfw",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "relationship-lpqtjgybfw",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "CustomsValuationCode",
+		"ToTableName": "CustomsDuty",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "CustomsValuationCode",
+				"ToColumnName": "CustomsValuationCode"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"CustomsValuationCode.cdm.json/CustomsValuationCode\",\"toEntity\":\"CustomsDuty.cdm.json/CustomsDuty\",\"joinPairs\":[{\"fromAttribute\":\"CustomsValuationCode\",\"toAttribute\":\"CustomsValuationCode\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

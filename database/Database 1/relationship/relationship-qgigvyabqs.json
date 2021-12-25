@@ -1,0 +1,34 @@
+{
+	"name": "relationship-qgigvyabqs",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "relationship-qgigvyabqs",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "ShipmentEvent",
+		"ToTableName": "ShipmentEventRelatedParty",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ShipmentEventStartTimestamp",
+				"ToColumnName": "ShipmentEventStartTimestamp"
+			},
+			{
+				"FromColumnName": "ShipmentEventTypeId",
+				"ToColumnName": "ShipmentEventTypeId"
+			},
+			{
+				"FromColumnName": "ShipmentId",
+				"ToColumnName": "ShipmentId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"ShipmentEvent.cdm.json/ShipmentEvent\",\"toEntity\":\"ShipmentEventRelatedParty.cdm.json/ShipmentEventRelatedParty\",\"joinPairs\":[{\"fromAttribute\":\"ShipmentEventStartTimestamp\",\"toAttribute\":\"ShipmentEventStartTimestamp\"},{\"fromAttribute\":\"ShipmentEventTypeId\",\"toAttribute\":\"ShipmentEventTypeId\"},{\"fromAttribute\":\"ShipmentId\",\"toAttribute\":\"ShipmentId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

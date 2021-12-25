@@ -1,0 +1,30 @@
+{
+	"name": "relationship-yrqwjivadc",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "relationship-yrqwjivadc",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "SoftwareProductVersion",
+		"ToTableName": "CommunicationDevice",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "SoftwareProductId",
+				"ToColumnName": "SoftwareProductId"
+			},
+			{
+				"FromColumnName": "SoftwareProductVersionNumber",
+				"ToColumnName": "SoftwareProductVersionNumber"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"SoftwareProductVersion.cdm.json/SoftwareProductVersion\",\"toEntity\":\"CommunicationDevice.cdm.json/CommunicationDevice\",\"joinPairs\":[{\"fromAttribute\":\"SoftwareProductId\",\"toAttribute\":\"SoftwareProductId\"},{\"fromAttribute\":\"SoftwareProductVersionNumber\",\"toAttribute\":\"SoftwareProductVersionNumber\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

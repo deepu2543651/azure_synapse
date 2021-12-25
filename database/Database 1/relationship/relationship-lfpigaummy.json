@@ -1,0 +1,26 @@
+{
+	"name": "relationship-lfpigaummy",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "relationship-lfpigaummy",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "InsurancePolicyClaim",
+		"ToTableName": "ShipmentDamage",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ClaimId",
+				"ToColumnName": "ClaimId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"InsurancePolicyClaim.cdm.json/InsurancePolicyClaim\",\"toEntity\":\"ShipmentDamage.cdm.json/ShipmentDamage\",\"joinPairs\":[{\"fromAttribute\":\"ClaimId\",\"toAttribute\":\"ClaimId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

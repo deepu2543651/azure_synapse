@@ -1,0 +1,101 @@
+{
+	"name": "ShipmentItemStorageCondition",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "ShipmentItemStorageCondition",
+		"Description": "The storage condition(s) associated with storage of a Shipment Item.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ShipmentId",
+					"Description": "The unique identifier of a Shipment.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentItemStorageCondition.cdm.json/ShipmentItemStorageCondition",
+						"Name": "ShipmentId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ShipmentItemNumber",
+					"Description": "The shipment line number.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentItemStorageCondition.cdm.json/ShipmentItemStorageCondition",
+						"Name": "ShipmentItemNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "StorageConditionId",
+					"Description": "The unique identifier of a Storage Condition.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentItemStorageCondition.cdm.json/ShipmentItemStorageCondition",
+						"Name": "StorageConditionId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ItemStorageConditionNote",
+					"Description": "A note, comment or additional information regarding the shipment item storage condition.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentItemStorageCondition.cdm.json/ShipmentItemStorageCondition",
+						"Name": "ItemStorageConditionNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ShipmentId\":{\"entity\":\"ShipmentItemStorageCondition.cdm.json/ShipmentItemStorageCondition\",\"name\":\"ShipmentId\"},\"ShipmentItemNumber\":{\"entity\":\"ShipmentItemStorageCondition.cdm.json/ShipmentItemStorageCondition\",\"name\":\"ShipmentItemNumber\"},\"StorageConditionId\":{\"entity\":\"ShipmentItemStorageCondition.cdm.json/ShipmentItemStorageCondition\",\"name\":\"StorageConditionId\"},\"ItemStorageConditionNote\":{\"entity\":\"ShipmentItemStorageCondition.cdm.json/ShipmentItemStorageCondition\",\"name\":\"ItemStorageConditionNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"ShipmentItemStorageCondition\",\"path\":\"ShipmentItemStorageCondition.cdm.json/ShipmentItemStorageCondition\"},\"description\":\"The storage condition(s) associated with storage of a Shipment Item.\",\"primaryKey\":[\"ShipmentId\",\"ShipmentItemNumber\",\"StorageConditionId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"ShipmentId\",\"attributeReference\":{\"entity\":\"ShipmentItemStorageCondition.cdm.json/ShipmentItemStorageCondition\",\"name\":\"ShipmentId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ShipmentItemNumber\",\"attributeReference\":{\"entity\":\"ShipmentItemStorageCondition.cdm.json/ShipmentItemStorageCondition\",\"name\":\"ShipmentItemNumber\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"StorageConditionId\",\"attributeReference\":{\"entity\":\"ShipmentItemStorageCondition.cdm.json/ShipmentItemStorageCondition\",\"name\":\"StorageConditionId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ItemStorageConditionNote\",\"attributeReference\":{\"entity\":\"ShipmentItemStorageCondition.cdm.json/ShipmentItemStorageCondition\",\"name\":\"ItemStorageConditionNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024}]}}}",
+			"Description": "The storage condition(s) associated with storage of a Shipment Item.",
+			"DisplayFolderInfo": "{\"name\":\"Shipping\",\"colorCode\":\"#000B42\"}",
+			"PrimaryKeys": "ShipmentId,ShipmentItemNumber,StorageConditionId"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

@@ -1,0 +1,168 @@
+{
+	"name": "VehicleScheduleLegRelatedParty",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "VehicleScheduleLegRelatedParty",
+		"Description": "A party that has a relationship with the vehicle schedule leg over the indicated period.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "VehicleId",
+					"Description": "The unique identifier of a Vehicle.",
+					"BaseAttributeReference": {
+						"Entity": "VehicleScheduleLegRelatedParty.cdm.json/VehicleScheduleLegRelatedParty",
+						"Name": "VehicleId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "ScheduledDepartureTimestamp",
+					"Description": "The scheduled timestamp of the vehicle departure from the from-location to the to-location.",
+					"BaseAttributeReference": {
+						"Entity": "VehicleScheduleLegRelatedParty.cdm.json/VehicleScheduleLegRelatedParty",
+						"Name": "ScheduledDepartureTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "PartyId",
+					"Description": "The unique identifier of a Party.",
+					"BaseAttributeReference": {
+						"Entity": "VehicleScheduleLegRelatedParty.cdm.json/VehicleScheduleLegRelatedParty",
+						"Name": "PartyId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "VehicleSchedulePartyRelationshipTypeId",
+					"Description": "The unique identifier of a customer relationship type.",
+					"BaseAttributeReference": {
+						"Entity": "VehicleScheduleLegRelatedParty.cdm.json/VehicleScheduleLegRelatedParty",
+						"Name": "VehicleSchedulePartyRelationshipTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PeriodStartTimestamp",
+					"Description": "The period start timestamp for which the associated vehicle schedule - party relationship is valid or in-effect.",
+					"BaseAttributeReference": {
+						"Entity": "VehicleScheduleLegRelatedParty.cdm.json/VehicleScheduleLegRelatedParty",
+						"Name": "PeriodStartTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "VehicleDeliveryLegNumber",
+					"Description": "The ordered leg number associated with this leg of the vehicle schedule.",
+					"BaseAttributeReference": {
+						"Entity": "VehicleScheduleLegRelatedParty.cdm.json/VehicleScheduleLegRelatedParty",
+						"Name": "VehicleDeliveryLegNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PeriodEndTimestamp",
+					"Description": "The period end timestamp for which the associated vehicle schedule - party relationship is valid or in-effect.",
+					"BaseAttributeReference": {
+						"Entity": "VehicleScheduleLegRelatedParty.cdm.json/VehicleScheduleLegRelatedParty",
+						"Name": "PeriodEndTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "VehicleScheduleRelatedPartyNote",
+					"Description": "A note, comment or additional information regarding the vehicle schedule - party relationship.",
+					"BaseAttributeReference": {
+						"Entity": "VehicleScheduleLegRelatedParty.cdm.json/VehicleScheduleLegRelatedParty",
+						"Name": "VehicleScheduleRelatedPartyNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"VehicleId\":{\"entity\":\"VehicleScheduleLegRelatedParty.cdm.json/VehicleScheduleLegRelatedParty\",\"name\":\"VehicleId\"},\"ScheduledDepartureTimestamp\":{\"entity\":\"VehicleScheduleLegRelatedParty.cdm.json/VehicleScheduleLegRelatedParty\",\"name\":\"ScheduledDepartureTimestamp\"},\"PartyId\":{\"entity\":\"VehicleScheduleLegRelatedParty.cdm.json/VehicleScheduleLegRelatedParty\",\"name\":\"PartyId\"},\"VehicleSchedulePartyRelationshipTypeId\":{\"entity\":\"VehicleScheduleLegRelatedParty.cdm.json/VehicleScheduleLegRelatedParty\",\"name\":\"VehicleSchedulePartyRelationshipTypeId\"},\"PeriodStartTimestamp\":{\"entity\":\"VehicleScheduleLegRelatedParty.cdm.json/VehicleScheduleLegRelatedParty\",\"name\":\"PeriodStartTimestamp\"},\"VehicleDeliveryLegNumber\":{\"entity\":\"VehicleScheduleLegRelatedParty.cdm.json/VehicleScheduleLegRelatedParty\",\"name\":\"VehicleDeliveryLegNumber\"},\"PeriodEndTimestamp\":{\"entity\":\"VehicleScheduleLegRelatedParty.cdm.json/VehicleScheduleLegRelatedParty\",\"name\":\"PeriodEndTimestamp\"},\"VehicleScheduleRelatedPartyNote\":{\"entity\":\"VehicleScheduleLegRelatedParty.cdm.json/VehicleScheduleLegRelatedParty\",\"name\":\"VehicleScheduleRelatedPartyNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"VehicleScheduleLegRelatedParty\",\"path\":\"VehicleScheduleLegRelatedParty.cdm.json/VehicleScheduleLegRelatedParty\"},\"description\":\"A party that has a relationship with the vehicle schedule leg over the indicated period.\",\"primaryKey\":[\"VehicleId\",\"ScheduledDepartureTimestamp\",\"PartyId\",\"VehicleSchedulePartyRelationshipTypeId\",\"PeriodStartTimestamp\",\"VehicleDeliveryLegNumber\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"VehicleId\",\"attributeReference\":{\"entity\":\"VehicleScheduleLegRelatedParty.cdm.json/VehicleScheduleLegRelatedParty\",\"name\":\"VehicleId\"},\"dataType\":\"long\"},{\"type\":\"Existing\",\"name\":\"ScheduledDepartureTimestamp\",\"attributeReference\":{\"entity\":\"VehicleScheduleLegRelatedParty.cdm.json/VehicleScheduleLegRelatedParty\",\"name\":\"ScheduledDepartureTimestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"PartyId\",\"attributeReference\":{\"entity\":\"VehicleScheduleLegRelatedParty.cdm.json/VehicleScheduleLegRelatedParty\",\"name\":\"PartyId\"},\"dataType\":\"long\"},{\"type\":\"Existing\",\"name\":\"VehicleSchedulePartyRelationshipTypeId\",\"attributeReference\":{\"entity\":\"VehicleScheduleLegRelatedParty.cdm.json/VehicleScheduleLegRelatedParty\",\"name\":\"VehicleSchedulePartyRelationshipTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"PeriodStartTimestamp\",\"attributeReference\":{\"entity\":\"VehicleScheduleLegRelatedParty.cdm.json/VehicleScheduleLegRelatedParty\",\"name\":\"PeriodStartTimestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"VehicleDeliveryLegNumber\",\"attributeReference\":{\"entity\":\"VehicleScheduleLegRelatedParty.cdm.json/VehicleScheduleLegRelatedParty\",\"name\":\"VehicleDeliveryLegNumber\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"PeriodEndTimestamp\",\"attributeReference\":{\"entity\":\"VehicleScheduleLegRelatedParty.cdm.json/VehicleScheduleLegRelatedParty\",\"name\":\"PeriodEndTimestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"VehicleScheduleRelatedPartyNote\",\"attributeReference\":{\"entity\":\"VehicleScheduleLegRelatedParty.cdm.json/VehicleScheduleLegRelatedParty\",\"name\":\"VehicleScheduleRelatedPartyNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024}]}}}",
+			"Description": "A party that has a relationship with the vehicle schedule leg over the indicated period.",
+			"DisplayFolderInfo": "{\"name\":\"Shipping\",\"colorCode\":\"#000B42\"}",
+			"PrimaryKeys": "VehicleId,ScheduledDepartureTimestamp,PartyId,VehicleSchedulePartyRelationshipTypeId,PeriodStartTimestamp,VehicleDeliveryLegNumber"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

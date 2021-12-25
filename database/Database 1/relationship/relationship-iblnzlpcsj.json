@@ -1,0 +1,26 @@
+{
+	"name": "relationship-iblnzlpcsj",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "relationship-iblnzlpcsj",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "ShipmentServiceType",
+		"ToTableName": "ShipmentService",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ShipmentServiceTypeId",
+				"ToColumnName": "ShipmentServiceTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"ShipmentServiceType.cdm.json/ShipmentServiceType\",\"toEntity\":\"ShipmentService.cdm.json/ShipmentService\",\"joinPairs\":[{\"fromAttribute\":\"ShipmentServiceTypeId\",\"toAttribute\":\"ShipmentServiceTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

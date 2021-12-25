@@ -1,0 +1,119 @@
+{
+	"name": "TowboatEngine",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "TowboatEngine",
+		"Description": "An engine that is attached to the towboat.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "TowboatId",
+					"Description": "The unique identifier of a towboat.",
+					"BaseAttributeReference": {
+						"Entity": "TowboatEngine.cdm.json/TowboatEngine",
+						"Name": "TowboatId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "EngineId",
+					"Description": "The unique identifier of a Barge instance.",
+					"BaseAttributeReference": {
+						"Entity": "TowboatEngine.cdm.json/TowboatEngine",
+						"Name": "EngineId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "TowboatEnginePeriodStartTimestamp",
+					"Description": "The period start timestamp that the engine is configured / installed on the associated towboat.",
+					"BaseAttributeReference": {
+						"Entity": "TowboatEngine.cdm.json/TowboatEngine",
+						"Name": "TowboatEnginePeriodStartTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "TowboatEnginePeriodEndTimestamp",
+					"Description": "The period end timestamp that the engine is configured / installed on the associated towboat.",
+					"BaseAttributeReference": {
+						"Entity": "TowboatEngine.cdm.json/TowboatEngine",
+						"Name": "TowboatEnginePeriodEndTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "TowboatEngineNote",
+					"Description": "A note, comment or additional information regarding the towboat engine.",
+					"BaseAttributeReference": {
+						"Entity": "TowboatEngine.cdm.json/TowboatEngine",
+						"Name": "TowboatEngineNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"TowboatId\":{\"entity\":\"TowboatEngine.cdm.json/TowboatEngine\",\"name\":\"TowboatId\"},\"EngineId\":{\"entity\":\"TowboatEngine.cdm.json/TowboatEngine\",\"name\":\"EngineId\"},\"TowboatEnginePeriodStartTimestamp\":{\"entity\":\"TowboatEngine.cdm.json/TowboatEngine\",\"name\":\"TowboatEnginePeriodStartTimestamp\"},\"TowboatEnginePeriodEndTimestamp\":{\"entity\":\"TowboatEngine.cdm.json/TowboatEngine\",\"name\":\"TowboatEnginePeriodEndTimestamp\"},\"TowboatEngineNote\":{\"entity\":\"TowboatEngine.cdm.json/TowboatEngine\",\"name\":\"TowboatEngineNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"TowboatEngine\",\"path\":\"TowboatEngine.cdm.json/TowboatEngine\"},\"description\":\"An engine that is attached to the towboat.\",\"primaryKey\":[\"TowboatId\",\"EngineId\",\"TowboatEnginePeriodStartTimestamp\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"TowboatId\",\"attributeReference\":{\"entity\":\"TowboatEngine.cdm.json/TowboatEngine\",\"name\":\"TowboatId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"EngineId\",\"attributeReference\":{\"entity\":\"TowboatEngine.cdm.json/TowboatEngine\",\"name\":\"EngineId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"TowboatEnginePeriodStartTimestamp\",\"attributeReference\":{\"entity\":\"TowboatEngine.cdm.json/TowboatEngine\",\"name\":\"TowboatEnginePeriodStartTimestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"TowboatEnginePeriodEndTimestamp\",\"attributeReference\":{\"entity\":\"TowboatEngine.cdm.json/TowboatEngine\",\"name\":\"TowboatEnginePeriodEndTimestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"TowboatEngineNote\",\"attributeReference\":{\"entity\":\"TowboatEngine.cdm.json/TowboatEngine\",\"name\":\"TowboatEngineNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024}]}}}",
+			"Description": "An engine that is attached to the towboat.",
+			"DisplayFolderInfo": "{\"name\":\"Shipping\",\"colorCode\":\"#000B42\"}",
+			"PrimaryKeys": "TowboatId,EngineId,TowboatEnginePeriodStartTimestamp"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

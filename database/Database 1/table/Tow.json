@@ -1,0 +1,85 @@
+{
+	"name": "Tow",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "Tow",
+		"Description": "A recurring departure of one or more barges to a destination.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "TowId",
+					"Description": "The unique identifier of a Tow.",
+					"BaseAttributeReference": {
+						"Entity": "Tow.cdm.json/Tow",
+						"Name": "TowId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "TowName",
+					"Description": "The name of the tow\n\nEx:\n- Mississippi River-  Bettendorf Terminal to Lansing Power Station Terminal",
+					"BaseAttributeReference": {
+						"Entity": "Tow.cdm.json/Tow",
+						"Name": "TowName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "CarrierId",
+					"Description": "The unique identifier of a Carrier.",
+					"BaseAttributeReference": {
+						"Entity": "Tow.cdm.json/Tow",
+						"Name": "CarrierId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"TowId\":{\"entity\":\"Tow.cdm.json/Tow\",\"name\":\"TowId\"},\"TowName\":{\"entity\":\"Tow.cdm.json/Tow\",\"name\":\"TowName\"},\"CarrierId\":{\"entity\":\"Tow.cdm.json/Tow\",\"name\":\"CarrierId\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"Tow\",\"path\":\"Tow.cdm.json/Tow\"},\"description\":\"A recurring departure of one or more barges to a destination.\",\"primaryKey\":[\"TowId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"TowId\",\"attributeReference\":{\"entity\":\"Tow.cdm.json/Tow\",\"name\":\"TowId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"TowName\",\"attributeReference\":{\"entity\":\"Tow.cdm.json/Tow\",\"name\":\"TowName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"CarrierId\",\"attributeReference\":{\"entity\":\"Tow.cdm.json/Tow\",\"name\":\"CarrierId\"},\"dataType\":\"integer\"}]}}}",
+			"Description": "A recurring departure of one or more barges to a destination.",
+			"DisplayFolderInfo": "{\"name\":\"Shipping\",\"colorCode\":\"#000B42\"}",
+			"PrimaryKeys": "TowId"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

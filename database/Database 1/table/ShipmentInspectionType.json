@@ -1,0 +1,86 @@
+{
+	"name": "ShipmentInspectionType",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "ShipmentInspectionType",
+		"Description": "The type of inspection performed on a Shipment.\n\nEx:\n- Final destination\n- Initial point of shipment\n- Spot\n- Intermediary",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ShipmentInspectionTypeId",
+					"Description": "The unique identifier of a Shipment Inspection Type.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentInspectionType.cdm.json/ShipmentInspectionType",
+						"Name": "ShipmentInspectionTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ShipmentInspectionTypeName",
+					"Description": "The name of a Shipment Inspection Type.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentInspectionType.cdm.json/ShipmentInspectionType",
+						"Name": "ShipmentInspectionTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ShipmentInspectionTypeDescription",
+					"Description": "The description of a Shipment Inspection Type.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentInspectionType.cdm.json/ShipmentInspectionType",
+						"Name": "ShipmentInspectionTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ShipmentInspectionTypeId\":{\"entity\":\"ShipmentInspectionType.cdm.json/ShipmentInspectionType\",\"name\":\"ShipmentInspectionTypeId\"},\"ShipmentInspectionTypeName\":{\"entity\":\"ShipmentInspectionType.cdm.json/ShipmentInspectionType\",\"name\":\"ShipmentInspectionTypeName\"},\"ShipmentInspectionTypeDescription\":{\"entity\":\"ShipmentInspectionType.cdm.json/ShipmentInspectionType\",\"name\":\"ShipmentInspectionTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"ShipmentInspectionType\",\"path\":\"ShipmentInspectionType.cdm.json/ShipmentInspectionType\"},\"description\":\"The type of inspection performed on a Shipment.\\n\\nEx:\\n- Final destination\\n- Initial point of shipment\\n- Spot\\n- Intermediary\",\"primaryKey\":[\"ShipmentInspectionTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"ShipmentInspectionTypeId\",\"attributeReference\":{\"entity\":\"ShipmentInspectionType.cdm.json/ShipmentInspectionType\",\"name\":\"ShipmentInspectionTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ShipmentInspectionTypeName\",\"attributeReference\":{\"entity\":\"ShipmentInspectionType.cdm.json/ShipmentInspectionType\",\"name\":\"ShipmentInspectionTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"ShipmentInspectionTypeDescription\",\"attributeReference\":{\"entity\":\"ShipmentInspectionType.cdm.json/ShipmentInspectionType\",\"name\":\"ShipmentInspectionTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512}]}}}",
+			"Description": "The type of inspection performed on a Shipment.\n\nEx:\n- Final destination\n- Initial point of shipment\n- Spot\n- Intermediary",
+			"DisplayFolderInfo": "{\"name\":\"Shipping\",\"colorCode\":\"#000B42\"}",
+			"PrimaryKeys": "ShipmentInspectionTypeId"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

@@ -1,0 +1,162 @@
+{
+	"name": "SourceDataset_3nn",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "HttpServer1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "HttpServerLocation"
+			}
+		},
+		"schema": {
+			"type": "object",
+			"properties": {
+				"index_name": {
+					"type": "string"
+				},
+				"title": {
+					"type": "string"
+				},
+				"desc": {
+					"type": "string"
+				},
+				"org_type": {
+					"type": "string"
+				},
+				"org": {
+					"type": "array",
+					"items": {
+						"type": "string"
+					}
+				},
+				"sector": {
+					"type": "array",
+					"items": {
+						"type": "string"
+					}
+				},
+				"source": {
+					"type": "string"
+				},
+				"catalog_uuid": {
+					"type": "string"
+				},
+				"visualizable": {
+					"type": "string"
+				},
+				"active": {
+					"type": "string"
+				},
+				"created": {
+					"type": "string"
+				},
+				"updated": {
+					"type": "integer"
+				},
+				"created_date": {
+					"type": "string"
+				},
+				"updated_date": {
+					"type": "string"
+				},
+				"external_ws": {
+					"type": "integer"
+				},
+				"external_ws_url": {
+					"type": "string"
+				},
+				"target_bucket": {
+					"type": "object",
+					"properties": {
+						"index": {
+							"type": "string"
+						},
+						"type": {
+							"type": "string"
+						},
+						"field": {
+							"type": "string"
+						}
+					}
+				},
+				"field": {
+					"type": "array",
+					"items": {
+						"type": "object",
+						"properties": {
+							"id": {
+								"type": "string"
+							},
+							"name": {
+								"type": "string"
+							},
+							"type": {
+								"type": "string"
+							}
+						}
+					}
+				},
+				"message": {
+					"type": "string"
+				},
+				"version": {
+					"type": "string"
+				},
+				"status": {
+					"type": "string"
+				},
+				"total": {
+					"type": "integer"
+				},
+				"count": {
+					"type": "integer"
+				},
+				"limit": {
+					"type": "string"
+				},
+				"offset": {
+					"type": "string"
+				},
+				"records": {
+					"type": "array",
+					"items": {
+						"type": "object",
+						"properties": {
+							"statename": {
+								"type": "string"
+							},
+							"state_id": {
+								"type": "string"
+							},
+							"districtname": {
+								"type": "string"
+							},
+							"district_id": {
+								"type": "string"
+							},
+							"totalnoofapplication": {
+								"type": "string"
+							},
+							"totalnoof_micro": {
+								"type": "string"
+							},
+							"totalnoof_small": {
+								"type": "string"
+							},
+							"totalnoof_medium": {
+								"type": "string"
+							},
+							"__createddate": {
+								"type": "string"
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

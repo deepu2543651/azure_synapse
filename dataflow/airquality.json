@@ -6,19 +6,27 @@
 			"sources": [
 				{
 					"dataset": {
-						"referenceName": "RestResource1",
+						"referenceName": "SourceDataset_3nn",
 						"type": "DatasetReference"
 					},
 					"name": "source1"
 				}
 			],
-			"sinks": [],
+			"sinks": [
+				{
+					"dataset": {
+						"referenceName": "DestinationDataset_3nn",
+						"type": "DatasetReference"
+					},
+					"name": "sink1"
+				}
+			],
 			"transformations": [
 				{
 					"name": "Flatten1"
 				}
 			],
-			"script": "source(allowSchemaDrift: false,\n\tvalidateSchema: false,\n\thttpMethod: 'GET',\n\ttimeout: 30,\n\trequestInterval: 0,\n\tpaginationRules: ['supportRFC5988' -> 'true'],\n\tresponseFormat: ['type' -> 'json', 'documentForm' -> 'documentPerLine']) ~> source1\nsource1 foldDown(unroll(),\n\tskipDuplicateMapInputs: false,\n\tskipDuplicateMapOutputs: false) ~> Flatten1"
+			"script": "source(output(\n\t\tindex_name as string,\n\t\ttitle as string,\n\t\tdesc as string,\n\t\torg_type as string,\n\t\torg as string[],\n\t\tsector as string[],\n\t\tsource as string,\n\t\tcatalog_uuid as string,\n\t\tvisualizable as string,\n\t\tactive as string,\n\t\tcreated as string,\n\t\tupdated as integer,\n\t\tcreated_date as string,\n\t\tupdated_date as string,\n\t\texternal_ws as integer,\n\t\texternal_ws_url as string,\n\t\ttarget_bucket as (index as string, type as string, field as string),\n\t\tfield as (id as string, name as string, type as string)[],\n\t\tmessage as string,\n\t\tversion as string,\n\t\tstatus as string,\n\t\ttotal as integer,\n\t\tcount as integer,\n\t\tlimit as string,\n\t\toffset as string,\n\t\trecords as (statename as string, state_id as string, districtname as string, district_id as string, totalnoofapplication as string, totalnoof_micro as string, totalnoof_small as string, totalnoof_medium as string, {__createddate} as string)[]\n\t),\n\tallowSchemaDrift: false,\n\tvalidateSchema: false,\n\tignoreNoFilesFound: false,\n\tdocumentForm: 'documentPerLine') ~> source1\nsource1 foldDown(unroll(records, records),\n\tmapColumn(\n\t\tstatename = records.statename,\n\t\tstate_id = records.state_id,\n\t\tdistrictname = records.districtname,\n\t\tdistrict_id = records.district_id,\n\t\ttotalnoofapplication = records.totalnoofapplication,\n\t\ttotalnoof_micro = records.totalnoof_micro,\n\t\ttotalnoof_small = records.totalnoof_small,\n\t\ttotalnoof_medium = records.totalnoof_medium,\n\t\t{__createddate} = records.{__createddate}\n\t),\n\tpartitionBy('hash', 1),\n\tskipDuplicateMapInputs: false,\n\tskipDuplicateMapOutputs: false) ~> Flatten1\nFlatten1 sink(allowSchemaDrift: true,\n\tvalidateSchema: false,\n\tumask: 0022,\n\tpreCommands: [],\n\tpostCommands: [],\n\tskipDuplicateMapInputs: true,\n\tskipDuplicateMapOutputs: true) ~> sink1"
 		}
 	}
 }

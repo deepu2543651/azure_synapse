@@ -1,0 +1,26 @@
+{
+	"name": "relationship-puszzltmke",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-puszzltmke",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "SavingsAccountType",
+		"ToTableName": "SavingsAccountProduct",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "SavingsAccountTypeId",
+				"ToColumnName": "SavingsAccountTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"SavingsAccountType.cdm.json/SavingsAccountType\",\"toEntity\":\"SavingsAccountProduct.cdm.json/SavingsAccountProduct\",\"joinPairs\":[{\"fromAttribute\":\"SavingsAccountTypeId\",\"toAttribute\":\"SavingsAccountTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

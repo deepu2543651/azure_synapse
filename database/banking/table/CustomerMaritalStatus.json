@@ -1,0 +1,145 @@
+{
+	"name": "CustomerMaritalStatus",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "CustomerMaritalStatus",
+		"Description": "The marital status of the Individual Customer.\n\nThese criteria can change over a period of time and are represented with 'period start date/period end date' qualifications, which represented the best case for knowing this information.    If the data is only randomly sampled or recorded then you could use a single 'date' to identify its recording or effective as-of date.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "CustomerId",
+					"Description": "The unique identifier of a Customer.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerMaritalStatus.cdm.json/CustomerMaritalStatus",
+						"Name": "CustomerId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "PeriodStartDate",
+					"Description": "The period start date for which the associated data is effective or 'as-of'.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerMaritalStatus.cdm.json/CustomerMaritalStatus",
+						"Name": "PeriodStartDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "PeriodEndDate",
+					"Description": "The period end date for which the associated data is effective or 'as-of'.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerMaritalStatus.cdm.json/CustomerMaritalStatus",
+						"Name": "PeriodEndDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "MaritalStatusId",
+					"Description": "The unique identifier of the Customer's Marital Status.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerMaritalStatus.cdm.json/CustomerMaritalStatus",
+						"Name": "MaritalStatusId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "CustomerMaritalStatusNote",
+					"Description": "A note, comment or additional information regarding the individual customer's marital status.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerMaritalStatus.cdm.json/CustomerMaritalStatus",
+						"Name": "CustomerMaritalStatusNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/CustomerMaritalStatus",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/CustomerMaritalStatus",
+				"Properties": {
+					"LinkedServiceName": "wspc-dpu-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"CustomerId\":{\"entity\":\"CustomerMaritalStatus.cdm.json/CustomerMaritalStatus\",\"name\":\"CustomerId\"},\"PeriodStartDate\":{\"entity\":\"CustomerMaritalStatus.cdm.json/CustomerMaritalStatus\",\"name\":\"PeriodStartDate\"},\"PeriodEndDate\":{\"entity\":\"CustomerMaritalStatus.cdm.json/CustomerMaritalStatus\",\"name\":\"PeriodEndDate\"},\"MaritalStatusId\":{\"entity\":\"CustomerMaritalStatus.cdm.json/CustomerMaritalStatus\",\"name\":\"MaritalStatusId\"},\"CustomerMaritalStatusNote\":{\"entity\":\"CustomerMaritalStatus.cdm.json/CustomerMaritalStatus\",\"name\":\"CustomerMaritalStatusNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"CustomerMaritalStatus\",\"path\":\"CustomerMaritalStatus.cdm.json/CustomerMaritalStatus\"},\"description\":\"The marital status of the Individual Customer.\\n\\nThese criteria can change over a period of time and are represented with 'period start date/period end date' qualifications, which represented the best case for knowing this information.    If the data is only randomly sampled or recorded then you could use a single 'date' to identify its recording or effective as-of date.\",\"primaryKey\":[\"CustomerId\",\"PeriodStartDate\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"CustomerId\",\"attributeReference\":{\"entity\":\"CustomerMaritalStatus.cdm.json/CustomerMaritalStatus\",\"name\":\"CustomerId\"},\"dataType\":\"long\"},{\"type\":\"Existing\",\"name\":\"PeriodStartDate\",\"attributeReference\":{\"entity\":\"CustomerMaritalStatus.cdm.json/CustomerMaritalStatus\",\"name\":\"PeriodStartDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\"},{\"type\":\"Existing\",\"name\":\"PeriodEndDate\",\"attributeReference\":{\"entity\":\"CustomerMaritalStatus.cdm.json/CustomerMaritalStatus\",\"name\":\"PeriodEndDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\"},{\"type\":\"Existing\",\"name\":\"MaritalStatusId\",\"attributeReference\":{\"entity\":\"CustomerMaritalStatus.cdm.json/CustomerMaritalStatus\",\"name\":\"MaritalStatusId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"CustomerMaritalStatusNote\",\"attributeReference\":{\"entity\":\"CustomerMaritalStatus.cdm.json/CustomerMaritalStatus\",\"name\":\"CustomerMaritalStatusNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024}]}}}",
+			"Description": "The marital status of the Individual Customer.\n\nThese criteria can change over a period of time and are represented with 'period start date/period end date' qualifications, which represented the best case for knowing this information.    If the data is only randomly sampled or recorded then you could use a single 'date' to identify its recording or effective as-of date.",
+			"DisplayFolderInfo": "{\"name\":\"Customer\",\"colorCode\":\"#4B003F\"}",
+			"PrimaryKeys": "CustomerId,PeriodStartDate",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

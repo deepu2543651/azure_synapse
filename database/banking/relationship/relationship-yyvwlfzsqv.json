@@ -1,0 +1,26 @@
+{
+	"name": "relationship-yyvwlfzsqv",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-yyvwlfzsqv",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "MarketingProgramType",
+		"ToTableName": "MarketingProgram",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "MarketingProgramTypeId",
+				"ToColumnName": "MarketingProgramTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"MarketingProgramType.cdm.json/MarketingProgramType\",\"toEntity\":\"MarketingProgram.cdm.json/MarketingProgram\",\"joinPairs\":[{\"fromAttribute\":\"MarketingProgramTypeId\",\"toAttribute\":\"MarketingProgramTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

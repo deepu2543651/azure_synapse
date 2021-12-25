@@ -1,0 +1,26 @@
+{
+	"name": "relationship-dezcshaakh",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-dezcshaakh",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Location",
+		"ToTableName": "RadioStation",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "LocationId",
+				"ToColumnName": "LocationId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Location.cdm.json/Location\",\"toEntity\":\"RadioStation.cdm.json/RadioStation\",\"joinPairs\":[{\"fromAttribute\":\"LocationId\",\"toAttribute\":\"LocationId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

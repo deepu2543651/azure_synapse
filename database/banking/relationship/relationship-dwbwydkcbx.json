@@ -1,0 +1,26 @@
+{
+	"name": "relationship-dwbwydkcbx",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-dwbwydkcbx",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "BankingProduct",
+		"ToTableName": "RelatedProduct",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ProductId",
+				"ToColumnName": "ProductId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"BankingProduct.cdm.json/BankingProduct\",\"toEntity\":\"RelatedProduct.cdm.json/RelatedProduct\",\"joinPairs\":[{\"fromAttribute\":\"ProductId\",\"toAttribute\":\"ProductId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

@@ -1,0 +1,26 @@
+{
+	"name": "relationship-nnowvhcxvt",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-nnowvhcxvt",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "MarketType",
+		"ToTableName": "Market",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "MarketTypeId",
+				"ToColumnName": "MarketTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"MarketType.cdm.json/MarketType\",\"toEntity\":\"Market.cdm.json/Market\",\"joinPairs\":[{\"fromAttribute\":\"MarketTypeId\",\"toAttribute\":\"MarketTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

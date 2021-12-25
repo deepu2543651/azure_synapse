@@ -1,0 +1,26 @@
+{
+	"name": "relationship-winblsusdc",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-winblsusdc",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "BankingProduct",
+		"ToTableName": "ProductServiceChannelFee",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ProductId",
+				"ToColumnName": "ProductId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"BankingProduct.cdm.json/BankingProduct\",\"toEntity\":\"ProductServiceChannelFee.cdm.json/ProductServiceChannelFee\",\"joinPairs\":[{\"fromAttribute\":\"ProductId\",\"toAttribute\":\"ProductId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

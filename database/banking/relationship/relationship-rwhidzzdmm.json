@@ -1,0 +1,26 @@
+{
+	"name": "relationship-rwhidzzdmm",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-rwhidzzdmm",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Daypart",
+		"ToTableName": "RadioAdvertisingEvent",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "DaypartId",
+				"ToColumnName": "DaypartId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Daypart.cdm.json/Daypart\",\"toEntity\":\"RadioAdvertisingEvent.cdm.json/RadioAdvertisingEvent\",\"joinPairs\":[{\"fromAttribute\":\"DaypartId\",\"toAttribute\":\"DaypartId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

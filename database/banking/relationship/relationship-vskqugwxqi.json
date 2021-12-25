@@ -1,0 +1,26 @@
+{
+	"name": "relationship-vskqugwxqi",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-vskqugwxqi",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "BankingProduct",
+		"ToTableName": "BaseRate",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ProductId",
+				"ToColumnName": "ProductId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"BankingProduct.cdm.json/BankingProduct\",\"toEntity\":\"BaseRate.cdm.json/BaseRate\",\"joinPairs\":[{\"fromAttribute\":\"ProductId\",\"toAttribute\":\"ProductId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

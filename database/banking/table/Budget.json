@@ -1,0 +1,211 @@
+{
+	"name": "Budget",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "Budget",
+		"Description": "A plan of financial operations embodying an estimate of proposed expenditures for a given period.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "BudgetId",
+					"Description": "The unique identifier of a Budget.",
+					"BaseAttributeReference": {
+						"Entity": "Budget.cdm.json/Budget",
+						"Name": "BudgetId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PeriodStartDate",
+					"Description": "The period start date for which the Budget is prepared.",
+					"BaseAttributeReference": {
+						"Entity": "Budget.cdm.json/Budget",
+						"Name": "PeriodStartDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "PeriodEndDate",
+					"Description": "The period end date for which the Budget is prepared.",
+					"BaseAttributeReference": {
+						"Entity": "Budget.cdm.json/Budget",
+						"Name": "PeriodEndDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "BudgetExplanationsStatement",
+					"Description": "An explanation or statement of additional data, details or associated information related to the Budget.",
+					"BaseAttributeReference": {
+						"Entity": "Budget.cdm.json/Budget",
+						"Name": "BudgetExplanationsStatement"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 2048,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "BudgetAssumptionsStatement",
+					"Description": "The assumptions or premises upon which the Budget was prepared.",
+					"BaseAttributeReference": {
+						"Entity": "Budget.cdm.json/Budget",
+						"Name": "BudgetAssumptionsStatement"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 2048,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "BudgetAnalysisStatement",
+					"Description": "An analysis of the Budget in terms of its objectives and success criteria.",
+					"BaseAttributeReference": {
+						"Entity": "Budget.cdm.json/Budget",
+						"Name": "BudgetAnalysisStatement"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 2048,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "BudgetTypeId",
+					"Description": "The unique identifier of a budget type.",
+					"BaseAttributeReference": {
+						"Entity": "Budget.cdm.json/Budget",
+						"Name": "BudgetTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PartyId",
+					"Description": "The unique identifier of a Party.",
+					"BaseAttributeReference": {
+						"Entity": "Budget.cdm.json/Budget",
+						"Name": "PartyId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "OrganizationId",
+					"Description": "The unique identifier of the Organization.",
+					"BaseAttributeReference": {
+						"Entity": "Budget.cdm.json/Budget",
+						"Name": "OrganizationId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/Budget",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/Budget",
+				"Properties": {
+					"LinkedServiceName": "wspc-dpu-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"BudgetId\":{\"entity\":\"Budget.cdm.json/Budget\",\"name\":\"BudgetId\"},\"PeriodStartDate\":{\"entity\":\"Budget.cdm.json/Budget\",\"name\":\"PeriodStartDate\"},\"PeriodEndDate\":{\"entity\":\"Budget.cdm.json/Budget\",\"name\":\"PeriodEndDate\"},\"BudgetExplanationsStatement\":{\"entity\":\"Budget.cdm.json/Budget\",\"name\":\"BudgetExplanationsStatement\"},\"BudgetAssumptionsStatement\":{\"entity\":\"Budget.cdm.json/Budget\",\"name\":\"BudgetAssumptionsStatement\"},\"BudgetAnalysisStatement\":{\"entity\":\"Budget.cdm.json/Budget\",\"name\":\"BudgetAnalysisStatement\"},\"BudgetTypeId\":{\"entity\":\"Budget.cdm.json/Budget\",\"name\":\"BudgetTypeId\"},\"PartyId\":{\"entity\":\"Budget.cdm.json/Budget\",\"name\":\"PartyId\"},\"OrganizationId\":{\"entity\":\"Budget.cdm.json/Budget\",\"name\":\"OrganizationId\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"Budget\",\"path\":\"Budget.cdm.json/Budget\"},\"description\":\"A plan of financial operations embodying an estimate of proposed expenditures for a given period.\",\"primaryKey\":[\"BudgetId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"BudgetId\",\"attributeReference\":{\"entity\":\"Budget.cdm.json/Budget\",\"name\":\"BudgetId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"PeriodStartDate\",\"attributeReference\":{\"entity\":\"Budget.cdm.json/Budget\",\"name\":\"PeriodStartDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\"},{\"type\":\"Existing\",\"name\":\"PeriodEndDate\",\"attributeReference\":{\"entity\":\"Budget.cdm.json/Budget\",\"name\":\"PeriodEndDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\"},{\"type\":\"Existing\",\"name\":\"BudgetExplanationsStatement\",\"attributeReference\":{\"entity\":\"Budget.cdm.json/Budget\",\"name\":\"BudgetExplanationsStatement\"},\"dataType\":\"string\",\"dataTypeLength\":2048},{\"type\":\"Existing\",\"name\":\"BudgetAssumptionsStatement\",\"attributeReference\":{\"entity\":\"Budget.cdm.json/Budget\",\"name\":\"BudgetAssumptionsStatement\"},\"dataType\":\"string\",\"dataTypeLength\":2048},{\"type\":\"Existing\",\"name\":\"BudgetAnalysisStatement\",\"attributeReference\":{\"entity\":\"Budget.cdm.json/Budget\",\"name\":\"BudgetAnalysisStatement\"},\"dataType\":\"string\",\"dataTypeLength\":2048},{\"type\":\"Existing\",\"name\":\"BudgetTypeId\",\"attributeReference\":{\"entity\":\"Budget.cdm.json/Budget\",\"name\":\"BudgetTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"PartyId\",\"attributeReference\":{\"entity\":\"Budget.cdm.json/Budget\",\"name\":\"PartyId\"},\"dataType\":\"long\"},{\"type\":\"Existing\",\"name\":\"OrganizationId\",\"attributeReference\":{\"entity\":\"Budget.cdm.json/Budget\",\"name\":\"OrganizationId\"},\"dataType\":\"integer\"}]}}}",
+			"Description": "A plan of financial operations embodying an estimate of proposed expenditures for a given period.",
+			"DisplayFolderInfo": "{\"name\":\"Customer Service & Contact Management\",\"colorCode\":\"#Ef6950\"}",
+			"PrimaryKeys": "BudgetId",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

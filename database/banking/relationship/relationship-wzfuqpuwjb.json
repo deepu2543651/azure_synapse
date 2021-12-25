@@ -1,0 +1,26 @@
+{
+	"name": "relationship-wzfuqpuwjb",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-wzfuqpuwjb",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "AioLevel",
+		"ToTableName": "CustomerInterest",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "AioLevelId",
+				"ToColumnName": "AioLevelId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"AioLevel.cdm.json/AioLevel\",\"toEntity\":\"CustomerInterest.cdm.json/CustomerInterest\",\"joinPairs\":[{\"fromAttribute\":\"AioLevelId\",\"toAttribute\":\"AioLevelId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

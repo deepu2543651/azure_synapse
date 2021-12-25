@@ -1,0 +1,1098 @@
+{
+	"name": "BankTransaction",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "BankTransaction",
+		"Description": "The lowest level of executable work or customer activity.\n\nA transaction consists of one or more discrete events.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "TransactionId",
+					"Description": "The unique identifier of a Transaction.",
+					"BaseAttributeReference": {
+						"Entity": "BankTransaction.cdm.json/BankTransaction",
+						"Name": "TransactionId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "TransactionTimestamp",
+					"Description": "The timestamp of the transaction.",
+					"BaseAttributeReference": {
+						"Entity": "BankTransaction.cdm.json/BankTransaction",
+						"Name": "TransactionTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "TransactionReceivedTimestamp",
+					"Description": "The timestamp that the Transaction was received.",
+					"BaseAttributeReference": {
+						"Entity": "BankTransaction.cdm.json/BankTransaction",
+						"Name": "TransactionReceivedTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "TransactionEntryTimestamp",
+					"Description": "The timestamp that the Transaction was entered into the appropriate system for processing.",
+					"BaseAttributeReference": {
+						"Entity": "BankTransaction.cdm.json/BankTransaction",
+						"Name": "TransactionEntryTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "TransactionConfirmationTimestamp",
+					"Description": "The timestamp that the Transaction was confirmed to the Customer/Customer Account.",
+					"BaseAttributeReference": {
+						"Entity": "BankTransaction.cdm.json/BankTransaction",
+						"Name": "TransactionConfirmationTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "TransactionCompletedTimestamp",
+					"Description": "The timestamp that the transaction was completed or closed.",
+					"BaseAttributeReference": {
+						"Entity": "BankTransaction.cdm.json/BankTransaction",
+						"Name": "TransactionCompletedTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "CreditCheckTimestamp",
+					"Description": "The timestamp that the Customer/Customer Account had a credit check in regard to the Transaction amount.",
+					"BaseAttributeReference": {
+						"Entity": "BankTransaction.cdm.json/BankTransaction",
+						"Name": "CreditCheckTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "RequestedDeliveryDate",
+					"Description": "The date that the Customer/Customer Account requested delivery of the items.",
+					"BaseAttributeReference": {
+						"Entity": "BankTransaction.cdm.json/BankTransaction",
+						"Name": "RequestedDeliveryDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "CommittedDeliveryDate",
+					"Description": "The date committed to the Customer/Customer Account for delivery of the items.",
+					"BaseAttributeReference": {
+						"Entity": "BankTransaction.cdm.json/BankTransaction",
+						"Name": "CommittedDeliveryDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "ActualDeliveryTimestamp",
+					"Description": "The actual timestamp of delivery of the items to the Customer/Customer Account.",
+					"BaseAttributeReference": {
+						"Entity": "BankTransaction.cdm.json/BankTransaction",
+						"Name": "ActualDeliveryTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "DeliveryConfirmationTimestamp",
+					"Description": "The timestamp that confirmation of the delivery or Shipment was made to the Customer/Customer Account.",
+					"BaseAttributeReference": {
+						"Entity": "BankTransaction.cdm.json/BankTransaction",
+						"Name": "DeliveryConfirmationTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "TransactionQuantity",
+					"Description": "The quantity of Product/Product Instance transacted.\n\nEx:\n\nTRANSACTION = Bond Purchase\nPRODUCT ID = Bond\nPRODUCT INSTANCE ID = Bond CUSIP 'x'\n\nTRANSACTION = Product Purchase\nPRODUCT ID = SKU 7777\nPRODUCT INSTANCE ID = Serial # xxxxx\nAMOUNT = $575.23\n\nTRANSACTION = Product Return\nPRODUCT ID = SKU 7777\nPRODUCT INSTANCE ID = Serial # xxxxx\nAMOUNT = $26.98",
+					"BaseAttributeReference": {
+						"Entity": "BankTransaction.cdm.json/BankTransaction",
+						"Name": "TransactionQuantity"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "TransactionAmount",
+					"Description": "The amount associated with the transaction.\n\nEx:\nRefund = 'amount'\nCredit = 'amount'",
+					"BaseAttributeReference": {
+						"Entity": "BankTransaction.cdm.json/BankTransaction",
+						"Name": "TransactionAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "TransactionConfirmationNumber",
+					"Description": "The transaction confirmation number provided to confirm that the transaction was executed.",
+					"BaseAttributeReference": {
+						"Entity": "BankTransaction.cdm.json/BankTransaction",
+						"Name": "TransactionConfirmationNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 16,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "TransactionCurrencyConversionTimestamp",
+					"Description": "The timestamp upon which currencies are converted  in relation to the associated transaction, which allows you to value the currencies for that transaction.",
+					"BaseAttributeReference": {
+						"Entity": "BankTransaction.cdm.json/BankTransaction",
+						"Name": "TransactionCurrencyConversionTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "TransactionNote",
+					"Description": "A note, comment or additional information regarding the Transaction.",
+					"BaseAttributeReference": {
+						"Entity": "BankTransaction.cdm.json/BankTransaction",
+						"Name": "TransactionNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "TotalRetailPriceAmount",
+					"Description": "The total list price value of the Transaction products = (list price per unit product price)x(quantity ordered) for each line item.",
+					"BaseAttributeReference": {
+						"Entity": "BankTransaction.cdm.json/BankTransaction",
+						"Name": "TotalRetailPriceAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "TotalAdjustmentPercentage",
+					"Description": "The total percentage of adjustment(s) applied to the Transaction.",
+					"BaseAttributeReference": {
+						"Entity": "BankTransaction.cdm.json/BankTransaction",
+						"Name": "TotalAdjustmentPercentage"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "TotalAdjustmentAmount",
+					"Description": "The total amount of adjustments applied to the Transaction.",
+					"BaseAttributeReference": {
+						"Entity": "BankTransaction.cdm.json/BankTransaction",
+						"Name": "TotalAdjustmentAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "TotalTransactionSalesPriceAmount",
+					"Description": "The total actual price value of the transaction item(s) = (actual selling price per unit product price)x(quantity) for each line item.",
+					"BaseAttributeReference": {
+						"Entity": "BankTransaction.cdm.json/BankTransaction",
+						"Name": "TotalTransactionSalesPriceAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "TotalShippingChargeAmount",
+					"Description": "The total amount of shipping charge associated with the Transaction.",
+					"BaseAttributeReference": {
+						"Entity": "BankTransaction.cdm.json/BankTransaction",
+						"Name": "TotalShippingChargeAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "TransactionTotalTaxAmount",
+					"Description": "The total amount of all taxes applied to the Transaction.",
+					"BaseAttributeReference": {
+						"Entity": "BankTransaction.cdm.json/BankTransaction",
+						"Name": "TransactionTotalTaxAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "TransactionTotalInvoicedAmount",
+					"Description": "The total invoiced amount to the Customer/Customer Account.",
+					"BaseAttributeReference": {
+						"Entity": "BankTransaction.cdm.json/BankTransaction",
+						"Name": "TransactionTotalInvoicedAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "TotalCommissionsPayableAmount",
+					"Description": "The total amount of commissions payable and due in regard to the Transaction.",
+					"BaseAttributeReference": {
+						"Entity": "BankTransaction.cdm.json/BankTransaction",
+						"Name": "TotalCommissionsPayableAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "SplitCommissionsIndicator",
+					"Description": "Indicates that the commissions are to be split between two or more employees.",
+					"BaseAttributeReference": {
+						"Entity": "BankTransaction.cdm.json/BankTransaction",
+						"Name": "SplitCommissionsIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "RequestedShipmentCarrierName",
+					"Description": "The name of the Carrier for the Shipment requested by the Customer/Customer Account.",
+					"BaseAttributeReference": {
+						"Entity": "BankTransaction.cdm.json/BankTransaction",
+						"Name": "RequestedShipmentCarrierName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "AlternateCarrierAcceptableIndicator",
+					"Description": "Indicates that an alternate Carrier of the Shipment would be acceptable to the Customer/Customer Account.",
+					"BaseAttributeReference": {
+						"Entity": "BankTransaction.cdm.json/BankTransaction",
+						"Name": "AlternateCarrierAcceptableIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "ShipCompleteIndicator",
+					"Description": "Indicates that the Transaction item(s) are only to be shipped when complete - no partial shipments.",
+					"BaseAttributeReference": {
+						"Entity": "BankTransaction.cdm.json/BankTransaction",
+						"Name": "ShipCompleteIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "AcknowledgementRequiredIndicator",
+					"Description": "Indicates that an acknowledgement  to the Customer/Customer Account is required for the Transaction.",
+					"BaseAttributeReference": {
+						"Entity": "BankTransaction.cdm.json/BankTransaction",
+						"Name": "AcknowledgementRequiredIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "ExpediteTransactionIndicator",
+					"Description": "Indicates that the Transaction is to be expedited.",
+					"BaseAttributeReference": {
+						"Entity": "BankTransaction.cdm.json/BankTransaction",
+						"Name": "ExpediteTransactionIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "DropShipmentIndicator",
+					"Description": "Indicates that the Transaction item(s) are to be drop shipped.",
+					"BaseAttributeReference": {
+						"Entity": "BankTransaction.cdm.json/BankTransaction",
+						"Name": "DropShipmentIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "ActualShipmentCarrierName",
+					"Description": "The Carrier of the Shipment.",
+					"BaseAttributeReference": {
+						"Entity": "BankTransaction.cdm.json/BankTransaction",
+						"Name": "ActualShipmentCarrierName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "TotalWeight",
+					"Description": "The total weight of the Transaction item(s).",
+					"BaseAttributeReference": {
+						"Entity": "BankTransaction.cdm.json/BankTransaction",
+						"Name": "TotalWeight"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "TotalFreightChargeAmount",
+					"Description": "The total freight charges amount.",
+					"BaseAttributeReference": {
+						"Entity": "BankTransaction.cdm.json/BankTransaction",
+						"Name": "TotalFreightChargeAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "UnitOfMeasureId",
+					"Description": "The unique identifier of a Unit Of Measure.",
+					"BaseAttributeReference": {
+						"Entity": "BankTransaction.cdm.json/BankTransaction",
+						"Name": "UnitOfMeasureId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "DeliveryInstructions",
+					"Description": "Instructions related to the delivery of the Transaction item(s).",
+					"BaseAttributeReference": {
+						"Entity": "BankTransaction.cdm.json/BankTransaction",
+						"Name": "DeliveryInstructions"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 2048,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "CustomerCreditCheckNote",
+					"Description": "A note, comment or additional information regarding the Transaction credit check.",
+					"BaseAttributeReference": {
+						"Entity": "BankTransaction.cdm.json/BankTransaction",
+						"Name": "CustomerCreditCheckNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "MessageToCustomer",
+					"Description": "A message to the Customer/Customer Account regarding the Transaction.",
+					"BaseAttributeReference": {
+						"Entity": "BankTransaction.cdm.json/BankTransaction",
+						"Name": "MessageToCustomer"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 2048,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "CustomerId",
+					"Description": "The unique identifier of a Customer.",
+					"BaseAttributeReference": {
+						"Entity": "BankTransaction.cdm.json/BankTransaction",
+						"Name": "CustomerId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "CustomerAccountId",
+					"Description": "The unique identifier of a Customer Account.",
+					"BaseAttributeReference": {
+						"Entity": "BankTransaction.cdm.json/BankTransaction",
+						"Name": "CustomerAccountId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "SalesChannelId",
+					"Description": "The unique identifier of a Channel.",
+					"BaseAttributeReference": {
+						"Entity": "BankTransaction.cdm.json/BankTransaction",
+						"Name": "SalesChannelId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "DistributionChannelId",
+					"Description": "The unique identifier of a Channel.",
+					"BaseAttributeReference": {
+						"Entity": "BankTransaction.cdm.json/BankTransaction",
+						"Name": "DistributionChannelId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "MarketingEventId",
+					"Description": "The unique identifier of a Marketing Event.",
+					"BaseAttributeReference": {
+						"Entity": "BankTransaction.cdm.json/BankTransaction",
+						"Name": "MarketingEventId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "AdvertisingEventId",
+					"Description": "The unique identifier of an Advertising Event.",
+					"BaseAttributeReference": {
+						"Entity": "BankTransaction.cdm.json/BankTransaction",
+						"Name": "AdvertisingEventId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PromotionId",
+					"Description": "The unique identifier of a Promotion.",
+					"BaseAttributeReference": {
+						"Entity": "BankTransaction.cdm.json/BankTransaction",
+						"Name": "PromotionId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "TransactionTypeId",
+					"Description": "The unique identifier of a Transaction Type.",
+					"BaseAttributeReference": {
+						"Entity": "BankTransaction.cdm.json/BankTransaction",
+						"Name": "TransactionTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "BillingCycleId",
+					"Description": "The unique identifier of a Billing Cycle.",
+					"BaseAttributeReference": {
+						"Entity": "BankTransaction.cdm.json/BankTransaction",
+						"Name": "BillingCycleId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "CustomerIdentificationMethodId",
+					"Description": "The unique identifier of a Customer Identity.",
+					"BaseAttributeReference": {
+						"Entity": "BankTransaction.cdm.json/BankTransaction",
+						"Name": "CustomerIdentificationMethodId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "TransactionClassificationId",
+					"Description": "The unique identifier of an Transaction Classification.",
+					"BaseAttributeReference": {
+						"Entity": "BankTransaction.cdm.json/BankTransaction",
+						"Name": "TransactionClassificationId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "TransactionProcessingStatusId",
+					"Description": "The unique identifier of a Transaction Processing Status.",
+					"BaseAttributeReference": {
+						"Entity": "BankTransaction.cdm.json/BankTransaction",
+						"Name": "TransactionProcessingStatusId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "IsoCurrencyCode",
+					"Description": "The ISO 4217 currency code.",
+					"BaseAttributeReference": {
+						"Entity": "BankTransaction.cdm.json/BankTransaction",
+						"Name": "IsoCurrencyCode"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 3,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "TransactionExecutionMethodId",
+					"Description": "The unique identifier of a Transaction Execution Type.",
+					"BaseAttributeReference": {
+						"Entity": "BankTransaction.cdm.json/BankTransaction",
+						"Name": "TransactionExecutionMethodId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "TransactionPriorityId",
+					"Description": "The unique identifier of a Transaction Priority.",
+					"BaseAttributeReference": {
+						"Entity": "BankTransaction.cdm.json/BankTransaction",
+						"Name": "TransactionPriorityId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "TransactionTaxStatusId",
+					"Description": "The unique identifier of a Transaction Tax Status.",
+					"BaseAttributeReference": {
+						"Entity": "BankTransaction.cdm.json/BankTransaction",
+						"Name": "TransactionTaxStatusId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "WebPageUrl",
+					"Description": "The unique address of any Web document.\n\nThe URL consists of:\nType of file (ex: http://)\nDomain name (ex: www. name.com)\nPath or directory to file (ex: /notes/internet)\nName of file (...name.html)",
+					"BaseAttributeReference": {
+						"Entity": "BankTransaction.cdm.json/BankTransaction",
+						"Name": "WebPageUrl"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 2083,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "PointOfSaleId",
+					"Description": "The unique identifier of a POS.",
+					"BaseAttributeReference": {
+						"Entity": "BankTransaction.cdm.json/BankTransaction",
+						"Name": "PointOfSaleId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "SessionId",
+					"Description": "The unique identifier of a Session.",
+					"BaseAttributeReference": {
+						"Entity": "BankTransaction.cdm.json/BankTransaction",
+						"Name": "SessionId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "LoyaltyProgramId",
+					"Description": "The unique identifier of a Loyalty Program.",
+					"BaseAttributeReference": {
+						"Entity": "BankTransaction.cdm.json/BankTransaction",
+						"Name": "LoyaltyProgramId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "LoyaltyAccountId",
+					"Description": "The unique identifier of a Loyalty Account.",
+					"BaseAttributeReference": {
+						"Entity": "BankTransaction.cdm.json/BankTransaction",
+						"Name": "LoyaltyAccountId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PaymentMethodId",
+					"Description": "The unique identifier of a Payment Method.",
+					"BaseAttributeReference": {
+						"Entity": "BankTransaction.cdm.json/BankTransaction",
+						"Name": "PaymentMethodId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ConfirmationMethodId",
+					"Description": "The unique identifier of a Confirmation Method.",
+					"BaseAttributeReference": {
+						"Entity": "BankTransaction.cdm.json/BankTransaction",
+						"Name": "ConfirmationMethodId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ServiceId",
+					"Description": "The unique identifier of a Product.",
+					"BaseAttributeReference": {
+						"Entity": "BankTransaction.cdm.json/BankTransaction",
+						"Name": "ServiceId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/BankTransaction",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/BankTransaction",
+				"Properties": {
+					"LinkedServiceName": "wspc-dpu-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"TransactionId\":{\"entity\":\"BankTransaction.cdm.json/BankTransaction\",\"name\":\"TransactionId\"},\"TransactionTimestamp\":{\"entity\":\"BankTransaction.cdm.json/BankTransaction\",\"name\":\"TransactionTimestamp\"},\"TransactionReceivedTimestamp\":{\"entity\":\"BankTransaction.cdm.json/BankTransaction\",\"name\":\"TransactionReceivedTimestamp\"},\"TransactionEntryTimestamp\":{\"entity\":\"BankTransaction.cdm.json/BankTransaction\",\"name\":\"TransactionEntryTimestamp\"},\"TransactionConfirmationTimestamp\":{\"entity\":\"BankTransaction.cdm.json/BankTransaction\",\"name\":\"TransactionConfirmationTimestamp\"},\"TransactionCompletedTimestamp\":{\"entity\":\"BankTransaction.cdm.json/BankTransaction\",\"name\":\"TransactionCompletedTimestamp\"},\"CreditCheckTimestamp\":{\"entity\":\"BankTransaction.cdm.json/BankTransaction\",\"name\":\"CreditCheckTimestamp\"},\"RequestedDeliveryDate\":{\"entity\":\"BankTransaction.cdm.json/BankTransaction\",\"name\":\"RequestedDeliveryDate\"},\"CommittedDeliveryDate\":{\"entity\":\"BankTransaction.cdm.json/BankTransaction\",\"name\":\"CommittedDeliveryDate\"},\"ActualDeliveryTimestamp\":{\"entity\":\"BankTransaction.cdm.json/BankTransaction\",\"name\":\"ActualDeliveryTimestamp\"},\"DeliveryConfirmationTimestamp\":{\"entity\":\"BankTransaction.cdm.json/BankTransaction\",\"name\":\"DeliveryConfirmationTimestamp\"},\"TransactionQuantity\":{\"entity\":\"BankTransaction.cdm.json/BankTransaction\",\"name\":\"TransactionQuantity\"},\"TransactionAmount\":{\"entity\":\"BankTransaction.cdm.json/BankTransaction\",\"name\":\"TransactionAmount\"},\"TransactionConfirmationNumber\":{\"entity\":\"BankTransaction.cdm.json/BankTransaction\",\"name\":\"TransactionConfirmationNumber\"},\"TransactionCurrencyConversionTimestamp\":{\"entity\":\"BankTransaction.cdm.json/BankTransaction\",\"name\":\"TransactionCurrencyConversionTimestamp\"},\"TransactionNote\":{\"entity\":\"BankTransaction.cdm.json/BankTransaction\",\"name\":\"TransactionNote\"},\"TotalRetailPriceAmount\":{\"entity\":\"BankTransaction.cdm.json/BankTransaction\",\"name\":\"TotalRetailPriceAmount\"},\"TotalAdjustmentPercentage\":{\"entity\":\"BankTransaction.cdm.json/BankTransaction\",\"name\":\"TotalAdjustmentPercentage\"},\"TotalAdjustmentAmount\":{\"entity\":\"BankTransaction.cdm.json/BankTransaction\",\"name\":\"TotalAdjustmentAmount\"},\"TotalTransactionSalesPriceAmount\":{\"entity\":\"BankTransaction.cdm.json/BankTransaction\",\"name\":\"TotalTransactionSalesPriceAmount\"},\"TotalShippingChargeAmount\":{\"entity\":\"BankTransaction.cdm.json/BankTransaction\",\"name\":\"TotalShippingChargeAmount\"},\"TransactionTotalTaxAmount\":{\"entity\":\"BankTransaction.cdm.json/BankTransaction\",\"name\":\"TransactionTotalTaxAmount\"},\"TransactionTotalInvoicedAmount\":{\"entity\":\"BankTransaction.cdm.json/BankTransaction\",\"name\":\"TransactionTotalInvoicedAmount\"},\"TotalCommissionsPayableAmount\":{\"entity\":\"BankTransaction.cdm.json/BankTransaction\",\"name\":\"TotalCommissionsPayableAmount\"},\"SplitCommissionsIndicator\":{\"entity\":\"BankTransaction.cdm.json/BankTransaction\",\"name\":\"SplitCommissionsIndicator\"},\"RequestedShipmentCarrierName\":{\"entity\":\"BankTransaction.cdm.json/BankTransaction\",\"name\":\"RequestedShipmentCarrierName\"},\"AlternateCarrierAcceptableIndicator\":{\"entity\":\"BankTransaction.cdm.json/BankTransaction\",\"name\":\"AlternateCarrierAcceptableIndicator\"},\"ShipCompleteIndicator\":{\"entity\":\"BankTransaction.cdm.json/BankTransaction\",\"name\":\"ShipCompleteIndicator\"},\"AcknowledgementRequiredIndicator\":{\"entity\":\"BankTransaction.cdm.json/BankTransaction\",\"name\":\"AcknowledgementRequiredIndicator\"},\"ExpediteTransactionIndicator\":{\"entity\":\"BankTransaction.cdm.json/BankTransaction\",\"name\":\"ExpediteTransactionIndicator\"},\"DropShipmentIndicator\":{\"entity\":\"BankTransaction.cdm.json/BankTransaction\",\"name\":\"DropShipmentIndicator\"},\"ActualShipmentCarrierName\":{\"entity\":\"BankTransaction.cdm.json/BankTransaction\",\"name\":\"ActualShipmentCarrierName\"},\"TotalWeight\":{\"entity\":\"BankTransaction.cdm.json/BankTransaction\",\"name\":\"TotalWeight\"},\"TotalFreightChargeAmount\":{\"entity\":\"BankTransaction.cdm.json/BankTransaction\",\"name\":\"TotalFreightChargeAmount\"},\"UnitOfMeasureId\":{\"entity\":\"BankTransaction.cdm.json/BankTransaction\",\"name\":\"UnitOfMeasureId\"},\"DeliveryInstructions\":{\"entity\":\"BankTransaction.cdm.json/BankTransaction\",\"name\":\"DeliveryInstructions\"},\"CustomerCreditCheckNote\":{\"entity\":\"BankTransaction.cdm.json/BankTransaction\",\"name\":\"CustomerCreditCheckNote\"},\"MessageToCustomer\":{\"entity\":\"BankTransaction.cdm.json/BankTransaction\",\"name\":\"MessageToCustomer\"},\"CustomerId\":{\"entity\":\"BankTransaction.cdm.json/BankTransaction\",\"name\":\"CustomerId\"},\"CustomerAccountId\":{\"entity\":\"BankTransaction.cdm.json/BankTransaction\",\"name\":\"CustomerAccountId\"},\"SalesChannelId\":{\"entity\":\"BankTransaction.cdm.json/BankTransaction\",\"name\":\"SalesChannelId\"},\"DistributionChannelId\":{\"entity\":\"BankTransaction.cdm.json/BankTransaction\",\"name\":\"DistributionChannelId\"},\"MarketingEventId\":{\"entity\":\"BankTransaction.cdm.json/BankTransaction\",\"name\":\"MarketingEventId\"},\"AdvertisingEventId\":{\"entity\":\"BankTransaction.cdm.json/BankTransaction\",\"name\":\"AdvertisingEventId\"},\"PromotionId\":{\"entity\":\"BankTransaction.cdm.json/BankTransaction\",\"name\":\"PromotionId\"},\"TransactionTypeId\":{\"entity\":\"BankTransaction.cdm.json/BankTransaction\",\"name\":\"TransactionTypeId\"},\"BillingCycleId\":{\"entity\":\"BankTransaction.cdm.json/BankTransaction\",\"name\":\"BillingCycleId\"},\"CustomerIdentificationMethodId\":{\"entity\":\"BankTransaction.cdm.json/BankTransaction\",\"name\":\"CustomerIdentificationMethodId\"},\"TransactionClassificationId\":{\"entity\":\"BankTransaction.cdm.json/BankTransaction\",\"name\":\"TransactionClassificationId\"},\"TransactionProcessingStatusId\":{\"entity\":\"BankTransaction.cdm.json/BankTransaction\",\"name\":\"TransactionProcessingStatusId\"},\"IsoCurrencyCode\":{\"entity\":\"BankTransaction.cdm.json/BankTransaction\",\"name\":\"IsoCurrencyCode\"},\"TransactionExecutionMethodId\":{\"entity\":\"BankTransaction.cdm.json/BankTransaction\",\"name\":\"TransactionExecutionMethodId\"},\"TransactionPriorityId\":{\"entity\":\"BankTransaction.cdm.json/BankTransaction\",\"name\":\"TransactionPriorityId\"},\"TransactionTaxStatusId\":{\"entity\":\"BankTransaction.cdm.json/BankTransaction\",\"name\":\"TransactionTaxStatusId\"},\"WebPageUrl\":{\"entity\":\"BankTransaction.cdm.json/BankTransaction\",\"name\":\"WebPageUrl\"},\"PointOfSaleId\":{\"entity\":\"BankTransaction.cdm.json/BankTransaction\",\"name\":\"PointOfSaleId\"},\"SessionId\":{\"entity\":\"BankTransaction.cdm.json/BankTransaction\",\"name\":\"SessionId\"},\"LoyaltyProgramId\":{\"entity\":\"BankTransaction.cdm.json/BankTransaction\",\"name\":\"LoyaltyProgramId\"},\"LoyaltyAccountId\":{\"entity\":\"BankTransaction.cdm.json/BankTransaction\",\"name\":\"LoyaltyAccountId\"},\"PaymentMethodId\":{\"entity\":\"BankTransaction.cdm.json/BankTransaction\",\"name\":\"PaymentMethodId\"},\"ConfirmationMethodId\":{\"entity\":\"BankTransaction.cdm.json/BankTransaction\",\"name\":\"ConfirmationMethodId\"},\"ServiceId\":{\"entity\":\"BankTransaction.cdm.json/BankTransaction\",\"name\":\"ServiceId\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"BankTransaction\",\"path\":\"BankTransaction.cdm.json/BankTransaction\"},\"description\":\"The lowest level of executable work or customer activity.\\n\\nA transaction consists of one or more discrete events.\",\"primaryKey\":[\"TransactionId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"TransactionId\",\"attributeReference\":{\"entity\":\"BankTransaction.cdm.json/BankTransaction\",\"name\":\"TransactionId\"},\"dataType\":\"long\"},{\"type\":\"Existing\",\"name\":\"TransactionTimestamp\",\"attributeReference\":{\"entity\":\"BankTransaction.cdm.json/BankTransaction\",\"name\":\"TransactionTimestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"TransactionReceivedTimestamp\",\"attributeReference\":{\"entity\":\"BankTransaction.cdm.json/BankTransaction\",\"name\":\"TransactionReceivedTimestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"TransactionEntryTimestamp\",\"attributeReference\":{\"entity\":\"BankTransaction.cdm.json/BankTransaction\",\"name\":\"TransactionEntryTimestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"TransactionConfirmationTimestamp\",\"attributeReference\":{\"entity\":\"BankTransaction.cdm.json/BankTransaction\",\"name\":\"TransactionConfirmationTimestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"TransactionCompletedTimestamp\",\"attributeReference\":{\"entity\":\"BankTransaction.cdm.json/BankTransaction\",\"name\":\"TransactionCompletedTimestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"CreditCheckTimestamp\",\"attributeReference\":{\"entity\":\"BankTransaction.cdm.json/BankTransaction\",\"name\":\"CreditCheckTimestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"RequestedDeliveryDate\",\"attributeReference\":{\"entity\":\"BankTransaction.cdm.json/BankTransaction\",\"name\":\"RequestedDeliveryDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\"},{\"type\":\"Existing\",\"name\":\"CommittedDeliveryDate\",\"attributeReference\":{\"entity\":\"BankTransaction.cdm.json/BankTransaction\",\"name\":\"CommittedDeliveryDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\"},{\"type\":\"Existing\",\"name\":\"ActualDeliveryTimestamp\",\"attributeReference\":{\"entity\":\"BankTransaction.cdm.json/BankTransaction\",\"name\":\"ActualDeliveryTimestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"DeliveryConfirmationTimestamp\",\"attributeReference\":{\"entity\":\"BankTransaction.cdm.json/BankTransaction\",\"name\":\"DeliveryConfirmationTimestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"TransactionQuantity\",\"attributeReference\":{\"entity\":\"BankTransaction.cdm.json/BankTransaction\",\"name\":\"TransactionQuantity\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"TransactionAmount\",\"attributeReference\":{\"entity\":\"BankTransaction.cdm.json/BankTransaction\",\"name\":\"TransactionAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"TransactionConfirmationNumber\",\"attributeReference\":{\"entity\":\"BankTransaction.cdm.json/BankTransaction\",\"name\":\"TransactionConfirmationNumber\"},\"dataType\":\"string\",\"dataTypeLength\":16},{\"type\":\"Existing\",\"name\":\"TransactionCurrencyConversionTimestamp\",\"attributeReference\":{\"entity\":\"BankTransaction.cdm.json/BankTransaction\",\"name\":\"TransactionCurrencyConversionTimestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"TransactionNote\",\"attributeReference\":{\"entity\":\"BankTransaction.cdm.json/BankTransaction\",\"name\":\"TransactionNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024},{\"type\":\"Existing\",\"name\":\"TotalRetailPriceAmount\",\"attributeReference\":{\"entity\":\"BankTransaction.cdm.json/BankTransaction\",\"name\":\"TotalRetailPriceAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"TotalAdjustmentPercentage\",\"attributeReference\":{\"entity\":\"BankTransaction.cdm.json/BankTransaction\",\"name\":\"TotalAdjustmentPercentage\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":8},{\"type\":\"Existing\",\"name\":\"TotalAdjustmentAmount\",\"attributeReference\":{\"entity\":\"BankTransaction.cdm.json/BankTransaction\",\"name\":\"TotalAdjustmentAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"TotalTransactionSalesPriceAmount\",\"attributeReference\":{\"entity\":\"BankTransaction.cdm.json/BankTransaction\",\"name\":\"TotalTransactionSalesPriceAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"TotalShippingChargeAmount\",\"attributeReference\":{\"entity\":\"BankTransaction.cdm.json/BankTransaction\",\"name\":\"TotalShippingChargeAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"TransactionTotalTaxAmount\",\"attributeReference\":{\"entity\":\"BankTransaction.cdm.json/BankTransaction\",\"name\":\"TransactionTotalTaxAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"TransactionTotalInvoicedAmount\",\"attributeReference\":{\"entity\":\"BankTransaction.cdm.json/BankTransaction\",\"name\":\"TransactionTotalInvoicedAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"TotalCommissionsPayableAmount\",\"attributeReference\":{\"entity\":\"BankTransaction.cdm.json/BankTransaction\",\"name\":\"TotalCommissionsPayableAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"SplitCommissionsIndicator\",\"attributeReference\":{\"entity\":\"BankTransaction.cdm.json/BankTransaction\",\"name\":\"SplitCommissionsIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"RequestedShipmentCarrierName\",\"attributeReference\":{\"entity\":\"BankTransaction.cdm.json/BankTransaction\",\"name\":\"RequestedShipmentCarrierName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"AlternateCarrierAcceptableIndicator\",\"attributeReference\":{\"entity\":\"BankTransaction.cdm.json/BankTransaction\",\"name\":\"AlternateCarrierAcceptableIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"ShipCompleteIndicator\",\"attributeReference\":{\"entity\":\"BankTransaction.cdm.json/BankTransaction\",\"name\":\"ShipCompleteIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"AcknowledgementRequiredIndicator\",\"attributeReference\":{\"entity\":\"BankTransaction.cdm.json/BankTransaction\",\"name\":\"AcknowledgementRequiredIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"ExpediteTransactionIndicator\",\"attributeReference\":{\"entity\":\"BankTransaction.cdm.json/BankTransaction\",\"name\":\"ExpediteTransactionIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"DropShipmentIndicator\",\"attributeReference\":{\"entity\":\"BankTransaction.cdm.json/BankTransaction\",\"name\":\"DropShipmentIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"ActualShipmentCarrierName\",\"attributeReference\":{\"entity\":\"BankTransaction.cdm.json/BankTransaction\",\"name\":\"ActualShipmentCarrierName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"TotalWeight\",\"attributeReference\":{\"entity\":\"BankTransaction.cdm.json/BankTransaction\",\"name\":\"TotalWeight\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":8},{\"type\":\"Existing\",\"name\":\"TotalFreightChargeAmount\",\"attributeReference\":{\"entity\":\"BankTransaction.cdm.json/BankTransaction\",\"name\":\"TotalFreightChargeAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"UnitOfMeasureId\",\"attributeReference\":{\"entity\":\"BankTransaction.cdm.json/BankTransaction\",\"name\":\"UnitOfMeasureId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"DeliveryInstructions\",\"attributeReference\":{\"entity\":\"BankTransaction.cdm.json/BankTransaction\",\"name\":\"DeliveryInstructions\"},\"dataType\":\"string\",\"dataTypeLength\":2048},{\"type\":\"Existing\",\"name\":\"CustomerCreditCheckNote\",\"attributeReference\":{\"entity\":\"BankTransaction.cdm.json/BankTransaction\",\"name\":\"CustomerCreditCheckNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024},{\"type\":\"Existing\",\"name\":\"MessageToCustomer\",\"attributeReference\":{\"entity\":\"BankTransaction.cdm.json/BankTransaction\",\"name\":\"MessageToCustomer\"},\"dataType\":\"string\",\"dataTypeLength\":2048},{\"type\":\"Existing\",\"name\":\"CustomerId\",\"attributeReference\":{\"entity\":\"BankTransaction.cdm.json/BankTransaction\",\"name\":\"CustomerId\"},\"dataType\":\"long\"},{\"type\":\"Existing\",\"name\":\"CustomerAccountId\",\"attributeReference\":{\"entity\":\"BankTransaction.cdm.json/BankTransaction\",\"name\":\"CustomerAccountId\"},\"dataType\":\"long\"},{\"type\":\"Existing\",\"name\":\"SalesChannelId\",\"attributeReference\":{\"entity\":\"BankTransaction.cdm.json/BankTransaction\",\"name\":\"SalesChannelId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"DistributionChannelId\",\"attributeReference\":{\"entity\":\"BankTransaction.cdm.json/BankTransaction\",\"name\":\"DistributionChannelId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"MarketingEventId\",\"attributeReference\":{\"entity\":\"BankTransaction.cdm.json/BankTransaction\",\"name\":\"MarketingEventId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"AdvertisingEventId\",\"attributeReference\":{\"entity\":\"BankTransaction.cdm.json/BankTransaction\",\"name\":\"AdvertisingEventId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"PromotionId\",\"attributeReference\":{\"entity\":\"BankTransaction.cdm.json/BankTransaction\",\"name\":\"PromotionId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"TransactionTypeId\",\"attributeReference\":{\"entity\":\"BankTransaction.cdm.json/BankTransaction\",\"name\":\"TransactionTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"BillingCycleId\",\"attributeReference\":{\"entity\":\"BankTransaction.cdm.json/BankTransaction\",\"name\":\"BillingCycleId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"CustomerIdentificationMethodId\",\"attributeReference\":{\"entity\":\"BankTransaction.cdm.json/BankTransaction\",\"name\":\"CustomerIdentificationMethodId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"TransactionClassificationId\",\"attributeReference\":{\"entity\":\"BankTransaction.cdm.json/BankTransaction\",\"name\":\"TransactionClassificationId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"TransactionProcessingStatusId\",\"attributeReference\":{\"entity\":\"BankTransaction.cdm.json/BankTransaction\",\"name\":\"TransactionProcessingStatusId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"IsoCurrencyCode\",\"attributeReference\":{\"entity\":\"BankTransaction.cdm.json/BankTransaction\",\"name\":\"IsoCurrencyCode\"},\"dataType\":\"string\",\"dataTypeLength\":3},{\"type\":\"Existing\",\"name\":\"TransactionExecutionMethodId\",\"attributeReference\":{\"entity\":\"BankTransaction.cdm.json/BankTransaction\",\"name\":\"TransactionExecutionMethodId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"TransactionPriorityId\",\"attributeReference\":{\"entity\":\"BankTransaction.cdm.json/BankTransaction\",\"name\":\"TransactionPriorityId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"TransactionTaxStatusId\",\"attributeReference\":{\"entity\":\"BankTransaction.cdm.json/BankTransaction\",\"name\":\"TransactionTaxStatusId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"WebPageUrl\",\"attributeReference\":{\"entity\":\"BankTransaction.cdm.json/BankTransaction\",\"name\":\"WebPageUrl\"},\"dataType\":\"string\",\"dataTypeLength\":2083},{\"type\":\"Existing\",\"name\":\"PointOfSaleId\",\"attributeReference\":{\"entity\":\"BankTransaction.cdm.json/BankTransaction\",\"name\":\"PointOfSaleId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"SessionId\",\"attributeReference\":{\"entity\":\"BankTransaction.cdm.json/BankTransaction\",\"name\":\"SessionId\"},\"dataType\":\"long\"},{\"type\":\"Existing\",\"name\":\"LoyaltyProgramId\",\"attributeReference\":{\"entity\":\"BankTransaction.cdm.json/BankTransaction\",\"name\":\"LoyaltyProgramId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"LoyaltyAccountId\",\"attributeReference\":{\"entity\":\"BankTransaction.cdm.json/BankTransaction\",\"name\":\"LoyaltyAccountId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"PaymentMethodId\",\"attributeReference\":{\"entity\":\"BankTransaction.cdm.json/BankTransaction\",\"name\":\"PaymentMethodId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ConfirmationMethodId\",\"attributeReference\":{\"entity\":\"BankTransaction.cdm.json/BankTransaction\",\"name\":\"ConfirmationMethodId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ServiceId\",\"attributeReference\":{\"entity\":\"BankTransaction.cdm.json/BankTransaction\",\"name\":\"ServiceId\"},\"dataType\":\"long\"}]}}}",
+			"Description": "The lowest level of executable work or customer activity.\n\nA transaction consists of one or more discrete events.",
+			"DisplayFolderInfo": "{\"name\":\"Transaction\",\"colorCode\":\"#823A16\"}",
+			"PrimaryKeys": "TransactionId",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

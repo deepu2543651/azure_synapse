@@ -1,0 +1,26 @@
+{
+	"name": "relationship-zeclqdfarb",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-zeclqdfarb",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "InterestRateType",
+		"ToTableName": "BaseRate",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "InterestRateTypeId",
+				"ToColumnName": "InterestRateTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"InterestRateType.cdm.json/InterestRateType\",\"toEntity\":\"BaseRate.cdm.json/BaseRate\",\"joinPairs\":[{\"fromAttribute\":\"InterestRateTypeId\",\"toAttribute\":\"InterestRateTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

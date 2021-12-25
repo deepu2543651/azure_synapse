@@ -1,0 +1,144 @@
+{
+	"name": "Publication",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "Publication",
+		"Description": "A copy of a printed work offered for distribution, usually a magazine, newspaper or similar means of conveying information to the public via printed media.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "PublicationId",
+					"Description": "The unique identifier of a Publication.",
+					"BaseAttributeReference": {
+						"Entity": "Publication.cdm.json/Publication",
+						"Name": "PublicationId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PublicationName",
+					"Description": "The name of a Publication.",
+					"BaseAttributeReference": {
+						"Entity": "Publication.cdm.json/Publication",
+						"Name": "PublicationName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "PublicationTypeId",
+					"Description": "The unique identifier of a Publication Type.",
+					"BaseAttributeReference": {
+						"Entity": "Publication.cdm.json/Publication",
+						"Name": "PublicationTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PublicationFrequency",
+					"Description": "The frequency upon which the publication is published.",
+					"BaseAttributeReference": {
+						"Entity": "Publication.cdm.json/Publication",
+						"Name": "PublicationFrequency"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "PartyId",
+					"Description": "The unique identifier of a Party.",
+					"BaseAttributeReference": {
+						"Entity": "Publication.cdm.json/Publication",
+						"Name": "PartyId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/Publication",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/Publication",
+				"Properties": {
+					"LinkedServiceName": "wspc-dpu-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"PublicationId\":{\"entity\":\"Publication.cdm.json/Publication\",\"name\":\"PublicationId\"},\"PublicationName\":{\"entity\":\"Publication.cdm.json/Publication\",\"name\":\"PublicationName\"},\"PublicationTypeId\":{\"entity\":\"Publication.cdm.json/Publication\",\"name\":\"PublicationTypeId\"},\"PublicationFrequency\":{\"entity\":\"Publication.cdm.json/Publication\",\"name\":\"PublicationFrequency\"},\"PartyId\":{\"entity\":\"Publication.cdm.json/Publication\",\"name\":\"PartyId\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"Publication\",\"path\":\"Publication.cdm.json/Publication\"},\"description\":\"A copy of a printed work offered for distribution, usually a magazine, newspaper or similar means of conveying information to the public via printed media.\",\"primaryKey\":[\"PublicationId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"PublicationId\",\"attributeReference\":{\"entity\":\"Publication.cdm.json/Publication\",\"name\":\"PublicationId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"PublicationName\",\"attributeReference\":{\"entity\":\"Publication.cdm.json/Publication\",\"name\":\"PublicationName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"PublicationTypeId\",\"attributeReference\":{\"entity\":\"Publication.cdm.json/Publication\",\"name\":\"PublicationTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"PublicationFrequency\",\"attributeReference\":{\"entity\":\"Publication.cdm.json/Publication\",\"name\":\"PublicationFrequency\"},\"dataType\":\"string\",\"dataTypeLength\":1024},{\"type\":\"Existing\",\"name\":\"PartyId\",\"attributeReference\":{\"entity\":\"Publication.cdm.json/Publication\",\"name\":\"PartyId\"},\"dataType\":\"long\"}]}}}",
+			"Description": "A copy of a printed work offered for distribution, usually a magazine, newspaper or similar means of conveying information to the public via printed media.",
+			"DisplayFolderInfo": "{\"name\":\"Marketing & Advertising\",\"colorCode\":\"#692B0C\"}",
+			"PrimaryKeys": "PublicationId",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

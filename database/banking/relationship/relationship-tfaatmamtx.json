@@ -1,0 +1,26 @@
+{
+	"name": "relationship-tfaatmamtx",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-tfaatmamtx",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "CustomerAssetConditionRating",
+		"ToTableName": "CustomerAssetFinancialAssessment",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "CustomerAssetConditionRatingId",
+				"ToColumnName": "CustomerAssetConditionRatingId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"CustomerAssetConditionRating.cdm.json/CustomerAssetConditionRating\",\"toEntity\":\"CustomerAssetFinancialAssessment.cdm.json/CustomerAssetFinancialAssessment\",\"joinPairs\":[{\"fromAttribute\":\"CustomerAssetConditionRatingId\",\"toAttribute\":\"CustomerAssetConditionRatingId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

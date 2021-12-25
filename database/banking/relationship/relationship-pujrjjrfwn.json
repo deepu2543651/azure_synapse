@@ -1,0 +1,26 @@
+{
+	"name": "relationship-pujrjjrfwn",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-pujrjjrfwn",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "BankingProduct",
+		"ToTableName": "BankProductFee",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ProductId",
+				"ToColumnName": "ProductId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"BankingProduct.cdm.json/BankingProduct\",\"toEntity\":\"BankProductFee.cdm.json/BankProductFee\",\"joinPairs\":[{\"fromAttribute\":\"ProductId\",\"toAttribute\":\"ProductId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

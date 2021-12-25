@@ -1,0 +1,26 @@
+{
+	"name": "relationship-ulmgvrifpp",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-ulmgvrifpp",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Payee",
+		"ToTableName": "PayeeCustomerAccount",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "PayeeId",
+				"ToColumnName": "PayeeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Payee.cdm.json/Payee\",\"toEntity\":\"PayeeCustomerAccount.cdm.json/PayeeCustomerAccount\",\"joinPairs\":[{\"fromAttribute\":\"PayeeId\",\"toAttribute\":\"PayeeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

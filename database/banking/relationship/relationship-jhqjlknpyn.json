@@ -1,0 +1,26 @@
+{
+	"name": "relationship-jhqjlknpyn",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-jhqjlknpyn",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "BankGuaranteeType",
+		"ToTableName": "BankGuaranteeProduct",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "BankGuaranteeTypeId",
+				"ToColumnName": "BankGuaranteeTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"BankGuaranteeType.cdm.json/BankGuaranteeType\",\"toEntity\":\"BankGuaranteeProduct.cdm.json/BankGuaranteeProduct\",\"joinPairs\":[{\"fromAttribute\":\"BankGuaranteeTypeId\",\"toAttribute\":\"BankGuaranteeTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

@@ -1,0 +1,26 @@
+{
+	"name": "relationship-mnuskmqfqw",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-mnuskmqfqw",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Currency",
+		"ToTableName": "CustomerAssetFinancialAssessment",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "IsoCurrencyCode",
+				"ToColumnName": "IsoCurrencyCode"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Currency.cdm.json/Currency\",\"toEntity\":\"CustomerAssetFinancialAssessment.cdm.json/CustomerAssetFinancialAssessment\",\"joinPairs\":[{\"fromAttribute\":\"IsoCurrencyCode\",\"toAttribute\":\"IsoCurrencyCode\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

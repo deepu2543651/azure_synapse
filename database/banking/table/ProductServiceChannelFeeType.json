@@ -1,0 +1,112 @@
+{
+	"name": "ProductServiceChannelFeeType",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "ProductServiceChannelFeeType",
+		"Description": "The fees that are associated with a Service offered through a Channel to a customer account holder of a Product. \n\nEx:\n- Wire Transfer Fee\n- Currency Conversion Fee\n- Bank Customer Transaction Fee\n- Bank Non-Customer Transaction Fee\n- Balance Inquiry Fee\n- Account Transfer Fee\n- Currency Conversion Fee\n- Channel Finder's Fee",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ProductServiceChannelFeeTypeId",
+					"Description": "The unique identifier of a Product Service Channel Fee Type.",
+					"BaseAttributeReference": {
+						"Entity": "ProductServiceChannelFeeType.cdm.json/ProductServiceChannelFeeType",
+						"Name": "ProductServiceChannelFeeTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ProductServiceChannelFeeTypeName",
+					"Description": "The name of a Product Service Channel Fee Type.",
+					"BaseAttributeReference": {
+						"Entity": "ProductServiceChannelFeeType.cdm.json/ProductServiceChannelFeeType",
+						"Name": "ProductServiceChannelFeeTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ProductServiceChannelFeeTypeDescription",
+					"Description": "The description of a Product Service Channel Fee Type.",
+					"BaseAttributeReference": {
+						"Entity": "ProductServiceChannelFeeType.cdm.json/ProductServiceChannelFeeType",
+						"Name": "ProductServiceChannelFeeTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/ProductServiceChannelFeeType",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/ProductServiceChannelFeeType",
+				"Properties": {
+					"LinkedServiceName": "wspc-dpu-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ProductServiceChannelFeeTypeId\":{\"entity\":\"ProductServiceChannelFeeType.cdm.json/ProductServiceChannelFeeType\",\"name\":\"ProductServiceChannelFeeTypeId\"},\"ProductServiceChannelFeeTypeName\":{\"entity\":\"ProductServiceChannelFeeType.cdm.json/ProductServiceChannelFeeType\",\"name\":\"ProductServiceChannelFeeTypeName\"},\"ProductServiceChannelFeeTypeDescription\":{\"entity\":\"ProductServiceChannelFeeType.cdm.json/ProductServiceChannelFeeType\",\"name\":\"ProductServiceChannelFeeTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"ProductServiceChannelFeeType\",\"path\":\"ProductServiceChannelFeeType.cdm.json/ProductServiceChannelFeeType\"},\"description\":\"The fees that are associated with a Service offered through a Channel to a customer account holder of a Product. \\n\\nEx:\\n- Wire Transfer Fee\\n- Currency Conversion Fee\\n- Bank Customer Transaction Fee\\n- Bank Non-Customer Transaction Fee\\n- Balance Inquiry Fee\\n- Account Transfer Fee\\n- Currency Conversion Fee\\n- Channel Finder's Fee\",\"primaryKey\":[\"ProductServiceChannelFeeTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"ProductServiceChannelFeeTypeId\",\"attributeReference\":{\"entity\":\"ProductServiceChannelFeeType.cdm.json/ProductServiceChannelFeeType\",\"name\":\"ProductServiceChannelFeeTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ProductServiceChannelFeeTypeName\",\"attributeReference\":{\"entity\":\"ProductServiceChannelFeeType.cdm.json/ProductServiceChannelFeeType\",\"name\":\"ProductServiceChannelFeeTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"ProductServiceChannelFeeTypeDescription\",\"attributeReference\":{\"entity\":\"ProductServiceChannelFeeType.cdm.json/ProductServiceChannelFeeType\",\"name\":\"ProductServiceChannelFeeTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512}]}}}",
+			"Description": "The fees that are associated with a Service offered through a Channel to a customer account holder of a Product. \n\nEx:\n- Wire Transfer Fee\n- Currency Conversion Fee\n- Bank Customer Transaction Fee\n- Bank Non-Customer Transaction Fee\n- Balance Inquiry Fee\n- Account Transfer Fee\n- Currency Conversion Fee\n- Channel Finder's Fee",
+			"DisplayFolderInfo": "{\"name\":\"Product\",\"colorCode\":\"#0E3D73\"}",
+			"PrimaryKeys": "ProductServiceChannelFeeTypeId",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

@@ -1,0 +1,161 @@
+{
+	"name": "TreasurySecurityPrice",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "TreasurySecurityPrice",
+		"Description": "The as-of-a-date pricing of a Treasury Security.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ProductId",
+					"Description": "The unique identifier of a Product.",
+					"BaseAttributeReference": {
+						"Entity": "TreasurySecurityPrice.cdm.json/TreasurySecurityPrice",
+						"Name": "ProductId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "Date",
+					"Description": "The date of the associated pricing.",
+					"BaseAttributeReference": {
+						"Entity": "TreasurySecurityPrice.cdm.json/TreasurySecurityPrice",
+						"Name": "Date"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "AskPrice",
+					"Description": "The price being sought for the security by the investor.",
+					"BaseAttributeReference": {
+						"Entity": "TreasurySecurityPrice.cdm.json/TreasurySecurityPrice",
+						"Name": "AskPrice"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "AskYield",
+					"Description": "The return an investor would receive on a Treasury security if he or she paid the ask price.",
+					"BaseAttributeReference": {
+						"Entity": "TreasurySecurityPrice.cdm.json/TreasurySecurityPrice",
+						"Name": "AskYield"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "AccruedInterest",
+					"Description": "Interest earned on a security that has not yet been paid to the investor.",
+					"BaseAttributeReference": {
+						"Entity": "TreasurySecurityPrice.cdm.json/TreasurySecurityPrice",
+						"Name": "AccruedInterest"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "CurrentYield",
+					"Description": "The percentage return on a bond based on its current market price and its original interest rate. A bond for which you paid $1,000 and that pays you $60 annually would have a current yield of 6%.",
+					"BaseAttributeReference": {
+						"Entity": "TreasurySecurityPrice.cdm.json/TreasurySecurityPrice",
+						"Name": "CurrentYield"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/TreasurySecurityPrice",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/TreasurySecurityPrice",
+				"Properties": {
+					"LinkedServiceName": "wspc-dpu-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ProductId\":{\"entity\":\"TreasurySecurityPrice.cdm.json/TreasurySecurityPrice\",\"name\":\"ProductId\"},\"Date\":{\"entity\":\"TreasurySecurityPrice.cdm.json/TreasurySecurityPrice\",\"name\":\"Date\"},\"AskPrice\":{\"entity\":\"TreasurySecurityPrice.cdm.json/TreasurySecurityPrice\",\"name\":\"AskPrice\"},\"AskYield\":{\"entity\":\"TreasurySecurityPrice.cdm.json/TreasurySecurityPrice\",\"name\":\"AskYield\"},\"AccruedInterest\":{\"entity\":\"TreasurySecurityPrice.cdm.json/TreasurySecurityPrice\",\"name\":\"AccruedInterest\"},\"CurrentYield\":{\"entity\":\"TreasurySecurityPrice.cdm.json/TreasurySecurityPrice\",\"name\":\"CurrentYield\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"TreasurySecurityPrice\",\"path\":\"TreasurySecurityPrice.cdm.json/TreasurySecurityPrice\"},\"description\":\"The as-of-a-date pricing of a Treasury Security.\",\"primaryKey\":[\"ProductId\",\"Date\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"ProductId\",\"attributeReference\":{\"entity\":\"TreasurySecurityPrice.cdm.json/TreasurySecurityPrice\",\"name\":\"ProductId\"},\"dataType\":\"long\"},{\"type\":\"Existing\",\"name\":\"Date\",\"attributeReference\":{\"entity\":\"TreasurySecurityPrice.cdm.json/TreasurySecurityPrice\",\"name\":\"Date\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\"},{\"type\":\"Existing\",\"name\":\"AskPrice\",\"attributeReference\":{\"entity\":\"TreasurySecurityPrice.cdm.json/TreasurySecurityPrice\",\"name\":\"AskPrice\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"AskYield\",\"attributeReference\":{\"entity\":\"TreasurySecurityPrice.cdm.json/TreasurySecurityPrice\",\"name\":\"AskYield\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"AccruedInterest\",\"attributeReference\":{\"entity\":\"TreasurySecurityPrice.cdm.json/TreasurySecurityPrice\",\"name\":\"AccruedInterest\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"CurrentYield\",\"attributeReference\":{\"entity\":\"TreasurySecurityPrice.cdm.json/TreasurySecurityPrice\",\"name\":\"CurrentYield\"},\"dataType\":\"integer\"}]}}}",
+			"Description": "The as-of-a-date pricing of a Treasury Security.",
+			"DisplayFolderInfo": "{\"name\":\"Product\",\"colorCode\":\"#0E3D73\"}",
+			"PrimaryKeys": "ProductId,Date",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

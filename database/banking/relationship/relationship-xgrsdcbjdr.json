@@ -1,0 +1,26 @@
+{
+	"name": "relationship-xgrsdcbjdr",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-xgrsdcbjdr",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Customer",
+		"ToTableName": "ClusterCustomer",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "CustomerId",
+				"ToColumnName": "CustomerId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Customer.cdm.json/Customer\",\"toEntity\":\"ClusterCustomer.cdm.json/ClusterCustomer\",\"joinPairs\":[{\"fromAttribute\":\"CustomerId\",\"toAttribute\":\"CustomerId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

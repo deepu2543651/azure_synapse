@@ -1,0 +1,112 @@
+{
+	"name": "MoneyMarketInvestmentType",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "MoneyMarketInvestmentType",
+		"Description": "A specific type of money market investment.\n\nEx.:\n- Call Deposit\n- Debenture\n- Eurodollar Deposit\n- Fiduciary Deposit\n- Fixed Time Deposit\n- Municipal Note\n- Treasury Bill\n\nwhere:\nCALL DEPOSIT\n'At call' refers to savings in accounts that can be accessed at any time and is not locked away for a specified period as with term deposits.\n\nWithdrawals and deposits can be made at any time. Rules and benefits differ depending upon the bank offering the account.\n\nDEBENTURE\nDebentures are fixed-interest securities on which the issuer pays interest at a fixed rate and for a specific term. \n\nIn this way, debentures are similar to term deposits. The difference is that term deposits offered by financial institutions while debentures are issued by companies which are not licensed to take deposits. \n\nInstead companies offering debentures are subject to debt securities law and must issue a prospectus. Often, the interest income paid on debentures is higher than the rate paid on cash investments because of the longer term of the investment. \n\nEURODOLLAR DEPOSIT\nEurodollars are deposits denominated in US dollars at banks outside the United States.\n\nThey are not under the jurisdiction of the Federal Reserve, which means such deposits are subject to much less regulation than similar deposits within the United States and allow for higher margins. \n\nThere is nothing \"European\" about Eurodollar deposits since a US dollar-denominated deposit anywhere in the world would also be deemed a Eurodollar deposit. \n\nFIDUCIARY DEPOSIT\nIt is investment by the bank in the form of deposit with another bank.  Such investment is done under the name of the bank but for the benefit of the customer as the beneficial owner.  With fiduciary deposits the customer can enjoy higher returns and greater tax advantages in comparison with the normal bank deposits.\n\nFIXED TIME DEPOSIT\nDeposits held at banks which have a fixed rate of interest and a maturity date determined in advance.\n\nMUNICIPAL NOTE\nShort-term municipal bond with a maturity of one year or less issued by municipalities in anticipation of tax receipts or other revenues.\n\nTREASURY BILL\nTreasury bills are book-entry, US government guaranteed debt obligations that mature in one year or less such as 13 weeks, 26 weeks or 52 weeks.   Treasury bills are not coupon-bearing and trade at a discount to face value.    Like other securities, individual issues of T-bills are identified with a unique CUSIP number.\n\nTreasury bills are sold by single price auctions held weekly.\n\nThe Treasury bill market is highly liquid; investors can quickly convert bills to cash through a broker or bank. \n\nTreasury bills function like zero-coupon bonds.   Investors buy bills at a discount from the par, or face, value and then receive the full amount when the bill matures. \n\nThe difference between the discounted price and face value represents the return to the investor.\n\n-  Settlement is next day, same day or delayed settlement.\n\n-  Bills are sold at a discount. The discount rate is determined at auction.\n\n-  Bills pay interest only at maturity. The interest is equal to the face value minus the purchase price.\n\n-  Bills are sold in increments of $100. The minimum purchase is $100.\n\n-  All bills except 52-week bills and cash management bills are auctioned every week. The 52-week bill is auctioned every four weeks. Cash management bills aren't auctioned on a regular schedule.\n\n-  Cash management bills are issued in variable terms, usually only a matter of days.\n\n-  Bills are issued in electronic form.\n\n-  You can hold a bill until it matures or sell it before it matures.\n\n-  In a single auction, an investor can buy up to $5 million in bills by non-competitive bidding or up to 35% of the initial offering amount by competitive bidding.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "MoneyMarketInvestmentTypeId",
+					"Description": "The unique identifier of a Money Market Investment Type.",
+					"BaseAttributeReference": {
+						"Entity": "MoneyMarketInvestmentType.cdm.json/MoneyMarketInvestmentType",
+						"Name": "MoneyMarketInvestmentTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "MoneyMarketInvestmentTypeName",
+					"Description": "The name of a Money Market Investment Type.",
+					"BaseAttributeReference": {
+						"Entity": "MoneyMarketInvestmentType.cdm.json/MoneyMarketInvestmentType",
+						"Name": "MoneyMarketInvestmentTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "MoneyMarketInvestmentTypeDescription",
+					"Description": "The description of a Money Market Investment Type.",
+					"BaseAttributeReference": {
+						"Entity": "MoneyMarketInvestmentType.cdm.json/MoneyMarketInvestmentType",
+						"Name": "MoneyMarketInvestmentTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/MoneyMarketInvestmentType",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/MoneyMarketInvestmentType",
+				"Properties": {
+					"LinkedServiceName": "wspc-dpu-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"MoneyMarketInvestmentTypeId\":{\"entity\":\"MoneyMarketInvestmentType.cdm.json/MoneyMarketInvestmentType\",\"name\":\"MoneyMarketInvestmentTypeId\"},\"MoneyMarketInvestmentTypeName\":{\"entity\":\"MoneyMarketInvestmentType.cdm.json/MoneyMarketInvestmentType\",\"name\":\"MoneyMarketInvestmentTypeName\"},\"MoneyMarketInvestmentTypeDescription\":{\"entity\":\"MoneyMarketInvestmentType.cdm.json/MoneyMarketInvestmentType\",\"name\":\"MoneyMarketInvestmentTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"MoneyMarketInvestmentType\",\"path\":\"MoneyMarketInvestmentType.cdm.json/MoneyMarketInvestmentType\"},\"description\":\"A specific type of money market investment.\\n\\nEx.:\\n- Call Deposit\\n- Debenture\\n- Eurodollar Deposit\\n- Fiduciary Deposit\\n- Fixed Time Deposit\\n- Municipal Note\\n- Treasury Bill\\n\\nwhere:\\nCALL DEPOSIT\\n'At call' refers to savings in accounts that can be accessed at any time and is not locked away for a specified period as with term deposits.\\n\\nWithdrawals and deposits can be made at any time. Rules and benefits differ depending upon the bank offering the account.\\n\\nDEBENTURE\\nDebentures are fixed-interest securities on which the issuer pays interest at a fixed rate and for a specific term. \\n\\nIn this way, debentures are similar to term deposits. The difference is that term deposits offered by financial institutions while debentures are issued by companies which are not licensed to take deposits. \\n\\nInstead companies offering debentures are subject to debt securities law and must issue a prospectus. Often, the interest income paid on debentures is higher than the rate paid on cash investments because of the longer term of the investment. \\n\\nEURODOLLAR DEPOSIT\\nEurodollars are deposits denominated in US dollars at banks outside the United States.\\n\\nThey are not under the jurisdiction of the Federal Reserve, which means such deposits are subject to much less regulation than similar deposits within the United States and allow for higher margins. \\n\\nThere is nothing \\\"European\\\" about Eurodollar deposits since a US dollar-denominated deposit anywhere in the world would also be deemed a Eurodollar deposit. \\n\\nFIDUCIARY DEPOSIT\\nIt is investment by the bank in the form of deposit with another bank.  Such investment is done under the name of the bank but for the benefit of the customer as the beneficial owner.  With fiduciary deposits the customer can enjoy higher returns and greater tax advantages in comparison with the normal bank deposits.\\n\\nFIXED TIME DEPOSIT\\nDeposits held at banks which have a fixed rate of interest and a maturity date determined in advance.\\n\\nMUNICIPAL NOTE\\nShort-term municipal bond with a maturity of one year or less issued by municipalities in anticipation of tax receipts or other revenues.\\n\\nTREASURY BILL\\nTreasury bills are book-entry, US government guaranteed debt obligations that mature in one year or less such as 13 weeks, 26 weeks or 52 weeks.   Treasury bills are not coupon-bearing and trade at a discount to face value.    Like other securities, individual issues of T-bills are identified with a unique CUSIP number.\\n\\nTreasury bills are sold by single price auctions held weekly.\\n\\nThe Treasury bill market is highly liquid; investors can quickly convert bills to cash through a broker or bank. \\n\\nTreasury bills function like zero-coupon bonds.   Investors buy bills at a discount from the par, or face, value and then receive the full amount when the bill matures. \\n\\nThe difference between the discounted price and face value represents the return to the investor.\\n\\n-  Settlement is next day, same day or delayed settlement.\\n\\n-  Bills are sold at a discount. The discount rate is determined at auction.\\n\\n-  Bills pay interest only at maturity. The interest is equal to the face value minus the purchase price.\\n\\n-  Bills are sold in increments of $100. The minimum purchase is $100.\\n\\n-  All bills except 52-week bills and cash management bills are auctioned every week. The 52-week bill is auctioned every four weeks. Cash management bills aren't auctioned on a regular schedule.\\n\\n-  Cash management bills are issued in variable terms, usually only a matter of days.\\n\\n-  Bills are issued in electronic form.\\n\\n-  You can hold a bill until it matures or sell it before it matures.\\n\\n-  In a single auction, an investor can buy up to $5 million in bills by non-competitive bidding or up to 35% of the initial offering amount by competitive bidding.\",\"primaryKey\":[\"MoneyMarketInvestmentTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"MoneyMarketInvestmentTypeId\",\"attributeReference\":{\"entity\":\"MoneyMarketInvestmentType.cdm.json/MoneyMarketInvestmentType\",\"name\":\"MoneyMarketInvestmentTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"MoneyMarketInvestmentTypeName\",\"attributeReference\":{\"entity\":\"MoneyMarketInvestmentType.cdm.json/MoneyMarketInvestmentType\",\"name\":\"MoneyMarketInvestmentTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"MoneyMarketInvestmentTypeDescription\",\"attributeReference\":{\"entity\":\"MoneyMarketInvestmentType.cdm.json/MoneyMarketInvestmentType\",\"name\":\"MoneyMarketInvestmentTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512}]}}}",
+			"Description": "A specific type of money market investment.\n\nEx.:\n- Call Deposit\n- Debenture\n- Eurodollar Deposit\n- Fiduciary Deposit\n- Fixed Time Deposit\n- Municipal Note\n- Treasury Bill\n\nwhere:\nCALL DEPOSIT\n'At call' refers to savings in accounts that can be accessed at any time and is not locked away for a specified period as with term deposits.\n\nWithdrawals and deposits can be made at any time. Rules and benefits differ depending upon the bank offering the account.\n\nDEBENTURE\nDebentures are fixed-interest securities on which the issuer pays interest at a fixed rate and for a specific term. \n\nIn this way, debentures are similar to term deposits. The difference is that term deposits offered by financial institutions while debentures are issued by companies which are not licensed to take deposits. \n\nInstead companies offering debentures are subject to debt securities law and must issue a prospectus. Often, the interest income paid on debentures is higher than the rate paid on cash investments because of the longer term of the investment. \n\nEURODOLLAR DEPOSIT\nEurodollars are deposits denominated in US dollars at banks outside the United States.\n\nThey are not under the jurisdiction of the Federal Reserve, which means such deposits are subject to much less regulation than similar deposits within the United States and allow for higher margins. \n\nThere is nothing \"European\" about Eurodollar deposits since a US dollar-denominated deposit anywhere in the world would also be deemed a Eurodollar deposit. \n\nFIDUCIARY DEPOSIT\nIt is investment by the bank in the form of deposit with another bank.  Such investment is done under the name of the bank but for the benefit of the customer as the beneficial owner.  With fiduciary deposits the customer can enjoy higher returns and greater tax advantages in comparison with the normal bank deposits.\n\nFIXED TIME DEPOSIT\nDeposits held at banks which have a fixed rate of interest and a maturity date determined in advance.\n\nMUNICIPAL NOTE\nShort-term municipal bond with a maturity of one year or less issued by municipalities in anticipation of tax receipts or other revenues.\n\nTREASURY BILL\nTreasury bills are book-entry, US government guaranteed debt obligations that mature in one year or less such as 13 weeks, 26 weeks or 52 weeks.   Treasury bills are not coupon-bearing and trade at a discount to face value.    Like other securities, individual issues of T-bills are identified with a unique CUSIP number.\n\nTreasury bills are sold by single price auctions held weekly.\n\nThe Treasury bill market is highly liquid; investors can quickly convert bills to cash through a broker or bank. \n\nTreasury bills function like zero-coupon bonds.   Investors buy bills at a discount from the par, or face, value and then receive the full amount when the bill matures. \n\nThe difference between the discounted price and face value represents the return to the investor.\n\n-  Settlement is next day, same day or delayed settlement.\n\n-  Bills are sold at a discount. The discount rate is determined at auction.\n\n-  Bills pay interest only at maturity. The interest is equal to the face value minus the purchase price.\n\n-  Bills are sold in increments of $100. The minimum purchase is $100.\n\n-  All bills except 52-week bills and cash management bills are auctioned every week. The 52-week bill is auctioned every four weeks. Cash management bills aren't auctioned on a regular schedule.\n\n-  Cash management bills are issued in variable terms, usually only a matter of days.\n\n-  Bills are issued in electronic form.\n\n-  You can hold a bill until it matures or sell it before it matures.\n\n-  In a single auction, an investor can buy up to $5 million in bills by non-competitive bidding or up to 35% of the initial offering amount by competitive bidding.",
+			"DisplayFolderInfo": "{\"name\":\"Product\",\"colorCode\":\"#0E3D73\"}",
+			"PrimaryKeys": "MoneyMarketInvestmentTypeId",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

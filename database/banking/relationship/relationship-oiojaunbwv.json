@@ -1,0 +1,26 @@
+{
+	"name": "relationship-oiojaunbwv",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-oiojaunbwv",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "AnzsicClass",
+		"ToTableName": "LegalEntityCustomer",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "AnzsicClassCode",
+				"ToColumnName": "AnzsicClassCode"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"AnzsicClass.cdm.json/AnzsicClass\",\"toEntity\":\"LegalEntityCustomer.cdm.json/LegalEntityCustomer\",\"joinPairs\":[{\"fromAttribute\":\"AnzsicClassCode\",\"toAttribute\":\"AnzsicClassCode\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

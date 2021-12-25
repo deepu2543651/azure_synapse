@@ -1,0 +1,26 @@
+{
+	"name": "relationship-ncdkgngtfb",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-ncdkgngtfb",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "BankProductFeatureType",
+		"ToTableName": "ProductFeature",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ProductFeatureTypeId",
+				"ToColumnName": "ProductFeatureTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"BankProductFeatureType.cdm.json/BankProductFeatureType\",\"toEntity\":\"ProductFeature.cdm.json/ProductFeature\",\"joinPairs\":[{\"fromAttribute\":\"ProductFeatureTypeId\",\"toAttribute\":\"ProductFeatureTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

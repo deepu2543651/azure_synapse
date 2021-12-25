@@ -1,0 +1,26 @@
+{
+	"name": "relationship-dkwyjvqozb",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-dkwyjvqozb",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "BankingProduct",
+		"ToTableName": "AdvertisingCampaign",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ProductId",
+				"ToColumnName": "ProductId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"BankingProduct.cdm.json/BankingProduct\",\"toEntity\":\"AdvertisingCampaign.cdm.json/AdvertisingCampaign\",\"joinPairs\":[{\"fromAttribute\":\"ProductId\",\"toAttribute\":\"ProductId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

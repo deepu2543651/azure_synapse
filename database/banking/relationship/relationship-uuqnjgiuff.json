@@ -1,0 +1,26 @@
+{
+	"name": "relationship-uuqnjgiuff",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-uuqnjgiuff",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "PayeeAccountStatus",
+		"ToTableName": "PayeeCustomerAccount",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "PayeeAccountStatusId",
+				"ToColumnName": "PayeeAccountStatusId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"PayeeAccountStatus.cdm.json/PayeeAccountStatus\",\"toEntity\":\"PayeeCustomerAccount.cdm.json/PayeeCustomerAccount\",\"joinPairs\":[{\"fromAttribute\":\"PayeeAccountStatusId\",\"toAttribute\":\"PayeeAccountStatusId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

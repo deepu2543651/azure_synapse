@@ -1,0 +1,26 @@
+{
+	"name": "relationship-vyhvnunbgb",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-vyhvnunbgb",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "PaymentCardMemberServiceType",
+		"ToTableName": "PaymentCardMemberService",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "PaymentCardMemberServiceTypeId",
+				"ToColumnName": "PaymentCardMemberServiceTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"PaymentCardMemberServiceType.cdm.json/PaymentCardMemberServiceType\",\"toEntity\":\"PaymentCardMemberService.cdm.json/PaymentCardMemberService\",\"joinPairs\":[{\"fromAttribute\":\"PaymentCardMemberServiceTypeId\",\"toAttribute\":\"PaymentCardMemberServiceTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

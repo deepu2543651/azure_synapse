@@ -1,0 +1,112 @@
+{
+	"name": "BankTransactionCategory",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "BankTransactionCategory",
+		"Description": "The category of transaction.\n\nEx:\nIn-Branch Transaction\nSelf Service Transaction",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "TransactionCategoryId",
+					"Description": "The unique identifier of a Transaction Category.",
+					"BaseAttributeReference": {
+						"Entity": "BankTransactionCategory.cdm.json/BankTransactionCategory",
+						"Name": "TransactionCategoryId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "TransactionCategoryName",
+					"Description": "The name of a Transaction Category.",
+					"BaseAttributeReference": {
+						"Entity": "BankTransactionCategory.cdm.json/BankTransactionCategory",
+						"Name": "TransactionCategoryName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "TransactionCategoryDescription",
+					"Description": "The description of a Transaction Category.",
+					"BaseAttributeReference": {
+						"Entity": "BankTransactionCategory.cdm.json/BankTransactionCategory",
+						"Name": "TransactionCategoryDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/BankTransactionCategory",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/BankTransactionCategory",
+				"Properties": {
+					"LinkedServiceName": "wspc-dpu-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"TransactionCategoryId\":{\"entity\":\"BankTransactionCategory.cdm.json/BankTransactionCategory\",\"name\":\"TransactionCategoryId\"},\"TransactionCategoryName\":{\"entity\":\"BankTransactionCategory.cdm.json/BankTransactionCategory\",\"name\":\"TransactionCategoryName\"},\"TransactionCategoryDescription\":{\"entity\":\"BankTransactionCategory.cdm.json/BankTransactionCategory\",\"name\":\"TransactionCategoryDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"BankTransactionCategory\",\"path\":\"BankTransactionCategory.cdm.json/BankTransactionCategory\"},\"description\":\"The category of transaction.\\n\\nEx:\\nIn-Branch Transaction\\nSelf Service Transaction\",\"primaryKey\":[\"TransactionCategoryId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"TransactionCategoryId\",\"attributeReference\":{\"entity\":\"BankTransactionCategory.cdm.json/BankTransactionCategory\",\"name\":\"TransactionCategoryId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"TransactionCategoryName\",\"attributeReference\":{\"entity\":\"BankTransactionCategory.cdm.json/BankTransactionCategory\",\"name\":\"TransactionCategoryName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"TransactionCategoryDescription\",\"attributeReference\":{\"entity\":\"BankTransactionCategory.cdm.json/BankTransactionCategory\",\"name\":\"TransactionCategoryDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512}]}}}",
+			"Description": "The category of transaction.\n\nEx:\nIn-Branch Transaction\nSelf Service Transaction",
+			"DisplayFolderInfo": "{\"name\":\"Transaction\",\"colorCode\":\"#823A16\"}",
+			"PrimaryKeys": "TransactionCategoryId",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

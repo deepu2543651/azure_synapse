@@ -1,0 +1,375 @@
+{
+	"name": "CustomerAsset",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "CustomerAsset",
+		"Description": "Customer Assets are things that are owned (partially or fully) by a Customer. \n\nAssets must meet two requirements:\n1 - It must be owned by the business or legal entity.\n2 - It must have a money value.\n\nThere are two forms of assets:  Tangible and Intangible\n- Tangible assets have physical substance.\n- Intangible assets are without physical qualities but have value based on rights or privileges belonging to the owner.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "CustomerAssetId",
+					"Description": "The unique identifier of a Customer Asset.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAsset.cdm.json/CustomerAsset",
+						"Name": "CustomerAssetId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "CustomerAssetName",
+					"Description": "The name of the Customer Asset.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAsset.cdm.json/CustomerAsset",
+						"Name": "CustomerAssetName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "CustomerAssetDescription",
+					"Description": "The description of the Customer Asset.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAsset.cdm.json/CustomerAsset",
+						"Name": "CustomerAssetDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "CustomerAssetNote",
+					"Description": "A note, comment or additional information regarding the Customer Asset.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAsset.cdm.json/CustomerAsset",
+						"Name": "CustomerAssetNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "CustomerAssetManufacturedDate",
+					"Description": "The date that the Customer Asset was manufactured.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAsset.cdm.json/CustomerAsset",
+						"Name": "CustomerAssetManufacturedDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "CustomerAssetPurchasedDate",
+					"Description": "The date that the Customer Asset was purchased.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAsset.cdm.json/CustomerAsset",
+						"Name": "CustomerAssetPurchasedDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "CustomerAssetDeliveredDate",
+					"Description": "The date that the Customer Asset was delivered.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAsset.cdm.json/CustomerAsset",
+						"Name": "CustomerAssetDeliveredDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "ManufacturerId",
+					"Description": "The unique identifier of the Manufacturer.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAsset.cdm.json/CustomerAsset",
+						"Name": "ManufacturerId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ModelNumber",
+					"Description": "The model number of the Asset.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAsset.cdm.json/CustomerAsset",
+						"Name": "ModelNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ManufacturerSerialNumber",
+					"Description": "The manufacturer's serial number of the Asset.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAsset.cdm.json/CustomerAsset",
+						"Name": "ManufacturerSerialNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 30,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "OrganizationAssignedSerialNumber",
+					"Description": "The serial number assigned to the Asset by the organization holding it.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAsset.cdm.json/CustomerAsset",
+						"Name": "OrganizationAssignedSerialNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 30,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "EconomicLifeMonths",
+					"Description": "The estimated period expressed in months that a fixed asset will provide benefits to the business organization.\n\nThis is usually less than the physical life of an asset because an asset continues to have physical life despite obsolescence.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAsset.cdm.json/CustomerAsset",
+						"Name": "EconomicLifeMonths"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PhysicalLifeMonths",
+					"Description": "The length of time that the fixed asset should be operational expressed in months.\n\nThis is different from the economic or depreciation life of the asset, which have to do with the accounting value to the business and not the actual length of time that the fixed asset may operate or be capable of operation.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAsset.cdm.json/CustomerAsset",
+						"Name": "PhysicalLifeMonths"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ServiceLifeMonths",
+					"Description": "The time that an asset will provide benefits to the business organization expressed in months.\n\nThe depreciation expense determination requires an estimated number of years of usefulness.\n\nThe service life may be less than its physical life due to obsolescence.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAsset.cdm.json/CustomerAsset",
+						"Name": "ServiceLifeMonths"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "CustomerAssetTypeId",
+					"Description": "The unique identifier of a Customer Asset Type.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAsset.cdm.json/CustomerAsset",
+						"Name": "CustomerAssetTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "CustomerAssetOwnershipTypeId",
+					"Description": "The unique identifier of a Customer Asset Ownership Type.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAsset.cdm.json/CustomerAsset",
+						"Name": "CustomerAssetOwnershipTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "AssetTitleStatusId",
+					"Description": "The unique identifier of an Asset Title Status.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAsset.cdm.json/CustomerAsset",
+						"Name": "AssetTitleStatusId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "CustomerAccountId",
+					"Description": "The unique identifier of a Customer Account.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAsset.cdm.json/CustomerAsset",
+						"Name": "CustomerAccountId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "ProductId",
+					"Description": "The unique identifier of a Product.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAsset.cdm.json/CustomerAsset",
+						"Name": "ProductId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/CustomerAsset",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/CustomerAsset",
+				"Properties": {
+					"LinkedServiceName": "wspc-dpu-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"CustomerAssetId\":{\"entity\":\"CustomerAsset.cdm.json/CustomerAsset\",\"name\":\"CustomerAssetId\"},\"CustomerAssetName\":{\"entity\":\"CustomerAsset.cdm.json/CustomerAsset\",\"name\":\"CustomerAssetName\"},\"CustomerAssetDescription\":{\"entity\":\"CustomerAsset.cdm.json/CustomerAsset\",\"name\":\"CustomerAssetDescription\"},\"CustomerAssetNote\":{\"entity\":\"CustomerAsset.cdm.json/CustomerAsset\",\"name\":\"CustomerAssetNote\"},\"CustomerAssetManufacturedDate\":{\"entity\":\"CustomerAsset.cdm.json/CustomerAsset\",\"name\":\"CustomerAssetManufacturedDate\"},\"CustomerAssetPurchasedDate\":{\"entity\":\"CustomerAsset.cdm.json/CustomerAsset\",\"name\":\"CustomerAssetPurchasedDate\"},\"CustomerAssetDeliveredDate\":{\"entity\":\"CustomerAsset.cdm.json/CustomerAsset\",\"name\":\"CustomerAssetDeliveredDate\"},\"ManufacturerId\":{\"entity\":\"CustomerAsset.cdm.json/CustomerAsset\",\"name\":\"ManufacturerId\"},\"ModelNumber\":{\"entity\":\"CustomerAsset.cdm.json/CustomerAsset\",\"name\":\"ModelNumber\"},\"ManufacturerSerialNumber\":{\"entity\":\"CustomerAsset.cdm.json/CustomerAsset\",\"name\":\"ManufacturerSerialNumber\"},\"OrganizationAssignedSerialNumber\":{\"entity\":\"CustomerAsset.cdm.json/CustomerAsset\",\"name\":\"OrganizationAssignedSerialNumber\"},\"EconomicLifeMonths\":{\"entity\":\"CustomerAsset.cdm.json/CustomerAsset\",\"name\":\"EconomicLifeMonths\"},\"PhysicalLifeMonths\":{\"entity\":\"CustomerAsset.cdm.json/CustomerAsset\",\"name\":\"PhysicalLifeMonths\"},\"ServiceLifeMonths\":{\"entity\":\"CustomerAsset.cdm.json/CustomerAsset\",\"name\":\"ServiceLifeMonths\"},\"CustomerAssetTypeId\":{\"entity\":\"CustomerAsset.cdm.json/CustomerAsset\",\"name\":\"CustomerAssetTypeId\"},\"CustomerAssetOwnershipTypeId\":{\"entity\":\"CustomerAsset.cdm.json/CustomerAsset\",\"name\":\"CustomerAssetOwnershipTypeId\"},\"AssetTitleStatusId\":{\"entity\":\"CustomerAsset.cdm.json/CustomerAsset\",\"name\":\"AssetTitleStatusId\"},\"CustomerAccountId\":{\"entity\":\"CustomerAsset.cdm.json/CustomerAsset\",\"name\":\"CustomerAccountId\"},\"ProductId\":{\"entity\":\"CustomerAsset.cdm.json/CustomerAsset\",\"name\":\"ProductId\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"CustomerAsset\",\"path\":\"CustomerAsset.cdm.json/CustomerAsset\"},\"description\":\"Customer Assets are things that are owned (partially or fully) by a Customer. \\n\\nAssets must meet two requirements:\\n1 - It must be owned by the business or legal entity.\\n2 - It must have a money value.\\n\\nThere are two forms of assets:  Tangible and Intangible\\n- Tangible assets have physical substance.\\n- Intangible assets are without physical qualities but have value based on rights or privileges belonging to the owner.\",\"primaryKey\":[\"CustomerAssetId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"CustomerAssetId\",\"attributeReference\":{\"entity\":\"CustomerAsset.cdm.json/CustomerAsset\",\"name\":\"CustomerAssetId\"},\"dataType\":\"long\"},{\"type\":\"Existing\",\"name\":\"CustomerAssetName\",\"attributeReference\":{\"entity\":\"CustomerAsset.cdm.json/CustomerAsset\",\"name\":\"CustomerAssetName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"CustomerAssetDescription\",\"attributeReference\":{\"entity\":\"CustomerAsset.cdm.json/CustomerAsset\",\"name\":\"CustomerAssetDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512},{\"type\":\"Existing\",\"name\":\"CustomerAssetNote\",\"attributeReference\":{\"entity\":\"CustomerAsset.cdm.json/CustomerAsset\",\"name\":\"CustomerAssetNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024},{\"type\":\"Existing\",\"name\":\"CustomerAssetManufacturedDate\",\"attributeReference\":{\"entity\":\"CustomerAsset.cdm.json/CustomerAsset\",\"name\":\"CustomerAssetManufacturedDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\"},{\"type\":\"Existing\",\"name\":\"CustomerAssetPurchasedDate\",\"attributeReference\":{\"entity\":\"CustomerAsset.cdm.json/CustomerAsset\",\"name\":\"CustomerAssetPurchasedDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\"},{\"type\":\"Existing\",\"name\":\"CustomerAssetDeliveredDate\",\"attributeReference\":{\"entity\":\"CustomerAsset.cdm.json/CustomerAsset\",\"name\":\"CustomerAssetDeliveredDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\"},{\"type\":\"Existing\",\"name\":\"ManufacturerId\",\"attributeReference\":{\"entity\":\"CustomerAsset.cdm.json/CustomerAsset\",\"name\":\"ManufacturerId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ModelNumber\",\"attributeReference\":{\"entity\":\"CustomerAsset.cdm.json/CustomerAsset\",\"name\":\"ModelNumber\"},\"dataType\":\"string\",\"dataTypeLength\":1024},{\"type\":\"Existing\",\"name\":\"ManufacturerSerialNumber\",\"attributeReference\":{\"entity\":\"CustomerAsset.cdm.json/CustomerAsset\",\"name\":\"ManufacturerSerialNumber\"},\"dataType\":\"string\",\"dataTypeLength\":30},{\"type\":\"Existing\",\"name\":\"OrganizationAssignedSerialNumber\",\"attributeReference\":{\"entity\":\"CustomerAsset.cdm.json/CustomerAsset\",\"name\":\"OrganizationAssignedSerialNumber\"},\"dataType\":\"string\",\"dataTypeLength\":30},{\"type\":\"Existing\",\"name\":\"EconomicLifeMonths\",\"attributeReference\":{\"entity\":\"CustomerAsset.cdm.json/CustomerAsset\",\"name\":\"EconomicLifeMonths\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"PhysicalLifeMonths\",\"attributeReference\":{\"entity\":\"CustomerAsset.cdm.json/CustomerAsset\",\"name\":\"PhysicalLifeMonths\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ServiceLifeMonths\",\"attributeReference\":{\"entity\":\"CustomerAsset.cdm.json/CustomerAsset\",\"name\":\"ServiceLifeMonths\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"CustomerAssetTypeId\",\"attributeReference\":{\"entity\":\"CustomerAsset.cdm.json/CustomerAsset\",\"name\":\"CustomerAssetTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"CustomerAssetOwnershipTypeId\",\"attributeReference\":{\"entity\":\"CustomerAsset.cdm.json/CustomerAsset\",\"name\":\"CustomerAssetOwnershipTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"AssetTitleStatusId\",\"attributeReference\":{\"entity\":\"CustomerAsset.cdm.json/CustomerAsset\",\"name\":\"AssetTitleStatusId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"CustomerAccountId\",\"attributeReference\":{\"entity\":\"CustomerAsset.cdm.json/CustomerAsset\",\"name\":\"CustomerAccountId\"},\"dataType\":\"long\"},{\"type\":\"Existing\",\"name\":\"ProductId\",\"attributeReference\":{\"entity\":\"CustomerAsset.cdm.json/CustomerAsset\",\"name\":\"ProductId\"},\"dataType\":\"long\"}]}}}",
+			"Description": "Customer Assets are things that are owned (partially or fully) by a Customer. \n\nAssets must meet two requirements:\n1 - It must be owned by the business or legal entity.\n2 - It must have a money value.\n\nThere are two forms of assets:  Tangible and Intangible\n- Tangible assets have physical substance.\n- Intangible assets are without physical qualities but have value based on rights or privileges belonging to the owner.",
+			"DisplayFolderInfo": "{\"name\":\"Customer Credit & Collections\",\"colorCode\":\"#022F22\"}",
+			"PrimaryKeys": "CustomerAssetId",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

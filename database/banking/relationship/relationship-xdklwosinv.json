@@ -1,0 +1,26 @@
+{
+	"name": "relationship-xdklwosinv",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-xdklwosinv",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "AdvertisingCampaign",
+		"ToTableName": "AdvertisingCampaignBudgetedCostItem",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "AdvertisingCampaignId",
+				"ToColumnName": "AdvertisingCampaignId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"AdvertisingCampaign.cdm.json/AdvertisingCampaign\",\"toEntity\":\"AdvertisingCampaignBudgetedCostItem.cdm.json/AdvertisingCampaignBudgetedCostItem\",\"joinPairs\":[{\"fromAttribute\":\"AdvertisingCampaignId\",\"toAttribute\":\"AdvertisingCampaignId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

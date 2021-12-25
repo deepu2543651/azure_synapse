@@ -1,0 +1,112 @@
+{
+	"name": "ServiceRequestType",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "ServiceRequestType",
+		"Description": "A classification or categorization of Service Requests based upon common objectives or characteristics.\n\nEx:\n- Information request\n- Shipment Location\n- Return\n- Invoicing\n- Billing Adjustment \n- Billing Dispute Resolution\n- Complaint\n- Loan Application\n- Demand Account Application\n- Mortgage Application\n- Credit Card Fraud\n- Identity Fraud\n- Request for Additional Debit Card\n- Order Modification \n- Order Expedite \n- Re-routing Request",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ServiceRequestTypeId",
+					"Description": "The unique identifier of a Service Request Type.",
+					"BaseAttributeReference": {
+						"Entity": "ServiceRequestType.cdm.json/ServiceRequestType",
+						"Name": "ServiceRequestTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ServiceRequestTypeName",
+					"Description": "The name of a Service Request Type.",
+					"BaseAttributeReference": {
+						"Entity": "ServiceRequestType.cdm.json/ServiceRequestType",
+						"Name": "ServiceRequestTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ServiceRequestTypeDescription",
+					"Description": "The description of a Service Request Type.",
+					"BaseAttributeReference": {
+						"Entity": "ServiceRequestType.cdm.json/ServiceRequestType",
+						"Name": "ServiceRequestTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/ServiceRequestType",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/ServiceRequestType",
+				"Properties": {
+					"LinkedServiceName": "wspc-dpu-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ServiceRequestTypeId\":{\"entity\":\"ServiceRequestType.cdm.json/ServiceRequestType\",\"name\":\"ServiceRequestTypeId\"},\"ServiceRequestTypeName\":{\"entity\":\"ServiceRequestType.cdm.json/ServiceRequestType\",\"name\":\"ServiceRequestTypeName\"},\"ServiceRequestTypeDescription\":{\"entity\":\"ServiceRequestType.cdm.json/ServiceRequestType\",\"name\":\"ServiceRequestTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"ServiceRequestType\",\"path\":\"ServiceRequestType.cdm.json/ServiceRequestType\"},\"description\":\"A classification or categorization of Service Requests based upon common objectives or characteristics.\\n\\nEx:\\n- Information request\\n- Shipment Location\\n- Return\\n- Invoicing\\n- Billing Adjustment \\n- Billing Dispute Resolution\\n- Complaint\\n- Loan Application\\n- Demand Account Application\\n- Mortgage Application\\n- Credit Card Fraud\\n- Identity Fraud\\n- Request for Additional Debit Card\\n- Order Modification \\n- Order Expedite \\n- Re-routing Request\",\"primaryKey\":[\"ServiceRequestTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"ServiceRequestTypeId\",\"attributeReference\":{\"entity\":\"ServiceRequestType.cdm.json/ServiceRequestType\",\"name\":\"ServiceRequestTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ServiceRequestTypeName\",\"attributeReference\":{\"entity\":\"ServiceRequestType.cdm.json/ServiceRequestType\",\"name\":\"ServiceRequestTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"ServiceRequestTypeDescription\",\"attributeReference\":{\"entity\":\"ServiceRequestType.cdm.json/ServiceRequestType\",\"name\":\"ServiceRequestTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512}]}}}",
+			"Description": "A classification or categorization of Service Requests based upon common objectives or characteristics.\n\nEx:\n- Information request\n- Shipment Location\n- Return\n- Invoicing\n- Billing Adjustment \n- Billing Dispute Resolution\n- Complaint\n- Loan Application\n- Demand Account Application\n- Mortgage Application\n- Credit Card Fraud\n- Identity Fraud\n- Request for Additional Debit Card\n- Order Modification \n- Order Expedite \n- Re-routing Request",
+			"DisplayFolderInfo": "{\"name\":\"Customer Service & Contact Management\",\"colorCode\":\"#Ef6950\"}",
+			"PrimaryKeys": "ServiceRequestTypeId",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

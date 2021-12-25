@@ -1,0 +1,26 @@
+{
+	"name": "relationship-imzptglwbo",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-imzptglwbo",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "TransactionStatusType",
+		"ToTableName": "TransactionStatus",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "TransactionStatusTypeId",
+				"ToColumnName": "TransactionStatusTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"TransactionStatusType.cdm.json/TransactionStatusType\",\"toEntity\":\"TransactionStatus.cdm.json/TransactionStatus\",\"joinPairs\":[{\"fromAttribute\":\"TransactionStatusTypeId\",\"toAttribute\":\"TransactionStatusTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

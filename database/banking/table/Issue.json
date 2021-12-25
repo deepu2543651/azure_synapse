@@ -1,0 +1,243 @@
+{
+	"name": "Issue",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "Issue",
+		"Description": "Issues are defined to raise visibility of significant subjects such as Service Requests to senior management for resolution or integration of solutions across organizations, products and programs.\n\nService Request(s) that cannot be routinely addressed are categorized and escalated as an Issue. Issues also include subjects of expense, quality-control, production, distribution or sales that are of sufficient importance to have organization-wide visibility and interest.\n\nCosts for Issue resolution are billed to internal organizations rather than to customers.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "IssueId",
+					"Description": "The unique identifier of an Issue.",
+					"BaseAttributeReference": {
+						"Entity": "Issue.cdm.json/Issue",
+						"Name": "IssueId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "IssueCreatedDate",
+					"Description": "The date that the Issue was created.",
+					"BaseAttributeReference": {
+						"Entity": "Issue.cdm.json/Issue",
+						"Name": "IssueCreatedDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "IssueClosedDate",
+					"Description": "The date that the Issue was closed.",
+					"BaseAttributeReference": {
+						"Entity": "Issue.cdm.json/Issue",
+						"Name": "IssueClosedDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "IssueDescription",
+					"Description": "The description of the Issue.",
+					"BaseAttributeReference": {
+						"Entity": "Issue.cdm.json/Issue",
+						"Name": "IssueDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "TotalManhoursExpended",
+					"Description": "The total number of manhours expended upon the associated Issue.",
+					"BaseAttributeReference": {
+						"Entity": "Issue.cdm.json/Issue",
+						"Name": "TotalManhoursExpended"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "TotalCostAmount",
+					"Description": "The total associated Cost assigned to the Issue.",
+					"BaseAttributeReference": {
+						"Entity": "Issue.cdm.json/Issue",
+						"Name": "TotalCostAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "EmployeeId",
+					"Description": "The unique identifier of an Employee.",
+					"BaseAttributeReference": {
+						"Entity": "Issue.cdm.json/Issue",
+						"Name": "EmployeeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "IssuePriorityId",
+					"Description": "The unique identifier of the Issue Priority.",
+					"BaseAttributeReference": {
+						"Entity": "Issue.cdm.json/Issue",
+						"Name": "IssuePriorityId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "IssueTypeId",
+					"Description": "The unique identifier of an Issue Type.",
+					"BaseAttributeReference": {
+						"Entity": "Issue.cdm.json/Issue",
+						"Name": "IssueTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PartyId",
+					"Description": "The unique identifier of a Party.",
+					"BaseAttributeReference": {
+						"Entity": "Issue.cdm.json/Issue",
+						"Name": "PartyId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "OrganizationId",
+					"Description": "The unique identifier of an organization or business unit.",
+					"BaseAttributeReference": {
+						"Entity": "Issue.cdm.json/Issue",
+						"Name": "OrganizationId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/Issue",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/Issue",
+				"Properties": {
+					"LinkedServiceName": "wspc-dpu-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"IssueId\":{\"entity\":\"Issue.cdm.json/Issue\",\"name\":\"IssueId\"},\"IssueCreatedDate\":{\"entity\":\"Issue.cdm.json/Issue\",\"name\":\"IssueCreatedDate\"},\"IssueClosedDate\":{\"entity\":\"Issue.cdm.json/Issue\",\"name\":\"IssueClosedDate\"},\"IssueDescription\":{\"entity\":\"Issue.cdm.json/Issue\",\"name\":\"IssueDescription\"},\"TotalManhoursExpended\":{\"entity\":\"Issue.cdm.json/Issue\",\"name\":\"TotalManhoursExpended\"},\"TotalCostAmount\":{\"entity\":\"Issue.cdm.json/Issue\",\"name\":\"TotalCostAmount\"},\"EmployeeId\":{\"entity\":\"Issue.cdm.json/Issue\",\"name\":\"EmployeeId\"},\"IssuePriorityId\":{\"entity\":\"Issue.cdm.json/Issue\",\"name\":\"IssuePriorityId\"},\"IssueTypeId\":{\"entity\":\"Issue.cdm.json/Issue\",\"name\":\"IssueTypeId\"},\"PartyId\":{\"entity\":\"Issue.cdm.json/Issue\",\"name\":\"PartyId\"},\"OrganizationId\":{\"entity\":\"Issue.cdm.json/Issue\",\"name\":\"OrganizationId\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"Issue\",\"path\":\"Issue.cdm.json/Issue\"},\"description\":\"Issues are defined to raise visibility of significant subjects such as Service Requests to senior management for resolution or integration of solutions across organizations, products and programs.\\n\\nService Request(s) that cannot be routinely addressed are categorized and escalated as an Issue. Issues also include subjects of expense, quality-control, production, distribution or sales that are of sufficient importance to have organization-wide visibility and interest.\\n\\nCosts for Issue resolution are billed to internal organizations rather than to customers.\",\"primaryKey\":[\"IssueId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"IssueId\",\"attributeReference\":{\"entity\":\"Issue.cdm.json/Issue\",\"name\":\"IssueId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"IssueCreatedDate\",\"attributeReference\":{\"entity\":\"Issue.cdm.json/Issue\",\"name\":\"IssueCreatedDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\"},{\"type\":\"Existing\",\"name\":\"IssueClosedDate\",\"attributeReference\":{\"entity\":\"Issue.cdm.json/Issue\",\"name\":\"IssueClosedDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\"},{\"type\":\"Existing\",\"name\":\"IssueDescription\",\"attributeReference\":{\"entity\":\"Issue.cdm.json/Issue\",\"name\":\"IssueDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512},{\"type\":\"Existing\",\"name\":\"TotalManhoursExpended\",\"attributeReference\":{\"entity\":\"Issue.cdm.json/Issue\",\"name\":\"TotalManhoursExpended\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"TotalCostAmount\",\"attributeReference\":{\"entity\":\"Issue.cdm.json/Issue\",\"name\":\"TotalCostAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"EmployeeId\",\"attributeReference\":{\"entity\":\"Issue.cdm.json/Issue\",\"name\":\"EmployeeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"IssuePriorityId\",\"attributeReference\":{\"entity\":\"Issue.cdm.json/Issue\",\"name\":\"IssuePriorityId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"IssueTypeId\",\"attributeReference\":{\"entity\":\"Issue.cdm.json/Issue\",\"name\":\"IssueTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"PartyId\",\"attributeReference\":{\"entity\":\"Issue.cdm.json/Issue\",\"name\":\"PartyId\"},\"dataType\":\"long\"},{\"type\":\"Existing\",\"name\":\"OrganizationId\",\"attributeReference\":{\"entity\":\"Issue.cdm.json/Issue\",\"name\":\"OrganizationId\"},\"dataType\":\"integer\"}]}}}",
+			"Description": "Issues are defined to raise visibility of significant subjects such as Service Requests to senior management for resolution or integration of solutions across organizations, products and programs.\n\nService Request(s) that cannot be routinely addressed are categorized and escalated as an Issue. Issues also include subjects of expense, quality-control, production, distribution or sales that are of sufficient importance to have organization-wide visibility and interest.\n\nCosts for Issue resolution are billed to internal organizations rather than to customers.",
+			"DisplayFolderInfo": "{\"name\":\"Customer Service & Contact Management\",\"colorCode\":\"#Ef6950\"}",
+			"PrimaryKeys": "IssueId",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

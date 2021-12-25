@@ -1,0 +1,112 @@
+{
+	"name": "PayeeAccountStatus",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "PayeeAccountStatus",
+		"Description": "The status type of the associated account's ability to make payments to the associated payee account.\n\nEx:\n- Active\n- Inactive",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "PayeeAccountStatusId",
+					"Description": "The unique identifier of a Payee Account Status.",
+					"BaseAttributeReference": {
+						"Entity": "PayeeAccountStatus.cdm.json/PayeeAccountStatus",
+						"Name": "PayeeAccountStatusId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PayeeAccountStatusName",
+					"Description": "The name of a Payee Account Status.",
+					"BaseAttributeReference": {
+						"Entity": "PayeeAccountStatus.cdm.json/PayeeAccountStatus",
+						"Name": "PayeeAccountStatusName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "PayeeAccountStatusDescription",
+					"Description": "The description of a Payee Account Status.",
+					"BaseAttributeReference": {
+						"Entity": "PayeeAccountStatus.cdm.json/PayeeAccountStatus",
+						"Name": "PayeeAccountStatusDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/PayeeAccountStatus",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/PayeeAccountStatus",
+				"Properties": {
+					"LinkedServiceName": "wspc-dpu-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"PayeeAccountStatusId\":{\"entity\":\"PayeeAccountStatus.cdm.json/PayeeAccountStatus\",\"name\":\"PayeeAccountStatusId\"},\"PayeeAccountStatusName\":{\"entity\":\"PayeeAccountStatus.cdm.json/PayeeAccountStatus\",\"name\":\"PayeeAccountStatusName\"},\"PayeeAccountStatusDescription\":{\"entity\":\"PayeeAccountStatus.cdm.json/PayeeAccountStatus\",\"name\":\"PayeeAccountStatusDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"PayeeAccountStatus\",\"path\":\"PayeeAccountStatus.cdm.json/PayeeAccountStatus\"},\"description\":\"The status type of the associated account's ability to make payments to the associated payee account.\\n\\nEx:\\n- Active\\n- Inactive\",\"primaryKey\":[\"PayeeAccountStatusId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"PayeeAccountStatusId\",\"attributeReference\":{\"entity\":\"PayeeAccountStatus.cdm.json/PayeeAccountStatus\",\"name\":\"PayeeAccountStatusId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"PayeeAccountStatusName\",\"attributeReference\":{\"entity\":\"PayeeAccountStatus.cdm.json/PayeeAccountStatus\",\"name\":\"PayeeAccountStatusName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"PayeeAccountStatusDescription\",\"attributeReference\":{\"entity\":\"PayeeAccountStatus.cdm.json/PayeeAccountStatus\",\"name\":\"PayeeAccountStatusDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512}]}}}",
+			"Description": "The status type of the associated account's ability to make payments to the associated payee account.\n\nEx:\n- Active\n- Inactive",
+			"DisplayFolderInfo": "{\"name\":\"Customer Account\",\"colorCode\":\"#E3008C\"}",
+			"PrimaryKeys": "PayeeAccountStatusId",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

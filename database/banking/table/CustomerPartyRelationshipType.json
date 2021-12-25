@@ -1,0 +1,112 @@
+{
+	"name": "CustomerPartyRelationshipType",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "CustomerPartyRelationshipType",
+		"Description": "The nature of the relationship between a customer and a related party.\n\nEx:\n- Company - parent company \n- Company - subsidiary company \n- Company - company Shipping Agent\n- Company - related-company\n- Individual - Employer\n- Individual - Family Member\n- Customer Referral\n- National Jurisdiction\n- State Jurisdiction\n- Provincial Jurisdiction\n- Customer - Travel Agent",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "CustomerPartyRelationshipTypeId",
+					"Description": "The unique identifier of a customer party relationship type.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerPartyRelationshipType.cdm.json/CustomerPartyRelationshipType",
+						"Name": "CustomerPartyRelationshipTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "CustomerPartyRelationshipTypeName",
+					"Description": "The name of a Customer Party relationship type.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerPartyRelationshipType.cdm.json/CustomerPartyRelationshipType",
+						"Name": "CustomerPartyRelationshipTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "CustomerPartyRelationshipTypeDescription",
+					"Description": "The description of a customer party relationship type.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerPartyRelationshipType.cdm.json/CustomerPartyRelationshipType",
+						"Name": "CustomerPartyRelationshipTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/CustomerPartyRelationshipType",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/CustomerPartyRelationshipType",
+				"Properties": {
+					"LinkedServiceName": "wspc-dpu-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"CustomerPartyRelationshipTypeId\":{\"entity\":\"CustomerPartyRelationshipType.cdm.json/CustomerPartyRelationshipType\",\"name\":\"CustomerPartyRelationshipTypeId\"},\"CustomerPartyRelationshipTypeName\":{\"entity\":\"CustomerPartyRelationshipType.cdm.json/CustomerPartyRelationshipType\",\"name\":\"CustomerPartyRelationshipTypeName\"},\"CustomerPartyRelationshipTypeDescription\":{\"entity\":\"CustomerPartyRelationshipType.cdm.json/CustomerPartyRelationshipType\",\"name\":\"CustomerPartyRelationshipTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"CustomerPartyRelationshipType\",\"path\":\"CustomerPartyRelationshipType.cdm.json/CustomerPartyRelationshipType\"},\"description\":\"The nature of the relationship between a customer and a related party.\\n\\nEx:\\n- Company - parent company \\n- Company - subsidiary company \\n- Company - company Shipping Agent\\n- Company - related-company\\n- Individual - Employer\\n- Individual - Family Member\\n- Customer Referral\\n- National Jurisdiction\\n- State Jurisdiction\\n- Provincial Jurisdiction\\n- Customer - Travel Agent\",\"primaryKey\":[\"CustomerPartyRelationshipTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"CustomerPartyRelationshipTypeId\",\"attributeReference\":{\"entity\":\"CustomerPartyRelationshipType.cdm.json/CustomerPartyRelationshipType\",\"name\":\"CustomerPartyRelationshipTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"CustomerPartyRelationshipTypeName\",\"attributeReference\":{\"entity\":\"CustomerPartyRelationshipType.cdm.json/CustomerPartyRelationshipType\",\"name\":\"CustomerPartyRelationshipTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"CustomerPartyRelationshipTypeDescription\",\"attributeReference\":{\"entity\":\"CustomerPartyRelationshipType.cdm.json/CustomerPartyRelationshipType\",\"name\":\"CustomerPartyRelationshipTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512}]}}}",
+			"Description": "The nature of the relationship between a customer and a related party.\n\nEx:\n- Company - parent company \n- Company - subsidiary company \n- Company - company Shipping Agent\n- Company - related-company\n- Individual - Employer\n- Individual - Family Member\n- Customer Referral\n- National Jurisdiction\n- State Jurisdiction\n- Provincial Jurisdiction\n- Customer - Travel Agent",
+			"DisplayFolderInfo": "{\"name\":\"Customer\",\"colorCode\":\"#4B003F\"}",
+			"PrimaryKeys": "CustomerPartyRelationshipTypeId",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

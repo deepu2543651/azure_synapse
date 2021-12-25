@@ -1,0 +1,26 @@
+{
+	"name": "relationship-gakilqxrwa",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-gakilqxrwa",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "PaymentMethod",
+		"ToTableName": "BankTransaction",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "PaymentMethodId",
+				"ToColumnName": "PaymentMethodId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"PaymentMethod.cdm.json/PaymentMethod\",\"toEntity\":\"BankTransaction.cdm.json/BankTransaction\",\"joinPairs\":[{\"fromAttribute\":\"PaymentMethodId\",\"toAttribute\":\"PaymentMethodId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

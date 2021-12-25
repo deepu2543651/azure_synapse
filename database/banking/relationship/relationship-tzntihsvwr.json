@@ -1,0 +1,26 @@
+{
+	"name": "relationship-tzntihsvwr",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-tzntihsvwr",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "DemographicCriteria",
+		"ToTableName": "CustomerDemographicCriteria",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "DemographicCriteriaId",
+				"ToColumnName": "DemographicCriteriaId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"DemographicCriteria.cdm.json/DemographicCriteria\",\"toEntity\":\"CustomerDemographicCriteria.cdm.json/CustomerDemographicCriteria\",\"joinPairs\":[{\"fromAttribute\":\"DemographicCriteriaId\",\"toAttribute\":\"DemographicCriteriaId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

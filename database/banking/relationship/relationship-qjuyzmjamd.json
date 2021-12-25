@@ -1,0 +1,26 @@
+{
+	"name": "relationship-qjuyzmjamd",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-qjuyzmjamd",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "MarketingEvent",
+		"ToTableName": "MarketingEventProductSales",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "MarketingEventId",
+				"ToColumnName": "MarketingEventId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"MarketingEvent.cdm.json/MarketingEvent\",\"toEntity\":\"MarketingEventProductSales.cdm.json/MarketingEventProductSales\",\"joinPairs\":[{\"fromAttribute\":\"MarketingEventId\",\"toAttribute\":\"MarketingEventId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

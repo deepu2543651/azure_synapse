@@ -1,0 +1,26 @@
+{
+	"name": "relationship-amzacemqra",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-amzacemqra",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "IssuePriority",
+		"ToTableName": "Issue",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "IssuePriorityId",
+				"ToColumnName": "IssuePriorityId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"IssuePriority.cdm.json/IssuePriority\",\"toEntity\":\"Issue.cdm.json/Issue\",\"joinPairs\":[{\"fromAttribute\":\"IssuePriorityId\",\"toAttribute\":\"IssuePriorityId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

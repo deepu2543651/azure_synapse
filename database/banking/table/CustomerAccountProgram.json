@@ -1,0 +1,179 @@
+{
+	"name": "CustomerAccountProgram",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "CustomerAccountProgram",
+		"Description": "The Program(s) in which a Customer Account participates.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "CustomerAccountId",
+					"Description": "The unique identifier of a Customer Account.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountProgram.cdm.json/CustomerAccountProgram",
+						"Name": "CustomerAccountId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "MarketingProgramId",
+					"Description": "The unique identifier of a Marketing Program.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountProgram.cdm.json/CustomerAccountProgram",
+						"Name": "MarketingProgramId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ProgramParticipationStatusId",
+					"Description": "The unique identifier of a Program Participation Status.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountProgram.cdm.json/CustomerAccountProgram",
+						"Name": "ProgramParticipationStatusId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "CustomerAccountProgramStartDate",
+					"Description": "The start date of the Customer Account's participation in a Program.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountProgram.cdm.json/CustomerAccountProgram",
+						"Name": "CustomerAccountProgramStartDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "CustomerAccountProgramEndDate",
+					"Description": "The end date of the Customer Account's participation in a Program.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountProgram.cdm.json/CustomerAccountProgram",
+						"Name": "CustomerAccountProgramEndDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "ContributedFundsAmount",
+					"Description": "The amount of funds contributed by the Program.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountProgram.cdm.json/CustomerAccountProgram",
+						"Name": "ContributedFundsAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "CustomerAccountProgramNote",
+					"Description": "A note, comment or additional information regarding the Customer Account's Program participation.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountProgram.cdm.json/CustomerAccountProgram",
+						"Name": "CustomerAccountProgramNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/CustomerAccountProgram",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/CustomerAccountProgram",
+				"Properties": {
+					"LinkedServiceName": "wspc-dpu-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"CustomerAccountId\":{\"entity\":\"CustomerAccountProgram.cdm.json/CustomerAccountProgram\",\"name\":\"CustomerAccountId\"},\"MarketingProgramId\":{\"entity\":\"CustomerAccountProgram.cdm.json/CustomerAccountProgram\",\"name\":\"MarketingProgramId\"},\"ProgramParticipationStatusId\":{\"entity\":\"CustomerAccountProgram.cdm.json/CustomerAccountProgram\",\"name\":\"ProgramParticipationStatusId\"},\"CustomerAccountProgramStartDate\":{\"entity\":\"CustomerAccountProgram.cdm.json/CustomerAccountProgram\",\"name\":\"CustomerAccountProgramStartDate\"},\"CustomerAccountProgramEndDate\":{\"entity\":\"CustomerAccountProgram.cdm.json/CustomerAccountProgram\",\"name\":\"CustomerAccountProgramEndDate\"},\"ContributedFundsAmount\":{\"entity\":\"CustomerAccountProgram.cdm.json/CustomerAccountProgram\",\"name\":\"ContributedFundsAmount\"},\"CustomerAccountProgramNote\":{\"entity\":\"CustomerAccountProgram.cdm.json/CustomerAccountProgram\",\"name\":\"CustomerAccountProgramNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"CustomerAccountProgram\",\"path\":\"CustomerAccountProgram.cdm.json/CustomerAccountProgram\"},\"description\":\"The Program(s) in which a Customer Account participates.\",\"primaryKey\":[\"CustomerAccountId\",\"MarketingProgramId\",\"ProgramParticipationStatusId\",\"CustomerAccountProgramStartDate\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"CustomerAccountId\",\"attributeReference\":{\"entity\":\"CustomerAccountProgram.cdm.json/CustomerAccountProgram\",\"name\":\"CustomerAccountId\"},\"dataType\":\"long\"},{\"type\":\"Existing\",\"name\":\"MarketingProgramId\",\"attributeReference\":{\"entity\":\"CustomerAccountProgram.cdm.json/CustomerAccountProgram\",\"name\":\"MarketingProgramId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ProgramParticipationStatusId\",\"attributeReference\":{\"entity\":\"CustomerAccountProgram.cdm.json/CustomerAccountProgram\",\"name\":\"ProgramParticipationStatusId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"CustomerAccountProgramStartDate\",\"attributeReference\":{\"entity\":\"CustomerAccountProgram.cdm.json/CustomerAccountProgram\",\"name\":\"CustomerAccountProgramStartDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\"},{\"type\":\"Existing\",\"name\":\"CustomerAccountProgramEndDate\",\"attributeReference\":{\"entity\":\"CustomerAccountProgram.cdm.json/CustomerAccountProgram\",\"name\":\"CustomerAccountProgramEndDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\"},{\"type\":\"Existing\",\"name\":\"ContributedFundsAmount\",\"attributeReference\":{\"entity\":\"CustomerAccountProgram.cdm.json/CustomerAccountProgram\",\"name\":\"ContributedFundsAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"CustomerAccountProgramNote\",\"attributeReference\":{\"entity\":\"CustomerAccountProgram.cdm.json/CustomerAccountProgram\",\"name\":\"CustomerAccountProgramNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024}]}}}",
+			"Description": "The Program(s) in which a Customer Account participates.",
+			"DisplayFolderInfo": "{\"name\":\"Customer Account\",\"colorCode\":\"#E3008C\"}",
+			"PrimaryKeys": "CustomerAccountId,MarketingProgramId,ProgramParticipationStatusId,CustomerAccountProgramStartDate",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

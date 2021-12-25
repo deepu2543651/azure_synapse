@@ -1,0 +1,26 @@
+{
+	"name": "relationship-iuddrsrvxg",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-iuddrsrvxg",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Customer",
+		"ToTableName": "CustomerEmail",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "CustomerId",
+				"ToColumnName": "CustomerId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Customer.cdm.json/Customer\",\"toEntity\":\"CustomerEmail.cdm.json/CustomerEmail\",\"joinPairs\":[{\"fromAttribute\":\"CustomerId\",\"toAttribute\":\"CustomerId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

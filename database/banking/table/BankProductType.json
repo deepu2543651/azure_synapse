@@ -1,0 +1,112 @@
+{
+	"name": "BankProductType",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "BankProductType",
+		"Description": "A means of categorizing products by functions performed, characteristics or similar common characteristics.\n\nEx:\n- Payment Card\n- Checking Account\n- Savings Account\n- Personal Loan\n- Home Equity Loan\n- Vehicle Loan\n- CD\n- Treasury Security\n- Commercial Mortgage Loan\n- Commercial Loan\n- Letter of Credit\n- Corporate Checking Account\n- Commercial Savings Account\n- Lockbox Service\n- Facility\n- Bank Guarantee\n- Bankers Acceptance\n- Commercial Construction Loan\n- Commercial Line Of Credit\n- Commercial Loan\n- Commercial Paper",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ProductTypeId",
+					"Description": "The unique identifier of a Product Type.",
+					"BaseAttributeReference": {
+						"Entity": "BankProductType.cdm.json/BankProductType",
+						"Name": "ProductTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ProductTypeName",
+					"Description": "The name of a Product Type.",
+					"BaseAttributeReference": {
+						"Entity": "BankProductType.cdm.json/BankProductType",
+						"Name": "ProductTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ProductTypeDescription",
+					"Description": "The description of a Product Type.",
+					"BaseAttributeReference": {
+						"Entity": "BankProductType.cdm.json/BankProductType",
+						"Name": "ProductTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/BankProductType",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/BankProductType",
+				"Properties": {
+					"LinkedServiceName": "wspc-dpu-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ProductTypeId\":{\"entity\":\"BankProductType.cdm.json/BankProductType\",\"name\":\"ProductTypeId\"},\"ProductTypeName\":{\"entity\":\"BankProductType.cdm.json/BankProductType\",\"name\":\"ProductTypeName\"},\"ProductTypeDescription\":{\"entity\":\"BankProductType.cdm.json/BankProductType\",\"name\":\"ProductTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"BankProductType\",\"path\":\"BankProductType.cdm.json/BankProductType\"},\"description\":\"A means of categorizing products by functions performed, characteristics or similar common characteristics.\\n\\nEx:\\n- Payment Card\\n- Checking Account\\n- Savings Account\\n- Personal Loan\\n- Home Equity Loan\\n- Vehicle Loan\\n- CD\\n- Treasury Security\\n- Commercial Mortgage Loan\\n- Commercial Loan\\n- Letter of Credit\\n- Corporate Checking Account\\n- Commercial Savings Account\\n- Lockbox Service\\n- Facility\\n- Bank Guarantee\\n- Bankers Acceptance\\n- Commercial Construction Loan\\n- Commercial Line Of Credit\\n- Commercial Loan\\n- Commercial Paper\",\"primaryKey\":[\"ProductTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"ProductTypeId\",\"attributeReference\":{\"entity\":\"BankProductType.cdm.json/BankProductType\",\"name\":\"ProductTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ProductTypeName\",\"attributeReference\":{\"entity\":\"BankProductType.cdm.json/BankProductType\",\"name\":\"ProductTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"ProductTypeDescription\",\"attributeReference\":{\"entity\":\"BankProductType.cdm.json/BankProductType\",\"name\":\"ProductTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512}]}}}",
+			"Description": "A means of categorizing products by functions performed, characteristics or similar common characteristics.\n\nEx:\n- Payment Card\n- Checking Account\n- Savings Account\n- Personal Loan\n- Home Equity Loan\n- Vehicle Loan\n- CD\n- Treasury Security\n- Commercial Mortgage Loan\n- Commercial Loan\n- Letter of Credit\n- Corporate Checking Account\n- Commercial Savings Account\n- Lockbox Service\n- Facility\n- Bank Guarantee\n- Bankers Acceptance\n- Commercial Construction Loan\n- Commercial Line Of Credit\n- Commercial Loan\n- Commercial Paper",
+			"DisplayFolderInfo": "{\"name\":\"Product\",\"colorCode\":\"#0E3D73\"}",
+			"PrimaryKeys": "ProductTypeId",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

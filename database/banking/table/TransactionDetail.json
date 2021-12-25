@@ -1,0 +1,145 @@
+{
+	"name": "TransactionDetail",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "TransactionDetail",
+		"Description": "The one or more Transaction Detail(s) associated with the Transaction.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "TransactionId",
+					"Description": "The unique identifier of a Transaction.",
+					"BaseAttributeReference": {
+						"Entity": "TransactionDetail.cdm.json/TransactionDetail",
+						"Name": "TransactionId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "TransactionDetailId",
+					"Description": "The sequence number of the Transaction Detail.",
+					"BaseAttributeReference": {
+						"Entity": "TransactionDetail.cdm.json/TransactionDetail",
+						"Name": "TransactionDetailId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "TransactionDetailAmount",
+					"Description": "The amount of the associated transaction detail.",
+					"BaseAttributeReference": {
+						"Entity": "TransactionDetail.cdm.json/TransactionDetail",
+						"Name": "TransactionDetailAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "TransactionDetailNote",
+					"Description": "The note or explanation related to the associated transaction detail.",
+					"BaseAttributeReference": {
+						"Entity": "TransactionDetail.cdm.json/TransactionDetail",
+						"Name": "TransactionDetailNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "TransactionDetailTypeId",
+					"Description": "The unique identifier of a Transaction Detail Type.",
+					"BaseAttributeReference": {
+						"Entity": "TransactionDetail.cdm.json/TransactionDetail",
+						"Name": "TransactionDetailTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/TransactionDetail",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/TransactionDetail",
+				"Properties": {
+					"LinkedServiceName": "wspc-dpu-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"TransactionId\":{\"entity\":\"TransactionDetail.cdm.json/TransactionDetail\",\"name\":\"TransactionId\"},\"TransactionDetailId\":{\"entity\":\"TransactionDetail.cdm.json/TransactionDetail\",\"name\":\"TransactionDetailId\"},\"TransactionDetailAmount\":{\"entity\":\"TransactionDetail.cdm.json/TransactionDetail\",\"name\":\"TransactionDetailAmount\"},\"TransactionDetailNote\":{\"entity\":\"TransactionDetail.cdm.json/TransactionDetail\",\"name\":\"TransactionDetailNote\"},\"TransactionDetailTypeId\":{\"entity\":\"TransactionDetail.cdm.json/TransactionDetail\",\"name\":\"TransactionDetailTypeId\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"TransactionDetail\",\"path\":\"TransactionDetail.cdm.json/TransactionDetail\"},\"description\":\"The one or more Transaction Detail(s) associated with the Transaction.\",\"primaryKey\":[\"TransactionId\",\"TransactionDetailId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"TransactionId\",\"attributeReference\":{\"entity\":\"TransactionDetail.cdm.json/TransactionDetail\",\"name\":\"TransactionId\"},\"dataType\":\"long\"},{\"type\":\"Existing\",\"name\":\"TransactionDetailId\",\"attributeReference\":{\"entity\":\"TransactionDetail.cdm.json/TransactionDetail\",\"name\":\"TransactionDetailId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"TransactionDetailAmount\",\"attributeReference\":{\"entity\":\"TransactionDetail.cdm.json/TransactionDetail\",\"name\":\"TransactionDetailAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"TransactionDetailNote\",\"attributeReference\":{\"entity\":\"TransactionDetail.cdm.json/TransactionDetail\",\"name\":\"TransactionDetailNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024},{\"type\":\"Existing\",\"name\":\"TransactionDetailTypeId\",\"attributeReference\":{\"entity\":\"TransactionDetail.cdm.json/TransactionDetail\",\"name\":\"TransactionDetailTypeId\"},\"dataType\":\"integer\"}]}}}",
+			"Description": "The one or more Transaction Detail(s) associated with the Transaction.",
+			"DisplayFolderInfo": "{\"name\":\"Transaction\",\"colorCode\":\"#823A16\"}",
+			"PrimaryKeys": "TransactionId,TransactionDetailId",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

@@ -1,0 +1,289 @@
+{
+	"name": "TvAdvertisingEvent",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "TvAdvertisingEvent",
+		"Description": "A TV Advertising Event.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "AdvertisingEventId",
+					"Description": "The unique identifier of an Advertising Event.",
+					"BaseAttributeReference": {
+						"Entity": "TvAdvertisingEvent.cdm.json/TvAdvertisingEvent",
+						"Name": "AdvertisingEventId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "TvStationId",
+					"Description": "The unique identifier of an Affiliate TV Station.\n\nLocal television stations that are associated with a major network. Affiliates agree to preempt time during specified hours for programming provided by the network and carry the advertising contained in the program.",
+					"BaseAttributeReference": {
+						"Entity": "TvAdvertisingEvent.cdm.json/TvAdvertisingEvent",
+						"Name": "TvStationId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ProgramId",
+					"Description": "The unique identifier of a Program.",
+					"BaseAttributeReference": {
+						"Entity": "TvAdvertisingEvent.cdm.json/TvAdvertisingEvent",
+						"Name": "ProgramId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "TvStationProgramDayOfWeekId",
+					"Description": "The unique identifier of a Day Of Week.",
+					"BaseAttributeReference": {
+						"Entity": "TvAdvertisingEvent.cdm.json/TvAdvertisingEvent",
+						"Name": "TvStationProgramDayOfWeekId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "TvStationProgramStartTime",
+					"Description": "The scheduled start time of a TV Station Program.",
+					"BaseAttributeReference": {
+						"Entity": "TvAdvertisingEvent.cdm.json/TvAdvertisingEvent",
+						"Name": "TvStationProgramStartTime"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 256,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "TvStationProgramEndTime",
+					"Description": "The scheduled end time of a TV Station Program.",
+					"BaseAttributeReference": {
+						"Entity": "TvAdvertisingEvent.cdm.json/TvAdvertisingEvent",
+						"Name": "TvStationProgramEndTime"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 256,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "CommercialName",
+					"Description": "The name of the commercial.",
+					"BaseAttributeReference": {
+						"Entity": "TvAdvertisingEvent.cdm.json/TvAdvertisingEvent",
+						"Name": "CommercialName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "CommercialAircheck",
+					"Description": "Tape of live broadcast.",
+					"BaseAttributeReference": {
+						"Entity": "TvAdvertisingEvent.cdm.json/TvAdvertisingEvent",
+						"Name": "CommercialAircheck"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "binary",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "binary"
+						}
+					}
+				},
+				{
+					"Name": "CommercialLengthSeconds",
+					"Description": "The length in seconds of the commercial.",
+					"BaseAttributeReference": {
+						"Entity": "TvAdvertisingEvent.cdm.json/TvAdvertisingEvent",
+						"Name": "CommercialLengthSeconds"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "OneTimeOnlyTvSpotIndicator",
+					"Description": "One Time Only, a TV spot which is ordered in a particular time period for a particular day (or week) and which is not scheduled for the same time period in subsequent weeks of a flight.",
+					"BaseAttributeReference": {
+						"Entity": "TvAdvertisingEvent.cdm.json/TvAdvertisingEvent",
+						"Name": "OneTimeOnlyTvSpotIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "FixedPositionTvCommercialIndicator",
+					"Description": "Indicates a guarantee for a TV Ad that will not be preempted.",
+					"BaseAttributeReference": {
+						"Entity": "TvAdvertisingEvent.cdm.json/TvAdvertisingEvent",
+						"Name": "FixedPositionTvCommercialIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "RunOfStationCommercialIndicator",
+					"Description": "Indicates that the start timestamp in which the TV advertising event will be run-of-station positioned.\n\nRun-of-station TV advertising is bulk commercial buying plan where station's traffic department will fit the commercials into available time locations.",
+					"BaseAttributeReference": {
+						"Entity": "TvAdvertisingEvent.cdm.json/TvAdvertisingEvent",
+						"Name": "RunOfStationCommercialIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "TvRoadblockIndicator",
+					"Description": "Indicates that the start timestamp in which the advertising event will be a roadblock.\n\nA Roadblock is a specified time for a spot to run simultaneously on all stations in a market or on the networks.",
+					"BaseAttributeReference": {
+						"Entity": "TvAdvertisingEvent.cdm.json/TvAdvertisingEvent",
+						"Name": "TvRoadblockIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "DaypartId",
+					"Description": "The unique identifier of a Daypart.",
+					"BaseAttributeReference": {
+						"Entity": "TvAdvertisingEvent.cdm.json/TvAdvertisingEvent",
+						"Name": "DaypartId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/TvAdvertisingEvent",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/TvAdvertisingEvent",
+				"Properties": {
+					"LinkedServiceName": "wspc-dpu-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"AdvertisingEventId\":{\"entity\":\"TvAdvertisingEvent.cdm.json/TvAdvertisingEvent\",\"name\":\"AdvertisingEventId\"},\"TvStationId\":{\"entity\":\"TvAdvertisingEvent.cdm.json/TvAdvertisingEvent\",\"name\":\"TvStationId\"},\"ProgramId\":{\"entity\":\"TvAdvertisingEvent.cdm.json/TvAdvertisingEvent\",\"name\":\"ProgramId\"},\"TvStationProgramDayOfWeekId\":{\"entity\":\"TvAdvertisingEvent.cdm.json/TvAdvertisingEvent\",\"name\":\"TvStationProgramDayOfWeekId\"},\"TvStationProgramStartTime\":{\"entity\":\"TvAdvertisingEvent.cdm.json/TvAdvertisingEvent\",\"name\":\"TvStationProgramStartTime\"},\"TvStationProgramEndTime\":{\"entity\":\"TvAdvertisingEvent.cdm.json/TvAdvertisingEvent\",\"name\":\"TvStationProgramEndTime\"},\"CommercialName\":{\"entity\":\"TvAdvertisingEvent.cdm.json/TvAdvertisingEvent\",\"name\":\"CommercialName\"},\"CommercialAircheck\":{\"entity\":\"TvAdvertisingEvent.cdm.json/TvAdvertisingEvent\",\"name\":\"CommercialAircheck\"},\"CommercialLengthSeconds\":{\"entity\":\"TvAdvertisingEvent.cdm.json/TvAdvertisingEvent\",\"name\":\"CommercialLengthSeconds\"},\"OneTimeOnlyTvSpotIndicator\":{\"entity\":\"TvAdvertisingEvent.cdm.json/TvAdvertisingEvent\",\"name\":\"OneTimeOnlyTvSpotIndicator\"},\"FixedPositionTvCommercialIndicator\":{\"entity\":\"TvAdvertisingEvent.cdm.json/TvAdvertisingEvent\",\"name\":\"FixedPositionTvCommercialIndicator\"},\"RunOfStationCommercialIndicator\":{\"entity\":\"TvAdvertisingEvent.cdm.json/TvAdvertisingEvent\",\"name\":\"RunOfStationCommercialIndicator\"},\"TvRoadblockIndicator\":{\"entity\":\"TvAdvertisingEvent.cdm.json/TvAdvertisingEvent\",\"name\":\"TvRoadblockIndicator\"},\"DaypartId\":{\"entity\":\"TvAdvertisingEvent.cdm.json/TvAdvertisingEvent\",\"name\":\"DaypartId\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"TvAdvertisingEvent\",\"path\":\"TvAdvertisingEvent.cdm.json/TvAdvertisingEvent\"},\"description\":\"A TV Advertising Event.\",\"primaryKey\":[\"AdvertisingEventId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"AdvertisingEventId\",\"attributeReference\":{\"entity\":\"TvAdvertisingEvent.cdm.json/TvAdvertisingEvent\",\"name\":\"AdvertisingEventId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"TvStationId\",\"attributeReference\":{\"entity\":\"TvAdvertisingEvent.cdm.json/TvAdvertisingEvent\",\"name\":\"TvStationId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ProgramId\",\"attributeReference\":{\"entity\":\"TvAdvertisingEvent.cdm.json/TvAdvertisingEvent\",\"name\":\"ProgramId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"TvStationProgramDayOfWeekId\",\"attributeReference\":{\"entity\":\"TvAdvertisingEvent.cdm.json/TvAdvertisingEvent\",\"name\":\"TvStationProgramDayOfWeekId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"TvStationProgramStartTime\",\"attributeReference\":{\"entity\":\"TvAdvertisingEvent.cdm.json/TvAdvertisingEvent\",\"name\":\"TvStationProgramStartTime\"},\"dataType\":\"string\",\"dataTypeLength\":256},{\"type\":\"Existing\",\"name\":\"TvStationProgramEndTime\",\"attributeReference\":{\"entity\":\"TvAdvertisingEvent.cdm.json/TvAdvertisingEvent\",\"name\":\"TvStationProgramEndTime\"},\"dataType\":\"string\",\"dataTypeLength\":256},{\"type\":\"Existing\",\"name\":\"CommercialName\",\"attributeReference\":{\"entity\":\"TvAdvertisingEvent.cdm.json/TvAdvertisingEvent\",\"name\":\"CommercialName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"CommercialAircheck\",\"attributeReference\":{\"entity\":\"TvAdvertisingEvent.cdm.json/TvAdvertisingEvent\",\"name\":\"CommercialAircheck\"},\"dataType\":\"binary\"},{\"type\":\"Existing\",\"name\":\"CommercialLengthSeconds\",\"attributeReference\":{\"entity\":\"TvAdvertisingEvent.cdm.json/TvAdvertisingEvent\",\"name\":\"CommercialLengthSeconds\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"OneTimeOnlyTvSpotIndicator\",\"attributeReference\":{\"entity\":\"TvAdvertisingEvent.cdm.json/TvAdvertisingEvent\",\"name\":\"OneTimeOnlyTvSpotIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"FixedPositionTvCommercialIndicator\",\"attributeReference\":{\"entity\":\"TvAdvertisingEvent.cdm.json/TvAdvertisingEvent\",\"name\":\"FixedPositionTvCommercialIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"RunOfStationCommercialIndicator\",\"attributeReference\":{\"entity\":\"TvAdvertisingEvent.cdm.json/TvAdvertisingEvent\",\"name\":\"RunOfStationCommercialIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"TvRoadblockIndicator\",\"attributeReference\":{\"entity\":\"TvAdvertisingEvent.cdm.json/TvAdvertisingEvent\",\"name\":\"TvRoadblockIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"DaypartId\",\"attributeReference\":{\"entity\":\"TvAdvertisingEvent.cdm.json/TvAdvertisingEvent\",\"name\":\"DaypartId\"},\"dataType\":\"integer\"}]}}}",
+			"Description": "A TV Advertising Event.",
+			"DisplayFolderInfo": "{\"name\":\"Marketing & Advertising\",\"colorCode\":\"#692B0C\"}",
+			"PrimaryKeys": "AdvertisingEventId",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

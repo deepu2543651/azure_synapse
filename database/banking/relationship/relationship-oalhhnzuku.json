@@ -1,0 +1,26 @@
+{
+	"name": "relationship-oalhhnzuku",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-oalhhnzuku",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "ProductSuitabilityRating",
+		"ToTableName": "CustomerAccountSuitableProduct",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ProductSuitabilityRatingId",
+				"ToColumnName": "ProductSuitabilityRatingId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"ProductSuitabilityRating.cdm.json/ProductSuitabilityRating\",\"toEntity\":\"CustomerAccountSuitableProduct.cdm.json/CustomerAccountSuitableProduct\",\"joinPairs\":[{\"fromAttribute\":\"ProductSuitabilityRatingId\",\"toAttribute\":\"ProductSuitabilityRatingId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

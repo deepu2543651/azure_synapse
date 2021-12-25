@@ -1,0 +1,112 @@
+{
+	"name": "MediaCategory",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "MediaCategory",
+		"Description": "A categorization of Media Types based upon where the marketing communication will appear.\n\nMedia categories are typically defined as follow:\n\n1. Print - newspapers, magazines\n\nEx.:\n- Newspaper\n- Magazines\n- Bill insert\n- Bind-in\n- Brochure\n- Circular\n\n2. Broadcast - radio, TV, cable TV, satellite systems Media that use the airwaves to transmit their signal and programming. Radio and television are examples of broadcasting media.\n\nEx.:\n- Radio\n- Television\n- Cable TV \n- Satellite systems.\n\n3.  Out-Of-Home - billboards\nAdvertising seen or heard by individuals outside of their homes.\n\nEx.:\n- Billboards\n- Transit advertising\n- Aisle advertising \n- Banner\n- Card deck\n- Cinema advertising",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "MediaCategoryId",
+					"Description": "The unique identifier of a Media Category.",
+					"BaseAttributeReference": {
+						"Entity": "MediaCategory.cdm.json/MediaCategory",
+						"Name": "MediaCategoryId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "MediaCategoryName",
+					"Description": "The name of the Media Category.",
+					"BaseAttributeReference": {
+						"Entity": "MediaCategory.cdm.json/MediaCategory",
+						"Name": "MediaCategoryName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "MediaCategoryDescription",
+					"Description": "The description of the Media Category.",
+					"BaseAttributeReference": {
+						"Entity": "MediaCategory.cdm.json/MediaCategory",
+						"Name": "MediaCategoryDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/MediaCategory",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/MediaCategory",
+				"Properties": {
+					"LinkedServiceName": "wspc-dpu-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"MediaCategoryId\":{\"entity\":\"MediaCategory.cdm.json/MediaCategory\",\"name\":\"MediaCategoryId\"},\"MediaCategoryName\":{\"entity\":\"MediaCategory.cdm.json/MediaCategory\",\"name\":\"MediaCategoryName\"},\"MediaCategoryDescription\":{\"entity\":\"MediaCategory.cdm.json/MediaCategory\",\"name\":\"MediaCategoryDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"MediaCategory\",\"path\":\"MediaCategory.cdm.json/MediaCategory\"},\"description\":\"A categorization of Media Types based upon where the marketing communication will appear.\\n\\nMedia categories are typically defined as follow:\\n\\n1. Print - newspapers, magazines\\n\\nEx.:\\n- Newspaper\\n- Magazines\\n- Bill insert\\n- Bind-in\\n- Brochure\\n- Circular\\n\\n2. Broadcast - radio, TV, cable TV, satellite systems Media that use the airwaves to transmit their signal and programming. Radio and television are examples of broadcasting media.\\n\\nEx.:\\n- Radio\\n- Television\\n- Cable TV \\n- Satellite systems.\\n\\n3.  Out-Of-Home - billboards\\nAdvertising seen or heard by individuals outside of their homes.\\n\\nEx.:\\n- Billboards\\n- Transit advertising\\n- Aisle advertising \\n- Banner\\n- Card deck\\n- Cinema advertising\",\"primaryKey\":[\"MediaCategoryId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"MediaCategoryId\",\"attributeReference\":{\"entity\":\"MediaCategory.cdm.json/MediaCategory\",\"name\":\"MediaCategoryId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"MediaCategoryName\",\"attributeReference\":{\"entity\":\"MediaCategory.cdm.json/MediaCategory\",\"name\":\"MediaCategoryName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"MediaCategoryDescription\",\"attributeReference\":{\"entity\":\"MediaCategory.cdm.json/MediaCategory\",\"name\":\"MediaCategoryDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512}]}}}",
+			"Description": "A categorization of Media Types based upon where the marketing communication will appear.\n\nMedia categories are typically defined as follow:\n\n1. Print - newspapers, magazines\n\nEx.:\n- Newspaper\n- Magazines\n- Bill insert\n- Bind-in\n- Brochure\n- Circular\n\n2. Broadcast - radio, TV, cable TV, satellite systems Media that use the airwaves to transmit their signal and programming. Radio and television are examples of broadcasting media.\n\nEx.:\n- Radio\n- Television\n- Cable TV \n- Satellite systems.\n\n3.  Out-Of-Home - billboards\nAdvertising seen or heard by individuals outside of their homes.\n\nEx.:\n- Billboards\n- Transit advertising\n- Aisle advertising \n- Banner\n- Card deck\n- Cinema advertising",
+			"DisplayFolderInfo": "{\"name\":\"Marketing & Advertising\",\"colorCode\":\"#692B0C\"}",
+			"PrimaryKeys": "MediaCategoryId",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

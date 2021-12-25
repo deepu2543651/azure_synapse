@@ -1,0 +1,112 @@
+{
+	"name": "TransactionDetailType",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "TransactionDetailType",
+		"Description": "A categorization of transaction details.\n\nEx:\n- Principal Amount\n- Interest Amount\n- Tax Amount\n- Fee Amount",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "TransactionDetailTypeId",
+					"Description": "The unique identifier of a Transaction Detail Type.",
+					"BaseAttributeReference": {
+						"Entity": "TransactionDetailType.cdm.json/TransactionDetailType",
+						"Name": "TransactionDetailTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "TransactionDetailTypeName",
+					"Description": "The name of a Transaction Detail Type.",
+					"BaseAttributeReference": {
+						"Entity": "TransactionDetailType.cdm.json/TransactionDetailType",
+						"Name": "TransactionDetailTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "TransactionDetailTypeDescription",
+					"Description": "The description of a Transaction Detail Type.",
+					"BaseAttributeReference": {
+						"Entity": "TransactionDetailType.cdm.json/TransactionDetailType",
+						"Name": "TransactionDetailTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/TransactionDetailType",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/TransactionDetailType",
+				"Properties": {
+					"LinkedServiceName": "wspc-dpu-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"TransactionDetailTypeId\":{\"entity\":\"TransactionDetailType.cdm.json/TransactionDetailType\",\"name\":\"TransactionDetailTypeId\"},\"TransactionDetailTypeName\":{\"entity\":\"TransactionDetailType.cdm.json/TransactionDetailType\",\"name\":\"TransactionDetailTypeName\"},\"TransactionDetailTypeDescription\":{\"entity\":\"TransactionDetailType.cdm.json/TransactionDetailType\",\"name\":\"TransactionDetailTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"TransactionDetailType\",\"path\":\"TransactionDetailType.cdm.json/TransactionDetailType\"},\"description\":\"A categorization of transaction details.\\n\\nEx:\\n- Principal Amount\\n- Interest Amount\\n- Tax Amount\\n- Fee Amount\",\"primaryKey\":[\"TransactionDetailTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"TransactionDetailTypeId\",\"attributeReference\":{\"entity\":\"TransactionDetailType.cdm.json/TransactionDetailType\",\"name\":\"TransactionDetailTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"TransactionDetailTypeName\",\"attributeReference\":{\"entity\":\"TransactionDetailType.cdm.json/TransactionDetailType\",\"name\":\"TransactionDetailTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"TransactionDetailTypeDescription\",\"attributeReference\":{\"entity\":\"TransactionDetailType.cdm.json/TransactionDetailType\",\"name\":\"TransactionDetailTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512}]}}}",
+			"Description": "A categorization of transaction details.\n\nEx:\n- Principal Amount\n- Interest Amount\n- Tax Amount\n- Fee Amount",
+			"DisplayFolderInfo": "{\"name\":\"Transaction\",\"colorCode\":\"#823A16\"}",
+			"PrimaryKeys": "TransactionDetailTypeId",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

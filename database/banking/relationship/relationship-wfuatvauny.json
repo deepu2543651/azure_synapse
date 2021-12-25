@@ -1,0 +1,30 @@
+{
+	"name": "relationship-wfuatvauny",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-wfuatvauny",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "BudgetCostItem",
+		"ToTableName": "AdvertisingEventBudgetedCostItem",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "BudgetId",
+				"ToColumnName": "BudgetId"
+			},
+			{
+				"FromColumnName": "CostItemId",
+				"ToColumnName": "CostItemId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"BudgetCostItem.cdm.json/BudgetCostItem\",\"toEntity\":\"AdvertisingEventBudgetedCostItem.cdm.json/AdvertisingEventBudgetedCostItem\",\"joinPairs\":[{\"fromAttribute\":\"BudgetId\",\"toAttribute\":\"BudgetId\"},{\"fromAttribute\":\"CostItemId\",\"toAttribute\":\"CostItemId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

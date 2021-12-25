@@ -1,0 +1,112 @@
+{
+	"name": "RepaymentPlanType",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "RepaymentPlanType",
+		"Description": "The type of repayment plan based on common characteristics.\n\nEx:\n- Standard Repayment Plan\n- Graduated Repayment Plan\n- Income Sensitive Repayment Plan\n- Extended Repayment Plan\n- Loan Consolidation Plan\n- Federal Family Education Loan Consolidation Program\n\nwhere:\n\nSTANDARD REPAYMENT PLAN\nThis plan gives you a fixed monthly payment amount. (Minimum payment will be at least $50.)   Payments of principal and interest are divided into equal monthly installments throughout the repayment period. The maximum repayment period is 10 years.\n\nGRADUATED REPAYMENT PLAN\nThis plan starts with a low payment then increases over time.  This plan allows borrowers to make smaller payments at the beginning of the repayment term which gradually increase over time. The maximum repayment period is 10 years. Interest paid under this option is generally less than the amount paid under the income-sensitive option below but more than the amount paid under the standard repayment plan.\n \nINCOME SENSITIVE REPAYMENT PLAN\nThis plan gives you monthly payments based on your annual income.  Under this plan, payments are based on the borrower's documented monthly income. The maximum repayment period is 10 years. Income-sensitive repayment schedules are valid for 12 months at a time. Each year borrowers must certify their income to qualify for another 12 months of income-sensitive payments. Interest repaid will generally be higher under this option than under the standard or graduated repayment plans.\n\nEXTENDED REPAYMENT PLAN\nFor customers with more than $30,000 in eligible loans, this plan offers standard or graduated payments over an extended repayment period of up to 25 years.\n\nLOAN CONSOLIDATION PLAN\nThis loan can be combined with other eligible loans into a new loan with a reduced monthly payment and a fixed interest rate.\n\nFEDERAL FAMILY EDUCATION LOAN PROGRAM CONSOLIDATION PLAN\nThe Federal Family Education Loan Program Consolidation Plan allows borrowers to combine all eligible federal loans into a single new loan with one lower monthly payment over an extended repayment period. Because the monthly payment amount is reduced and the repayment period is extended, the total amount repaid by the borrower will be greater than under the standard repayment plan.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "RepaymentPlanTypeId",
+					"Description": "The unique identifier of a Repayment Plan.",
+					"BaseAttributeReference": {
+						"Entity": "RepaymentPlanType.cdm.json/RepaymentPlanType",
+						"Name": "RepaymentPlanTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "RepaymentPlanTypeName",
+					"Description": "The name of a Repayment Plan.",
+					"BaseAttributeReference": {
+						"Entity": "RepaymentPlanType.cdm.json/RepaymentPlanType",
+						"Name": "RepaymentPlanTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "RepaymentPlanTypeDescription",
+					"Description": "The description of a Repayment Plan.",
+					"BaseAttributeReference": {
+						"Entity": "RepaymentPlanType.cdm.json/RepaymentPlanType",
+						"Name": "RepaymentPlanTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/RepaymentPlanType",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/RepaymentPlanType",
+				"Properties": {
+					"LinkedServiceName": "wspc-dpu-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"RepaymentPlanTypeId\":{\"entity\":\"RepaymentPlanType.cdm.json/RepaymentPlanType\",\"name\":\"RepaymentPlanTypeId\"},\"RepaymentPlanTypeName\":{\"entity\":\"RepaymentPlanType.cdm.json/RepaymentPlanType\",\"name\":\"RepaymentPlanTypeName\"},\"RepaymentPlanTypeDescription\":{\"entity\":\"RepaymentPlanType.cdm.json/RepaymentPlanType\",\"name\":\"RepaymentPlanTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"RepaymentPlanType\",\"path\":\"RepaymentPlanType.cdm.json/RepaymentPlanType\"},\"description\":\"The type of repayment plan based on common characteristics.\\n\\nEx:\\n- Standard Repayment Plan\\n- Graduated Repayment Plan\\n- Income Sensitive Repayment Plan\\n- Extended Repayment Plan\\n- Loan Consolidation Plan\\n- Federal Family Education Loan Consolidation Program\\n\\nwhere:\\n\\nSTANDARD REPAYMENT PLAN\\nThis plan gives you a fixed monthly payment amount. (Minimum payment will be at least $50.)   Payments of principal and interest are divided into equal monthly installments throughout the repayment period. The maximum repayment period is 10 years.\\n\\nGRADUATED REPAYMENT PLAN\\nThis plan starts with a low payment then increases over time.  This plan allows borrowers to make smaller payments at the beginning of the repayment term which gradually increase over time. The maximum repayment period is 10 years. Interest paid under this option is generally less than the amount paid under the income-sensitive option below but more than the amount paid under the standard repayment plan.\\n \\nINCOME SENSITIVE REPAYMENT PLAN\\nThis plan gives you monthly payments based on your annual income.  Under this plan, payments are based on the borrower's documented monthly income. The maximum repayment period is 10 years. Income-sensitive repayment schedules are valid for 12 months at a time. Each year borrowers must certify their income to qualify for another 12 months of income-sensitive payments. Interest repaid will generally be higher under this option than under the standard or graduated repayment plans.\\n\\nEXTENDED REPAYMENT PLAN\\nFor customers with more than $30,000 in eligible loans, this plan offers standard or graduated payments over an extended repayment period of up to 25 years.\\n\\nLOAN CONSOLIDATION PLAN\\nThis loan can be combined with other eligible loans into a new loan with a reduced monthly payment and a fixed interest rate.\\n\\nFEDERAL FAMILY EDUCATION LOAN PROGRAM CONSOLIDATION PLAN\\nThe Federal Family Education Loan Program Consolidation Plan allows borrowers to combine all eligible federal loans into a single new loan with one lower monthly payment over an extended repayment period. Because the monthly payment amount is reduced and the repayment period is extended, the total amount repaid by the borrower will be greater than under the standard repayment plan.\",\"primaryKey\":[\"RepaymentPlanTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"RepaymentPlanTypeId\",\"attributeReference\":{\"entity\":\"RepaymentPlanType.cdm.json/RepaymentPlanType\",\"name\":\"RepaymentPlanTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"RepaymentPlanTypeName\",\"attributeReference\":{\"entity\":\"RepaymentPlanType.cdm.json/RepaymentPlanType\",\"name\":\"RepaymentPlanTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"RepaymentPlanTypeDescription\",\"attributeReference\":{\"entity\":\"RepaymentPlanType.cdm.json/RepaymentPlanType\",\"name\":\"RepaymentPlanTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512}]}}}",
+			"Description": "The type of repayment plan based on common characteristics.\n\nEx:\n- Standard Repayment Plan\n- Graduated Repayment Plan\n- Income Sensitive Repayment Plan\n- Extended Repayment Plan\n- Loan Consolidation Plan\n- Federal Family Education Loan Consolidation Program\n\nwhere:\n\nSTANDARD REPAYMENT PLAN\nThis plan gives you a fixed monthly payment amount. (Minimum payment will be at least $50.)   Payments of principal and interest are divided into equal monthly installments throughout the repayment period. The maximum repayment period is 10 years.\n\nGRADUATED REPAYMENT PLAN\nThis plan starts with a low payment then increases over time.  This plan allows borrowers to make smaller payments at the beginning of the repayment term which gradually increase over time. The maximum repayment period is 10 years. Interest paid under this option is generally less than the amount paid under the income-sensitive option below but more than the amount paid under the standard repayment plan.\n \nINCOME SENSITIVE REPAYMENT PLAN\nThis plan gives you monthly payments based on your annual income.  Under this plan, payments are based on the borrower's documented monthly income. The maximum repayment period is 10 years. Income-sensitive repayment schedules are valid for 12 months at a time. Each year borrowers must certify their income to qualify for another 12 months of income-sensitive payments. Interest repaid will generally be higher under this option than under the standard or graduated repayment plans.\n\nEXTENDED REPAYMENT PLAN\nFor customers with more than $30,000 in eligible loans, this plan offers standard or graduated payments over an extended repayment period of up to 25 years.\n\nLOAN CONSOLIDATION PLAN\nThis loan can be combined with other eligible loans into a new loan with a reduced monthly payment and a fixed interest rate.\n\nFEDERAL FAMILY EDUCATION LOAN PROGRAM CONSOLIDATION PLAN\nThe Federal Family Education Loan Program Consolidation Plan allows borrowers to combine all eligible federal loans into a single new loan with one lower monthly payment over an extended repayment period. Because the monthly payment amount is reduced and the repayment period is extended, the total amount repaid by the borrower will be greater than under the standard repayment plan.",
+			"DisplayFolderInfo": "{\"name\":\"Product\",\"colorCode\":\"#0E3D73\"}",
+			"PrimaryKeys": "RepaymentPlanTypeId",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

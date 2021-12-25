@@ -1,0 +1,26 @@
+{
+	"name": "relationship-acopcavkql",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-acopcavkql",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "PublicationType",
+		"ToTableName": "Publication",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "PublicationTypeId",
+				"ToColumnName": "PublicationTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"PublicationType.cdm.json/PublicationType\",\"toEntity\":\"Publication.cdm.json/Publication\",\"joinPairs\":[{\"fromAttribute\":\"PublicationTypeId\",\"toAttribute\":\"PublicationTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

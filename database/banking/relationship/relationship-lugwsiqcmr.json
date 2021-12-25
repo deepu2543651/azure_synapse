@@ -1,0 +1,26 @@
+{
+	"name": "relationship-lugwsiqcmr",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-lugwsiqcmr",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Market",
+		"ToTableName": "MarketSegment",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "MarketId",
+				"ToColumnName": "MarketId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Market.cdm.json/Market\",\"toEntity\":\"MarketSegment.cdm.json/MarketSegment\",\"joinPairs\":[{\"fromAttribute\":\"MarketId\",\"toAttribute\":\"MarketId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

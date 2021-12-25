@@ -1,0 +1,26 @@
+{
+	"name": "relationship-piygjzlaee",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-piygjzlaee",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "MarketingProgram",
+		"ToTableName": "ProgramProduct",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "MarketingProgramId",
+				"ToColumnName": "MarketingProgramId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"MarketingProgram.cdm.json/MarketingProgram\",\"toEntity\":\"ProgramProduct.cdm.json/ProgramProduct\",\"joinPairs\":[{\"fromAttribute\":\"MarketingProgramId\",\"toAttribute\":\"MarketingProgramId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

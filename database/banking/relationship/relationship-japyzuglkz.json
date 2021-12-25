@@ -1,0 +1,26 @@
+{
+	"name": "relationship-japyzuglkz",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-japyzuglkz",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "MarketingCampaign",
+		"ToTableName": "MarketingCampaignIncurredCostItem",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "MarketingCampaignId",
+				"ToColumnName": "MarketingCampaignId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"MarketingCampaign.cdm.json/MarketingCampaign\",\"toEntity\":\"MarketingCampaignIncurredCostItem.cdm.json/MarketingCampaignIncurredCostItem\",\"joinPairs\":[{\"fromAttribute\":\"MarketingCampaignId\",\"toAttribute\":\"MarketingCampaignId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

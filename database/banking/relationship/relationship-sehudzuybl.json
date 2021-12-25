@@ -1,0 +1,26 @@
+{
+	"name": "relationship-sehudzuybl",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-sehudzuybl",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "AdvertisingCollateral",
+		"ToTableName": "AdvertisingEventSocialMediaPlatformAdPlacement",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "AdvertisingCollateralId",
+				"ToColumnName": "AdvertisingCollateralId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"AdvertisingCollateral.cdm.json/AdvertisingCollateral\",\"toEntity\":\"AdvertisingEventSocialMediaPlatformAdPlacement.cdm.json/AdvertisingEventSocialMediaPlatformAdPlacement\",\"joinPairs\":[{\"fromAttribute\":\"AdvertisingCollateralId\",\"toAttribute\":\"AdvertisingCollateralId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

@@ -1,0 +1,26 @@
+{
+	"name": "relationship-smpupxdoei",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-smpupxdoei",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "MortgageLoanType",
+		"ToTableName": "MortgageLoanProduct",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "MortgageLoanTypeId",
+				"ToColumnName": "MortgageLoanTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"MortgageLoanType.cdm.json/MortgageLoanType\",\"toEntity\":\"MortgageLoanProduct.cdm.json/MortgageLoanProduct\",\"joinPairs\":[{\"fromAttribute\":\"MortgageLoanTypeId\",\"toAttribute\":\"MortgageLoanTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

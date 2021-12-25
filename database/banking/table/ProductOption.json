@@ -1,0 +1,197 @@
+{
+	"name": "ProductOption",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "ProductOption",
+		"Description": "The specific option(s) applicable to a retail banking product during the associated period.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ProductId",
+					"Description": "The unique identifier of a Product.",
+					"BaseAttributeReference": {
+						"Entity": "ProductOption.cdm.json/ProductOption",
+						"Name": "ProductId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "ProductOptionTypeId",
+					"Description": "The unique identifier of a Product Option Type.",
+					"BaseAttributeReference": {
+						"Entity": "ProductOption.cdm.json/ProductOption",
+						"Name": "ProductOptionTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PeriodStartDate",
+					"Description": "The period start date that the associated retail banking product is available for the associated retail banking product.",
+					"BaseAttributeReference": {
+						"Entity": "ProductOption.cdm.json/ProductOption",
+						"Name": "PeriodStartDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "PeriodEndDate",
+					"Description": "The period end date that the associated retail banking product is available for the associated retail banking product.",
+					"BaseAttributeReference": {
+						"Entity": "ProductOption.cdm.json/ProductOption",
+						"Name": "PeriodEndDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "BillingCycleId",
+					"Description": "The unique identifier of a Billing Cycle.",
+					"BaseAttributeReference": {
+						"Entity": "ProductOption.cdm.json/ProductOption",
+						"Name": "BillingCycleId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ProductOptionFeeAmount",
+					"Description": "The amount of the product option fee.",
+					"BaseAttributeReference": {
+						"Entity": "ProductOption.cdm.json/ProductOption",
+						"Name": "ProductOptionFeeAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "ProductOptionNote",
+					"Description": "A note or comment regarding the Product Option.",
+					"BaseAttributeReference": {
+						"Entity": "ProductOption.cdm.json/ProductOption",
+						"Name": "ProductOptionNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ProductOptionServiceTelephoneNumber",
+					"Description": "The number for accessing the Product Option in the US.",
+					"BaseAttributeReference": {
+						"Entity": "ProductOption.cdm.json/ProductOption",
+						"Name": "ProductOptionServiceTelephoneNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 15,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/ProductOption",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/ProductOption",
+				"Properties": {
+					"LinkedServiceName": "wspc-dpu-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ProductId\":{\"entity\":\"ProductOption.cdm.json/ProductOption\",\"name\":\"ProductId\"},\"ProductOptionTypeId\":{\"entity\":\"ProductOption.cdm.json/ProductOption\",\"name\":\"ProductOptionTypeId\"},\"PeriodStartDate\":{\"entity\":\"ProductOption.cdm.json/ProductOption\",\"name\":\"PeriodStartDate\"},\"PeriodEndDate\":{\"entity\":\"ProductOption.cdm.json/ProductOption\",\"name\":\"PeriodEndDate\"},\"BillingCycleId\":{\"entity\":\"ProductOption.cdm.json/ProductOption\",\"name\":\"BillingCycleId\"},\"ProductOptionFeeAmount\":{\"entity\":\"ProductOption.cdm.json/ProductOption\",\"name\":\"ProductOptionFeeAmount\"},\"ProductOptionNote\":{\"entity\":\"ProductOption.cdm.json/ProductOption\",\"name\":\"ProductOptionNote\"},\"ProductOptionServiceTelephoneNumber\":{\"entity\":\"ProductOption.cdm.json/ProductOption\",\"name\":\"ProductOptionServiceTelephoneNumber\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"ProductOption\",\"path\":\"ProductOption.cdm.json/ProductOption\"},\"description\":\"The specific option(s) applicable to a retail banking product during the associated period.\",\"primaryKey\":[\"ProductId\",\"ProductOptionTypeId\",\"PeriodStartDate\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"ProductId\",\"attributeReference\":{\"entity\":\"ProductOption.cdm.json/ProductOption\",\"name\":\"ProductId\"},\"dataType\":\"long\"},{\"type\":\"Existing\",\"name\":\"ProductOptionTypeId\",\"attributeReference\":{\"entity\":\"ProductOption.cdm.json/ProductOption\",\"name\":\"ProductOptionTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"PeriodStartDate\",\"attributeReference\":{\"entity\":\"ProductOption.cdm.json/ProductOption\",\"name\":\"PeriodStartDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\"},{\"type\":\"Existing\",\"name\":\"PeriodEndDate\",\"attributeReference\":{\"entity\":\"ProductOption.cdm.json/ProductOption\",\"name\":\"PeriodEndDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\"},{\"type\":\"Existing\",\"name\":\"BillingCycleId\",\"attributeReference\":{\"entity\":\"ProductOption.cdm.json/ProductOption\",\"name\":\"BillingCycleId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ProductOptionFeeAmount\",\"attributeReference\":{\"entity\":\"ProductOption.cdm.json/ProductOption\",\"name\":\"ProductOptionFeeAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"ProductOptionNote\",\"attributeReference\":{\"entity\":\"ProductOption.cdm.json/ProductOption\",\"name\":\"ProductOptionNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024},{\"type\":\"Existing\",\"name\":\"ProductOptionServiceTelephoneNumber\",\"attributeReference\":{\"entity\":\"ProductOption.cdm.json/ProductOption\",\"name\":\"ProductOptionServiceTelephoneNumber\"},\"dataType\":\"decimal\",\"dataTypeLength\":15,\"scale\":0}]}}}",
+			"Description": "The specific option(s) applicable to a retail banking product during the associated period.",
+			"DisplayFolderInfo": "{\"name\":\"Product\",\"colorCode\":\"#0E3D73\"}",
+			"PrimaryKeys": "ProductId,ProductOptionTypeId,PeriodStartDate",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

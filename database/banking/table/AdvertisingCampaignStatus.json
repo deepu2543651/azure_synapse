@@ -1,0 +1,145 @@
+{
+	"name": "AdvertisingCampaignStatus",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "AdvertisingCampaignStatus",
+		"Description": "The status of the Advertising Campaign as of the associated period.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "AdvertisingCampaignId",
+					"Description": "The unique identifier of an Advertising Campaign.",
+					"BaseAttributeReference": {
+						"Entity": "AdvertisingCampaignStatus.cdm.json/AdvertisingCampaignStatus",
+						"Name": "AdvertisingCampaignId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PeriodStartDate",
+					"Description": "The period start date that the associated marketing event status is effective.",
+					"BaseAttributeReference": {
+						"Entity": "AdvertisingCampaignStatus.cdm.json/AdvertisingCampaignStatus",
+						"Name": "PeriodStartDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "PeriodEndDate",
+					"Description": "The period end date that the associated marketing event status is effective.",
+					"BaseAttributeReference": {
+						"Entity": "AdvertisingCampaignStatus.cdm.json/AdvertisingCampaignStatus",
+						"Name": "PeriodEndDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "AdvertisingCampaignStatusTypeId",
+					"Description": "The unique identifier of an Advertising Campaign Status Type.",
+					"BaseAttributeReference": {
+						"Entity": "AdvertisingCampaignStatus.cdm.json/AdvertisingCampaignStatus",
+						"Name": "AdvertisingCampaignStatusTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "AdvertisingCampaignStatusNote",
+					"Description": "A note, comment or additional information regarding the Advertising Campaign status.",
+					"BaseAttributeReference": {
+						"Entity": "AdvertisingCampaignStatus.cdm.json/AdvertisingCampaignStatus",
+						"Name": "AdvertisingCampaignStatusNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/AdvertisingCampaignStatus",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/AdvertisingCampaignStatus",
+				"Properties": {
+					"LinkedServiceName": "wspc-dpu-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"AdvertisingCampaignId\":{\"entity\":\"AdvertisingCampaignStatus.cdm.json/AdvertisingCampaignStatus\",\"name\":\"AdvertisingCampaignId\"},\"PeriodStartDate\":{\"entity\":\"AdvertisingCampaignStatus.cdm.json/AdvertisingCampaignStatus\",\"name\":\"PeriodStartDate\"},\"PeriodEndDate\":{\"entity\":\"AdvertisingCampaignStatus.cdm.json/AdvertisingCampaignStatus\",\"name\":\"PeriodEndDate\"},\"AdvertisingCampaignStatusTypeId\":{\"entity\":\"AdvertisingCampaignStatus.cdm.json/AdvertisingCampaignStatus\",\"name\":\"AdvertisingCampaignStatusTypeId\"},\"AdvertisingCampaignStatusNote\":{\"entity\":\"AdvertisingCampaignStatus.cdm.json/AdvertisingCampaignStatus\",\"name\":\"AdvertisingCampaignStatusNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"AdvertisingCampaignStatus\",\"path\":\"AdvertisingCampaignStatus.cdm.json/AdvertisingCampaignStatus\"},\"description\":\"The status of the Advertising Campaign as of the associated period.\",\"primaryKey\":[\"AdvertisingCampaignId\",\"PeriodStartDate\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"AdvertisingCampaignId\",\"attributeReference\":{\"entity\":\"AdvertisingCampaignStatus.cdm.json/AdvertisingCampaignStatus\",\"name\":\"AdvertisingCampaignId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"PeriodStartDate\",\"attributeReference\":{\"entity\":\"AdvertisingCampaignStatus.cdm.json/AdvertisingCampaignStatus\",\"name\":\"PeriodStartDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\"},{\"type\":\"Existing\",\"name\":\"PeriodEndDate\",\"attributeReference\":{\"entity\":\"AdvertisingCampaignStatus.cdm.json/AdvertisingCampaignStatus\",\"name\":\"PeriodEndDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\"},{\"type\":\"Existing\",\"name\":\"AdvertisingCampaignStatusTypeId\",\"attributeReference\":{\"entity\":\"AdvertisingCampaignStatus.cdm.json/AdvertisingCampaignStatus\",\"name\":\"AdvertisingCampaignStatusTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"AdvertisingCampaignStatusNote\",\"attributeReference\":{\"entity\":\"AdvertisingCampaignStatus.cdm.json/AdvertisingCampaignStatus\",\"name\":\"AdvertisingCampaignStatusNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024}]}}}",
+			"Description": "The status of the Advertising Campaign as of the associated period.",
+			"DisplayFolderInfo": "{\"name\":\"Marketing & Advertising\",\"colorCode\":\"#692B0C\"}",
+			"PrimaryKeys": "AdvertisingCampaignId,PeriodStartDate",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

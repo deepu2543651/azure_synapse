@@ -1,0 +1,26 @@
+{
+	"name": "relationship-fuhnwoqirf",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-fuhnwoqirf",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "FinancialInstitution",
+		"ToTableName": "Branch",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "FinancialInstitutionId",
+				"ToColumnName": "FinancialInstitutionId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"FinancialInstitution.cdm.json/FinancialInstitution\",\"toEntity\":\"Branch.cdm.json/Branch\",\"joinPairs\":[{\"fromAttribute\":\"FinancialInstitutionId\",\"toAttribute\":\"FinancialInstitutionId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

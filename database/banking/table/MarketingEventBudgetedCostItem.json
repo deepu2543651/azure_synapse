@@ -1,0 +1,146 @@
+{
+	"name": "MarketingEventBudgetedCostItem",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "MarketingEventBudgetedCostItem",
+		"Description": "The planned and actual marketing event costs for a specific cost item.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "MarketingEventId",
+					"Description": "The unique identifier of a Marketing Event.",
+					"BaseAttributeReference": {
+						"Entity": "MarketingEventBudgetedCostItem.cdm.json/MarketingEventBudgetedCostItem",
+						"Name": "MarketingEventId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "BudgetId",
+					"Description": "The unique identifier of a budget.",
+					"BaseAttributeReference": {
+						"Entity": "MarketingEventBudgetedCostItem.cdm.json/MarketingEventBudgetedCostItem",
+						"Name": "BudgetId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "CostItemId",
+					"Description": "The unique identifier of a Cost Item.",
+					"BaseAttributeReference": {
+						"Entity": "MarketingEventBudgetedCostItem.cdm.json/MarketingEventBudgetedCostItem",
+						"Name": "CostItemId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "MarketingEventCostItemPlannedAmount",
+					"Description": "The amount of the associated Cost Item planned to be spent within the Budget by the Marketing Event.",
+					"BaseAttributeReference": {
+						"Entity": "MarketingEventBudgetedCostItem.cdm.json/MarketingEventBudgetedCostItem",
+						"Name": "MarketingEventCostItemPlannedAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "MarketingEventCostItemActualAmount",
+					"Description": "The amount of the associated Cost Item actually spent within the Budget by the Marketing Event.",
+					"BaseAttributeReference": {
+						"Entity": "MarketingEventBudgetedCostItem.cdm.json/MarketingEventBudgetedCostItem",
+						"Name": "MarketingEventCostItemActualAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/MarketingEventBudgetedCostItem",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/MarketingEventBudgetedCostItem",
+				"Properties": {
+					"LinkedServiceName": "wspc-dpu-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"MarketingEventId\":{\"entity\":\"MarketingEventBudgetedCostItem.cdm.json/MarketingEventBudgetedCostItem\",\"name\":\"MarketingEventId\"},\"BudgetId\":{\"entity\":\"MarketingEventBudgetedCostItem.cdm.json/MarketingEventBudgetedCostItem\",\"name\":\"BudgetId\"},\"CostItemId\":{\"entity\":\"MarketingEventBudgetedCostItem.cdm.json/MarketingEventBudgetedCostItem\",\"name\":\"CostItemId\"},\"MarketingEventCostItemPlannedAmount\":{\"entity\":\"MarketingEventBudgetedCostItem.cdm.json/MarketingEventBudgetedCostItem\",\"name\":\"MarketingEventCostItemPlannedAmount\"},\"MarketingEventCostItemActualAmount\":{\"entity\":\"MarketingEventBudgetedCostItem.cdm.json/MarketingEventBudgetedCostItem\",\"name\":\"MarketingEventCostItemActualAmount\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"MarketingEventBudgetedCostItem\",\"path\":\"MarketingEventBudgetedCostItem.cdm.json/MarketingEventBudgetedCostItem\"},\"description\":\"The planned and actual marketing event costs for a specific cost item.\",\"primaryKey\":[\"MarketingEventId\",\"BudgetId\",\"CostItemId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"MarketingEventId\",\"attributeReference\":{\"entity\":\"MarketingEventBudgetedCostItem.cdm.json/MarketingEventBudgetedCostItem\",\"name\":\"MarketingEventId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"BudgetId\",\"attributeReference\":{\"entity\":\"MarketingEventBudgetedCostItem.cdm.json/MarketingEventBudgetedCostItem\",\"name\":\"BudgetId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"CostItemId\",\"attributeReference\":{\"entity\":\"MarketingEventBudgetedCostItem.cdm.json/MarketingEventBudgetedCostItem\",\"name\":\"CostItemId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"MarketingEventCostItemPlannedAmount\",\"attributeReference\":{\"entity\":\"MarketingEventBudgetedCostItem.cdm.json/MarketingEventBudgetedCostItem\",\"name\":\"MarketingEventCostItemPlannedAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"MarketingEventCostItemActualAmount\",\"attributeReference\":{\"entity\":\"MarketingEventBudgetedCostItem.cdm.json/MarketingEventBudgetedCostItem\",\"name\":\"MarketingEventCostItemActualAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2}]}}}",
+			"Description": "The planned and actual marketing event costs for a specific cost item.",
+			"DisplayFolderInfo": "{\"name\":\"Marketing & Advertising\",\"colorCode\":\"#692B0C\"}",
+			"PrimaryKeys": "MarketingEventId,BudgetId,CostItemId",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

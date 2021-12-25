@@ -1,0 +1,26 @@
+{
+	"name": "relationship-olcwrqadws",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-olcwrqadws",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Asset",
+		"ToTableName": "AssetNetPresentValue",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "AssetId",
+				"ToColumnName": "AssetId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Asset.cdm.json/Asset\",\"toEntity\":\"AssetNetPresentValue.cdm.json/AssetNetPresentValue\",\"joinPairs\":[{\"fromAttribute\":\"AssetId\",\"toAttribute\":\"AssetId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

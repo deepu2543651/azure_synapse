@@ -1,0 +1,26 @@
+{
+	"name": "relationship-bkkerovcdg",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-bkkerovcdg",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "UnitOfMeasure",
+		"ToTableName": "DocumentType",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "UnitOfMeasureId",
+				"ToColumnName": "DocumentTypeRetentionPeriodUomId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"UnitOfMeasure.cdm.json/UnitOfMeasure\",\"toEntity\":\"DocumentType.cdm.json/DocumentType\",\"joinPairs\":[{\"fromAttribute\":\"UnitOfMeasureId\",\"toAttribute\":\"DocumentTypeRetentionPeriodUomId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

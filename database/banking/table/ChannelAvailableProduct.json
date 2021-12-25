@@ -1,0 +1,179 @@
+{
+	"name": "ChannelAvailableProduct",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "ChannelAvailableProduct",
+		"Description": "The products/services available from the Bank at the indicated Channel.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ChannelId",
+					"Description": "The unique identifier of a Channel.",
+					"BaseAttributeReference": {
+						"Entity": "ChannelAvailableProduct.cdm.json/ChannelAvailableProduct",
+						"Name": "ChannelId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ProductId",
+					"Description": "The unique identifier of a Product.",
+					"BaseAttributeReference": {
+						"Entity": "ChannelAvailableProduct.cdm.json/ChannelAvailableProduct",
+						"Name": "ProductId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "AvailabilityFirstDate",
+					"Description": "The first date that the Product is available through the Channel.",
+					"BaseAttributeReference": {
+						"Entity": "ChannelAvailableProduct.cdm.json/ChannelAvailableProduct",
+						"Name": "AvailabilityFirstDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "AvailabilityLastDate",
+					"Description": "The last date that the Product is available through the Channel.",
+					"BaseAttributeReference": {
+						"Entity": "ChannelAvailableProduct.cdm.json/ChannelAvailableProduct",
+						"Name": "AvailabilityLastDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "AvailabilityAnnouncedDate",
+					"Description": "The date that the Product availability was announced for the Channel.",
+					"BaseAttributeReference": {
+						"Entity": "ChannelAvailableProduct.cdm.json/ChannelAvailableProduct",
+						"Name": "AvailabilityAnnouncedDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "AvailabilityRestrictionsNote",
+					"Description": "Restrictions regarding the availability of the Product at the Channel.",
+					"BaseAttributeReference": {
+						"Entity": "ChannelAvailableProduct.cdm.json/ChannelAvailableProduct",
+						"Name": "AvailabilityRestrictionsNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "AvailabilityNote",
+					"Description": "Notes, comments or additional information regarding the availability of the Product at the Channel.",
+					"BaseAttributeReference": {
+						"Entity": "ChannelAvailableProduct.cdm.json/ChannelAvailableProduct",
+						"Name": "AvailabilityNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/ChannelAvailableProduct",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/ChannelAvailableProduct",
+				"Properties": {
+					"LinkedServiceName": "wspc-dpu-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ChannelId\":{\"entity\":\"ChannelAvailableProduct.cdm.json/ChannelAvailableProduct\",\"name\":\"ChannelId\"},\"ProductId\":{\"entity\":\"ChannelAvailableProduct.cdm.json/ChannelAvailableProduct\",\"name\":\"ProductId\"},\"AvailabilityFirstDate\":{\"entity\":\"ChannelAvailableProduct.cdm.json/ChannelAvailableProduct\",\"name\":\"AvailabilityFirstDate\"},\"AvailabilityLastDate\":{\"entity\":\"ChannelAvailableProduct.cdm.json/ChannelAvailableProduct\",\"name\":\"AvailabilityLastDate\"},\"AvailabilityAnnouncedDate\":{\"entity\":\"ChannelAvailableProduct.cdm.json/ChannelAvailableProduct\",\"name\":\"AvailabilityAnnouncedDate\"},\"AvailabilityRestrictionsNote\":{\"entity\":\"ChannelAvailableProduct.cdm.json/ChannelAvailableProduct\",\"name\":\"AvailabilityRestrictionsNote\"},\"AvailabilityNote\":{\"entity\":\"ChannelAvailableProduct.cdm.json/ChannelAvailableProduct\",\"name\":\"AvailabilityNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"ChannelAvailableProduct\",\"path\":\"ChannelAvailableProduct.cdm.json/ChannelAvailableProduct\"},\"description\":\"The products/services available from the Bank at the indicated Channel.\",\"primaryKey\":[\"ChannelId\",\"ProductId\",\"AvailabilityFirstDate\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"ChannelId\",\"attributeReference\":{\"entity\":\"ChannelAvailableProduct.cdm.json/ChannelAvailableProduct\",\"name\":\"ChannelId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ProductId\",\"attributeReference\":{\"entity\":\"ChannelAvailableProduct.cdm.json/ChannelAvailableProduct\",\"name\":\"ProductId\"},\"dataType\":\"long\"},{\"type\":\"Existing\",\"name\":\"AvailabilityFirstDate\",\"attributeReference\":{\"entity\":\"ChannelAvailableProduct.cdm.json/ChannelAvailableProduct\",\"name\":\"AvailabilityFirstDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\"},{\"type\":\"Existing\",\"name\":\"AvailabilityLastDate\",\"attributeReference\":{\"entity\":\"ChannelAvailableProduct.cdm.json/ChannelAvailableProduct\",\"name\":\"AvailabilityLastDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\"},{\"type\":\"Existing\",\"name\":\"AvailabilityAnnouncedDate\",\"attributeReference\":{\"entity\":\"ChannelAvailableProduct.cdm.json/ChannelAvailableProduct\",\"name\":\"AvailabilityAnnouncedDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\"},{\"type\":\"Existing\",\"name\":\"AvailabilityRestrictionsNote\",\"attributeReference\":{\"entity\":\"ChannelAvailableProduct.cdm.json/ChannelAvailableProduct\",\"name\":\"AvailabilityRestrictionsNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024},{\"type\":\"Existing\",\"name\":\"AvailabilityNote\",\"attributeReference\":{\"entity\":\"ChannelAvailableProduct.cdm.json/ChannelAvailableProduct\",\"name\":\"AvailabilityNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024}]}}}",
+			"Description": "The products/services available from the Bank at the indicated Channel.",
+			"DisplayFolderInfo": "{\"name\":\"Channel\",\"colorCode\":\"#001D3F\"}",
+			"PrimaryKeys": "ChannelId,ProductId,AvailabilityFirstDate",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

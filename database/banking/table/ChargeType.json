@@ -1,0 +1,112 @@
+{
+	"name": "ChargeType",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "ChargeType",
+		"Description": "A classification of charges based on common characteristics or functions performed.\n\nEx:\n- Abatement Charge\n- Absorption Charge\n- Accessorial Charge\n- Advance Charge\n- Agent Charge\n- Broker Charge\n- Cargo Agent Charge\n- Cartage Agent Charge \n- Commission fee\n- EU VAT tax\n- Federal Tax \n- Handling charge\n- Large-item charge\n- Late Payment Fee\n- On-line Service fee\n- Third-party billing charge\n- Regulatory fee\n- Return/stocking\n- Shipping\n- State Tax",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ChargeTypeId",
+					"Description": "The unique identifier of a Charge Type.",
+					"BaseAttributeReference": {
+						"Entity": "ChargeType.cdm.json/ChargeType",
+						"Name": "ChargeTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ChargeTypeName",
+					"Description": "The name of a Charge Type.",
+					"BaseAttributeReference": {
+						"Entity": "ChargeType.cdm.json/ChargeType",
+						"Name": "ChargeTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ChargeTypeDescription",
+					"Description": "The description of a Charge Type.",
+					"BaseAttributeReference": {
+						"Entity": "ChargeType.cdm.json/ChargeType",
+						"Name": "ChargeTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/ChargeType",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/ChargeType",
+				"Properties": {
+					"LinkedServiceName": "wspc-dpu-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ChargeTypeId\":{\"entity\":\"ChargeType.cdm.json/ChargeType\",\"name\":\"ChargeTypeId\"},\"ChargeTypeName\":{\"entity\":\"ChargeType.cdm.json/ChargeType\",\"name\":\"ChargeTypeName\"},\"ChargeTypeDescription\":{\"entity\":\"ChargeType.cdm.json/ChargeType\",\"name\":\"ChargeTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"ChargeType\",\"path\":\"ChargeType.cdm.json/ChargeType\"},\"description\":\"A classification of charges based on common characteristics or functions performed.\\n\\nEx:\\n- Abatement Charge\\n- Absorption Charge\\n- Accessorial Charge\\n- Advance Charge\\n- Agent Charge\\n- Broker Charge\\n- Cargo Agent Charge\\n- Cartage Agent Charge \\n- Commission fee\\n- EU VAT tax\\n- Federal Tax \\n- Handling charge\\n- Large-item charge\\n- Late Payment Fee\\n- On-line Service fee\\n- Third-party billing charge\\n- Regulatory fee\\n- Return/stocking\\n- Shipping\\n- State Tax\",\"primaryKey\":[\"ChargeTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"ChargeTypeId\",\"attributeReference\":{\"entity\":\"ChargeType.cdm.json/ChargeType\",\"name\":\"ChargeTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ChargeTypeName\",\"attributeReference\":{\"entity\":\"ChargeType.cdm.json/ChargeType\",\"name\":\"ChargeTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"ChargeTypeDescription\",\"attributeReference\":{\"entity\":\"ChargeType.cdm.json/ChargeType\",\"name\":\"ChargeTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512}]}}}",
+			"Description": "A classification of charges based on common characteristics or functions performed.\n\nEx:\n- Abatement Charge\n- Absorption Charge\n- Accessorial Charge\n- Advance Charge\n- Agent Charge\n- Broker Charge\n- Cargo Agent Charge\n- Cartage Agent Charge \n- Commission fee\n- EU VAT tax\n- Federal Tax \n- Handling charge\n- Large-item charge\n- Late Payment Fee\n- On-line Service fee\n- Third-party billing charge\n- Regulatory fee\n- Return/stocking\n- Shipping\n- State Tax",
+			"DisplayFolderInfo": "{\"name\":\"Transaction\",\"colorCode\":\"#823A16\"}",
+			"PrimaryKeys": "ChargeTypeId",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

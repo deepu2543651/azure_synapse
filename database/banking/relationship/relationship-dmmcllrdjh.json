@@ -1,0 +1,26 @@
+{
+	"name": "relationship-dmmcllrdjh",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-dmmcllrdjh",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Party",
+		"ToTableName": "CustomerAssetFinancialAssessment",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "PartyId",
+				"ToColumnName": "AssessedByPartyId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Party.cdm.json/Party\",\"toEntity\":\"CustomerAssetFinancialAssessment.cdm.json/CustomerAssetFinancialAssessment\",\"joinPairs\":[{\"fromAttribute\":\"PartyId\",\"toAttribute\":\"AssessedByPartyId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

@@ -1,0 +1,26 @@
+{
+	"name": "relationship-apwiaidevz",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-apwiaidevz",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "CustomerAccount",
+		"ToTableName": "CustomerAccountCreditStatus",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "CustomerAccountId",
+				"ToColumnName": "CustomerAccountId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"CustomerAccount.cdm.json/CustomerAccount\",\"toEntity\":\"CustomerAccountCreditStatus.cdm.json/CustomerAccountCreditStatus\",\"joinPairs\":[{\"fromAttribute\":\"CustomerAccountId\",\"toAttribute\":\"CustomerAccountId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

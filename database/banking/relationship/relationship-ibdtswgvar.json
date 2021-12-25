@@ -1,0 +1,26 @@
+{
+	"name": "relationship-ibdtswgvar",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-ibdtswgvar",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "AssetTitleStatus",
+		"ToTableName": "Asset",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "AssetTitleStatusId",
+				"ToColumnName": "AssetTitleStatusId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"AssetTitleStatus.cdm.json/AssetTitleStatus\",\"toEntity\":\"Asset.cdm.json/Asset\",\"joinPairs\":[{\"fromAttribute\":\"AssetTitleStatusId\",\"toAttribute\":\"AssetTitleStatusId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

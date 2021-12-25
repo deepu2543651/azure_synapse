@@ -1,0 +1,112 @@
+{
+	"name": "BudgetType",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "BudgetType",
+		"Description": "A categorization of budgets based on common characteristics or functions performed.\n\nEx:\n- Department Annual Budget\n- Department Supplementary Budget",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "BudgetTypeId",
+					"Description": "The unique identifier of a budget type.",
+					"BaseAttributeReference": {
+						"Entity": "BudgetType.cdm.json/BudgetType",
+						"Name": "BudgetTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "BudgetTypeName",
+					"Description": "The name of a budget type.",
+					"BaseAttributeReference": {
+						"Entity": "BudgetType.cdm.json/BudgetType",
+						"Name": "BudgetTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "BudgetTypeDescription",
+					"Description": "The description of a budget type.",
+					"BaseAttributeReference": {
+						"Entity": "BudgetType.cdm.json/BudgetType",
+						"Name": "BudgetTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/BudgetType",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/BudgetType",
+				"Properties": {
+					"LinkedServiceName": "wspc-dpu-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"BudgetTypeId\":{\"entity\":\"BudgetType.cdm.json/BudgetType\",\"name\":\"BudgetTypeId\"},\"BudgetTypeName\":{\"entity\":\"BudgetType.cdm.json/BudgetType\",\"name\":\"BudgetTypeName\"},\"BudgetTypeDescription\":{\"entity\":\"BudgetType.cdm.json/BudgetType\",\"name\":\"BudgetTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"BudgetType\",\"path\":\"BudgetType.cdm.json/BudgetType\"},\"description\":\"A categorization of budgets based on common characteristics or functions performed.\\n\\nEx:\\n- Department Annual Budget\\n- Department Supplementary Budget\",\"primaryKey\":[\"BudgetTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"BudgetTypeId\",\"attributeReference\":{\"entity\":\"BudgetType.cdm.json/BudgetType\",\"name\":\"BudgetTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"BudgetTypeName\",\"attributeReference\":{\"entity\":\"BudgetType.cdm.json/BudgetType\",\"name\":\"BudgetTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"BudgetTypeDescription\",\"attributeReference\":{\"entity\":\"BudgetType.cdm.json/BudgetType\",\"name\":\"BudgetTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512}]}}}",
+			"Description": "A categorization of budgets based on common characteristics or functions performed.\n\nEx:\n- Department Annual Budget\n- Department Supplementary Budget",
+			"DisplayFolderInfo": "{\"name\":\"Customer Service & Contact Management\",\"colorCode\":\"#Ef6950\"}",
+			"PrimaryKeys": "BudgetTypeId",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

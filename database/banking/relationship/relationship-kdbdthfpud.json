@@ -1,0 +1,26 @@
+{
+	"name": "relationship-kdbdthfpud",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-kdbdthfpud",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Party",
+		"ToTableName": "AssetAssessment",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "PartyId",
+				"ToColumnName": "AssessedByPartyId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Party.cdm.json/Party\",\"toEntity\":\"AssetAssessment.cdm.json/AssetAssessment\",\"joinPairs\":[{\"fromAttribute\":\"PartyId\",\"toAttribute\":\"AssessedByPartyId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

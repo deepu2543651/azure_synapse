@@ -1,0 +1,26 @@
+{
+	"name": "relationship-criulurdmo",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-criulurdmo",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "CustomerAccount",
+		"ToTableName": "Collateral",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "CustomerAccountId",
+				"ToColumnName": "CustomerAccountId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"CustomerAccount.cdm.json/CustomerAccount\",\"toEntity\":\"Collateral.cdm.json/Collateral\",\"joinPairs\":[{\"fromAttribute\":\"CustomerAccountId\",\"toAttribute\":\"CustomerAccountId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

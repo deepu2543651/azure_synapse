@@ -1,0 +1,26 @@
+{
+	"name": "relationship-shcjwfpchz",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-shcjwfpchz",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Document",
+		"ToTableName": "DocumentStatus",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "DocumentId",
+				"ToColumnName": "DocumentId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Document.cdm.json/Document\",\"toEntity\":\"DocumentStatus.cdm.json/DocumentStatus\",\"joinPairs\":[{\"fromAttribute\":\"DocumentId\",\"toAttribute\":\"DocumentId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

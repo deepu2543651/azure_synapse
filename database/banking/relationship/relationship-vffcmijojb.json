@@ -1,0 +1,26 @@
+{
+	"name": "relationship-vffcmijojb",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-vffcmijojb",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Asset",
+		"ToTableName": "CustomerAssetOwnership",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "AssetId",
+				"ToColumnName": "CustomerAssetId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Asset.cdm.json/Asset\",\"toEntity\":\"CustomerAssetOwnership.cdm.json/CustomerAssetOwnership\",\"joinPairs\":[{\"fromAttribute\":\"AssetId\",\"toAttribute\":\"CustomerAssetId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

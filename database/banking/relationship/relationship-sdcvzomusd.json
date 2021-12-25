@@ -1,0 +1,26 @@
+{
+	"name": "relationship-sdcvzomusd",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-sdcvzomusd",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "CustomerAccount",
+		"ToTableName": "CustomerAccountContract",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "CustomerAccountId",
+				"ToColumnName": "CustomerAccountId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"CustomerAccount.cdm.json/CustomerAccount\",\"toEntity\":\"CustomerAccountContract.cdm.json/CustomerAccountContract\",\"joinPairs\":[{\"fromAttribute\":\"CustomerAccountId\",\"toAttribute\":\"CustomerAccountId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

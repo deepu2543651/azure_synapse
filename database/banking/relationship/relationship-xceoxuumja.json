@@ -1,0 +1,26 @@
+{
+	"name": "relationship-xceoxuumja",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-xceoxuumja",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "RatingCriteria",
+		"ToTableName": "ProductSatisfactionRating",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "RatingCriteriaId",
+				"ToColumnName": "RatingCriteriaId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"RatingCriteria.cdm.json/RatingCriteria\",\"toEntity\":\"ProductSatisfactionRating.cdm.json/ProductSatisfactionRating\",\"joinPairs\":[{\"fromAttribute\":\"RatingCriteriaId\",\"toAttribute\":\"RatingCriteriaId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

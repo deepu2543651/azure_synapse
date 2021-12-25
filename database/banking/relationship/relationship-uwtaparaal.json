@@ -1,0 +1,26 @@
+{
+	"name": "relationship-uwtaparaal",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-uwtaparaal",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "BankIdentificationNumber",
+		"ToTableName": "PaymentCardProduct",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "BankIdentificationNumber",
+				"ToColumnName": "BankIdentificationNumber"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"BankIdentificationNumber.cdm.json/BankIdentificationNumber\",\"toEntity\":\"PaymentCardProduct.cdm.json/PaymentCardProduct\",\"joinPairs\":[{\"fromAttribute\":\"BankIdentificationNumber\",\"toAttribute\":\"BankIdentificationNumber\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

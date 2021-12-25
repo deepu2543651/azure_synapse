@@ -1,0 +1,145 @@
+{
+	"name": "MarketingEventIncurredCostItem",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "MarketingEventIncurredCostItem",
+		"Description": "The actual Cost Item expense(s) incurred by the Marketing Event and assigned to the associated Budget.\n\nNote that a Cost Item can be expensed against multiple budgets so Budget must be part of the key.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "MarketingEventId",
+					"Description": "The unique identifier of a Marketing Event.",
+					"BaseAttributeReference": {
+						"Entity": "MarketingEventIncurredCostItem.cdm.json/MarketingEventIncurredCostItem",
+						"Name": "MarketingEventId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "BudgetId",
+					"Description": "The unique identifier of a budget.",
+					"BaseAttributeReference": {
+						"Entity": "MarketingEventIncurredCostItem.cdm.json/MarketingEventIncurredCostItem",
+						"Name": "BudgetId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "CostItemId",
+					"Description": "The unique identifier of a Cost Item.",
+					"BaseAttributeReference": {
+						"Entity": "MarketingEventIncurredCostItem.cdm.json/MarketingEventIncurredCostItem",
+						"Name": "CostItemId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "Date",
+					"Description": "The date that the associated budget cost item expenses are incurred as-of or reported as for.",
+					"BaseAttributeReference": {
+						"Entity": "MarketingEventIncurredCostItem.cdm.json/MarketingEventIncurredCostItem",
+						"Name": "Date"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "ExpensedAmount",
+					"Description": "The actual amount of the Cost Item expensed to the associated Budget as of the indicated date.",
+					"BaseAttributeReference": {
+						"Entity": "MarketingEventIncurredCostItem.cdm.json/MarketingEventIncurredCostItem",
+						"Name": "ExpensedAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/MarketingEventIncurredCostItem",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/MarketingEventIncurredCostItem",
+				"Properties": {
+					"LinkedServiceName": "wspc-dpu-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"MarketingEventId\":{\"entity\":\"MarketingEventIncurredCostItem.cdm.json/MarketingEventIncurredCostItem\",\"name\":\"MarketingEventId\"},\"BudgetId\":{\"entity\":\"MarketingEventIncurredCostItem.cdm.json/MarketingEventIncurredCostItem\",\"name\":\"BudgetId\"},\"CostItemId\":{\"entity\":\"MarketingEventIncurredCostItem.cdm.json/MarketingEventIncurredCostItem\",\"name\":\"CostItemId\"},\"Date\":{\"entity\":\"MarketingEventIncurredCostItem.cdm.json/MarketingEventIncurredCostItem\",\"name\":\"Date\"},\"ExpensedAmount\":{\"entity\":\"MarketingEventIncurredCostItem.cdm.json/MarketingEventIncurredCostItem\",\"name\":\"ExpensedAmount\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"MarketingEventIncurredCostItem\",\"path\":\"MarketingEventIncurredCostItem.cdm.json/MarketingEventIncurredCostItem\"},\"description\":\"The actual Cost Item expense(s) incurred by the Marketing Event and assigned to the associated Budget.\\n\\nNote that a Cost Item can be expensed against multiple budgets so Budget must be part of the key.\",\"primaryKey\":[\"MarketingEventId\",\"BudgetId\",\"CostItemId\",\"Date\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"MarketingEventId\",\"attributeReference\":{\"entity\":\"MarketingEventIncurredCostItem.cdm.json/MarketingEventIncurredCostItem\",\"name\":\"MarketingEventId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"BudgetId\",\"attributeReference\":{\"entity\":\"MarketingEventIncurredCostItem.cdm.json/MarketingEventIncurredCostItem\",\"name\":\"BudgetId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"CostItemId\",\"attributeReference\":{\"entity\":\"MarketingEventIncurredCostItem.cdm.json/MarketingEventIncurredCostItem\",\"name\":\"CostItemId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"Date\",\"attributeReference\":{\"entity\":\"MarketingEventIncurredCostItem.cdm.json/MarketingEventIncurredCostItem\",\"name\":\"Date\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\"},{\"type\":\"Existing\",\"name\":\"ExpensedAmount\",\"attributeReference\":{\"entity\":\"MarketingEventIncurredCostItem.cdm.json/MarketingEventIncurredCostItem\",\"name\":\"ExpensedAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2}]}}}",
+			"Description": "The actual Cost Item expense(s) incurred by the Marketing Event and assigned to the associated Budget.\n\nNote that a Cost Item can be expensed against multiple budgets so Budget must be part of the key.",
+			"DisplayFolderInfo": "{\"name\":\"Marketing & Advertising\",\"colorCode\":\"#692B0C\"}",
+			"PrimaryKeys": "MarketingEventId,BudgetId,CostItemId,Date",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

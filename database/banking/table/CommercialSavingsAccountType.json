@@ -1,0 +1,112 @@
+{
+	"name": "CommercialSavingsAccountType",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "CommercialSavingsAccountType",
+		"Description": "A type of commercial savings account types based on its functionality and interest rates paid.\n\nEx:\n- Commercial Basic Savings\n- Commercial Money Market",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "CommercialSavingsAccountTypeId",
+					"Description": "The unique identifier of a Commercial Savings Account Type.",
+					"BaseAttributeReference": {
+						"Entity": "CommercialSavingsAccountType.cdm.json/CommercialSavingsAccountType",
+						"Name": "CommercialSavingsAccountTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "CommercialSavingsAccountTypeName",
+					"Description": "The name of a Commercial Savings Account Type.",
+					"BaseAttributeReference": {
+						"Entity": "CommercialSavingsAccountType.cdm.json/CommercialSavingsAccountType",
+						"Name": "CommercialSavingsAccountTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "CommercialSavingsAccountTypeDescription",
+					"Description": "The description of a Commercial Savings Account Type.",
+					"BaseAttributeReference": {
+						"Entity": "CommercialSavingsAccountType.cdm.json/CommercialSavingsAccountType",
+						"Name": "CommercialSavingsAccountTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/CommercialSavingsAccountType",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/CommercialSavingsAccountType",
+				"Properties": {
+					"LinkedServiceName": "wspc-dpu-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"CommercialSavingsAccountTypeId\":{\"entity\":\"CommercialSavingsAccountType.cdm.json/CommercialSavingsAccountType\",\"name\":\"CommercialSavingsAccountTypeId\"},\"CommercialSavingsAccountTypeName\":{\"entity\":\"CommercialSavingsAccountType.cdm.json/CommercialSavingsAccountType\",\"name\":\"CommercialSavingsAccountTypeName\"},\"CommercialSavingsAccountTypeDescription\":{\"entity\":\"CommercialSavingsAccountType.cdm.json/CommercialSavingsAccountType\",\"name\":\"CommercialSavingsAccountTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"CommercialSavingsAccountType\",\"path\":\"CommercialSavingsAccountType.cdm.json/CommercialSavingsAccountType\"},\"description\":\"A type of commercial savings account types based on its functionality and interest rates paid.\\n\\nEx:\\n- Commercial Basic Savings\\n- Commercial Money Market\",\"primaryKey\":[\"CommercialSavingsAccountTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"CommercialSavingsAccountTypeId\",\"attributeReference\":{\"entity\":\"CommercialSavingsAccountType.cdm.json/CommercialSavingsAccountType\",\"name\":\"CommercialSavingsAccountTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"CommercialSavingsAccountTypeName\",\"attributeReference\":{\"entity\":\"CommercialSavingsAccountType.cdm.json/CommercialSavingsAccountType\",\"name\":\"CommercialSavingsAccountTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"CommercialSavingsAccountTypeDescription\",\"attributeReference\":{\"entity\":\"CommercialSavingsAccountType.cdm.json/CommercialSavingsAccountType\",\"name\":\"CommercialSavingsAccountTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512}]}}}",
+			"Description": "A type of commercial savings account types based on its functionality and interest rates paid.\n\nEx:\n- Commercial Basic Savings\n- Commercial Money Market",
+			"DisplayFolderInfo": "{\"name\":\"Product\",\"colorCode\":\"#0E3D73\"}",
+			"PrimaryKeys": "CommercialSavingsAccountTypeId",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

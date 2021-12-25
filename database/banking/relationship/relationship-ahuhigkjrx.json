@@ -1,0 +1,26 @@
+{
+	"name": "relationship-ahuhigkjrx",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-ahuhigkjrx",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "AuthorizationType",
+		"ToTableName": "TransactionAuthorization",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "AuthorizationTypeId",
+				"ToColumnName": "AuthorizationTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"AuthorizationType.cdm.json/AuthorizationType\",\"toEntity\":\"TransactionAuthorization.cdm.json/TransactionAuthorization\",\"joinPairs\":[{\"fromAttribute\":\"AuthorizationTypeId\",\"toAttribute\":\"AuthorizationTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

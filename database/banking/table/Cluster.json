@@ -1,0 +1,112 @@
+{
+	"name": "Cluster",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "Cluster",
+		"Description": "An arbitrary grouping based upon convenience, purpose or some similar objective.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ClusterId",
+					"Description": "The unique identifier of a Cluster.",
+					"BaseAttributeReference": {
+						"Entity": "Cluster.cdm.json/Cluster",
+						"Name": "ClusterId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ClusterName",
+					"Description": "The name of the Cluster.",
+					"BaseAttributeReference": {
+						"Entity": "Cluster.cdm.json/Cluster",
+						"Name": "ClusterName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ClusterDescription",
+					"Description": "The description of the Cluster.",
+					"BaseAttributeReference": {
+						"Entity": "Cluster.cdm.json/Cluster",
+						"Name": "ClusterDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/Cluster",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/Cluster",
+				"Properties": {
+					"LinkedServiceName": "wspc-dpu-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ClusterId\":{\"entity\":\"Cluster.cdm.json/Cluster\",\"name\":\"ClusterId\"},\"ClusterName\":{\"entity\":\"Cluster.cdm.json/Cluster\",\"name\":\"ClusterName\"},\"ClusterDescription\":{\"entity\":\"Cluster.cdm.json/Cluster\",\"name\":\"ClusterDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"Cluster\",\"path\":\"Cluster.cdm.json/Cluster\"},\"description\":\"An arbitrary grouping based upon convenience, purpose or some similar objective.\",\"primaryKey\":[\"ClusterId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"ClusterId\",\"attributeReference\":{\"entity\":\"Cluster.cdm.json/Cluster\",\"name\":\"ClusterId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ClusterName\",\"attributeReference\":{\"entity\":\"Cluster.cdm.json/Cluster\",\"name\":\"ClusterName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"ClusterDescription\",\"attributeReference\":{\"entity\":\"Cluster.cdm.json/Cluster\",\"name\":\"ClusterDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512}]}}}",
+			"Description": "An arbitrary grouping based upon convenience, purpose or some similar objective.",
+			"DisplayFolderInfo": "{\"name\":\"Party\",\"colorCode\":\"#00727A\"}",
+			"PrimaryKeys": "ClusterId",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

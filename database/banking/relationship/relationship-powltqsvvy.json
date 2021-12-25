@@ -1,0 +1,26 @@
+{
+	"name": "relationship-powltqsvvy",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-powltqsvvy",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Document",
+		"ToTableName": "CustomerAccountDocument",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "DocumentId",
+				"ToColumnName": "DocumentId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Document.cdm.json/Document\",\"toEntity\":\"CustomerAccountDocument.cdm.json/CustomerAccountDocument\",\"joinPairs\":[{\"fromAttribute\":\"DocumentId\",\"toAttribute\":\"DocumentId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

@@ -1,0 +1,361 @@
+{
+	"name": "BaseRate",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "BaseRate",
+		"Description": "The interest rate(s) used to calculate charges for the associated product for the associated period.\n\nA product may have multiple interest rates that are applicable depending on the purpose of the interest.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ProductId",
+					"Description": "The unique identifier of a Product.",
+					"BaseAttributeReference": {
+						"Entity": "BaseRate.cdm.json/BaseRate",
+						"Name": "ProductId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "InterestRatePurposeId",
+					"Description": "The unique identifier of an Interest Rate Purpose.",
+					"BaseAttributeReference": {
+						"Entity": "BaseRate.cdm.json/BaseRate",
+						"Name": "InterestRatePurposeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "MinimumAccountBalance",
+					"Description": "The minimum account balance for which the associated base rate is applicable.",
+					"BaseAttributeReference": {
+						"Entity": "BaseRate.cdm.json/BaseRate",
+						"Name": "MinimumAccountBalance"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "MaximumAccountBalance",
+					"Description": "The maximum account balance for which the associated base rate is applicable.",
+					"BaseAttributeReference": {
+						"Entity": "BaseRate.cdm.json/BaseRate",
+						"Name": "MaximumAccountBalance"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "BaseRatePeriodStartTimestamp",
+					"Description": "The period start timestamp for which the associated base rate is applicable.",
+					"BaseAttributeReference": {
+						"Entity": "BaseRate.cdm.json/BaseRate",
+						"Name": "BaseRatePeriodStartTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "BaseRatePeriodEndTimestamp",
+					"Description": "The period end timestamp for which the associated base rate is applicable.",
+					"BaseAttributeReference": {
+						"Entity": "BaseRate.cdm.json/BaseRate",
+						"Name": "BaseRatePeriodEndTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "BaseInterestRatePercentage",
+					"Description": "The product base rate expressed as a percentage for fixed rate. The rate added to the index for variable rate.",
+					"BaseAttributeReference": {
+						"Entity": "BaseRate.cdm.json/BaseRate",
+						"Name": "BaseInterestRatePercentage"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "AnnualPercentageRate",
+					"Description": "Annual Percentage Rate. A way of expressing the cost of credit on a loan. Under federal law, all consumer loans must disclose the Annual Percentage Rate.\n\nOften confused with interest rate, an APR supplies the cost of credit over the course of a year. It is supplied as a percentage taking into consideration the amount finance, any charges, and the term of the loan.",
+					"BaseAttributeReference": {
+						"Entity": "BaseRate.cdm.json/BaseRate",
+						"Name": "AnnualPercentageRate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "AnnualPercentageYield",
+					"Description": "The APY based on the interest rate percentage.",
+					"BaseAttributeReference": {
+						"Entity": "BaseRate.cdm.json/BaseRate",
+						"Name": "AnnualPercentageYield"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "RateDurationUnits",
+					"Description": "Length (Duration) that the Base Rate is effective.",
+					"BaseAttributeReference": {
+						"Entity": "BaseRate.cdm.json/BaseRate",
+						"Name": "RateDurationUnits"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "RateDurationUnitOfMeasureId",
+					"Description": "The unique identifier of a Unit Of Measure.",
+					"BaseAttributeReference": {
+						"Entity": "BaseRate.cdm.json/BaseRate",
+						"Name": "RateDurationUnitOfMeasureId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "InterestRateTypeId",
+					"Description": "The unique identifier of an Interest Rate Type.",
+					"BaseAttributeReference": {
+						"Entity": "BaseRate.cdm.json/BaseRate",
+						"Name": "InterestRateTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "MarginInterestRateAdjustmentPercentage",
+					"Description": "A percentage that is added /subtracted from the associated interest rate of the interest rate type.\n\nThe rate is adjusted in increments, called the margin, to compensate for greater credit risk or other factors that affect the cost of lending.",
+					"BaseAttributeReference": {
+						"Entity": "BaseRate.cdm.json/BaseRate",
+						"Name": "MarginInterestRateAdjustmentPercentage"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "BaseRateNote",
+					"Description": "A note, comment or additional information regarding the base rate.",
+					"BaseAttributeReference": {
+						"Entity": "BaseRate.cdm.json/BaseRate",
+						"Name": "BaseRateNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "InterestRateDirectionId",
+					"Description": "The unique identifier of an interest rate type.",
+					"BaseAttributeReference": {
+						"Entity": "BaseRate.cdm.json/BaseRate",
+						"Name": "InterestRateDirectionId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "InterestRateIndexId",
+					"Description": "The unique identifier of an Interest Rate Index.",
+					"BaseAttributeReference": {
+						"Entity": "BaseRate.cdm.json/BaseRate",
+						"Name": "InterestRateIndexId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "AprBasisTypeId",
+					"Description": "The unique identifier of an APR Basis Type.",
+					"BaseAttributeReference": {
+						"Entity": "BaseRate.cdm.json/BaseRate",
+						"Name": "AprBasisTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "BillingCycleId",
+					"Description": "The unique identifier of a Billing Cycle.",
+					"BaseAttributeReference": {
+						"Entity": "BaseRate.cdm.json/BaseRate",
+						"Name": "BillingCycleId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/BaseRate",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/BaseRate",
+				"Properties": {
+					"LinkedServiceName": "wspc-dpu-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ProductId\":{\"entity\":\"BaseRate.cdm.json/BaseRate\",\"name\":\"ProductId\"},\"InterestRatePurposeId\":{\"entity\":\"BaseRate.cdm.json/BaseRate\",\"name\":\"InterestRatePurposeId\"},\"MinimumAccountBalance\":{\"entity\":\"BaseRate.cdm.json/BaseRate\",\"name\":\"MinimumAccountBalance\"},\"MaximumAccountBalance\":{\"entity\":\"BaseRate.cdm.json/BaseRate\",\"name\":\"MaximumAccountBalance\"},\"BaseRatePeriodStartTimestamp\":{\"entity\":\"BaseRate.cdm.json/BaseRate\",\"name\":\"BaseRatePeriodStartTimestamp\"},\"BaseRatePeriodEndTimestamp\":{\"entity\":\"BaseRate.cdm.json/BaseRate\",\"name\":\"BaseRatePeriodEndTimestamp\"},\"BaseInterestRatePercentage\":{\"entity\":\"BaseRate.cdm.json/BaseRate\",\"name\":\"BaseInterestRatePercentage\"},\"AnnualPercentageRate\":{\"entity\":\"BaseRate.cdm.json/BaseRate\",\"name\":\"AnnualPercentageRate\"},\"AnnualPercentageYield\":{\"entity\":\"BaseRate.cdm.json/BaseRate\",\"name\":\"AnnualPercentageYield\"},\"RateDurationUnits\":{\"entity\":\"BaseRate.cdm.json/BaseRate\",\"name\":\"RateDurationUnits\"},\"RateDurationUnitOfMeasureId\":{\"entity\":\"BaseRate.cdm.json/BaseRate\",\"name\":\"RateDurationUnitOfMeasureId\"},\"InterestRateTypeId\":{\"entity\":\"BaseRate.cdm.json/BaseRate\",\"name\":\"InterestRateTypeId\"},\"MarginInterestRateAdjustmentPercentage\":{\"entity\":\"BaseRate.cdm.json/BaseRate\",\"name\":\"MarginInterestRateAdjustmentPercentage\"},\"BaseRateNote\":{\"entity\":\"BaseRate.cdm.json/BaseRate\",\"name\":\"BaseRateNote\"},\"InterestRateDirectionId\":{\"entity\":\"BaseRate.cdm.json/BaseRate\",\"name\":\"InterestRateDirectionId\"},\"InterestRateIndexId\":{\"entity\":\"BaseRate.cdm.json/BaseRate\",\"name\":\"InterestRateIndexId\"},\"AprBasisTypeId\":{\"entity\":\"BaseRate.cdm.json/BaseRate\",\"name\":\"AprBasisTypeId\"},\"BillingCycleId\":{\"entity\":\"BaseRate.cdm.json/BaseRate\",\"name\":\"BillingCycleId\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"BaseRate\",\"path\":\"BaseRate.cdm.json/BaseRate\"},\"description\":\"The interest rate(s) used to calculate charges for the associated product for the associated period.\\n\\nA product may have multiple interest rates that are applicable depending on the purpose of the interest.\",\"primaryKey\":[\"ProductId\",\"InterestRatePurposeId\",\"MinimumAccountBalance\",\"MaximumAccountBalance\",\"BaseRatePeriodStartTimestamp\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"ProductId\",\"attributeReference\":{\"entity\":\"BaseRate.cdm.json/BaseRate\",\"name\":\"ProductId\"},\"dataType\":\"long\"},{\"type\":\"Existing\",\"name\":\"InterestRatePurposeId\",\"attributeReference\":{\"entity\":\"BaseRate.cdm.json/BaseRate\",\"name\":\"InterestRatePurposeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"MinimumAccountBalance\",\"attributeReference\":{\"entity\":\"BaseRate.cdm.json/BaseRate\",\"name\":\"MinimumAccountBalance\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"MaximumAccountBalance\",\"attributeReference\":{\"entity\":\"BaseRate.cdm.json/BaseRate\",\"name\":\"MaximumAccountBalance\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"BaseRatePeriodStartTimestamp\",\"attributeReference\":{\"entity\":\"BaseRate.cdm.json/BaseRate\",\"name\":\"BaseRatePeriodStartTimestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"BaseRatePeriodEndTimestamp\",\"attributeReference\":{\"entity\":\"BaseRate.cdm.json/BaseRate\",\"name\":\"BaseRatePeriodEndTimestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"BaseInterestRatePercentage\",\"attributeReference\":{\"entity\":\"BaseRate.cdm.json/BaseRate\",\"name\":\"BaseInterestRatePercentage\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":8},{\"type\":\"Existing\",\"name\":\"AnnualPercentageRate\",\"attributeReference\":{\"entity\":\"BaseRate.cdm.json/BaseRate\",\"name\":\"AnnualPercentageRate\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"AnnualPercentageYield\",\"attributeReference\":{\"entity\":\"BaseRate.cdm.json/BaseRate\",\"name\":\"AnnualPercentageYield\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"RateDurationUnits\",\"attributeReference\":{\"entity\":\"BaseRate.cdm.json/BaseRate\",\"name\":\"RateDurationUnits\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"RateDurationUnitOfMeasureId\",\"attributeReference\":{\"entity\":\"BaseRate.cdm.json/BaseRate\",\"name\":\"RateDurationUnitOfMeasureId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"InterestRateTypeId\",\"attributeReference\":{\"entity\":\"BaseRate.cdm.json/BaseRate\",\"name\":\"InterestRateTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"MarginInterestRateAdjustmentPercentage\",\"attributeReference\":{\"entity\":\"BaseRate.cdm.json/BaseRate\",\"name\":\"MarginInterestRateAdjustmentPercentage\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":8},{\"type\":\"Existing\",\"name\":\"BaseRateNote\",\"attributeReference\":{\"entity\":\"BaseRate.cdm.json/BaseRate\",\"name\":\"BaseRateNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024},{\"type\":\"Existing\",\"name\":\"InterestRateDirectionId\",\"attributeReference\":{\"entity\":\"BaseRate.cdm.json/BaseRate\",\"name\":\"InterestRateDirectionId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"InterestRateIndexId\",\"attributeReference\":{\"entity\":\"BaseRate.cdm.json/BaseRate\",\"name\":\"InterestRateIndexId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"AprBasisTypeId\",\"attributeReference\":{\"entity\":\"BaseRate.cdm.json/BaseRate\",\"name\":\"AprBasisTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"BillingCycleId\",\"attributeReference\":{\"entity\":\"BaseRate.cdm.json/BaseRate\",\"name\":\"BillingCycleId\"},\"dataType\":\"integer\"}]}}}",
+			"Description": "The interest rate(s) used to calculate charges for the associated product for the associated period.\n\nA product may have multiple interest rates that are applicable depending on the purpose of the interest.",
+			"DisplayFolderInfo": "{\"name\":\"Product\",\"colorCode\":\"#0E3D73\"}",
+			"PrimaryKeys": "ProductId,InterestRatePurposeId,MinimumAccountBalance,MaximumAccountBalance,BaseRatePeriodStartTimestamp",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

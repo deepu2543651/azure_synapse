@@ -1,0 +1,26 @@
+{
+	"name": "relationship-mvpyudyhrv",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-mvpyudyhrv",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "BankTransaction",
+		"ToTableName": "TransactionAuthorization",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "TransactionId",
+				"ToColumnName": "TransactionId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"BankTransaction.cdm.json/BankTransaction\",\"toEntity\":\"TransactionAuthorization.cdm.json/TransactionAuthorization\",\"joinPairs\":[{\"fromAttribute\":\"TransactionId\",\"toAttribute\":\"TransactionId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

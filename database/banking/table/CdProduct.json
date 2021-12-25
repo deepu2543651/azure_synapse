@@ -1,0 +1,559 @@
+{
+	"name": "CdProduct",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "CdProduct",
+		"Description": "A certificate of deposit or CD is a time deposit, a financial product commonly offered to consumers by banks, thrift institutions, and credit unions.\n\nCDs are insured and thus virtually risk-free.  CDs are insured by the FDIC for banks for a total of up to $100,000 or by the NCUA for credit unions.\n\nA CD has a specific, fixed term and usually a fixed interest rate.   The CD is intended to  be held until maturity.\n\nInstitutions usually grant higher interest rates than they do on accounts from which money may be withdrawn on demand because the money is to be on deposit for a specific period without being withdrawn.\n\nCDs are offered in a variety of terms, CDs range from 30 days up to 10 years. And they require a minimum deposit, which will vary depending on the bank and the term selected. Because you pay a penalty for early withdrawal, you should be able to commit to keeping the funds in the CD until it matures. \n\nFixed rates are common, but some institutions offer CDs with various forms of variable rates.\n\nCDs typically require a minimum deposit, and may offer higher rates for larger deposits. In the US, the best rates are generally offered on \"Jumbo CDs\" with minimum deposits of $100,000.\n\nThe consumer who opens a CD may receive a passbook or paper certificate, but it now is common for a CD to consist simply of a book entry and an item shown in the consumer's periodic bank statements; that is, there is usually no certificate.\n\nThe CD purchaser can usually arrange to have the interest periodically mailed as a check or transferred into a checking or savings account.\n\nWithdrawals before maturity are usually subject to a substantial penalty\n\nNormally a period of time is allowed after maturity where the CD holder can cash in the CD without penalty.   It is common for the institution to otherwise roll over the CD automatically.\n\nIn the U.S. insured CDs are required by the Truth in Savings Regulation DD to state at the time of account opening the penalty for early withdrawal. These penalties cannot be revised by the depository prior to maturity. The penalty for early withdrawal is the deterrent to allowing depositors to take advantage of subsequent enhanced investment opportunities during the term of the CD.\n\nVariations on CD's include:\n\nCALLABLE CDS\nA callable CD is similar to a traditional CD, except that the bank reserves the right to \"call\" the investment. After the initial non-callable period, the bank can buy (call) back the CD. Callable CDs pay a premium interest rate. Banks manage their interest rate risk by selling callable CDs. On the call date, the banks determine if it is cheaper to replace the investment or leave it outstanding\n\nBROKERED CDS\nMany brokerage firms - known as \"deposit brokers\" - offer CDs. These brokerage firms can sometimes negotiate a higher rate of interest for a CD by promising to bring a certain amount of deposits to the institution.\nUnlike traditional bank CDs, brokered CDs are sometimes held by a group of unrelated investors. Instead of owning the entire CD, each investor owns a piece. If several investors own the CD, the deposit broker may not list each person's name in the title but the account records should reflect that the broker is merely acting as an agent (e.g., \"XYZ Brokerage as Custodian for Customers\"). This ensures that each portion of the CD qualifies for up to $100,000 of FDIC coverage.\n\nIn some cases, the deposit broker may advertise that the CD does not have a prepayment penalty for early withdrawal. In those cases, the deposit broker will instead try to resell the CD if the investor wants to redeem it before maturity. If interest rates have fallen since the CD was purchased, and demand is high, he/she may be able to sell the CD for a profit. But if interest rates have risen, there may be less demand for such lower-yielding CD, which means that he/she may have to sell the CD at a discount and lose some of the investor's original deposit.\n\nThere are many variations in the terms and conditions for CDs.\n\nCD may be called\nThe terms may state that the bank or credit union can close the CD before the term ends.\n\nInterest payout\n Interest may be paid out as it is accrued or it may accumulate in the CD.\nInterest calculation\nThe CD may start earning interest from the date of deposit or from the start of the next month or quarter.\n\nRight to delay withdrawals\nInstitutions generally have the right to delay withdrawals for a specified .\n\nWithdrawal of principal\n Withdrawal of principal below a certain minimum-or any withdrawal of principal at all-may require closure of the entire CD.  \n\nWithdrawal of interest\nMay be limited to the most recent interest payment or allow for withdrawal of accumulated total interest since the CD was opened.  \n\nPenalty for early withdrawal. \nMay be measured in months of interest, may be calculated to be equal to the institution's current cost of replacing the money, or may use another formula. This may or may not reduce the principal-for example, if principal is withdrawn three months after opening a CD with a six-month penalty.\n\nFees\nA fee may be specified for withdrawal or closure or for providing a certified check.\n\nAutomatic renewal. \nThe institution may or may not commit to sending a notice before automatic rollover at CD maturity. The institution may specify a grace period before automatically rolling over the CD to a new CD at maturity..",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "CdId",
+					"Description": "The unique identifier of a CD.",
+					"BaseAttributeReference": {
+						"Entity": "CdProduct.cdm.json/CdProduct",
+						"Name": "CdId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "CdIssuingDenominationAmount",
+					"Description": "The denomination in which the CD is issued.\n\nInstitutional CD's are issued in denominations of $100,000 or more.\n\nIndividual CD's are issued in denominations of as low as $100.",
+					"BaseAttributeReference": {
+						"Entity": "CdProduct.cdm.json/CdProduct",
+						"Name": "CdIssuingDenominationAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "CdInterestRatePercentage",
+					"Description": "The interest rate paid by the CD.",
+					"BaseAttributeReference": {
+						"Entity": "CdProduct.cdm.json/CdProduct",
+						"Name": "CdInterestRatePercentage"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "CdTermInWeeks",
+					"Description": "CD Terms are normally defined as:\n\n- 3 month\n- 6 month\n- 1 year\n- 18 months\n- 2 years \n- 3 years\n- 5 years",
+					"BaseAttributeReference": {
+						"Entity": "CdProduct.cdm.json/CdProduct",
+						"Name": "CdTermInWeeks"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "CdMaturityDate",
+					"Description": "The date that the CD matures.",
+					"BaseAttributeReference": {
+						"Entity": "CdProduct.cdm.json/CdProduct",
+						"Name": "CdMaturityDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "CdGracePeriodDays",
+					"Description": "Most financial institutions give a seven- to 10-day grace period after the CD matures. Consumers who forgot to notify the bank of their wishes prior to maturity can cash the CD without penalty during the grace period even though it's been rolled over for a new term.",
+					"BaseAttributeReference": {
+						"Entity": "CdProduct.cdm.json/CdProduct",
+						"Name": "CdGracePeriodDays"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "CdMinimumInvestmentAmount",
+					"Description": "The minimum that may be invested in a CD.",
+					"BaseAttributeReference": {
+						"Entity": "CdProduct.cdm.json/CdProduct",
+						"Name": "CdMinimumInvestmentAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "CdInsuredToAmount",
+					"Description": "The amount to which the CD is insured.",
+					"BaseAttributeReference": {
+						"Entity": "CdProduct.cdm.json/CdProduct",
+						"Name": "CdInsuredToAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "CdInterestRatesSetPeriodName",
+					"Description": "Weekly/monthly/quarterly/semi-annual/annual",
+					"BaseAttributeReference": {
+						"Entity": "CdProduct.cdm.json/CdProduct",
+						"Name": "CdInterestRatesSetPeriodName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "CdStepRateCdResetPeriodDays",
+					"Description": "The number of days or period upon which the step-rate CD resets.",
+					"BaseAttributeReference": {
+						"Entity": "CdProduct.cdm.json/CdProduct",
+						"Name": "CdStepRateCdResetPeriodDays"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "IndexCdAssociatedIndexName",
+					"Description": "The name of the index associated with the indexed CD.",
+					"BaseAttributeReference": {
+						"Entity": "CdProduct.cdm.json/CdProduct",
+						"Name": "IndexCdAssociatedIndexName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "InterestRateIndexId",
+					"Description": "The unique identifier of an Interest Rate Index.",
+					"BaseAttributeReference": {
+						"Entity": "CdProduct.cdm.json/CdProduct",
+						"Name": "InterestRateIndexId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "BrokeredCdIndicator",
+					"Description": "A Certificate of Deposit (CD) that is issued by a bank and bought in bulk by brokerage firms who resell them to their customers.\n\nBrokered CD's may pay as much as 1% more than those sold directly by banks, carry federal deposit insurance up to $100,000, are liquid on a secondary market made by the broker, and investors are not charged a commission.",
+					"BaseAttributeReference": {
+						"Entity": "CdProduct.cdm.json/CdProduct",
+						"Name": "BrokeredCdIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "BumpUpCdIndicator",
+					"Description": "A Bump-Up Certificate of Deposit allows for the interest rate to be \"bumped\" or increased sometime during the term of the CD\n\nEx:\nFor 24 & 36 month Bump-Up Certificate of Deposit accounts you have the option to make one interest rate adjustment during the term of the account. For 48 and 60 month Bump-Up Certificate of Deposit accounts you have the option to make two interest rate adjustments during the term of the account.",
+					"BaseAttributeReference": {
+						"Entity": "CdProduct.cdm.json/CdProduct",
+						"Name": "BumpUpCdIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "RightToDelayWithdrawalsIndicator",
+					"Description": "Institutions generally have the right to delay withdrawals for a specified period.",
+					"BaseAttributeReference": {
+						"Entity": "CdProduct.cdm.json/CdProduct",
+						"Name": "RightToDelayWithdrawalsIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "IndexedCdIndicator",
+					"Description": "Indexed CDs yield a rate of return that is linked to the performance of a market index, like the S&P 500 or the Dow Jones Industrial Average.",
+					"BaseAttributeReference": {
+						"Entity": "CdProduct.cdm.json/CdProduct",
+						"Name": "IndexedCdIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "JumboCdIndicator",
+					"Description": "Balances over $100,000",
+					"BaseAttributeReference": {
+						"Entity": "CdProduct.cdm.json/CdProduct",
+						"Name": "JumboCdIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "NegotiableCdIndicator",
+					"Description": "A certificate of deposit with a minimum face value of $100,000. These are guaranteed by the bank and can usually be sold in a highly liquid secondary market, but they cannot be cashed-in before maturity. \n\nDue to their large denominations, NCDs are bought most often by large institutional investors. Institutions often use these as a way to invest in a low-risk, low-interest security. \n\nA Yankee CD would be one example of a NCD.",
+					"BaseAttributeReference": {
+						"Entity": "CdProduct.cdm.json/CdProduct",
+						"Name": "NegotiableCdIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "BankHasRightToDelayWithdrawalsIndicator",
+					"Description": "Institutions generally have the right to delay withdrawals for a specified period to stop a bank run.",
+					"BaseAttributeReference": {
+						"Entity": "CdProduct.cdm.json/CdProduct",
+						"Name": "BankHasRightToDelayWithdrawalsIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "AutomaticRenewalIndicator",
+					"Description": "The institution may or may not commit to sending a notice before automatic rollover at CD maturity. The institution may specify a grace period before automatically rolling over the CD to a new CD at maturity.",
+					"BaseAttributeReference": {
+						"Entity": "CdProduct.cdm.json/CdProduct",
+						"Name": "AutomaticRenewalIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "WithdrawalOfPrincipalAtBankDiscretionIndicator",
+					"Description": "May be at the discretion of the financial institution. Withdrawal of principal below a certain minimum or any withdrawal of principal at all may require closure of the entire CD",
+					"BaseAttributeReference": {
+						"Entity": "CdProduct.cdm.json/CdProduct",
+						"Name": "WithdrawalOfPrincipalAtBankDiscretionIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "EarlyWithdrawalCdIndicator",
+					"Description": "Indicates whether the CD may be withdrawn early.",
+					"BaseAttributeReference": {
+						"Entity": "CdProduct.cdm.json/CdProduct",
+						"Name": "EarlyWithdrawalCdIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "CallableCdIndicator",
+					"Description": "The terms may state that the bank or credit union can close the CD before the term ends.\n\nA callable CD is similar to a traditional CD, except that the bank reserves the right to \"call\" the investment. After the initial non-callable period, the bank can buy (call) back the CD. Callable CDs pay a premium interest rate. Banks manage their interest rate risk by selling callable CDs. On the call date, the banks determine if it is cheaper to replace the investment or leave it outstanding.",
+					"BaseAttributeReference": {
+						"Entity": "CdProduct.cdm.json/CdProduct",
+						"Name": "CallableCdIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "CannotCallPeriodStartDate",
+					"Description": "The period start date during which the CD cannot be called.",
+					"BaseAttributeReference": {
+						"Entity": "CdProduct.cdm.json/CdProduct",
+						"Name": "CannotCallPeriodStartDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "CannotCallPeriodEndDate",
+					"Description": "The period end date during which the CD cannot be called.",
+					"BaseAttributeReference": {
+						"Entity": "CdProduct.cdm.json/CdProduct",
+						"Name": "CannotCallPeriodEndDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "EarlyWithdrawalPenaltyPercentage",
+					"Description": "The percentage penalty for CD early withdrawal.",
+					"BaseAttributeReference": {
+						"Entity": "CdProduct.cdm.json/CdProduct",
+						"Name": "EarlyWithdrawalPenaltyPercentage"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "EarlyWithdrawalPenaltyAmount",
+					"Description": "The amount penalty for CD early withdrawal.",
+					"BaseAttributeReference": {
+						"Entity": "CdProduct.cdm.json/CdProduct",
+						"Name": "EarlyWithdrawalPenaltyAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "CdProductTypeId",
+					"Description": "The unique identifier of the CD Product Type.",
+					"BaseAttributeReference": {
+						"Entity": "CdProduct.cdm.json/CdProduct",
+						"Name": "CdProductTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "CdInterestRateTypeId",
+					"Description": "The unique identifier of a CD Interest Rate Type.",
+					"BaseAttributeReference": {
+						"Entity": "CdProduct.cdm.json/CdProduct",
+						"Name": "CdInterestRateTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "CdInterestPaymentMethodId",
+					"Description": "The unique identifier of a CD Interest Payment Method.",
+					"BaseAttributeReference": {
+						"Entity": "CdProduct.cdm.json/CdProduct",
+						"Name": "CdInterestPaymentMethodId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/CdProduct",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/CdProduct",
+				"Properties": {
+					"LinkedServiceName": "wspc-dpu-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"CdId\":{\"entity\":\"CdProduct.cdm.json/CdProduct\",\"name\":\"CdId\"},\"CdIssuingDenominationAmount\":{\"entity\":\"CdProduct.cdm.json/CdProduct\",\"name\":\"CdIssuingDenominationAmount\"},\"CdInterestRatePercentage\":{\"entity\":\"CdProduct.cdm.json/CdProduct\",\"name\":\"CdInterestRatePercentage\"},\"CdTermInWeeks\":{\"entity\":\"CdProduct.cdm.json/CdProduct\",\"name\":\"CdTermInWeeks\"},\"CdMaturityDate\":{\"entity\":\"CdProduct.cdm.json/CdProduct\",\"name\":\"CdMaturityDate\"},\"CdGracePeriodDays\":{\"entity\":\"CdProduct.cdm.json/CdProduct\",\"name\":\"CdGracePeriodDays\"},\"CdMinimumInvestmentAmount\":{\"entity\":\"CdProduct.cdm.json/CdProduct\",\"name\":\"CdMinimumInvestmentAmount\"},\"CdInsuredToAmount\":{\"entity\":\"CdProduct.cdm.json/CdProduct\",\"name\":\"CdInsuredToAmount\"},\"CdInterestRatesSetPeriodName\":{\"entity\":\"CdProduct.cdm.json/CdProduct\",\"name\":\"CdInterestRatesSetPeriodName\"},\"CdStepRateCdResetPeriodDays\":{\"entity\":\"CdProduct.cdm.json/CdProduct\",\"name\":\"CdStepRateCdResetPeriodDays\"},\"IndexCdAssociatedIndexName\":{\"entity\":\"CdProduct.cdm.json/CdProduct\",\"name\":\"IndexCdAssociatedIndexName\"},\"InterestRateIndexId\":{\"entity\":\"CdProduct.cdm.json/CdProduct\",\"name\":\"InterestRateIndexId\"},\"BrokeredCdIndicator\":{\"entity\":\"CdProduct.cdm.json/CdProduct\",\"name\":\"BrokeredCdIndicator\"},\"BumpUpCdIndicator\":{\"entity\":\"CdProduct.cdm.json/CdProduct\",\"name\":\"BumpUpCdIndicator\"},\"RightToDelayWithdrawalsIndicator\":{\"entity\":\"CdProduct.cdm.json/CdProduct\",\"name\":\"RightToDelayWithdrawalsIndicator\"},\"IndexedCdIndicator\":{\"entity\":\"CdProduct.cdm.json/CdProduct\",\"name\":\"IndexedCdIndicator\"},\"JumboCdIndicator\":{\"entity\":\"CdProduct.cdm.json/CdProduct\",\"name\":\"JumboCdIndicator\"},\"NegotiableCdIndicator\":{\"entity\":\"CdProduct.cdm.json/CdProduct\",\"name\":\"NegotiableCdIndicator\"},\"BankHasRightToDelayWithdrawalsIndicator\":{\"entity\":\"CdProduct.cdm.json/CdProduct\",\"name\":\"BankHasRightToDelayWithdrawalsIndicator\"},\"AutomaticRenewalIndicator\":{\"entity\":\"CdProduct.cdm.json/CdProduct\",\"name\":\"AutomaticRenewalIndicator\"},\"WithdrawalOfPrincipalAtBankDiscretionIndicator\":{\"entity\":\"CdProduct.cdm.json/CdProduct\",\"name\":\"WithdrawalOfPrincipalAtBankDiscretionIndicator\"},\"EarlyWithdrawalCdIndicator\":{\"entity\":\"CdProduct.cdm.json/CdProduct\",\"name\":\"EarlyWithdrawalCdIndicator\"},\"CallableCdIndicator\":{\"entity\":\"CdProduct.cdm.json/CdProduct\",\"name\":\"CallableCdIndicator\"},\"CannotCallPeriodStartDate\":{\"entity\":\"CdProduct.cdm.json/CdProduct\",\"name\":\"CannotCallPeriodStartDate\"},\"CannotCallPeriodEndDate\":{\"entity\":\"CdProduct.cdm.json/CdProduct\",\"name\":\"CannotCallPeriodEndDate\"},\"EarlyWithdrawalPenaltyPercentage\":{\"entity\":\"CdProduct.cdm.json/CdProduct\",\"name\":\"EarlyWithdrawalPenaltyPercentage\"},\"EarlyWithdrawalPenaltyAmount\":{\"entity\":\"CdProduct.cdm.json/CdProduct\",\"name\":\"EarlyWithdrawalPenaltyAmount\"},\"CdProductTypeId\":{\"entity\":\"CdProduct.cdm.json/CdProduct\",\"name\":\"CdProductTypeId\"},\"CdInterestRateTypeId\":{\"entity\":\"CdProduct.cdm.json/CdProduct\",\"name\":\"CdInterestRateTypeId\"},\"CdInterestPaymentMethodId\":{\"entity\":\"CdProduct.cdm.json/CdProduct\",\"name\":\"CdInterestPaymentMethodId\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"CdProduct\",\"path\":\"CdProduct.cdm.json/CdProduct\"},\"description\":\"A certificate of deposit or CD is a time deposit, a financial product commonly offered to consumers by banks, thrift institutions, and credit unions.\\n\\nCDs are insured and thus virtually risk-free.  CDs are insured by the FDIC for banks for a total of up to $100,000 or by the NCUA for credit unions.\\n\\nA CD has a specific, fixed term and usually a fixed interest rate.   The CD is intended to  be held until maturity.\\n\\nInstitutions usually grant higher interest rates than they do on accounts from which money may be withdrawn on demand because the money is to be on deposit for a specific period without being withdrawn.\\n\\nCDs are offered in a variety of terms, CDs range from 30 days up to 10 years. And they require a minimum deposit, which will vary depending on the bank and the term selected. Because you pay a penalty for early withdrawal, you should be able to commit to keeping the funds in the CD until it matures. \\n\\nFixed rates are common, but some institutions offer CDs with various forms of variable rates.\\n\\nCDs typically require a minimum deposit, and may offer higher rates for larger deposits. In the US, the best rates are generally offered on \\\"Jumbo CDs\\\" with minimum deposits of $100,000.\\n\\nThe consumer who opens a CD may receive a passbook or paper certificate, but it now is common for a CD to consist simply of a book entry and an item shown in the consumer's periodic bank statements; that is, there is usually no certificate.\\n\\nThe CD purchaser can usually arrange to have the interest periodically mailed as a check or transferred into a checking or savings account.\\n\\nWithdrawals before maturity are usually subject to a substantial penalty\\n\\nNormally a period of time is allowed after maturity where the CD holder can cash in the CD without penalty.   It is common for the institution to otherwise roll over the CD automatically.\\n\\nIn the U.S. insured CDs are required by the Truth in Savings Regulation DD to state at the time of account opening the penalty for early withdrawal. These penalties cannot be revised by the depository prior to maturity. The penalty for early withdrawal is the deterrent to allowing depositors to take advantage of subsequent enhanced investment opportunities during the term of the CD.\\n\\nVariations on CD's include:\\n\\nCALLABLE CDS\\nA callable CD is similar to a traditional CD, except that the bank reserves the right to \\\"call\\\" the investment. After the initial non-callable period, the bank can buy (call) back the CD. Callable CDs pay a premium interest rate. Banks manage their interest rate risk by selling callable CDs. On the call date, the banks determine if it is cheaper to replace the investment or leave it outstanding\\n\\nBROKERED CDS\\nMany brokerage firms - known as \\\"deposit brokers\\\" - offer CDs. These brokerage firms can sometimes negotiate a higher rate of interest for a CD by promising to bring a certain amount of deposits to the institution.\\nUnlike traditional bank CDs, brokered CDs are sometimes held by a group of unrelated investors. Instead of owning the entire CD, each investor owns a piece. If several investors own the CD, the deposit broker may not list each person's name in the title but the account records should reflect that the broker is merely acting as an agent (e.g., \\\"XYZ Brokerage as Custodian for Customers\\\"). This ensures that each portion of the CD qualifies for up to $100,000 of FDIC coverage.\\n\\nIn some cases, the deposit broker may advertise that the CD does not have a prepayment penalty for early withdrawal. In those cases, the deposit broker will instead try to resell the CD if the investor wants to redeem it before maturity. If interest rates have fallen since the CD was purchased, and demand is high, he/she may be able to sell the CD for a profit. But if interest rates have risen, there may be less demand for such lower-yielding CD, which means that he/she may have to sell the CD at a discount and lose some of the investor's original deposit.\\n\\nThere are many variations in the terms and conditions for CDs.\\n\\nCD may be called\\nThe terms may state that the bank or credit union can close the CD before the term ends.\\n\\nInterest payout\\n Interest may be paid out as it is accrued or it may accumulate in the CD.\\nInterest calculation\\nThe CD may start earning interest from the date of deposit or from the start of the next month or quarter.\\n\\nRight to delay withdrawals\\nInstitutions generally have the right to delay withdrawals for a specified .\\n\\nWithdrawal of principal\\n Withdrawal of principal below a certain minimum-or any withdrawal of principal at all-may require closure of the entire CD.  \\n\\nWithdrawal of interest\\nMay be limited to the most recent interest payment or allow for withdrawal of accumulated total interest since the CD was opened.  \\n\\nPenalty for early withdrawal. \\nMay be measured in months of interest, may be calculated to be equal to the institution's current cost of replacing the money, or may use another formula. This may or may not reduce the principal-for example, if principal is withdrawn three months after opening a CD with a six-month penalty.\\n\\nFees\\nA fee may be specified for withdrawal or closure or for providing a certified check.\\n\\nAutomatic renewal. \\nThe institution may or may not commit to sending a notice before automatic rollover at CD maturity. The institution may specify a grace period before automatically rolling over the CD to a new CD at maturity..\",\"primaryKey\":[\"CdId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"CdId\",\"attributeReference\":{\"entity\":\"CdProduct.cdm.json/CdProduct\",\"name\":\"CdId\"},\"dataType\":\"long\"},{\"type\":\"Existing\",\"name\":\"CdIssuingDenominationAmount\",\"attributeReference\":{\"entity\":\"CdProduct.cdm.json/CdProduct\",\"name\":\"CdIssuingDenominationAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"CdInterestRatePercentage\",\"attributeReference\":{\"entity\":\"CdProduct.cdm.json/CdProduct\",\"name\":\"CdInterestRatePercentage\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":8},{\"type\":\"Existing\",\"name\":\"CdTermInWeeks\",\"attributeReference\":{\"entity\":\"CdProduct.cdm.json/CdProduct\",\"name\":\"CdTermInWeeks\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"CdMaturityDate\",\"attributeReference\":{\"entity\":\"CdProduct.cdm.json/CdProduct\",\"name\":\"CdMaturityDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\"},{\"type\":\"Existing\",\"name\":\"CdGracePeriodDays\",\"attributeReference\":{\"entity\":\"CdProduct.cdm.json/CdProduct\",\"name\":\"CdGracePeriodDays\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"CdMinimumInvestmentAmount\",\"attributeReference\":{\"entity\":\"CdProduct.cdm.json/CdProduct\",\"name\":\"CdMinimumInvestmentAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"CdInsuredToAmount\",\"attributeReference\":{\"entity\":\"CdProduct.cdm.json/CdProduct\",\"name\":\"CdInsuredToAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"CdInterestRatesSetPeriodName\",\"attributeReference\":{\"entity\":\"CdProduct.cdm.json/CdProduct\",\"name\":\"CdInterestRatesSetPeriodName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"CdStepRateCdResetPeriodDays\",\"attributeReference\":{\"entity\":\"CdProduct.cdm.json/CdProduct\",\"name\":\"CdStepRateCdResetPeriodDays\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"IndexCdAssociatedIndexName\",\"attributeReference\":{\"entity\":\"CdProduct.cdm.json/CdProduct\",\"name\":\"IndexCdAssociatedIndexName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"InterestRateIndexId\",\"attributeReference\":{\"entity\":\"CdProduct.cdm.json/CdProduct\",\"name\":\"InterestRateIndexId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"BrokeredCdIndicator\",\"attributeReference\":{\"entity\":\"CdProduct.cdm.json/CdProduct\",\"name\":\"BrokeredCdIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"BumpUpCdIndicator\",\"attributeReference\":{\"entity\":\"CdProduct.cdm.json/CdProduct\",\"name\":\"BumpUpCdIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"RightToDelayWithdrawalsIndicator\",\"attributeReference\":{\"entity\":\"CdProduct.cdm.json/CdProduct\",\"name\":\"RightToDelayWithdrawalsIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"IndexedCdIndicator\",\"attributeReference\":{\"entity\":\"CdProduct.cdm.json/CdProduct\",\"name\":\"IndexedCdIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"JumboCdIndicator\",\"attributeReference\":{\"entity\":\"CdProduct.cdm.json/CdProduct\",\"name\":\"JumboCdIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"NegotiableCdIndicator\",\"attributeReference\":{\"entity\":\"CdProduct.cdm.json/CdProduct\",\"name\":\"NegotiableCdIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"BankHasRightToDelayWithdrawalsIndicator\",\"attributeReference\":{\"entity\":\"CdProduct.cdm.json/CdProduct\",\"name\":\"BankHasRightToDelayWithdrawalsIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"AutomaticRenewalIndicator\",\"attributeReference\":{\"entity\":\"CdProduct.cdm.json/CdProduct\",\"name\":\"AutomaticRenewalIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"WithdrawalOfPrincipalAtBankDiscretionIndicator\",\"attributeReference\":{\"entity\":\"CdProduct.cdm.json/CdProduct\",\"name\":\"WithdrawalOfPrincipalAtBankDiscretionIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"EarlyWithdrawalCdIndicator\",\"attributeReference\":{\"entity\":\"CdProduct.cdm.json/CdProduct\",\"name\":\"EarlyWithdrawalCdIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"CallableCdIndicator\",\"attributeReference\":{\"entity\":\"CdProduct.cdm.json/CdProduct\",\"name\":\"CallableCdIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"CannotCallPeriodStartDate\",\"attributeReference\":{\"entity\":\"CdProduct.cdm.json/CdProduct\",\"name\":\"CannotCallPeriodStartDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\"},{\"type\":\"Existing\",\"name\":\"CannotCallPeriodEndDate\",\"attributeReference\":{\"entity\":\"CdProduct.cdm.json/CdProduct\",\"name\":\"CannotCallPeriodEndDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\"},{\"type\":\"Existing\",\"name\":\"EarlyWithdrawalPenaltyPercentage\",\"attributeReference\":{\"entity\":\"CdProduct.cdm.json/CdProduct\",\"name\":\"EarlyWithdrawalPenaltyPercentage\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":8},{\"type\":\"Existing\",\"name\":\"EarlyWithdrawalPenaltyAmount\",\"attributeReference\":{\"entity\":\"CdProduct.cdm.json/CdProduct\",\"name\":\"EarlyWithdrawalPenaltyAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"CdProductTypeId\",\"attributeReference\":{\"entity\":\"CdProduct.cdm.json/CdProduct\",\"name\":\"CdProductTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"CdInterestRateTypeId\",\"attributeReference\":{\"entity\":\"CdProduct.cdm.json/CdProduct\",\"name\":\"CdInterestRateTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"CdInterestPaymentMethodId\",\"attributeReference\":{\"entity\":\"CdProduct.cdm.json/CdProduct\",\"name\":\"CdInterestPaymentMethodId\"},\"dataType\":\"integer\"}]}}}",
+			"Description": "A certificate of deposit or CD is a time deposit, a financial product commonly offered to consumers by banks, thrift institutions, and credit unions.\n\nCDs are insured and thus virtually risk-free.  CDs are insured by the FDIC for banks for a total of up to $100,000 or by the NCUA for credit unions.\n\nA CD has a specific, fixed term and usually a fixed interest rate.   The CD is intended to  be held until maturity.\n\nInstitutions usually grant higher interest rates than they do on accounts from which money may be withdrawn on demand because the money is to be on deposit for a specific period without being withdrawn.\n\nCDs are offered in a variety of terms, CDs range from 30 days up to 10 years. And they require a minimum deposit, which will vary depending on the bank and the term selected. Because you pay a penalty for early withdrawal, you should be able to commit to keeping the funds in the CD until it matures. \n\nFixed rates are common, but some institutions offer CDs with various forms of variable rates.\n\nCDs typically require a minimum deposit, and may offer higher rates for larger deposits. In the US, the best rates are generally offered on \"Jumbo CDs\" with minimum deposits of $100,000.\n\nThe consumer who opens a CD may receive a passbook or paper certificate, but it now is common for a CD to consist simply of a book entry and an item shown in the consumer's periodic bank statements; that is, there is usually no certificate.\n\nThe CD purchaser can usually arrange to have the interest periodically mailed as a check or transferred into a checking or savings account.\n\nWithdrawals before maturity are usually subject to a substantial penalty\n\nNormally a period of time is allowed after maturity where the CD holder can cash in the CD without penalty.   It is common for the institution to otherwise roll over the CD automatically.\n\nIn the U.S. insured CDs are required by the Truth in Savings Regulation DD to state at the time of account opening the penalty for early withdrawal. These penalties cannot be revised by the depository prior to maturity. The penalty for early withdrawal is the deterrent to allowing depositors to take advantage of subsequent enhanced investment opportunities during the term of the CD.\n\nVariations on CD's include:\n\nCALLABLE CDS\nA callable CD is similar to a traditional CD, except that the bank reserves the right to \"call\" the investment. After the initial non-callable period, the bank can buy (call) back the CD. Callable CDs pay a premium interest rate. Banks manage their interest rate risk by selling callable CDs. On the call date, the banks determine if it is cheaper to replace the investment or leave it outstanding\n\nBROKERED CDS\nMany brokerage firms - known as \"deposit brokers\" - offer CDs. These brokerage firms can sometimes negotiate a higher rate of interest for a CD by promising to bring a certain amount of deposits to the institution.\nUnlike traditional bank CDs, brokered CDs are sometimes held by a group of unrelated investors. Instead of owning the entire CD, each investor owns a piece. If several investors own the CD, the deposit broker may not list each person's name in the title but the account records should reflect that the broker is merely acting as an agent (e.g., \"XYZ Brokerage as Custodian for Customers\"). This ensures that each portion of the CD qualifies for up to $100,000 of FDIC coverage.\n\nIn some cases, the deposit broker may advertise that the CD does not have a prepayment penalty for early withdrawal. In those cases, the deposit broker will instead try to resell the CD if the investor wants to redeem it before maturity. If interest rates have fallen since the CD was purchased, and demand is high, he/she may be able to sell the CD for a profit. But if interest rates have risen, there may be less demand for such lower-yielding CD, which means that he/she may have to sell the CD at a discount and lose some of the investor's original deposit.\n\nThere are many variations in the terms and conditions for CDs.\n\nCD may be called\nThe terms may state that the bank or credit union can close the CD before the term ends.\n\nInterest payout\n Interest may be paid out as it is accrued or it may accumulate in the CD.\nInterest calculation\nThe CD may start earning interest from the date of deposit or from the start of the next month or quarter.\n\nRight to delay withdrawals\nInstitutions generally have the right to delay withdrawals for a specified .\n\nWithdrawal of principal\n Withdrawal of principal below a certain minimum-or any withdrawal of principal at all-may require closure of the entire CD.  \n\nWithdrawal of interest\nMay be limited to the most recent interest payment or allow for withdrawal of accumulated total interest since the CD was opened.  \n\nPenalty for early withdrawal. \nMay be measured in months of interest, may be calculated to be equal to the institution's current cost of replacing the money, or may use another formula. This may or may not reduce the principal-for example, if principal is withdrawn three months after opening a CD with a six-month penalty.\n\nFees\nA fee may be specified for withdrawal or closure or for providing a certified check.\n\nAutomatic renewal. \nThe institution may or may not commit to sending a notice before automatic rollover at CD maturity. The institution may specify a grace period before automatically rolling over the CD to a new CD at maturity..",
+			"DisplayFolderInfo": "{\"name\":\"Financial Product\",\"colorCode\":\"#001475\"}",
+			"PrimaryKeys": "CdId",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

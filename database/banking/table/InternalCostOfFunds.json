@@ -1,0 +1,163 @@
+{
+	"name": "InternalCostOfFunds",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "InternalCostOfFunds",
+		"Description": "The internal costs of funds within the bank for various internal organization, departments, parties or products to use bank funds for their business processes.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ProductId",
+					"Description": "The unique identifier of a Product.",
+					"BaseAttributeReference": {
+						"Entity": "InternalCostOfFunds.cdm.json/InternalCostOfFunds",
+						"Name": "ProductId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "IsoCurrencyCode",
+					"Description": "The ISO 4217 currency code.",
+					"BaseAttributeReference": {
+						"Entity": "InternalCostOfFunds.cdm.json/InternalCostOfFunds",
+						"Name": "IsoCurrencyCode"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Length": 3,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "PeriodStartDate",
+					"Description": "The period start date for which the associated internal costs of funds is determined.",
+					"BaseAttributeReference": {
+						"Entity": "InternalCostOfFunds.cdm.json/InternalCostOfFunds",
+						"Name": "PeriodStartDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "PeriodEndDate",
+					"Description": "The period end date for which the associated internal costs of funds is determined.",
+					"BaseAttributeReference": {
+						"Entity": "InternalCostOfFunds.cdm.json/InternalCostOfFunds",
+						"Name": "PeriodEndDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "FundsProvidedByPartyId",
+					"Description": "The unique identifier of a Party.",
+					"BaseAttributeReference": {
+						"Entity": "InternalCostOfFunds.cdm.json/InternalCostOfFunds",
+						"Name": "FundsProvidedByPartyId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "CostOfFundsPercentage",
+					"Description": "The percentage that is charged for the use of funds.",
+					"BaseAttributeReference": {
+						"Entity": "InternalCostOfFunds.cdm.json/InternalCostOfFunds",
+						"Name": "CostOfFundsPercentage"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/InternalCostOfFunds",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/InternalCostOfFunds",
+				"Properties": {
+					"LinkedServiceName": "wspc-dpu-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ProductId\":{\"entity\":\"InternalCostOfFunds.cdm.json/InternalCostOfFunds\",\"name\":\"ProductId\"},\"IsoCurrencyCode\":{\"entity\":\"InternalCostOfFunds.cdm.json/InternalCostOfFunds\",\"name\":\"IsoCurrencyCode\"},\"PeriodStartDate\":{\"entity\":\"InternalCostOfFunds.cdm.json/InternalCostOfFunds\",\"name\":\"PeriodStartDate\"},\"PeriodEndDate\":{\"entity\":\"InternalCostOfFunds.cdm.json/InternalCostOfFunds\",\"name\":\"PeriodEndDate\"},\"FundsProvidedByPartyId\":{\"entity\":\"InternalCostOfFunds.cdm.json/InternalCostOfFunds\",\"name\":\"FundsProvidedByPartyId\"},\"CostOfFundsPercentage\":{\"entity\":\"InternalCostOfFunds.cdm.json/InternalCostOfFunds\",\"name\":\"CostOfFundsPercentage\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"InternalCostOfFunds\",\"path\":\"InternalCostOfFunds.cdm.json/InternalCostOfFunds\"},\"description\":\"The internal costs of funds within the bank for various internal organization, departments, parties or products to use bank funds for their business processes.\",\"primaryKey\":[\"ProductId\",\"IsoCurrencyCode\",\"PeriodStartDate\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"ProductId\",\"attributeReference\":{\"entity\":\"InternalCostOfFunds.cdm.json/InternalCostOfFunds\",\"name\":\"ProductId\"},\"dataType\":\"long\"},{\"type\":\"Existing\",\"name\":\"IsoCurrencyCode\",\"attributeReference\":{\"entity\":\"InternalCostOfFunds.cdm.json/InternalCostOfFunds\",\"name\":\"IsoCurrencyCode\"},\"dataType\":\"string\",\"dataTypeLength\":3},{\"type\":\"Existing\",\"name\":\"PeriodStartDate\",\"attributeReference\":{\"entity\":\"InternalCostOfFunds.cdm.json/InternalCostOfFunds\",\"name\":\"PeriodStartDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\"},{\"type\":\"Existing\",\"name\":\"PeriodEndDate\",\"attributeReference\":{\"entity\":\"InternalCostOfFunds.cdm.json/InternalCostOfFunds\",\"name\":\"PeriodEndDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\"},{\"type\":\"Existing\",\"name\":\"FundsProvidedByPartyId\",\"attributeReference\":{\"entity\":\"InternalCostOfFunds.cdm.json/InternalCostOfFunds\",\"name\":\"FundsProvidedByPartyId\"},\"dataType\":\"long\"},{\"type\":\"Existing\",\"name\":\"CostOfFundsPercentage\",\"attributeReference\":{\"entity\":\"InternalCostOfFunds.cdm.json/InternalCostOfFunds\",\"name\":\"CostOfFundsPercentage\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":8}]}}}",
+			"Description": "The internal costs of funds within the bank for various internal organization, departments, parties or products to use bank funds for their business processes.",
+			"DisplayFolderInfo": "{\"name\":\"Product\",\"colorCode\":\"#0E3D73\"}",
+			"PrimaryKeys": "ProductId,IsoCurrencyCode,PeriodStartDate",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

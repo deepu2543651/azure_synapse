@@ -1,0 +1,26 @@
+{
+	"name": "relationship-zgawexbudd",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-zgawexbudd",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "CustomerAccount",
+		"ToTableName": "CustomerAccountProgram",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "CustomerAccountId",
+				"ToColumnName": "CustomerAccountId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"CustomerAccount.cdm.json/CustomerAccount\",\"toEntity\":\"CustomerAccountProgram.cdm.json/CustomerAccountProgram\",\"joinPairs\":[{\"fromAttribute\":\"CustomerAccountId\",\"toAttribute\":\"CustomerAccountId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

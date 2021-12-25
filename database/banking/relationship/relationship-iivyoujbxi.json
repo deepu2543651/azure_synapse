@@ -1,0 +1,26 @@
+{
+	"name": "relationship-iivyoujbxi",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-iivyoujbxi",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "AnzsicClass",
+		"ToTableName": "Channel",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "AnzsicClassCode",
+				"ToColumnName": "AnzsicClassCode"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"AnzsicClass.cdm.json/AnzsicClass\",\"toEntity\":\"Channel.cdm.json/Channel\",\"joinPairs\":[{\"fromAttribute\":\"AnzsicClassCode\",\"toAttribute\":\"AnzsicClassCode\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

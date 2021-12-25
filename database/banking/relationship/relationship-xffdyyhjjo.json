@@ -1,0 +1,26 @@
+{
+	"name": "relationship-xffdyyhjjo",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-xffdyyhjjo",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "CustomerAccount",
+		"ToTableName": "CustomerAccountCurrencyUsage",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "CustomerAccountId",
+				"ToColumnName": "CustomerAccountId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"CustomerAccount.cdm.json/CustomerAccount\",\"toEntity\":\"CustomerAccountCurrencyUsage.cdm.json/CustomerAccountCurrencyUsage\",\"joinPairs\":[{\"fromAttribute\":\"CustomerAccountId\",\"toAttribute\":\"CustomerAccountId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

@@ -1,0 +1,26 @@
+{
+	"name": "relationship-sewqpfupjr",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-sewqpfupjr",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Language",
+		"ToTableName": "CustomerAccountLanguageUsage",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "IsoLanguageId",
+				"ToColumnName": "IsoLanguageId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Language.cdm.json/Language\",\"toEntity\":\"CustomerAccountLanguageUsage.cdm.json/CustomerAccountLanguageUsage\",\"joinPairs\":[{\"fromAttribute\":\"IsoLanguageId\",\"toAttribute\":\"IsoLanguageId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

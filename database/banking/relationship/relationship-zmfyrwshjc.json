@@ -1,0 +1,26 @@
+{
+	"name": "relationship-zmfyrwshjc",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-zmfyrwshjc",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Channel",
+		"ToTableName": "BankTransaction",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ChannelId",
+				"ToColumnName": "SalesChannelId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Channel.cdm.json/Channel\",\"toEntity\":\"BankTransaction.cdm.json/BankTransaction\",\"joinPairs\":[{\"fromAttribute\":\"ChannelId\",\"toAttribute\":\"SalesChannelId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

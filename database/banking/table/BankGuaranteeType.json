@@ -1,0 +1,112 @@
+{
+	"name": "BankGuaranteeType",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "BankGuaranteeType",
+		"Description": "The types of bank guarantee include: \n- Advance Payment Guarantee\n- Bid Bond\n- Credit Line Guarantee\n- Missing Bill Of Lading Letter Of Indemnity\n- Payment Guarantee\n- Performance Bond\n- Warranty Obligations Guarantee\n\nwhere:\n\nADVANCE PAYMENT GUARANTEE\nAdvance Payment Guarantees are used secure claims by the buyer on the seller for reimbursement of the buyer's advance payment on the contract price before delivery of the goods (or advance payment of the full contract price) should the seller fail to meet his or her contractual delivery obligations in full.\n\nBID BOND\nBonds which guarantee that a party will enter into a contract at the amount bid and post the appropriate performance bonds. \n\nBid bonds secure claims by the party inviting the tender on the tenderer in the event of withdrawal of the bid before the expiry date or in the case where the bid is modified by one party or if the tenderer, upon being awarded the contract, refuses to sign the contract or provide further guarantees on request.\n\nThese bonds are used by owners to pre-qualify contractors submitting proposals on contracts. \n\nThese bonds provide financial assurance that the bid has been submitted in good faith and that the contractor will enter into a contract at the bid price.\n\nCREDIT LINE GUARANTEE\nThe credit line guarantee secures claims by the lender on the borrower due to a credit such as a loan not being repaid in accordance with the terms of the contract.\n\nTypical procedure:\n\nIssuance of credit guarantee and performance under guarantee\n\n-  Bank issues the credit guarantee based on the client's application up to the amount and with a tenor in accordance with the terms and conditions of the contract between bank and the client (applicant).\n\n- Together with a request for the issuance of the guarantee, the client submits documents containing the conditions and requirements under which the guarantee should be issued.\n\n-  In the contract on issuance of the guarantee or in the credit agreement, the client expresses its agreement that if bank, in accordance with the conditions of the guarantee, is asked for performance under the guarantee, it will provide irrevocable performance in favor of the guarantee's beneficiary.\n\n-  With regard to the fact that a guarantee represents an irrevocable obligation, bank cannot change the conditions of the guarantee in a manner unfavorable to the beneficiary or cancel the guarantee without the consent of the guarantee's beneficiary.\n\n-  Bank provides performance under the guarantee only in the event it receives an invitation to perform submitted by the guarantee's beneficiary in accordance with the terms and conditions of the guarantee.\n\nMISSING BILL OF LADING LETTER OF INDEMNITY\nThe Missing Bill Of Lading Letter Of Indemnity is used to secure claims by the shipping line/shipping company on: \n\n- the buyer that result from the goods arriving from overseas that are released without the original bill of lading being presented  for reasons such as postal delays or even loss.\n\n- the supplier due to issuance of a replacement bill of lading for which the bill is lost.\n\nPAYMENT GUARANTEE\nThe payment guarantee is used to secure claims by the seller on the buyer for payment of the contract price by the agreed date.\n\nIn the import-export business, the payment guarantee is frequently used instead of a documentary credit upon delivery against open account.\n\nPERFORMANCE BOND\nA performance bond is a surety bond issued by a bank to guarantee the satisfactory completion of a project by a contractor.\n\nA contractor may cause a performance bond to be issued in favor of their client for whom the contractor is performing a project.   Should the contractor fails to complete the project  according to the specifications laid out by the contract then the client is guaranteed compensation for any monetary loss up to the amount of the performance bond.\n\nPerformance bonds are commonly used in the construction and development of real property-related projects.   The owner or investor may require the developer to assure that project parties procure performance bonds to guarantee that the value of the work will not be lost in the case of an event such as bankruptcy of the contractor etc. \n\nPayment from the performance bond is available only to the project/property owner. No one else can make claims against it. \n\nWARRANTY OBLIGATION GUARANTEE\nThe warranty obligations guarantee secures  claims by the buyer on the seller due to possible defects appearing after delivery.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "BankGuaranteeTypeId",
+					"Description": "The unique identifier of a Bank Guarantee Type.",
+					"BaseAttributeReference": {
+						"Entity": "BankGuaranteeType.cdm.json/BankGuaranteeType",
+						"Name": "BankGuaranteeTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "BankGuaranteeTypeName",
+					"Description": "The name of a Bank Guarantee Type.",
+					"BaseAttributeReference": {
+						"Entity": "BankGuaranteeType.cdm.json/BankGuaranteeType",
+						"Name": "BankGuaranteeTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "BankGuaranteeTypeDescription",
+					"Description": "The description of a Bank Guarantee Type.",
+					"BaseAttributeReference": {
+						"Entity": "BankGuaranteeType.cdm.json/BankGuaranteeType",
+						"Name": "BankGuaranteeTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/BankGuaranteeType",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/BankGuaranteeType",
+				"Properties": {
+					"LinkedServiceName": "wspc-dpu-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"BankGuaranteeTypeId\":{\"entity\":\"BankGuaranteeType.cdm.json/BankGuaranteeType\",\"name\":\"BankGuaranteeTypeId\"},\"BankGuaranteeTypeName\":{\"entity\":\"BankGuaranteeType.cdm.json/BankGuaranteeType\",\"name\":\"BankGuaranteeTypeName\"},\"BankGuaranteeTypeDescription\":{\"entity\":\"BankGuaranteeType.cdm.json/BankGuaranteeType\",\"name\":\"BankGuaranteeTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"BankGuaranteeType\",\"path\":\"BankGuaranteeType.cdm.json/BankGuaranteeType\"},\"description\":\"The types of bank guarantee include: \\n- Advance Payment Guarantee\\n- Bid Bond\\n- Credit Line Guarantee\\n- Missing Bill Of Lading Letter Of Indemnity\\n- Payment Guarantee\\n- Performance Bond\\n- Warranty Obligations Guarantee\\n\\nwhere:\\n\\nADVANCE PAYMENT GUARANTEE\\nAdvance Payment Guarantees are used secure claims by the buyer on the seller for reimbursement of the buyer's advance payment on the contract price before delivery of the goods (or advance payment of the full contract price) should the seller fail to meet his or her contractual delivery obligations in full.\\n\\nBID BOND\\nBonds which guarantee that a party will enter into a contract at the amount bid and post the appropriate performance bonds. \\n\\nBid bonds secure claims by the party inviting the tender on the tenderer in the event of withdrawal of the bid before the expiry date or in the case where the bid is modified by one party or if the tenderer, upon being awarded the contract, refuses to sign the contract or provide further guarantees on request.\\n\\nThese bonds are used by owners to pre-qualify contractors submitting proposals on contracts. \\n\\nThese bonds provide financial assurance that the bid has been submitted in good faith and that the contractor will enter into a contract at the bid price.\\n\\nCREDIT LINE GUARANTEE\\nThe credit line guarantee secures claims by the lender on the borrower due to a credit such as a loan not being repaid in accordance with the terms of the contract.\\n\\nTypical procedure:\\n\\nIssuance of credit guarantee and performance under guarantee\\n\\n-  Bank issues the credit guarantee based on the client's application up to the amount and with a tenor in accordance with the terms and conditions of the contract between bank and the client (applicant).\\n\\n- Together with a request for the issuance of the guarantee, the client submits documents containing the conditions and requirements under which the guarantee should be issued.\\n\\n-  In the contract on issuance of the guarantee or in the credit agreement, the client expresses its agreement that if bank, in accordance with the conditions of the guarantee, is asked for performance under the guarantee, it will provide irrevocable performance in favor of the guarantee's beneficiary.\\n\\n-  With regard to the fact that a guarantee represents an irrevocable obligation, bank cannot change the conditions of the guarantee in a manner unfavorable to the beneficiary or cancel the guarantee without the consent of the guarantee's beneficiary.\\n\\n-  Bank provides performance under the guarantee only in the event it receives an invitation to perform submitted by the guarantee's beneficiary in accordance with the terms and conditions of the guarantee.\\n\\nMISSING BILL OF LADING LETTER OF INDEMNITY\\nThe Missing Bill Of Lading Letter Of Indemnity is used to secure claims by the shipping line/shipping company on: \\n\\n- the buyer that result from the goods arriving from overseas that are released without the original bill of lading being presented  for reasons such as postal delays or even loss.\\n\\n- the supplier due to issuance of a replacement bill of lading for which the bill is lost.\\n\\nPAYMENT GUARANTEE\\nThe payment guarantee is used to secure claims by the seller on the buyer for payment of the contract price by the agreed date.\\n\\nIn the import-export business, the payment guarantee is frequently used instead of a documentary credit upon delivery against open account.\\n\\nPERFORMANCE BOND\\nA performance bond is a surety bond issued by a bank to guarantee the satisfactory completion of a project by a contractor.\\n\\nA contractor may cause a performance bond to be issued in favor of their client for whom the contractor is performing a project.   Should the contractor fails to complete the project  according to the specifications laid out by the contract then the client is guaranteed compensation for any monetary loss up to the amount of the performance bond.\\n\\nPerformance bonds are commonly used in the construction and development of real property-related projects.   The owner or investor may require the developer to assure that project parties procure performance bonds to guarantee that the value of the work will not be lost in the case of an event such as bankruptcy of the contractor etc. \\n\\nPayment from the performance bond is available only to the project/property owner. No one else can make claims against it. \\n\\nWARRANTY OBLIGATION GUARANTEE\\nThe warranty obligations guarantee secures  claims by the buyer on the seller due to possible defects appearing after delivery.\",\"primaryKey\":[\"BankGuaranteeTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"BankGuaranteeTypeId\",\"attributeReference\":{\"entity\":\"BankGuaranteeType.cdm.json/BankGuaranteeType\",\"name\":\"BankGuaranteeTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"BankGuaranteeTypeName\",\"attributeReference\":{\"entity\":\"BankGuaranteeType.cdm.json/BankGuaranteeType\",\"name\":\"BankGuaranteeTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"BankGuaranteeTypeDescription\",\"attributeReference\":{\"entity\":\"BankGuaranteeType.cdm.json/BankGuaranteeType\",\"name\":\"BankGuaranteeTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512}]}}}",
+			"Description": "The types of bank guarantee include: \n- Advance Payment Guarantee\n- Bid Bond\n- Credit Line Guarantee\n- Missing Bill Of Lading Letter Of Indemnity\n- Payment Guarantee\n- Performance Bond\n- Warranty Obligations Guarantee\n\nwhere:\n\nADVANCE PAYMENT GUARANTEE\nAdvance Payment Guarantees are used secure claims by the buyer on the seller for reimbursement of the buyer's advance payment on the contract price before delivery of the goods (or advance payment of the full contract price) should the seller fail to meet his or her contractual delivery obligations in full.\n\nBID BOND\nBonds which guarantee that a party will enter into a contract at the amount bid and post the appropriate performance bonds. \n\nBid bonds secure claims by the party inviting the tender on the tenderer in the event of withdrawal of the bid before the expiry date or in the case where the bid is modified by one party or if the tenderer, upon being awarded the contract, refuses to sign the contract or provide further guarantees on request.\n\nThese bonds are used by owners to pre-qualify contractors submitting proposals on contracts. \n\nThese bonds provide financial assurance that the bid has been submitted in good faith and that the contractor will enter into a contract at the bid price.\n\nCREDIT LINE GUARANTEE\nThe credit line guarantee secures claims by the lender on the borrower due to a credit such as a loan not being repaid in accordance with the terms of the contract.\n\nTypical procedure:\n\nIssuance of credit guarantee and performance under guarantee\n\n-  Bank issues the credit guarantee based on the client's application up to the amount and with a tenor in accordance with the terms and conditions of the contract between bank and the client (applicant).\n\n- Together with a request for the issuance of the guarantee, the client submits documents containing the conditions and requirements under which the guarantee should be issued.\n\n-  In the contract on issuance of the guarantee or in the credit agreement, the client expresses its agreement that if bank, in accordance with the conditions of the guarantee, is asked for performance under the guarantee, it will provide irrevocable performance in favor of the guarantee's beneficiary.\n\n-  With regard to the fact that a guarantee represents an irrevocable obligation, bank cannot change the conditions of the guarantee in a manner unfavorable to the beneficiary or cancel the guarantee without the consent of the guarantee's beneficiary.\n\n-  Bank provides performance under the guarantee only in the event it receives an invitation to perform submitted by the guarantee's beneficiary in accordance with the terms and conditions of the guarantee.\n\nMISSING BILL OF LADING LETTER OF INDEMNITY\nThe Missing Bill Of Lading Letter Of Indemnity is used to secure claims by the shipping line/shipping company on: \n\n- the buyer that result from the goods arriving from overseas that are released without the original bill of lading being presented  for reasons such as postal delays or even loss.\n\n- the supplier due to issuance of a replacement bill of lading for which the bill is lost.\n\nPAYMENT GUARANTEE\nThe payment guarantee is used to secure claims by the seller on the buyer for payment of the contract price by the agreed date.\n\nIn the import-export business, the payment guarantee is frequently used instead of a documentary credit upon delivery against open account.\n\nPERFORMANCE BOND\nA performance bond is a surety bond issued by a bank to guarantee the satisfactory completion of a project by a contractor.\n\nA contractor may cause a performance bond to be issued in favor of their client for whom the contractor is performing a project.   Should the contractor fails to complete the project  according to the specifications laid out by the contract then the client is guaranteed compensation for any monetary loss up to the amount of the performance bond.\n\nPerformance bonds are commonly used in the construction and development of real property-related projects.   The owner or investor may require the developer to assure that project parties procure performance bonds to guarantee that the value of the work will not be lost in the case of an event such as bankruptcy of the contractor etc. \n\nPayment from the performance bond is available only to the project/property owner. No one else can make claims against it. \n\nWARRANTY OBLIGATION GUARANTEE\nThe warranty obligations guarantee secures  claims by the buyer on the seller due to possible defects appearing after delivery.",
+			"DisplayFolderInfo": "{\"name\":\"Product\",\"colorCode\":\"#0E3D73\"}",
+			"PrimaryKeys": "BankGuaranteeTypeId",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

@@ -1,0 +1,26 @@
+{
+	"name": "relationship-qvotfcoqtp",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-qvotfcoqtp",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "ReportingRequirement",
+		"ToTableName": "TransactionTypeCountryReportingRequirement",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ReportingRequirementId",
+				"ToColumnName": "ReportingRequirementId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"ReportingRequirement.cdm.json/ReportingRequirement\",\"toEntity\":\"TransactionTypeCountryReportingRequirement.cdm.json/TransactionTypeCountryReportingRequirement\",\"joinPairs\":[{\"fromAttribute\":\"ReportingRequirementId\",\"toAttribute\":\"ReportingRequirementId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

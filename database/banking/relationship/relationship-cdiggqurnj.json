@@ -1,0 +1,26 @@
+{
+	"name": "relationship-cdiggqurnj",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-cdiggqurnj",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "BankTransaction",
+		"ToTableName": "TransactionRelatedCustomerAccount",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "TransactionId",
+				"ToColumnName": "TransactionId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"BankTransaction.cdm.json/BankTransaction\",\"toEntity\":\"TransactionRelatedCustomerAccount.cdm.json/TransactionRelatedCustomerAccount\",\"joinPairs\":[{\"fromAttribute\":\"TransactionId\",\"toAttribute\":\"TransactionId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

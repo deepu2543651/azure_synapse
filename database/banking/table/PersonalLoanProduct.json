@@ -1,0 +1,94 @@
+{
+	"name": "PersonalLoanProduct",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "PersonalLoanProduct",
+		"Description": "A personal loan is the generic term for a loan. It can either be secured against your property or unsecured depending on your personal circumstances and preferences.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ProductId",
+					"Description": "The unique identifier of a Product.",
+					"BaseAttributeReference": {
+						"Entity": "PersonalLoanProduct.cdm.json/PersonalLoanProduct",
+						"Name": "ProductId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "PersonalLoanTypeId",
+					"Description": "The unique identifier of a Personal Loan Type.",
+					"BaseAttributeReference": {
+						"Entity": "PersonalLoanProduct.cdm.json/PersonalLoanProduct",
+						"Name": "PersonalLoanTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/PersonalLoanProduct",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/PersonalLoanProduct",
+				"Properties": {
+					"LinkedServiceName": "wspc-dpu-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ProductId\":{\"entity\":\"PersonalLoanProduct.cdm.json/PersonalLoanProduct\",\"name\":\"ProductId\"},\"PersonalLoanTypeId\":{\"entity\":\"PersonalLoanProduct.cdm.json/PersonalLoanProduct\",\"name\":\"PersonalLoanTypeId\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"PersonalLoanProduct\",\"path\":\"PersonalLoanProduct.cdm.json/PersonalLoanProduct\"},\"description\":\"A personal loan is the generic term for a loan. It can either be secured against your property or unsecured depending on your personal circumstances and preferences.\",\"primaryKey\":[\"ProductId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"ProductId\",\"attributeReference\":{\"entity\":\"PersonalLoanProduct.cdm.json/PersonalLoanProduct\",\"name\":\"ProductId\"},\"dataType\":\"long\"},{\"type\":\"Existing\",\"name\":\"PersonalLoanTypeId\",\"attributeReference\":{\"entity\":\"PersonalLoanProduct.cdm.json/PersonalLoanProduct\",\"name\":\"PersonalLoanTypeId\"},\"dataType\":\"integer\"}]}}}",
+			"Description": "A personal loan is the generic term for a loan. It can either be secured against your property or unsecured depending on your personal circumstances and preferences.",
+			"DisplayFolderInfo": "{\"name\":\"Product\",\"colorCode\":\"#0E3D73\"}",
+			"PrimaryKeys": "ProductId",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

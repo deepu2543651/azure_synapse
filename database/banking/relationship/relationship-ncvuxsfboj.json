@@ -1,0 +1,26 @@
+{
+	"name": "relationship-ncvuxsfboj",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-ncvuxsfboj",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "IndividualCustomer",
+		"ToTableName": "CustomerPsychographicCriteria",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "CustomerId",
+				"ToColumnName": "CustomerId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"IndividualCustomer.cdm.json/IndividualCustomer\",\"toEntity\":\"CustomerPsychographicCriteria.cdm.json/CustomerPsychographicCriteria\",\"joinPairs\":[{\"fromAttribute\":\"CustomerId\",\"toAttribute\":\"CustomerId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

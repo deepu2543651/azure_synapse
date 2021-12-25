@@ -1,0 +1,26 @@
+{
+	"name": "relationship-hlnfiwyeho",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-hlnfiwyeho",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "BankProductFeeType",
+		"ToTableName": "BankProductFee",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ProductFeeTypeId",
+				"ToColumnName": "ProductFeeTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"BankProductFeeType.cdm.json/BankProductFeeType\",\"toEntity\":\"BankProductFee.cdm.json/BankProductFee\",\"joinPairs\":[{\"fromAttribute\":\"ProductFeeTypeId\",\"toAttribute\":\"ProductFeeTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

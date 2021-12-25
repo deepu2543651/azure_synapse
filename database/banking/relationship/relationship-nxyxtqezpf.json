@@ -1,0 +1,26 @@
+{
+	"name": "relationship-nxyxtqezpf",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-nxyxtqezpf",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "BankTransaction",
+		"ToTableName": "RelatedTransaction",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "TransactionId",
+				"ToColumnName": "RelatedTransactionId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"BankTransaction.cdm.json/BankTransaction\",\"toEntity\":\"RelatedTransaction.cdm.json/RelatedTransaction\",\"joinPairs\":[{\"fromAttribute\":\"TransactionId\",\"toAttribute\":\"RelatedTransactionId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

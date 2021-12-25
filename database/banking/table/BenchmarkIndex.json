@@ -1,0 +1,112 @@
+{
+	"name": "BenchmarkIndex",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "BenchmarkIndex",
+		"Description": "The benchmark used as a basis for calculating the spread.\n\nEx:\n- EURIBOR\n- LIBOR\n- EURODOLLAR SYNTHETIC FORWARD CURVE (\"EDSF\")\n\nwhere\n\nEURIBOR\nEuribor (Euro Interbank Offered Rate) is the rate at which euro interbank term deposits within the euro zone are offered by one prime bank to another prime bank\n\nLIBOR\n\"The rate at which an individual Contributor Panel bank could borrow funds, were it to do so by asking for and then accepting inter-bank offers in reasonable market size, just prior to 11.00 London time.\"\n\nEURODOLLAR SYNTHETIC FORWARD CURVE (\"EDSF\")\nShort for Eurodollar Synthetic Forward Curve, an interest rate benchmark for pricing short term, fixed-rate Home Equity Certificates and other short term ABS such as Autos and Equipment Leases.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "BenchmarkIndexId",
+					"Description": "The unique identifier of a benchmark index.",
+					"BaseAttributeReference": {
+						"Entity": "BenchmarkIndex.cdm.json/BenchmarkIndex",
+						"Name": "BenchmarkIndexId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "BenchmarkIndexName",
+					"Description": "The name of a benchmark index.",
+					"BaseAttributeReference": {
+						"Entity": "BenchmarkIndex.cdm.json/BenchmarkIndex",
+						"Name": "BenchmarkIndexName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "BenchmarkIndexDescription",
+					"Description": "The description of a benchmark index.",
+					"BaseAttributeReference": {
+						"Entity": "BenchmarkIndex.cdm.json/BenchmarkIndex",
+						"Name": "BenchmarkIndexDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/BenchmarkIndex",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/BenchmarkIndex",
+				"Properties": {
+					"LinkedServiceName": "wspc-dpu-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"BenchmarkIndexId\":{\"entity\":\"BenchmarkIndex.cdm.json/BenchmarkIndex\",\"name\":\"BenchmarkIndexId\"},\"BenchmarkIndexName\":{\"entity\":\"BenchmarkIndex.cdm.json/BenchmarkIndex\",\"name\":\"BenchmarkIndexName\"},\"BenchmarkIndexDescription\":{\"entity\":\"BenchmarkIndex.cdm.json/BenchmarkIndex\",\"name\":\"BenchmarkIndexDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"BenchmarkIndex\",\"path\":\"BenchmarkIndex.cdm.json/BenchmarkIndex\"},\"description\":\"The benchmark used as a basis for calculating the spread.\\n\\nEx:\\n- EURIBOR\\n- LIBOR\\n- EURODOLLAR SYNTHETIC FORWARD CURVE (\\\"EDSF\\\")\\n\\nwhere\\n\\nEURIBOR\\nEuribor (Euro Interbank Offered Rate) is the rate at which euro interbank term deposits within the euro zone are offered by one prime bank to another prime bank\\n\\nLIBOR\\n\\\"The rate at which an individual Contributor Panel bank could borrow funds, were it to do so by asking for and then accepting inter-bank offers in reasonable market size, just prior to 11.00 London time.\\\"\\n\\nEURODOLLAR SYNTHETIC FORWARD CURVE (\\\"EDSF\\\")\\nShort for Eurodollar Synthetic Forward Curve, an interest rate benchmark for pricing short term, fixed-rate Home Equity Certificates and other short term ABS such as Autos and Equipment Leases.\",\"primaryKey\":[\"BenchmarkIndexId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"BenchmarkIndexId\",\"attributeReference\":{\"entity\":\"BenchmarkIndex.cdm.json/BenchmarkIndex\",\"name\":\"BenchmarkIndexId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"BenchmarkIndexName\",\"attributeReference\":{\"entity\":\"BenchmarkIndex.cdm.json/BenchmarkIndex\",\"name\":\"BenchmarkIndexName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"BenchmarkIndexDescription\",\"attributeReference\":{\"entity\":\"BenchmarkIndex.cdm.json/BenchmarkIndex\",\"name\":\"BenchmarkIndexDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512}]}}}",
+			"Description": "The benchmark used as a basis for calculating the spread.\n\nEx:\n- EURIBOR\n- LIBOR\n- EURODOLLAR SYNTHETIC FORWARD CURVE (\"EDSF\")\n\nwhere\n\nEURIBOR\nEuribor (Euro Interbank Offered Rate) is the rate at which euro interbank term deposits within the euro zone are offered by one prime bank to another prime bank\n\nLIBOR\n\"The rate at which an individual Contributor Panel bank could borrow funds, were it to do so by asking for and then accepting inter-bank offers in reasonable market size, just prior to 11.00 London time.\"\n\nEURODOLLAR SYNTHETIC FORWARD CURVE (\"EDSF\")\nShort for Eurodollar Synthetic Forward Curve, an interest rate benchmark for pricing short term, fixed-rate Home Equity Certificates and other short term ABS such as Autos and Equipment Leases.",
+			"DisplayFolderInfo": "{\"name\":\"Product\",\"colorCode\":\"#0E3D73\"}",
+			"PrimaryKeys": "BenchmarkIndexId",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

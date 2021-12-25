@@ -1,0 +1,26 @@
+{
+	"name": "relationship-lovovwpzrt",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-lovovwpzrt",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "CreditStatusType",
+		"ToTableName": "CustomerAccountCreditStatus",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "CreditStatusTypeId",
+				"ToColumnName": "CreditStatusTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"CreditStatusType.cdm.json/CreditStatusType\",\"toEntity\":\"CustomerAccountCreditStatus.cdm.json/CustomerAccountCreditStatus\",\"joinPairs\":[{\"fromAttribute\":\"CreditStatusTypeId\",\"toAttribute\":\"CreditStatusTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

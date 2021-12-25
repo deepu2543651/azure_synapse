@@ -1,0 +1,112 @@
+{
+	"name": "IssueType",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "IssueType",
+		"Description": "A classification or categorization of Issues.\n\nEx:\n- Service\n- Sales\n- Billing\n- Fraud\n- Complaint\n- Quality\n- Production\n- Manufacturing",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "IssueTypeId",
+					"Description": "The unique identifier of an Issue Type.",
+					"BaseAttributeReference": {
+						"Entity": "IssueType.cdm.json/IssueType",
+						"Name": "IssueTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "IssueTypeName",
+					"Description": "The name of the Issue Type.",
+					"BaseAttributeReference": {
+						"Entity": "IssueType.cdm.json/IssueType",
+						"Name": "IssueTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "IssueTypeDescription",
+					"Description": "The description of an Issue Type.",
+					"BaseAttributeReference": {
+						"Entity": "IssueType.cdm.json/IssueType",
+						"Name": "IssueTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/IssueType",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/IssueType",
+				"Properties": {
+					"LinkedServiceName": "wspc-dpu-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"IssueTypeId\":{\"entity\":\"IssueType.cdm.json/IssueType\",\"name\":\"IssueTypeId\"},\"IssueTypeName\":{\"entity\":\"IssueType.cdm.json/IssueType\",\"name\":\"IssueTypeName\"},\"IssueTypeDescription\":{\"entity\":\"IssueType.cdm.json/IssueType\",\"name\":\"IssueTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"IssueType\",\"path\":\"IssueType.cdm.json/IssueType\"},\"description\":\"A classification or categorization of Issues.\\n\\nEx:\\n- Service\\n- Sales\\n- Billing\\n- Fraud\\n- Complaint\\n- Quality\\n- Production\\n- Manufacturing\",\"primaryKey\":[\"IssueTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"IssueTypeId\",\"attributeReference\":{\"entity\":\"IssueType.cdm.json/IssueType\",\"name\":\"IssueTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"IssueTypeName\",\"attributeReference\":{\"entity\":\"IssueType.cdm.json/IssueType\",\"name\":\"IssueTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"IssueTypeDescription\",\"attributeReference\":{\"entity\":\"IssueType.cdm.json/IssueType\",\"name\":\"IssueTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512}]}}}",
+			"Description": "A classification or categorization of Issues.\n\nEx:\n- Service\n- Sales\n- Billing\n- Fraud\n- Complaint\n- Quality\n- Production\n- Manufacturing",
+			"DisplayFolderInfo": "{\"name\":\"Customer Service & Contact Management\",\"colorCode\":\"#Ef6950\"}",
+			"PrimaryKeys": "IssueTypeId",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

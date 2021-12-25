@@ -1,0 +1,26 @@
+{
+	"name": "relationship-imbajusgcd",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-imbajusgcd",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Opinion",
+		"ToTableName": "CustomerOpinion",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "OpinionId",
+				"ToColumnName": "OpinionId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Opinion.cdm.json/Opinion\",\"toEntity\":\"CustomerOpinion.cdm.json/CustomerOpinion\",\"joinPairs\":[{\"fromAttribute\":\"OpinionId\",\"toAttribute\":\"OpinionId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

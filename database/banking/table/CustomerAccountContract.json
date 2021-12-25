@@ -1,0 +1,145 @@
+{
+	"name": "CustomerAccountContract",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "CustomerAccountContract",
+		"Description": "The one or more Contracts specifying the terms, conditions and obligations of the Customer Account.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "CustomerAccountId",
+					"Description": "The unique identifier of a Customer Account.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountContract.cdm.json/CustomerAccountContract",
+						"Name": "CustomerAccountId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "ContractId",
+					"Description": "The unique identifier of a Contract.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountContract.cdm.json/CustomerAccountContract",
+						"Name": "ContractId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PeriodStartDate",
+					"Description": "The period start date the customer account-contract relationship is effective.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountContract.cdm.json/CustomerAccountContract",
+						"Name": "PeriodStartDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "PeriodEndDate",
+					"Description": "The period end date the customer account-contract relationship is effective.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountContract.cdm.json/CustomerAccountContract",
+						"Name": "PeriodEndDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "CustomerAccountContractNote",
+					"Description": "A note, comment or additional information regarding the Customer Account's contract.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountContract.cdm.json/CustomerAccountContract",
+						"Name": "CustomerAccountContractNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/CustomerAccountContract",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/CustomerAccountContract",
+				"Properties": {
+					"LinkedServiceName": "wspc-dpu-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"CustomerAccountId\":{\"entity\":\"CustomerAccountContract.cdm.json/CustomerAccountContract\",\"name\":\"CustomerAccountId\"},\"ContractId\":{\"entity\":\"CustomerAccountContract.cdm.json/CustomerAccountContract\",\"name\":\"ContractId\"},\"PeriodStartDate\":{\"entity\":\"CustomerAccountContract.cdm.json/CustomerAccountContract\",\"name\":\"PeriodStartDate\"},\"PeriodEndDate\":{\"entity\":\"CustomerAccountContract.cdm.json/CustomerAccountContract\",\"name\":\"PeriodEndDate\"},\"CustomerAccountContractNote\":{\"entity\":\"CustomerAccountContract.cdm.json/CustomerAccountContract\",\"name\":\"CustomerAccountContractNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"CustomerAccountContract\",\"path\":\"CustomerAccountContract.cdm.json/CustomerAccountContract\"},\"description\":\"The one or more Contracts specifying the terms, conditions and obligations of the Customer Account.\",\"primaryKey\":[\"CustomerAccountId\",\"ContractId\",\"PeriodStartDate\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"CustomerAccountId\",\"attributeReference\":{\"entity\":\"CustomerAccountContract.cdm.json/CustomerAccountContract\",\"name\":\"CustomerAccountId\"},\"dataType\":\"long\"},{\"type\":\"Existing\",\"name\":\"ContractId\",\"attributeReference\":{\"entity\":\"CustomerAccountContract.cdm.json/CustomerAccountContract\",\"name\":\"ContractId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"PeriodStartDate\",\"attributeReference\":{\"entity\":\"CustomerAccountContract.cdm.json/CustomerAccountContract\",\"name\":\"PeriodStartDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\"},{\"type\":\"Existing\",\"name\":\"PeriodEndDate\",\"attributeReference\":{\"entity\":\"CustomerAccountContract.cdm.json/CustomerAccountContract\",\"name\":\"PeriodEndDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\"},{\"type\":\"Existing\",\"name\":\"CustomerAccountContractNote\",\"attributeReference\":{\"entity\":\"CustomerAccountContract.cdm.json/CustomerAccountContract\",\"name\":\"CustomerAccountContractNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024}]}}}",
+			"Description": "The one or more Contracts specifying the terms, conditions and obligations of the Customer Account.",
+			"DisplayFolderInfo": "{\"name\":\"Customer Account\",\"colorCode\":\"#E3008C\"}",
+			"PrimaryKeys": "CustomerAccountId,ContractId,PeriodStartDate",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

@@ -1,0 +1,26 @@
+{
+	"name": "relationship-oaftifmtnd",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-oaftifmtnd",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "ServiceRequestPartyRelationshipType",
+		"ToTableName": "ServiceRequestRelatedParty",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ServiceRequestPartyRelationshipTypeId",
+				"ToColumnName": "ServiceRequestPartyRelationshipTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"ServiceRequestPartyRelationshipType.cdm.json/ServiceRequestPartyRelationshipType\",\"toEntity\":\"ServiceRequestRelatedParty.cdm.json/ServiceRequestRelatedParty\",\"joinPairs\":[{\"fromAttribute\":\"ServiceRequestPartyRelationshipTypeId\",\"toAttribute\":\"ServiceRequestPartyRelationshipTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

@@ -1,0 +1,26 @@
+{
+	"name": "relationship-rcqmxllgpr",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-rcqmxllgpr",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Customer",
+		"ToTableName": "BankTransaction",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "CustomerId",
+				"ToColumnName": "CustomerId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Customer.cdm.json/Customer\",\"toEntity\":\"BankTransaction.cdm.json/BankTransaction\",\"joinPairs\":[{\"fromAttribute\":\"CustomerId\",\"toAttribute\":\"CustomerId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

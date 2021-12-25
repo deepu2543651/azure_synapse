@@ -1,0 +1,111 @@
+{
+	"name": "SpecialPurposeVehicle",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "SpecialPurposeVehicle",
+		"Description": "Frequently a separate institution, called a special purpose vehicle (SPV), is created to handle the securitization of asset backed securities. \n\nThe special purpose vehicle (SPV), which creates and sells the securities, uses the proceeds of the sale to pay back the bank that created, or originated, the underlying assets. The special purpose vehicle is responsible for bundling  the underlying assets into a specified pool that fits  the risk preferences and similar requirements of investors who might want to buy the securities.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "SpvId",
+					"Description": "The unique identifier of the SVP.",
+					"BaseAttributeReference": {
+						"Entity": "SpecialPurposeVehicle.cdm.json/SpecialPurposeVehicle",
+						"Name": "SpvId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "SpvName",
+					"Description": "The name of the SPV.",
+					"BaseAttributeReference": {
+						"Entity": "SpecialPurposeVehicle.cdm.json/SpecialPurposeVehicle",
+						"Name": "SpvName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "PartyId",
+					"Description": "The unique identifier of a Party.",
+					"BaseAttributeReference": {
+						"Entity": "SpecialPurposeVehicle.cdm.json/SpecialPurposeVehicle",
+						"Name": "PartyId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/SpecialPurposeVehicle",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/SpecialPurposeVehicle",
+				"Properties": {
+					"LinkedServiceName": "wspc-dpu-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"SpvId\":{\"entity\":\"SpecialPurposeVehicle.cdm.json/SpecialPurposeVehicle\",\"name\":\"SpvId\"},\"SpvName\":{\"entity\":\"SpecialPurposeVehicle.cdm.json/SpecialPurposeVehicle\",\"name\":\"SpvName\"},\"PartyId\":{\"entity\":\"SpecialPurposeVehicle.cdm.json/SpecialPurposeVehicle\",\"name\":\"PartyId\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"SpecialPurposeVehicle\",\"path\":\"SpecialPurposeVehicle.cdm.json/SpecialPurposeVehicle\"},\"description\":\"Frequently a separate institution, called a special purpose vehicle (SPV), is created to handle the securitization of asset backed securities. \\n\\nThe special purpose vehicle (SPV), which creates and sells the securities, uses the proceeds of the sale to pay back the bank that created, or originated, the underlying assets. The special purpose vehicle is responsible for bundling  the underlying assets into a specified pool that fits  the risk preferences and similar requirements of investors who might want to buy the securities.\",\"primaryKey\":[\"SpvId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"SpvId\",\"attributeReference\":{\"entity\":\"SpecialPurposeVehicle.cdm.json/SpecialPurposeVehicle\",\"name\":\"SpvId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"SpvName\",\"attributeReference\":{\"entity\":\"SpecialPurposeVehicle.cdm.json/SpecialPurposeVehicle\",\"name\":\"SpvName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"PartyId\",\"attributeReference\":{\"entity\":\"SpecialPurposeVehicle.cdm.json/SpecialPurposeVehicle\",\"name\":\"PartyId\"},\"dataType\":\"long\"}]}}}",
+			"Description": "Frequently a separate institution, called a special purpose vehicle (SPV), is created to handle the securitization of asset backed securities. \n\nThe special purpose vehicle (SPV), which creates and sells the securities, uses the proceeds of the sale to pay back the bank that created, or originated, the underlying assets. The special purpose vehicle is responsible for bundling  the underlying assets into a specified pool that fits  the risk preferences and similar requirements of investors who might want to buy the securities.",
+			"DisplayFolderInfo": "{\"name\":\"Product\",\"colorCode\":\"#0E3D73\"}",
+			"PrimaryKeys": "SpvId",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

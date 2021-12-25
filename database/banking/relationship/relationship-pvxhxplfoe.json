@@ -1,0 +1,34 @@
+{
+	"name": "relationship-pvxhxplfoe",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-pvxhxplfoe",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "MarketingCampaignBudgetedCostItem",
+		"ToTableName": "MarketingCampaignIncurredCostItem",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "BudgetId",
+				"ToColumnName": "BudgetId"
+			},
+			{
+				"FromColumnName": "CostItemId",
+				"ToColumnName": "CostItemId"
+			},
+			{
+				"FromColumnName": "MarketingCampaignId",
+				"ToColumnName": "MarketingCampaignId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"MarketingCampaignBudgetedCostItem.cdm.json/MarketingCampaignBudgetedCostItem\",\"toEntity\":\"MarketingCampaignIncurredCostItem.cdm.json/MarketingCampaignIncurredCostItem\",\"joinPairs\":[{\"fromAttribute\":\"BudgetId\",\"toAttribute\":\"BudgetId\"},{\"fromAttribute\":\"CostItemId\",\"toAttribute\":\"CostItemId\"},{\"fromAttribute\":\"MarketingCampaignId\",\"toAttribute\":\"MarketingCampaignId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

@@ -1,0 +1,26 @@
+{
+	"name": "relationship-iwklrcruyf",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-iwklrcruyf",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "LockboxServiceType",
+		"ToTableName": "LockboxProductAvailableService",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "LockboxServiceTypeId",
+				"ToColumnName": "LockboxServiceTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"LockboxServiceType.cdm.json/LockboxServiceType\",\"toEntity\":\"LockboxProductAvailableService.cdm.json/LockboxProductAvailableService\",\"joinPairs\":[{\"fromAttribute\":\"LockboxServiceTypeId\",\"toAttribute\":\"LockboxServiceTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

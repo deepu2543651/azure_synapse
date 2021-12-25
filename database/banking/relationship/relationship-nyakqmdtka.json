@@ -1,0 +1,26 @@
+{
+	"name": "relationship-nyakqmdtka",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-nyakqmdtka",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "DemandAccountType",
+		"ToTableName": "CommercialDemandAccountProduct",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "DemandAccountTypeId",
+				"ToColumnName": "DemandAccountTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"DemandAccountType.cdm.json/DemandAccountType\",\"toEntity\":\"CommercialDemandAccountProduct.cdm.json/CommercialDemandAccountProduct\",\"joinPairs\":[{\"fromAttribute\":\"DemandAccountTypeId\",\"toAttribute\":\"DemandAccountTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

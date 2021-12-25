@@ -1,0 +1,26 @@
+{
+	"name": "relationship-njjrqxkycw",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-njjrqxkycw",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "SicIndustry",
+		"ToTableName": "DunBradstreetReport",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "SicIndustryCode",
+				"ToColumnName": "SicIndustryCode"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"SicIndustry.cdm.json/SicIndustry\",\"toEntity\":\"DunBradstreetReport.cdm.json/DunBradstreetReport\",\"joinPairs\":[{\"fromAttribute\":\"SicIndustryCode\",\"toAttribute\":\"SicIndustryCode\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

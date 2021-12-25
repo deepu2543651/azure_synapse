@@ -1,0 +1,112 @@
+{
+	"name": "BankFacilityType",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "BankFacilityType",
+		"Description": "The type of bank facility:\n\n- Funded Bank Facility\n- Unfunded Bank Facility\n- Mixed Funding Bank Facility\n- Revolving Facility\n\nwhere:\n\nFunded Bank Facility\nWhen the bank provides actual cash.\n\nUnfunded Bank Facility\nWhen the bank does not provide cash but provides guarantees or documentary credits.\n\nMixed Funding Bank Facility\nWhen the bank provides a mixture or combination of cash and guarantees/documentary credits.\n\nRevolving Facility\nThis is a committed facility that provides a maximum amount that can be borrowed over an agreed period. The borrower may draw down and repay advances during the term of the credit facility. Amounts repaid can be re- borrowed. The borrower can o en select an interest period and fix the interest rate it pays over that period for each advance it draws. At the end of an interest period, the borrower will decide whether to repay or \"rollover\" the advance into a new interest period. Rolling over an advance means the advance remains outstanding as far as the borrower is concerned. Further advances can be drawn down at any time during the availability period (commonly almost as long as the term of the credit facility) with different interest periods running in parallel.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "BankFacilityTypeId",
+					"Description": "The unique identifier of a bank facility type.",
+					"BaseAttributeReference": {
+						"Entity": "BankFacilityType.cdm.json/BankFacilityType",
+						"Name": "BankFacilityTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "BankFacilityTypeName",
+					"Description": "The name of a bank facility type.",
+					"BaseAttributeReference": {
+						"Entity": "BankFacilityType.cdm.json/BankFacilityType",
+						"Name": "BankFacilityTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "BankFacilityTypeDescription",
+					"Description": "The description of a bank facility type.",
+					"BaseAttributeReference": {
+						"Entity": "BankFacilityType.cdm.json/BankFacilityType",
+						"Name": "BankFacilityTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/BankFacilityType",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/BankFacilityType",
+				"Properties": {
+					"LinkedServiceName": "wspc-dpu-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"BankFacilityTypeId\":{\"entity\":\"BankFacilityType.cdm.json/BankFacilityType\",\"name\":\"BankFacilityTypeId\"},\"BankFacilityTypeName\":{\"entity\":\"BankFacilityType.cdm.json/BankFacilityType\",\"name\":\"BankFacilityTypeName\"},\"BankFacilityTypeDescription\":{\"entity\":\"BankFacilityType.cdm.json/BankFacilityType\",\"name\":\"BankFacilityTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"BankFacilityType\",\"path\":\"BankFacilityType.cdm.json/BankFacilityType\"},\"description\":\"The type of bank facility:\\n\\n- Funded Bank Facility\\n- Unfunded Bank Facility\\n- Mixed Funding Bank Facility\\n- Revolving Facility\\n\\nwhere:\\n\\nFunded Bank Facility\\nWhen the bank provides actual cash.\\n\\nUnfunded Bank Facility\\nWhen the bank does not provide cash but provides guarantees or documentary credits.\\n\\nMixed Funding Bank Facility\\nWhen the bank provides a mixture or combination of cash and guarantees/documentary credits.\\n\\nRevolving Facility\\nThis is a committed facility that provides a maximum amount that can be borrowed over an agreed period. The borrower may draw down and repay advances during the term of the credit facility. Amounts repaid can be re- borrowed. The borrower can o en select an interest period and fix the interest rate it pays over that period for each advance it draws. At the end of an interest period, the borrower will decide whether to repay or \\\"rollover\\\" the advance into a new interest period. Rolling over an advance means the advance remains outstanding as far as the borrower is concerned. Further advances can be drawn down at any time during the availability period (commonly almost as long as the term of the credit facility) with different interest periods running in parallel.\",\"primaryKey\":[\"BankFacilityTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"BankFacilityTypeId\",\"attributeReference\":{\"entity\":\"BankFacilityType.cdm.json/BankFacilityType\",\"name\":\"BankFacilityTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"BankFacilityTypeName\",\"attributeReference\":{\"entity\":\"BankFacilityType.cdm.json/BankFacilityType\",\"name\":\"BankFacilityTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"BankFacilityTypeDescription\",\"attributeReference\":{\"entity\":\"BankFacilityType.cdm.json/BankFacilityType\",\"name\":\"BankFacilityTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512}]}}}",
+			"Description": "The type of bank facility:\n\n- Funded Bank Facility\n- Unfunded Bank Facility\n- Mixed Funding Bank Facility\n- Revolving Facility\n\nwhere:\n\nFunded Bank Facility\nWhen the bank provides actual cash.\n\nUnfunded Bank Facility\nWhen the bank does not provide cash but provides guarantees or documentary credits.\n\nMixed Funding Bank Facility\nWhen the bank provides a mixture or combination of cash and guarantees/documentary credits.\n\nRevolving Facility\nThis is a committed facility that provides a maximum amount that can be borrowed over an agreed period. The borrower may draw down and repay advances during the term of the credit facility. Amounts repaid can be re- borrowed. The borrower can o en select an interest period and fix the interest rate it pays over that period for each advance it draws. At the end of an interest period, the borrower will decide whether to repay or \"rollover\" the advance into a new interest period. Rolling over an advance means the advance remains outstanding as far as the borrower is concerned. Further advances can be drawn down at any time during the availability period (commonly almost as long as the term of the credit facility) with different interest periods running in parallel.",
+			"DisplayFolderInfo": "{\"name\":\"Product\",\"colorCode\":\"#0E3D73\"}",
+			"PrimaryKeys": "BankFacilityTypeId",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

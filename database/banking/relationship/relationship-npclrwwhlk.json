@@ -1,0 +1,30 @@
+{
+	"name": "relationship-npclrwwhlk",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-npclrwwhlk",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "PartyOrganization",
+		"ToTableName": "Budget",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "OrganizationId",
+				"ToColumnName": "OrganizationId"
+			},
+			{
+				"FromColumnName": "PartyId",
+				"ToColumnName": "PartyId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"PartyOrganization.cdm.json/PartyOrganization\",\"toEntity\":\"Budget.cdm.json/Budget\",\"joinPairs\":[{\"fromAttribute\":\"OrganizationId\",\"toAttribute\":\"OrganizationId\"},{\"fromAttribute\":\"PartyId\",\"toAttribute\":\"PartyId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

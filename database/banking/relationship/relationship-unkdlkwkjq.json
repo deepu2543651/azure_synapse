@@ -1,0 +1,26 @@
+{
+	"name": "relationship-unkdlkwkjq",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-unkdlkwkjq",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "PaymentCardProductType",
+		"ToTableName": "PaymentCardProduct",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "PaymentCardTypeId",
+				"ToColumnName": "PaymentCardTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"PaymentCardProductType.cdm.json/PaymentCardProductType\",\"toEntity\":\"PaymentCardProduct.cdm.json/PaymentCardProduct\",\"joinPairs\":[{\"fromAttribute\":\"PaymentCardTypeId\",\"toAttribute\":\"PaymentCardTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

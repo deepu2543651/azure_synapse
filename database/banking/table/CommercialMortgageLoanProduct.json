@@ -1,0 +1,555 @@
+{
+	"name": "CommercialMortgageLoanProduct",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "CommercialMortgageLoanProduct",
+		"Description": "A commercial mortgage is a loan made using real estate or real property as collateral to secure repayment.\n\nA commercial mortgage is similar to a residential mortgage, except the collateral is a commercial building or other business real estate.\nBusiness typically take out commercial mortgages with the borrower being a partnership, incorporated business, or limited company.\n\nSome commercial mortgages are nonrecourse, which means in the event of default in repayment, the creditor may only seize the collateral.   However, the creditor has no further claim against the borrower for any remaining financial obligations.  The general reason for this is because many laws prevent the creditor from going after the borrower for any deficiency, and mortgages structured for sale as bonds give a higher priority to constantly receiving some sort of income and require a clause that allows the lender to take the property immediately regardless of bankruptcy proceedings that the borrower might be going through.\n\nThe mortgage may be supplemented by a general obligation of the borrower which makes the debt payable in full even if foreclosure on the mortgaged collateral does not satisfy the outstanding balance.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ProductId",
+					"Description": "The unique identifier of a Product.",
+					"BaseAttributeReference": {
+						"Entity": "CommercialMortgageLoanProduct.cdm.json/CommercialMortgageLoanProduct",
+						"Name": "ProductId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "CommercialMortgageLoanTypeId",
+					"Description": "The unique identifier of a Loan Type.",
+					"BaseAttributeReference": {
+						"Entity": "CommercialMortgageLoanProduct.cdm.json/CommercialMortgageLoanProduct",
+						"Name": "CommercialMortgageLoanTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "AssumptionClause",
+					"Description": "A provision in an assumable mortgage that allows a buyer to assume responsibility for the mortgage from the seller. The loan does not need to be paid in full by the original borrower upon sale or transfer of the property.",
+					"BaseAttributeReference": {
+						"Entity": "CommercialMortgageLoanProduct.cdm.json/CommercialMortgageLoanProduct",
+						"Name": "AssumptionClause"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 2048,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "AccelerationClause",
+					"Description": "The clause in a mortgage or trust deed that stipulates the entire debt is due immediately if the mortgagee defaults under the terms of the contract. \n\nCondition in a mortgage that may require the balance of the loan to become due immediately, if regular mortgage payments are not made or for breach of other conditions of the mortgage.",
+					"BaseAttributeReference": {
+						"Entity": "CommercialMortgageLoanProduct.cdm.json/CommercialMortgageLoanProduct",
+						"Name": "AccelerationClause"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 2048,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ConvertibleClause",
+					"Description": "A provision in some adjustable-rate mortgages (ARMs) that allows the borrower to change the ARM to a fixed-rate mortgage at specified time.",
+					"BaseAttributeReference": {
+						"Entity": "CommercialMortgageLoanProduct.cdm.json/CommercialMortgageLoanProduct",
+						"Name": "ConvertibleClause"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 2048,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "InterestRateCapClause",
+					"Description": "A provision of an adjustable rate mortgage limiting how much interest rates may increase per adjustment period.",
+					"BaseAttributeReference": {
+						"Entity": "CommercialMortgageLoanProduct.cdm.json/CommercialMortgageLoanProduct",
+						"Name": "InterestRateCapClause"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 2048,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "EscalatorClause",
+					"Description": "A clause in a loan providing for increases in payments or interest based on pre-determined schedules or on a specific economic index, such as the consumer price index.",
+					"BaseAttributeReference": {
+						"Entity": "CommercialMortgageLoanProduct.cdm.json/CommercialMortgageLoanProduct",
+						"Name": "EscalatorClause"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 2048,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "CovenantClause",
+					"Description": "A clause in a mortgage that obligates or restricts the borrower and that, if violated, can result in foreclosure.",
+					"BaseAttributeReference": {
+						"Entity": "CommercialMortgageLoanProduct.cdm.json/CommercialMortgageLoanProduct",
+						"Name": "CovenantClause"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 2048,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "PrepaymentClause",
+					"Description": "The right given to a purchaser to pay all or part of a debt prior to its maturity. The mortgagee does not have to accept any payment other than those originally agreed to.",
+					"BaseAttributeReference": {
+						"Entity": "CommercialMortgageLoanProduct.cdm.json/CommercialMortgageLoanProduct",
+						"Name": "PrepaymentClause"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 2048,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "DueOnSaleProvisionClause",
+					"Description": "A provision in a mortgage that allows the lender to demand repayment in full if the borrower sells the property that serves as security for the mortgage.",
+					"BaseAttributeReference": {
+						"Entity": "CommercialMortgageLoanProduct.cdm.json/CommercialMortgageLoanProduct",
+						"Name": "DueOnSaleProvisionClause"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 2048,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "DueOnTransferProvisionClause",
+					"Description": "This terminology is usually used for second mortgages.",
+					"BaseAttributeReference": {
+						"Entity": "CommercialMortgageLoanProduct.cdm.json/CommercialMortgageLoanProduct",
+						"Name": "DueOnTransferProvisionClause"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 2048,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "CoinsuranceClause",
+					"Description": "A provision in a hazard insurance policy that states the amount of coverage that must be maintained -- as a percentage of the total value of the property -- for the insured to collect the full amount of a loss.",
+					"BaseAttributeReference": {
+						"Entity": "CommercialMortgageLoanProduct.cdm.json/CommercialMortgageLoanProduct",
+						"Name": "CoinsuranceClause"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 2048,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "LockInClause",
+					"Description": "Clause in a loan agreement that states that the borrower cannot repay a loan prior to a specified date.",
+					"BaseAttributeReference": {
+						"Entity": "CommercialMortgageLoanProduct.cdm.json/CommercialMortgageLoanProduct",
+						"Name": "LockInClause"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 2048,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "CallOptionClause",
+					"Description": "A provision in the mortgage that gives the mortgagee the right to call the mortgage due and payable at the end of a specified period for whatever reason.",
+					"BaseAttributeReference": {
+						"Entity": "CommercialMortgageLoanProduct.cdm.json/CommercialMortgageLoanProduct",
+						"Name": "CallOptionClause"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 2048,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ReconveyanceClause",
+					"Description": "The clause in a trust deed that gives the title back to the borrower when the loan is paid in full.",
+					"BaseAttributeReference": {
+						"Entity": "CommercialMortgageLoanProduct.cdm.json/CommercialMortgageLoanProduct",
+						"Name": "ReconveyanceClause"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 2048,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "NonrecourseLoanIndicator",
+					"Description": "Some commercial mortgages are nonrecourse, which means in the event of default in repayment, the creditor may only seize the collateral.   However, the creditor has no further claim against the borrower for any remaining financial obligations.  \n\nThe general reason for this is because many laws prevent the creditor from going after the borrower for any deficiency, and mortgages structured for sale as bonds give a higher priority to constantly receiving some sort of income and require a clause that allows the lender to take the property immediately regardless of bankruptcy proceedings that the borrower might be going through.",
+					"BaseAttributeReference": {
+						"Entity": "CommercialMortgageLoanProduct.cdm.json/CommercialMortgageLoanProduct",
+						"Name": "NonrecourseLoanIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "FixedRateMortgageIndicator",
+					"Description": "A mortgage in which the interest rate does not change during the entire term of the loan.",
+					"BaseAttributeReference": {
+						"Entity": "CommercialMortgageLoanProduct.cdm.json/CommercialMortgageLoanProduct",
+						"Name": "FixedRateMortgageIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "AdjustableRateMortgageIndicator",
+					"Description": "A mortgage in which the interest rate changes during the entire term of the loan.",
+					"BaseAttributeReference": {
+						"Entity": "CommercialMortgageLoanProduct.cdm.json/CommercialMortgageLoanProduct",
+						"Name": "AdjustableRateMortgageIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "LoanIsAssumableIndicator",
+					"Description": "Indicates that the loan may be assumable.",
+					"BaseAttributeReference": {
+						"Entity": "CommercialMortgageLoanProduct.cdm.json/CommercialMortgageLoanProduct",
+						"Name": "LoanIsAssumableIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "FeeSimpleTitleIndicator",
+					"Description": "The best title that one can obtain; unqualified and conveys the highest bundle of rights.",
+					"BaseAttributeReference": {
+						"Entity": "CommercialMortgageLoanProduct.cdm.json/CommercialMortgageLoanProduct",
+						"Name": "FeeSimpleTitleIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "NegativeAmortizingLoanIndicator",
+					"Description": "Some types of ARMs offer payment caps rather than interest rate caps, which limit the amount the monthly payment can increase. If a loan has a payment cap but has no periodic interest rate cap, then the loan may become negatively amortized: if the interest rates rise to the point that the monthly mortgage payment does not cover the interest due, any unpaid interest will get added to the loan balance, so the loan balance increases. However, you always have the option to pay the minimum monthly payment, or the fully amortized amount due.\n\nThe advantage of negatively amortizing loans is that you can control cash flow (relatively stable payment), take advantage of low interest rates relative to the market at any given time, and pay back the money borrowed today at a depreciated value years from now (because of natural inflation). This makes such loans a great tool for homeowners as long as you understand the mechanics of what's going on.\n\nWith most ARMs, the interest rate can adjust every six months, once a year, every three years, or every five years. The interest rate on negatively amortized loans can adjust monthly. A loan with an adjustment period of 6 months is called a 6-month ARM, with an adjustment period of 1 year is called a 1-year ARM, and so on. Most ARMs offer an initial lower interest rate than the fully indexed rate (index plus margin) during the initial period of the loan, which could be one month or a year or more. It is also known as teaser rate.\n\nAll ARMs are available with 30-year terms and some with 15-year terms.\n\nAdjustable rate mortgages generally have a lower initial interest rate than fixed rate loans.",
+					"BaseAttributeReference": {
+						"Entity": "CommercialMortgageLoanProduct.cdm.json/CommercialMortgageLoanProduct",
+						"Name": "NegativeAmortizingLoanIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "CreditLoanMortgageIndicator",
+					"Description": "A credit loan is a mortgage that is issued on only the financial strength of a borrower, without great regard for collateral.",
+					"BaseAttributeReference": {
+						"Entity": "CommercialMortgageLoanProduct.cdm.json/CommercialMortgageLoanProduct",
+						"Name": "CreditLoanMortgageIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "ConstructionLoanIndicator",
+					"Description": "A short term loan for funding the cost of construction. The lender advances funds to the builder as the work progresses.",
+					"BaseAttributeReference": {
+						"Entity": "CommercialMortgageLoanProduct.cdm.json/CommercialMortgageLoanProduct",
+						"Name": "ConstructionLoanIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "ConvertibleArmLoanIndicator",
+					"Description": "Some ARMs come with option to convert them to a fixed-rate mortgage at designated times (usually during the first five years on the adjustment date), if you see interest rates starting to rise. The new rate is established at the current market rate for fixed-rate mortgages.\n\nThe conversion is typically done for a nominal fee and requires almost no paperwork. The disadvantage is that the conversion interest rate is typically a little higher than the market rate at that time.\n\nThe other kind of convertible mortgage is a fixed rate loan with rate reduction option. If rates had dropped since the time of closing it allows you, under some prescribed conditions, for a small conversion fee to adjust your mortgage to going market rate. Generally the interest rate or discount points may be a little higher for a convertible loan.",
+					"BaseAttributeReference": {
+						"Entity": "CommercialMortgageLoanProduct.cdm.json/CommercialMortgageLoanProduct",
+						"Name": "ConvertibleArmLoanIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "BalloonMortgageIndicator",
+					"Description": "A mortgage that behaves like a fixed-rate mortgage for a set number of years (usually five or seven) and then must be paid off in full in a single \"balloon\" payment. Balloon loans are popular with those expecting to sell or refinance their property within a definite period of time.",
+					"BaseAttributeReference": {
+						"Entity": "CommercialMortgageLoanProduct.cdm.json/CommercialMortgageLoanProduct",
+						"Name": "BalloonMortgageIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "BlanketMortgageLoanIndicator",
+					"Description": "A mortgage secured by the pledging of more than one property or collateral.",
+					"BaseAttributeReference": {
+						"Entity": "CommercialMortgageLoanProduct.cdm.json/CommercialMortgageLoanProduct",
+						"Name": "BlanketMortgageLoanIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "GraduatedPaymentMortgageGpmLoanIndicator",
+					"Description": "Graduated payment mortgages have payments that start low and gradually increase at predetermined times. A lower initial payments allow you to qualify for a larger loan amount. The monthly payments will eventually be higher in order to catch up from the lower payments. In fact, your loan will be negatively amortizing during the early years of the loan, then pay off the principal at an accelerated pace through the later years.\n\nLenders offer different GPM payment plans, which vary in the rate of payment increases and the number of years over which the payments will increase. The greater the rate of increase or the longer the period of increase, the lower the mortgage payments in the early years.",
+					"BaseAttributeReference": {
+						"Entity": "CommercialMortgageLoanProduct.cdm.json/CommercialMortgageLoanProduct",
+						"Name": "GraduatedPaymentMortgageGpmLoanIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "RolloverLoanIndicator",
+					"Description": "A loan that /includes a call date earlier than its normal amortization period.",
+					"BaseAttributeReference": {
+						"Entity": "CommercialMortgageLoanProduct.cdm.json/CommercialMortgageLoanProduct",
+						"Name": "RolloverLoanIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "RecastMortgageLoanIndicator",
+					"Description": "Indicates that the mortgage loan has been recast.",
+					"BaseAttributeReference": {
+						"Entity": "CommercialMortgageLoanProduct.cdm.json/CommercialMortgageLoanProduct",
+						"Name": "RecastMortgageLoanIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "LoanConversionOptionId",
+					"Description": "The unique identifier of a Loan Conversion Option.",
+					"BaseAttributeReference": {
+						"Entity": "CommercialMortgageLoanProduct.cdm.json/CommercialMortgageLoanProduct",
+						"Name": "LoanConversionOptionId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/CommercialMortgageLoanProduct",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/CommercialMortgageLoanProduct",
+				"Properties": {
+					"LinkedServiceName": "wspc-dpu-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ProductId\":{\"entity\":\"CommercialMortgageLoanProduct.cdm.json/CommercialMortgageLoanProduct\",\"name\":\"ProductId\"},\"CommercialMortgageLoanTypeId\":{\"entity\":\"CommercialMortgageLoanProduct.cdm.json/CommercialMortgageLoanProduct\",\"name\":\"CommercialMortgageLoanTypeId\"},\"AssumptionClause\":{\"entity\":\"CommercialMortgageLoanProduct.cdm.json/CommercialMortgageLoanProduct\",\"name\":\"AssumptionClause\"},\"AccelerationClause\":{\"entity\":\"CommercialMortgageLoanProduct.cdm.json/CommercialMortgageLoanProduct\",\"name\":\"AccelerationClause\"},\"ConvertibleClause\":{\"entity\":\"CommercialMortgageLoanProduct.cdm.json/CommercialMortgageLoanProduct\",\"name\":\"ConvertibleClause\"},\"InterestRateCapClause\":{\"entity\":\"CommercialMortgageLoanProduct.cdm.json/CommercialMortgageLoanProduct\",\"name\":\"InterestRateCapClause\"},\"EscalatorClause\":{\"entity\":\"CommercialMortgageLoanProduct.cdm.json/CommercialMortgageLoanProduct\",\"name\":\"EscalatorClause\"},\"CovenantClause\":{\"entity\":\"CommercialMortgageLoanProduct.cdm.json/CommercialMortgageLoanProduct\",\"name\":\"CovenantClause\"},\"PrepaymentClause\":{\"entity\":\"CommercialMortgageLoanProduct.cdm.json/CommercialMortgageLoanProduct\",\"name\":\"PrepaymentClause\"},\"DueOnSaleProvisionClause\":{\"entity\":\"CommercialMortgageLoanProduct.cdm.json/CommercialMortgageLoanProduct\",\"name\":\"DueOnSaleProvisionClause\"},\"DueOnTransferProvisionClause\":{\"entity\":\"CommercialMortgageLoanProduct.cdm.json/CommercialMortgageLoanProduct\",\"name\":\"DueOnTransferProvisionClause\"},\"CoinsuranceClause\":{\"entity\":\"CommercialMortgageLoanProduct.cdm.json/CommercialMortgageLoanProduct\",\"name\":\"CoinsuranceClause\"},\"LockInClause\":{\"entity\":\"CommercialMortgageLoanProduct.cdm.json/CommercialMortgageLoanProduct\",\"name\":\"LockInClause\"},\"CallOptionClause\":{\"entity\":\"CommercialMortgageLoanProduct.cdm.json/CommercialMortgageLoanProduct\",\"name\":\"CallOptionClause\"},\"ReconveyanceClause\":{\"entity\":\"CommercialMortgageLoanProduct.cdm.json/CommercialMortgageLoanProduct\",\"name\":\"ReconveyanceClause\"},\"NonrecourseLoanIndicator\":{\"entity\":\"CommercialMortgageLoanProduct.cdm.json/CommercialMortgageLoanProduct\",\"name\":\"NonrecourseLoanIndicator\"},\"FixedRateMortgageIndicator\":{\"entity\":\"CommercialMortgageLoanProduct.cdm.json/CommercialMortgageLoanProduct\",\"name\":\"FixedRateMortgageIndicator\"},\"AdjustableRateMortgageIndicator\":{\"entity\":\"CommercialMortgageLoanProduct.cdm.json/CommercialMortgageLoanProduct\",\"name\":\"AdjustableRateMortgageIndicator\"},\"LoanIsAssumableIndicator\":{\"entity\":\"CommercialMortgageLoanProduct.cdm.json/CommercialMortgageLoanProduct\",\"name\":\"LoanIsAssumableIndicator\"},\"FeeSimpleTitleIndicator\":{\"entity\":\"CommercialMortgageLoanProduct.cdm.json/CommercialMortgageLoanProduct\",\"name\":\"FeeSimpleTitleIndicator\"},\"NegativeAmortizingLoanIndicator\":{\"entity\":\"CommercialMortgageLoanProduct.cdm.json/CommercialMortgageLoanProduct\",\"name\":\"NegativeAmortizingLoanIndicator\"},\"CreditLoanMortgageIndicator\":{\"entity\":\"CommercialMortgageLoanProduct.cdm.json/CommercialMortgageLoanProduct\",\"name\":\"CreditLoanMortgageIndicator\"},\"ConstructionLoanIndicator\":{\"entity\":\"CommercialMortgageLoanProduct.cdm.json/CommercialMortgageLoanProduct\",\"name\":\"ConstructionLoanIndicator\"},\"ConvertibleArmLoanIndicator\":{\"entity\":\"CommercialMortgageLoanProduct.cdm.json/CommercialMortgageLoanProduct\",\"name\":\"ConvertibleArmLoanIndicator\"},\"BalloonMortgageIndicator\":{\"entity\":\"CommercialMortgageLoanProduct.cdm.json/CommercialMortgageLoanProduct\",\"name\":\"BalloonMortgageIndicator\"},\"BlanketMortgageLoanIndicator\":{\"entity\":\"CommercialMortgageLoanProduct.cdm.json/CommercialMortgageLoanProduct\",\"name\":\"BlanketMortgageLoanIndicator\"},\"GraduatedPaymentMortgageGpmLoanIndicator\":{\"entity\":\"CommercialMortgageLoanProduct.cdm.json/CommercialMortgageLoanProduct\",\"name\":\"GraduatedPaymentMortgageGpmLoanIndicator\"},\"RolloverLoanIndicator\":{\"entity\":\"CommercialMortgageLoanProduct.cdm.json/CommercialMortgageLoanProduct\",\"name\":\"RolloverLoanIndicator\"},\"RecastMortgageLoanIndicator\":{\"entity\":\"CommercialMortgageLoanProduct.cdm.json/CommercialMortgageLoanProduct\",\"name\":\"RecastMortgageLoanIndicator\"},\"LoanConversionOptionId\":{\"entity\":\"CommercialMortgageLoanProduct.cdm.json/CommercialMortgageLoanProduct\",\"name\":\"LoanConversionOptionId\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"CommercialMortgageLoanProduct\",\"path\":\"CommercialMortgageLoanProduct.cdm.json/CommercialMortgageLoanProduct\"},\"description\":\"A commercial mortgage is a loan made using real estate or real property as collateral to secure repayment.\\n\\nA commercial mortgage is similar to a residential mortgage, except the collateral is a commercial building or other business real estate.\\nBusiness typically take out commercial mortgages with the borrower being a partnership, incorporated business, or limited company.\\n\\nSome commercial mortgages are nonrecourse, which means in the event of default in repayment, the creditor may only seize the collateral.   However, the creditor has no further claim against the borrower for any remaining financial obligations.  The general reason for this is because many laws prevent the creditor from going after the borrower for any deficiency, and mortgages structured for sale as bonds give a higher priority to constantly receiving some sort of income and require a clause that allows the lender to take the property immediately regardless of bankruptcy proceedings that the borrower might be going through.\\n\\nThe mortgage may be supplemented by a general obligation of the borrower which makes the debt payable in full even if foreclosure on the mortgaged collateral does not satisfy the outstanding balance.\",\"primaryKey\":[\"ProductId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"ProductId\",\"attributeReference\":{\"entity\":\"CommercialMortgageLoanProduct.cdm.json/CommercialMortgageLoanProduct\",\"name\":\"ProductId\"},\"dataType\":\"long\"},{\"type\":\"Existing\",\"name\":\"CommercialMortgageLoanTypeId\",\"attributeReference\":{\"entity\":\"CommercialMortgageLoanProduct.cdm.json/CommercialMortgageLoanProduct\",\"name\":\"CommercialMortgageLoanTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"AssumptionClause\",\"attributeReference\":{\"entity\":\"CommercialMortgageLoanProduct.cdm.json/CommercialMortgageLoanProduct\",\"name\":\"AssumptionClause\"},\"dataType\":\"string\",\"dataTypeLength\":2048},{\"type\":\"Existing\",\"name\":\"AccelerationClause\",\"attributeReference\":{\"entity\":\"CommercialMortgageLoanProduct.cdm.json/CommercialMortgageLoanProduct\",\"name\":\"AccelerationClause\"},\"dataType\":\"string\",\"dataTypeLength\":2048},{\"type\":\"Existing\",\"name\":\"ConvertibleClause\",\"attributeReference\":{\"entity\":\"CommercialMortgageLoanProduct.cdm.json/CommercialMortgageLoanProduct\",\"name\":\"ConvertibleClause\"},\"dataType\":\"string\",\"dataTypeLength\":2048},{\"type\":\"Existing\",\"name\":\"InterestRateCapClause\",\"attributeReference\":{\"entity\":\"CommercialMortgageLoanProduct.cdm.json/CommercialMortgageLoanProduct\",\"name\":\"InterestRateCapClause\"},\"dataType\":\"string\",\"dataTypeLength\":2048},{\"type\":\"Existing\",\"name\":\"EscalatorClause\",\"attributeReference\":{\"entity\":\"CommercialMortgageLoanProduct.cdm.json/CommercialMortgageLoanProduct\",\"name\":\"EscalatorClause\"},\"dataType\":\"string\",\"dataTypeLength\":2048},{\"type\":\"Existing\",\"name\":\"CovenantClause\",\"attributeReference\":{\"entity\":\"CommercialMortgageLoanProduct.cdm.json/CommercialMortgageLoanProduct\",\"name\":\"CovenantClause\"},\"dataType\":\"string\",\"dataTypeLength\":2048},{\"type\":\"Existing\",\"name\":\"PrepaymentClause\",\"attributeReference\":{\"entity\":\"CommercialMortgageLoanProduct.cdm.json/CommercialMortgageLoanProduct\",\"name\":\"PrepaymentClause\"},\"dataType\":\"string\",\"dataTypeLength\":2048},{\"type\":\"Existing\",\"name\":\"DueOnSaleProvisionClause\",\"attributeReference\":{\"entity\":\"CommercialMortgageLoanProduct.cdm.json/CommercialMortgageLoanProduct\",\"name\":\"DueOnSaleProvisionClause\"},\"dataType\":\"string\",\"dataTypeLength\":2048},{\"type\":\"Existing\",\"name\":\"DueOnTransferProvisionClause\",\"attributeReference\":{\"entity\":\"CommercialMortgageLoanProduct.cdm.json/CommercialMortgageLoanProduct\",\"name\":\"DueOnTransferProvisionClause\"},\"dataType\":\"string\",\"dataTypeLength\":2048},{\"type\":\"Existing\",\"name\":\"CoinsuranceClause\",\"attributeReference\":{\"entity\":\"CommercialMortgageLoanProduct.cdm.json/CommercialMortgageLoanProduct\",\"name\":\"CoinsuranceClause\"},\"dataType\":\"string\",\"dataTypeLength\":2048},{\"type\":\"Existing\",\"name\":\"LockInClause\",\"attributeReference\":{\"entity\":\"CommercialMortgageLoanProduct.cdm.json/CommercialMortgageLoanProduct\",\"name\":\"LockInClause\"},\"dataType\":\"string\",\"dataTypeLength\":2048},{\"type\":\"Existing\",\"name\":\"CallOptionClause\",\"attributeReference\":{\"entity\":\"CommercialMortgageLoanProduct.cdm.json/CommercialMortgageLoanProduct\",\"name\":\"CallOptionClause\"},\"dataType\":\"string\",\"dataTypeLength\":2048},{\"type\":\"Existing\",\"name\":\"ReconveyanceClause\",\"attributeReference\":{\"entity\":\"CommercialMortgageLoanProduct.cdm.json/CommercialMortgageLoanProduct\",\"name\":\"ReconveyanceClause\"},\"dataType\":\"string\",\"dataTypeLength\":2048},{\"type\":\"Existing\",\"name\":\"NonrecourseLoanIndicator\",\"attributeReference\":{\"entity\":\"CommercialMortgageLoanProduct.cdm.json/CommercialMortgageLoanProduct\",\"name\":\"NonrecourseLoanIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"FixedRateMortgageIndicator\",\"attributeReference\":{\"entity\":\"CommercialMortgageLoanProduct.cdm.json/CommercialMortgageLoanProduct\",\"name\":\"FixedRateMortgageIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"AdjustableRateMortgageIndicator\",\"attributeReference\":{\"entity\":\"CommercialMortgageLoanProduct.cdm.json/CommercialMortgageLoanProduct\",\"name\":\"AdjustableRateMortgageIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"LoanIsAssumableIndicator\",\"attributeReference\":{\"entity\":\"CommercialMortgageLoanProduct.cdm.json/CommercialMortgageLoanProduct\",\"name\":\"LoanIsAssumableIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"FeeSimpleTitleIndicator\",\"attributeReference\":{\"entity\":\"CommercialMortgageLoanProduct.cdm.json/CommercialMortgageLoanProduct\",\"name\":\"FeeSimpleTitleIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"NegativeAmortizingLoanIndicator\",\"attributeReference\":{\"entity\":\"CommercialMortgageLoanProduct.cdm.json/CommercialMortgageLoanProduct\",\"name\":\"NegativeAmortizingLoanIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"CreditLoanMortgageIndicator\",\"attributeReference\":{\"entity\":\"CommercialMortgageLoanProduct.cdm.json/CommercialMortgageLoanProduct\",\"name\":\"CreditLoanMortgageIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"ConstructionLoanIndicator\",\"attributeReference\":{\"entity\":\"CommercialMortgageLoanProduct.cdm.json/CommercialMortgageLoanProduct\",\"name\":\"ConstructionLoanIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"ConvertibleArmLoanIndicator\",\"attributeReference\":{\"entity\":\"CommercialMortgageLoanProduct.cdm.json/CommercialMortgageLoanProduct\",\"name\":\"ConvertibleArmLoanIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"BalloonMortgageIndicator\",\"attributeReference\":{\"entity\":\"CommercialMortgageLoanProduct.cdm.json/CommercialMortgageLoanProduct\",\"name\":\"BalloonMortgageIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"BlanketMortgageLoanIndicator\",\"attributeReference\":{\"entity\":\"CommercialMortgageLoanProduct.cdm.json/CommercialMortgageLoanProduct\",\"name\":\"BlanketMortgageLoanIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"GraduatedPaymentMortgageGpmLoanIndicator\",\"attributeReference\":{\"entity\":\"CommercialMortgageLoanProduct.cdm.json/CommercialMortgageLoanProduct\",\"name\":\"GraduatedPaymentMortgageGpmLoanIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"RolloverLoanIndicator\",\"attributeReference\":{\"entity\":\"CommercialMortgageLoanProduct.cdm.json/CommercialMortgageLoanProduct\",\"name\":\"RolloverLoanIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"RecastMortgageLoanIndicator\",\"attributeReference\":{\"entity\":\"CommercialMortgageLoanProduct.cdm.json/CommercialMortgageLoanProduct\",\"name\":\"RecastMortgageLoanIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"LoanConversionOptionId\",\"attributeReference\":{\"entity\":\"CommercialMortgageLoanProduct.cdm.json/CommercialMortgageLoanProduct\",\"name\":\"LoanConversionOptionId\"},\"dataType\":\"integer\"}]}}}",
+			"Description": "A commercial mortgage is a loan made using real estate or real property as collateral to secure repayment.\n\nA commercial mortgage is similar to a residential mortgage, except the collateral is a commercial building or other business real estate.\nBusiness typically take out commercial mortgages with the borrower being a partnership, incorporated business, or limited company.\n\nSome commercial mortgages are nonrecourse, which means in the event of default in repayment, the creditor may only seize the collateral.   However, the creditor has no further claim against the borrower for any remaining financial obligations.  The general reason for this is because many laws prevent the creditor from going after the borrower for any deficiency, and mortgages structured for sale as bonds give a higher priority to constantly receiving some sort of income and require a clause that allows the lender to take the property immediately regardless of bankruptcy proceedings that the borrower might be going through.\n\nThe mortgage may be supplemented by a general obligation of the borrower which makes the debt payable in full even if foreclosure on the mortgaged collateral does not satisfy the outstanding balance.",
+			"DisplayFolderInfo": "{\"name\":\"Product\",\"colorCode\":\"#0E3D73\"}",
+			"PrimaryKeys": "ProductId",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

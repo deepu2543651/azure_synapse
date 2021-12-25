@@ -1,0 +1,112 @@
+{
+	"name": "AdvertisingCollateralStatus",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "AdvertisingCollateralStatus",
+		"Description": "The status of the associated Advertising Collateral.\n\nEx:\n- In-design\n- In-review\n- Active\n- Retired",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "AdvertisingCollateralStatusId",
+					"Description": "The unique identifier of an Advertising Collateral Status.",
+					"BaseAttributeReference": {
+						"Entity": "AdvertisingCollateralStatus.cdm.json/AdvertisingCollateralStatus",
+						"Name": "AdvertisingCollateralStatusId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "AdvertisingCollateralStatusName",
+					"Description": "The name of an Advertising Collateral Status.",
+					"BaseAttributeReference": {
+						"Entity": "AdvertisingCollateralStatus.cdm.json/AdvertisingCollateralStatus",
+						"Name": "AdvertisingCollateralStatusName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "AdvertisingCollateralStatusDescription",
+					"Description": "The description of an Advertising Collateral Status.",
+					"BaseAttributeReference": {
+						"Entity": "AdvertisingCollateralStatus.cdm.json/AdvertisingCollateralStatus",
+						"Name": "AdvertisingCollateralStatusDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/AdvertisingCollateralStatus",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/AdvertisingCollateralStatus",
+				"Properties": {
+					"LinkedServiceName": "wspc-dpu-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"AdvertisingCollateralStatusId\":{\"entity\":\"AdvertisingCollateralStatus.cdm.json/AdvertisingCollateralStatus\",\"name\":\"AdvertisingCollateralStatusId\"},\"AdvertisingCollateralStatusName\":{\"entity\":\"AdvertisingCollateralStatus.cdm.json/AdvertisingCollateralStatus\",\"name\":\"AdvertisingCollateralStatusName\"},\"AdvertisingCollateralStatusDescription\":{\"entity\":\"AdvertisingCollateralStatus.cdm.json/AdvertisingCollateralStatus\",\"name\":\"AdvertisingCollateralStatusDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"AdvertisingCollateralStatus\",\"path\":\"AdvertisingCollateralStatus.cdm.json/AdvertisingCollateralStatus\"},\"description\":\"The status of the associated Advertising Collateral.\\n\\nEx:\\n- In-design\\n- In-review\\n- Active\\n- Retired\",\"primaryKey\":[\"AdvertisingCollateralStatusId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"AdvertisingCollateralStatusId\",\"attributeReference\":{\"entity\":\"AdvertisingCollateralStatus.cdm.json/AdvertisingCollateralStatus\",\"name\":\"AdvertisingCollateralStatusId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"AdvertisingCollateralStatusName\",\"attributeReference\":{\"entity\":\"AdvertisingCollateralStatus.cdm.json/AdvertisingCollateralStatus\",\"name\":\"AdvertisingCollateralStatusName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"AdvertisingCollateralStatusDescription\",\"attributeReference\":{\"entity\":\"AdvertisingCollateralStatus.cdm.json/AdvertisingCollateralStatus\",\"name\":\"AdvertisingCollateralStatusDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512}]}}}",
+			"Description": "The status of the associated Advertising Collateral.\n\nEx:\n- In-design\n- In-review\n- Active\n- Retired",
+			"DisplayFolderInfo": "{\"name\":\"Marketing & Advertising\",\"colorCode\":\"#692B0C\"}",
+			"PrimaryKeys": "AdvertisingCollateralStatusId",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

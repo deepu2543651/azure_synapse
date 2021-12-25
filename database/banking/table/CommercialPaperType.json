@@ -1,0 +1,112 @@
+{
+	"name": "CommercialPaperType",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "CommercialPaperType",
+		"Description": "The type of commercial paper.\n\n- Discounted Instrument\n- Plus Interest Instrument\n\nCommercial paper is a debt instrument that is offered as either a 'discounted instrument' or as a 'principal plus interest'.\n\nIn the case of a 'discounted instrument', there are no interest payment made. \n\nThe price paid to buy the instrument is lower than the face value, which is paid to the buyer upon maturity.\n\nIn the case of a 'plus interest instrument' the client pays the full face to buy the paper and receives that face value plus the interest.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "CommercialPaperTypeId",
+					"Description": "The unique identifier of a Commercial Paper Type.",
+					"BaseAttributeReference": {
+						"Entity": "CommercialPaperType.cdm.json/CommercialPaperType",
+						"Name": "CommercialPaperTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "CommercialPaperTypeName",
+					"Description": "The name of a Commercial Paper Type.",
+					"BaseAttributeReference": {
+						"Entity": "CommercialPaperType.cdm.json/CommercialPaperType",
+						"Name": "CommercialPaperTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "CommercialPaperTypeDescription",
+					"Description": "The description of a Commercial Paper Type.",
+					"BaseAttributeReference": {
+						"Entity": "CommercialPaperType.cdm.json/CommercialPaperType",
+						"Name": "CommercialPaperTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/CommercialPaperType",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/CommercialPaperType",
+				"Properties": {
+					"LinkedServiceName": "wspc-dpu-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"CommercialPaperTypeId\":{\"entity\":\"CommercialPaperType.cdm.json/CommercialPaperType\",\"name\":\"CommercialPaperTypeId\"},\"CommercialPaperTypeName\":{\"entity\":\"CommercialPaperType.cdm.json/CommercialPaperType\",\"name\":\"CommercialPaperTypeName\"},\"CommercialPaperTypeDescription\":{\"entity\":\"CommercialPaperType.cdm.json/CommercialPaperType\",\"name\":\"CommercialPaperTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"CommercialPaperType\",\"path\":\"CommercialPaperType.cdm.json/CommercialPaperType\"},\"description\":\"The type of commercial paper.\\n\\n- Discounted Instrument\\n- Plus Interest Instrument\\n\\nCommercial paper is a debt instrument that is offered as either a 'discounted instrument' or as a 'principal plus interest'.\\n\\nIn the case of a 'discounted instrument', there are no interest payment made. \\n\\nThe price paid to buy the instrument is lower than the face value, which is paid to the buyer upon maturity.\\n\\nIn the case of a 'plus interest instrument' the client pays the full face to buy the paper and receives that face value plus the interest.\",\"primaryKey\":[\"CommercialPaperTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"CommercialPaperTypeId\",\"attributeReference\":{\"entity\":\"CommercialPaperType.cdm.json/CommercialPaperType\",\"name\":\"CommercialPaperTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"CommercialPaperTypeName\",\"attributeReference\":{\"entity\":\"CommercialPaperType.cdm.json/CommercialPaperType\",\"name\":\"CommercialPaperTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"CommercialPaperTypeDescription\",\"attributeReference\":{\"entity\":\"CommercialPaperType.cdm.json/CommercialPaperType\",\"name\":\"CommercialPaperTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512}]}}}",
+			"Description": "The type of commercial paper.\n\n- Discounted Instrument\n- Plus Interest Instrument\n\nCommercial paper is a debt instrument that is offered as either a 'discounted instrument' or as a 'principal plus interest'.\n\nIn the case of a 'discounted instrument', there are no interest payment made. \n\nThe price paid to buy the instrument is lower than the face value, which is paid to the buyer upon maturity.\n\nIn the case of a 'plus interest instrument' the client pays the full face to buy the paper and receives that face value plus the interest.",
+			"DisplayFolderInfo": "{\"name\":\"Financial Product\",\"colorCode\":\"#001475\"}",
+			"PrimaryKeys": "CommercialPaperTypeId",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

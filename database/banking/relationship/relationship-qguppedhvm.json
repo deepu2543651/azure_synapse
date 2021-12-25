@@ -1,0 +1,26 @@
+{
+	"name": "relationship-qguppedhvm",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-qguppedhvm",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Service",
+		"ToTableName": "ProductServiceChannelFee",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ServiceId",
+				"ToColumnName": "ServiceId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Service.cdm.json/Service\",\"toEntity\":\"ProductServiceChannelFee.cdm.json/ProductServiceChannelFee\",\"joinPairs\":[{\"fromAttribute\":\"ServiceId\",\"toAttribute\":\"ServiceId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

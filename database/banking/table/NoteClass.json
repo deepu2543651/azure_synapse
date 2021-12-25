@@ -1,0 +1,299 @@
+{
+	"name": "NoteClass",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "NoteClass",
+		"Description": "The individual class of notes that comprise a complete issue.\n\nEx:\n\nShinsei Funding Three\nAmount: ¥40bn\nRating: AAA/AAA/AAA\nIssue price: 100.00\n\nClass 2002-3 notes: ¥15.5bn\nLegal maturity: April 25, 2007\nExpected maturity: April 25, 2005\nCoupon: 0.59%\nSpread at re-offer: three month\nLibor plus 35bp\n\nClass 2002-4 notes: ¥10.5bn\nLegal maturity: April 25, 2009\nExpected maturity: April 25, 2007\nCoupon: 1.055%\nSpread at re-offer: three month\nLibor plus 55bp\n\nClass 2002-4 notes: ¥14bn\nLegal maturity: April 25, 2009\nExpected maturity: April 25, 2007\nCoupon: three month Libor plus\n55bp\n\nLaunched: Thursday June 20\nLead mgr: Nomura (books),\nShinsei Securities\nSecured on: loans to Japanese\ncorporates originated by Shinsei\nBank",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "AssetBackedSecurityId",
+					"Description": "The unique identifier of a Product.",
+					"BaseAttributeReference": {
+						"Entity": "NoteClass.cdm.json/NoteClass",
+						"Name": "AssetBackedSecurityId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "NoteClassId",
+					"Description": "The unique identifier of an Asset",
+					"BaseAttributeReference": {
+						"Entity": "NoteClass.cdm.json/NoteClass",
+						"Name": "NoteClassId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "NoteClassName",
+					"Description": "The name of the Note Class.\n\nEx:\nClass 2002-3 Notes:  15.5Bn Yen",
+					"BaseAttributeReference": {
+						"Entity": "NoteClass.cdm.json/NoteClass",
+						"Name": "NoteClassName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "NoteClassDescription",
+					"Description": "A description of the associated Note Class.",
+					"BaseAttributeReference": {
+						"Entity": "NoteClass.cdm.json/NoteClass",
+						"Name": "NoteClassDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "NotesIssuedAmount",
+					"Description": "The total amount of asset backed security notes issued.",
+					"BaseAttributeReference": {
+						"Entity": "NoteClass.cdm.json/NoteClass",
+						"Name": "NotesIssuedAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "NotesIssuePriceAmount",
+					"Description": "The price of the issued notes.",
+					"BaseAttributeReference": {
+						"Entity": "NoteClass.cdm.json/NoteClass",
+						"Name": "NotesIssuePriceAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "NotesLegalMaturityDate",
+					"Description": "The legal maturity of the notes.",
+					"BaseAttributeReference": {
+						"Entity": "NoteClass.cdm.json/NoteClass",
+						"Name": "NotesLegalMaturityDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "NotesExpectedMaturityDate",
+					"Description": "The expected maturity date of the notes.",
+					"BaseAttributeReference": {
+						"Entity": "NoteClass.cdm.json/NoteClass",
+						"Name": "NotesExpectedMaturityDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "NotesCouponPercentage",
+					"Description": "The percentage provided by the coupons of the notes.",
+					"BaseAttributeReference": {
+						"Entity": "NoteClass.cdm.json/NoteClass",
+						"Name": "NotesCouponPercentage"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "NotesSpreadAtReOfferStatement",
+					"Description": "The spread at re-offer of the ABS notes.\n\nEx:\n\nThree month LIBOR plus 35 bp",
+					"BaseAttributeReference": {
+						"Entity": "NoteClass.cdm.json/NoteClass",
+						"Name": "NotesSpreadAtReOfferStatement"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 2048,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "NotesSecuredOnAssetsStatement",
+					"Description": "A statement describing the underlying secured assets of the ABS notes.\n\nEx:\n\n-  Secured on: loans to Japanese corporates originated by Shinsei Bank\n\n-  Secured on: UK commercial mortgages originated by Northern Rock\n\n-  Secured on: a secured loan to Home Technology Finance Ltd, a division of boxclever, backed by consumer and rental contracts originated by boxclever",
+					"BaseAttributeReference": {
+						"Entity": "NoteClass.cdm.json/NoteClass",
+						"Name": "NotesSecuredOnAssetsStatement"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 2048,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "NotesCallOptionStatement",
+					"Description": "A statement describing any call options associated with the ABS notes.\n\nEx:\n\nCall option: June 27, 2009 when coupons step up",
+					"BaseAttributeReference": {
+						"Entity": "NoteClass.cdm.json/NoteClass",
+						"Name": "NotesCallOptionStatement"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 2048,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "NotesAverageLife",
+					"Description": "The average life to maturity of the associated Asset Backed Security Note Class.",
+					"BaseAttributeReference": {
+						"Entity": "NoteClass.cdm.json/NoteClass",
+						"Name": "NotesAverageLife"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ProductId",
+					"Description": "The unique identifier of a Product.",
+					"BaseAttributeReference": {
+						"Entity": "NoteClass.cdm.json/NoteClass",
+						"Name": "ProductId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/NoteClass",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/NoteClass",
+				"Properties": {
+					"LinkedServiceName": "wspc-dpu-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"AssetBackedSecurityId\":{\"entity\":\"NoteClass.cdm.json/NoteClass\",\"name\":\"AssetBackedSecurityId\"},\"NoteClassId\":{\"entity\":\"NoteClass.cdm.json/NoteClass\",\"name\":\"NoteClassId\"},\"NoteClassName\":{\"entity\":\"NoteClass.cdm.json/NoteClass\",\"name\":\"NoteClassName\"},\"NoteClassDescription\":{\"entity\":\"NoteClass.cdm.json/NoteClass\",\"name\":\"NoteClassDescription\"},\"NotesIssuedAmount\":{\"entity\":\"NoteClass.cdm.json/NoteClass\",\"name\":\"NotesIssuedAmount\"},\"NotesIssuePriceAmount\":{\"entity\":\"NoteClass.cdm.json/NoteClass\",\"name\":\"NotesIssuePriceAmount\"},\"NotesLegalMaturityDate\":{\"entity\":\"NoteClass.cdm.json/NoteClass\",\"name\":\"NotesLegalMaturityDate\"},\"NotesExpectedMaturityDate\":{\"entity\":\"NoteClass.cdm.json/NoteClass\",\"name\":\"NotesExpectedMaturityDate\"},\"NotesCouponPercentage\":{\"entity\":\"NoteClass.cdm.json/NoteClass\",\"name\":\"NotesCouponPercentage\"},\"NotesSpreadAtReOfferStatement\":{\"entity\":\"NoteClass.cdm.json/NoteClass\",\"name\":\"NotesSpreadAtReOfferStatement\"},\"NotesSecuredOnAssetsStatement\":{\"entity\":\"NoteClass.cdm.json/NoteClass\",\"name\":\"NotesSecuredOnAssetsStatement\"},\"NotesCallOptionStatement\":{\"entity\":\"NoteClass.cdm.json/NoteClass\",\"name\":\"NotesCallOptionStatement\"},\"NotesAverageLife\":{\"entity\":\"NoteClass.cdm.json/NoteClass\",\"name\":\"NotesAverageLife\"},\"ProductId\":{\"entity\":\"NoteClass.cdm.json/NoteClass\",\"name\":\"ProductId\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"NoteClass\",\"path\":\"NoteClass.cdm.json/NoteClass\"},\"description\":\"The individual class of notes that comprise a complete issue.\\n\\nEx:\\n\\nShinsei Funding Three\\nAmount: ¥40bn\\nRating: AAA/AAA/AAA\\nIssue price: 100.00\\n\\nClass 2002-3 notes: ¥15.5bn\\nLegal maturity: April 25, 2007\\nExpected maturity: April 25, 2005\\nCoupon: 0.59%\\nSpread at re-offer: three month\\nLibor plus 35bp\\n\\nClass 2002-4 notes: ¥10.5bn\\nLegal maturity: April 25, 2009\\nExpected maturity: April 25, 2007\\nCoupon: 1.055%\\nSpread at re-offer: three month\\nLibor plus 55bp\\n\\nClass 2002-4 notes: ¥14bn\\nLegal maturity: April 25, 2009\\nExpected maturity: April 25, 2007\\nCoupon: three month Libor plus\\n55bp\\n\\nLaunched: Thursday June 20\\nLead mgr: Nomura (books),\\nShinsei Securities\\nSecured on: loans to Japanese\\ncorporates originated by Shinsei\\nBank\",\"primaryKey\":[\"AssetBackedSecurityId\",\"NoteClassId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"AssetBackedSecurityId\",\"attributeReference\":{\"entity\":\"NoteClass.cdm.json/NoteClass\",\"name\":\"AssetBackedSecurityId\"},\"dataType\":\"long\"},{\"type\":\"Existing\",\"name\":\"NoteClassId\",\"attributeReference\":{\"entity\":\"NoteClass.cdm.json/NoteClass\",\"name\":\"NoteClassId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"NoteClassName\",\"attributeReference\":{\"entity\":\"NoteClass.cdm.json/NoteClass\",\"name\":\"NoteClassName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"NoteClassDescription\",\"attributeReference\":{\"entity\":\"NoteClass.cdm.json/NoteClass\",\"name\":\"NoteClassDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512},{\"type\":\"Existing\",\"name\":\"NotesIssuedAmount\",\"attributeReference\":{\"entity\":\"NoteClass.cdm.json/NoteClass\",\"name\":\"NotesIssuedAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"NotesIssuePriceAmount\",\"attributeReference\":{\"entity\":\"NoteClass.cdm.json/NoteClass\",\"name\":\"NotesIssuePriceAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"NotesLegalMaturityDate\",\"attributeReference\":{\"entity\":\"NoteClass.cdm.json/NoteClass\",\"name\":\"NotesLegalMaturityDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\"},{\"type\":\"Existing\",\"name\":\"NotesExpectedMaturityDate\",\"attributeReference\":{\"entity\":\"NoteClass.cdm.json/NoteClass\",\"name\":\"NotesExpectedMaturityDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\"},{\"type\":\"Existing\",\"name\":\"NotesCouponPercentage\",\"attributeReference\":{\"entity\":\"NoteClass.cdm.json/NoteClass\",\"name\":\"NotesCouponPercentage\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":8},{\"type\":\"Existing\",\"name\":\"NotesSpreadAtReOfferStatement\",\"attributeReference\":{\"entity\":\"NoteClass.cdm.json/NoteClass\",\"name\":\"NotesSpreadAtReOfferStatement\"},\"dataType\":\"string\",\"dataTypeLength\":2048},{\"type\":\"Existing\",\"name\":\"NotesSecuredOnAssetsStatement\",\"attributeReference\":{\"entity\":\"NoteClass.cdm.json/NoteClass\",\"name\":\"NotesSecuredOnAssetsStatement\"},\"dataType\":\"string\",\"dataTypeLength\":2048},{\"type\":\"Existing\",\"name\":\"NotesCallOptionStatement\",\"attributeReference\":{\"entity\":\"NoteClass.cdm.json/NoteClass\",\"name\":\"NotesCallOptionStatement\"},\"dataType\":\"string\",\"dataTypeLength\":2048},{\"type\":\"Existing\",\"name\":\"NotesAverageLife\",\"attributeReference\":{\"entity\":\"NoteClass.cdm.json/NoteClass\",\"name\":\"NotesAverageLife\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ProductId\",\"attributeReference\":{\"entity\":\"NoteClass.cdm.json/NoteClass\",\"name\":\"ProductId\"},\"dataType\":\"long\"}]}}}",
+			"Description": "The individual class of notes that comprise a complete issue.\n\nEx:\n\nShinsei Funding Three\nAmount: ¥40bn\nRating: AAA/AAA/AAA\nIssue price: 100.00\n\nClass 2002-3 notes: ¥15.5bn\nLegal maturity: April 25, 2007\nExpected maturity: April 25, 2005\nCoupon: 0.59%\nSpread at re-offer: three month\nLibor plus 35bp\n\nClass 2002-4 notes: ¥10.5bn\nLegal maturity: April 25, 2009\nExpected maturity: April 25, 2007\nCoupon: 1.055%\nSpread at re-offer: three month\nLibor plus 55bp\n\nClass 2002-4 notes: ¥14bn\nLegal maturity: April 25, 2009\nExpected maturity: April 25, 2007\nCoupon: three month Libor plus\n55bp\n\nLaunched: Thursday June 20\nLead mgr: Nomura (books),\nShinsei Securities\nSecured on: loans to Japanese\ncorporates originated by Shinsei\nBank",
+			"DisplayFolderInfo": "{\"name\":\"Product\",\"colorCode\":\"#0E3D73\"}",
+			"PrimaryKeys": "AssetBackedSecurityId,NoteClassId",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

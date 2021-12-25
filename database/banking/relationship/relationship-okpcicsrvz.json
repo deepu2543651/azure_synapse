@@ -1,0 +1,26 @@
+{
+	"name": "relationship-okpcicsrvz",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-okpcicsrvz",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "MarketingProgram",
+		"ToTableName": "CustomerAccountProgram",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "MarketingProgramId",
+				"ToColumnName": "MarketingProgramId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"MarketingProgram.cdm.json/MarketingProgram\",\"toEntity\":\"CustomerAccountProgram.cdm.json/CustomerAccountProgram\",\"joinPairs\":[{\"fromAttribute\":\"MarketingProgramId\",\"toAttribute\":\"MarketingProgramId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

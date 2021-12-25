@@ -1,0 +1,177 @@
+{
+	"name": "CustomerAccountBankProduct",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "CustomerAccountBankProduct",
+		"Description": "The bank product that is associated with a customer account during a period of time.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "CustomerAccountId",
+					"Description": "The unique identifier of a Customer Account.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountBankProduct.cdm.json/CustomerAccountBankProduct",
+						"Name": "CustomerAccountId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "PeriodStartDate",
+					"Description": "The period start date that the customer account is associated with the banking product.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountBankProduct.cdm.json/CustomerAccountBankProduct",
+						"Name": "PeriodStartDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "PeriodEndDate",
+					"Description": "The period end date that the customer account is associated with the banking product.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountBankProduct.cdm.json/CustomerAccountBankProduct",
+						"Name": "PeriodEndDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "ProductId",
+					"Description": "The unique identifier of a Product.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountBankProduct.cdm.json/CustomerAccountBankProduct",
+						"Name": "ProductId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "IsoCurrencyCode",
+					"Description": "The ISO 4217 currency code.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountBankProduct.cdm.json/CustomerAccountBankProduct",
+						"Name": "IsoCurrencyCode"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 3,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "UsageCategoryId",
+					"Description": "The unique identifier of a Usage Category.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountBankProduct.cdm.json/CustomerAccountBankProduct",
+						"Name": "UsageCategoryId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "CommitmentId",
+					"Description": "The unique identifier of a Commitment.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountBankProduct.cdm.json/CustomerAccountBankProduct",
+						"Name": "CommitmentId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/CustomerAccountBankProduct",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/CustomerAccountBankProduct",
+				"Properties": {
+					"LinkedServiceName": "wspc-dpu-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"CustomerAccountId\":{\"entity\":\"CustomerAccountBankProduct.cdm.json/CustomerAccountBankProduct\",\"name\":\"CustomerAccountId\"},\"PeriodStartDate\":{\"entity\":\"CustomerAccountBankProduct.cdm.json/CustomerAccountBankProduct\",\"name\":\"PeriodStartDate\"},\"PeriodEndDate\":{\"entity\":\"CustomerAccountBankProduct.cdm.json/CustomerAccountBankProduct\",\"name\":\"PeriodEndDate\"},\"ProductId\":{\"entity\":\"CustomerAccountBankProduct.cdm.json/CustomerAccountBankProduct\",\"name\":\"ProductId\"},\"IsoCurrencyCode\":{\"entity\":\"CustomerAccountBankProduct.cdm.json/CustomerAccountBankProduct\",\"name\":\"IsoCurrencyCode\"},\"UsageCategoryId\":{\"entity\":\"CustomerAccountBankProduct.cdm.json/CustomerAccountBankProduct\",\"name\":\"UsageCategoryId\"},\"CommitmentId\":{\"entity\":\"CustomerAccountBankProduct.cdm.json/CustomerAccountBankProduct\",\"name\":\"CommitmentId\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"CustomerAccountBankProduct\",\"path\":\"CustomerAccountBankProduct.cdm.json/CustomerAccountBankProduct\"},\"description\":\"The bank product that is associated with a customer account during a period of time.\",\"primaryKey\":[\"CustomerAccountId\",\"PeriodStartDate\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"CustomerAccountId\",\"attributeReference\":{\"entity\":\"CustomerAccountBankProduct.cdm.json/CustomerAccountBankProduct\",\"name\":\"CustomerAccountId\"},\"dataType\":\"long\"},{\"type\":\"Existing\",\"name\":\"PeriodStartDate\",\"attributeReference\":{\"entity\":\"CustomerAccountBankProduct.cdm.json/CustomerAccountBankProduct\",\"name\":\"PeriodStartDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\"},{\"type\":\"Existing\",\"name\":\"PeriodEndDate\",\"attributeReference\":{\"entity\":\"CustomerAccountBankProduct.cdm.json/CustomerAccountBankProduct\",\"name\":\"PeriodEndDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\"},{\"type\":\"Existing\",\"name\":\"ProductId\",\"attributeReference\":{\"entity\":\"CustomerAccountBankProduct.cdm.json/CustomerAccountBankProduct\",\"name\":\"ProductId\"},\"dataType\":\"long\"},{\"type\":\"Existing\",\"name\":\"IsoCurrencyCode\",\"attributeReference\":{\"entity\":\"CustomerAccountBankProduct.cdm.json/CustomerAccountBankProduct\",\"name\":\"IsoCurrencyCode\"},\"dataType\":\"string\",\"dataTypeLength\":3},{\"type\":\"Existing\",\"name\":\"UsageCategoryId\",\"attributeReference\":{\"entity\":\"CustomerAccountBankProduct.cdm.json/CustomerAccountBankProduct\",\"name\":\"UsageCategoryId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"CommitmentId\",\"attributeReference\":{\"entity\":\"CustomerAccountBankProduct.cdm.json/CustomerAccountBankProduct\",\"name\":\"CommitmentId\"},\"dataType\":\"integer\"}]}}}",
+			"Description": "The bank product that is associated with a customer account during a period of time.",
+			"DisplayFolderInfo": "{\"name\":\"Customer Account\",\"colorCode\":\"#E3008C\"}",
+			"PrimaryKeys": "CustomerAccountId,PeriodStartDate",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

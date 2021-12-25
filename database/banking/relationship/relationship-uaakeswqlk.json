@@ -1,0 +1,26 @@
+{
+	"name": "relationship-uaakeswqlk",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-uaakeswqlk",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Party",
+		"ToTableName": "RadioStation",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "PartyId",
+				"ToColumnName": "PartyId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Party.cdm.json/Party\",\"toEntity\":\"RadioStation.cdm.json/RadioStation\",\"joinPairs\":[{\"fromAttribute\":\"PartyId\",\"toAttribute\":\"PartyId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

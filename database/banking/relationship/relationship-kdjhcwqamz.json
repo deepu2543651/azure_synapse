@@ -1,0 +1,26 @@
+{
+	"name": "relationship-kdjhcwqamz",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-kdjhcwqamz",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "ActivityType",
+		"ToTableName": "Activity",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ActivityTypeId",
+				"ToColumnName": "ActivityTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"ActivityType.cdm.json/ActivityType\",\"toEntity\":\"Activity.cdm.json/Activity\",\"joinPairs\":[{\"fromAttribute\":\"ActivityTypeId\",\"toAttribute\":\"ActivityTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

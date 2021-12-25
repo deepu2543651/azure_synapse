@@ -1,0 +1,26 @@
+{
+	"name": "relationship-pvumgarqgi",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-pvumgarqgi",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "LegalEntityForm",
+		"ToTableName": "LegalEntityCustomer",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "LegalEntityFormId",
+				"ToColumnName": "LegalEntityFormId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"LegalEntityForm.cdm.json/LegalEntityForm\",\"toEntity\":\"LegalEntityCustomer.cdm.json/LegalEntityCustomer\",\"joinPairs\":[{\"fromAttribute\":\"LegalEntityFormId\",\"toAttribute\":\"LegalEntityFormId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

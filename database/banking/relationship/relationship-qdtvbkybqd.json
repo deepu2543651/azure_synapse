@@ -1,0 +1,30 @@
+{
+	"name": "relationship-qdtvbkybqd",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-qdtvbkybqd",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "DunBradstreetReport",
+		"ToTableName": "CustomerDunBradstreetReport",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "DunsNumber",
+				"ToColumnName": "DunsNumber"
+			},
+			{
+				"FromColumnName": "ReportPurchaseDate",
+				"ToColumnName": "ReportPurchaseDate"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"DunBradstreetReport.cdm.json/DunBradstreetReport\",\"toEntity\":\"CustomerDunBradstreetReport.cdm.json/CustomerDunBradstreetReport\",\"joinPairs\":[{\"fromAttribute\":\"DunsNumber\",\"toAttribute\":\"DunsNumber\"},{\"fromAttribute\":\"ReportPurchaseDate\",\"toAttribute\":\"ReportPurchaseDate\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

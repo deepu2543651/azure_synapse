@@ -1,0 +1,112 @@
+{
+	"name": "AccountBalanceCalculationMethod",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "AccountBalanceCalculationMethod",
+		"Description": "The method by which the account balance on the associated card is calculated.\n\nEx:\n\nAverage Daily Balance Method. \nThis is one of the most common computation methods that credit card issuers use to calculate account balance. To figure the balance due, the issuer totals the beginning balance for each day in the billing period and subtracts any credits made to your account that day. While new purchases may or may not be added to the balance, depending on your plan, cash advances typically are included. The resulting daily balances are added for the billing cycle. The total is then divided by the number of days in the billing period to get the \"average daily balance.\"",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "AccountBalanceCalculationMethodId",
+					"Description": "The unique identifier of an Account Balance Calculation Method.",
+					"BaseAttributeReference": {
+						"Entity": "AccountBalanceCalculationMethod.cdm.json/AccountBalanceCalculationMethod",
+						"Name": "AccountBalanceCalculationMethodId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "AccountBalanceCalculationMethodName",
+					"Description": "The name of an Account Balance Calculation Method.",
+					"BaseAttributeReference": {
+						"Entity": "AccountBalanceCalculationMethod.cdm.json/AccountBalanceCalculationMethod",
+						"Name": "AccountBalanceCalculationMethodName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "AccountBalanceCalculationMethodDescription",
+					"Description": "The description of an Account Balance Calculation Method.",
+					"BaseAttributeReference": {
+						"Entity": "AccountBalanceCalculationMethod.cdm.json/AccountBalanceCalculationMethod",
+						"Name": "AccountBalanceCalculationMethodDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/AccountBalanceCalculationMethod",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/AccountBalanceCalculationMethod",
+				"Properties": {
+					"LinkedServiceName": "wspc-dpu-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"AccountBalanceCalculationMethodId\":{\"entity\":\"AccountBalanceCalculationMethod.cdm.json/AccountBalanceCalculationMethod\",\"name\":\"AccountBalanceCalculationMethodId\"},\"AccountBalanceCalculationMethodName\":{\"entity\":\"AccountBalanceCalculationMethod.cdm.json/AccountBalanceCalculationMethod\",\"name\":\"AccountBalanceCalculationMethodName\"},\"AccountBalanceCalculationMethodDescription\":{\"entity\":\"AccountBalanceCalculationMethod.cdm.json/AccountBalanceCalculationMethod\",\"name\":\"AccountBalanceCalculationMethodDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"AccountBalanceCalculationMethod\",\"path\":\"AccountBalanceCalculationMethod.cdm.json/AccountBalanceCalculationMethod\"},\"description\":\"The method by which the account balance on the associated card is calculated.\\n\\nEx:\\n\\nAverage Daily Balance Method. \\nThis is one of the most common computation methods that credit card issuers use to calculate account balance. To figure the balance due, the issuer totals the beginning balance for each day in the billing period and subtracts any credits made to your account that day. While new purchases may or may not be added to the balance, depending on your plan, cash advances typically are included. The resulting daily balances are added for the billing cycle. The total is then divided by the number of days in the billing period to get the \\\"average daily balance.\\\"\",\"primaryKey\":[\"AccountBalanceCalculationMethodId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"AccountBalanceCalculationMethodId\",\"attributeReference\":{\"entity\":\"AccountBalanceCalculationMethod.cdm.json/AccountBalanceCalculationMethod\",\"name\":\"AccountBalanceCalculationMethodId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"AccountBalanceCalculationMethodName\",\"attributeReference\":{\"entity\":\"AccountBalanceCalculationMethod.cdm.json/AccountBalanceCalculationMethod\",\"name\":\"AccountBalanceCalculationMethodName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"AccountBalanceCalculationMethodDescription\",\"attributeReference\":{\"entity\":\"AccountBalanceCalculationMethod.cdm.json/AccountBalanceCalculationMethod\",\"name\":\"AccountBalanceCalculationMethodDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512}]}}}",
+			"Description": "The method by which the account balance on the associated card is calculated.\n\nEx:\n\nAverage Daily Balance Method. \nThis is one of the most common computation methods that credit card issuers use to calculate account balance. To figure the balance due, the issuer totals the beginning balance for each day in the billing period and subtracts any credits made to your account that day. While new purchases may or may not be added to the balance, depending on your plan, cash advances typically are included. The resulting daily balances are added for the billing cycle. The total is then divided by the number of days in the billing period to get the \"average daily balance.\"",
+			"DisplayFolderInfo": "{\"name\":\"Product\",\"colorCode\":\"#0E3D73\"}",
+			"PrimaryKeys": "AccountBalanceCalculationMethodId",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

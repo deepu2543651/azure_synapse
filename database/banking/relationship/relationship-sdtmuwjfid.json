@@ -1,0 +1,26 @@
+{
+	"name": "relationship-sdtmuwjfid",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-sdtmuwjfid",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "CardAssociation",
+		"ToTableName": "AssociationPeriodInterchangeRate",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "CardAssociationId",
+				"ToColumnName": "CardAssociationId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"CardAssociation.cdm.json/CardAssociation\",\"toEntity\":\"AssociationPeriodInterchangeRate.cdm.json/AssociationPeriodInterchangeRate\",\"joinPairs\":[{\"fromAttribute\":\"CardAssociationId\",\"toAttribute\":\"CardAssociationId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

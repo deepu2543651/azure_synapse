@@ -1,0 +1,26 @@
+{
+	"name": "relationship-cxrihfxmtp",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-cxrihfxmtp",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "CardAssociation",
+		"ToTableName": "PaymentCardProductType",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "CardAssociationId",
+				"ToColumnName": "CardAssociationId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"CardAssociation.cdm.json/CardAssociation\",\"toEntity\":\"PaymentCardProductType.cdm.json/PaymentCardProductType\",\"joinPairs\":[{\"fromAttribute\":\"CardAssociationId\",\"toAttribute\":\"CardAssociationId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

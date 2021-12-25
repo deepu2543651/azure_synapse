@@ -1,0 +1,26 @@
+{
+	"name": "relationship-xtpdbwakrm",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-xtpdbwakrm",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "SocialClass",
+		"ToTableName": "CustomerSocialClass",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "SocialClassId",
+				"ToColumnName": "SocialClassId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"SocialClass.cdm.json/SocialClass\",\"toEntity\":\"CustomerSocialClass.cdm.json/CustomerSocialClass\",\"joinPairs\":[{\"fromAttribute\":\"SocialClassId\",\"toAttribute\":\"SocialClassId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

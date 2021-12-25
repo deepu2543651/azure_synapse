@@ -1,0 +1,26 @@
+{
+	"name": "relationship-mscugfhuue",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-mscugfhuue",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "TransactionPriority",
+		"ToTableName": "BankTransaction",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "TransactionPriorityId",
+				"ToColumnName": "TransactionPriorityId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"TransactionPriority.cdm.json/TransactionPriority\",\"toEntity\":\"BankTransaction.cdm.json/BankTransaction\",\"joinPairs\":[{\"fromAttribute\":\"TransactionPriorityId\",\"toAttribute\":\"TransactionPriorityId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

@@ -1,0 +1,111 @@
+{
+	"name": "Conduit",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "Conduit",
+		"Description": "A medium, or a legal vehicle. \n\nSpecific to securitizations, this means an entity formed to hold receivables transferred by the originator on behalf of the investors. \n\nIn pass through structures, an SPV is a mere conduit as it merely represents the collective property and cash flows of the investors. In case of asset-backed commercial paper it means the SPV which holds the receivables transferred by different originators, and issues commercial paper to raise money to buy the same.\n\nThe distinction between asset-backed securities and asset-backed commercial paper is primarily one of the tenure of the paper - commercial paper by definition is short-term funding, and is therefore mostly used for short-term assets such as trade receivables\n\nAsset-backed commercial paper (ABCP) is a device used by banks to get operating assets such as trade receivables funded by issuance of securities. Traditionally, banks devised ABCP conduits as a device to put their current asset credits off their balance sheets and yet provide liquidity support to their clients.\n\nFor example, assume Bank A has a client X, whose working capital needs are funded by the bank. If the bank wants to release the regulatory capital that is locked in this credit asset, the bank can set up a conduit, essentially an SPV that issues commercial paper. The conduit will buy the receivables of the client and get the same funded by issuance of commercial paper. The bank will be required to provide some liquidity support to the conduit, as it is practically impossible to match the maturities of the commercial paper to the realization of trade receivables. Thus, the credit asset is moved off the balance sheet giving the bank a regulatory relief.\n\nSo depending upon whether the bank provides full or partial liquidity support to the conduit, ABCP can be either fully supported or partly supported. \n\nABCP conduits are virtual subsets of the parent bank. If the bank provides full liquidity support to the conduit, for regulatory purposes, the liquidity support given by the bank may be treated as a direct credit substitute in which case the assets held by the conduit are aggregated with those of the bank.\n\nNot only are ABCP conduits set up by banks, there are also large issuers who set up their own conduits.\n\nFrom viewpoint of the number of originators throwing their receivables into the program, ABCP conduits are known as single originator and multiple originator conduits. In the latter case, the credit enhancements (and/or liquidity enhancements) are found both at the level of transfer by each originator (originator-level enhancement) and at the program level.\n\nBy the end of year 2001, the outstanding ABCP volume had reached USD 745 billion, up from USD 641 billion year-end 2000.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ConduitId",
+					"Description": "The unique identifier of a conduit.",
+					"BaseAttributeReference": {
+						"Entity": "Conduit.cdm.json/Conduit",
+						"Name": "ConduitId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ConduitName",
+					"Description": "The legal entity name of the Conduit.",
+					"BaseAttributeReference": {
+						"Entity": "Conduit.cdm.json/Conduit",
+						"Name": "ConduitName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "PartyId",
+					"Description": "The unique identifier of a Party.",
+					"BaseAttributeReference": {
+						"Entity": "Conduit.cdm.json/Conduit",
+						"Name": "PartyId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/Conduit",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/Conduit",
+				"Properties": {
+					"LinkedServiceName": "wspc-dpu-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ConduitId\":{\"entity\":\"Conduit.cdm.json/Conduit\",\"name\":\"ConduitId\"},\"ConduitName\":{\"entity\":\"Conduit.cdm.json/Conduit\",\"name\":\"ConduitName\"},\"PartyId\":{\"entity\":\"Conduit.cdm.json/Conduit\",\"name\":\"PartyId\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"Conduit\",\"path\":\"Conduit.cdm.json/Conduit\"},\"description\":\"A medium, or a legal vehicle. \\n\\nSpecific to securitizations, this means an entity formed to hold receivables transferred by the originator on behalf of the investors. \\n\\nIn pass through structures, an SPV is a mere conduit as it merely represents the collective property and cash flows of the investors. In case of asset-backed commercial paper it means the SPV which holds the receivables transferred by different originators, and issues commercial paper to raise money to buy the same.\\n\\nThe distinction between asset-backed securities and asset-backed commercial paper is primarily one of the tenure of the paper - commercial paper by definition is short-term funding, and is therefore mostly used for short-term assets such as trade receivables\\n\\nAsset-backed commercial paper (ABCP) is a device used by banks to get operating assets such as trade receivables funded by issuance of securities. Traditionally, banks devised ABCP conduits as a device to put their current asset credits off their balance sheets and yet provide liquidity support to their clients.\\n\\nFor example, assume Bank A has a client X, whose working capital needs are funded by the bank. If the bank wants to release the regulatory capital that is locked in this credit asset, the bank can set up a conduit, essentially an SPV that issues commercial paper. The conduit will buy the receivables of the client and get the same funded by issuance of commercial paper. The bank will be required to provide some liquidity support to the conduit, as it is practically impossible to match the maturities of the commercial paper to the realization of trade receivables. Thus, the credit asset is moved off the balance sheet giving the bank a regulatory relief.\\n\\nSo depending upon whether the bank provides full or partial liquidity support to the conduit, ABCP can be either fully supported or partly supported. \\n\\nABCP conduits are virtual subsets of the parent bank. If the bank provides full liquidity support to the conduit, for regulatory purposes, the liquidity support given by the bank may be treated as a direct credit substitute in which case the assets held by the conduit are aggregated with those of the bank.\\n\\nNot only are ABCP conduits set up by banks, there are also large issuers who set up their own conduits.\\n\\nFrom viewpoint of the number of originators throwing their receivables into the program, ABCP conduits are known as single originator and multiple originator conduits. In the latter case, the credit enhancements (and/or liquidity enhancements) are found both at the level of transfer by each originator (originator-level enhancement) and at the program level.\\n\\nBy the end of year 2001, the outstanding ABCP volume had reached USD 745 billion, up from USD 641 billion year-end 2000.\",\"primaryKey\":[\"ConduitId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"ConduitId\",\"attributeReference\":{\"entity\":\"Conduit.cdm.json/Conduit\",\"name\":\"ConduitId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ConduitName\",\"attributeReference\":{\"entity\":\"Conduit.cdm.json/Conduit\",\"name\":\"ConduitName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"PartyId\",\"attributeReference\":{\"entity\":\"Conduit.cdm.json/Conduit\",\"name\":\"PartyId\"},\"dataType\":\"long\"}]}}}",
+			"Description": "A medium, or a legal vehicle. \n\nSpecific to securitizations, this means an entity formed to hold receivables transferred by the originator on behalf of the investors. \n\nIn pass through structures, an SPV is a mere conduit as it merely represents the collective property and cash flows of the investors. In case of asset-backed commercial paper it means the SPV which holds the receivables transferred by different originators, and issues commercial paper to raise money to buy the same.\n\nThe distinction between asset-backed securities and asset-backed commercial paper is primarily one of the tenure of the paper - commercial paper by definition is short-term funding, and is therefore mostly used for short-term assets such as trade receivables\n\nAsset-backed commercial paper (ABCP) is a device used by banks to get operating assets such as trade receivables funded by issuance of securities. Traditionally, banks devised ABCP conduits as a device to put their current asset credits off their balance sheets and yet provide liquidity support to their clients.\n\nFor example, assume Bank A has a client X, whose working capital needs are funded by the bank. If the bank wants to release the regulatory capital that is locked in this credit asset, the bank can set up a conduit, essentially an SPV that issues commercial paper. The conduit will buy the receivables of the client and get the same funded by issuance of commercial paper. The bank will be required to provide some liquidity support to the conduit, as it is practically impossible to match the maturities of the commercial paper to the realization of trade receivables. Thus, the credit asset is moved off the balance sheet giving the bank a regulatory relief.\n\nSo depending upon whether the bank provides full or partial liquidity support to the conduit, ABCP can be either fully supported or partly supported. \n\nABCP conduits are virtual subsets of the parent bank. If the bank provides full liquidity support to the conduit, for regulatory purposes, the liquidity support given by the bank may be treated as a direct credit substitute in which case the assets held by the conduit are aggregated with those of the bank.\n\nNot only are ABCP conduits set up by banks, there are also large issuers who set up their own conduits.\n\nFrom viewpoint of the number of originators throwing their receivables into the program, ABCP conduits are known as single originator and multiple originator conduits. In the latter case, the credit enhancements (and/or liquidity enhancements) are found both at the level of transfer by each originator (originator-level enhancement) and at the program level.\n\nBy the end of year 2001, the outstanding ABCP volume had reached USD 745 billion, up from USD 641 billion year-end 2000.",
+			"DisplayFolderInfo": "{\"name\":\"Product\",\"colorCode\":\"#0E3D73\"}",
+			"PrimaryKeys": "ConduitId",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

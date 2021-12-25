@@ -1,0 +1,195 @@
+{
+	"name": "ProductRestriction",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "ProductRestriction",
+		"Description": "A restriction placed upon the use, procurement, operation or sales of the Product.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ProductId",
+					"Description": "The unique identifier of a Product.",
+					"BaseAttributeReference": {
+						"Entity": "ProductRestriction.cdm.json/ProductRestriction",
+						"Name": "ProductId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "RestrictionId",
+					"Description": "The unique identifier of a Restriction.",
+					"BaseAttributeReference": {
+						"Entity": "ProductRestriction.cdm.json/ProductRestriction",
+						"Name": "RestrictionId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "RestrictedByPartyId",
+					"Description": "The unique identifier of a Party.",
+					"BaseAttributeReference": {
+						"Entity": "ProductRestriction.cdm.json/ProductRestriction",
+						"Name": "RestrictedByPartyId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "RestrictionPeriodStartDate",
+					"Description": "The period start date that the associated restriction is applied.",
+					"BaseAttributeReference": {
+						"Entity": "ProductRestriction.cdm.json/ProductRestriction",
+						"Name": "RestrictionPeriodStartDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "RestrictionPeriodEndDate",
+					"Description": "The period end date that the associated restriction is applied.",
+					"BaseAttributeReference": {
+						"Entity": "ProductRestriction.cdm.json/ProductRestriction",
+						"Name": "RestrictionPeriodEndDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "GoverningStatuteName",
+					"Description": "The name of the governing statute.",
+					"BaseAttributeReference": {
+						"Entity": "ProductRestriction.cdm.json/ProductRestriction",
+						"Name": "GoverningStatuteName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "GoverningBodyName",
+					"Description": "The name of the governing body requiring or invoking the associated restriction.",
+					"BaseAttributeReference": {
+						"Entity": "ProductRestriction.cdm.json/ProductRestriction",
+						"Name": "GoverningBodyName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ProductRestrictionNote",
+					"Description": "A note, comment or additional information regarding the Product Restriction.",
+					"BaseAttributeReference": {
+						"Entity": "ProductRestriction.cdm.json/ProductRestriction",
+						"Name": "ProductRestrictionNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/ProductRestriction",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/ProductRestriction",
+				"Properties": {
+					"LinkedServiceName": "wspc-dpu-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ProductId\":{\"entity\":\"ProductRestriction.cdm.json/ProductRestriction\",\"name\":\"ProductId\"},\"RestrictionId\":{\"entity\":\"ProductRestriction.cdm.json/ProductRestriction\",\"name\":\"RestrictionId\"},\"RestrictedByPartyId\":{\"entity\":\"ProductRestriction.cdm.json/ProductRestriction\",\"name\":\"RestrictedByPartyId\"},\"RestrictionPeriodStartDate\":{\"entity\":\"ProductRestriction.cdm.json/ProductRestriction\",\"name\":\"RestrictionPeriodStartDate\"},\"RestrictionPeriodEndDate\":{\"entity\":\"ProductRestriction.cdm.json/ProductRestriction\",\"name\":\"RestrictionPeriodEndDate\"},\"GoverningStatuteName\":{\"entity\":\"ProductRestriction.cdm.json/ProductRestriction\",\"name\":\"GoverningStatuteName\"},\"GoverningBodyName\":{\"entity\":\"ProductRestriction.cdm.json/ProductRestriction\",\"name\":\"GoverningBodyName\"},\"ProductRestrictionNote\":{\"entity\":\"ProductRestriction.cdm.json/ProductRestriction\",\"name\":\"ProductRestrictionNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"ProductRestriction\",\"path\":\"ProductRestriction.cdm.json/ProductRestriction\"},\"description\":\"A restriction placed upon the use, procurement, operation or sales of the Product.\",\"primaryKey\":[\"ProductId\",\"RestrictionId\",\"RestrictedByPartyId\",\"RestrictionPeriodStartDate\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"ProductId\",\"attributeReference\":{\"entity\":\"ProductRestriction.cdm.json/ProductRestriction\",\"name\":\"ProductId\"},\"dataType\":\"long\"},{\"type\":\"Existing\",\"name\":\"RestrictionId\",\"attributeReference\":{\"entity\":\"ProductRestriction.cdm.json/ProductRestriction\",\"name\":\"RestrictionId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"RestrictedByPartyId\",\"attributeReference\":{\"entity\":\"ProductRestriction.cdm.json/ProductRestriction\",\"name\":\"RestrictedByPartyId\"},\"dataType\":\"long\"},{\"type\":\"Existing\",\"name\":\"RestrictionPeriodStartDate\",\"attributeReference\":{\"entity\":\"ProductRestriction.cdm.json/ProductRestriction\",\"name\":\"RestrictionPeriodStartDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\"},{\"type\":\"Existing\",\"name\":\"RestrictionPeriodEndDate\",\"attributeReference\":{\"entity\":\"ProductRestriction.cdm.json/ProductRestriction\",\"name\":\"RestrictionPeriodEndDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\"},{\"type\":\"Existing\",\"name\":\"GoverningStatuteName\",\"attributeReference\":{\"entity\":\"ProductRestriction.cdm.json/ProductRestriction\",\"name\":\"GoverningStatuteName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"GoverningBodyName\",\"attributeReference\":{\"entity\":\"ProductRestriction.cdm.json/ProductRestriction\",\"name\":\"GoverningBodyName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"ProductRestrictionNote\",\"attributeReference\":{\"entity\":\"ProductRestriction.cdm.json/ProductRestriction\",\"name\":\"ProductRestrictionNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024}]}}}",
+			"Description": "A restriction placed upon the use, procurement, operation or sales of the Product.",
+			"DisplayFolderInfo": "{\"name\":\"Product\",\"colorCode\":\"#0E3D73\"}",
+			"PrimaryKeys": "ProductId,RestrictionId,RestrictedByPartyId,RestrictionPeriodStartDate",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

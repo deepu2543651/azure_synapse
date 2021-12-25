@@ -1,0 +1,272 @@
+{
+	"name": "TvStation",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "TvStation",
+		"Description": "Television networks are simply identified as \"networks\" (such as ABC, CBS or NBC), while the local stations are identified by the station's call sign and city of license.\n\nTelevision stations that are either independent or affiliated with national networks.\n\nAffiliates agree to pre-empt time during specified hours for programming provided by the network and carry the advertising contained in the program.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "TvStationId",
+					"Description": "The unique identifier of an Affiliate TV Station.\n\nLocal television stations that are associated with a major network. Affiliates agree to preempt time during specified hours for programming provided by the network and carry the advertising contained in the program.",
+					"BaseAttributeReference": {
+						"Entity": "TvStation.cdm.json/TvStation",
+						"Name": "TvStationId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "TvStationCallSign",
+					"Description": "Assigned station identification.",
+					"BaseAttributeReference": {
+						"Entity": "TvStation.cdm.json/TvStation",
+						"Name": "TvStationCallSign"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "TvStationName",
+					"Description": "The name of the Affiliate TV Station.\n\nEx:\n- CBS Channel 7 Omaha, Nebraska",
+					"BaseAttributeReference": {
+						"Entity": "TvStation.cdm.json/TvStation",
+						"Name": "TvStationName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "LocationId",
+					"Description": "The unique identifier of a Location.",
+					"BaseAttributeReference": {
+						"Entity": "TvStation.cdm.json/TvStation",
+						"Name": "LocationId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "OwnedAndOperatedLocalStationIndicator",
+					"Description": "A local station owned and operated by a network. Federal statue limits the number of television O&O to five He and two UHF stations.",
+					"BaseAttributeReference": {
+						"Entity": "TvStation.cdm.json/TvStation",
+						"Name": "OwnedAndOperatedLocalStationIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "SuperstationIndicator",
+					"Description": "A TV station that receives its signals from satellite and transmits the signal to a receiver, which enables the receiver to view programming from greater distances.\n\nIndependent local stations that send their signals via satellite to cable operators\n that, in turn, make them available to subscribers (WWOR, WPIX, WGN, WSBK, WTBS).",
+					"BaseAttributeReference": {
+						"Entity": "TvStation.cdm.json/TvStation",
+						"Name": "SuperstationIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "UhfStationIndicator",
+					"Description": "Indicates that the TV station is a UHF station (Ultra High Frequency) broadcasting on the bands between channels 14-83.",
+					"BaseAttributeReference": {
+						"Entity": "TvStation.cdm.json/TvStation",
+						"Name": "UhfStationIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "VhfTvStationIndicator",
+					"Description": "Very High Frequency TV (channels 2-13) which have the greatest coverage area.\n\nUHF stations, for example, cover a much smaller area.",
+					"BaseAttributeReference": {
+						"Entity": "TvStation.cdm.json/TvStation",
+						"Name": "VhfTvStationIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "CableStationIndicator",
+					"Description": "A station that is available on cable only.",
+					"BaseAttributeReference": {
+						"Entity": "TvStation.cdm.json/TvStation",
+						"Name": "CableStationIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "SatelliteStationIndicator",
+					"Description": "A station that is available on satellite only.",
+					"BaseAttributeReference": {
+						"Entity": "TvStation.cdm.json/TvStation",
+						"Name": "SatelliteStationIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "AffiliateTvStationIndicator",
+					"Description": "Indicates a television station that has a contract with a network to carry the network's programs and announcements.",
+					"BaseAttributeReference": {
+						"Entity": "TvStation.cdm.json/TvStation",
+						"Name": "AffiliateTvStationIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "PartyId",
+					"Description": "The unique identifier of a Party.",
+					"BaseAttributeReference": {
+						"Entity": "TvStation.cdm.json/TvStation",
+						"Name": "PartyId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "TvNetworkId",
+					"Description": "The unique identifier of a TV Network.",
+					"BaseAttributeReference": {
+						"Entity": "TvStation.cdm.json/TvStation",
+						"Name": "TvNetworkId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/TvStation",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/TvStation",
+				"Properties": {
+					"LinkedServiceName": "wspc-dpu-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"TvStationId\":{\"entity\":\"TvStation.cdm.json/TvStation\",\"name\":\"TvStationId\"},\"TvStationCallSign\":{\"entity\":\"TvStation.cdm.json/TvStation\",\"name\":\"TvStationCallSign\"},\"TvStationName\":{\"entity\":\"TvStation.cdm.json/TvStation\",\"name\":\"TvStationName\"},\"LocationId\":{\"entity\":\"TvStation.cdm.json/TvStation\",\"name\":\"LocationId\"},\"OwnedAndOperatedLocalStationIndicator\":{\"entity\":\"TvStation.cdm.json/TvStation\",\"name\":\"OwnedAndOperatedLocalStationIndicator\"},\"SuperstationIndicator\":{\"entity\":\"TvStation.cdm.json/TvStation\",\"name\":\"SuperstationIndicator\"},\"UhfStationIndicator\":{\"entity\":\"TvStation.cdm.json/TvStation\",\"name\":\"UhfStationIndicator\"},\"VhfTvStationIndicator\":{\"entity\":\"TvStation.cdm.json/TvStation\",\"name\":\"VhfTvStationIndicator\"},\"CableStationIndicator\":{\"entity\":\"TvStation.cdm.json/TvStation\",\"name\":\"CableStationIndicator\"},\"SatelliteStationIndicator\":{\"entity\":\"TvStation.cdm.json/TvStation\",\"name\":\"SatelliteStationIndicator\"},\"AffiliateTvStationIndicator\":{\"entity\":\"TvStation.cdm.json/TvStation\",\"name\":\"AffiliateTvStationIndicator\"},\"PartyId\":{\"entity\":\"TvStation.cdm.json/TvStation\",\"name\":\"PartyId\"},\"TvNetworkId\":{\"entity\":\"TvStation.cdm.json/TvStation\",\"name\":\"TvNetworkId\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"TvStation\",\"path\":\"TvStation.cdm.json/TvStation\"},\"description\":\"Television networks are simply identified as \\\"networks\\\" (such as ABC, CBS or NBC), while the local stations are identified by the station's call sign and city of license.\\n\\nTelevision stations that are either independent or affiliated with national networks.\\n\\nAffiliates agree to pre-empt time during specified hours for programming provided by the network and carry the advertising contained in the program.\",\"primaryKey\":[\"TvStationId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"TvStationId\",\"attributeReference\":{\"entity\":\"TvStation.cdm.json/TvStation\",\"name\":\"TvStationId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"TvStationCallSign\",\"attributeReference\":{\"entity\":\"TvStation.cdm.json/TvStation\",\"name\":\"TvStationCallSign\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"TvStationName\",\"attributeReference\":{\"entity\":\"TvStation.cdm.json/TvStation\",\"name\":\"TvStationName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"LocationId\",\"attributeReference\":{\"entity\":\"TvStation.cdm.json/TvStation\",\"name\":\"LocationId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"OwnedAndOperatedLocalStationIndicator\",\"attributeReference\":{\"entity\":\"TvStation.cdm.json/TvStation\",\"name\":\"OwnedAndOperatedLocalStationIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"SuperstationIndicator\",\"attributeReference\":{\"entity\":\"TvStation.cdm.json/TvStation\",\"name\":\"SuperstationIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"UhfStationIndicator\",\"attributeReference\":{\"entity\":\"TvStation.cdm.json/TvStation\",\"name\":\"UhfStationIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"VhfTvStationIndicator\",\"attributeReference\":{\"entity\":\"TvStation.cdm.json/TvStation\",\"name\":\"VhfTvStationIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"CableStationIndicator\",\"attributeReference\":{\"entity\":\"TvStation.cdm.json/TvStation\",\"name\":\"CableStationIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"SatelliteStationIndicator\",\"attributeReference\":{\"entity\":\"TvStation.cdm.json/TvStation\",\"name\":\"SatelliteStationIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"AffiliateTvStationIndicator\",\"attributeReference\":{\"entity\":\"TvStation.cdm.json/TvStation\",\"name\":\"AffiliateTvStationIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"PartyId\",\"attributeReference\":{\"entity\":\"TvStation.cdm.json/TvStation\",\"name\":\"PartyId\"},\"dataType\":\"long\"},{\"type\":\"Existing\",\"name\":\"TvNetworkId\",\"attributeReference\":{\"entity\":\"TvStation.cdm.json/TvStation\",\"name\":\"TvNetworkId\"},\"dataType\":\"integer\"}]}}}",
+			"Description": "Television networks are simply identified as \"networks\" (such as ABC, CBS or NBC), while the local stations are identified by the station's call sign and city of license.\n\nTelevision stations that are either independent or affiliated with national networks.\n\nAffiliates agree to pre-empt time during specified hours for programming provided by the network and carry the advertising contained in the program.",
+			"DisplayFolderInfo": "{\"name\":\"Marketing & Advertising\",\"colorCode\":\"#692B0C\"}",
+			"PrimaryKeys": "TvStationId",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

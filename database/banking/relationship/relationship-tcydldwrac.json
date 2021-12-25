@@ -1,0 +1,26 @@
+{
+	"name": "relationship-tcydldwrac",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-tcydldwrac",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "NaicsNationalIndustry",
+		"ToTableName": "DunBradstreetReport",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "NaicsNationalIndustryCode",
+				"ToColumnName": "NaicsNationalIndustryCode"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"NaicsNationalIndustry.cdm.json/NaicsNationalIndustry\",\"toEntity\":\"DunBradstreetReport.cdm.json/DunBradstreetReport\",\"joinPairs\":[{\"fromAttribute\":\"NaicsNationalIndustryCode\",\"toAttribute\":\"NaicsNationalIndustryCode\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

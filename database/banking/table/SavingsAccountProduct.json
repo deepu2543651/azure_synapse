@@ -1,0 +1,378 @@
+{
+	"name": "SavingsAccountProduct",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "SavingsAccountProduct",
+		"Description": "Savings accounts are accounts maintained by commercial banks, savings and loan associations, credit unions, building societies and mutual savings banks that pay interest but may not be accessed directly via check.  These accounts let customers set aside a portion of their liquid assets while earning a monetary return.\n\nSome savings accounts require funds to be kept on deposit for a minimum length of time, but most permit unlimited access to funds. \n\nThe account holder may be able to access funds via an ATM or a debit card.\n\nIn the US, Regulation D, 12 CFR 204.2(d)(2)] limits the withdrawals, payments, and transfers that a savings account may perform.  Banks comply with these regulations differently; some will immediately prevent the transfer from happening, while others will allow the transfer to occur but will notify the account holder upon violation of the regulation. \n\nTrue savings accounts do not offer check-writing privileges, although many institutions will call their higher-interest demand accounts or money market accounts \"savings accounts.\"\n\nAll savings accounts offer itemized lists of all financial transactions, traditionally through a passbook, but also through a bank statement.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ProductId",
+					"Description": "The unique identifier of a Product.",
+					"BaseAttributeReference": {
+						"Entity": "SavingsAccountProduct.cdm.json/SavingsAccountProduct",
+						"Name": "ProductId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "InterestCompoundingPeriod",
+					"Description": "The period for which interest compounding is calculated for the checking account.",
+					"BaseAttributeReference": {
+						"Entity": "SavingsAccountProduct.cdm.json/SavingsAccountProduct",
+						"Name": "InterestCompoundingPeriod"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 3,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "InterestPaidPeriod",
+					"Description": "The period of days upon which interest is calculated and paid.",
+					"BaseAttributeReference": {
+						"Entity": "SavingsAccountProduct.cdm.json/SavingsAccountProduct",
+						"Name": "InterestPaidPeriod"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "GuaranteedMinimumInterestRatePercentage",
+					"Description": "The lowest minimum interest rate that will be paid on the savings account.",
+					"BaseAttributeReference": {
+						"Entity": "SavingsAccountProduct.cdm.json/SavingsAccountProduct",
+						"Name": "GuaranteedMinimumInterestRatePercentage"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "MinimumAccountOpeningAmountRequired",
+					"Description": "The minimum amount required to open a savings account.",
+					"BaseAttributeReference": {
+						"Entity": "SavingsAccountProduct.cdm.json/SavingsAccountProduct",
+						"Name": "MinimumAccountOpeningAmountRequired"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "MinimumDailyBalanceRequiredAmount",
+					"Description": "The minimum daily balance required to keep the savings account open without additional penalty fees.",
+					"BaseAttributeReference": {
+						"Entity": "SavingsAccountProduct.cdm.json/SavingsAccountProduct",
+						"Name": "MinimumDailyBalanceRequiredAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "MinimumBalanceRequiredToEarnInterest",
+					"Description": "The minimum amount required in order for the savings account to earn interest.",
+					"BaseAttributeReference": {
+						"Entity": "SavingsAccountProduct.cdm.json/SavingsAccountProduct",
+						"Name": "MinimumBalanceRequiredToEarnInterest"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "MinimumAutomaticTransferPerTransactionAmount",
+					"Description": "The minimum amount that must be transferred for each automatic transfer.",
+					"BaseAttributeReference": {
+						"Entity": "SavingsAccountProduct.cdm.json/SavingsAccountProduct",
+						"Name": "MinimumAutomaticTransferPerTransactionAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "SavingsAccountTypeId",
+					"Description": "The unique identifier of a Savings Account Type.",
+					"BaseAttributeReference": {
+						"Entity": "SavingsAccountProduct.cdm.json/SavingsAccountProduct",
+						"Name": "SavingsAccountTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "MinimumAgeToOpenAccount",
+					"Description": "The minimum age to open a savings account.",
+					"BaseAttributeReference": {
+						"Entity": "SavingsAccountProduct.cdm.json/SavingsAccountProduct",
+						"Name": "MinimumAgeToOpenAccount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "MaximumChecksPerMonth",
+					"Description": "The maximum number of checks that may be written per month without additional fees.",
+					"BaseAttributeReference": {
+						"Entity": "SavingsAccountProduct.cdm.json/SavingsAccountProduct",
+						"Name": "MaximumChecksPerMonth"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "AutomaticSavingsPlanIndicator",
+					"Description": "Indicates that the savings account is linked to an automatic savings plan.",
+					"BaseAttributeReference": {
+						"Entity": "SavingsAccountProduct.cdm.json/SavingsAccountProduct",
+						"Name": "AutomaticSavingsPlanIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "CheckWritingIndicator",
+					"Description": "Indicates that the savings account has check writing feature associated with it.",
+					"BaseAttributeReference": {
+						"Entity": "SavingsAccountProduct.cdm.json/SavingsAccountProduct",
+						"Name": "CheckWritingIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "ConsolidatedSavingsCheckingStatementIndicator",
+					"Description": "Indicates that consolidated savings and checking account statements are issued.",
+					"BaseAttributeReference": {
+						"Entity": "SavingsAccountProduct.cdm.json/SavingsAccountProduct",
+						"Name": "ConsolidatedSavingsCheckingStatementIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "24HourInformationLineIndicator",
+					"Description": "Indicates that the service offers a 24 hour information line.",
+					"BaseAttributeReference": {
+						"Entity": "SavingsAccountProduct.cdm.json/SavingsAccountProduct",
+						"Name": "24HourInformationLineIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "OnLineBankingAvailableIndicator",
+					"Description": "Indicates that the service offers a on-line banking.",
+					"BaseAttributeReference": {
+						"Entity": "SavingsAccountProduct.cdm.json/SavingsAccountProduct",
+						"Name": "OnLineBankingAvailableIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "MonthlyStatementsIndicator",
+					"Description": "Indicates that monthly statements are provided.",
+					"BaseAttributeReference": {
+						"Entity": "SavingsAccountProduct.cdm.json/SavingsAccountProduct",
+						"Name": "MonthlyStatementsIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "AtmAccessIndicator",
+					"Description": "Indicates that the savings plan has ATM access.",
+					"BaseAttributeReference": {
+						"Entity": "SavingsAccountProduct.cdm.json/SavingsAccountProduct",
+						"Name": "AtmAccessIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "PhoneBankingIndicator",
+					"Description": "Indicates that phone banking is included.",
+					"BaseAttributeReference": {
+						"Entity": "SavingsAccountProduct.cdm.json/SavingsAccountProduct",
+						"Name": "PhoneBankingIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/SavingsAccountProduct",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/SavingsAccountProduct",
+				"Properties": {
+					"LinkedServiceName": "wspc-dpu-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ProductId\":{\"entity\":\"SavingsAccountProduct.cdm.json/SavingsAccountProduct\",\"name\":\"ProductId\"},\"InterestCompoundingPeriod\":{\"entity\":\"SavingsAccountProduct.cdm.json/SavingsAccountProduct\",\"name\":\"InterestCompoundingPeriod\"},\"InterestPaidPeriod\":{\"entity\":\"SavingsAccountProduct.cdm.json/SavingsAccountProduct\",\"name\":\"InterestPaidPeriod\"},\"GuaranteedMinimumInterestRatePercentage\":{\"entity\":\"SavingsAccountProduct.cdm.json/SavingsAccountProduct\",\"name\":\"GuaranteedMinimumInterestRatePercentage\"},\"MinimumAccountOpeningAmountRequired\":{\"entity\":\"SavingsAccountProduct.cdm.json/SavingsAccountProduct\",\"name\":\"MinimumAccountOpeningAmountRequired\"},\"MinimumDailyBalanceRequiredAmount\":{\"entity\":\"SavingsAccountProduct.cdm.json/SavingsAccountProduct\",\"name\":\"MinimumDailyBalanceRequiredAmount\"},\"MinimumBalanceRequiredToEarnInterest\":{\"entity\":\"SavingsAccountProduct.cdm.json/SavingsAccountProduct\",\"name\":\"MinimumBalanceRequiredToEarnInterest\"},\"MinimumAutomaticTransferPerTransactionAmount\":{\"entity\":\"SavingsAccountProduct.cdm.json/SavingsAccountProduct\",\"name\":\"MinimumAutomaticTransferPerTransactionAmount\"},\"SavingsAccountTypeId\":{\"entity\":\"SavingsAccountProduct.cdm.json/SavingsAccountProduct\",\"name\":\"SavingsAccountTypeId\"},\"MinimumAgeToOpenAccount\":{\"entity\":\"SavingsAccountProduct.cdm.json/SavingsAccountProduct\",\"name\":\"MinimumAgeToOpenAccount\"},\"MaximumChecksPerMonth\":{\"entity\":\"SavingsAccountProduct.cdm.json/SavingsAccountProduct\",\"name\":\"MaximumChecksPerMonth\"},\"AutomaticSavingsPlanIndicator\":{\"entity\":\"SavingsAccountProduct.cdm.json/SavingsAccountProduct\",\"name\":\"AutomaticSavingsPlanIndicator\"},\"CheckWritingIndicator\":{\"entity\":\"SavingsAccountProduct.cdm.json/SavingsAccountProduct\",\"name\":\"CheckWritingIndicator\"},\"ConsolidatedSavingsCheckingStatementIndicator\":{\"entity\":\"SavingsAccountProduct.cdm.json/SavingsAccountProduct\",\"name\":\"ConsolidatedSavingsCheckingStatementIndicator\"},\"24HourInformationLineIndicator\":{\"entity\":\"SavingsAccountProduct.cdm.json/SavingsAccountProduct\",\"name\":\"24HourInformationLineIndicator\"},\"OnLineBankingAvailableIndicator\":{\"entity\":\"SavingsAccountProduct.cdm.json/SavingsAccountProduct\",\"name\":\"OnLineBankingAvailableIndicator\"},\"MonthlyStatementsIndicator\":{\"entity\":\"SavingsAccountProduct.cdm.json/SavingsAccountProduct\",\"name\":\"MonthlyStatementsIndicator\"},\"AtmAccessIndicator\":{\"entity\":\"SavingsAccountProduct.cdm.json/SavingsAccountProduct\",\"name\":\"AtmAccessIndicator\"},\"PhoneBankingIndicator\":{\"entity\":\"SavingsAccountProduct.cdm.json/SavingsAccountProduct\",\"name\":\"PhoneBankingIndicator\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"SavingsAccountProduct\",\"path\":\"SavingsAccountProduct.cdm.json/SavingsAccountProduct\"},\"description\":\"Savings accounts are accounts maintained by commercial banks, savings and loan associations, credit unions, building societies and mutual savings banks that pay interest but may not be accessed directly via check.  These accounts let customers set aside a portion of their liquid assets while earning a monetary return.\\n\\nSome savings accounts require funds to be kept on deposit for a minimum length of time, but most permit unlimited access to funds. \\n\\nThe account holder may be able to access funds via an ATM or a debit card.\\n\\nIn the US, Regulation D, 12 CFR 204.2(d)(2)] limits the withdrawals, payments, and transfers that a savings account may perform.  Banks comply with these regulations differently; some will immediately prevent the transfer from happening, while others will allow the transfer to occur but will notify the account holder upon violation of the regulation. \\n\\nTrue savings accounts do not offer check-writing privileges, although many institutions will call their higher-interest demand accounts or money market accounts \\\"savings accounts.\\\"\\n\\nAll savings accounts offer itemized lists of all financial transactions, traditionally through a passbook, but also through a bank statement.\",\"primaryKey\":[\"ProductId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"ProductId\",\"attributeReference\":{\"entity\":\"SavingsAccountProduct.cdm.json/SavingsAccountProduct\",\"name\":\"ProductId\"},\"dataType\":\"long\"},{\"type\":\"Existing\",\"name\":\"InterestCompoundingPeriod\",\"attributeReference\":{\"entity\":\"SavingsAccountProduct.cdm.json/SavingsAccountProduct\",\"name\":\"InterestCompoundingPeriod\"},\"dataType\":\"decimal\",\"dataTypeLength\":3,\"scale\":0},{\"type\":\"Existing\",\"name\":\"InterestPaidPeriod\",\"attributeReference\":{\"entity\":\"SavingsAccountProduct.cdm.json/SavingsAccountProduct\",\"name\":\"InterestPaidPeriod\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"GuaranteedMinimumInterestRatePercentage\",\"attributeReference\":{\"entity\":\"SavingsAccountProduct.cdm.json/SavingsAccountProduct\",\"name\":\"GuaranteedMinimumInterestRatePercentage\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":8},{\"type\":\"Existing\",\"name\":\"MinimumAccountOpeningAmountRequired\",\"attributeReference\":{\"entity\":\"SavingsAccountProduct.cdm.json/SavingsAccountProduct\",\"name\":\"MinimumAccountOpeningAmountRequired\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"MinimumDailyBalanceRequiredAmount\",\"attributeReference\":{\"entity\":\"SavingsAccountProduct.cdm.json/SavingsAccountProduct\",\"name\":\"MinimumDailyBalanceRequiredAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"MinimumBalanceRequiredToEarnInterest\",\"attributeReference\":{\"entity\":\"SavingsAccountProduct.cdm.json/SavingsAccountProduct\",\"name\":\"MinimumBalanceRequiredToEarnInterest\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"MinimumAutomaticTransferPerTransactionAmount\",\"attributeReference\":{\"entity\":\"SavingsAccountProduct.cdm.json/SavingsAccountProduct\",\"name\":\"MinimumAutomaticTransferPerTransactionAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"SavingsAccountTypeId\",\"attributeReference\":{\"entity\":\"SavingsAccountProduct.cdm.json/SavingsAccountProduct\",\"name\":\"SavingsAccountTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"MinimumAgeToOpenAccount\",\"attributeReference\":{\"entity\":\"SavingsAccountProduct.cdm.json/SavingsAccountProduct\",\"name\":\"MinimumAgeToOpenAccount\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"MaximumChecksPerMonth\",\"attributeReference\":{\"entity\":\"SavingsAccountProduct.cdm.json/SavingsAccountProduct\",\"name\":\"MaximumChecksPerMonth\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"AutomaticSavingsPlanIndicator\",\"attributeReference\":{\"entity\":\"SavingsAccountProduct.cdm.json/SavingsAccountProduct\",\"name\":\"AutomaticSavingsPlanIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"CheckWritingIndicator\",\"attributeReference\":{\"entity\":\"SavingsAccountProduct.cdm.json/SavingsAccountProduct\",\"name\":\"CheckWritingIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"ConsolidatedSavingsCheckingStatementIndicator\",\"attributeReference\":{\"entity\":\"SavingsAccountProduct.cdm.json/SavingsAccountProduct\",\"name\":\"ConsolidatedSavingsCheckingStatementIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"24HourInformationLineIndicator\",\"attributeReference\":{\"entity\":\"SavingsAccountProduct.cdm.json/SavingsAccountProduct\",\"name\":\"24HourInformationLineIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"OnLineBankingAvailableIndicator\",\"attributeReference\":{\"entity\":\"SavingsAccountProduct.cdm.json/SavingsAccountProduct\",\"name\":\"OnLineBankingAvailableIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"MonthlyStatementsIndicator\",\"attributeReference\":{\"entity\":\"SavingsAccountProduct.cdm.json/SavingsAccountProduct\",\"name\":\"MonthlyStatementsIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"AtmAccessIndicator\",\"attributeReference\":{\"entity\":\"SavingsAccountProduct.cdm.json/SavingsAccountProduct\",\"name\":\"AtmAccessIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"PhoneBankingIndicator\",\"attributeReference\":{\"entity\":\"SavingsAccountProduct.cdm.json/SavingsAccountProduct\",\"name\":\"PhoneBankingIndicator\"},\"dataType\":\"boolean\"}]}}}",
+			"Description": "Savings accounts are accounts maintained by commercial banks, savings and loan associations, credit unions, building societies and mutual savings banks that pay interest but may not be accessed directly via check.  These accounts let customers set aside a portion of their liquid assets while earning a monetary return.\n\nSome savings accounts require funds to be kept on deposit for a minimum length of time, but most permit unlimited access to funds. \n\nThe account holder may be able to access funds via an ATM or a debit card.\n\nIn the US, Regulation D, 12 CFR 204.2(d)(2)] limits the withdrawals, payments, and transfers that a savings account may perform.  Banks comply with these regulations differently; some will immediately prevent the transfer from happening, while others will allow the transfer to occur but will notify the account holder upon violation of the regulation. \n\nTrue savings accounts do not offer check-writing privileges, although many institutions will call their higher-interest demand accounts or money market accounts \"savings accounts.\"\n\nAll savings accounts offer itemized lists of all financial transactions, traditionally through a passbook, but also through a bank statement.",
+			"DisplayFolderInfo": "{\"name\":\"Product\",\"colorCode\":\"#0E3D73\"}",
+			"PrimaryKeys": "ProductId",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

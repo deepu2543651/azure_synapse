@@ -1,0 +1,112 @@
+{
+	"name": "ProductSuitabilityRating",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "ProductSuitabilityRating",
+		"Description": "A rating that reflect how suitable or applicable a product is for the associated Customer Account.\n\nEx:\n- High suitability\n- Moderate Suitability\n- Low suitability\n- Unsuitable",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ProductSuitabilityRatingId",
+					"Description": "The unique identifier of a Product Suitability Rating.",
+					"BaseAttributeReference": {
+						"Entity": "ProductSuitabilityRating.cdm.json/ProductSuitabilityRating",
+						"Name": "ProductSuitabilityRatingId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ProductSuitabilityRatingName",
+					"Description": "The name of a Product Suitability Rating.",
+					"BaseAttributeReference": {
+						"Entity": "ProductSuitabilityRating.cdm.json/ProductSuitabilityRating",
+						"Name": "ProductSuitabilityRatingName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ProductSuitabilityRatingDescription",
+					"Description": "The description of a Product Suitability Rating.",
+					"BaseAttributeReference": {
+						"Entity": "ProductSuitabilityRating.cdm.json/ProductSuitabilityRating",
+						"Name": "ProductSuitabilityRatingDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/ProductSuitabilityRating",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/ProductSuitabilityRating",
+				"Properties": {
+					"LinkedServiceName": "wspc-dpu-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ProductSuitabilityRatingId\":{\"entity\":\"ProductSuitabilityRating.cdm.json/ProductSuitabilityRating\",\"name\":\"ProductSuitabilityRatingId\"},\"ProductSuitabilityRatingName\":{\"entity\":\"ProductSuitabilityRating.cdm.json/ProductSuitabilityRating\",\"name\":\"ProductSuitabilityRatingName\"},\"ProductSuitabilityRatingDescription\":{\"entity\":\"ProductSuitabilityRating.cdm.json/ProductSuitabilityRating\",\"name\":\"ProductSuitabilityRatingDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"ProductSuitabilityRating\",\"path\":\"ProductSuitabilityRating.cdm.json/ProductSuitabilityRating\"},\"description\":\"A rating that reflect how suitable or applicable a product is for the associated Customer Account.\\n\\nEx:\\n- High suitability\\n- Moderate Suitability\\n- Low suitability\\n- Unsuitable\",\"primaryKey\":[\"ProductSuitabilityRatingId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"ProductSuitabilityRatingId\",\"attributeReference\":{\"entity\":\"ProductSuitabilityRating.cdm.json/ProductSuitabilityRating\",\"name\":\"ProductSuitabilityRatingId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ProductSuitabilityRatingName\",\"attributeReference\":{\"entity\":\"ProductSuitabilityRating.cdm.json/ProductSuitabilityRating\",\"name\":\"ProductSuitabilityRatingName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"ProductSuitabilityRatingDescription\",\"attributeReference\":{\"entity\":\"ProductSuitabilityRating.cdm.json/ProductSuitabilityRating\",\"name\":\"ProductSuitabilityRatingDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512}]}}}",
+			"Description": "A rating that reflect how suitable or applicable a product is for the associated Customer Account.\n\nEx:\n- High suitability\n- Moderate Suitability\n- Low suitability\n- Unsuitable",
+			"DisplayFolderInfo": "{\"name\":\"Customer Account\",\"colorCode\":\"#E3008C\"}",
+			"PrimaryKeys": "ProductSuitabilityRatingId",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

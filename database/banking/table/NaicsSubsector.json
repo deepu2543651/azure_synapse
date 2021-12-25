@@ -1,0 +1,132 @@
+{
+	"name": "NaicsSubsector",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "NaicsSubsector",
+		"Description": "The NAICS Subsector.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "NaicsSubsectorCode",
+					"Description": "The unique identifier of a NAICS Subsector.",
+					"BaseAttributeReference": {
+						"Entity": "NaicsSubsector.cdm.json/NaicsSubsector",
+						"Name": "NaicsSubsectorCode"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Precision": 3,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "NaicsSubsectorName",
+					"Description": "The name of a NAICS Subsector.",
+					"BaseAttributeReference": {
+						"Entity": "NaicsSubsector.cdm.json/NaicsSubsector",
+						"Name": "NaicsSubsectorName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "NaicsSubsectorDescription",
+					"Description": "The description of a NAICS Subsector.",
+					"BaseAttributeReference": {
+						"Entity": "NaicsSubsector.cdm.json/NaicsSubsector",
+						"Name": "NaicsSubsectorDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "NaicsSectorCode",
+					"Description": "The unique identifier of a NAICS Sector.",
+					"BaseAttributeReference": {
+						"Entity": "NaicsSubsector.cdm.json/NaicsSubsector",
+						"Name": "NaicsSectorCode"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Precision": 2,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/NaicsSubsector",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/NaicsSubsector",
+				"Properties": {
+					"LinkedServiceName": "wspc-dpu-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"NaicsSubsectorCode\":{\"entity\":\"NaicsSubsector.cdm.json/NaicsSubsector\",\"name\":\"NaicsSubsectorCode\"},\"NaicsSubsectorName\":{\"entity\":\"NaicsSubsector.cdm.json/NaicsSubsector\",\"name\":\"NaicsSubsectorName\"},\"NaicsSubsectorDescription\":{\"entity\":\"NaicsSubsector.cdm.json/NaicsSubsector\",\"name\":\"NaicsSubsectorDescription\"},\"NaicsSectorCode\":{\"entity\":\"NaicsSubsector.cdm.json/NaicsSubsector\",\"name\":\"NaicsSectorCode\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"NaicsSubsector\",\"path\":\"NaicsSubsector.cdm.json/NaicsSubsector\"},\"description\":\"The NAICS Subsector.\",\"primaryKey\":[\"NaicsSubsectorCode\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"NaicsSubsectorCode\",\"attributeReference\":{\"entity\":\"NaicsSubsector.cdm.json/NaicsSubsector\",\"name\":\"NaicsSubsectorCode\"},\"dataType\":\"decimal\",\"dataTypeLength\":3,\"scale\":0},{\"type\":\"Existing\",\"name\":\"NaicsSubsectorName\",\"attributeReference\":{\"entity\":\"NaicsSubsector.cdm.json/NaicsSubsector\",\"name\":\"NaicsSubsectorName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"NaicsSubsectorDescription\",\"attributeReference\":{\"entity\":\"NaicsSubsector.cdm.json/NaicsSubsector\",\"name\":\"NaicsSubsectorDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512},{\"type\":\"Existing\",\"name\":\"NaicsSectorCode\",\"attributeReference\":{\"entity\":\"NaicsSubsector.cdm.json/NaicsSubsector\",\"name\":\"NaicsSectorCode\"},\"dataType\":\"decimal\",\"dataTypeLength\":2,\"scale\":0}]}}}",
+			"Description": "The NAICS Subsector.",
+			"DisplayFolderInfo": "{\"name\":\"Party\",\"colorCode\":\"#00727A\"}",
+			"PrimaryKeys": "NaicsSubsectorCode",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

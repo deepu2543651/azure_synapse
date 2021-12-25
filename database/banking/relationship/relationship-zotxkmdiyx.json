@@ -1,0 +1,26 @@
+{
+	"name": "relationship-zotxkmdiyx",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-zotxkmdiyx",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "CustomerAccountType",
+		"ToTableName": "CustomerAccountTypePeriod",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "CustomerAccountTypeId",
+				"ToColumnName": "CustomerAccountTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"CustomerAccountType.cdm.json/CustomerAccountType\",\"toEntity\":\"CustomerAccountTypePeriod.cdm.json/CustomerAccountTypePeriod\",\"joinPairs\":[{\"fromAttribute\":\"CustomerAccountTypeId\",\"toAttribute\":\"CustomerAccountTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

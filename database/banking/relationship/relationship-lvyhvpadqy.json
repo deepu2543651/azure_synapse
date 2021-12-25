@@ -1,0 +1,34 @@
+{
+	"name": "relationship-lvyhvpadqy",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-lvyhvpadqy",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "ProductOption",
+		"ToTableName": "CustomerAccountProductOption",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "PeriodStartDate",
+				"ToColumnName": "PeriodStartDate"
+			},
+			{
+				"FromColumnName": "ProductId",
+				"ToColumnName": "ProductId"
+			},
+			{
+				"FromColumnName": "ProductOptionTypeId",
+				"ToColumnName": "ProductOptionTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"ProductOption.cdm.json/ProductOption\",\"toEntity\":\"CustomerAccountProductOption.cdm.json/CustomerAccountProductOption\",\"joinPairs\":[{\"fromAttribute\":\"PeriodStartDate\",\"toAttribute\":\"PeriodStartDate\"},{\"fromAttribute\":\"ProductId\",\"toAttribute\":\"ProductId\"},{\"fromAttribute\":\"ProductOptionTypeId\",\"toAttribute\":\"ProductOptionTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

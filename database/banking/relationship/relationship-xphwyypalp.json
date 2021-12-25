@@ -1,0 +1,26 @@
+{
+	"name": "relationship-xphwyypalp",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-xphwyypalp",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "CustomerAccountRelationshipType",
+		"ToTableName": "RelatedCustomerAccount",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "CustomerAccountRelationshipTypeId",
+				"ToColumnName": "CustomerAccountRelationshipTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"CustomerAccountRelationshipType.cdm.json/CustomerAccountRelationshipType\",\"toEntity\":\"RelatedCustomerAccount.cdm.json/RelatedCustomerAccount\",\"joinPairs\":[{\"fromAttribute\":\"CustomerAccountRelationshipTypeId\",\"toAttribute\":\"CustomerAccountRelationshipTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

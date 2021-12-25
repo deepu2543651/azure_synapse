@@ -1,0 +1,26 @@
+{
+	"name": "relationship-rwgyqskbjp",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-rwgyqskbjp",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Channel",
+		"ToTableName": "ChannelAvailableProduct",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ChannelId",
+				"ToColumnName": "ChannelId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Channel.cdm.json/Channel\",\"toEntity\":\"ChannelAvailableProduct.cdm.json/ChannelAvailableProduct\",\"joinPairs\":[{\"fromAttribute\":\"ChannelId\",\"toAttribute\":\"ChannelId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

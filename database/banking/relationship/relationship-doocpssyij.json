@@ -1,0 +1,26 @@
+{
+	"name": "relationship-doocpssyij",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-doocpssyij",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "CustomerAssetType",
+		"ToTableName": "ProductEligibleCustomerAssetType",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "CustomerAssetTypeId",
+				"ToColumnName": "CustomerAssetTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"CustomerAssetType.cdm.json/CustomerAssetType\",\"toEntity\":\"ProductEligibleCustomerAssetType.cdm.json/ProductEligibleCustomerAssetType\",\"joinPairs\":[{\"fromAttribute\":\"CustomerAssetTypeId\",\"toAttribute\":\"CustomerAssetTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

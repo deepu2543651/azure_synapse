@@ -1,0 +1,26 @@
+{
+	"name": "relationship-bovzdfeghp",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-bovzdfeghp",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Party",
+		"ToTableName": "MarketingEventTargetParty",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "PartyId",
+				"ToColumnName": "PartyId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Party.cdm.json/Party\",\"toEntity\":\"MarketingEventTargetParty.cdm.json/MarketingEventTargetParty\",\"joinPairs\":[{\"fromAttribute\":\"PartyId\",\"toAttribute\":\"PartyId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

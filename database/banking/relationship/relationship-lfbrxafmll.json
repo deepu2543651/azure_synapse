@@ -1,0 +1,26 @@
+{
+	"name": "relationship-lfbrxafmll",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-lfbrxafmll",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "ServiceRequest",
+		"ToTableName": "ServiceRequestCharge",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ServiceRequestId",
+				"ToColumnName": "ServiceRequestId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"ServiceRequest.cdm.json/ServiceRequest\",\"toEntity\":\"ServiceRequestCharge.cdm.json/ServiceRequestCharge\",\"joinPairs\":[{\"fromAttribute\":\"ServiceRequestId\",\"toAttribute\":\"ServiceRequestId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

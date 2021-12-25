@@ -1,0 +1,23 @@
+{
+	"name": "banking",
+	"properties": {
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"Properties": {
+			"IsSyMSCDMDatabase": true,
+			"DerivedModelDBInfo": "{\"ModelDirectives\":{\"BaseModel\":{\"Name\":\"Banking\",\"Version\":\"0.1.0\"}}}"
+		},
+		"Name": "banking",
+		"EntityType": "DATABASE",
+		"Source": {
+			"Provider": "ADLS",
+			"Location": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test",
+			"Properties": {
+				"FormatType": "csv",
+				"LinkedServiceName": "wspc-dpu-WorkspaceDefaultStorage"
+			}
+		}
+	},
+	"type": "DATABASE"
+}

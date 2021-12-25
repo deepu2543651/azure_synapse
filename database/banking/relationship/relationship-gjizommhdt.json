@@ -1,0 +1,26 @@
+{
+	"name": "relationship-gjizommhdt",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-gjizommhdt",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "GovernmentSecurityProductType",
+		"ToTableName": "GovernmentSecurityProduct",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "GovernmentSecurityProductTypeId",
+				"ToColumnName": "GovernmentSecurityProductTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"GovernmentSecurityProductType.cdm.json/GovernmentSecurityProductType\",\"toEntity\":\"GovernmentSecurityProduct.cdm.json/GovernmentSecurityProduct\",\"joinPairs\":[{\"fromAttribute\":\"GovernmentSecurityProductTypeId\",\"toAttribute\":\"GovernmentSecurityProductTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

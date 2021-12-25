@@ -1,0 +1,26 @@
+{
+	"name": "relationship-qqawvhgozp",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-qqawvhgozp",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "MediaCategory",
+		"ToTableName": "AdvertisingCollateralType",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "MediaCategoryId",
+				"ToColumnName": "MediaCategoryId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"MediaCategory.cdm.json/MediaCategory\",\"toEntity\":\"AdvertisingCollateralType.cdm.json/AdvertisingCollateralType\",\"joinPairs\":[{\"fromAttribute\":\"MediaCategoryId\",\"toAttribute\":\"MediaCategoryId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

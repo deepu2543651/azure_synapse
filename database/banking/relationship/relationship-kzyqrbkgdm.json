@@ -1,0 +1,26 @@
+{
+	"name": "relationship-kzyqrbkgdm",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-kzyqrbkgdm",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "LoanConversionOption",
+		"ToTableName": "CommercialMortgageLoanProduct",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "LoanConversionOptionId",
+				"ToColumnName": "LoanConversionOptionId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"LoanConversionOption.cdm.json/LoanConversionOption\",\"toEntity\":\"CommercialMortgageLoanProduct.cdm.json/CommercialMortgageLoanProduct\",\"joinPairs\":[{\"fromAttribute\":\"LoanConversionOptionId\",\"toAttribute\":\"LoanConversionOptionId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

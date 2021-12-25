@@ -1,0 +1,26 @@
+{
+	"name": "relationship-eravpddubq",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-eravpddubq",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Customer",
+		"ToTableName": "CustomerAssetOwnership",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "CustomerId",
+				"ToColumnName": "CustomerId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Customer.cdm.json/Customer\",\"toEntity\":\"CustomerAssetOwnership.cdm.json/CustomerAssetOwnership\",\"joinPairs\":[{\"fromAttribute\":\"CustomerId\",\"toAttribute\":\"CustomerId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

@@ -1,0 +1,26 @@
+{
+	"name": "relationship-wwwcewdvok",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-wwwcewdvok",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "FinancialInstitution",
+		"ToTableName": "BankIdentificationNumber",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "FinancialInstitutionId",
+				"ToColumnName": "FinancialInstitutionId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"FinancialInstitution.cdm.json/FinancialInstitution\",\"toEntity\":\"BankIdentificationNumber.cdm.json/BankIdentificationNumber\",\"joinPairs\":[{\"fromAttribute\":\"FinancialInstitutionId\",\"toAttribute\":\"FinancialInstitutionId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

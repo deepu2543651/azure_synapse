@@ -1,0 +1,26 @@
+{
+	"name": "relationship-owpcfmjcsd",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-owpcfmjcsd",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "MarketSegment",
+		"ToTableName": "ProductTargetMarketSegment",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "MarketSegmentId",
+				"ToColumnName": "MarketSegmentId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"MarketSegment.cdm.json/MarketSegment\",\"toEntity\":\"ProductTargetMarketSegment.cdm.json/ProductTargetMarketSegment\",\"joinPairs\":[{\"fromAttribute\":\"MarketSegmentId\",\"toAttribute\":\"MarketSegmentId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

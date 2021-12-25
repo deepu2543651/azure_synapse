@@ -1,0 +1,26 @@
+{
+	"name": "relationship-qfiahdplnz",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-qfiahdplnz",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "BankersAcceptanceType",
+		"ToTableName": "BankersAcceptance",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "BankersAcceptanceTypeId",
+				"ToColumnName": "BankersAcceptanceTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"BankersAcceptanceType.cdm.json/BankersAcceptanceType\",\"toEntity\":\"BankersAcceptance.cdm.json/BankersAcceptance\",\"joinPairs\":[{\"fromAttribute\":\"BankersAcceptanceTypeId\",\"toAttribute\":\"BankersAcceptanceTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

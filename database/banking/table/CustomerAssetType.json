@@ -1,0 +1,112 @@
+{
+	"name": "CustomerAssetType",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "CustomerAssetType",
+		"Description": "A categorization of customer assets based on function, form and similar criteria.\n\nEx:\n- Treasury bonds\n- Personal vehicle\n- Land\n- Building\n- Residential property\n- Primary Residence\n- Investment Property\n- Second or Vacation Home\n- Cash\n- Real Property\n- Equities\n- Lease\n- Intellectual Property\n- Right\n- Software\n- Furniture\n- Computer\n- Machinery",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "CustomerAssetTypeId",
+					"Description": "The unique identifier of a Customer Asset Type.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAssetType.cdm.json/CustomerAssetType",
+						"Name": "CustomerAssetTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "CustomerAssetTypeName",
+					"Description": "The name of a Customer Asset Type.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAssetType.cdm.json/CustomerAssetType",
+						"Name": "CustomerAssetTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "CustomerAssetTypeDescription",
+					"Description": "The description of a Customer Asset Type.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAssetType.cdm.json/CustomerAssetType",
+						"Name": "CustomerAssetTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/CustomerAssetType",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/CustomerAssetType",
+				"Properties": {
+					"LinkedServiceName": "wspc-dpu-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"CustomerAssetTypeId\":{\"entity\":\"CustomerAssetType.cdm.json/CustomerAssetType\",\"name\":\"CustomerAssetTypeId\"},\"CustomerAssetTypeName\":{\"entity\":\"CustomerAssetType.cdm.json/CustomerAssetType\",\"name\":\"CustomerAssetTypeName\"},\"CustomerAssetTypeDescription\":{\"entity\":\"CustomerAssetType.cdm.json/CustomerAssetType\",\"name\":\"CustomerAssetTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"CustomerAssetType\",\"path\":\"CustomerAssetType.cdm.json/CustomerAssetType\"},\"description\":\"A categorization of customer assets based on function, form and similar criteria.\\n\\nEx:\\n- Treasury bonds\\n- Personal vehicle\\n- Land\\n- Building\\n- Residential property\\n- Primary Residence\\n- Investment Property\\n- Second or Vacation Home\\n- Cash\\n- Real Property\\n- Equities\\n- Lease\\n- Intellectual Property\\n- Right\\n- Software\\n- Furniture\\n- Computer\\n- Machinery\",\"primaryKey\":[\"CustomerAssetTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"CustomerAssetTypeId\",\"attributeReference\":{\"entity\":\"CustomerAssetType.cdm.json/CustomerAssetType\",\"name\":\"CustomerAssetTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"CustomerAssetTypeName\",\"attributeReference\":{\"entity\":\"CustomerAssetType.cdm.json/CustomerAssetType\",\"name\":\"CustomerAssetTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"CustomerAssetTypeDescription\",\"attributeReference\":{\"entity\":\"CustomerAssetType.cdm.json/CustomerAssetType\",\"name\":\"CustomerAssetTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512}]}}}",
+			"Description": "A categorization of customer assets based on function, form and similar criteria.\n\nEx:\n- Treasury bonds\n- Personal vehicle\n- Land\n- Building\n- Residential property\n- Primary Residence\n- Investment Property\n- Second or Vacation Home\n- Cash\n- Real Property\n- Equities\n- Lease\n- Intellectual Property\n- Right\n- Software\n- Furniture\n- Computer\n- Machinery",
+			"DisplayFolderInfo": "{\"name\":\"Customer Credit & Collections\",\"colorCode\":\"#022F22\"}",
+			"PrimaryKeys": "CustomerAssetTypeId",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

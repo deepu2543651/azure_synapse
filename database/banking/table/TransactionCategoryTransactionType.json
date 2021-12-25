@@ -1,0 +1,145 @@
+{
+	"name": "TransactionCategoryTransactionType",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "TransactionCategoryTransactionType",
+		"Description": "The category(s) that a Transaction Type is part of.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "TransactionCategoryId",
+					"Description": "The unique identifier of a Transaction Category.",
+					"BaseAttributeReference": {
+						"Entity": "TransactionCategoryTransactionType.cdm.json/TransactionCategoryTransactionType",
+						"Name": "TransactionCategoryId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "TransactionTypeId",
+					"Description": "The unique identifier of a Transaction Type.",
+					"BaseAttributeReference": {
+						"Entity": "TransactionCategoryTransactionType.cdm.json/TransactionCategoryTransactionType",
+						"Name": "TransactionTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PeriodStartDate",
+					"Description": "The period start date for which the Transaction Category included the Transaction Type.",
+					"BaseAttributeReference": {
+						"Entity": "TransactionCategoryTransactionType.cdm.json/TransactionCategoryTransactionType",
+						"Name": "PeriodStartDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "PeriodEndDate",
+					"Description": "The period end date for which the Transaction Category included the Transaction Type.",
+					"BaseAttributeReference": {
+						"Entity": "TransactionCategoryTransactionType.cdm.json/TransactionCategoryTransactionType",
+						"Name": "PeriodEndDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "TransactionCategoryTransactionTypeNote",
+					"Description": "A note, comment or additional information regarding a Transaction Category Transaction Type.",
+					"BaseAttributeReference": {
+						"Entity": "TransactionCategoryTransactionType.cdm.json/TransactionCategoryTransactionType",
+						"Name": "TransactionCategoryTransactionTypeNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/TransactionCategoryTransactionType",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/TransactionCategoryTransactionType",
+				"Properties": {
+					"LinkedServiceName": "wspc-dpu-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"TransactionCategoryId\":{\"entity\":\"TransactionCategoryTransactionType.cdm.json/TransactionCategoryTransactionType\",\"name\":\"TransactionCategoryId\"},\"TransactionTypeId\":{\"entity\":\"TransactionCategoryTransactionType.cdm.json/TransactionCategoryTransactionType\",\"name\":\"TransactionTypeId\"},\"PeriodStartDate\":{\"entity\":\"TransactionCategoryTransactionType.cdm.json/TransactionCategoryTransactionType\",\"name\":\"PeriodStartDate\"},\"PeriodEndDate\":{\"entity\":\"TransactionCategoryTransactionType.cdm.json/TransactionCategoryTransactionType\",\"name\":\"PeriodEndDate\"},\"TransactionCategoryTransactionTypeNote\":{\"entity\":\"TransactionCategoryTransactionType.cdm.json/TransactionCategoryTransactionType\",\"name\":\"TransactionCategoryTransactionTypeNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"TransactionCategoryTransactionType\",\"path\":\"TransactionCategoryTransactionType.cdm.json/TransactionCategoryTransactionType\"},\"description\":\"The category(s) that a Transaction Type is part of.\",\"primaryKey\":[\"TransactionCategoryId\",\"TransactionTypeId\",\"PeriodStartDate\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"TransactionCategoryId\",\"attributeReference\":{\"entity\":\"TransactionCategoryTransactionType.cdm.json/TransactionCategoryTransactionType\",\"name\":\"TransactionCategoryId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"TransactionTypeId\",\"attributeReference\":{\"entity\":\"TransactionCategoryTransactionType.cdm.json/TransactionCategoryTransactionType\",\"name\":\"TransactionTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"PeriodStartDate\",\"attributeReference\":{\"entity\":\"TransactionCategoryTransactionType.cdm.json/TransactionCategoryTransactionType\",\"name\":\"PeriodStartDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\"},{\"type\":\"Existing\",\"name\":\"PeriodEndDate\",\"attributeReference\":{\"entity\":\"TransactionCategoryTransactionType.cdm.json/TransactionCategoryTransactionType\",\"name\":\"PeriodEndDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\"},{\"type\":\"Existing\",\"name\":\"TransactionCategoryTransactionTypeNote\",\"attributeReference\":{\"entity\":\"TransactionCategoryTransactionType.cdm.json/TransactionCategoryTransactionType\",\"name\":\"TransactionCategoryTransactionTypeNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024}]}}}",
+			"Description": "The category(s) that a Transaction Type is part of.",
+			"DisplayFolderInfo": "{\"name\":\"Transaction\",\"colorCode\":\"#823A16\"}",
+			"PrimaryKeys": "TransactionCategoryId,TransactionTypeId,PeriodStartDate",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

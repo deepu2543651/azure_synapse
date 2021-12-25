@@ -1,0 +1,26 @@
+{
+	"name": "relationship-akdwecxdxz",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-akdwecxdxz",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "SatisfactionRating",
+		"ToTableName": "CustomerAccountSatisfactionRating",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "SatisfactionRatingId",
+				"ToColumnName": "SatisfactionRatingId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"SatisfactionRating.cdm.json/SatisfactionRating\",\"toEntity\":\"CustomerAccountSatisfactionRating.cdm.json/CustomerAccountSatisfactionRating\",\"joinPairs\":[{\"fromAttribute\":\"SatisfactionRatingId\",\"toAttribute\":\"SatisfactionRatingId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

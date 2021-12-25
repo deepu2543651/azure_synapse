@@ -1,0 +1,112 @@
+{
+	"name": "BankProductOptionType",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "BankProductOptionType",
+		"Description": "An option that is standard for or may be added-to a retail banking product for a fee to give it additional functionality or features.\n\nThis is where you would aggregate all the options available to the individual retail banking products if you wanted to maintain them in one place.\n\nSavings Account Option Examples:\n- Overdraft protection\n- Check writing\n- Check card\n- ATM card\n\nChecking Account Option Examples:\n- Monthly check return\n- ATM \n- Payment Card\n- Overdraft protection\n- Direct Deposit\n- Online statements\n\nCD Option Examples:\n- Automatic Renewal\n- Passbook\n- Paper Certificate\n- Mail interest by check\n- Transfer Interest to Savings Account\n- Transfer Interest to Checking Account\n- Interest is paid out\n- Interest accrues\n- CD starts earning interest from date of deposit\n- CD starts earning interest from start of next month \n- CD starts earning interest from start of next quarter\n\nMortgage Loan Option Examples:\n- Borrowers Protection Plan\n- Combination Mortgage (mortgage + line of credit)\n- Automatic Loan Payments\n\nPersonal Line of Credit Option Examples:\n- Line of Credit checks\n- Monthly statements\n- Cash advances at ATM's\n\nHome Equity Line of Credit Option Examples:\n- Linked to checking account\n- Linked to payment card\n\nHome Equity Loan Option Examples:\n- Buyers Protection Plan\n- Insurance\n- Direct payments using automatic payments from savings or checking account\n\nVehicle Loan Option Examples:\n- Automatic Payments\n- Payment Protection\n- Vehicle Insurance\n\nPersonal Loan Option Examples:\n- Automatic Payments\n- Payment Protection Insurance\n- Involuntary Unemployment Insurance\n\nPayment Card Examples:\n- Additional Cards\n- ATM Advances\n- Auto Rental Insurance\n- Automatic Payments\n- Cash Advance Checks\n- Cash Advances\n- Credit Report\n- Discount On-Line Shopping\n- Discount Shopping\n- Early Warning Service\n- Emergency Roadside Assistance\n- Interest-free Grace Period.\n- Life Insurance\n- Lost Payment Card Service\n- Overdraft Protection\n- Payment Protection\n- Payment Protection - Disability\n- Payment Protection - Family Leave\n- Payment Protection - Life\n- Payment Protection - Unemployment\n- Purchase Assurance\n- Travel Accident Insurance\n- Travel Incentives",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ProductOptionTypeId",
+					"Description": "The unique identifier of a Product Option Type.",
+					"BaseAttributeReference": {
+						"Entity": "BankProductOptionType.cdm.json/BankProductOptionType",
+						"Name": "ProductOptionTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ProductOptionTypeName",
+					"Description": "The name of a Product Option Type.",
+					"BaseAttributeReference": {
+						"Entity": "BankProductOptionType.cdm.json/BankProductOptionType",
+						"Name": "ProductOptionTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ProductOptionTypeDescription",
+					"Description": "The description of a Product Option Type.",
+					"BaseAttributeReference": {
+						"Entity": "BankProductOptionType.cdm.json/BankProductOptionType",
+						"Name": "ProductOptionTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/BankProductOptionType",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/BankProductOptionType",
+				"Properties": {
+					"LinkedServiceName": "wspc-dpu-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ProductOptionTypeId\":{\"entity\":\"BankProductOptionType.cdm.json/BankProductOptionType\",\"name\":\"ProductOptionTypeId\"},\"ProductOptionTypeName\":{\"entity\":\"BankProductOptionType.cdm.json/BankProductOptionType\",\"name\":\"ProductOptionTypeName\"},\"ProductOptionTypeDescription\":{\"entity\":\"BankProductOptionType.cdm.json/BankProductOptionType\",\"name\":\"ProductOptionTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"BankProductOptionType\",\"path\":\"BankProductOptionType.cdm.json/BankProductOptionType\"},\"description\":\"An option that is standard for or may be added-to a retail banking product for a fee to give it additional functionality or features.\\n\\nThis is where you would aggregate all the options available to the individual retail banking products if you wanted to maintain them in one place.\\n\\nSavings Account Option Examples:\\n- Overdraft protection\\n- Check writing\\n- Check card\\n- ATM card\\n\\nChecking Account Option Examples:\\n- Monthly check return\\n- ATM \\n- Payment Card\\n- Overdraft protection\\n- Direct Deposit\\n- Online statements\\n\\nCD Option Examples:\\n- Automatic Renewal\\n- Passbook\\n- Paper Certificate\\n- Mail interest by check\\n- Transfer Interest to Savings Account\\n- Transfer Interest to Checking Account\\n- Interest is paid out\\n- Interest accrues\\n- CD starts earning interest from date of deposit\\n- CD starts earning interest from start of next month \\n- CD starts earning interest from start of next quarter\\n\\nMortgage Loan Option Examples:\\n- Borrowers Protection Plan\\n- Combination Mortgage (mortgage + line of credit)\\n- Automatic Loan Payments\\n\\nPersonal Line of Credit Option Examples:\\n- Line of Credit checks\\n- Monthly statements\\n- Cash advances at ATM's\\n\\nHome Equity Line of Credit Option Examples:\\n- Linked to checking account\\n- Linked to payment card\\n\\nHome Equity Loan Option Examples:\\n- Buyers Protection Plan\\n- Insurance\\n- Direct payments using automatic payments from savings or checking account\\n\\nVehicle Loan Option Examples:\\n- Automatic Payments\\n- Payment Protection\\n- Vehicle Insurance\\n\\nPersonal Loan Option Examples:\\n- Automatic Payments\\n- Payment Protection Insurance\\n- Involuntary Unemployment Insurance\\n\\nPayment Card Examples:\\n- Additional Cards\\n- ATM Advances\\n- Auto Rental Insurance\\n- Automatic Payments\\n- Cash Advance Checks\\n- Cash Advances\\n- Credit Report\\n- Discount On-Line Shopping\\n- Discount Shopping\\n- Early Warning Service\\n- Emergency Roadside Assistance\\n- Interest-free Grace Period.\\n- Life Insurance\\n- Lost Payment Card Service\\n- Overdraft Protection\\n- Payment Protection\\n- Payment Protection - Disability\\n- Payment Protection - Family Leave\\n- Payment Protection - Life\\n- Payment Protection - Unemployment\\n- Purchase Assurance\\n- Travel Accident Insurance\\n- Travel Incentives\",\"primaryKey\":[\"ProductOptionTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"ProductOptionTypeId\",\"attributeReference\":{\"entity\":\"BankProductOptionType.cdm.json/BankProductOptionType\",\"name\":\"ProductOptionTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ProductOptionTypeName\",\"attributeReference\":{\"entity\":\"BankProductOptionType.cdm.json/BankProductOptionType\",\"name\":\"ProductOptionTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"ProductOptionTypeDescription\",\"attributeReference\":{\"entity\":\"BankProductOptionType.cdm.json/BankProductOptionType\",\"name\":\"ProductOptionTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512}]}}}",
+			"Description": "An option that is standard for or may be added-to a retail banking product for a fee to give it additional functionality or features.\n\nThis is where you would aggregate all the options available to the individual retail banking products if you wanted to maintain them in one place.\n\nSavings Account Option Examples:\n- Overdraft protection\n- Check writing\n- Check card\n- ATM card\n\nChecking Account Option Examples:\n- Monthly check return\n- ATM \n- Payment Card\n- Overdraft protection\n- Direct Deposit\n- Online statements\n\nCD Option Examples:\n- Automatic Renewal\n- Passbook\n- Paper Certificate\n- Mail interest by check\n- Transfer Interest to Savings Account\n- Transfer Interest to Checking Account\n- Interest is paid out\n- Interest accrues\n- CD starts earning interest from date of deposit\n- CD starts earning interest from start of next month \n- CD starts earning interest from start of next quarter\n\nMortgage Loan Option Examples:\n- Borrowers Protection Plan\n- Combination Mortgage (mortgage + line of credit)\n- Automatic Loan Payments\n\nPersonal Line of Credit Option Examples:\n- Line of Credit checks\n- Monthly statements\n- Cash advances at ATM's\n\nHome Equity Line of Credit Option Examples:\n- Linked to checking account\n- Linked to payment card\n\nHome Equity Loan Option Examples:\n- Buyers Protection Plan\n- Insurance\n- Direct payments using automatic payments from savings or checking account\n\nVehicle Loan Option Examples:\n- Automatic Payments\n- Payment Protection\n- Vehicle Insurance\n\nPersonal Loan Option Examples:\n- Automatic Payments\n- Payment Protection Insurance\n- Involuntary Unemployment Insurance\n\nPayment Card Examples:\n- Additional Cards\n- ATM Advances\n- Auto Rental Insurance\n- Automatic Payments\n- Cash Advance Checks\n- Cash Advances\n- Credit Report\n- Discount On-Line Shopping\n- Discount Shopping\n- Early Warning Service\n- Emergency Roadside Assistance\n- Interest-free Grace Period.\n- Life Insurance\n- Lost Payment Card Service\n- Overdraft Protection\n- Payment Protection\n- Payment Protection - Disability\n- Payment Protection - Family Leave\n- Payment Protection - Life\n- Payment Protection - Unemployment\n- Purchase Assurance\n- Travel Accident Insurance\n- Travel Incentives",
+			"DisplayFolderInfo": "{\"name\":\"Product\",\"colorCode\":\"#0E3D73\"}",
+			"PrimaryKeys": "ProductOptionTypeId",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

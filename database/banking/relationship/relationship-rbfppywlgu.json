@@ -1,0 +1,26 @@
+{
+	"name": "relationship-rbfppywlgu",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-rbfppywlgu",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Budget",
+		"ToTableName": "ServiceRequestCostType",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "BudgetId",
+				"ToColumnName": "BudgetId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Budget.cdm.json/Budget\",\"toEntity\":\"ServiceRequestCostType.cdm.json/ServiceRequestCostType\",\"joinPairs\":[{\"fromAttribute\":\"BudgetId\",\"toAttribute\":\"BudgetId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

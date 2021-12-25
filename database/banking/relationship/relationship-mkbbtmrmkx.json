@@ -1,0 +1,26 @@
+{
+	"name": "relationship-mkbbtmrmkx",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-mkbbtmrmkx",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "MarketingEventStatusType",
+		"ToTableName": "MarketingEventStatus",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "MarketingEventStatusTypeId",
+				"ToColumnName": "MarketingEventStatusTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"MarketingEventStatusType.cdm.json/MarketingEventStatusType\",\"toEntity\":\"MarketingEventStatus.cdm.json/MarketingEventStatus\",\"joinPairs\":[{\"fromAttribute\":\"MarketingEventStatusTypeId\",\"toAttribute\":\"MarketingEventStatusTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

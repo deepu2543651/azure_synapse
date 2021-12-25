@@ -1,0 +1,112 @@
+{
+	"name": "TransactionRestrictionType",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "TransactionRestrictionType",
+		"Description": "A restriction that is applied upon a Transaction.\n\nEx:\n- Restricted to US corporations only\n- Must be settled in cash only\n- No cash payout\n- Product may not be exported without approval\n- Must have available account funds\n- Must be within credit line amount\n- Party must be 18 years of age\n- Party must provide valid ID\n- Party must provide valid passport at check-in",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "TransactionRestrictionTypeId",
+					"Description": "The unique identifier of a Transaction Restriction Type.",
+					"BaseAttributeReference": {
+						"Entity": "TransactionRestrictionType.cdm.json/TransactionRestrictionType",
+						"Name": "TransactionRestrictionTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "TransactionRestrictionTypeName",
+					"Description": "The name of a Transaction Restriction Type.",
+					"BaseAttributeReference": {
+						"Entity": "TransactionRestrictionType.cdm.json/TransactionRestrictionType",
+						"Name": "TransactionRestrictionTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "TransactionRestrictionTypeDescription",
+					"Description": "The description of a Transaction Restriction Type.",
+					"BaseAttributeReference": {
+						"Entity": "TransactionRestrictionType.cdm.json/TransactionRestrictionType",
+						"Name": "TransactionRestrictionTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/TransactionRestrictionType",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/TransactionRestrictionType",
+				"Properties": {
+					"LinkedServiceName": "wspc-dpu-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"TransactionRestrictionTypeId\":{\"entity\":\"TransactionRestrictionType.cdm.json/TransactionRestrictionType\",\"name\":\"TransactionRestrictionTypeId\"},\"TransactionRestrictionTypeName\":{\"entity\":\"TransactionRestrictionType.cdm.json/TransactionRestrictionType\",\"name\":\"TransactionRestrictionTypeName\"},\"TransactionRestrictionTypeDescription\":{\"entity\":\"TransactionRestrictionType.cdm.json/TransactionRestrictionType\",\"name\":\"TransactionRestrictionTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"TransactionRestrictionType\",\"path\":\"TransactionRestrictionType.cdm.json/TransactionRestrictionType\"},\"description\":\"A restriction that is applied upon a Transaction.\\n\\nEx:\\n- Restricted to US corporations only\\n- Must be settled in cash only\\n- No cash payout\\n- Product may not be exported without approval\\n- Must have available account funds\\n- Must be within credit line amount\\n- Party must be 18 years of age\\n- Party must provide valid ID\\n- Party must provide valid passport at check-in\",\"primaryKey\":[\"TransactionRestrictionTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"TransactionRestrictionTypeId\",\"attributeReference\":{\"entity\":\"TransactionRestrictionType.cdm.json/TransactionRestrictionType\",\"name\":\"TransactionRestrictionTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"TransactionRestrictionTypeName\",\"attributeReference\":{\"entity\":\"TransactionRestrictionType.cdm.json/TransactionRestrictionType\",\"name\":\"TransactionRestrictionTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"TransactionRestrictionTypeDescription\",\"attributeReference\":{\"entity\":\"TransactionRestrictionType.cdm.json/TransactionRestrictionType\",\"name\":\"TransactionRestrictionTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512}]}}}",
+			"Description": "A restriction that is applied upon a Transaction.\n\nEx:\n- Restricted to US corporations only\n- Must be settled in cash only\n- No cash payout\n- Product may not be exported without approval\n- Must have available account funds\n- Must be within credit line amount\n- Party must be 18 years of age\n- Party must provide valid ID\n- Party must provide valid passport at check-in",
+			"DisplayFolderInfo": "{\"name\":\"Transaction\",\"colorCode\":\"#823A16\"}",
+			"PrimaryKeys": "TransactionRestrictionTypeId",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

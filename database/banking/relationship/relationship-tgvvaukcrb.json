@@ -1,0 +1,26 @@
+{
+	"name": "relationship-tgvvaukcrb",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-tgvvaukcrb",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Document",
+		"ToTableName": "ProductDocument",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "DocumentId",
+				"ToColumnName": "DocumentId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Document.cdm.json/Document\",\"toEntity\":\"ProductDocument.cdm.json/ProductDocument\",\"joinPairs\":[{\"fromAttribute\":\"DocumentId\",\"toAttribute\":\"DocumentId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

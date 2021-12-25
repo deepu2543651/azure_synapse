@@ -1,0 +1,253 @@
+{
+	"name": "ProductEligibleCustomerAssetType",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "ProductEligibleCustomerAssetType",
+		"Description": "The type(s) of customer assets that are eligible to be used as collateral  to secure a customer account for this product.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ProductId",
+					"Description": "The unique identifier of a Product.",
+					"BaseAttributeReference": {
+						"Entity": "ProductEligibleCustomerAssetType.cdm.json/ProductEligibleCustomerAssetType",
+						"Name": "ProductId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "CustomerAssetTypeId",
+					"Description": "The unique identifier of a Customer Asset Type.",
+					"BaseAttributeReference": {
+						"Entity": "ProductEligibleCustomerAssetType.cdm.json/ProductEligibleCustomerAssetType",
+						"Name": "CustomerAssetTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PeriodStartDate",
+					"Description": "The period start date that the customer asset type can be used as collateral to secure a product.",
+					"BaseAttributeReference": {
+						"Entity": "ProductEligibleCustomerAssetType.cdm.json/ProductEligibleCustomerAssetType",
+						"Name": "PeriodStartDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "PeriodEndDate",
+					"Description": "The period end date that the customer asset type can be used as collateral to secure a product.",
+					"BaseAttributeReference": {
+						"Entity": "ProductEligibleCustomerAssetType.cdm.json/ProductEligibleCustomerAssetType",
+						"Name": "PeriodEndDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "MaximumLoanAmount",
+					"Description": "The maximum amount of loan that may be advanced.",
+					"BaseAttributeReference": {
+						"Entity": "ProductEligibleCustomerAssetType.cdm.json/ProductEligibleCustomerAssetType",
+						"Name": "MaximumLoanAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "MaximumLtvPercentage",
+					"Description": "LTV value is defined as the relationship between the loan amount and the lesser of appraised value plus allowable closing costs or sales price plus or minus required adjustments.",
+					"BaseAttributeReference": {
+						"Entity": "ProductEligibleCustomerAssetType.cdm.json/ProductEligibleCustomerAssetType",
+						"Name": "MaximumLtvPercentage"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "MaximumFinancingConcessionPercentage",
+					"Description": "Financing concessions, which include seller-paid discount points, interest rate buy-downs, payment of mortgage interest, and up-front MIP must not exceed x% of the sales price. \n\nSales concessions, which include seller-paid closing costs, buyer-broker fees, condo or HOA fees, decorating allowances, etc., must be deducted from the sales price, dollar-for dollar, before calculating the mortgage amount.",
+					"BaseAttributeReference": {
+						"Entity": "ProductEligibleCustomerAssetType.cdm.json/ProductEligibleCustomerAssetType",
+						"Name": "MaximumFinancingConcessionPercentage"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "QualifyingRatioPercentage",
+					"Description": "The ratio of the borrowers fixed monthly expenses to his gross monthly income. Ratios are expressed as two numbers like 28/36 where 28 would be the Front-End Ratio and 36 would be the Back-End Ratio.",
+					"BaseAttributeReference": {
+						"Entity": "ProductEligibleCustomerAssetType.cdm.json/ProductEligibleCustomerAssetType",
+						"Name": "QualifyingRatioPercentage"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "MinimumFrontEndRatio",
+					"Description": "The Front-End Ratio is the percentage of a borrowers gross monthly income (before income taxes) that would cover the cost of PITI (Mortgage Principal Payment + Mortgage Interest Payment + Property Taxes + Homeowners Insurance). \n\nIn the case of a 28% Front-End Ratio a borrower could qualify if the proposed monthly PITI payments were 28% or less than the borrower's gross monthly income.",
+					"BaseAttributeReference": {
+						"Entity": "ProductEligibleCustomerAssetType.cdm.json/ProductEligibleCustomerAssetType",
+						"Name": "MinimumFrontEndRatio"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "MinimumBackEndRatio",
+					"Description": "The Back-End Ratio is the percentage of a borrowers gross monthly income that would cover the cost of PITI plus any other monthly debt payments like car or personal loans and payment card debt.",
+					"BaseAttributeReference": {
+						"Entity": "ProductEligibleCustomerAssetType.cdm.json/ProductEligibleCustomerAssetType",
+						"Name": "MinimumBackEndRatio"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "ProductEligibleCollateralTypeNote",
+					"Description": "A note, comment or additional information regarding a product eligible customer asset type.",
+					"BaseAttributeReference": {
+						"Entity": "ProductEligibleCustomerAssetType.cdm.json/ProductEligibleCustomerAssetType",
+						"Name": "ProductEligibleCollateralTypeNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/ProductEligibleCustomerAssetType",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/ProductEligibleCustomerAssetType",
+				"Properties": {
+					"LinkedServiceName": "wspc-dpu-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ProductId\":{\"entity\":\"ProductEligibleCustomerAssetType.cdm.json/ProductEligibleCustomerAssetType\",\"name\":\"ProductId\"},\"CustomerAssetTypeId\":{\"entity\":\"ProductEligibleCustomerAssetType.cdm.json/ProductEligibleCustomerAssetType\",\"name\":\"CustomerAssetTypeId\"},\"PeriodStartDate\":{\"entity\":\"ProductEligibleCustomerAssetType.cdm.json/ProductEligibleCustomerAssetType\",\"name\":\"PeriodStartDate\"},\"PeriodEndDate\":{\"entity\":\"ProductEligibleCustomerAssetType.cdm.json/ProductEligibleCustomerAssetType\",\"name\":\"PeriodEndDate\"},\"MaximumLoanAmount\":{\"entity\":\"ProductEligibleCustomerAssetType.cdm.json/ProductEligibleCustomerAssetType\",\"name\":\"MaximumLoanAmount\"},\"MaximumLtvPercentage\":{\"entity\":\"ProductEligibleCustomerAssetType.cdm.json/ProductEligibleCustomerAssetType\",\"name\":\"MaximumLtvPercentage\"},\"MaximumFinancingConcessionPercentage\":{\"entity\":\"ProductEligibleCustomerAssetType.cdm.json/ProductEligibleCustomerAssetType\",\"name\":\"MaximumFinancingConcessionPercentage\"},\"QualifyingRatioPercentage\":{\"entity\":\"ProductEligibleCustomerAssetType.cdm.json/ProductEligibleCustomerAssetType\",\"name\":\"QualifyingRatioPercentage\"},\"MinimumFrontEndRatio\":{\"entity\":\"ProductEligibleCustomerAssetType.cdm.json/ProductEligibleCustomerAssetType\",\"name\":\"MinimumFrontEndRatio\"},\"MinimumBackEndRatio\":{\"entity\":\"ProductEligibleCustomerAssetType.cdm.json/ProductEligibleCustomerAssetType\",\"name\":\"MinimumBackEndRatio\"},\"ProductEligibleCollateralTypeNote\":{\"entity\":\"ProductEligibleCustomerAssetType.cdm.json/ProductEligibleCustomerAssetType\",\"name\":\"ProductEligibleCollateralTypeNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"ProductEligibleCustomerAssetType\",\"path\":\"ProductEligibleCustomerAssetType.cdm.json/ProductEligibleCustomerAssetType\"},\"description\":\"The type(s) of customer assets that are eligible to be used as collateral  to secure a customer account for this product.\",\"primaryKey\":[\"ProductId\",\"CustomerAssetTypeId\",\"PeriodStartDate\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"ProductId\",\"attributeReference\":{\"entity\":\"ProductEligibleCustomerAssetType.cdm.json/ProductEligibleCustomerAssetType\",\"name\":\"ProductId\"},\"dataType\":\"long\"},{\"type\":\"Existing\",\"name\":\"CustomerAssetTypeId\",\"attributeReference\":{\"entity\":\"ProductEligibleCustomerAssetType.cdm.json/ProductEligibleCustomerAssetType\",\"name\":\"CustomerAssetTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"PeriodStartDate\",\"attributeReference\":{\"entity\":\"ProductEligibleCustomerAssetType.cdm.json/ProductEligibleCustomerAssetType\",\"name\":\"PeriodStartDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\"},{\"type\":\"Existing\",\"name\":\"PeriodEndDate\",\"attributeReference\":{\"entity\":\"ProductEligibleCustomerAssetType.cdm.json/ProductEligibleCustomerAssetType\",\"name\":\"PeriodEndDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\"},{\"type\":\"Existing\",\"name\":\"MaximumLoanAmount\",\"attributeReference\":{\"entity\":\"ProductEligibleCustomerAssetType.cdm.json/ProductEligibleCustomerAssetType\",\"name\":\"MaximumLoanAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"MaximumLtvPercentage\",\"attributeReference\":{\"entity\":\"ProductEligibleCustomerAssetType.cdm.json/ProductEligibleCustomerAssetType\",\"name\":\"MaximumLtvPercentage\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":8},{\"type\":\"Existing\",\"name\":\"MaximumFinancingConcessionPercentage\",\"attributeReference\":{\"entity\":\"ProductEligibleCustomerAssetType.cdm.json/ProductEligibleCustomerAssetType\",\"name\":\"MaximumFinancingConcessionPercentage\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":8},{\"type\":\"Existing\",\"name\":\"QualifyingRatioPercentage\",\"attributeReference\":{\"entity\":\"ProductEligibleCustomerAssetType.cdm.json/ProductEligibleCustomerAssetType\",\"name\":\"QualifyingRatioPercentage\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":8},{\"type\":\"Existing\",\"name\":\"MinimumFrontEndRatio\",\"attributeReference\":{\"entity\":\"ProductEligibleCustomerAssetType.cdm.json/ProductEligibleCustomerAssetType\",\"name\":\"MinimumFrontEndRatio\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":8},{\"type\":\"Existing\",\"name\":\"MinimumBackEndRatio\",\"attributeReference\":{\"entity\":\"ProductEligibleCustomerAssetType.cdm.json/ProductEligibleCustomerAssetType\",\"name\":\"MinimumBackEndRatio\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":8},{\"type\":\"Existing\",\"name\":\"ProductEligibleCollateralTypeNote\",\"attributeReference\":{\"entity\":\"ProductEligibleCustomerAssetType.cdm.json/ProductEligibleCustomerAssetType\",\"name\":\"ProductEligibleCollateralTypeNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024}]}}}",
+			"Description": "The type(s) of customer assets that are eligible to be used as collateral  to secure a customer account for this product.",
+			"DisplayFolderInfo": "{\"name\":\"Product\",\"colorCode\":\"#0E3D73\"}",
+			"PrimaryKeys": "ProductId,CustomerAssetTypeId,PeriodStartDate",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

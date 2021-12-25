@@ -1,0 +1,26 @@
+{
+	"name": "relationship-kajqaqupyh",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-kajqaqupyh",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "BenchmarkIndex",
+		"ToTableName": "AssetBackedSecurity",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "BenchmarkIndexId",
+				"ToColumnName": "BenchmarkIndexId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"BenchmarkIndex.cdm.json/BenchmarkIndex\",\"toEntity\":\"AssetBackedSecurity.cdm.json/AssetBackedSecurity\",\"joinPairs\":[{\"fromAttribute\":\"BenchmarkIndexId\",\"toAttribute\":\"BenchmarkIndexId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

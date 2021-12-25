@@ -1,0 +1,26 @@
+{
+	"name": "relationship-eepntfhqul",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-eepntfhqul",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Channel",
+		"ToTableName": "ProductSalesChannel",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ChannelId",
+				"ToColumnName": "ChannelId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Channel.cdm.json/Channel\",\"toEntity\":\"ProductSalesChannel.cdm.json/ProductSalesChannel\",\"joinPairs\":[{\"fromAttribute\":\"ChannelId\",\"toAttribute\":\"ChannelId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

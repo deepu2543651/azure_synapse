@@ -1,0 +1,26 @@
+{
+	"name": "relationship-ddhihtnrhr",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-ddhihtnrhr",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "AssetBackedSecurityType",
+		"ToTableName": "AssetBackedSecurity",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "AssetBackedSecurityTypeId",
+				"ToColumnName": "AssetBackedSecurityTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"AssetBackedSecurityType.cdm.json/AssetBackedSecurityType\",\"toEntity\":\"AssetBackedSecurity.cdm.json/AssetBackedSecurity\",\"joinPairs\":[{\"fromAttribute\":\"AssetBackedSecurityTypeId\",\"toAttribute\":\"AssetBackedSecurityTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

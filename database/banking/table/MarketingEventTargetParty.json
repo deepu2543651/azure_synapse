@@ -1,0 +1,111 @@
+{
+	"name": "MarketingEventTargetParty",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "MarketingEventTargetParty",
+		"Description": "The party(s) targeted by the associated Marketing Event.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "MarketingEventId",
+					"Description": "The unique identifier of a Marketing Event.",
+					"BaseAttributeReference": {
+						"Entity": "MarketingEventTargetParty.cdm.json/MarketingEventTargetParty",
+						"Name": "MarketingEventId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PartyId",
+					"Description": "The unique identifier of a Party.",
+					"BaseAttributeReference": {
+						"Entity": "MarketingEventTargetParty.cdm.json/MarketingEventTargetParty",
+						"Name": "PartyId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "TargetPartyNote",
+					"Description": "A note, comment or additional information regarding the targeting of the Party.",
+					"BaseAttributeReference": {
+						"Entity": "MarketingEventTargetParty.cdm.json/MarketingEventTargetParty",
+						"Name": "TargetPartyNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/MarketingEventTargetParty",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/MarketingEventTargetParty",
+				"Properties": {
+					"LinkedServiceName": "wspc-dpu-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"MarketingEventId\":{\"entity\":\"MarketingEventTargetParty.cdm.json/MarketingEventTargetParty\",\"name\":\"MarketingEventId\"},\"PartyId\":{\"entity\":\"MarketingEventTargetParty.cdm.json/MarketingEventTargetParty\",\"name\":\"PartyId\"},\"TargetPartyNote\":{\"entity\":\"MarketingEventTargetParty.cdm.json/MarketingEventTargetParty\",\"name\":\"TargetPartyNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"MarketingEventTargetParty\",\"path\":\"MarketingEventTargetParty.cdm.json/MarketingEventTargetParty\"},\"description\":\"The party(s) targeted by the associated Marketing Event.\",\"primaryKey\":[\"MarketingEventId\",\"PartyId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"MarketingEventId\",\"attributeReference\":{\"entity\":\"MarketingEventTargetParty.cdm.json/MarketingEventTargetParty\",\"name\":\"MarketingEventId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"PartyId\",\"attributeReference\":{\"entity\":\"MarketingEventTargetParty.cdm.json/MarketingEventTargetParty\",\"name\":\"PartyId\"},\"dataType\":\"long\"},{\"type\":\"Existing\",\"name\":\"TargetPartyNote\",\"attributeReference\":{\"entity\":\"MarketingEventTargetParty.cdm.json/MarketingEventTargetParty\",\"name\":\"TargetPartyNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024}]}}}",
+			"Description": "The party(s) targeted by the associated Marketing Event.",
+			"DisplayFolderInfo": "{\"name\":\"Marketing & Advertising\",\"colorCode\":\"#692B0C\"}",
+			"PrimaryKeys": "MarketingEventId,PartyId",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

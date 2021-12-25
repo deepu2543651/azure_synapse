@@ -1,0 +1,26 @@
+{
+	"name": "relationship-eboqgvrojv",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-eboqgvrojv",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Location",
+		"ToTableName": "PartyOrganization",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "LocationId",
+				"ToColumnName": "LocationId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Location.cdm.json/Location\",\"toEntity\":\"PartyOrganization.cdm.json/PartyOrganization\",\"joinPairs\":[{\"fromAttribute\":\"LocationId\",\"toAttribute\":\"LocationId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

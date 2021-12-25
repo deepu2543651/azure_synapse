@@ -1,0 +1,26 @@
+{
+	"name": "relationship-jrqdcamrye",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-jrqdcamrye",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "CdProductType",
+		"ToTableName": "CdProduct",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "CdProductTypeId",
+				"ToColumnName": "CdProductTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"CdProductType.cdm.json/CdProductType\",\"toEntity\":\"CdProduct.cdm.json/CdProduct\",\"joinPairs\":[{\"fromAttribute\":\"CdProductTypeId\",\"toAttribute\":\"CdProductTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

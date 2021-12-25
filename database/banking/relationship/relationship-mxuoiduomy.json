@@ -1,0 +1,26 @@
+{
+	"name": "relationship-mxuoiduomy",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-mxuoiduomy",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "IssueStatusType",
+		"ToTableName": "IssueStatus",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "IssueStatusTypeId",
+				"ToColumnName": "IssueStatusTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"IssueStatusType.cdm.json/IssueStatusType\",\"toEntity\":\"IssueStatus.cdm.json/IssueStatus\",\"joinPairs\":[{\"fromAttribute\":\"IssueStatusTypeId\",\"toAttribute\":\"IssueStatusTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

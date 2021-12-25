@@ -1,0 +1,26 @@
+{
+	"name": "relationship-cptohjmnwd",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-cptohjmnwd",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "TransactionRestrictionType",
+		"ToTableName": "TransactionRestriction",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "TransactionRestrictionTypeId",
+				"ToColumnName": "TransactionRestrictionTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"TransactionRestrictionType.cdm.json/TransactionRestrictionType\",\"toEntity\":\"TransactionRestriction.cdm.json/TransactionRestriction\",\"joinPairs\":[{\"fromAttribute\":\"TransactionRestrictionTypeId\",\"toAttribute\":\"TransactionRestrictionTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

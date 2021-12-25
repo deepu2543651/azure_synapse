@@ -1,0 +1,237 @@
+{
+	"name": "CustomerAccountBankStatement",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "CustomerAccountBankStatement",
+		"Description": "A detailed record of a customer account listing credits, debits, transfers between accounts and service charges.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "CustomerAccountId",
+					"Description": "The unique identifier of a Customer Account.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountBankStatement.cdm.json/CustomerAccountBankStatement",
+						"Name": "CustomerAccountId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "PeriodStartDate",
+					"Description": "The period start date for which the Customer Account Statement is prepared.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountBankStatement.cdm.json/CustomerAccountBankStatement",
+						"Name": "PeriodStartDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "PeriodEndDate",
+					"Description": "The period end date for which the Customer Account Statement is prepared.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountBankStatement.cdm.json/CustomerAccountBankStatement",
+						"Name": "PeriodEndDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "DateIssued",
+					"Description": "The date that the Customer Statement was issued.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountBankStatement.cdm.json/CustomerAccountBankStatement",
+						"Name": "DateIssued"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "BeginningPeriodBalanceAmount",
+					"Description": "The account balance as of the period start date.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountBankStatement.cdm.json/CustomerAccountBankStatement",
+						"Name": "BeginningPeriodBalanceAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "EndingPeriodBalanceAmount",
+					"Description": "The account balance as of the period end date.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountBankStatement.cdm.json/CustomerAccountBankStatement",
+						"Name": "EndingPeriodBalanceAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "PeriodAverageBalanceAmount",
+					"Description": "The average balance during the period.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountBankStatement.cdm.json/CustomerAccountBankStatement",
+						"Name": "PeriodAverageBalanceAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "TotalDepositsCreditsAmount",
+					"Description": "The total amount of account deposits or credits to the account.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountBankStatement.cdm.json/CustomerAccountBankStatement",
+						"Name": "TotalDepositsCreditsAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "TotalWithdrawalsDebitsAmount",
+					"Description": "The total amount of account withdrawals or debits from the account.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountBankStatement.cdm.json/CustomerAccountBankStatement",
+						"Name": "TotalWithdrawalsDebitsAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "TotalPeriodInterestPostedAmount",
+					"Description": "The total amount of interest postings for the period.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountBankStatement.cdm.json/CustomerAccountBankStatement",
+						"Name": "TotalPeriodInterestPostedAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/CustomerAccountBankStatement",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/CustomerAccountBankStatement",
+				"Properties": {
+					"LinkedServiceName": "wspc-dpu-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"CustomerAccountId\":{\"entity\":\"CustomerAccountBankStatement.cdm.json/CustomerAccountBankStatement\",\"name\":\"CustomerAccountId\"},\"PeriodStartDate\":{\"entity\":\"CustomerAccountBankStatement.cdm.json/CustomerAccountBankStatement\",\"name\":\"PeriodStartDate\"},\"PeriodEndDate\":{\"entity\":\"CustomerAccountBankStatement.cdm.json/CustomerAccountBankStatement\",\"name\":\"PeriodEndDate\"},\"DateIssued\":{\"entity\":\"CustomerAccountBankStatement.cdm.json/CustomerAccountBankStatement\",\"name\":\"DateIssued\"},\"BeginningPeriodBalanceAmount\":{\"entity\":\"CustomerAccountBankStatement.cdm.json/CustomerAccountBankStatement\",\"name\":\"BeginningPeriodBalanceAmount\"},\"EndingPeriodBalanceAmount\":{\"entity\":\"CustomerAccountBankStatement.cdm.json/CustomerAccountBankStatement\",\"name\":\"EndingPeriodBalanceAmount\"},\"PeriodAverageBalanceAmount\":{\"entity\":\"CustomerAccountBankStatement.cdm.json/CustomerAccountBankStatement\",\"name\":\"PeriodAverageBalanceAmount\"},\"TotalDepositsCreditsAmount\":{\"entity\":\"CustomerAccountBankStatement.cdm.json/CustomerAccountBankStatement\",\"name\":\"TotalDepositsCreditsAmount\"},\"TotalWithdrawalsDebitsAmount\":{\"entity\":\"CustomerAccountBankStatement.cdm.json/CustomerAccountBankStatement\",\"name\":\"TotalWithdrawalsDebitsAmount\"},\"TotalPeriodInterestPostedAmount\":{\"entity\":\"CustomerAccountBankStatement.cdm.json/CustomerAccountBankStatement\",\"name\":\"TotalPeriodInterestPostedAmount\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"CustomerAccountBankStatement\",\"path\":\"CustomerAccountBankStatement.cdm.json/CustomerAccountBankStatement\"},\"description\":\"A detailed record of a customer account listing credits, debits, transfers between accounts and service charges.\",\"primaryKey\":[\"CustomerAccountId\",\"PeriodStartDate\",\"PeriodEndDate\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"CustomerAccountId\",\"attributeReference\":{\"entity\":\"CustomerAccountBankStatement.cdm.json/CustomerAccountBankStatement\",\"name\":\"CustomerAccountId\"},\"dataType\":\"long\"},{\"type\":\"Existing\",\"name\":\"PeriodStartDate\",\"attributeReference\":{\"entity\":\"CustomerAccountBankStatement.cdm.json/CustomerAccountBankStatement\",\"name\":\"PeriodStartDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\"},{\"type\":\"Existing\",\"name\":\"PeriodEndDate\",\"attributeReference\":{\"entity\":\"CustomerAccountBankStatement.cdm.json/CustomerAccountBankStatement\",\"name\":\"PeriodEndDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\"},{\"type\":\"Existing\",\"name\":\"DateIssued\",\"attributeReference\":{\"entity\":\"CustomerAccountBankStatement.cdm.json/CustomerAccountBankStatement\",\"name\":\"DateIssued\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\"},{\"type\":\"Existing\",\"name\":\"BeginningPeriodBalanceAmount\",\"attributeReference\":{\"entity\":\"CustomerAccountBankStatement.cdm.json/CustomerAccountBankStatement\",\"name\":\"BeginningPeriodBalanceAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"EndingPeriodBalanceAmount\",\"attributeReference\":{\"entity\":\"CustomerAccountBankStatement.cdm.json/CustomerAccountBankStatement\",\"name\":\"EndingPeriodBalanceAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"PeriodAverageBalanceAmount\",\"attributeReference\":{\"entity\":\"CustomerAccountBankStatement.cdm.json/CustomerAccountBankStatement\",\"name\":\"PeriodAverageBalanceAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"TotalDepositsCreditsAmount\",\"attributeReference\":{\"entity\":\"CustomerAccountBankStatement.cdm.json/CustomerAccountBankStatement\",\"name\":\"TotalDepositsCreditsAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"TotalWithdrawalsDebitsAmount\",\"attributeReference\":{\"entity\":\"CustomerAccountBankStatement.cdm.json/CustomerAccountBankStatement\",\"name\":\"TotalWithdrawalsDebitsAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"TotalPeriodInterestPostedAmount\",\"attributeReference\":{\"entity\":\"CustomerAccountBankStatement.cdm.json/CustomerAccountBankStatement\",\"name\":\"TotalPeriodInterestPostedAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2}]}}}",
+			"Description": "A detailed record of a customer account listing credits, debits, transfers between accounts and service charges.",
+			"DisplayFolderInfo": "{\"name\":\"Customer Account\",\"colorCode\":\"#E3008C\"}",
+			"PrimaryKeys": "CustomerAccountId,PeriodStartDate,PeriodEndDate",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

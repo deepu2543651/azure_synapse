@@ -1,0 +1,145 @@
+{
+	"name": "IssueStatus",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "IssueStatus",
+		"Description": "The status of the associated Issue.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "IssueId",
+					"Description": "The unique identifier of an Issue.",
+					"BaseAttributeReference": {
+						"Entity": "IssueStatus.cdm.json/IssueStatus",
+						"Name": "IssueId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PeriodStartTimestamp",
+					"Description": "The period start timestamp that the associated status is effective or valid.",
+					"BaseAttributeReference": {
+						"Entity": "IssueStatus.cdm.json/IssueStatus",
+						"Name": "PeriodStartTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "PeriodEndTimestamp",
+					"Description": "The period end timestamp that the associated status is effective or valid.",
+					"BaseAttributeReference": {
+						"Entity": "IssueStatus.cdm.json/IssueStatus",
+						"Name": "PeriodEndTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "IssueStatusTypeId",
+					"Description": "The unique identifier of a Issue Status Type.",
+					"BaseAttributeReference": {
+						"Entity": "IssueStatus.cdm.json/IssueStatus",
+						"Name": "IssueStatusTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "IssueStatusNote",
+					"Description": "A note, comment or additional information regarding the Issue Status.",
+					"BaseAttributeReference": {
+						"Entity": "IssueStatus.cdm.json/IssueStatus",
+						"Name": "IssueStatusNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/IssueStatus",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/IssueStatus",
+				"Properties": {
+					"LinkedServiceName": "wspc-dpu-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"IssueId\":{\"entity\":\"IssueStatus.cdm.json/IssueStatus\",\"name\":\"IssueId\"},\"PeriodStartTimestamp\":{\"entity\":\"IssueStatus.cdm.json/IssueStatus\",\"name\":\"PeriodStartTimestamp\"},\"PeriodEndTimestamp\":{\"entity\":\"IssueStatus.cdm.json/IssueStatus\",\"name\":\"PeriodEndTimestamp\"},\"IssueStatusTypeId\":{\"entity\":\"IssueStatus.cdm.json/IssueStatus\",\"name\":\"IssueStatusTypeId\"},\"IssueStatusNote\":{\"entity\":\"IssueStatus.cdm.json/IssueStatus\",\"name\":\"IssueStatusNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"IssueStatus\",\"path\":\"IssueStatus.cdm.json/IssueStatus\"},\"description\":\"The status of the associated Issue.\",\"primaryKey\":[\"IssueId\",\"PeriodStartTimestamp\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"IssueId\",\"attributeReference\":{\"entity\":\"IssueStatus.cdm.json/IssueStatus\",\"name\":\"IssueId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"PeriodStartTimestamp\",\"attributeReference\":{\"entity\":\"IssueStatus.cdm.json/IssueStatus\",\"name\":\"PeriodStartTimestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"PeriodEndTimestamp\",\"attributeReference\":{\"entity\":\"IssueStatus.cdm.json/IssueStatus\",\"name\":\"PeriodEndTimestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"IssueStatusTypeId\",\"attributeReference\":{\"entity\":\"IssueStatus.cdm.json/IssueStatus\",\"name\":\"IssueStatusTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"IssueStatusNote\",\"attributeReference\":{\"entity\":\"IssueStatus.cdm.json/IssueStatus\",\"name\":\"IssueStatusNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024}]}}}",
+			"Description": "The status of the associated Issue.",
+			"DisplayFolderInfo": "{\"name\":\"Customer Service & Contact Management\",\"colorCode\":\"#Ef6950\"}",
+			"PrimaryKeys": "IssueId,PeriodStartTimestamp",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

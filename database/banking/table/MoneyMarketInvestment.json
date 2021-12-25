@@ -1,0 +1,466 @@
+{
+	"name": "MoneyMarketInvestment",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "MoneyMarketInvestment",
+		"Description": "Money market investments represent a global financial market for short-term borrowing and lending normally under 12 months and provides short-term liquidity to participants.\n\nThese instruments are often benchmarked to the London Interbank Offered Rate (LIBOR) for the appropriate term and currency.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ProductId",
+					"Description": "The unique identifier of a Product.",
+					"BaseAttributeReference": {
+						"Entity": "MoneyMarketInvestment.cdm.json/MoneyMarketInvestment",
+						"Name": "ProductId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "MoneyMarketInvestmentTypeId",
+					"Description": "The unique identifier of a Money Market Investment Type.",
+					"BaseAttributeReference": {
+						"Entity": "MoneyMarketInvestment.cdm.json/MoneyMarketInvestment",
+						"Name": "MoneyMarketInvestmentTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "Term",
+					"Description": "The term of the investment expressed in months.",
+					"BaseAttributeReference": {
+						"Entity": "MoneyMarketInvestment.cdm.json/MoneyMarketInvestment",
+						"Name": "Term"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "InvestmentStartDate",
+					"Description": "The starting date of the investment.",
+					"BaseAttributeReference": {
+						"Entity": "MoneyMarketInvestment.cdm.json/MoneyMarketInvestment",
+						"Name": "InvestmentStartDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "DepositPeriodDays",
+					"Description": "The number of days that the deposit must be maintained to be paid the associated interest rate.",
+					"BaseAttributeReference": {
+						"Entity": "MoneyMarketInvestment.cdm.json/MoneyMarketInvestment",
+						"Name": "DepositPeriodDays"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "InterestPeriodInDays",
+					"Description": "The length of the interest period for the money market investment.",
+					"BaseAttributeReference": {
+						"Entity": "MoneyMarketInvestment.cdm.json/MoneyMarketInvestment",
+						"Name": "InterestPeriodInDays"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "InvestmentMaturityDate",
+					"Description": "The date that the investment matures.",
+					"BaseAttributeReference": {
+						"Entity": "MoneyMarketInvestment.cdm.json/MoneyMarketInvestment",
+						"Name": "InvestmentMaturityDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "InterestPaymentPeriod",
+					"Description": "The period upon which interest will be paid.\n\nEx:\n\n- Monthly\n- Semi-annually\n- Annually\n- Year-end",
+					"BaseAttributeReference": {
+						"Entity": "MoneyMarketInvestment.cdm.json/MoneyMarketInvestment",
+						"Name": "InterestPaymentPeriod"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 3,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "MayBeUsedForCollateralIndicator",
+					"Description": "Indicates that the money market funds may be used as collateral.",
+					"BaseAttributeReference": {
+						"Entity": "MoneyMarketInvestment.cdm.json/MoneyMarketInvestment",
+						"Name": "MayBeUsedForCollateralIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "ConvertibleDebentureIndicator",
+					"Description": "Indicates that the debenture is convertible into shares of the issuing company after a period of time.",
+					"BaseAttributeReference": {
+						"Entity": "MoneyMarketInvestment.cdm.json/MoneyMarketInvestment",
+						"Name": "ConvertibleDebentureIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "ConvertiblePeriodDays",
+					"Description": "The number of days after which the debenture can be converted into shares of the issuing company.",
+					"BaseAttributeReference": {
+						"Entity": "MoneyMarketInvestment.cdm.json/MoneyMarketInvestment",
+						"Name": "ConvertiblePeriodDays"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PrincipalAmount",
+					"Description": "The face amount of a bond payable at maturity.",
+					"BaseAttributeReference": {
+						"Entity": "MoneyMarketInvestment.cdm.json/MoneyMarketInvestment",
+						"Name": "PrincipalAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "ParValue",
+					"Description": "The principal amount of a bond or note due at maturity.\n\nPar value is important for bonds because the interest paid on bonds is based on a percentage of a bond's par value.",
+					"BaseAttributeReference": {
+						"Entity": "MoneyMarketInvestment.cdm.json/MoneyMarketInvestment",
+						"Name": "ParValue"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "DiscountPriceAmount",
+					"Description": "The price at which the bill is purchased at discount.",
+					"BaseAttributeReference": {
+						"Entity": "MoneyMarketInvestment.cdm.json/MoneyMarketInvestment",
+						"Name": "DiscountPriceAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "FaceValueAmount",
+					"Description": "The face value of the bill.",
+					"BaseAttributeReference": {
+						"Entity": "MoneyMarketInvestment.cdm.json/MoneyMarketInvestment",
+						"Name": "FaceValueAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "AuctionDate",
+					"Description": "The auction date of the treasury bill.\n\nAll bills except 52-week bills and cash management bills are auctioned every week.",
+					"BaseAttributeReference": {
+						"Entity": "MoneyMarketInvestment.cdm.json/MoneyMarketInvestment",
+						"Name": "AuctionDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "IssuedInElectronicFormIndicator",
+					"Description": "Bills are issued in electronic form.",
+					"BaseAttributeReference": {
+						"Entity": "MoneyMarketInvestment.cdm.json/MoneyMarketInvestment",
+						"Name": "IssuedInElectronicFormIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "BondholderName",
+					"Description": "The owner of the bond.\n\nThis would normally be the same as the Customer associated with the Customer Account unless a beneficial owner relationship exists.",
+					"BaseAttributeReference": {
+						"Entity": "MoneyMarketInvestment.cdm.json/MoneyMarketInvestment",
+						"Name": "BondholderName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ObligorName",
+					"Description": "The one who has an obligation, which is the issuer of the bonds.\n\nThe obligor is legally bound to pay a debt, including interest, when due.",
+					"BaseAttributeReference": {
+						"Entity": "MoneyMarketInvestment.cdm.json/MoneyMarketInvestment",
+						"Name": "ObligorName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "OfferingDate",
+					"Description": "The date on which the bond will first be available for sale to the public.",
+					"BaseAttributeReference": {
+						"Entity": "MoneyMarketInvestment.cdm.json/MoneyMarketInvestment",
+						"Name": "OfferingDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "MaturityDate",
+					"Description": "The date on which the principal amount of a bond is due and payable.",
+					"BaseAttributeReference": {
+						"Entity": "MoneyMarketInvestment.cdm.json/MoneyMarketInvestment",
+						"Name": "MaturityDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "RedemptionDate",
+					"Description": "The date on which a bond is scheduled to mature or be redeemed.",
+					"BaseAttributeReference": {
+						"Entity": "MoneyMarketInvestment.cdm.json/MoneyMarketInvestment",
+						"Name": "RedemptionDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "MaturityPeriodInMonths",
+					"Description": "The maturity period expressed in years for the associated Bond.\n\nNote:\nThis could be derived from the Maturity Date.",
+					"BaseAttributeReference": {
+						"Entity": "MoneyMarketInvestment.cdm.json/MoneyMarketInvestment",
+						"Name": "MaturityPeriodInMonths"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "BondCapPercentage",
+					"Description": "The highest level interest rate that can be paid on a floating-rate debt instrument.",
+					"BaseAttributeReference": {
+						"Entity": "MoneyMarketInvestment.cdm.json/MoneyMarketInvestment",
+						"Name": "BondCapPercentage"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/MoneyMarketInvestment",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/MoneyMarketInvestment",
+				"Properties": {
+					"LinkedServiceName": "wspc-dpu-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ProductId\":{\"entity\":\"MoneyMarketInvestment.cdm.json/MoneyMarketInvestment\",\"name\":\"ProductId\"},\"MoneyMarketInvestmentTypeId\":{\"entity\":\"MoneyMarketInvestment.cdm.json/MoneyMarketInvestment\",\"name\":\"MoneyMarketInvestmentTypeId\"},\"Term\":{\"entity\":\"MoneyMarketInvestment.cdm.json/MoneyMarketInvestment\",\"name\":\"Term\"},\"InvestmentStartDate\":{\"entity\":\"MoneyMarketInvestment.cdm.json/MoneyMarketInvestment\",\"name\":\"InvestmentStartDate\"},\"DepositPeriodDays\":{\"entity\":\"MoneyMarketInvestment.cdm.json/MoneyMarketInvestment\",\"name\":\"DepositPeriodDays\"},\"InterestPeriodInDays\":{\"entity\":\"MoneyMarketInvestment.cdm.json/MoneyMarketInvestment\",\"name\":\"InterestPeriodInDays\"},\"InvestmentMaturityDate\":{\"entity\":\"MoneyMarketInvestment.cdm.json/MoneyMarketInvestment\",\"name\":\"InvestmentMaturityDate\"},\"InterestPaymentPeriod\":{\"entity\":\"MoneyMarketInvestment.cdm.json/MoneyMarketInvestment\",\"name\":\"InterestPaymentPeriod\"},\"MayBeUsedForCollateralIndicator\":{\"entity\":\"MoneyMarketInvestment.cdm.json/MoneyMarketInvestment\",\"name\":\"MayBeUsedForCollateralIndicator\"},\"ConvertibleDebentureIndicator\":{\"entity\":\"MoneyMarketInvestment.cdm.json/MoneyMarketInvestment\",\"name\":\"ConvertibleDebentureIndicator\"},\"ConvertiblePeriodDays\":{\"entity\":\"MoneyMarketInvestment.cdm.json/MoneyMarketInvestment\",\"name\":\"ConvertiblePeriodDays\"},\"PrincipalAmount\":{\"entity\":\"MoneyMarketInvestment.cdm.json/MoneyMarketInvestment\",\"name\":\"PrincipalAmount\"},\"ParValue\":{\"entity\":\"MoneyMarketInvestment.cdm.json/MoneyMarketInvestment\",\"name\":\"ParValue\"},\"DiscountPriceAmount\":{\"entity\":\"MoneyMarketInvestment.cdm.json/MoneyMarketInvestment\",\"name\":\"DiscountPriceAmount\"},\"FaceValueAmount\":{\"entity\":\"MoneyMarketInvestment.cdm.json/MoneyMarketInvestment\",\"name\":\"FaceValueAmount\"},\"AuctionDate\":{\"entity\":\"MoneyMarketInvestment.cdm.json/MoneyMarketInvestment\",\"name\":\"AuctionDate\"},\"IssuedInElectronicFormIndicator\":{\"entity\":\"MoneyMarketInvestment.cdm.json/MoneyMarketInvestment\",\"name\":\"IssuedInElectronicFormIndicator\"},\"BondholderName\":{\"entity\":\"MoneyMarketInvestment.cdm.json/MoneyMarketInvestment\",\"name\":\"BondholderName\"},\"ObligorName\":{\"entity\":\"MoneyMarketInvestment.cdm.json/MoneyMarketInvestment\",\"name\":\"ObligorName\"},\"OfferingDate\":{\"entity\":\"MoneyMarketInvestment.cdm.json/MoneyMarketInvestment\",\"name\":\"OfferingDate\"},\"MaturityDate\":{\"entity\":\"MoneyMarketInvestment.cdm.json/MoneyMarketInvestment\",\"name\":\"MaturityDate\"},\"RedemptionDate\":{\"entity\":\"MoneyMarketInvestment.cdm.json/MoneyMarketInvestment\",\"name\":\"RedemptionDate\"},\"MaturityPeriodInMonths\":{\"entity\":\"MoneyMarketInvestment.cdm.json/MoneyMarketInvestment\",\"name\":\"MaturityPeriodInMonths\"},\"BondCapPercentage\":{\"entity\":\"MoneyMarketInvestment.cdm.json/MoneyMarketInvestment\",\"name\":\"BondCapPercentage\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"MoneyMarketInvestment\",\"path\":\"MoneyMarketInvestment.cdm.json/MoneyMarketInvestment\"},\"description\":\"Money market investments represent a global financial market for short-term borrowing and lending normally under 12 months and provides short-term liquidity to participants.\\n\\nThese instruments are often benchmarked to the London Interbank Offered Rate (LIBOR) for the appropriate term and currency.\",\"primaryKey\":[\"ProductId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"ProductId\",\"attributeReference\":{\"entity\":\"MoneyMarketInvestment.cdm.json/MoneyMarketInvestment\",\"name\":\"ProductId\"},\"dataType\":\"long\"},{\"type\":\"Existing\",\"name\":\"MoneyMarketInvestmentTypeId\",\"attributeReference\":{\"entity\":\"MoneyMarketInvestment.cdm.json/MoneyMarketInvestment\",\"name\":\"MoneyMarketInvestmentTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"Term\",\"attributeReference\":{\"entity\":\"MoneyMarketInvestment.cdm.json/MoneyMarketInvestment\",\"name\":\"Term\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"InvestmentStartDate\",\"attributeReference\":{\"entity\":\"MoneyMarketInvestment.cdm.json/MoneyMarketInvestment\",\"name\":\"InvestmentStartDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\"},{\"type\":\"Existing\",\"name\":\"DepositPeriodDays\",\"attributeReference\":{\"entity\":\"MoneyMarketInvestment.cdm.json/MoneyMarketInvestment\",\"name\":\"DepositPeriodDays\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"InterestPeriodInDays\",\"attributeReference\":{\"entity\":\"MoneyMarketInvestment.cdm.json/MoneyMarketInvestment\",\"name\":\"InterestPeriodInDays\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"InvestmentMaturityDate\",\"attributeReference\":{\"entity\":\"MoneyMarketInvestment.cdm.json/MoneyMarketInvestment\",\"name\":\"InvestmentMaturityDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\"},{\"type\":\"Existing\",\"name\":\"InterestPaymentPeriod\",\"attributeReference\":{\"entity\":\"MoneyMarketInvestment.cdm.json/MoneyMarketInvestment\",\"name\":\"InterestPaymentPeriod\"},\"dataType\":\"decimal\",\"dataTypeLength\":3,\"scale\":0},{\"type\":\"Existing\",\"name\":\"MayBeUsedForCollateralIndicator\",\"attributeReference\":{\"entity\":\"MoneyMarketInvestment.cdm.json/MoneyMarketInvestment\",\"name\":\"MayBeUsedForCollateralIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"ConvertibleDebentureIndicator\",\"attributeReference\":{\"entity\":\"MoneyMarketInvestment.cdm.json/MoneyMarketInvestment\",\"name\":\"ConvertibleDebentureIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"ConvertiblePeriodDays\",\"attributeReference\":{\"entity\":\"MoneyMarketInvestment.cdm.json/MoneyMarketInvestment\",\"name\":\"ConvertiblePeriodDays\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"PrincipalAmount\",\"attributeReference\":{\"entity\":\"MoneyMarketInvestment.cdm.json/MoneyMarketInvestment\",\"name\":\"PrincipalAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"ParValue\",\"attributeReference\":{\"entity\":\"MoneyMarketInvestment.cdm.json/MoneyMarketInvestment\",\"name\":\"ParValue\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"DiscountPriceAmount\",\"attributeReference\":{\"entity\":\"MoneyMarketInvestment.cdm.json/MoneyMarketInvestment\",\"name\":\"DiscountPriceAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"FaceValueAmount\",\"attributeReference\":{\"entity\":\"MoneyMarketInvestment.cdm.json/MoneyMarketInvestment\",\"name\":\"FaceValueAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"AuctionDate\",\"attributeReference\":{\"entity\":\"MoneyMarketInvestment.cdm.json/MoneyMarketInvestment\",\"name\":\"AuctionDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\"},{\"type\":\"Existing\",\"name\":\"IssuedInElectronicFormIndicator\",\"attributeReference\":{\"entity\":\"MoneyMarketInvestment.cdm.json/MoneyMarketInvestment\",\"name\":\"IssuedInElectronicFormIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"BondholderName\",\"attributeReference\":{\"entity\":\"MoneyMarketInvestment.cdm.json/MoneyMarketInvestment\",\"name\":\"BondholderName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"ObligorName\",\"attributeReference\":{\"entity\":\"MoneyMarketInvestment.cdm.json/MoneyMarketInvestment\",\"name\":\"ObligorName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"OfferingDate\",\"attributeReference\":{\"entity\":\"MoneyMarketInvestment.cdm.json/MoneyMarketInvestment\",\"name\":\"OfferingDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\"},{\"type\":\"Existing\",\"name\":\"MaturityDate\",\"attributeReference\":{\"entity\":\"MoneyMarketInvestment.cdm.json/MoneyMarketInvestment\",\"name\":\"MaturityDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\"},{\"type\":\"Existing\",\"name\":\"RedemptionDate\",\"attributeReference\":{\"entity\":\"MoneyMarketInvestment.cdm.json/MoneyMarketInvestment\",\"name\":\"RedemptionDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\"},{\"type\":\"Existing\",\"name\":\"MaturityPeriodInMonths\",\"attributeReference\":{\"entity\":\"MoneyMarketInvestment.cdm.json/MoneyMarketInvestment\",\"name\":\"MaturityPeriodInMonths\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"BondCapPercentage\",\"attributeReference\":{\"entity\":\"MoneyMarketInvestment.cdm.json/MoneyMarketInvestment\",\"name\":\"BondCapPercentage\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":8}]}}}",
+			"Description": "Money market investments represent a global financial market for short-term borrowing and lending normally under 12 months and provides short-term liquidity to participants.\n\nThese instruments are often benchmarked to the London Interbank Offered Rate (LIBOR) for the appropriate term and currency.",
+			"DisplayFolderInfo": "{\"name\":\"Product\",\"colorCode\":\"#0E3D73\"}",
+			"PrimaryKeys": "ProductId",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

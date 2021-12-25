@@ -1,0 +1,26 @@
+{
+	"name": "relationship-wbopfgwvyw",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-wbopfgwvyw",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "BalanceType",
+		"ToTableName": "CustomerAccountBalance",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "BalanceTypeId",
+				"ToColumnName": "BalanceTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"BalanceType.cdm.json/BalanceType\",\"toEntity\":\"CustomerAccountBalance.cdm.json/CustomerAccountBalance\",\"joinPairs\":[{\"fromAttribute\":\"BalanceTypeId\",\"toAttribute\":\"BalanceTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

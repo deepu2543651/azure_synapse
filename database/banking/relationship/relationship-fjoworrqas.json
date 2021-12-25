@@ -1,0 +1,26 @@
+{
+	"name": "relationship-fjoworrqas",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-fjoworrqas",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Agency",
+		"ToTableName": "AdvertisingEvent",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "AgencyId",
+				"ToColumnName": "AgencyId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Agency.cdm.json/Agency\",\"toEntity\":\"AdvertisingEvent.cdm.json/AdvertisingEvent\",\"joinPairs\":[{\"fromAttribute\":\"AgencyId\",\"toAttribute\":\"AgencyId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

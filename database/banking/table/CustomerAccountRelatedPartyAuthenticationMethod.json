@@ -1,0 +1,275 @@
+{
+	"name": "CustomerAccountRelatedPartyAuthenticationMethod",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "CustomerAccountRelatedPartyAuthenticationMethod",
+		"Description": "A method that can be used to authenticate a related party with a particular relationship to the customer account. Note that not all identification, security questions or biometrics may be considered suitable or sufficient for authentication.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "CustomerAccountId",
+					"Description": "The unique identifier of a Customer Account.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountRelatedPartyAuthenticationMethod.cdm.json/CustomerAccountRelatedPartyAuthenticationMethod",
+						"Name": "CustomerAccountId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "PartyId",
+					"Description": "The unique identifier of a Party.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountRelatedPartyAuthenticationMethod.cdm.json/CustomerAccountRelatedPartyAuthenticationMethod",
+						"Name": "PartyId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "CustomerAccountPartyRelationshipTypeId",
+					"Description": "The unique identifier of a Customer Account Party Relationship Type.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountRelatedPartyAuthenticationMethod.cdm.json/CustomerAccountRelatedPartyAuthenticationMethod",
+						"Name": "CustomerAccountPartyRelationshipTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PeriodStartTimestamp",
+					"Description": "The period start timestamp for which the Customer Account / Party relationship is valid or effective.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountRelatedPartyAuthenticationMethod.cdm.json/CustomerAccountRelatedPartyAuthenticationMethod",
+						"Name": "PeriodStartTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "CustomerAccountRelatedPartyAuthenticationMethodId",
+					"Description": "The unique identifier of a Customer Account Related Party Authentication Method.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountRelatedPartyAuthenticationMethod.cdm.json/CustomerAccountRelatedPartyAuthenticationMethod",
+						"Name": "CustomerAccountRelatedPartyAuthenticationMethodId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "CustomerAccountRelatedPartyAuthenticationMethodPeriodStartTimestamp",
+					"Description": "The period start timestamp that the customer account related party is associated with the authentication method.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountRelatedPartyAuthenticationMethod.cdm.json/CustomerAccountRelatedPartyAuthenticationMethod",
+						"Name": "CustomerAccountRelatedPartyAuthenticationMethodPeriodStartTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "CustomerAccountRelatedPartyAuthenticationMethodPeriodEndTimestamp",
+					"Description": "The period end timestamp that the customer account related party is associated with the authentication method.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountRelatedPartyAuthenticationMethod.cdm.json/CustomerAccountRelatedPartyAuthenticationMethod",
+						"Name": "CustomerAccountRelatedPartyAuthenticationMethodPeriodEndTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "AuthenticationMethodId",
+					"Description": "The unique identifier of an Authentication Method.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountRelatedPartyAuthenticationMethod.cdm.json/CustomerAccountRelatedPartyAuthenticationMethod",
+						"Name": "AuthenticationMethodId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "CustomerAccountRelatedPartyAuthenticationMethodNote",
+					"Description": "A note, comment or additional information regarding the customer account related party authentication method.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountRelatedPartyAuthenticationMethod.cdm.json/CustomerAccountRelatedPartyAuthenticationMethod",
+						"Name": "CustomerAccountRelatedPartyAuthenticationMethodNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "SecurityQuestionNumber",
+					"Description": "The number associated with the order in which the question is asked for the purpose of identification.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountRelatedPartyAuthenticationMethod.cdm.json/CustomerAccountRelatedPartyAuthenticationMethod",
+						"Name": "SecurityQuestionNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "IdentificationId",
+					"Description": "The unique identifier of the identification.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountRelatedPartyAuthenticationMethod.cdm.json/CustomerAccountRelatedPartyAuthenticationMethod",
+						"Name": "IdentificationId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "BiometricTypeId",
+					"Description": "The unique identifier of a biometric type.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountRelatedPartyAuthenticationMethod.cdm.json/CustomerAccountRelatedPartyAuthenticationMethod",
+						"Name": "BiometricTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "Timestamp",
+					"Description": "The timestamp that the associated information is reported, recorded or effective as-of.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountRelatedPartyAuthenticationMethod.cdm.json/CustomerAccountRelatedPartyAuthenticationMethod",
+						"Name": "Timestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/CustomerAccountRelatedPartyAuthenticationMethod",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/CustomerAccountRelatedPartyAuthenticationMethod",
+				"Properties": {
+					"LinkedServiceName": "wspc-dpu-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"CustomerAccountId\":{\"entity\":\"CustomerAccountRelatedPartyAuthenticationMethod.cdm.json/CustomerAccountRelatedPartyAuthenticationMethod\",\"name\":\"CustomerAccountId\"},\"PartyId\":{\"entity\":\"CustomerAccountRelatedPartyAuthenticationMethod.cdm.json/CustomerAccountRelatedPartyAuthenticationMethod\",\"name\":\"PartyId\"},\"CustomerAccountPartyRelationshipTypeId\":{\"entity\":\"CustomerAccountRelatedPartyAuthenticationMethod.cdm.json/CustomerAccountRelatedPartyAuthenticationMethod\",\"name\":\"CustomerAccountPartyRelationshipTypeId\"},\"PeriodStartTimestamp\":{\"entity\":\"CustomerAccountRelatedPartyAuthenticationMethod.cdm.json/CustomerAccountRelatedPartyAuthenticationMethod\",\"name\":\"PeriodStartTimestamp\"},\"CustomerAccountRelatedPartyAuthenticationMethodId\":{\"entity\":\"CustomerAccountRelatedPartyAuthenticationMethod.cdm.json/CustomerAccountRelatedPartyAuthenticationMethod\",\"name\":\"CustomerAccountRelatedPartyAuthenticationMethodId\"},\"CustomerAccountRelatedPartyAuthenticationMethodPeriodStartTimestamp\":{\"entity\":\"CustomerAccountRelatedPartyAuthenticationMethod.cdm.json/CustomerAccountRelatedPartyAuthenticationMethod\",\"name\":\"CustomerAccountRelatedPartyAuthenticationMethodPeriodStartTimestamp\"},\"CustomerAccountRelatedPartyAuthenticationMethodPeriodEndTimestamp\":{\"entity\":\"CustomerAccountRelatedPartyAuthenticationMethod.cdm.json/CustomerAccountRelatedPartyAuthenticationMethod\",\"name\":\"CustomerAccountRelatedPartyAuthenticationMethodPeriodEndTimestamp\"},\"AuthenticationMethodId\":{\"entity\":\"CustomerAccountRelatedPartyAuthenticationMethod.cdm.json/CustomerAccountRelatedPartyAuthenticationMethod\",\"name\":\"AuthenticationMethodId\"},\"CustomerAccountRelatedPartyAuthenticationMethodNote\":{\"entity\":\"CustomerAccountRelatedPartyAuthenticationMethod.cdm.json/CustomerAccountRelatedPartyAuthenticationMethod\",\"name\":\"CustomerAccountRelatedPartyAuthenticationMethodNote\"},\"SecurityQuestionNumber\":{\"entity\":\"CustomerAccountRelatedPartyAuthenticationMethod.cdm.json/CustomerAccountRelatedPartyAuthenticationMethod\",\"name\":\"SecurityQuestionNumber\"},\"IdentificationId\":{\"entity\":\"CustomerAccountRelatedPartyAuthenticationMethod.cdm.json/CustomerAccountRelatedPartyAuthenticationMethod\",\"name\":\"IdentificationId\"},\"BiometricTypeId\":{\"entity\":\"CustomerAccountRelatedPartyAuthenticationMethod.cdm.json/CustomerAccountRelatedPartyAuthenticationMethod\",\"name\":\"BiometricTypeId\"},\"Timestamp\":{\"entity\":\"CustomerAccountRelatedPartyAuthenticationMethod.cdm.json/CustomerAccountRelatedPartyAuthenticationMethod\",\"name\":\"Timestamp\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"CustomerAccountRelatedPartyAuthenticationMethod\",\"path\":\"CustomerAccountRelatedPartyAuthenticationMethod.cdm.json/CustomerAccountRelatedPartyAuthenticationMethod\"},\"description\":\"A method that can be used to authenticate a related party with a particular relationship to the customer account. Note that not all identification, security questions or biometrics may be considered suitable or sufficient for authentication.\",\"primaryKey\":[\"CustomerAccountId\",\"PartyId\",\"CustomerAccountPartyRelationshipTypeId\",\"PeriodStartTimestamp\",\"CustomerAccountRelatedPartyAuthenticationMethodId\",\"CustomerAccountRelatedPartyAuthenticationMethodPeriodStartTimestamp\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"CustomerAccountId\",\"attributeReference\":{\"entity\":\"CustomerAccountRelatedPartyAuthenticationMethod.cdm.json/CustomerAccountRelatedPartyAuthenticationMethod\",\"name\":\"CustomerAccountId\"},\"dataType\":\"long\"},{\"type\":\"Existing\",\"name\":\"PartyId\",\"attributeReference\":{\"entity\":\"CustomerAccountRelatedPartyAuthenticationMethod.cdm.json/CustomerAccountRelatedPartyAuthenticationMethod\",\"name\":\"PartyId\"},\"dataType\":\"long\"},{\"type\":\"Existing\",\"name\":\"CustomerAccountPartyRelationshipTypeId\",\"attributeReference\":{\"entity\":\"CustomerAccountRelatedPartyAuthenticationMethod.cdm.json/CustomerAccountRelatedPartyAuthenticationMethod\",\"name\":\"CustomerAccountPartyRelationshipTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"PeriodStartTimestamp\",\"attributeReference\":{\"entity\":\"CustomerAccountRelatedPartyAuthenticationMethod.cdm.json/CustomerAccountRelatedPartyAuthenticationMethod\",\"name\":\"PeriodStartTimestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"CustomerAccountRelatedPartyAuthenticationMethodId\",\"attributeReference\":{\"entity\":\"CustomerAccountRelatedPartyAuthenticationMethod.cdm.json/CustomerAccountRelatedPartyAuthenticationMethod\",\"name\":\"CustomerAccountRelatedPartyAuthenticationMethodId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"CustomerAccountRelatedPartyAuthenticationMethodPeriodStartTimestamp\",\"attributeReference\":{\"entity\":\"CustomerAccountRelatedPartyAuthenticationMethod.cdm.json/CustomerAccountRelatedPartyAuthenticationMethod\",\"name\":\"CustomerAccountRelatedPartyAuthenticationMethodPeriodStartTimestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"CustomerAccountRelatedPartyAuthenticationMethodPeriodEndTimestamp\",\"attributeReference\":{\"entity\":\"CustomerAccountRelatedPartyAuthenticationMethod.cdm.json/CustomerAccountRelatedPartyAuthenticationMethod\",\"name\":\"CustomerAccountRelatedPartyAuthenticationMethodPeriodEndTimestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"AuthenticationMethodId\",\"attributeReference\":{\"entity\":\"CustomerAccountRelatedPartyAuthenticationMethod.cdm.json/CustomerAccountRelatedPartyAuthenticationMethod\",\"name\":\"AuthenticationMethodId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"CustomerAccountRelatedPartyAuthenticationMethodNote\",\"attributeReference\":{\"entity\":\"CustomerAccountRelatedPartyAuthenticationMethod.cdm.json/CustomerAccountRelatedPartyAuthenticationMethod\",\"name\":\"CustomerAccountRelatedPartyAuthenticationMethodNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024},{\"type\":\"Existing\",\"name\":\"SecurityQuestionNumber\",\"attributeReference\":{\"entity\":\"CustomerAccountRelatedPartyAuthenticationMethod.cdm.json/CustomerAccountRelatedPartyAuthenticationMethod\",\"name\":\"SecurityQuestionNumber\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"IdentificationId\",\"attributeReference\":{\"entity\":\"CustomerAccountRelatedPartyAuthenticationMethod.cdm.json/CustomerAccountRelatedPartyAuthenticationMethod\",\"name\":\"IdentificationId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"BiometricTypeId\",\"attributeReference\":{\"entity\":\"CustomerAccountRelatedPartyAuthenticationMethod.cdm.json/CustomerAccountRelatedPartyAuthenticationMethod\",\"name\":\"BiometricTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"Timestamp\",\"attributeReference\":{\"entity\":\"CustomerAccountRelatedPartyAuthenticationMethod.cdm.json/CustomerAccountRelatedPartyAuthenticationMethod\",\"name\":\"Timestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"}]}}}",
+			"Description": "A method that can be used to authenticate a related party with a particular relationship to the customer account. Note that not all identification, security questions or biometrics may be considered suitable or sufficient for authentication.",
+			"DisplayFolderInfo": "{\"name\":\"Customer Account\",\"colorCode\":\"#E3008C\"}",
+			"PrimaryKeys": "CustomerAccountId,PartyId,CustomerAccountPartyRelationshipTypeId,PeriodStartTimestamp,CustomerAccountRelatedPartyAuthenticationMethodId,CustomerAccountRelatedPartyAuthenticationMethodPeriodStartTimestamp",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

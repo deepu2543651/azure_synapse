@@ -1,0 +1,42 @@
+{
+	"name": "relationship-ibxkxysper",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-ibxkxysper",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "BaseRate",
+		"ToTableName": "CustomerAccountMarginInterestRate",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "BaseRatePeriodStartTimestamp",
+				"ToColumnName": "BaseRatePeriodStartTimestamp"
+			},
+			{
+				"FromColumnName": "InterestRatePurposeId",
+				"ToColumnName": "InterestRatePurposeId"
+			},
+			{
+				"FromColumnName": "MaximumAccountBalance",
+				"ToColumnName": "MaximumAccountBalance"
+			},
+			{
+				"FromColumnName": "MinimumAccountBalance",
+				"ToColumnName": "MinimumAccountBalance"
+			},
+			{
+				"FromColumnName": "ProductId",
+				"ToColumnName": "ProductId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"BaseRate.cdm.json/BaseRate\",\"toEntity\":\"CustomerAccountMarginInterestRate.cdm.json/CustomerAccountMarginInterestRate\",\"joinPairs\":[{\"fromAttribute\":\"BaseRatePeriodStartTimestamp\",\"toAttribute\":\"BaseRatePeriodStartTimestamp\"},{\"fromAttribute\":\"InterestRatePurposeId\",\"toAttribute\":\"InterestRatePurposeId\"},{\"fromAttribute\":\"MaximumAccountBalance\",\"toAttribute\":\"MaximumAccountBalance\"},{\"fromAttribute\":\"MinimumAccountBalance\",\"toAttribute\":\"MinimumAccountBalance\"},{\"fromAttribute\":\"ProductId\",\"toAttribute\":\"ProductId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

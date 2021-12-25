@@ -1,0 +1,511 @@
+{
+	"name": "AssetBackedSecurity",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "AssetBackedSecurity",
+		"Description": "An asset-backed security is a security whose value and income payments are derived from and collateralized by a specified pool of underlying assets. \n\nCreating a pool of assets allows them to be sold to investors (\"securitization\") and allows the risk of investing in the underlying assets to be diversified since each security will represent a fraction of the total value of the pool of underlying assets. \n\nThe pools of underlying assets can include payments from credit cards, auto loans, and mortgage loans, aircraft leases, royalty payments among other more creative underlying assets.\n\nFrequently a separate institution, called a special purpose vehicle (SPV), is created to handle the securitization of asset backed securities. \n\nThe special purpose vehicle (SPV), which creates and sells the securities, uses the proceeds of the sale to pay back the bank that created, or originated, the underlying assets. The special purpose vehicle is responsible for bundling  the underlying assets into a specified pool that fits  the risk preferences and similar requirements of investors who might want to buy the securities.\n\nBy transferring the credit risk of the underlying assets to another institution, the originating bank removes the value of the underlying assets from its balance sheet and receives cash in return.\n\nThe credit rating of the asset backed securities would be based only on the assets and liabilities of the special purpose vehicle.  A higher credit rating could allow the special purpose vehicle to pay a lower interest rate (= charge a higher price) on the asset-backed securities than if the originating institution borrowed funds or issued bonds.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "AssetBackedSecurityId",
+					"Description": "The unique identifier of a Product.",
+					"BaseAttributeReference": {
+						"Entity": "AssetBackedSecurity.cdm.json/AssetBackedSecurity",
+						"Name": "AssetBackedSecurityId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "IssuerName",
+					"Description": "The name of an Issuer of the Asset Backed Security.",
+					"BaseAttributeReference": {
+						"Entity": "AssetBackedSecurity.cdm.json/AssetBackedSecurity",
+						"Name": "IssuerName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "OriginatorName",
+					"Description": "The name of the originator of the assets.",
+					"BaseAttributeReference": {
+						"Entity": "AssetBackedSecurity.cdm.json/AssetBackedSecurity",
+						"Name": "OriginatorName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "IssuedAmount",
+					"Description": "The total amount of asset backed security issued.\n\nIndividual amounts by Note Class are indicated in the NOTE CLASS entity.",
+					"BaseAttributeReference": {
+						"Entity": "AssetBackedSecurity.cdm.json/AssetBackedSecurity",
+						"Name": "IssuedAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "IssuePriceAmount",
+					"Description": "The price of the issue.",
+					"BaseAttributeReference": {
+						"Entity": "AssetBackedSecurity.cdm.json/AssetBackedSecurity",
+						"Name": "IssuePriceAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "CollateralDescription",
+					"Description": "A description of the collateral underlying the Asset Backed Security",
+					"BaseAttributeReference": {
+						"Entity": "AssetBackedSecurity.cdm.json/AssetBackedSecurity",
+						"Name": "CollateralDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "LaunchDate",
+					"Description": "The launch date of the issue.",
+					"BaseAttributeReference": {
+						"Entity": "AssetBackedSecurity.cdm.json/AssetBackedSecurity",
+						"Name": "LaunchDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "LegalMaturityDate",
+					"Description": "The date on which principal and interest must be paid to investors, which is later than the expected maturity date ('aka Legal Maturity Date')",
+					"BaseAttributeReference": {
+						"Entity": "AssetBackedSecurity.cdm.json/AssetBackedSecurity",
+						"Name": "LegalMaturityDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "ExpectedMaturityDate",
+					"Description": "The date on which principal is projected to be paid to investors based on collateral performance.",
+					"BaseAttributeReference": {
+						"Entity": "AssetBackedSecurity.cdm.json/AssetBackedSecurity",
+						"Name": "ExpectedMaturityDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "BenchmarkIndexId",
+					"Description": "The unique identifier of a benchmark.",
+					"BaseAttributeReference": {
+						"Entity": "AssetBackedSecurity.cdm.json/AssetBackedSecurity",
+						"Name": "BenchmarkIndexId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "SpvId",
+					"Description": "The unique identifier of the SVP.",
+					"BaseAttributeReference": {
+						"Entity": "AssetBackedSecurity.cdm.json/AssetBackedSecurity",
+						"Name": "SpvId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "AssetBackedSecurityTypeId",
+					"Description": "The unique identifier of an Asset Backed Security Type.",
+					"BaseAttributeReference": {
+						"Entity": "AssetBackedSecurity.cdm.json/AssetBackedSecurity",
+						"Name": "AssetBackedSecurityTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "CouponPercentage",
+					"Description": "The percentage provided by the coupons of the issue.",
+					"BaseAttributeReference": {
+						"Entity": "AssetBackedSecurity.cdm.json/AssetBackedSecurity",
+						"Name": "CouponPercentage"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "ProspectusStatement",
+					"Description": "The base prospectus included with a S-3 registration statement.\n\nExamples of disclosure items that may be set forth in the base prospectus include: \n\n-  general information about the issuer, \n\n-  risk factors that are applicable generally to the issuer and all of its securities\n\n-  information about the underwriting process and underwriting standards applicable to the assets to be included in the underling pools, \ndiscussion of the types of credit enhancement that may be used in connection with the related take downs, \n\n-  description of the trustee and servicer,\n\n-  general material federal income tax consequences discussion,\n\n-  legal considerations discussion, and \nother information",
+					"BaseAttributeReference": {
+						"Entity": "AssetBackedSecurity.cdm.json/AssetBackedSecurity",
+						"Name": "ProspectusStatement"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 2048,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "SpreadAtReOfferStatement",
+					"Description": "The spread at re-offer of the ABS.\n\nEx:\n\nThree month LIBOR plus 35 bp",
+					"BaseAttributeReference": {
+						"Entity": "AssetBackedSecurity.cdm.json/AssetBackedSecurity",
+						"Name": "SpreadAtReOfferStatement"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 2048,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ClassOfNotesOfferedStatement",
+					"Description": "A statement regarding the class of note(s) offered (NOTE CLASS).",
+					"BaseAttributeReference": {
+						"Entity": "AssetBackedSecurity.cdm.json/AssetBackedSecurity",
+						"Name": "ClassOfNotesOfferedStatement"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 2048,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "SecuredOnAssetsStatement",
+					"Description": "A statement describing the underlying secured assets of the ABS.\n\nEx:\n\n-  Secured on: loans to Japanese corporates originated by Shinsei Bank\n\n-  Secured on: UK commercial mortgages originated by Northern Rock\n\n-  Secured on: a secured loan to Home Technology Finance Ltd, a division of boxclever, backed by consumer and rental contracts originated by boxclever",
+					"BaseAttributeReference": {
+						"Entity": "AssetBackedSecurity.cdm.json/AssetBackedSecurity",
+						"Name": "SecuredOnAssetsStatement"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 2048,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "CallOptionStatement",
+					"Description": "A statement describing any call options associated with the ABS.\n\nEx:\n\nCall option: June 27, 2009 when coupons step up",
+					"BaseAttributeReference": {
+						"Entity": "AssetBackedSecurity.cdm.json/AssetBackedSecurity",
+						"Name": "CallOptionStatement"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 2048,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "LoanPaperBackedSecurityIndicator",
+					"Description": "Indicates that the ABS is backed by loans.",
+					"BaseAttributeReference": {
+						"Entity": "AssetBackedSecurity.cdm.json/AssetBackedSecurity",
+						"Name": "LoanPaperBackedSecurityIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "PassThroughAbsIndicator",
+					"Description": "Indicates that the ABS is a pass-through ABS.\n\nAsset-backed securities can be structured either as pass-throughs or as multiple tranches similar to collateralized mortgage obligations",
+					"BaseAttributeReference": {
+						"Entity": "AssetBackedSecurity.cdm.json/AssetBackedSecurity",
+						"Name": "PassThroughAbsIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "MultipleTrancheAbsIndicator",
+					"Description": "Indicates that the ABS is a multiple tranche ABS (see NOTE CLASS).\n\nAsset-backed securities can be structured either as pass-throughs or as multiple tranches similar to collateralized mortgage obligations",
+					"BaseAttributeReference": {
+						"Entity": "AssetBackedSecurity.cdm.json/AssetBackedSecurity",
+						"Name": "MultipleTrancheAbsIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "IssuerAccountsReceivableBackedIndicator",
+					"Description": "Indicates that the ABS is backed by receivables.",
+					"BaseAttributeReference": {
+						"Entity": "AssetBackedSecurity.cdm.json/AssetBackedSecurity",
+						"Name": "IssuerAccountsReceivableBackedIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "CreditEnhancedAssetBackedSecurityIndicator",
+					"Description": "An asset-backed security is said to be \"credit enhanced\" if there is some feature present in the transaction that makes it more likely that the holder of the asset-backed security will receive the principal or interest owed.",
+					"BaseAttributeReference": {
+						"Entity": "AssetBackedSecurity.cdm.json/AssetBackedSecurity",
+						"Name": "CreditEnhancedAssetBackedSecurityIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "GrantorTrustStructureIndicator",
+					"Description": "Indicates that a grantor trust legal structure is being used, which is most common for pass-throughs.    It allows passive pass-through of cash flows without taxation at the pool level.",
+					"BaseAttributeReference": {
+						"Entity": "AssetBackedSecurity.cdm.json/AssetBackedSecurity",
+						"Name": "GrantorTrustStructureIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "OwnerTrustStructureIndicator",
+					"Description": "Indicates that the ABS structure is that of an Owner Trust, which is an amortizing structure that permits significant cash-flow engineering that is normally prohibited from grantor trusts.  \n\nOwner trusts are often used with auto loans, equipment leases and student loans.",
+					"BaseAttributeReference": {
+						"Entity": "AssetBackedSecurity.cdm.json/AssetBackedSecurity",
+						"Name": "OwnerTrustStructureIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "RevolvingTrustStructureIndicator",
+					"Description": "Indicates that the ABS is structured as a revolving trust, which is used for assets with high turnover rates such as credit cards. trade and dealer floor-plan receivables.  \n\nIt is characterized by a revolving period and an accumulation (controlled-amortization) period.",
+					"BaseAttributeReference": {
+						"Entity": "AssetBackedSecurity.cdm.json/AssetBackedSecurity",
+						"Name": "RevolvingTrustStructureIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "AuditedFinancialStatementRequiredIndicator",
+					"Description": "Audited financial statements are required if 20% or more of the underlying pool of assets consists of securities of that underlying issuer.",
+					"BaseAttributeReference": {
+						"Entity": "AssetBackedSecurity.cdm.json/AssetBackedSecurity",
+						"Name": "AuditedFinancialStatementRequiredIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/AssetBackedSecurity",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/AssetBackedSecurity",
+				"Properties": {
+					"LinkedServiceName": "wspc-dpu-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"AssetBackedSecurityId\":{\"entity\":\"AssetBackedSecurity.cdm.json/AssetBackedSecurity\",\"name\":\"AssetBackedSecurityId\"},\"IssuerName\":{\"entity\":\"AssetBackedSecurity.cdm.json/AssetBackedSecurity\",\"name\":\"IssuerName\"},\"OriginatorName\":{\"entity\":\"AssetBackedSecurity.cdm.json/AssetBackedSecurity\",\"name\":\"OriginatorName\"},\"IssuedAmount\":{\"entity\":\"AssetBackedSecurity.cdm.json/AssetBackedSecurity\",\"name\":\"IssuedAmount\"},\"IssuePriceAmount\":{\"entity\":\"AssetBackedSecurity.cdm.json/AssetBackedSecurity\",\"name\":\"IssuePriceAmount\"},\"CollateralDescription\":{\"entity\":\"AssetBackedSecurity.cdm.json/AssetBackedSecurity\",\"name\":\"CollateralDescription\"},\"LaunchDate\":{\"entity\":\"AssetBackedSecurity.cdm.json/AssetBackedSecurity\",\"name\":\"LaunchDate\"},\"LegalMaturityDate\":{\"entity\":\"AssetBackedSecurity.cdm.json/AssetBackedSecurity\",\"name\":\"LegalMaturityDate\"},\"ExpectedMaturityDate\":{\"entity\":\"AssetBackedSecurity.cdm.json/AssetBackedSecurity\",\"name\":\"ExpectedMaturityDate\"},\"BenchmarkIndexId\":{\"entity\":\"AssetBackedSecurity.cdm.json/AssetBackedSecurity\",\"name\":\"BenchmarkIndexId\"},\"SpvId\":{\"entity\":\"AssetBackedSecurity.cdm.json/AssetBackedSecurity\",\"name\":\"SpvId\"},\"AssetBackedSecurityTypeId\":{\"entity\":\"AssetBackedSecurity.cdm.json/AssetBackedSecurity\",\"name\":\"AssetBackedSecurityTypeId\"},\"CouponPercentage\":{\"entity\":\"AssetBackedSecurity.cdm.json/AssetBackedSecurity\",\"name\":\"CouponPercentage\"},\"ProspectusStatement\":{\"entity\":\"AssetBackedSecurity.cdm.json/AssetBackedSecurity\",\"name\":\"ProspectusStatement\"},\"SpreadAtReOfferStatement\":{\"entity\":\"AssetBackedSecurity.cdm.json/AssetBackedSecurity\",\"name\":\"SpreadAtReOfferStatement\"},\"ClassOfNotesOfferedStatement\":{\"entity\":\"AssetBackedSecurity.cdm.json/AssetBackedSecurity\",\"name\":\"ClassOfNotesOfferedStatement\"},\"SecuredOnAssetsStatement\":{\"entity\":\"AssetBackedSecurity.cdm.json/AssetBackedSecurity\",\"name\":\"SecuredOnAssetsStatement\"},\"CallOptionStatement\":{\"entity\":\"AssetBackedSecurity.cdm.json/AssetBackedSecurity\",\"name\":\"CallOptionStatement\"},\"LoanPaperBackedSecurityIndicator\":{\"entity\":\"AssetBackedSecurity.cdm.json/AssetBackedSecurity\",\"name\":\"LoanPaperBackedSecurityIndicator\"},\"PassThroughAbsIndicator\":{\"entity\":\"AssetBackedSecurity.cdm.json/AssetBackedSecurity\",\"name\":\"PassThroughAbsIndicator\"},\"MultipleTrancheAbsIndicator\":{\"entity\":\"AssetBackedSecurity.cdm.json/AssetBackedSecurity\",\"name\":\"MultipleTrancheAbsIndicator\"},\"IssuerAccountsReceivableBackedIndicator\":{\"entity\":\"AssetBackedSecurity.cdm.json/AssetBackedSecurity\",\"name\":\"IssuerAccountsReceivableBackedIndicator\"},\"CreditEnhancedAssetBackedSecurityIndicator\":{\"entity\":\"AssetBackedSecurity.cdm.json/AssetBackedSecurity\",\"name\":\"CreditEnhancedAssetBackedSecurityIndicator\"},\"GrantorTrustStructureIndicator\":{\"entity\":\"AssetBackedSecurity.cdm.json/AssetBackedSecurity\",\"name\":\"GrantorTrustStructureIndicator\"},\"OwnerTrustStructureIndicator\":{\"entity\":\"AssetBackedSecurity.cdm.json/AssetBackedSecurity\",\"name\":\"OwnerTrustStructureIndicator\"},\"RevolvingTrustStructureIndicator\":{\"entity\":\"AssetBackedSecurity.cdm.json/AssetBackedSecurity\",\"name\":\"RevolvingTrustStructureIndicator\"},\"AuditedFinancialStatementRequiredIndicator\":{\"entity\":\"AssetBackedSecurity.cdm.json/AssetBackedSecurity\",\"name\":\"AuditedFinancialStatementRequiredIndicator\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"AssetBackedSecurity\",\"path\":\"AssetBackedSecurity.cdm.json/AssetBackedSecurity\"},\"description\":\"An asset-backed security is a security whose value and income payments are derived from and collateralized by a specified pool of underlying assets. \\n\\nCreating a pool of assets allows them to be sold to investors (\\\"securitization\\\") and allows the risk of investing in the underlying assets to be diversified since each security will represent a fraction of the total value of the pool of underlying assets. \\n\\nThe pools of underlying assets can include payments from credit cards, auto loans, and mortgage loans, aircraft leases, royalty payments among other more creative underlying assets.\\n\\nFrequently a separate institution, called a special purpose vehicle (SPV), is created to handle the securitization of asset backed securities. \\n\\nThe special purpose vehicle (SPV), which creates and sells the securities, uses the proceeds of the sale to pay back the bank that created, or originated, the underlying assets. The special purpose vehicle is responsible for bundling  the underlying assets into a specified pool that fits  the risk preferences and similar requirements of investors who might want to buy the securities.\\n\\nBy transferring the credit risk of the underlying assets to another institution, the originating bank removes the value of the underlying assets from its balance sheet and receives cash in return.\\n\\nThe credit rating of the asset backed securities would be based only on the assets and liabilities of the special purpose vehicle.  A higher credit rating could allow the special purpose vehicle to pay a lower interest rate (= charge a higher price) on the asset-backed securities than if the originating institution borrowed funds or issued bonds.\",\"primaryKey\":[\"AssetBackedSecurityId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"AssetBackedSecurityId\",\"attributeReference\":{\"entity\":\"AssetBackedSecurity.cdm.json/AssetBackedSecurity\",\"name\":\"AssetBackedSecurityId\"},\"dataType\":\"long\"},{\"type\":\"Existing\",\"name\":\"IssuerName\",\"attributeReference\":{\"entity\":\"AssetBackedSecurity.cdm.json/AssetBackedSecurity\",\"name\":\"IssuerName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"OriginatorName\",\"attributeReference\":{\"entity\":\"AssetBackedSecurity.cdm.json/AssetBackedSecurity\",\"name\":\"OriginatorName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"IssuedAmount\",\"attributeReference\":{\"entity\":\"AssetBackedSecurity.cdm.json/AssetBackedSecurity\",\"name\":\"IssuedAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"IssuePriceAmount\",\"attributeReference\":{\"entity\":\"AssetBackedSecurity.cdm.json/AssetBackedSecurity\",\"name\":\"IssuePriceAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"CollateralDescription\",\"attributeReference\":{\"entity\":\"AssetBackedSecurity.cdm.json/AssetBackedSecurity\",\"name\":\"CollateralDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512},{\"type\":\"Existing\",\"name\":\"LaunchDate\",\"attributeReference\":{\"entity\":\"AssetBackedSecurity.cdm.json/AssetBackedSecurity\",\"name\":\"LaunchDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\"},{\"type\":\"Existing\",\"name\":\"LegalMaturityDate\",\"attributeReference\":{\"entity\":\"AssetBackedSecurity.cdm.json/AssetBackedSecurity\",\"name\":\"LegalMaturityDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\"},{\"type\":\"Existing\",\"name\":\"ExpectedMaturityDate\",\"attributeReference\":{\"entity\":\"AssetBackedSecurity.cdm.json/AssetBackedSecurity\",\"name\":\"ExpectedMaturityDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\"},{\"type\":\"Existing\",\"name\":\"BenchmarkIndexId\",\"attributeReference\":{\"entity\":\"AssetBackedSecurity.cdm.json/AssetBackedSecurity\",\"name\":\"BenchmarkIndexId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"SpvId\",\"attributeReference\":{\"entity\":\"AssetBackedSecurity.cdm.json/AssetBackedSecurity\",\"name\":\"SpvId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"AssetBackedSecurityTypeId\",\"attributeReference\":{\"entity\":\"AssetBackedSecurity.cdm.json/AssetBackedSecurity\",\"name\":\"AssetBackedSecurityTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"CouponPercentage\",\"attributeReference\":{\"entity\":\"AssetBackedSecurity.cdm.json/AssetBackedSecurity\",\"name\":\"CouponPercentage\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":8},{\"type\":\"Existing\",\"name\":\"ProspectusStatement\",\"attributeReference\":{\"entity\":\"AssetBackedSecurity.cdm.json/AssetBackedSecurity\",\"name\":\"ProspectusStatement\"},\"dataType\":\"string\",\"dataTypeLength\":2048},{\"type\":\"Existing\",\"name\":\"SpreadAtReOfferStatement\",\"attributeReference\":{\"entity\":\"AssetBackedSecurity.cdm.json/AssetBackedSecurity\",\"name\":\"SpreadAtReOfferStatement\"},\"dataType\":\"string\",\"dataTypeLength\":2048},{\"type\":\"Existing\",\"name\":\"ClassOfNotesOfferedStatement\",\"attributeReference\":{\"entity\":\"AssetBackedSecurity.cdm.json/AssetBackedSecurity\",\"name\":\"ClassOfNotesOfferedStatement\"},\"dataType\":\"string\",\"dataTypeLength\":2048},{\"type\":\"Existing\",\"name\":\"SecuredOnAssetsStatement\",\"attributeReference\":{\"entity\":\"AssetBackedSecurity.cdm.json/AssetBackedSecurity\",\"name\":\"SecuredOnAssetsStatement\"},\"dataType\":\"string\",\"dataTypeLength\":2048},{\"type\":\"Existing\",\"name\":\"CallOptionStatement\",\"attributeReference\":{\"entity\":\"AssetBackedSecurity.cdm.json/AssetBackedSecurity\",\"name\":\"CallOptionStatement\"},\"dataType\":\"string\",\"dataTypeLength\":2048},{\"type\":\"Existing\",\"name\":\"LoanPaperBackedSecurityIndicator\",\"attributeReference\":{\"entity\":\"AssetBackedSecurity.cdm.json/AssetBackedSecurity\",\"name\":\"LoanPaperBackedSecurityIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"PassThroughAbsIndicator\",\"attributeReference\":{\"entity\":\"AssetBackedSecurity.cdm.json/AssetBackedSecurity\",\"name\":\"PassThroughAbsIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"MultipleTrancheAbsIndicator\",\"attributeReference\":{\"entity\":\"AssetBackedSecurity.cdm.json/AssetBackedSecurity\",\"name\":\"MultipleTrancheAbsIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"IssuerAccountsReceivableBackedIndicator\",\"attributeReference\":{\"entity\":\"AssetBackedSecurity.cdm.json/AssetBackedSecurity\",\"name\":\"IssuerAccountsReceivableBackedIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"CreditEnhancedAssetBackedSecurityIndicator\",\"attributeReference\":{\"entity\":\"AssetBackedSecurity.cdm.json/AssetBackedSecurity\",\"name\":\"CreditEnhancedAssetBackedSecurityIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"GrantorTrustStructureIndicator\",\"attributeReference\":{\"entity\":\"AssetBackedSecurity.cdm.json/AssetBackedSecurity\",\"name\":\"GrantorTrustStructureIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"OwnerTrustStructureIndicator\",\"attributeReference\":{\"entity\":\"AssetBackedSecurity.cdm.json/AssetBackedSecurity\",\"name\":\"OwnerTrustStructureIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"RevolvingTrustStructureIndicator\",\"attributeReference\":{\"entity\":\"AssetBackedSecurity.cdm.json/AssetBackedSecurity\",\"name\":\"RevolvingTrustStructureIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"AuditedFinancialStatementRequiredIndicator\",\"attributeReference\":{\"entity\":\"AssetBackedSecurity.cdm.json/AssetBackedSecurity\",\"name\":\"AuditedFinancialStatementRequiredIndicator\"},\"dataType\":\"boolean\"}]}}}",
+			"Description": "An asset-backed security is a security whose value and income payments are derived from and collateralized by a specified pool of underlying assets. \n\nCreating a pool of assets allows them to be sold to investors (\"securitization\") and allows the risk of investing in the underlying assets to be diversified since each security will represent a fraction of the total value of the pool of underlying assets. \n\nThe pools of underlying assets can include payments from credit cards, auto loans, and mortgage loans, aircraft leases, royalty payments among other more creative underlying assets.\n\nFrequently a separate institution, called a special purpose vehicle (SPV), is created to handle the securitization of asset backed securities. \n\nThe special purpose vehicle (SPV), which creates and sells the securities, uses the proceeds of the sale to pay back the bank that created, or originated, the underlying assets. The special purpose vehicle is responsible for bundling  the underlying assets into a specified pool that fits  the risk preferences and similar requirements of investors who might want to buy the securities.\n\nBy transferring the credit risk of the underlying assets to another institution, the originating bank removes the value of the underlying assets from its balance sheet and receives cash in return.\n\nThe credit rating of the asset backed securities would be based only on the assets and liabilities of the special purpose vehicle.  A higher credit rating could allow the special purpose vehicle to pay a lower interest rate (= charge a higher price) on the asset-backed securities than if the originating institution borrowed funds or issued bonds.",
+			"DisplayFolderInfo": "{\"name\":\"Financial Product\",\"colorCode\":\"#001475\"}",
+			"PrimaryKeys": "AssetBackedSecurityId",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

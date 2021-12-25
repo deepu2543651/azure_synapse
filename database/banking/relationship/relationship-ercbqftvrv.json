@@ -1,0 +1,26 @@
+{
+	"name": "relationship-ercbqftvrv",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-ercbqftvrv",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "TransactionDetailType",
+		"ToTableName": "TransactionDetail",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "TransactionDetailTypeId",
+				"ToColumnName": "TransactionDetailTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"TransactionDetailType.cdm.json/TransactionDetailType\",\"toEntity\":\"TransactionDetail.cdm.json/TransactionDetail\",\"joinPairs\":[{\"fromAttribute\":\"TransactionDetailTypeId\",\"toAttribute\":\"TransactionDetailTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

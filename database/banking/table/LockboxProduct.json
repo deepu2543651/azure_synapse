@@ -1,0 +1,110 @@
+{
+	"name": "LockboxProduct",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "LockboxProduct",
+		"Description": "The lockbox that acts as the basis for any lockbox services.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ProductId",
+					"Description": "The unique identifier of a Product.",
+					"BaseAttributeReference": {
+						"Entity": "LockboxProduct.cdm.json/LockboxProduct",
+						"Name": "ProductId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "LockboxServiceTransmissionMethodId",
+					"Description": "The unique identifier of a Transmission Method.",
+					"BaseAttributeReference": {
+						"Entity": "LockboxProduct.cdm.json/LockboxProduct",
+						"Name": "LockboxServiceTransmissionMethodId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "LockboxProcessingScheduleId",
+					"Description": "The unique identifier of a Processing Schedule.",
+					"BaseAttributeReference": {
+						"Entity": "LockboxProduct.cdm.json/LockboxProduct",
+						"Name": "LockboxProcessingScheduleId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/LockboxProduct",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/LockboxProduct",
+				"Properties": {
+					"LinkedServiceName": "wspc-dpu-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ProductId\":{\"entity\":\"LockboxProduct.cdm.json/LockboxProduct\",\"name\":\"ProductId\"},\"LockboxServiceTransmissionMethodId\":{\"entity\":\"LockboxProduct.cdm.json/LockboxProduct\",\"name\":\"LockboxServiceTransmissionMethodId\"},\"LockboxProcessingScheduleId\":{\"entity\":\"LockboxProduct.cdm.json/LockboxProduct\",\"name\":\"LockboxProcessingScheduleId\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"LockboxProduct\",\"path\":\"LockboxProduct.cdm.json/LockboxProduct\"},\"description\":\"The lockbox that acts as the basis for any lockbox services.\",\"primaryKey\":[\"ProductId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"ProductId\",\"attributeReference\":{\"entity\":\"LockboxProduct.cdm.json/LockboxProduct\",\"name\":\"ProductId\"},\"dataType\":\"long\"},{\"type\":\"Existing\",\"name\":\"LockboxServiceTransmissionMethodId\",\"attributeReference\":{\"entity\":\"LockboxProduct.cdm.json/LockboxProduct\",\"name\":\"LockboxServiceTransmissionMethodId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"LockboxProcessingScheduleId\",\"attributeReference\":{\"entity\":\"LockboxProduct.cdm.json/LockboxProduct\",\"name\":\"LockboxProcessingScheduleId\"},\"dataType\":\"integer\"}]}}}",
+			"Description": "The lockbox that acts as the basis for any lockbox services.",
+			"DisplayFolderInfo": "{\"name\":\"Product\",\"colorCode\":\"#0E3D73\"}",
+			"PrimaryKeys": "ProductId",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

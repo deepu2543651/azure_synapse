@@ -1,0 +1,30 @@
+{
+	"name": "relationship-njzjuivrtg",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-njzjuivrtg",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "BudgetCostItem",
+		"ToTableName": "MarketingCampaignBudgetedCostItem",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "BudgetId",
+				"ToColumnName": "BudgetId"
+			},
+			{
+				"FromColumnName": "CostItemId",
+				"ToColumnName": "CostItemId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"BudgetCostItem.cdm.json/BudgetCostItem\",\"toEntity\":\"MarketingCampaignBudgetedCostItem.cdm.json/MarketingCampaignBudgetedCostItem\",\"joinPairs\":[{\"fromAttribute\":\"BudgetId\",\"toAttribute\":\"BudgetId\"},{\"fromAttribute\":\"CostItemId\",\"toAttribute\":\"CostItemId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

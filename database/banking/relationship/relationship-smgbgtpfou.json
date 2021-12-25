@@ -1,0 +1,26 @@
+{
+	"name": "relationship-smgbgtpfou",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-smgbgtpfou",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "TvStation",
+		"ToTableName": "TvAdvertisingEvent",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "TvStationId",
+				"ToColumnName": "TvStationId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"TvStation.cdm.json/TvStation\",\"toEntity\":\"TvAdvertisingEvent.cdm.json/TvAdvertisingEvent\",\"joinPairs\":[{\"fromAttribute\":\"TvStationId\",\"toAttribute\":\"TvStationId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

@@ -1,0 +1,26 @@
+{
+	"name": "relationship-jxawqcguuz",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-jxawqcguuz",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "TransactionExecutionMethod",
+		"ToTableName": "BankTransaction",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "TransactionExecutionMethodId",
+				"ToColumnName": "TransactionExecutionMethodId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"TransactionExecutionMethod.cdm.json/TransactionExecutionMethod\",\"toEntity\":\"BankTransaction.cdm.json/BankTransaction\",\"joinPairs\":[{\"fromAttribute\":\"TransactionExecutionMethodId\",\"toAttribute\":\"TransactionExecutionMethodId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

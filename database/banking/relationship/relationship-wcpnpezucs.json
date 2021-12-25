@@ -1,0 +1,26 @@
+{
+	"name": "relationship-wcpnpezucs",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-wcpnpezucs",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Issue",
+		"ToTableName": "IssueStatus",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "IssueId",
+				"ToColumnName": "IssueId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Issue.cdm.json/Issue\",\"toEntity\":\"IssueStatus.cdm.json/IssueStatus\",\"joinPairs\":[{\"fromAttribute\":\"IssueId\",\"toAttribute\":\"IssueId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

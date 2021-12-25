@@ -1,0 +1,26 @@
+{
+	"name": "relationship-wapasvfjik",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-wapasvfjik",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Party",
+		"ToTableName": "ReportingRequirement",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "PartyId",
+				"ToColumnName": "ReportToPartyId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Party.cdm.json/Party\",\"toEntity\":\"ReportingRequirement.cdm.json/ReportingRequirement\",\"joinPairs\":[{\"fromAttribute\":\"PartyId\",\"toAttribute\":\"ReportToPartyId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

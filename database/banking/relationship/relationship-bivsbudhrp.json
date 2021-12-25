@@ -1,0 +1,26 @@
+{
+	"name": "relationship-bivsbudhrp",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-bivsbudhrp",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "CurrencyUsage",
+		"ToTableName": "CustomerAccountCurrencyUsage",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "CurrencyUsageId",
+				"ToColumnName": "CurrencyUsageId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"CurrencyUsage.cdm.json/CurrencyUsage\",\"toEntity\":\"CustomerAccountCurrencyUsage.cdm.json/CustomerAccountCurrencyUsage\",\"joinPairs\":[{\"fromAttribute\":\"CurrencyUsageId\",\"toAttribute\":\"CurrencyUsageId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

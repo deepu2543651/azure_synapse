@@ -1,0 +1,111 @@
+{
+	"name": "CardAssociation",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "CardAssociation",
+		"Description": "These companies such as VISA and MASTERCARD that provide payment cards and other products for banks. \n\nBanks add their own brand to the products, and may issue cards to cardholders, establish programs for merchants to accept the cards, or both. Banks make money on transactional fees, membership charges, and interest generated from these products. The card associations also operate and manage worldwide authorization and settlement systems.\n\nEx:\nDISCOVER CARD\nVISA\nMASTERCARD",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "CardAssociationId",
+					"Description": "The unique identifier of a Card Association.",
+					"BaseAttributeReference": {
+						"Entity": "CardAssociation.cdm.json/CardAssociation",
+						"Name": "CardAssociationId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "CardAssociationName",
+					"Description": "The name of a Card Association.",
+					"BaseAttributeReference": {
+						"Entity": "CardAssociation.cdm.json/CardAssociation",
+						"Name": "CardAssociationName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "PartyId",
+					"Description": "The unique identifier of a Party.",
+					"BaseAttributeReference": {
+						"Entity": "CardAssociation.cdm.json/CardAssociation",
+						"Name": "PartyId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/CardAssociation",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/CardAssociation",
+				"Properties": {
+					"LinkedServiceName": "wspc-dpu-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"CardAssociationId\":{\"entity\":\"CardAssociation.cdm.json/CardAssociation\",\"name\":\"CardAssociationId\"},\"CardAssociationName\":{\"entity\":\"CardAssociation.cdm.json/CardAssociation\",\"name\":\"CardAssociationName\"},\"PartyId\":{\"entity\":\"CardAssociation.cdm.json/CardAssociation\",\"name\":\"PartyId\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"CardAssociation\",\"path\":\"CardAssociation.cdm.json/CardAssociation\"},\"description\":\"These companies such as VISA and MASTERCARD that provide payment cards and other products for banks. \\n\\nBanks add their own brand to the products, and may issue cards to cardholders, establish programs for merchants to accept the cards, or both. Banks make money on transactional fees, membership charges, and interest generated from these products. The card associations also operate and manage worldwide authorization and settlement systems.\\n\\nEx:\\nDISCOVER CARD\\nVISA\\nMASTERCARD\",\"primaryKey\":[\"CardAssociationId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"CardAssociationId\",\"attributeReference\":{\"entity\":\"CardAssociation.cdm.json/CardAssociation\",\"name\":\"CardAssociationId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"CardAssociationName\",\"attributeReference\":{\"entity\":\"CardAssociation.cdm.json/CardAssociation\",\"name\":\"CardAssociationName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"PartyId\",\"attributeReference\":{\"entity\":\"CardAssociation.cdm.json/CardAssociation\",\"name\":\"PartyId\"},\"dataType\":\"long\"}]}}}",
+			"Description": "These companies such as VISA and MASTERCARD that provide payment cards and other products for banks. \n\nBanks add their own brand to the products, and may issue cards to cardholders, establish programs for merchants to accept the cards, or both. Banks make money on transactional fees, membership charges, and interest generated from these products. The card associations also operate and manage worldwide authorization and settlement systems.\n\nEx:\nDISCOVER CARD\nVISA\nMASTERCARD",
+			"DisplayFolderInfo": "{\"name\":\"Party\",\"colorCode\":\"#00727A\"}",
+			"PrimaryKeys": "CardAssociationId",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

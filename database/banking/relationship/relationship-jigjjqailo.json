@@ -1,0 +1,26 @@
+{
+	"name": "relationship-jigjjqailo",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-jigjjqailo",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "ConfirmationMethod",
+		"ToTableName": "BankTransaction",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ConfirmationMethodId",
+				"ToColumnName": "ConfirmationMethodId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"ConfirmationMethod.cdm.json/ConfirmationMethod\",\"toEntity\":\"BankTransaction.cdm.json/BankTransaction\",\"joinPairs\":[{\"fromAttribute\":\"ConfirmationMethodId\",\"toAttribute\":\"ConfirmationMethodId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

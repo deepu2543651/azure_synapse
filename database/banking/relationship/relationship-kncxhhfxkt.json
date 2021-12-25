@@ -1,0 +1,26 @@
+{
+	"name": "relationship-kncxhhfxkt",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-kncxhhfxkt",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Country",
+		"ToTableName": "TransactionTypeCountryReportingRequirement",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "CountryId",
+				"ToColumnName": "CountryId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Country.cdm.json/Country\",\"toEntity\":\"TransactionTypeCountryReportingRequirement.cdm.json/TransactionTypeCountryReportingRequirement\",\"joinPairs\":[{\"fromAttribute\":\"CountryId\",\"toAttribute\":\"CountryId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

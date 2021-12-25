@@ -1,0 +1,26 @@
+{
+	"name": "relationship-jsqxzjkltd",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-jsqxzjkltd",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "AdvertisingEvent",
+		"ToTableName": "TvAdvertisingEvent",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "AdvertisingEventId",
+				"ToColumnName": "AdvertisingEventId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"AdvertisingEvent.cdm.json/AdvertisingEvent\",\"toEntity\":\"TvAdvertisingEvent.cdm.json/TvAdvertisingEvent\",\"joinPairs\":[{\"fromAttribute\":\"AdvertisingEventId\",\"toAttribute\":\"AdvertisingEventId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

@@ -1,0 +1,112 @@
+{
+	"name": "EducationLoanType",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "EducationLoanType",
+		"Description": "The type of education loan.\n\nEx:\n- Continuing Education Loan\n- Elementary and Secondary School Loan\n- Federal Consolidation Loan\n- Federal Family Education Loans\n- Federal Graduate Plus Loan\n- Federal Parent Plus Loan\n- Federal Perkins Loan\n- Federal Stafford Loan\n- Federal Student Loan Consolidation\n- Ford Direct Student Loans\n- Health Professional Residency Loan\n- Individual Education Loan\n- International Student Loan Program",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "EducationLoanTypeId",
+					"Description": "The unique identifier of an education loan type.",
+					"BaseAttributeReference": {
+						"Entity": "EducationLoanType.cdm.json/EducationLoanType",
+						"Name": "EducationLoanTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "EducationLoanTypeName",
+					"Description": "The name of an education loan type.",
+					"BaseAttributeReference": {
+						"Entity": "EducationLoanType.cdm.json/EducationLoanType",
+						"Name": "EducationLoanTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "EducationLoanTypeDescription",
+					"Description": "The description of an education loan type.",
+					"BaseAttributeReference": {
+						"Entity": "EducationLoanType.cdm.json/EducationLoanType",
+						"Name": "EducationLoanTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/EducationLoanType",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/EducationLoanType",
+				"Properties": {
+					"LinkedServiceName": "wspc-dpu-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"EducationLoanTypeId\":{\"entity\":\"EducationLoanType.cdm.json/EducationLoanType\",\"name\":\"EducationLoanTypeId\"},\"EducationLoanTypeName\":{\"entity\":\"EducationLoanType.cdm.json/EducationLoanType\",\"name\":\"EducationLoanTypeName\"},\"EducationLoanTypeDescription\":{\"entity\":\"EducationLoanType.cdm.json/EducationLoanType\",\"name\":\"EducationLoanTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"EducationLoanType\",\"path\":\"EducationLoanType.cdm.json/EducationLoanType\"},\"description\":\"The type of education loan.\\n\\nEx:\\n- Continuing Education Loan\\n- Elementary and Secondary School Loan\\n- Federal Consolidation Loan\\n- Federal Family Education Loans\\n- Federal Graduate Plus Loan\\n- Federal Parent Plus Loan\\n- Federal Perkins Loan\\n- Federal Stafford Loan\\n- Federal Student Loan Consolidation\\n- Ford Direct Student Loans\\n- Health Professional Residency Loan\\n- Individual Education Loan\\n- International Student Loan Program\",\"primaryKey\":[\"EducationLoanTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"EducationLoanTypeId\",\"attributeReference\":{\"entity\":\"EducationLoanType.cdm.json/EducationLoanType\",\"name\":\"EducationLoanTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"EducationLoanTypeName\",\"attributeReference\":{\"entity\":\"EducationLoanType.cdm.json/EducationLoanType\",\"name\":\"EducationLoanTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"EducationLoanTypeDescription\",\"attributeReference\":{\"entity\":\"EducationLoanType.cdm.json/EducationLoanType\",\"name\":\"EducationLoanTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512}]}}}",
+			"Description": "The type of education loan.\n\nEx:\n- Continuing Education Loan\n- Elementary and Secondary School Loan\n- Federal Consolidation Loan\n- Federal Family Education Loans\n- Federal Graduate Plus Loan\n- Federal Parent Plus Loan\n- Federal Perkins Loan\n- Federal Stafford Loan\n- Federal Student Loan Consolidation\n- Ford Direct Student Loans\n- Health Professional Residency Loan\n- Individual Education Loan\n- International Student Loan Program",
+			"DisplayFolderInfo": "{\"name\":\"Customer Credit & Collections\",\"colorCode\":\"#022F22\"}",
+			"PrimaryKeys": "EducationLoanTypeId",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

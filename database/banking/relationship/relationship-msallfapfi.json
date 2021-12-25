@@ -1,0 +1,26 @@
+{
+	"name": "relationship-msallfapfi",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-msallfapfi",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "PayeeStatus",
+		"ToTableName": "Payee",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "PayeeStatusId",
+				"ToColumnName": "PayeeStatusId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"PayeeStatus.cdm.json/PayeeStatus\",\"toEntity\":\"Payee.cdm.json/Payee\",\"joinPairs\":[{\"fromAttribute\":\"PayeeStatusId\",\"toAttribute\":\"PayeeStatusId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

@@ -1,0 +1,149 @@
+{
+	"name": "CustomerAssetEquity",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "CustomerAssetEquity",
+		"Description": "The difference between the market value of a customer asset and the owner's outstanding loans.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "CustomerAssetId",
+					"Description": "The unique identifier of a Customer Asset.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAssetEquity.cdm.json/CustomerAssetEquity",
+						"Name": "CustomerAssetId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "Date",
+					"Description": "The date upon which the equity is calculated.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAssetEquity.cdm.json/CustomerAssetEquity",
+						"Name": "Date"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "OutstandingLoanBalanceAmount",
+					"Description": "The total amount of all outstanding loans on the customer asset.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAssetEquity.cdm.json/CustomerAssetEquity",
+						"Name": "OutstandingLoanBalanceAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "AppraisedValueAmount",
+					"Description": "The appraised value of the customer asset.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAssetEquity.cdm.json/CustomerAssetEquity",
+						"Name": "AppraisedValueAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "EquityAmount",
+					"Description": "The equity amount = the difference between the market value of a customer asset and the owner's outstanding loan balance.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAssetEquity.cdm.json/CustomerAssetEquity",
+						"Name": "EquityAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/CustomerAssetEquity",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/CustomerAssetEquity",
+				"Properties": {
+					"LinkedServiceName": "wspc-dpu-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"CustomerAssetId\":{\"entity\":\"CustomerAssetEquity.cdm.json/CustomerAssetEquity\",\"name\":\"CustomerAssetId\"},\"Date\":{\"entity\":\"CustomerAssetEquity.cdm.json/CustomerAssetEquity\",\"name\":\"Date\"},\"OutstandingLoanBalanceAmount\":{\"entity\":\"CustomerAssetEquity.cdm.json/CustomerAssetEquity\",\"name\":\"OutstandingLoanBalanceAmount\"},\"AppraisedValueAmount\":{\"entity\":\"CustomerAssetEquity.cdm.json/CustomerAssetEquity\",\"name\":\"AppraisedValueAmount\"},\"EquityAmount\":{\"entity\":\"CustomerAssetEquity.cdm.json/CustomerAssetEquity\",\"name\":\"EquityAmount\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"CustomerAssetEquity\",\"path\":\"CustomerAssetEquity.cdm.json/CustomerAssetEquity\"},\"description\":\"The difference between the market value of a customer asset and the owner's outstanding loans.\",\"primaryKey\":[\"CustomerAssetId\",\"Date\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"CustomerAssetId\",\"attributeReference\":{\"entity\":\"CustomerAssetEquity.cdm.json/CustomerAssetEquity\",\"name\":\"CustomerAssetId\"},\"dataType\":\"long\"},{\"type\":\"Existing\",\"name\":\"Date\",\"attributeReference\":{\"entity\":\"CustomerAssetEquity.cdm.json/CustomerAssetEquity\",\"name\":\"Date\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\"},{\"type\":\"Existing\",\"name\":\"OutstandingLoanBalanceAmount\",\"attributeReference\":{\"entity\":\"CustomerAssetEquity.cdm.json/CustomerAssetEquity\",\"name\":\"OutstandingLoanBalanceAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"AppraisedValueAmount\",\"attributeReference\":{\"entity\":\"CustomerAssetEquity.cdm.json/CustomerAssetEquity\",\"name\":\"AppraisedValueAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"EquityAmount\",\"attributeReference\":{\"entity\":\"CustomerAssetEquity.cdm.json/CustomerAssetEquity\",\"name\":\"EquityAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2}]}}}",
+			"Description": "The difference between the market value of a customer asset and the owner's outstanding loans.",
+			"DisplayFolderInfo": "{\"name\":\"Customer Credit & Collections\",\"colorCode\":\"#022F22\"}",
+			"PrimaryKeys": "CustomerAssetId,Date",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

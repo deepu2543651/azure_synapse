@@ -1,0 +1,26 @@
+{
+	"name": "relationship-bftjnkrasi",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-bftjnkrasi",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "CustomerAccountPartyRelationshipType",
+		"ToTableName": "CustomerAccountRelatedParty",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "CustomerAccountPartyRelationshipTypeId",
+				"ToColumnName": "CustomerAccountPartyRelationshipTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"CustomerAccountPartyRelationshipType.cdm.json/CustomerAccountPartyRelationshipType\",\"toEntity\":\"CustomerAccountRelatedParty.cdm.json/CustomerAccountRelatedParty\",\"joinPairs\":[{\"fromAttribute\":\"CustomerAccountPartyRelationshipTypeId\",\"toAttribute\":\"CustomerAccountPartyRelationshipTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

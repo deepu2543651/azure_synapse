@@ -1,0 +1,356 @@
+{
+	"name": "DemandAccountProduct",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "DemandAccountProduct",
+		"Description": "An account which allows the holder to write checks against deposited funds. \n\nDemand accounts which pay interest are sometimes referred to as negotiable order of withdrawal (NOW) accounts. \n\nThe interest rate often depends on how large the balance in the account is, and most charge a monthly service fee if the account balance falls below a preset level.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ProductId",
+					"Description": "The unique identifier of a Product.",
+					"BaseAttributeReference": {
+						"Entity": "DemandAccountProduct.cdm.json/DemandAccountProduct",
+						"Name": "ProductId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "InterestPaidPeriod",
+					"Description": "The period of days upon which interest is calculated and paid.",
+					"BaseAttributeReference": {
+						"Entity": "DemandAccountProduct.cdm.json/DemandAccountProduct",
+						"Name": "InterestPaidPeriod"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "MinimumBalanceNoFeeAmount",
+					"Description": "The minimum balance amount required to keep the checking account open without additional fees.",
+					"BaseAttributeReference": {
+						"Entity": "DemandAccountProduct.cdm.json/DemandAccountProduct",
+						"Name": "MinimumBalanceNoFeeAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "MinimumAmountToOpenCheckingAccount",
+					"Description": "The minimum amount to open the checking account.",
+					"BaseAttributeReference": {
+						"Entity": "DemandAccountProduct.cdm.json/DemandAccountProduct",
+						"Name": "MinimumAmountToOpenCheckingAccount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "FreeChecksBalanceAmount",
+					"Description": "The balance that must be maintained in order to receive free checks.",
+					"BaseAttributeReference": {
+						"Entity": "DemandAccountProduct.cdm.json/DemandAccountProduct",
+						"Name": "FreeChecksBalanceAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "NumberOfChecksDuringMonth",
+					"Description": "The number of checks that can be written without a fee in a month.",
+					"BaseAttributeReference": {
+						"Entity": "DemandAccountProduct.cdm.json/DemandAccountProduct",
+						"Name": "NumberOfChecksDuringMonth"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "FreeCashiersChecksIndicator",
+					"Description": "Indicates that the checking account includes free cashiers checks.",
+					"BaseAttributeReference": {
+						"Entity": "DemandAccountProduct.cdm.json/DemandAccountProduct",
+						"Name": "FreeCashiersChecksIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "FreeTravelersChecksIndicator",
+					"Description": "Indicates that the checking account includes free travelers checks.",
+					"BaseAttributeReference": {
+						"Entity": "DemandAccountProduct.cdm.json/DemandAccountProduct",
+						"Name": "FreeTravelersChecksIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "FreeNotaryServicesIndicator",
+					"Description": "Indicates that the checking account includes free notary services",
+					"BaseAttributeReference": {
+						"Entity": "DemandAccountProduct.cdm.json/DemandAccountProduct",
+						"Name": "FreeNotaryServicesIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "FreeChecksIndicator",
+					"Description": "Indicates that the checking account includes free checks.",
+					"BaseAttributeReference": {
+						"Entity": "DemandAccountProduct.cdm.json/DemandAccountProduct",
+						"Name": "FreeChecksIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "AutomaticMonthlyBillPaymentIndicator",
+					"Description": "Automatic monthly bill payments save time and provide the convenience of having your recurring monthly payments automatically paid directly from your checking account. You set up a bill to be paid using your Check Card once, after which your provider will automatically deduct the monthly amount from your checking account. If you use Online Banking, you'll be able to track your payments online. All of your payments are covered by your Visa benefits. And if you have one of our airline Check Cards, this is a great and easy way to earn miles.",
+					"BaseAttributeReference": {
+						"Entity": "DemandAccountProduct.cdm.json/DemandAccountProduct",
+						"Name": "AutomaticMonthlyBillPaymentIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "OverdraftProtectionIndicator",
+					"Description": "A service that allows a checking account to be linked to another account that helps provide protection against returned items or overdrafts. When your checking account does not have sufficient available funds to cover a check, funds are automatically transferred from the available balance in the linked account to cover the check. Choices can include using a savings account, credit card or a line of credit account as the linked account to provide protection.",
+					"BaseAttributeReference": {
+						"Entity": "DemandAccountProduct.cdm.json/DemandAccountProduct",
+						"Name": "OverdraftProtectionIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "UnlimitedCheckWritingIndicator",
+					"Description": "Indicates that the checking account comes with  the ability to write unlimited checks against it.",
+					"BaseAttributeReference": {
+						"Entity": "DemandAccountProduct.cdm.json/DemandAccountProduct",
+						"Name": "UnlimitedCheckWritingIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "NonInterestBearingAccountIndicator",
+					"Description": "Indicates that the checking account is a non-interest bearing account.",
+					"BaseAttributeReference": {
+						"Entity": "DemandAccountProduct.cdm.json/DemandAccountProduct",
+						"Name": "NonInterestBearingAccountIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "InsuranceOptionalIndicator",
+					"Description": "A flag or indicator denoting that insurance is optionally provided in conjunction with the checking account.",
+					"BaseAttributeReference": {
+						"Entity": "DemandAccountProduct.cdm.json/DemandAccountProduct",
+						"Name": "InsuranceOptionalIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "CheckStorageAvailableIndicator",
+					"Description": "A flag or indicator denoting that storage of checks is available.",
+					"BaseAttributeReference": {
+						"Entity": "DemandAccountProduct.cdm.json/DemandAccountProduct",
+						"Name": "CheckStorageAvailableIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "DirectDepositIndicator",
+					"Description": "Electronic deposit of wages or benefits, such as pension or social security, into a personal bank account; direct deposits are handled through the ACH.",
+					"BaseAttributeReference": {
+						"Entity": "DemandAccountProduct.cdm.json/DemandAccountProduct",
+						"Name": "DirectDepositIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "ConsolidatedSavingsCheckingStatementIndicator",
+					"Description": "Indicates that consolidated savings and checking account statements are included/",
+					"BaseAttributeReference": {
+						"Entity": "DemandAccountProduct.cdm.json/DemandAccountProduct",
+						"Name": "ConsolidatedSavingsCheckingStatementIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/DemandAccountProduct",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/DemandAccountProduct",
+				"Properties": {
+					"LinkedServiceName": "wspc-dpu-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ProductId\":{\"entity\":\"DemandAccountProduct.cdm.json/DemandAccountProduct\",\"name\":\"ProductId\"},\"InterestPaidPeriod\":{\"entity\":\"DemandAccountProduct.cdm.json/DemandAccountProduct\",\"name\":\"InterestPaidPeriod\"},\"MinimumBalanceNoFeeAmount\":{\"entity\":\"DemandAccountProduct.cdm.json/DemandAccountProduct\",\"name\":\"MinimumBalanceNoFeeAmount\"},\"MinimumAmountToOpenCheckingAccount\":{\"entity\":\"DemandAccountProduct.cdm.json/DemandAccountProduct\",\"name\":\"MinimumAmountToOpenCheckingAccount\"},\"FreeChecksBalanceAmount\":{\"entity\":\"DemandAccountProduct.cdm.json/DemandAccountProduct\",\"name\":\"FreeChecksBalanceAmount\"},\"NumberOfChecksDuringMonth\":{\"entity\":\"DemandAccountProduct.cdm.json/DemandAccountProduct\",\"name\":\"NumberOfChecksDuringMonth\"},\"FreeCashiersChecksIndicator\":{\"entity\":\"DemandAccountProduct.cdm.json/DemandAccountProduct\",\"name\":\"FreeCashiersChecksIndicator\"},\"FreeTravelersChecksIndicator\":{\"entity\":\"DemandAccountProduct.cdm.json/DemandAccountProduct\",\"name\":\"FreeTravelersChecksIndicator\"},\"FreeNotaryServicesIndicator\":{\"entity\":\"DemandAccountProduct.cdm.json/DemandAccountProduct\",\"name\":\"FreeNotaryServicesIndicator\"},\"FreeChecksIndicator\":{\"entity\":\"DemandAccountProduct.cdm.json/DemandAccountProduct\",\"name\":\"FreeChecksIndicator\"},\"AutomaticMonthlyBillPaymentIndicator\":{\"entity\":\"DemandAccountProduct.cdm.json/DemandAccountProduct\",\"name\":\"AutomaticMonthlyBillPaymentIndicator\"},\"OverdraftProtectionIndicator\":{\"entity\":\"DemandAccountProduct.cdm.json/DemandAccountProduct\",\"name\":\"OverdraftProtectionIndicator\"},\"UnlimitedCheckWritingIndicator\":{\"entity\":\"DemandAccountProduct.cdm.json/DemandAccountProduct\",\"name\":\"UnlimitedCheckWritingIndicator\"},\"NonInterestBearingAccountIndicator\":{\"entity\":\"DemandAccountProduct.cdm.json/DemandAccountProduct\",\"name\":\"NonInterestBearingAccountIndicator\"},\"InsuranceOptionalIndicator\":{\"entity\":\"DemandAccountProduct.cdm.json/DemandAccountProduct\",\"name\":\"InsuranceOptionalIndicator\"},\"CheckStorageAvailableIndicator\":{\"entity\":\"DemandAccountProduct.cdm.json/DemandAccountProduct\",\"name\":\"CheckStorageAvailableIndicator\"},\"DirectDepositIndicator\":{\"entity\":\"DemandAccountProduct.cdm.json/DemandAccountProduct\",\"name\":\"DirectDepositIndicator\"},\"ConsolidatedSavingsCheckingStatementIndicator\":{\"entity\":\"DemandAccountProduct.cdm.json/DemandAccountProduct\",\"name\":\"ConsolidatedSavingsCheckingStatementIndicator\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"DemandAccountProduct\",\"path\":\"DemandAccountProduct.cdm.json/DemandAccountProduct\"},\"description\":\"An account which allows the holder to write checks against deposited funds. \\n\\nDemand accounts which pay interest are sometimes referred to as negotiable order of withdrawal (NOW) accounts. \\n\\nThe interest rate often depends on how large the balance in the account is, and most charge a monthly service fee if the account balance falls below a preset level.\",\"primaryKey\":[\"ProductId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"ProductId\",\"attributeReference\":{\"entity\":\"DemandAccountProduct.cdm.json/DemandAccountProduct\",\"name\":\"ProductId\"},\"dataType\":\"long\"},{\"type\":\"Existing\",\"name\":\"InterestPaidPeriod\",\"attributeReference\":{\"entity\":\"DemandAccountProduct.cdm.json/DemandAccountProduct\",\"name\":\"InterestPaidPeriod\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"MinimumBalanceNoFeeAmount\",\"attributeReference\":{\"entity\":\"DemandAccountProduct.cdm.json/DemandAccountProduct\",\"name\":\"MinimumBalanceNoFeeAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"MinimumAmountToOpenCheckingAccount\",\"attributeReference\":{\"entity\":\"DemandAccountProduct.cdm.json/DemandAccountProduct\",\"name\":\"MinimumAmountToOpenCheckingAccount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"FreeChecksBalanceAmount\",\"attributeReference\":{\"entity\":\"DemandAccountProduct.cdm.json/DemandAccountProduct\",\"name\":\"FreeChecksBalanceAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"NumberOfChecksDuringMonth\",\"attributeReference\":{\"entity\":\"DemandAccountProduct.cdm.json/DemandAccountProduct\",\"name\":\"NumberOfChecksDuringMonth\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"FreeCashiersChecksIndicator\",\"attributeReference\":{\"entity\":\"DemandAccountProduct.cdm.json/DemandAccountProduct\",\"name\":\"FreeCashiersChecksIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"FreeTravelersChecksIndicator\",\"attributeReference\":{\"entity\":\"DemandAccountProduct.cdm.json/DemandAccountProduct\",\"name\":\"FreeTravelersChecksIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"FreeNotaryServicesIndicator\",\"attributeReference\":{\"entity\":\"DemandAccountProduct.cdm.json/DemandAccountProduct\",\"name\":\"FreeNotaryServicesIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"FreeChecksIndicator\",\"attributeReference\":{\"entity\":\"DemandAccountProduct.cdm.json/DemandAccountProduct\",\"name\":\"FreeChecksIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"AutomaticMonthlyBillPaymentIndicator\",\"attributeReference\":{\"entity\":\"DemandAccountProduct.cdm.json/DemandAccountProduct\",\"name\":\"AutomaticMonthlyBillPaymentIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"OverdraftProtectionIndicator\",\"attributeReference\":{\"entity\":\"DemandAccountProduct.cdm.json/DemandAccountProduct\",\"name\":\"OverdraftProtectionIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"UnlimitedCheckWritingIndicator\",\"attributeReference\":{\"entity\":\"DemandAccountProduct.cdm.json/DemandAccountProduct\",\"name\":\"UnlimitedCheckWritingIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"NonInterestBearingAccountIndicator\",\"attributeReference\":{\"entity\":\"DemandAccountProduct.cdm.json/DemandAccountProduct\",\"name\":\"NonInterestBearingAccountIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"InsuranceOptionalIndicator\",\"attributeReference\":{\"entity\":\"DemandAccountProduct.cdm.json/DemandAccountProduct\",\"name\":\"InsuranceOptionalIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"CheckStorageAvailableIndicator\",\"attributeReference\":{\"entity\":\"DemandAccountProduct.cdm.json/DemandAccountProduct\",\"name\":\"CheckStorageAvailableIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"DirectDepositIndicator\",\"attributeReference\":{\"entity\":\"DemandAccountProduct.cdm.json/DemandAccountProduct\",\"name\":\"DirectDepositIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"ConsolidatedSavingsCheckingStatementIndicator\",\"attributeReference\":{\"entity\":\"DemandAccountProduct.cdm.json/DemandAccountProduct\",\"name\":\"ConsolidatedSavingsCheckingStatementIndicator\"},\"dataType\":\"boolean\"}]}}}",
+			"Description": "An account which allows the holder to write checks against deposited funds. \n\nDemand accounts which pay interest are sometimes referred to as negotiable order of withdrawal (NOW) accounts. \n\nThe interest rate often depends on how large the balance in the account is, and most charge a monthly service fee if the account balance falls below a preset level.",
+			"DisplayFolderInfo": "{\"name\":\"Product\",\"colorCode\":\"#0E3D73\"}",
+			"PrimaryKeys": "ProductId",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

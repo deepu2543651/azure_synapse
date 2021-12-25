@@ -1,0 +1,26 @@
+{
+	"name": "relationship-cumgxrgbig",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-cumgxrgbig",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "CardAssociation",
+		"ToTableName": "PaymentCardProduct",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "CardAssociationId",
+				"ToColumnName": "CardAssociationId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"CardAssociation.cdm.json/CardAssociation\",\"toEntity\":\"PaymentCardProduct.cdm.json/PaymentCardProduct\",\"joinPairs\":[{\"fromAttribute\":\"CardAssociationId\",\"toAttribute\":\"CardAssociationId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

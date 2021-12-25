@@ -1,0 +1,26 @@
+{
+	"name": "relationship-lsddjnhipm",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-lsddjnhipm",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "UsageCategory",
+		"ToTableName": "CustomerAccountBankProduct",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "UsageCategoryId",
+				"ToColumnName": "UsageCategoryId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"UsageCategory.cdm.json/UsageCategory\",\"toEntity\":\"CustomerAccountBankProduct.cdm.json/CustomerAccountBankProduct\",\"joinPairs\":[{\"fromAttribute\":\"UsageCategoryId\",\"toAttribute\":\"UsageCategoryId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

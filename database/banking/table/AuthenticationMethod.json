@@ -1,0 +1,112 @@
+{
+	"name": "AuthenticationMethod",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "AuthenticationMethod",
+		"Description": "The method used to authenticate identity.\n\nEx:\n- Identification\n- Biometric\n- Security Question(s)",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "AuthenticationMethodId",
+					"Description": "The unique identifier of an Authentication Method.",
+					"BaseAttributeReference": {
+						"Entity": "AuthenticationMethod.cdm.json/AuthenticationMethod",
+						"Name": "AuthenticationMethodId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "AuthenticationMethodName",
+					"Description": "The name of an Authentication Method.",
+					"BaseAttributeReference": {
+						"Entity": "AuthenticationMethod.cdm.json/AuthenticationMethod",
+						"Name": "AuthenticationMethodName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "AuthenticationMethodDescription",
+					"Description": "The description of an Authentication Method.",
+					"BaseAttributeReference": {
+						"Entity": "AuthenticationMethod.cdm.json/AuthenticationMethod",
+						"Name": "AuthenticationMethodDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/AuthenticationMethod",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/AuthenticationMethod",
+				"Properties": {
+					"LinkedServiceName": "wspc-dpu-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"AuthenticationMethodId\":{\"entity\":\"AuthenticationMethod.cdm.json/AuthenticationMethod\",\"name\":\"AuthenticationMethodId\"},\"AuthenticationMethodName\":{\"entity\":\"AuthenticationMethod.cdm.json/AuthenticationMethod\",\"name\":\"AuthenticationMethodName\"},\"AuthenticationMethodDescription\":{\"entity\":\"AuthenticationMethod.cdm.json/AuthenticationMethod\",\"name\":\"AuthenticationMethodDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"AuthenticationMethod\",\"path\":\"AuthenticationMethod.cdm.json/AuthenticationMethod\"},\"description\":\"The method used to authenticate identity.\\n\\nEx:\\n- Identification\\n- Biometric\\n- Security Question(s)\",\"primaryKey\":[\"AuthenticationMethodId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"AuthenticationMethodId\",\"attributeReference\":{\"entity\":\"AuthenticationMethod.cdm.json/AuthenticationMethod\",\"name\":\"AuthenticationMethodId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"AuthenticationMethodName\",\"attributeReference\":{\"entity\":\"AuthenticationMethod.cdm.json/AuthenticationMethod\",\"name\":\"AuthenticationMethodName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"AuthenticationMethodDescription\",\"attributeReference\":{\"entity\":\"AuthenticationMethod.cdm.json/AuthenticationMethod\",\"name\":\"AuthenticationMethodDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512}]}}}",
+			"Description": "The method used to authenticate identity.\n\nEx:\n- Identification\n- Biometric\n- Security Question(s)",
+			"DisplayFolderInfo": "{\"name\":\"Party\",\"colorCode\":\"#00727A\"}",
+			"PrimaryKeys": "AuthenticationMethodId",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

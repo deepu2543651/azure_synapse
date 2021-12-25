@@ -1,0 +1,112 @@
+{
+	"name": "PersonalLoanType",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "PersonalLoanType",
+		"Description": "Indicates whether a personal loan is:\n\n-  Secured \n-  Unsecured.\n\nA secured loan is has collateral involved in the loan. The lender can repossess the collateral if secured loan is not repaid in full.\n\nWhen a loan is unsecured it means there is no provision for the return or collection of the loan when payments are not made. For this reason the APR's tend to be a little higher than a Secured Loan, and the repayment period is shorter.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "PersonalLoanTypeId",
+					"Description": "The unique identifier of a Personal Loan Type.",
+					"BaseAttributeReference": {
+						"Entity": "PersonalLoanType.cdm.json/PersonalLoanType",
+						"Name": "PersonalLoanTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PersonalLoanTypeName",
+					"Description": "The name of a Personal Loan Type.",
+					"BaseAttributeReference": {
+						"Entity": "PersonalLoanType.cdm.json/PersonalLoanType",
+						"Name": "PersonalLoanTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "PersonalLoanTypeDescription",
+					"Description": "The description of a Personal Loan Type.",
+					"BaseAttributeReference": {
+						"Entity": "PersonalLoanType.cdm.json/PersonalLoanType",
+						"Name": "PersonalLoanTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/PersonalLoanType",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/PersonalLoanType",
+				"Properties": {
+					"LinkedServiceName": "wspc-dpu-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"PersonalLoanTypeId\":{\"entity\":\"PersonalLoanType.cdm.json/PersonalLoanType\",\"name\":\"PersonalLoanTypeId\"},\"PersonalLoanTypeName\":{\"entity\":\"PersonalLoanType.cdm.json/PersonalLoanType\",\"name\":\"PersonalLoanTypeName\"},\"PersonalLoanTypeDescription\":{\"entity\":\"PersonalLoanType.cdm.json/PersonalLoanType\",\"name\":\"PersonalLoanTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"PersonalLoanType\",\"path\":\"PersonalLoanType.cdm.json/PersonalLoanType\"},\"description\":\"Indicates whether a personal loan is:\\n\\n-  Secured \\n-  Unsecured.\\n\\nA secured loan is has collateral involved in the loan. The lender can repossess the collateral if secured loan is not repaid in full.\\n\\nWhen a loan is unsecured it means there is no provision for the return or collection of the loan when payments are not made. For this reason the APR's tend to be a little higher than a Secured Loan, and the repayment period is shorter.\",\"primaryKey\":[\"PersonalLoanTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"PersonalLoanTypeId\",\"attributeReference\":{\"entity\":\"PersonalLoanType.cdm.json/PersonalLoanType\",\"name\":\"PersonalLoanTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"PersonalLoanTypeName\",\"attributeReference\":{\"entity\":\"PersonalLoanType.cdm.json/PersonalLoanType\",\"name\":\"PersonalLoanTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"PersonalLoanTypeDescription\",\"attributeReference\":{\"entity\":\"PersonalLoanType.cdm.json/PersonalLoanType\",\"name\":\"PersonalLoanTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512}]}}}",
+			"Description": "Indicates whether a personal loan is:\n\n-  Secured \n-  Unsecured.\n\nA secured loan is has collateral involved in the loan. The lender can repossess the collateral if secured loan is not repaid in full.\n\nWhen a loan is unsecured it means there is no provision for the return or collection of the loan when payments are not made. For this reason the APR's tend to be a little higher than a Secured Loan, and the repayment period is shorter.",
+			"DisplayFolderInfo": "{\"name\":\"Product\",\"colorCode\":\"#0E3D73\"}",
+			"PrimaryKeys": "PersonalLoanTypeId",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

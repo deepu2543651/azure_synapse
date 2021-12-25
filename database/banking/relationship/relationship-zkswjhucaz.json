@@ -1,0 +1,26 @@
+{
+	"name": "relationship-zkswjhucaz",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-zkswjhucaz",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Cluster",
+		"ToTableName": "ClusterCustomer",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ClusterId",
+				"ToColumnName": "ClusterId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Cluster.cdm.json/Cluster\",\"toEntity\":\"ClusterCustomer.cdm.json/ClusterCustomer\",\"joinPairs\":[{\"fromAttribute\":\"ClusterId\",\"toAttribute\":\"ClusterId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

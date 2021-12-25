@@ -1,0 +1,112 @@
+{
+	"name": "TransactionAccountRelationshipType",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "TransactionAccountRelationshipType",
+		"Description": "The nature of the relationship between account(s) related to the transaction.\n\nEx:\n- Debit-From Account\n- Credit-To Account\n- Charge-To Account\n- Notify-To Account\n- Refund-To Account\n- Pay-From Account\n- Pay-To Account\n- Transfer-From Account\n- Transfer-To Account",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "TransactionAccountRelationshipTypeId",
+					"Description": "The unique identifier of a Transaction Account Relationship Type.",
+					"BaseAttributeReference": {
+						"Entity": "TransactionAccountRelationshipType.cdm.json/TransactionAccountRelationshipType",
+						"Name": "TransactionAccountRelationshipTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "TransactionAccountRelationshipTypeName",
+					"Description": "The name of a Transaction Account Relationship Type.",
+					"BaseAttributeReference": {
+						"Entity": "TransactionAccountRelationshipType.cdm.json/TransactionAccountRelationshipType",
+						"Name": "TransactionAccountRelationshipTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "TransactionAccountRelationshipTypeDescription",
+					"Description": "The description of a Transaction Account Relationship Type.",
+					"BaseAttributeReference": {
+						"Entity": "TransactionAccountRelationshipType.cdm.json/TransactionAccountRelationshipType",
+						"Name": "TransactionAccountRelationshipTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/TransactionAccountRelationshipType",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/TransactionAccountRelationshipType",
+				"Properties": {
+					"LinkedServiceName": "wspc-dpu-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"TransactionAccountRelationshipTypeId\":{\"entity\":\"TransactionAccountRelationshipType.cdm.json/TransactionAccountRelationshipType\",\"name\":\"TransactionAccountRelationshipTypeId\"},\"TransactionAccountRelationshipTypeName\":{\"entity\":\"TransactionAccountRelationshipType.cdm.json/TransactionAccountRelationshipType\",\"name\":\"TransactionAccountRelationshipTypeName\"},\"TransactionAccountRelationshipTypeDescription\":{\"entity\":\"TransactionAccountRelationshipType.cdm.json/TransactionAccountRelationshipType\",\"name\":\"TransactionAccountRelationshipTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"TransactionAccountRelationshipType\",\"path\":\"TransactionAccountRelationshipType.cdm.json/TransactionAccountRelationshipType\"},\"description\":\"The nature of the relationship between account(s) related to the transaction.\\n\\nEx:\\n- Debit-From Account\\n- Credit-To Account\\n- Charge-To Account\\n- Notify-To Account\\n- Refund-To Account\\n- Pay-From Account\\n- Pay-To Account\\n- Transfer-From Account\\n- Transfer-To Account\",\"primaryKey\":[\"TransactionAccountRelationshipTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"TransactionAccountRelationshipTypeId\",\"attributeReference\":{\"entity\":\"TransactionAccountRelationshipType.cdm.json/TransactionAccountRelationshipType\",\"name\":\"TransactionAccountRelationshipTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"TransactionAccountRelationshipTypeName\",\"attributeReference\":{\"entity\":\"TransactionAccountRelationshipType.cdm.json/TransactionAccountRelationshipType\",\"name\":\"TransactionAccountRelationshipTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"TransactionAccountRelationshipTypeDescription\",\"attributeReference\":{\"entity\":\"TransactionAccountRelationshipType.cdm.json/TransactionAccountRelationshipType\",\"name\":\"TransactionAccountRelationshipTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512}]}}}",
+			"Description": "The nature of the relationship between account(s) related to the transaction.\n\nEx:\n- Debit-From Account\n- Credit-To Account\n- Charge-To Account\n- Notify-To Account\n- Refund-To Account\n- Pay-From Account\n- Pay-To Account\n- Transfer-From Account\n- Transfer-To Account",
+			"DisplayFolderInfo": "{\"name\":\"Transaction\",\"colorCode\":\"#823A16\"}",
+			"PrimaryKeys": "TransactionAccountRelationshipTypeId",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

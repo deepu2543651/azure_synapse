@@ -1,0 +1,26 @@
+{
+	"name": "relationship-pxpxjtiegh",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-pxpxjtiegh",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Party",
+		"ToTableName": "ChannelRelatedParty",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "PartyId",
+				"ToColumnName": "PartyId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Party.cdm.json/Party\",\"toEntity\":\"ChannelRelatedParty.cdm.json/ChannelRelatedParty\",\"joinPairs\":[{\"fromAttribute\":\"PartyId\",\"toAttribute\":\"PartyId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

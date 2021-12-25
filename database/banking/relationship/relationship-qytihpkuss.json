@@ -1,0 +1,26 @@
+{
+	"name": "relationship-qytihpkuss",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-qytihpkuss",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "BankFacilityType",
+		"ToTableName": "BankFacilityProduct",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "BankFacilityTypeId",
+				"ToColumnName": "BankFacilityTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"BankFacilityType.cdm.json/BankFacilityType\",\"toEntity\":\"BankFacilityProduct.cdm.json/BankFacilityProduct\",\"joinPairs\":[{\"fromAttribute\":\"BankFacilityTypeId\",\"toAttribute\":\"BankFacilityTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

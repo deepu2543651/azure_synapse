@@ -1,0 +1,26 @@
+{
+	"name": "relationship-grfalwqgao",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-grfalwqgao",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "HomeEquityLoanType",
+		"ToTableName": "HomeEquityLoanProduct",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "HomeEquityLoanTypeId",
+				"ToColumnName": "HomeEquityLoanTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"HomeEquityLoanType.cdm.json/HomeEquityLoanType\",\"toEntity\":\"HomeEquityLoanProduct.cdm.json/HomeEquityLoanProduct\",\"joinPairs\":[{\"fromAttribute\":\"HomeEquityLoanTypeId\",\"toAttribute\":\"HomeEquityLoanTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

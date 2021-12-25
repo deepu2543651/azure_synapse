@@ -1,0 +1,112 @@
+{
+	"name": "AssetConditionRating",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "AssetConditionRating",
+		"Description": "A rating or ranking of the condition of an asset.\n\nEx:\n-  Optimum condition\n-  Above average\n-  Average\n-  Below average\n-  Inoperable/repairable\n-  Inoperable/salvage value only",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "AssetConditionRatingId",
+					"Description": "The unique identifier of an Asset Condition Rating.",
+					"BaseAttributeReference": {
+						"Entity": "AssetConditionRating.cdm.json/AssetConditionRating",
+						"Name": "AssetConditionRatingId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "AssetConditionRatingName",
+					"Description": "The name of an Asset Condition Rating.",
+					"BaseAttributeReference": {
+						"Entity": "AssetConditionRating.cdm.json/AssetConditionRating",
+						"Name": "AssetConditionRatingName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "AssetConditionRatingDescription",
+					"Description": "The description of an Asset Condition Rating.",
+					"BaseAttributeReference": {
+						"Entity": "AssetConditionRating.cdm.json/AssetConditionRating",
+						"Name": "AssetConditionRatingDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/AssetConditionRating",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/AssetConditionRating",
+				"Properties": {
+					"LinkedServiceName": "wspc-dpu-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"AssetConditionRatingId\":{\"entity\":\"AssetConditionRating.cdm.json/AssetConditionRating\",\"name\":\"AssetConditionRatingId\"},\"AssetConditionRatingName\":{\"entity\":\"AssetConditionRating.cdm.json/AssetConditionRating\",\"name\":\"AssetConditionRatingName\"},\"AssetConditionRatingDescription\":{\"entity\":\"AssetConditionRating.cdm.json/AssetConditionRating\",\"name\":\"AssetConditionRatingDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"AssetConditionRating\",\"path\":\"AssetConditionRating.cdm.json/AssetConditionRating\"},\"description\":\"A rating or ranking of the condition of an asset.\\n\\nEx:\\n-  Optimum condition\\n-  Above average\\n-  Average\\n-  Below average\\n-  Inoperable/repairable\\n-  Inoperable/salvage value only\",\"primaryKey\":[\"AssetConditionRatingId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"AssetConditionRatingId\",\"attributeReference\":{\"entity\":\"AssetConditionRating.cdm.json/AssetConditionRating\",\"name\":\"AssetConditionRatingId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"AssetConditionRatingName\",\"attributeReference\":{\"entity\":\"AssetConditionRating.cdm.json/AssetConditionRating\",\"name\":\"AssetConditionRatingName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"AssetConditionRatingDescription\",\"attributeReference\":{\"entity\":\"AssetConditionRating.cdm.json/AssetConditionRating\",\"name\":\"AssetConditionRatingDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512}]}}}",
+			"Description": "A rating or ranking of the condition of an asset.\n\nEx:\n-  Optimum condition\n-  Above average\n-  Average\n-  Below average\n-  Inoperable/repairable\n-  Inoperable/salvage value only",
+			"DisplayFolderInfo": "{\"name\":\"Property & Equipment\",\"colorCode\":\"#7D0F6C\"}",
+			"PrimaryKeys": "AssetConditionRatingId",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

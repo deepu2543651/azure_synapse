@@ -1,0 +1,178 @@
+{
+	"name": "Regulation",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "Regulation",
+		"Description": "A specific regulation that may apply to a Product.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "RegulationId",
+					"Description": "The unique identifier of a regulation.",
+					"BaseAttributeReference": {
+						"Entity": "Regulation.cdm.json/Regulation",
+						"Name": "RegulationId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "RegulationName",
+					"Description": "The name of the Regulation.",
+					"BaseAttributeReference": {
+						"Entity": "Regulation.cdm.json/Regulation",
+						"Name": "RegulationName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "RegulationIdentifier",
+					"Description": "The identifier associated with the regulation.",
+					"BaseAttributeReference": {
+						"Entity": "Regulation.cdm.json/Regulation",
+						"Name": "RegulationIdentifier"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Length": 5,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "RegulationDescription",
+					"Description": "The description of the regulation.",
+					"BaseAttributeReference": {
+						"Entity": "Regulation.cdm.json/Regulation",
+						"Name": "RegulationDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "RegulationText",
+					"Description": "The complete text of the Regulation.",
+					"BaseAttributeReference": {
+						"Entity": "Regulation.cdm.json/Regulation",
+						"Name": "RegulationText"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "RegulationIssuingGoverningPartyId",
+					"Description": "The unique identifier of a Party.",
+					"BaseAttributeReference": {
+						"Entity": "Regulation.cdm.json/Regulation",
+						"Name": "RegulationIssuingGoverningPartyId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "RegulationCategoryId",
+					"Description": "The unique identifier of a Regulation Category.",
+					"BaseAttributeReference": {
+						"Entity": "Regulation.cdm.json/Regulation",
+						"Name": "RegulationCategoryId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/Regulation",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/Regulation",
+				"Properties": {
+					"LinkedServiceName": "wspc-dpu-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"RegulationId\":{\"entity\":\"Regulation.cdm.json/Regulation\",\"name\":\"RegulationId\"},\"RegulationName\":{\"entity\":\"Regulation.cdm.json/Regulation\",\"name\":\"RegulationName\"},\"RegulationIdentifier\":{\"entity\":\"Regulation.cdm.json/Regulation\",\"name\":\"RegulationIdentifier\"},\"RegulationDescription\":{\"entity\":\"Regulation.cdm.json/Regulation\",\"name\":\"RegulationDescription\"},\"RegulationText\":{\"entity\":\"Regulation.cdm.json/Regulation\",\"name\":\"RegulationText\"},\"RegulationIssuingGoverningPartyId\":{\"entity\":\"Regulation.cdm.json/Regulation\",\"name\":\"RegulationIssuingGoverningPartyId\"},\"RegulationCategoryId\":{\"entity\":\"Regulation.cdm.json/Regulation\",\"name\":\"RegulationCategoryId\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"Regulation\",\"path\":\"Regulation.cdm.json/Regulation\"},\"description\":\"A specific regulation that may apply to a Product.\",\"primaryKey\":[\"RegulationId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"RegulationId\",\"attributeReference\":{\"entity\":\"Regulation.cdm.json/Regulation\",\"name\":\"RegulationId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"RegulationName\",\"attributeReference\":{\"entity\":\"Regulation.cdm.json/Regulation\",\"name\":\"RegulationName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"RegulationIdentifier\",\"attributeReference\":{\"entity\":\"Regulation.cdm.json/Regulation\",\"name\":\"RegulationIdentifier\"},\"dataType\":\"string\",\"dataTypeLength\":5},{\"type\":\"Existing\",\"name\":\"RegulationDescription\",\"attributeReference\":{\"entity\":\"Regulation.cdm.json/Regulation\",\"name\":\"RegulationDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512},{\"type\":\"Existing\",\"name\":\"RegulationText\",\"attributeReference\":{\"entity\":\"Regulation.cdm.json/Regulation\",\"name\":\"RegulationText\"},\"dataType\":\"string\",\"dataTypeLength\":1024},{\"type\":\"Existing\",\"name\":\"RegulationIssuingGoverningPartyId\",\"attributeReference\":{\"entity\":\"Regulation.cdm.json/Regulation\",\"name\":\"RegulationIssuingGoverningPartyId\"},\"dataType\":\"long\"},{\"type\":\"Existing\",\"name\":\"RegulationCategoryId\",\"attributeReference\":{\"entity\":\"Regulation.cdm.json/Regulation\",\"name\":\"RegulationCategoryId\"},\"dataType\":\"integer\"}]}}}",
+			"Description": "A specific regulation that may apply to a Product.",
+			"DisplayFolderInfo": "{\"name\":\"Product\",\"colorCode\":\"#0E3D73\"}",
+			"PrimaryKeys": "RegulationId",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

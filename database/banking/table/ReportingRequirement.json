@@ -1,0 +1,144 @@
+{
+	"name": "ReportingRequirement",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "ReportingRequirement",
+		"Description": "A reporting requirement that is applied to all corresponding transaction types for the associated country.\n\nEx:\n- Report transactions exceeding $10,000",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ReportingRequirementId",
+					"Description": "The unique identifier of a reporting requirement.",
+					"BaseAttributeReference": {
+						"Entity": "ReportingRequirement.cdm.json/ReportingRequirement",
+						"Name": "ReportingRequirementId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ReportingRequirementName",
+					"Description": "The name of a reporting requirement.",
+					"BaseAttributeReference": {
+						"Entity": "ReportingRequirement.cdm.json/ReportingRequirement",
+						"Name": "ReportingRequirementName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ReportingRequirementDescription",
+					"Description": "The description of a reporting requirement.",
+					"BaseAttributeReference": {
+						"Entity": "ReportingRequirement.cdm.json/ReportingRequirement",
+						"Name": "ReportingRequirementDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "RequiredByPartyId",
+					"Description": "The unique identifier of a Party.",
+					"BaseAttributeReference": {
+						"Entity": "ReportingRequirement.cdm.json/ReportingRequirement",
+						"Name": "RequiredByPartyId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "ReportToPartyId",
+					"Description": "The unique identifier of a Party.",
+					"BaseAttributeReference": {
+						"Entity": "ReportingRequirement.cdm.json/ReportingRequirement",
+						"Name": "ReportToPartyId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/ReportingRequirement",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/ReportingRequirement",
+				"Properties": {
+					"LinkedServiceName": "wspc-dpu-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ReportingRequirementId\":{\"entity\":\"ReportingRequirement.cdm.json/ReportingRequirement\",\"name\":\"ReportingRequirementId\"},\"ReportingRequirementName\":{\"entity\":\"ReportingRequirement.cdm.json/ReportingRequirement\",\"name\":\"ReportingRequirementName\"},\"ReportingRequirementDescription\":{\"entity\":\"ReportingRequirement.cdm.json/ReportingRequirement\",\"name\":\"ReportingRequirementDescription\"},\"RequiredByPartyId\":{\"entity\":\"ReportingRequirement.cdm.json/ReportingRequirement\",\"name\":\"RequiredByPartyId\"},\"ReportToPartyId\":{\"entity\":\"ReportingRequirement.cdm.json/ReportingRequirement\",\"name\":\"ReportToPartyId\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"ReportingRequirement\",\"path\":\"ReportingRequirement.cdm.json/ReportingRequirement\"},\"description\":\"A reporting requirement that is applied to all corresponding transaction types for the associated country.\\n\\nEx:\\n- Report transactions exceeding $10,000\",\"primaryKey\":[\"ReportingRequirementId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"ReportingRequirementId\",\"attributeReference\":{\"entity\":\"ReportingRequirement.cdm.json/ReportingRequirement\",\"name\":\"ReportingRequirementId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ReportingRequirementName\",\"attributeReference\":{\"entity\":\"ReportingRequirement.cdm.json/ReportingRequirement\",\"name\":\"ReportingRequirementName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"ReportingRequirementDescription\",\"attributeReference\":{\"entity\":\"ReportingRequirement.cdm.json/ReportingRequirement\",\"name\":\"ReportingRequirementDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512},{\"type\":\"Existing\",\"name\":\"RequiredByPartyId\",\"attributeReference\":{\"entity\":\"ReportingRequirement.cdm.json/ReportingRequirement\",\"name\":\"RequiredByPartyId\"},\"dataType\":\"long\"},{\"type\":\"Existing\",\"name\":\"ReportToPartyId\",\"attributeReference\":{\"entity\":\"ReportingRequirement.cdm.json/ReportingRequirement\",\"name\":\"ReportToPartyId\"},\"dataType\":\"long\"}]}}}",
+			"Description": "A reporting requirement that is applied to all corresponding transaction types for the associated country.\n\nEx:\n- Report transactions exceeding $10,000",
+			"DisplayFolderInfo": "{\"name\":\"Transaction\",\"colorCode\":\"#823A16\"}",
+			"PrimaryKeys": "ReportingRequirementId",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

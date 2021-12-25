@@ -1,0 +1,112 @@
+{
+	"name": "CommercialMortgageLoanType",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "CommercialMortgageLoanType",
+		"Description": "The type of commercial mortgage loan:\n\nEx:\n- Acquisition and Development\n- Adjustable Commercial Mortgage\n- Adjustable Rate Mortgage (ARM) Loan\n- Assumed Mortgage Loan\n- Balloon Loan\n- Conventional Loam\n- Convertible ARM Loan\n- Construction Mini-Perm\n- Construction Loan with Take-Out\n- Fixed Rate Mortgage Loan\n- Fixed Rate ARM\n- Fixed Rate Commercial Mortgage\n- Government Loan\n- Graduated Payment Mortgage (GPM) Loan\n- Hard Money Loan\n- Interim Loan\n- Joint Venture\n- Negative Amortizing Loan\n- Participating Mortgage\n- Real Estate Sale and Leaseback\n- Real Estate Purchase Loan\n- Second Mortgage (Commercial)\n- Wraparound\n\nwhere:\nAcquisition and Development\nRaw land infrastructure development (streets, utilities, etc.)\n\nAdjustable Commercial Mortgage\nInterest moves with a specific index (Prime, T-Bills, etc.)\n\nConstruction Mini-Perm\nConstruction with 3 to 5 year loan, usually on income property.\n\nConstruction Loan with Take-out\nConstruction with pre-arranged takeout loan in place.\n\nFixed Rate Commercial Mortgage\nInterest Rate remains constant throughout the term.\n\nHard Money Loan\nLoans from private lenders based primarily on the hard asset value (commercial building, vacant land, etc.).\n\nInterim Loan\nA short term (2 years or less), bridge or project type loan.\n\nJoint Venture\nA financial partner in the development of real estate.\n\nParticipating Mortgage\nLender receives a kicker for gross income above a preset level.\n\nReal Estate Sale and Leaseback\nLender purchases land and leases back to borrower (generally developer) for a fixed rent plus other considerations. Mortgages are issued on leasehold at market rates. Usually, produces more dollars than a mortgage.\n\nReal Estate Purchase Loan\nLending for the purchase of commercial real estate.\n\nSecond Mortgage (Commercial)\nLoan secured by equity behind that of the first lien.\n\nWraparound\nLender makes a second mortgage and assumes the first mortgage.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "CommercialMortgageLoanTypeId",
+					"Description": "The unique identifier of a Commercial Mortgage Loan Type.",
+					"BaseAttributeReference": {
+						"Entity": "CommercialMortgageLoanType.cdm.json/CommercialMortgageLoanType",
+						"Name": "CommercialMortgageLoanTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "CommercialMortgageLoanTypeName",
+					"Description": "The name of a Commercial Mortgage Loan Type.",
+					"BaseAttributeReference": {
+						"Entity": "CommercialMortgageLoanType.cdm.json/CommercialMortgageLoanType",
+						"Name": "CommercialMortgageLoanTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "CommercialMortgageLoanTypeDescription",
+					"Description": "The description of a Commercial Mortgage Loan Type.",
+					"BaseAttributeReference": {
+						"Entity": "CommercialMortgageLoanType.cdm.json/CommercialMortgageLoanType",
+						"Name": "CommercialMortgageLoanTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/CommercialMortgageLoanType",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/CommercialMortgageLoanType",
+				"Properties": {
+					"LinkedServiceName": "wspc-dpu-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"CommercialMortgageLoanTypeId\":{\"entity\":\"CommercialMortgageLoanType.cdm.json/CommercialMortgageLoanType\",\"name\":\"CommercialMortgageLoanTypeId\"},\"CommercialMortgageLoanTypeName\":{\"entity\":\"CommercialMortgageLoanType.cdm.json/CommercialMortgageLoanType\",\"name\":\"CommercialMortgageLoanTypeName\"},\"CommercialMortgageLoanTypeDescription\":{\"entity\":\"CommercialMortgageLoanType.cdm.json/CommercialMortgageLoanType\",\"name\":\"CommercialMortgageLoanTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"CommercialMortgageLoanType\",\"path\":\"CommercialMortgageLoanType.cdm.json/CommercialMortgageLoanType\"},\"description\":\"The type of commercial mortgage loan:\\n\\nEx:\\n- Acquisition and Development\\n- Adjustable Commercial Mortgage\\n- Adjustable Rate Mortgage (ARM) Loan\\n- Assumed Mortgage Loan\\n- Balloon Loan\\n- Conventional Loam\\n- Convertible ARM Loan\\n- Construction Mini-Perm\\n- Construction Loan with Take-Out\\n- Fixed Rate Mortgage Loan\\n- Fixed Rate ARM\\n- Fixed Rate Commercial Mortgage\\n- Government Loan\\n- Graduated Payment Mortgage (GPM) Loan\\n- Hard Money Loan\\n- Interim Loan\\n- Joint Venture\\n- Negative Amortizing Loan\\n- Participating Mortgage\\n- Real Estate Sale and Leaseback\\n- Real Estate Purchase Loan\\n- Second Mortgage (Commercial)\\n- Wraparound\\n\\nwhere:\\nAcquisition and Development\\nRaw land infrastructure development (streets, utilities, etc.)\\n\\nAdjustable Commercial Mortgage\\nInterest moves with a specific index (Prime, T-Bills, etc.)\\n\\nConstruction Mini-Perm\\nConstruction with 3 to 5 year loan, usually on income property.\\n\\nConstruction Loan with Take-out\\nConstruction with pre-arranged takeout loan in place.\\n\\nFixed Rate Commercial Mortgage\\nInterest Rate remains constant throughout the term.\\n\\nHard Money Loan\\nLoans from private lenders based primarily on the hard asset value (commercial building, vacant land, etc.).\\n\\nInterim Loan\\nA short term (2 years or less), bridge or project type loan.\\n\\nJoint Venture\\nA financial partner in the development of real estate.\\n\\nParticipating Mortgage\\nLender receives a kicker for gross income above a preset level.\\n\\nReal Estate Sale and Leaseback\\nLender purchases land and leases back to borrower (generally developer) for a fixed rent plus other considerations. Mortgages are issued on leasehold at market rates. Usually, produces more dollars than a mortgage.\\n\\nReal Estate Purchase Loan\\nLending for the purchase of commercial real estate.\\n\\nSecond Mortgage (Commercial)\\nLoan secured by equity behind that of the first lien.\\n\\nWraparound\\nLender makes a second mortgage and assumes the first mortgage.\",\"primaryKey\":[\"CommercialMortgageLoanTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"CommercialMortgageLoanTypeId\",\"attributeReference\":{\"entity\":\"CommercialMortgageLoanType.cdm.json/CommercialMortgageLoanType\",\"name\":\"CommercialMortgageLoanTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"CommercialMortgageLoanTypeName\",\"attributeReference\":{\"entity\":\"CommercialMortgageLoanType.cdm.json/CommercialMortgageLoanType\",\"name\":\"CommercialMortgageLoanTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"CommercialMortgageLoanTypeDescription\",\"attributeReference\":{\"entity\":\"CommercialMortgageLoanType.cdm.json/CommercialMortgageLoanType\",\"name\":\"CommercialMortgageLoanTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512}]}}}",
+			"Description": "The type of commercial mortgage loan:\n\nEx:\n- Acquisition and Development\n- Adjustable Commercial Mortgage\n- Adjustable Rate Mortgage (ARM) Loan\n- Assumed Mortgage Loan\n- Balloon Loan\n- Conventional Loam\n- Convertible ARM Loan\n- Construction Mini-Perm\n- Construction Loan with Take-Out\n- Fixed Rate Mortgage Loan\n- Fixed Rate ARM\n- Fixed Rate Commercial Mortgage\n- Government Loan\n- Graduated Payment Mortgage (GPM) Loan\n- Hard Money Loan\n- Interim Loan\n- Joint Venture\n- Negative Amortizing Loan\n- Participating Mortgage\n- Real Estate Sale and Leaseback\n- Real Estate Purchase Loan\n- Second Mortgage (Commercial)\n- Wraparound\n\nwhere:\nAcquisition and Development\nRaw land infrastructure development (streets, utilities, etc.)\n\nAdjustable Commercial Mortgage\nInterest moves with a specific index (Prime, T-Bills, etc.)\n\nConstruction Mini-Perm\nConstruction with 3 to 5 year loan, usually on income property.\n\nConstruction Loan with Take-out\nConstruction with pre-arranged takeout loan in place.\n\nFixed Rate Commercial Mortgage\nInterest Rate remains constant throughout the term.\n\nHard Money Loan\nLoans from private lenders based primarily on the hard asset value (commercial building, vacant land, etc.).\n\nInterim Loan\nA short term (2 years or less), bridge or project type loan.\n\nJoint Venture\nA financial partner in the development of real estate.\n\nParticipating Mortgage\nLender receives a kicker for gross income above a preset level.\n\nReal Estate Sale and Leaseback\nLender purchases land and leases back to borrower (generally developer) for a fixed rent plus other considerations. Mortgages are issued on leasehold at market rates. Usually, produces more dollars than a mortgage.\n\nReal Estate Purchase Loan\nLending for the purchase of commercial real estate.\n\nSecond Mortgage (Commercial)\nLoan secured by equity behind that of the first lien.\n\nWraparound\nLender makes a second mortgage and assumes the first mortgage.",
+			"DisplayFolderInfo": "{\"name\":\"Product\",\"colorCode\":\"#0E3D73\"}",
+			"PrimaryKeys": "CommercialMortgageLoanTypeId",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

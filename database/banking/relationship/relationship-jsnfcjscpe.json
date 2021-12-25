@@ -1,0 +1,26 @@
+{
+	"name": "relationship-jsnfcjscpe",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-jsnfcjscpe",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "PaymentCardClassification",
+		"ToTableName": "PaymentCardProduct",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "PaymentCardClassificationId",
+				"ToColumnName": "PaymentCardClassificationId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"PaymentCardClassification.cdm.json/PaymentCardClassification\",\"toEntity\":\"PaymentCardProduct.cdm.json/PaymentCardProduct\",\"joinPairs\":[{\"fromAttribute\":\"PaymentCardClassificationId\",\"toAttribute\":\"PaymentCardClassificationId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

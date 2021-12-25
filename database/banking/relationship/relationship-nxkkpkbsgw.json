@@ -1,0 +1,26 @@
+{
+	"name": "relationship-nxkkpkbsgw",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-nxkkpkbsgw",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Location",
+		"ToTableName": "CustomerAccountLocation",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "LocationId",
+				"ToColumnName": "LocationId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Location.cdm.json/Location\",\"toEntity\":\"CustomerAccountLocation.cdm.json/CustomerAccountLocation\",\"joinPairs\":[{\"fromAttribute\":\"LocationId\",\"toAttribute\":\"LocationId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

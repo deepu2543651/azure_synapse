@@ -1,0 +1,26 @@
+{
+	"name": "relationship-sntetfgyhs",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-sntetfgyhs",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Atm",
+		"ToTableName": "AtmHoursOfOperation",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "AtmId",
+				"ToColumnName": "AtmId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Atm.cdm.json/Atm\",\"toEntity\":\"AtmHoursOfOperation.cdm.json/AtmHoursOfOperation\",\"joinPairs\":[{\"fromAttribute\":\"AtmId\",\"toAttribute\":\"AtmId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

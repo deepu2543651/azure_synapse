@@ -1,0 +1,222 @@
+{
+	"name": "PersonalLineOfCreditProduct",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "PersonalLineOfCreditProduct",
+		"Description": "A variable interest rate line of credit that requires collateral or security.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ProductId",
+					"Description": "The unique identifier of a Product.",
+					"BaseAttributeReference": {
+						"Entity": "PersonalLineOfCreditProduct.cdm.json/PersonalLineOfCreditProduct",
+						"Name": "ProductId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "MinimumPaymentPercentageOfBalance",
+					"Description": "The minimum payment per payment period expressed as a percentage of the total incurred.\n\nEx:\n$25 or 1/120th of outstanding principal, whichever is greater, plus accrued interest.",
+					"BaseAttributeReference": {
+						"Entity": "PersonalLineOfCreditProduct.cdm.json/PersonalLineOfCreditProduct",
+						"Name": "MinimumPaymentPercentageOfBalance"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ChecksIndicator",
+					"Description": "Indicates whether loan draft checks are available for this specific line of credit issued.",
+					"BaseAttributeReference": {
+						"Entity": "PersonalLineOfCreditProduct.cdm.json/PersonalLineOfCreditProduct",
+						"Name": "ChecksIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "AutomaticPaymentIndicator",
+					"Description": "Indicates whether automatic payment are available for this specific line of credit issued.",
+					"BaseAttributeReference": {
+						"Entity": "PersonalLineOfCreditProduct.cdm.json/PersonalLineOfCreditProduct",
+						"Name": "AutomaticPaymentIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "MonthlyStatementsIndicator",
+					"Description": "Indicates whether monthly statements are available for this specific line of credit issued.",
+					"BaseAttributeReference": {
+						"Entity": "PersonalLineOfCreditProduct.cdm.json/PersonalLineOfCreditProduct",
+						"Name": "MonthlyStatementsIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "CashAdvancesIndicator",
+					"Description": "Indicates whether cash advances are available for this specific line of credit issued.",
+					"BaseAttributeReference": {
+						"Entity": "PersonalLineOfCreditProduct.cdm.json/PersonalLineOfCreditProduct",
+						"Name": "CashAdvancesIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "CreditChecksIndicator",
+					"Description": "Indicates whether credit checks are available for this specific line of credit issued.",
+					"BaseAttributeReference": {
+						"Entity": "PersonalLineOfCreditProduct.cdm.json/PersonalLineOfCreditProduct",
+						"Name": "CreditChecksIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "AtmAccessIndicator",
+					"Description": "Indicates whether ATM access to the line of credit funds is provided.",
+					"BaseAttributeReference": {
+						"Entity": "PersonalLineOfCreditProduct.cdm.json/PersonalLineOfCreditProduct",
+						"Name": "AtmAccessIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "24HourInternetAccessIndicator",
+					"Description": "Indicates whether 24 hour internet access to account information is available for this specific line of credit issued.",
+					"BaseAttributeReference": {
+						"Entity": "PersonalLineOfCreditProduct.cdm.json/PersonalLineOfCreditProduct",
+						"Name": "24HourInternetAccessIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "24HourPhoneAccessIndicator",
+					"Description": "Indicates whether 24 hour phone access to account information is available for this specific line of credit issued.",
+					"BaseAttributeReference": {
+						"Entity": "PersonalLineOfCreditProduct.cdm.json/PersonalLineOfCreditProduct",
+						"Name": "24HourPhoneAccessIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/PersonalLineOfCreditProduct",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/PersonalLineOfCreditProduct",
+				"Properties": {
+					"LinkedServiceName": "wspc-dpu-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ProductId\":{\"entity\":\"PersonalLineOfCreditProduct.cdm.json/PersonalLineOfCreditProduct\",\"name\":\"ProductId\"},\"MinimumPaymentPercentageOfBalance\":{\"entity\":\"PersonalLineOfCreditProduct.cdm.json/PersonalLineOfCreditProduct\",\"name\":\"MinimumPaymentPercentageOfBalance\"},\"ChecksIndicator\":{\"entity\":\"PersonalLineOfCreditProduct.cdm.json/PersonalLineOfCreditProduct\",\"name\":\"ChecksIndicator\"},\"AutomaticPaymentIndicator\":{\"entity\":\"PersonalLineOfCreditProduct.cdm.json/PersonalLineOfCreditProduct\",\"name\":\"AutomaticPaymentIndicator\"},\"MonthlyStatementsIndicator\":{\"entity\":\"PersonalLineOfCreditProduct.cdm.json/PersonalLineOfCreditProduct\",\"name\":\"MonthlyStatementsIndicator\"},\"CashAdvancesIndicator\":{\"entity\":\"PersonalLineOfCreditProduct.cdm.json/PersonalLineOfCreditProduct\",\"name\":\"CashAdvancesIndicator\"},\"CreditChecksIndicator\":{\"entity\":\"PersonalLineOfCreditProduct.cdm.json/PersonalLineOfCreditProduct\",\"name\":\"CreditChecksIndicator\"},\"AtmAccessIndicator\":{\"entity\":\"PersonalLineOfCreditProduct.cdm.json/PersonalLineOfCreditProduct\",\"name\":\"AtmAccessIndicator\"},\"24HourInternetAccessIndicator\":{\"entity\":\"PersonalLineOfCreditProduct.cdm.json/PersonalLineOfCreditProduct\",\"name\":\"24HourInternetAccessIndicator\"},\"24HourPhoneAccessIndicator\":{\"entity\":\"PersonalLineOfCreditProduct.cdm.json/PersonalLineOfCreditProduct\",\"name\":\"24HourPhoneAccessIndicator\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"PersonalLineOfCreditProduct\",\"path\":\"PersonalLineOfCreditProduct.cdm.json/PersonalLineOfCreditProduct\"},\"description\":\"A variable interest rate line of credit that requires collateral or security.\",\"primaryKey\":[\"ProductId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"ProductId\",\"attributeReference\":{\"entity\":\"PersonalLineOfCreditProduct.cdm.json/PersonalLineOfCreditProduct\",\"name\":\"ProductId\"},\"dataType\":\"long\"},{\"type\":\"Existing\",\"name\":\"MinimumPaymentPercentageOfBalance\",\"attributeReference\":{\"entity\":\"PersonalLineOfCreditProduct.cdm.json/PersonalLineOfCreditProduct\",\"name\":\"MinimumPaymentPercentageOfBalance\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ChecksIndicator\",\"attributeReference\":{\"entity\":\"PersonalLineOfCreditProduct.cdm.json/PersonalLineOfCreditProduct\",\"name\":\"ChecksIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"AutomaticPaymentIndicator\",\"attributeReference\":{\"entity\":\"PersonalLineOfCreditProduct.cdm.json/PersonalLineOfCreditProduct\",\"name\":\"AutomaticPaymentIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"MonthlyStatementsIndicator\",\"attributeReference\":{\"entity\":\"PersonalLineOfCreditProduct.cdm.json/PersonalLineOfCreditProduct\",\"name\":\"MonthlyStatementsIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"CashAdvancesIndicator\",\"attributeReference\":{\"entity\":\"PersonalLineOfCreditProduct.cdm.json/PersonalLineOfCreditProduct\",\"name\":\"CashAdvancesIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"CreditChecksIndicator\",\"attributeReference\":{\"entity\":\"PersonalLineOfCreditProduct.cdm.json/PersonalLineOfCreditProduct\",\"name\":\"CreditChecksIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"AtmAccessIndicator\",\"attributeReference\":{\"entity\":\"PersonalLineOfCreditProduct.cdm.json/PersonalLineOfCreditProduct\",\"name\":\"AtmAccessIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"24HourInternetAccessIndicator\",\"attributeReference\":{\"entity\":\"PersonalLineOfCreditProduct.cdm.json/PersonalLineOfCreditProduct\",\"name\":\"24HourInternetAccessIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"24HourPhoneAccessIndicator\",\"attributeReference\":{\"entity\":\"PersonalLineOfCreditProduct.cdm.json/PersonalLineOfCreditProduct\",\"name\":\"24HourPhoneAccessIndicator\"},\"dataType\":\"boolean\"}]}}}",
+			"Description": "A variable interest rate line of credit that requires collateral or security.",
+			"DisplayFolderInfo": "{\"name\":\"Product\",\"colorCode\":\"#0E3D73\"}",
+			"PrimaryKeys": "ProductId",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

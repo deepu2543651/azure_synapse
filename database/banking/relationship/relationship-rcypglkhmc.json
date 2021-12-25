@@ -1,0 +1,26 @@
+{
+	"name": "relationship-rcypglkhmc",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-rcypglkhmc",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "ChannelPartyRelationshipType",
+		"ToTableName": "ChannelRelatedParty",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ChannelPartyRelationshipTypeId",
+				"ToColumnName": "ChannelPartyRelationshipTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"ChannelPartyRelationshipType.cdm.json/ChannelPartyRelationshipType\",\"toEntity\":\"ChannelRelatedParty.cdm.json/ChannelRelatedParty\",\"joinPairs\":[{\"fromAttribute\":\"ChannelPartyRelationshipTypeId\",\"toAttribute\":\"ChannelPartyRelationshipTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

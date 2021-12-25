@@ -1,0 +1,209 @@
+{
+	"name": "AdvertisingEventSocialMediaPlatformAdPlacement",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "AdvertisingEventSocialMediaPlatformAdPlacement",
+		"Description": "Social Media Platform Ad Placement associated with an Advertising Event.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "AdvertisingEventId",
+					"Description": "The unique identifier of an Advertising Event.",
+					"BaseAttributeReference": {
+						"Entity": "AdvertisingEventSocialMediaPlatformAdPlacement.cdm.json/AdvertisingEventSocialMediaPlatformAdPlacement",
+						"Name": "AdvertisingEventId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "SocialMediaPlatformId",
+					"Description": "The unique identifier of a Social Media Platform.",
+					"BaseAttributeReference": {
+						"Entity": "AdvertisingEventSocialMediaPlatformAdPlacement.cdm.json/AdvertisingEventSocialMediaPlatformAdPlacement",
+						"Name": "SocialMediaPlatformId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "AdvertisingCollateralId",
+					"Description": "The unique identifier of a Marketing Communication.",
+					"BaseAttributeReference": {
+						"Entity": "AdvertisingEventSocialMediaPlatformAdPlacement.cdm.json/AdvertisingEventSocialMediaPlatformAdPlacement",
+						"Name": "AdvertisingCollateralId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "PeriodStartDate",
+					"Description": "The period start date of the Advertising Event Web Site Ad Placement.",
+					"BaseAttributeReference": {
+						"Entity": "AdvertisingEventSocialMediaPlatformAdPlacement.cdm.json/AdvertisingEventSocialMediaPlatformAdPlacement",
+						"Name": "PeriodStartDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "PeriodEndDate",
+					"Description": "The period end date of the Advertising Event Web Site Ad Placement.",
+					"BaseAttributeReference": {
+						"Entity": "AdvertisingEventSocialMediaPlatformAdPlacement.cdm.json/AdvertisingEventSocialMediaPlatformAdPlacement",
+						"Name": "PeriodEndDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "PlannedNumberOfImpressions",
+					"Description": "The planned number of exposures or placements of the ad on a web site associated with the advertising event.",
+					"BaseAttributeReference": {
+						"Entity": "AdvertisingEventSocialMediaPlatformAdPlacement.cdm.json/AdvertisingEventSocialMediaPlatformAdPlacement",
+						"Name": "PlannedNumberOfImpressions"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ActualNumberOfImpressions",
+					"Description": "The actual number of exposures or placements of the ad on a web site associated with the advertising event.",
+					"BaseAttributeReference": {
+						"Entity": "AdvertisingEventSocialMediaPlatformAdPlacement.cdm.json/AdvertisingEventSocialMediaPlatformAdPlacement",
+						"Name": "ActualNumberOfImpressions"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "NumberOfClicks",
+					"Description": "The number of clicks on the ad on the web site associated with the advertising event.",
+					"BaseAttributeReference": {
+						"Entity": "AdvertisingEventSocialMediaPlatformAdPlacement.cdm.json/AdvertisingEventSocialMediaPlatformAdPlacement",
+						"Name": "NumberOfClicks"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "AdvertisingEventSocialMediaPlatformAdPlacementNote",
+					"Description": "A note, comment or additional information regarding the Advertising Event Social Media Platform.",
+					"BaseAttributeReference": {
+						"Entity": "AdvertisingEventSocialMediaPlatformAdPlacement.cdm.json/AdvertisingEventSocialMediaPlatformAdPlacement",
+						"Name": "AdvertisingEventSocialMediaPlatformAdPlacementNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/AdvertisingEventSocialMediaPlatformAdPlacement",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/AdvertisingEventSocialMediaPlatformAdPlacement",
+				"Properties": {
+					"LinkedServiceName": "wspc-dpu-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"AdvertisingEventId\":{\"entity\":\"AdvertisingEventSocialMediaPlatformAdPlacement.cdm.json/AdvertisingEventSocialMediaPlatformAdPlacement\",\"name\":\"AdvertisingEventId\"},\"SocialMediaPlatformId\":{\"entity\":\"AdvertisingEventSocialMediaPlatformAdPlacement.cdm.json/AdvertisingEventSocialMediaPlatformAdPlacement\",\"name\":\"SocialMediaPlatformId\"},\"AdvertisingCollateralId\":{\"entity\":\"AdvertisingEventSocialMediaPlatformAdPlacement.cdm.json/AdvertisingEventSocialMediaPlatformAdPlacement\",\"name\":\"AdvertisingCollateralId\"},\"PeriodStartDate\":{\"entity\":\"AdvertisingEventSocialMediaPlatformAdPlacement.cdm.json/AdvertisingEventSocialMediaPlatformAdPlacement\",\"name\":\"PeriodStartDate\"},\"PeriodEndDate\":{\"entity\":\"AdvertisingEventSocialMediaPlatformAdPlacement.cdm.json/AdvertisingEventSocialMediaPlatformAdPlacement\",\"name\":\"PeriodEndDate\"},\"PlannedNumberOfImpressions\":{\"entity\":\"AdvertisingEventSocialMediaPlatformAdPlacement.cdm.json/AdvertisingEventSocialMediaPlatformAdPlacement\",\"name\":\"PlannedNumberOfImpressions\"},\"ActualNumberOfImpressions\":{\"entity\":\"AdvertisingEventSocialMediaPlatformAdPlacement.cdm.json/AdvertisingEventSocialMediaPlatformAdPlacement\",\"name\":\"ActualNumberOfImpressions\"},\"NumberOfClicks\":{\"entity\":\"AdvertisingEventSocialMediaPlatformAdPlacement.cdm.json/AdvertisingEventSocialMediaPlatformAdPlacement\",\"name\":\"NumberOfClicks\"},\"AdvertisingEventSocialMediaPlatformAdPlacementNote\":{\"entity\":\"AdvertisingEventSocialMediaPlatformAdPlacement.cdm.json/AdvertisingEventSocialMediaPlatformAdPlacement\",\"name\":\"AdvertisingEventSocialMediaPlatformAdPlacementNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"AdvertisingEventSocialMediaPlatformAdPlacement\",\"path\":\"AdvertisingEventSocialMediaPlatformAdPlacement.cdm.json/AdvertisingEventSocialMediaPlatformAdPlacement\"},\"description\":\"Social Media Platform Ad Placement associated with an Advertising Event.\",\"primaryKey\":[\"AdvertisingEventId\",\"SocialMediaPlatformId\",\"AdvertisingCollateralId\",\"PeriodStartDate\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"AdvertisingEventId\",\"attributeReference\":{\"entity\":\"AdvertisingEventSocialMediaPlatformAdPlacement.cdm.json/AdvertisingEventSocialMediaPlatformAdPlacement\",\"name\":\"AdvertisingEventId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"SocialMediaPlatformId\",\"attributeReference\":{\"entity\":\"AdvertisingEventSocialMediaPlatformAdPlacement.cdm.json/AdvertisingEventSocialMediaPlatformAdPlacement\",\"name\":\"SocialMediaPlatformId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"AdvertisingCollateralId\",\"attributeReference\":{\"entity\":\"AdvertisingEventSocialMediaPlatformAdPlacement.cdm.json/AdvertisingEventSocialMediaPlatformAdPlacement\",\"name\":\"AdvertisingCollateralId\"},\"dataType\":\"long\"},{\"type\":\"Existing\",\"name\":\"PeriodStartDate\",\"attributeReference\":{\"entity\":\"AdvertisingEventSocialMediaPlatformAdPlacement.cdm.json/AdvertisingEventSocialMediaPlatformAdPlacement\",\"name\":\"PeriodStartDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\"},{\"type\":\"Existing\",\"name\":\"PeriodEndDate\",\"attributeReference\":{\"entity\":\"AdvertisingEventSocialMediaPlatformAdPlacement.cdm.json/AdvertisingEventSocialMediaPlatformAdPlacement\",\"name\":\"PeriodEndDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\"},{\"type\":\"Existing\",\"name\":\"PlannedNumberOfImpressions\",\"attributeReference\":{\"entity\":\"AdvertisingEventSocialMediaPlatformAdPlacement.cdm.json/AdvertisingEventSocialMediaPlatformAdPlacement\",\"name\":\"PlannedNumberOfImpressions\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ActualNumberOfImpressions\",\"attributeReference\":{\"entity\":\"AdvertisingEventSocialMediaPlatformAdPlacement.cdm.json/AdvertisingEventSocialMediaPlatformAdPlacement\",\"name\":\"ActualNumberOfImpressions\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"NumberOfClicks\",\"attributeReference\":{\"entity\":\"AdvertisingEventSocialMediaPlatformAdPlacement.cdm.json/AdvertisingEventSocialMediaPlatformAdPlacement\",\"name\":\"NumberOfClicks\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"AdvertisingEventSocialMediaPlatformAdPlacementNote\",\"attributeReference\":{\"entity\":\"AdvertisingEventSocialMediaPlatformAdPlacement.cdm.json/AdvertisingEventSocialMediaPlatformAdPlacement\",\"name\":\"AdvertisingEventSocialMediaPlatformAdPlacementNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024}]}}}",
+			"Description": "Social Media Platform Ad Placement associated with an Advertising Event.",
+			"DisplayFolderInfo": "{\"name\":\"Marketing & Advertising\",\"colorCode\":\"#692B0C\"}",
+			"PrimaryKeys": "AdvertisingEventId,SocialMediaPlatformId,AdvertisingCollateralId,PeriodStartDate",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

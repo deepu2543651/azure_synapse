@@ -1,0 +1,26 @@
+{
+	"name": "relationship-ujepiikqni",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-ujepiikqni",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "CommunicationType",
+		"ToTableName": "Communication",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "CommunicationTypeId",
+				"ToColumnName": "CommunicationTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"CommunicationType.cdm.json/CommunicationType\",\"toEntity\":\"Communication.cdm.json/Communication\",\"joinPairs\":[{\"fromAttribute\":\"CommunicationTypeId\",\"toAttribute\":\"CommunicationTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

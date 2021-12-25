@@ -1,0 +1,26 @@
+{
+	"name": "relationship-wlodaeycdw",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-wlodaeycdw",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "TransactionRelationshipType",
+		"ToTableName": "RelatedTransaction",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "TransactionRelationshipTypeId",
+				"ToColumnName": "TransactionRelationshipTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"TransactionRelationshipType.cdm.json/TransactionRelationshipType\",\"toEntity\":\"RelatedTransaction.cdm.json/RelatedTransaction\",\"joinPairs\":[{\"fromAttribute\":\"TransactionRelationshipTypeId\",\"toAttribute\":\"TransactionRelationshipTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

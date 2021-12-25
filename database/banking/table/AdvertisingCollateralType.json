@@ -1,0 +1,128 @@
+{
+	"name": "AdvertisingCollateralType",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "AdvertisingCollateralType",
+		"Description": "A classification of Media Types used to create Marketing Communications based upon it's format, physical characteristics or functional attributes.\n\nEx:\n- Ad slick\n- Action Device\n- ADRMP\n- Image\n- Poster\n- Audio Clip\n- Video Clip",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "AdvertisingCollateralTypeId",
+					"Description": "The unique identifier of a Media Type.",
+					"BaseAttributeReference": {
+						"Entity": "AdvertisingCollateralType.cdm.json/AdvertisingCollateralType",
+						"Name": "AdvertisingCollateralTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "AdvertisingCollateralTypeName",
+					"Description": "The name of the Media Type.",
+					"BaseAttributeReference": {
+						"Entity": "AdvertisingCollateralType.cdm.json/AdvertisingCollateralType",
+						"Name": "AdvertisingCollateralTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "AdvertisingCollateralTypeDescription",
+					"Description": "The description of the Media Type.",
+					"BaseAttributeReference": {
+						"Entity": "AdvertisingCollateralType.cdm.json/AdvertisingCollateralType",
+						"Name": "AdvertisingCollateralTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "MediaCategoryId",
+					"Description": "The unique identifier of a Media Category.",
+					"BaseAttributeReference": {
+						"Entity": "AdvertisingCollateralType.cdm.json/AdvertisingCollateralType",
+						"Name": "MediaCategoryId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/AdvertisingCollateralType",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/AdvertisingCollateralType",
+				"Properties": {
+					"LinkedServiceName": "wspc-dpu-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"AdvertisingCollateralTypeId\":{\"entity\":\"AdvertisingCollateralType.cdm.json/AdvertisingCollateralType\",\"name\":\"AdvertisingCollateralTypeId\"},\"AdvertisingCollateralTypeName\":{\"entity\":\"AdvertisingCollateralType.cdm.json/AdvertisingCollateralType\",\"name\":\"AdvertisingCollateralTypeName\"},\"AdvertisingCollateralTypeDescription\":{\"entity\":\"AdvertisingCollateralType.cdm.json/AdvertisingCollateralType\",\"name\":\"AdvertisingCollateralTypeDescription\"},\"MediaCategoryId\":{\"entity\":\"AdvertisingCollateralType.cdm.json/AdvertisingCollateralType\",\"name\":\"MediaCategoryId\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"AdvertisingCollateralType\",\"path\":\"AdvertisingCollateralType.cdm.json/AdvertisingCollateralType\"},\"description\":\"A classification of Media Types used to create Marketing Communications based upon it's format, physical characteristics or functional attributes.\\n\\nEx:\\n- Ad slick\\n- Action Device\\n- ADRMP\\n- Image\\n- Poster\\n- Audio Clip\\n- Video Clip\",\"primaryKey\":[\"AdvertisingCollateralTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"AdvertisingCollateralTypeId\",\"attributeReference\":{\"entity\":\"AdvertisingCollateralType.cdm.json/AdvertisingCollateralType\",\"name\":\"AdvertisingCollateralTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"AdvertisingCollateralTypeName\",\"attributeReference\":{\"entity\":\"AdvertisingCollateralType.cdm.json/AdvertisingCollateralType\",\"name\":\"AdvertisingCollateralTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"AdvertisingCollateralTypeDescription\",\"attributeReference\":{\"entity\":\"AdvertisingCollateralType.cdm.json/AdvertisingCollateralType\",\"name\":\"AdvertisingCollateralTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512},{\"type\":\"Existing\",\"name\":\"MediaCategoryId\",\"attributeReference\":{\"entity\":\"AdvertisingCollateralType.cdm.json/AdvertisingCollateralType\",\"name\":\"MediaCategoryId\"},\"dataType\":\"integer\"}]}}}",
+			"Description": "A classification of Media Types used to create Marketing Communications based upon it's format, physical characteristics or functional attributes.\n\nEx:\n- Ad slick\n- Action Device\n- ADRMP\n- Image\n- Poster\n- Audio Clip\n- Video Clip",
+			"DisplayFolderInfo": "{\"name\":\"Marketing & Advertising\",\"colorCode\":\"#692B0C\"}",
+			"PrimaryKeys": "AdvertisingCollateralTypeId",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

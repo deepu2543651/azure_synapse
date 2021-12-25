@@ -1,0 +1,26 @@
+{
+	"name": "relationship-pyvyuwcnhx",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-pyvyuwcnhx",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Issue",
+		"ToTableName": "RelatedIssue",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "IssueId",
+				"ToColumnName": "IssueId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Issue.cdm.json/Issue\",\"toEntity\":\"RelatedIssue.cdm.json/RelatedIssue\",\"joinPairs\":[{\"fromAttribute\":\"IssueId\",\"toAttribute\":\"IssueId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

@@ -1,0 +1,26 @@
+{
+	"name": "relationship-nfbitrbgpr",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-nfbitrbgpr",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Party",
+		"ToTableName": "TransactionRelatedParty",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "PartyId",
+				"ToColumnName": "PartyId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Party.cdm.json/Party\",\"toEntity\":\"TransactionRelatedParty.cdm.json/TransactionRelatedParty\",\"joinPairs\":[{\"fromAttribute\":\"PartyId\",\"toAttribute\":\"PartyId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

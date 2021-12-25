@@ -1,0 +1,94 @@
+{
+	"name": "CommercialLoanProduct",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "CommercialLoanProduct",
+		"Description": "A commercial loan is a short-term loan borrowed by a company to pay for the needs for operations and other current requirements of the business. \n\nTypically a commercial loan may be renewable once it matures. \n\nThe business' tangible assets are usually used as collateral to secure the loan.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ProductId",
+					"Description": "The unique identifier of a Product.",
+					"BaseAttributeReference": {
+						"Entity": "CommercialLoanProduct.cdm.json/CommercialLoanProduct",
+						"Name": "ProductId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "CommercialLoanTypeId",
+					"Description": "The unique identifier of a Commercial Loan Type.",
+					"BaseAttributeReference": {
+						"Entity": "CommercialLoanProduct.cdm.json/CommercialLoanProduct",
+						"Name": "CommercialLoanTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/CommercialLoanProduct",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/CommercialLoanProduct",
+				"Properties": {
+					"LinkedServiceName": "wspc-dpu-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ProductId\":{\"entity\":\"CommercialLoanProduct.cdm.json/CommercialLoanProduct\",\"name\":\"ProductId\"},\"CommercialLoanTypeId\":{\"entity\":\"CommercialLoanProduct.cdm.json/CommercialLoanProduct\",\"name\":\"CommercialLoanTypeId\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"CommercialLoanProduct\",\"path\":\"CommercialLoanProduct.cdm.json/CommercialLoanProduct\"},\"description\":\"A commercial loan is a short-term loan borrowed by a company to pay for the needs for operations and other current requirements of the business. \\n\\nTypically a commercial loan may be renewable once it matures. \\n\\nThe business' tangible assets are usually used as collateral to secure the loan.\",\"primaryKey\":[\"ProductId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"ProductId\",\"attributeReference\":{\"entity\":\"CommercialLoanProduct.cdm.json/CommercialLoanProduct\",\"name\":\"ProductId\"},\"dataType\":\"long\"},{\"type\":\"Existing\",\"name\":\"CommercialLoanTypeId\",\"attributeReference\":{\"entity\":\"CommercialLoanProduct.cdm.json/CommercialLoanProduct\",\"name\":\"CommercialLoanTypeId\"},\"dataType\":\"integer\"}]}}}",
+			"Description": "A commercial loan is a short-term loan borrowed by a company to pay for the needs for operations and other current requirements of the business. \n\nTypically a commercial loan may be renewable once it matures. \n\nThe business' tangible assets are usually used as collateral to secure the loan.",
+			"DisplayFolderInfo": "{\"name\":\"Product\",\"colorCode\":\"#0E3D73\"}",
+			"PrimaryKeys": "ProductId",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

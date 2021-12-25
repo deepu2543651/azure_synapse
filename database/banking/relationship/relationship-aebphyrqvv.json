@@ -1,0 +1,34 @@
+{
+	"name": "relationship-aebphyrqvv",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-aebphyrqvv",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "ProductFeature",
+		"ToTableName": "CustomerAccountProductFeature",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "PeriodStartDate",
+				"ToColumnName": "PeriodStartDate"
+			},
+			{
+				"FromColumnName": "ProductFeatureTypeId",
+				"ToColumnName": "ProductFeatureTypeId"
+			},
+			{
+				"FromColumnName": "ProductId",
+				"ToColumnName": "ProductId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"ProductFeature.cdm.json/ProductFeature\",\"toEntity\":\"CustomerAccountProductFeature.cdm.json/CustomerAccountProductFeature\",\"joinPairs\":[{\"fromAttribute\":\"PeriodStartDate\",\"toAttribute\":\"PeriodStartDate\"},{\"fromAttribute\":\"ProductFeatureTypeId\",\"toAttribute\":\"ProductFeatureTypeId\"},{\"fromAttribute\":\"ProductId\",\"toAttribute\":\"ProductId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

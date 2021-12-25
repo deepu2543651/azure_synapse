@@ -1,0 +1,26 @@
+{
+	"name": "relationship-ygsormcmwi",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-ygsormcmwi",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "AssetTitleStatus",
+		"ToTableName": "CustomerAsset",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "AssetTitleStatusId",
+				"ToColumnName": "AssetTitleStatusId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"AssetTitleStatus.cdm.json/AssetTitleStatus\",\"toEntity\":\"CustomerAsset.cdm.json/CustomerAsset\",\"joinPairs\":[{\"fromAttribute\":\"AssetTitleStatusId\",\"toAttribute\":\"AssetTitleStatusId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

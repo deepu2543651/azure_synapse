@@ -1,0 +1,26 @@
+{
+	"name": "relationship-ykpowufgjp",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-ykpowufgjp",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "BudgetType",
+		"ToTableName": "Budget",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "BudgetTypeId",
+				"ToColumnName": "BudgetTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"BudgetType.cdm.json/BudgetType\",\"toEntity\":\"Budget.cdm.json/Budget\",\"joinPairs\":[{\"fromAttribute\":\"BudgetTypeId\",\"toAttribute\":\"BudgetTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

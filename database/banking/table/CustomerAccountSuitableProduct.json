@@ -1,0 +1,161 @@
+{
+	"name": "CustomerAccountSuitableProduct",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "CustomerAccountSuitableProduct",
+		"Description": "One of more Product(s) that have been judged to be suitable for marketing to the associated Customer Account for the period indicated.\n\nFor example, a family with small children is targeted for school lunch products via promotions, advertising etc. whereby a retired couple would not.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "CustomerAccountId",
+					"Description": "The unique identifier of a Customer Account.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountSuitableProduct.cdm.json/CustomerAccountSuitableProduct",
+						"Name": "CustomerAccountId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "ProductId",
+					"Description": "The unique identifier of a Product.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountSuitableProduct.cdm.json/CustomerAccountSuitableProduct",
+						"Name": "ProductId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "PeriodStartDate",
+					"Description": "The period start date for which the associated Product(s) are identified as suitable for the associated Customer Account.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountSuitableProduct.cdm.json/CustomerAccountSuitableProduct",
+						"Name": "PeriodStartDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "PeriodEndDate",
+					"Description": "The period end date for which the associated Product(s) are identified as suitable for the associated Customer Account.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountSuitableProduct.cdm.json/CustomerAccountSuitableProduct",
+						"Name": "PeriodEndDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "ProductSuitabilityNote",
+					"Description": "Notes, comments or additional information regarding the Product suitability for the associated Customer Account.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountSuitableProduct.cdm.json/CustomerAccountSuitableProduct",
+						"Name": "ProductSuitabilityNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ProductSuitabilityRatingId",
+					"Description": "The unique identifier of a Product Suitability Rating.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountSuitableProduct.cdm.json/CustomerAccountSuitableProduct",
+						"Name": "ProductSuitabilityRatingId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/CustomerAccountSuitableProduct",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/CustomerAccountSuitableProduct",
+				"Properties": {
+					"LinkedServiceName": "wspc-dpu-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"CustomerAccountId\":{\"entity\":\"CustomerAccountSuitableProduct.cdm.json/CustomerAccountSuitableProduct\",\"name\":\"CustomerAccountId\"},\"ProductId\":{\"entity\":\"CustomerAccountSuitableProduct.cdm.json/CustomerAccountSuitableProduct\",\"name\":\"ProductId\"},\"PeriodStartDate\":{\"entity\":\"CustomerAccountSuitableProduct.cdm.json/CustomerAccountSuitableProduct\",\"name\":\"PeriodStartDate\"},\"PeriodEndDate\":{\"entity\":\"CustomerAccountSuitableProduct.cdm.json/CustomerAccountSuitableProduct\",\"name\":\"PeriodEndDate\"},\"ProductSuitabilityNote\":{\"entity\":\"CustomerAccountSuitableProduct.cdm.json/CustomerAccountSuitableProduct\",\"name\":\"ProductSuitabilityNote\"},\"ProductSuitabilityRatingId\":{\"entity\":\"CustomerAccountSuitableProduct.cdm.json/CustomerAccountSuitableProduct\",\"name\":\"ProductSuitabilityRatingId\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"CustomerAccountSuitableProduct\",\"path\":\"CustomerAccountSuitableProduct.cdm.json/CustomerAccountSuitableProduct\"},\"description\":\"One of more Product(s) that have been judged to be suitable for marketing to the associated Customer Account for the period indicated.\\n\\nFor example, a family with small children is targeted for school lunch products via promotions, advertising etc. whereby a retired couple would not.\",\"primaryKey\":[\"CustomerAccountId\",\"ProductId\",\"PeriodStartDate\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"CustomerAccountId\",\"attributeReference\":{\"entity\":\"CustomerAccountSuitableProduct.cdm.json/CustomerAccountSuitableProduct\",\"name\":\"CustomerAccountId\"},\"dataType\":\"long\"},{\"type\":\"Existing\",\"name\":\"ProductId\",\"attributeReference\":{\"entity\":\"CustomerAccountSuitableProduct.cdm.json/CustomerAccountSuitableProduct\",\"name\":\"ProductId\"},\"dataType\":\"long\"},{\"type\":\"Existing\",\"name\":\"PeriodStartDate\",\"attributeReference\":{\"entity\":\"CustomerAccountSuitableProduct.cdm.json/CustomerAccountSuitableProduct\",\"name\":\"PeriodStartDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\"},{\"type\":\"Existing\",\"name\":\"PeriodEndDate\",\"attributeReference\":{\"entity\":\"CustomerAccountSuitableProduct.cdm.json/CustomerAccountSuitableProduct\",\"name\":\"PeriodEndDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\"},{\"type\":\"Existing\",\"name\":\"ProductSuitabilityNote\",\"attributeReference\":{\"entity\":\"CustomerAccountSuitableProduct.cdm.json/CustomerAccountSuitableProduct\",\"name\":\"ProductSuitabilityNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024},{\"type\":\"Existing\",\"name\":\"ProductSuitabilityRatingId\",\"attributeReference\":{\"entity\":\"CustomerAccountSuitableProduct.cdm.json/CustomerAccountSuitableProduct\",\"name\":\"ProductSuitabilityRatingId\"},\"dataType\":\"integer\"}]}}}",
+			"Description": "One of more Product(s) that have been judged to be suitable for marketing to the associated Customer Account for the period indicated.\n\nFor example, a family with small children is targeted for school lunch products via promotions, advertising etc. whereby a retired couple would not.",
+			"DisplayFolderInfo": "{\"name\":\"Customer Account\",\"colorCode\":\"#E3008C\"}",
+			"PrimaryKeys": "CustomerAccountId,ProductId,PeriodStartDate",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

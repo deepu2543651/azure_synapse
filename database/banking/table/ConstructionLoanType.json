@@ -1,0 +1,112 @@
+{
+	"name": "ConstructionLoanType",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "ConstructionLoanType",
+		"Description": "The type of construction loan based on characteristics, financing and objectives.\n\nEx:\n- Construction-To- Permanent Loan\n- Remodeler Loan\n- Bridge Loan\n- Lot Land Loan\n\nwhere:\n\nCONSTRUCTION-TO- PERMANENT LOAN\nOften times getting approved for a construction loan can be involve multiple loans, paperwork and fees.   In many cases, two loans are required--one for construction and one for permanent financing. \n\nUsually you will have to pay closing costs on both loans in addition to the associated administration fees and time consuming activities.  \n\nA construction-to-permanent loan combines both construction and permanent financing into one loan.\n\nREMODELER LOAN\nThe Remodeler Loan is designed for the property owner who is  making a major improvement to a commercial property. \n\nTypically this loan calculates the value of the property by adding the value of the planned improvement to the property's current value.\n\nBRIDGE LOAN\nA Bridge Loan is designed for commercial property owners planning to construct a new commercial property. The Bridge Loan allows the owner to access the equity in their current property, and use it as the down payment on a Construction-to-Permanent Loan.\n\nLOT LAND LOAN \nThe Lot/Land Loan is used to purchase a commercial lot to build upon.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ConstructionLoanTypeId",
+					"Description": "The unique identifier of a construction loan type.",
+					"BaseAttributeReference": {
+						"Entity": "ConstructionLoanType.cdm.json/ConstructionLoanType",
+						"Name": "ConstructionLoanTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ConstructionLoanTypeName",
+					"Description": "The name of a construction loan type.",
+					"BaseAttributeReference": {
+						"Entity": "ConstructionLoanType.cdm.json/ConstructionLoanType",
+						"Name": "ConstructionLoanTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ConstructionLoanTypeDescription",
+					"Description": "The description of a construction loan type.",
+					"BaseAttributeReference": {
+						"Entity": "ConstructionLoanType.cdm.json/ConstructionLoanType",
+						"Name": "ConstructionLoanTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/ConstructionLoanType",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/ConstructionLoanType",
+				"Properties": {
+					"LinkedServiceName": "wspc-dpu-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ConstructionLoanTypeId\":{\"entity\":\"ConstructionLoanType.cdm.json/ConstructionLoanType\",\"name\":\"ConstructionLoanTypeId\"},\"ConstructionLoanTypeName\":{\"entity\":\"ConstructionLoanType.cdm.json/ConstructionLoanType\",\"name\":\"ConstructionLoanTypeName\"},\"ConstructionLoanTypeDescription\":{\"entity\":\"ConstructionLoanType.cdm.json/ConstructionLoanType\",\"name\":\"ConstructionLoanTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"ConstructionLoanType\",\"path\":\"ConstructionLoanType.cdm.json/ConstructionLoanType\"},\"description\":\"The type of construction loan based on characteristics, financing and objectives.\\n\\nEx:\\n- Construction-To- Permanent Loan\\n- Remodeler Loan\\n- Bridge Loan\\n- Lot Land Loan\\n\\nwhere:\\n\\nCONSTRUCTION-TO- PERMANENT LOAN\\nOften times getting approved for a construction loan can be involve multiple loans, paperwork and fees.   In many cases, two loans are required--one for construction and one for permanent financing. \\n\\nUsually you will have to pay closing costs on both loans in addition to the associated administration fees and time consuming activities.  \\n\\nA construction-to-permanent loan combines both construction and permanent financing into one loan.\\n\\nREMODELER LOAN\\nThe Remodeler Loan is designed for the property owner who is  making a major improvement to a commercial property. \\n\\nTypically this loan calculates the value of the property by adding the value of the planned improvement to the property's current value.\\n\\nBRIDGE LOAN\\nA Bridge Loan is designed for commercial property owners planning to construct a new commercial property. The Bridge Loan allows the owner to access the equity in their current property, and use it as the down payment on a Construction-to-Permanent Loan.\\n\\nLOT LAND LOAN \\nThe Lot/Land Loan is used to purchase a commercial lot to build upon.\",\"primaryKey\":[\"ConstructionLoanTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"ConstructionLoanTypeId\",\"attributeReference\":{\"entity\":\"ConstructionLoanType.cdm.json/ConstructionLoanType\",\"name\":\"ConstructionLoanTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ConstructionLoanTypeName\",\"attributeReference\":{\"entity\":\"ConstructionLoanType.cdm.json/ConstructionLoanType\",\"name\":\"ConstructionLoanTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"ConstructionLoanTypeDescription\",\"attributeReference\":{\"entity\":\"ConstructionLoanType.cdm.json/ConstructionLoanType\",\"name\":\"ConstructionLoanTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512}]}}}",
+			"Description": "The type of construction loan based on characteristics, financing and objectives.\n\nEx:\n- Construction-To- Permanent Loan\n- Remodeler Loan\n- Bridge Loan\n- Lot Land Loan\n\nwhere:\n\nCONSTRUCTION-TO- PERMANENT LOAN\nOften times getting approved for a construction loan can be involve multiple loans, paperwork and fees.   In many cases, two loans are required--one for construction and one for permanent financing. \n\nUsually you will have to pay closing costs on both loans in addition to the associated administration fees and time consuming activities.  \n\nA construction-to-permanent loan combines both construction and permanent financing into one loan.\n\nREMODELER LOAN\nThe Remodeler Loan is designed for the property owner who is  making a major improvement to a commercial property. \n\nTypically this loan calculates the value of the property by adding the value of the planned improvement to the property's current value.\n\nBRIDGE LOAN\nA Bridge Loan is designed for commercial property owners planning to construct a new commercial property. The Bridge Loan allows the owner to access the equity in their current property, and use it as the down payment on a Construction-to-Permanent Loan.\n\nLOT LAND LOAN \nThe Lot/Land Loan is used to purchase a commercial lot to build upon.",
+			"DisplayFolderInfo": "{\"name\":\"Product\",\"colorCode\":\"#0E3D73\"}",
+			"PrimaryKeys": "ConstructionLoanTypeId",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

@@ -1,0 +1,26 @@
+{
+	"name": "relationship-prmbnfctep",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-prmbnfctep",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "AccountBalanceCalculationMethod",
+		"ToTableName": "PaymentCardProduct",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "AccountBalanceCalculationMethodId",
+				"ToColumnName": "AccountBalanceCalculationMethodId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"AccountBalanceCalculationMethod.cdm.json/AccountBalanceCalculationMethod\",\"toEntity\":\"PaymentCardProduct.cdm.json/PaymentCardProduct\",\"joinPairs\":[{\"fromAttribute\":\"AccountBalanceCalculationMethodId\",\"toAttribute\":\"AccountBalanceCalculationMethodId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

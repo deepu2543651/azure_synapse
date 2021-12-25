@@ -1,0 +1,26 @@
+{
+	"name": "relationship-qyjedatdcz",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-qyjedatdcz",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "CommercialSavingsAccountType",
+		"ToTableName": "CommercialSavingsAccountProduct",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "CommercialSavingsAccountTypeId",
+				"ToColumnName": "CommercialSavingsAccountTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"CommercialSavingsAccountType.cdm.json/CommercialSavingsAccountType\",\"toEntity\":\"CommercialSavingsAccountProduct.cdm.json/CommercialSavingsAccountProduct\",\"joinPairs\":[{\"fromAttribute\":\"CommercialSavingsAccountTypeId\",\"toAttribute\":\"CommercialSavingsAccountTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

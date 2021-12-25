@@ -1,0 +1,26 @@
+{
+	"name": "relationship-kuaucxjxur",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-kuaucxjxur",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "CostItem",
+		"ToTableName": "BudgetCostItem",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "CostItemId",
+				"ToColumnName": "CostItemId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"CostItem.cdm.json/CostItem\",\"toEntity\":\"BudgetCostItem.cdm.json/BudgetCostItem\",\"joinPairs\":[{\"fromAttribute\":\"CostItemId\",\"toAttribute\":\"CostItemId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

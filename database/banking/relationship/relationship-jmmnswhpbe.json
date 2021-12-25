@@ -1,0 +1,26 @@
+{
+	"name": "relationship-jmmnswhpbe",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-jmmnswhpbe",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "ServiceRequestChargeType",
+		"ToTableName": "ServiceRequestCharge",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ServiceRequestChargeTypeId",
+				"ToColumnName": "ServiceRequestChargeTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"ServiceRequestChargeType.cdm.json/ServiceRequestChargeType\",\"toEntity\":\"ServiceRequestCharge.cdm.json/ServiceRequestCharge\",\"joinPairs\":[{\"fromAttribute\":\"ServiceRequestChargeTypeId\",\"toAttribute\":\"ServiceRequestChargeTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

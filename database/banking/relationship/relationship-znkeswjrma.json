@@ -1,0 +1,26 @@
+{
+	"name": "relationship-znkeswjrma",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-znkeswjrma",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Contract",
+		"ToTableName": "ContractDocument",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ContractId",
+				"ToColumnName": "ContractId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Contract.cdm.json/Contract\",\"toEntity\":\"ContractDocument.cdm.json/ContractDocument\",\"joinPairs\":[{\"fromAttribute\":\"ContractId\",\"toAttribute\":\"ContractId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

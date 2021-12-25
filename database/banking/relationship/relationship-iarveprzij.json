@@ -1,0 +1,26 @@
+{
+	"name": "relationship-iarveprzij",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-iarveprzij",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "EducationLoanType",
+		"ToTableName": "EducationLoanProduct",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "EducationLoanTypeId",
+				"ToColumnName": "EducationLoanTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"EducationLoanType.cdm.json/EducationLoanType\",\"toEntity\":\"EducationLoanProduct.cdm.json/EducationLoanProduct\",\"joinPairs\":[{\"fromAttribute\":\"EducationLoanTypeId\",\"toAttribute\":\"EducationLoanTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

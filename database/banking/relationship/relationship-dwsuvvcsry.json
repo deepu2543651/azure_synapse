@@ -1,0 +1,26 @@
+{
+	"name": "relationship-dwsuvvcsry",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-dwsuvvcsry",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "CustomerAsset",
+		"ToTableName": "CustomerAssetFinancialAssessment",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "CustomerAssetId",
+				"ToColumnName": "CustomerAssetId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"CustomerAsset.cdm.json/CustomerAsset\",\"toEntity\":\"CustomerAssetFinancialAssessment.cdm.json/CustomerAssetFinancialAssessment\",\"joinPairs\":[{\"fromAttribute\":\"CustomerAssetId\",\"toAttribute\":\"CustomerAssetId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

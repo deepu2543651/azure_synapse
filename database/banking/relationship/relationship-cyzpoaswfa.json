@@ -1,0 +1,26 @@
+{
+	"name": "relationship-cyzpoaswfa",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-cyzpoaswfa",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "AioLevel",
+		"ToTableName": "CustomerActivity",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "AioLevelId",
+				"ToColumnName": "AioLevelId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"AioLevel.cdm.json/AioLevel\",\"toEntity\":\"CustomerActivity.cdm.json/CustomerActivity\",\"joinPairs\":[{\"fromAttribute\":\"AioLevelId\",\"toAttribute\":\"AioLevelId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

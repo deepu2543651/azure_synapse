@@ -1,0 +1,26 @@
+{
+	"name": "relationship-ianeycxmpf",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-ianeycxmpf",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "AdvertisingCollateralStatus",
+		"ToTableName": "AdvertisingCollateral",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "AdvertisingCollateralStatusId",
+				"ToColumnName": "AdvertisingCollateralStatusId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"AdvertisingCollateralStatus.cdm.json/AdvertisingCollateralStatus\",\"toEntity\":\"AdvertisingCollateral.cdm.json/AdvertisingCollateral\",\"joinPairs\":[{\"fromAttribute\":\"AdvertisingCollateralStatusId\",\"toAttribute\":\"AdvertisingCollateralStatusId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

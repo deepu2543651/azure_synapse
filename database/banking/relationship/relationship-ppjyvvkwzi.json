@@ -1,0 +1,26 @@
+{
+	"name": "relationship-ppjyvvkwzi",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-ppjyvvkwzi",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "RestrictionType",
+		"ToTableName": "Restriction",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "RestrictionTypeId",
+				"ToColumnName": "RestrictionTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"RestrictionType.cdm.json/RestrictionType\",\"toEntity\":\"Restriction.cdm.json/Restriction\",\"joinPairs\":[{\"fromAttribute\":\"RestrictionTypeId\",\"toAttribute\":\"RestrictionTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

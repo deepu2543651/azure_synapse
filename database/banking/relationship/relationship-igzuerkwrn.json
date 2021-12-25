@@ -1,0 +1,26 @@
+{
+	"name": "relationship-igzuerkwrn",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-igzuerkwrn",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "InterestRatePurpose",
+		"ToTableName": "BaseRate",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "InterestRatePurposeId",
+				"ToColumnName": "InterestRatePurposeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"InterestRatePurpose.cdm.json/InterestRatePurpose\",\"toEntity\":\"BaseRate.cdm.json/BaseRate\",\"joinPairs\":[{\"fromAttribute\":\"InterestRatePurposeId\",\"toAttribute\":\"InterestRatePurposeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

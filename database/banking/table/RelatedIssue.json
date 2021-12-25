@@ -1,0 +1,127 @@
+{
+	"name": "RelatedIssue",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "RelatedIssue",
+		"Description": "The relationship of two or more issues.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "IssueId",
+					"Description": "The unique identifier of an Issue.",
+					"BaseAttributeReference": {
+						"Entity": "RelatedIssue.cdm.json/RelatedIssue",
+						"Name": "IssueId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "RelatedIssueId",
+					"Description": "The unique identifier of an Issue.",
+					"BaseAttributeReference": {
+						"Entity": "RelatedIssue.cdm.json/RelatedIssue",
+						"Name": "RelatedIssueId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "IssueRelationshipDescription",
+					"Description": "A description of the nature of relationship between the Issues.",
+					"BaseAttributeReference": {
+						"Entity": "RelatedIssue.cdm.json/RelatedIssue",
+						"Name": "IssueRelationshipDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "IssueRelationshipTypeId",
+					"Description": "The unique identifier of a Issue Relationship Type.",
+					"BaseAttributeReference": {
+						"Entity": "RelatedIssue.cdm.json/RelatedIssue",
+						"Name": "IssueRelationshipTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/RelatedIssue",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/RelatedIssue",
+				"Properties": {
+					"LinkedServiceName": "wspc-dpu-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"IssueId\":{\"entity\":\"RelatedIssue.cdm.json/RelatedIssue\",\"name\":\"IssueId\"},\"RelatedIssueId\":{\"entity\":\"RelatedIssue.cdm.json/RelatedIssue\",\"name\":\"RelatedIssueId\"},\"IssueRelationshipDescription\":{\"entity\":\"RelatedIssue.cdm.json/RelatedIssue\",\"name\":\"IssueRelationshipDescription\"},\"IssueRelationshipTypeId\":{\"entity\":\"RelatedIssue.cdm.json/RelatedIssue\",\"name\":\"IssueRelationshipTypeId\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"RelatedIssue\",\"path\":\"RelatedIssue.cdm.json/RelatedIssue\"},\"description\":\"The relationship of two or more issues.\",\"primaryKey\":[\"IssueId\",\"RelatedIssueId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"IssueId\",\"attributeReference\":{\"entity\":\"RelatedIssue.cdm.json/RelatedIssue\",\"name\":\"IssueId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"RelatedIssueId\",\"attributeReference\":{\"entity\":\"RelatedIssue.cdm.json/RelatedIssue\",\"name\":\"RelatedIssueId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"IssueRelationshipDescription\",\"attributeReference\":{\"entity\":\"RelatedIssue.cdm.json/RelatedIssue\",\"name\":\"IssueRelationshipDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512},{\"type\":\"Existing\",\"name\":\"IssueRelationshipTypeId\",\"attributeReference\":{\"entity\":\"RelatedIssue.cdm.json/RelatedIssue\",\"name\":\"IssueRelationshipTypeId\"},\"dataType\":\"integer\"}]}}}",
+			"Description": "The relationship of two or more issues.",
+			"DisplayFolderInfo": "{\"name\":\"Customer Service & Contact Management\",\"colorCode\":\"#Ef6950\"}",
+			"PrimaryKeys": "IssueId,RelatedIssueId",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

@@ -1,0 +1,112 @@
+{
+	"name": "LoanConversionOption",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "LoanConversionOption",
+		"Description": "The right of a borrower to convert an adjustable or balloon loan into a fixed loan. \n\nEx:\n- Borrower may not convert loan\n- Borrower may convert loan but must requalify\n- Borrower may convert loan and is automatically qualified\n- The right of a borrower to convert an adjustable or balloon loan into a fixed loan",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "LoanConversionOptionId",
+					"Description": "The unique identifier of a Loan Conversion Option.",
+					"BaseAttributeReference": {
+						"Entity": "LoanConversionOption.cdm.json/LoanConversionOption",
+						"Name": "LoanConversionOptionId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "LoanConversionOptionName",
+					"Description": "The name of a Loan Conversion Option.",
+					"BaseAttributeReference": {
+						"Entity": "LoanConversionOption.cdm.json/LoanConversionOption",
+						"Name": "LoanConversionOptionName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "LoanConversionOptionDescription",
+					"Description": "The description of a Loan Conversion Option.",
+					"BaseAttributeReference": {
+						"Entity": "LoanConversionOption.cdm.json/LoanConversionOption",
+						"Name": "LoanConversionOptionDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/LoanConversionOption",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/LoanConversionOption",
+				"Properties": {
+					"LinkedServiceName": "wspc-dpu-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"LoanConversionOptionId\":{\"entity\":\"LoanConversionOption.cdm.json/LoanConversionOption\",\"name\":\"LoanConversionOptionId\"},\"LoanConversionOptionName\":{\"entity\":\"LoanConversionOption.cdm.json/LoanConversionOption\",\"name\":\"LoanConversionOptionName\"},\"LoanConversionOptionDescription\":{\"entity\":\"LoanConversionOption.cdm.json/LoanConversionOption\",\"name\":\"LoanConversionOptionDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"LoanConversionOption\",\"path\":\"LoanConversionOption.cdm.json/LoanConversionOption\"},\"description\":\"The right of a borrower to convert an adjustable or balloon loan into a fixed loan. \\n\\nEx:\\n- Borrower may not convert loan\\n- Borrower may convert loan but must requalify\\n- Borrower may convert loan and is automatically qualified\\n- The right of a borrower to convert an adjustable or balloon loan into a fixed loan\",\"primaryKey\":[\"LoanConversionOptionId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"LoanConversionOptionId\",\"attributeReference\":{\"entity\":\"LoanConversionOption.cdm.json/LoanConversionOption\",\"name\":\"LoanConversionOptionId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"LoanConversionOptionName\",\"attributeReference\":{\"entity\":\"LoanConversionOption.cdm.json/LoanConversionOption\",\"name\":\"LoanConversionOptionName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"LoanConversionOptionDescription\",\"attributeReference\":{\"entity\":\"LoanConversionOption.cdm.json/LoanConversionOption\",\"name\":\"LoanConversionOptionDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512}]}}}",
+			"Description": "The right of a borrower to convert an adjustable or balloon loan into a fixed loan. \n\nEx:\n- Borrower may not convert loan\n- Borrower may convert loan but must requalify\n- Borrower may convert loan and is automatically qualified\n- The right of a borrower to convert an adjustable or balloon loan into a fixed loan",
+			"DisplayFolderInfo": "{\"name\":\"Product\",\"colorCode\":\"#0E3D73\"}",
+			"PrimaryKeys": "LoanConversionOptionId",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

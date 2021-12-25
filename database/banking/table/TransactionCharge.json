@@ -1,0 +1,146 @@
+{
+	"name": "TransactionCharge",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "TransactionCharge",
+		"Description": "The one or more Charge(s) applied to the associated Transaction.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "TransactionId",
+					"Description": "The unique identifier of a Transaction.",
+					"BaseAttributeReference": {
+						"Entity": "TransactionCharge.cdm.json/TransactionCharge",
+						"Name": "TransactionId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "ChargeId",
+					"Description": "The unique identifier of a Charge.",
+					"BaseAttributeReference": {
+						"Entity": "TransactionCharge.cdm.json/TransactionCharge",
+						"Name": "ChargeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ChargeAmount",
+					"Description": "The amount of the charge.",
+					"BaseAttributeReference": {
+						"Entity": "TransactionCharge.cdm.json/TransactionCharge",
+						"Name": "ChargeAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "ChargeNote",
+					"Description": "A note, comment or additional information regarding the charge.",
+					"BaseAttributeReference": {
+						"Entity": "TransactionCharge.cdm.json/TransactionCharge",
+						"Name": "ChargeNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "IsoCurrencyCode",
+					"Description": "The ISO 4217 currency code.",
+					"BaseAttributeReference": {
+						"Entity": "TransactionCharge.cdm.json/TransactionCharge",
+						"Name": "IsoCurrencyCode"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 3,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/TransactionCharge",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/TransactionCharge",
+				"Properties": {
+					"LinkedServiceName": "wspc-dpu-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"TransactionId\":{\"entity\":\"TransactionCharge.cdm.json/TransactionCharge\",\"name\":\"TransactionId\"},\"ChargeId\":{\"entity\":\"TransactionCharge.cdm.json/TransactionCharge\",\"name\":\"ChargeId\"},\"ChargeAmount\":{\"entity\":\"TransactionCharge.cdm.json/TransactionCharge\",\"name\":\"ChargeAmount\"},\"ChargeNote\":{\"entity\":\"TransactionCharge.cdm.json/TransactionCharge\",\"name\":\"ChargeNote\"},\"IsoCurrencyCode\":{\"entity\":\"TransactionCharge.cdm.json/TransactionCharge\",\"name\":\"IsoCurrencyCode\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"TransactionCharge\",\"path\":\"TransactionCharge.cdm.json/TransactionCharge\"},\"description\":\"The one or more Charge(s) applied to the associated Transaction.\",\"primaryKey\":[\"TransactionId\",\"ChargeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"TransactionId\",\"attributeReference\":{\"entity\":\"TransactionCharge.cdm.json/TransactionCharge\",\"name\":\"TransactionId\"},\"dataType\":\"long\"},{\"type\":\"Existing\",\"name\":\"ChargeId\",\"attributeReference\":{\"entity\":\"TransactionCharge.cdm.json/TransactionCharge\",\"name\":\"ChargeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ChargeAmount\",\"attributeReference\":{\"entity\":\"TransactionCharge.cdm.json/TransactionCharge\",\"name\":\"ChargeAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"ChargeNote\",\"attributeReference\":{\"entity\":\"TransactionCharge.cdm.json/TransactionCharge\",\"name\":\"ChargeNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024},{\"type\":\"Existing\",\"name\":\"IsoCurrencyCode\",\"attributeReference\":{\"entity\":\"TransactionCharge.cdm.json/TransactionCharge\",\"name\":\"IsoCurrencyCode\"},\"dataType\":\"string\",\"dataTypeLength\":3}]}}}",
+			"Description": "The one or more Charge(s) applied to the associated Transaction.",
+			"DisplayFolderInfo": "{\"name\":\"Transaction\",\"colorCode\":\"#823A16\"}",
+			"PrimaryKeys": "TransactionId,ChargeId",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

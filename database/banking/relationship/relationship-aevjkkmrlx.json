@@ -1,0 +1,26 @@
+{
+	"name": "relationship-aevjkkmrlx",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-aevjkkmrlx",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Party",
+		"ToTableName": "Payee",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "PartyId",
+				"ToColumnName": "PayeeGovernedByPartyId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Party.cdm.json/Party\",\"toEntity\":\"Payee.cdm.json/Payee\",\"joinPairs\":[{\"fromAttribute\":\"PartyId\",\"toAttribute\":\"PayeeGovernedByPartyId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

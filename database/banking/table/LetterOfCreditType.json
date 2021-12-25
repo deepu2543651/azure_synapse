@@ -1,0 +1,112 @@
+{
+	"name": "LetterOfCreditType",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "LetterOfCreditType",
+		"Description": "A specific type of letter of credit.\n\nEx:\n- Back-to-Back\n- Confirmed\n- Deferred Payment\n- Irrevocable\n- Red Clause\n- Revocable\n- Revolving\n- Sight (\"Draft\")  \n- Standby\n- Transferrable\n\nwhere:\n\nBACK-TO-BACK\nBack-to-back letters of credit (documentary credits) are used in international and domestic trade.  The parties to a back-to-back letter of credit are: the buyer and his bank, the seller/manufacturer and his bank, the manufacturer's supplier and his bank. \nThis type of documentary credit transaction is used when a seller or manufacturer has to purchase a component or farm out part of the manufacture of a product, but may not have the cash flow to do so.  In this case, the buyer applies to the issuing bank for an irrevocable letter of credit in favor of the seller (the beneficiary).  \n\nThe irrevocable letter of credit is sent to the seller's bank.  \n\nThe seller then applies to his bank for a second letter of credit, identical to the first, except that it is for a lesser value.  This second letter of credit is sent to the supplier's bank and therefore the supplier knows that he will be paid and can proceed with his part of the transaction.\n\nThis is a new letter of credit opened based on an already existing, nontransferable credit used as collateral. Traders often use back-to-back arrangements to pay the ultimate supplier. A trader receives a letter of credit from the buyer and then opens another letter of credit in favor of the supplier. The first letter of credit serves as collateral for the second credit.\n\nCONFIRMED\nLetter of Credit where a Confirming Bank, usually located in the Exporter's country, has guaranteed payment under the Letter of Credit assuming that all terms and conditions of the Letter of Credit have been met. With a Confirmed Letter of Credit, payment risk is assumed by the Confirmed Bank as well as the Issuing Bank, thereby providing more protection for the Exporter.\n\nDEFERRED PAYMENT\nIn Deferred Payment Letters of Credit, the buyer accepts the documents related to the letter of credit and agrees to pay the issuing bank after a fixed period. This credit gives the buyer a grace period for payment.\n\nIRREVOCABLE\nA Letter of Credit that cannot be canceled or changed without the consent of all parties, including the Exporter. Unless otherwise stipulated, all Letters of Credit are irrevocable.\n\nRED CLAUSE\nRed Clause Letters of Credit provide the seller with cash prior to shipment to finance production of the goods. The buyer's issuing bank may advance some or all of the funds. The buyer, in essence, extends financing to the seller and incurs the risk for all advanced credits.\n\nREVOCABLE\nA revocable Letter of Credit can be revoked without the consent of the Exporter, meaning that it may be canceled or changed up to the time the documents are presented.\n\nREVOLVING\nIt is established when there are regular shipments of the same commodity between supplier and customer. Eliminates the need to issue an LC for each individual transaction.\n\nWith a Revolving Letter of Credit, the issuing bank restores the credit to its original amount once it has been used or drawn down. Usually, these arrangements limit the number of times the buyer may draw down its line over a predetermined period.\n\nSIGHT (\"DRAFT\")\nAn unconditional order in writing addressed by one person to another, signed by the person giving it , requiring the person to whom it is addressed to pay, on demand or at a fixed or determinable future time a certain sum of money to or to the order of a specified person or bearer.\n\nSTANDBY\nA written instrument issued by a bank (Issuing Bank) at the request of its customer (Applicant) on behalf of a beneficiary, whereby the Issuing Bank agrees to provide financial remedy in the event that the Applicant defaults on any terms and conditions specified under the Standby Letter of Credit. Standby Letters of Credit are often issued at the request of Importers in favor of Exporters as financial security for goods purchased on Open Account.\n\nIf the beneficiary does not get paid from its customer it can then demand payment from the Bank by forwarding the copy of the invoice that was not paid and supporting documentation.\n\nThis credit is a payment or performance guarantee used primarily in the United States. They are often called non-performing letters of credit because they are only used as a backup should the buyer fail to pay as agreed. Thus, a stand-by letter of credit allows the customer to establish a rapport with the seller by showing that it can fulfill its payment commitments. \n\nStandby letters of credit are used, for example, to guarantee repayment of loans, to ensure fulfillment of a contract, and to secure payment for goods delivered by third parties. \n\nThe beneficiary to a standby letter of credit can cash it on demand. Stand-by letters of credit are generally less complicated and involve far less documentation requirements than irrevocable letters of credit.\n\nTRANSFERRABLE\nA Letter of Credit that allows the Beneficiary (Exporter) to instruct its bank to transfer the credit in part or in whole to a Secondary Beneficiary.\n\nThe beneficiary of a letter of credit may assign all or part of the proceeds under a credit to a third party (the assignee). However, unlike a transferred credit, the beneficiary maintains sole rights to the credit and is solely responsible for complying with its terms and conditions. For the assignee, an assignment only means that the paying bank, once it receives notice of the assignment, undertakes to follow the assignment instructions, if and when payment is made. The assignee is dependent upon the beneficiary for compliance, and thus this arrangement is riskier than a transferred credit. Before agreeing to an assignment of proceeds arrangement, the assignee should carefully review the original letter of credit.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "LetterOfCreditTypeId",
+					"Description": "The unique identifier of a letter of credit type.",
+					"BaseAttributeReference": {
+						"Entity": "LetterOfCreditType.cdm.json/LetterOfCreditType",
+						"Name": "LetterOfCreditTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "LetterOfCreditTypeName",
+					"Description": "The name of a letter of credit type.",
+					"BaseAttributeReference": {
+						"Entity": "LetterOfCreditType.cdm.json/LetterOfCreditType",
+						"Name": "LetterOfCreditTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "LetterOfCreditTypeDescription",
+					"Description": "The description of a letter of credit type.",
+					"BaseAttributeReference": {
+						"Entity": "LetterOfCreditType.cdm.json/LetterOfCreditType",
+						"Name": "LetterOfCreditTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/LetterOfCreditType",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/LetterOfCreditType",
+				"Properties": {
+					"LinkedServiceName": "wspc-dpu-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"LetterOfCreditTypeId\":{\"entity\":\"LetterOfCreditType.cdm.json/LetterOfCreditType\",\"name\":\"LetterOfCreditTypeId\"},\"LetterOfCreditTypeName\":{\"entity\":\"LetterOfCreditType.cdm.json/LetterOfCreditType\",\"name\":\"LetterOfCreditTypeName\"},\"LetterOfCreditTypeDescription\":{\"entity\":\"LetterOfCreditType.cdm.json/LetterOfCreditType\",\"name\":\"LetterOfCreditTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"LetterOfCreditType\",\"path\":\"LetterOfCreditType.cdm.json/LetterOfCreditType\"},\"description\":\"A specific type of letter of credit.\\n\\nEx:\\n- Back-to-Back\\n- Confirmed\\n- Deferred Payment\\n- Irrevocable\\n- Red Clause\\n- Revocable\\n- Revolving\\n- Sight (\\\"Draft\\\")  \\n- Standby\\n- Transferrable\\n\\nwhere:\\n\\nBACK-TO-BACK\\nBack-to-back letters of credit (documentary credits) are used in international and domestic trade.  The parties to a back-to-back letter of credit are: the buyer and his bank, the seller/manufacturer and his bank, the manufacturer's supplier and his bank. \\nThis type of documentary credit transaction is used when a seller or manufacturer has to purchase a component or farm out part of the manufacture of a product, but may not have the cash flow to do so.  In this case, the buyer applies to the issuing bank for an irrevocable letter of credit in favor of the seller (the beneficiary).  \\n\\nThe irrevocable letter of credit is sent to the seller's bank.  \\n\\nThe seller then applies to his bank for a second letter of credit, identical to the first, except that it is for a lesser value.  This second letter of credit is sent to the supplier's bank and therefore the supplier knows that he will be paid and can proceed with his part of the transaction.\\n\\nThis is a new letter of credit opened based on an already existing, nontransferable credit used as collateral. Traders often use back-to-back arrangements to pay the ultimate supplier. A trader receives a letter of credit from the buyer and then opens another letter of credit in favor of the supplier. The first letter of credit serves as collateral for the second credit.\\n\\nCONFIRMED\\nLetter of Credit where a Confirming Bank, usually located in the Exporter's country, has guaranteed payment under the Letter of Credit assuming that all terms and conditions of the Letter of Credit have been met. With a Confirmed Letter of Credit, payment risk is assumed by the Confirmed Bank as well as the Issuing Bank, thereby providing more protection for the Exporter.\\n\\nDEFERRED PAYMENT\\nIn Deferred Payment Letters of Credit, the buyer accepts the documents related to the letter of credit and agrees to pay the issuing bank after a fixed period. This credit gives the buyer a grace period for payment.\\n\\nIRREVOCABLE\\nA Letter of Credit that cannot be canceled or changed without the consent of all parties, including the Exporter. Unless otherwise stipulated, all Letters of Credit are irrevocable.\\n\\nRED CLAUSE\\nRed Clause Letters of Credit provide the seller with cash prior to shipment to finance production of the goods. The buyer's issuing bank may advance some or all of the funds. The buyer, in essence, extends financing to the seller and incurs the risk for all advanced credits.\\n\\nREVOCABLE\\nA revocable Letter of Credit can be revoked without the consent of the Exporter, meaning that it may be canceled or changed up to the time the documents are presented.\\n\\nREVOLVING\\nIt is established when there are regular shipments of the same commodity between supplier and customer. Eliminates the need to issue an LC for each individual transaction.\\n\\nWith a Revolving Letter of Credit, the issuing bank restores the credit to its original amount once it has been used or drawn down. Usually, these arrangements limit the number of times the buyer may draw down its line over a predetermined period.\\n\\nSIGHT (\\\"DRAFT\\\")\\nAn unconditional order in writing addressed by one person to another, signed by the person giving it , requiring the person to whom it is addressed to pay, on demand or at a fixed or determinable future time a certain sum of money to or to the order of a specified person or bearer.\\n\\nSTANDBY\\nA written instrument issued by a bank (Issuing Bank) at the request of its customer (Applicant) on behalf of a beneficiary, whereby the Issuing Bank agrees to provide financial remedy in the event that the Applicant defaults on any terms and conditions specified under the Standby Letter of Credit. Standby Letters of Credit are often issued at the request of Importers in favor of Exporters as financial security for goods purchased on Open Account.\\n\\nIf the beneficiary does not get paid from its customer it can then demand payment from the Bank by forwarding the copy of the invoice that was not paid and supporting documentation.\\n\\nThis credit is a payment or performance guarantee used primarily in the United States. They are often called non-performing letters of credit because they are only used as a backup should the buyer fail to pay as agreed. Thus, a stand-by letter of credit allows the customer to establish a rapport with the seller by showing that it can fulfill its payment commitments. \\n\\nStandby letters of credit are used, for example, to guarantee repayment of loans, to ensure fulfillment of a contract, and to secure payment for goods delivered by third parties. \\n\\nThe beneficiary to a standby letter of credit can cash it on demand. Stand-by letters of credit are generally less complicated and involve far less documentation requirements than irrevocable letters of credit.\\n\\nTRANSFERRABLE\\nA Letter of Credit that allows the Beneficiary (Exporter) to instruct its bank to transfer the credit in part or in whole to a Secondary Beneficiary.\\n\\nThe beneficiary of a letter of credit may assign all or part of the proceeds under a credit to a third party (the assignee). However, unlike a transferred credit, the beneficiary maintains sole rights to the credit and is solely responsible for complying with its terms and conditions. For the assignee, an assignment only means that the paying bank, once it receives notice of the assignment, undertakes to follow the assignment instructions, if and when payment is made. The assignee is dependent upon the beneficiary for compliance, and thus this arrangement is riskier than a transferred credit. Before agreeing to an assignment of proceeds arrangement, the assignee should carefully review the original letter of credit.\",\"primaryKey\":[\"LetterOfCreditTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"LetterOfCreditTypeId\",\"attributeReference\":{\"entity\":\"LetterOfCreditType.cdm.json/LetterOfCreditType\",\"name\":\"LetterOfCreditTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"LetterOfCreditTypeName\",\"attributeReference\":{\"entity\":\"LetterOfCreditType.cdm.json/LetterOfCreditType\",\"name\":\"LetterOfCreditTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"LetterOfCreditTypeDescription\",\"attributeReference\":{\"entity\":\"LetterOfCreditType.cdm.json/LetterOfCreditType\",\"name\":\"LetterOfCreditTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512}]}}}",
+			"Description": "A specific type of letter of credit.\n\nEx:\n- Back-to-Back\n- Confirmed\n- Deferred Payment\n- Irrevocable\n- Red Clause\n- Revocable\n- Revolving\n- Sight (\"Draft\")  \n- Standby\n- Transferrable\n\nwhere:\n\nBACK-TO-BACK\nBack-to-back letters of credit (documentary credits) are used in international and domestic trade.  The parties to a back-to-back letter of credit are: the buyer and his bank, the seller/manufacturer and his bank, the manufacturer's supplier and his bank. \nThis type of documentary credit transaction is used when a seller or manufacturer has to purchase a component or farm out part of the manufacture of a product, but may not have the cash flow to do so.  In this case, the buyer applies to the issuing bank for an irrevocable letter of credit in favor of the seller (the beneficiary).  \n\nThe irrevocable letter of credit is sent to the seller's bank.  \n\nThe seller then applies to his bank for a second letter of credit, identical to the first, except that it is for a lesser value.  This second letter of credit is sent to the supplier's bank and therefore the supplier knows that he will be paid and can proceed with his part of the transaction.\n\nThis is a new letter of credit opened based on an already existing, nontransferable credit used as collateral. Traders often use back-to-back arrangements to pay the ultimate supplier. A trader receives a letter of credit from the buyer and then opens another letter of credit in favor of the supplier. The first letter of credit serves as collateral for the second credit.\n\nCONFIRMED\nLetter of Credit where a Confirming Bank, usually located in the Exporter's country, has guaranteed payment under the Letter of Credit assuming that all terms and conditions of the Letter of Credit have been met. With a Confirmed Letter of Credit, payment risk is assumed by the Confirmed Bank as well as the Issuing Bank, thereby providing more protection for the Exporter.\n\nDEFERRED PAYMENT\nIn Deferred Payment Letters of Credit, the buyer accepts the documents related to the letter of credit and agrees to pay the issuing bank after a fixed period. This credit gives the buyer a grace period for payment.\n\nIRREVOCABLE\nA Letter of Credit that cannot be canceled or changed without the consent of all parties, including the Exporter. Unless otherwise stipulated, all Letters of Credit are irrevocable.\n\nRED CLAUSE\nRed Clause Letters of Credit provide the seller with cash prior to shipment to finance production of the goods. The buyer's issuing bank may advance some or all of the funds. The buyer, in essence, extends financing to the seller and incurs the risk for all advanced credits.\n\nREVOCABLE\nA revocable Letter of Credit can be revoked without the consent of the Exporter, meaning that it may be canceled or changed up to the time the documents are presented.\n\nREVOLVING\nIt is established when there are regular shipments of the same commodity between supplier and customer. Eliminates the need to issue an LC for each individual transaction.\n\nWith a Revolving Letter of Credit, the issuing bank restores the credit to its original amount once it has been used or drawn down. Usually, these arrangements limit the number of times the buyer may draw down its line over a predetermined period.\n\nSIGHT (\"DRAFT\")\nAn unconditional order in writing addressed by one person to another, signed by the person giving it , requiring the person to whom it is addressed to pay, on demand or at a fixed or determinable future time a certain sum of money to or to the order of a specified person or bearer.\n\nSTANDBY\nA written instrument issued by a bank (Issuing Bank) at the request of its customer (Applicant) on behalf of a beneficiary, whereby the Issuing Bank agrees to provide financial remedy in the event that the Applicant defaults on any terms and conditions specified under the Standby Letter of Credit. Standby Letters of Credit are often issued at the request of Importers in favor of Exporters as financial security for goods purchased on Open Account.\n\nIf the beneficiary does not get paid from its customer it can then demand payment from the Bank by forwarding the copy of the invoice that was not paid and supporting documentation.\n\nThis credit is a payment or performance guarantee used primarily in the United States. They are often called non-performing letters of credit because they are only used as a backup should the buyer fail to pay as agreed. Thus, a stand-by letter of credit allows the customer to establish a rapport with the seller by showing that it can fulfill its payment commitments. \n\nStandby letters of credit are used, for example, to guarantee repayment of loans, to ensure fulfillment of a contract, and to secure payment for goods delivered by third parties. \n\nThe beneficiary to a standby letter of credit can cash it on demand. Stand-by letters of credit are generally less complicated and involve far less documentation requirements than irrevocable letters of credit.\n\nTRANSFERRABLE\nA Letter of Credit that allows the Beneficiary (Exporter) to instruct its bank to transfer the credit in part or in whole to a Secondary Beneficiary.\n\nThe beneficiary of a letter of credit may assign all or part of the proceeds under a credit to a third party (the assignee). However, unlike a transferred credit, the beneficiary maintains sole rights to the credit and is solely responsible for complying with its terms and conditions. For the assignee, an assignment only means that the paying bank, once it receives notice of the assignment, undertakes to follow the assignment instructions, if and when payment is made. The assignee is dependent upon the beneficiary for compliance, and thus this arrangement is riskier than a transferred credit. Before agreeing to an assignment of proceeds arrangement, the assignee should carefully review the original letter of credit.",
+			"DisplayFolderInfo": "{\"name\":\"Product\",\"colorCode\":\"#0E3D73\"}",
+			"PrimaryKeys": "LetterOfCreditTypeId",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

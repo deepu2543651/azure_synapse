@@ -1,0 +1,34 @@
+{
+	"name": "relationship-mwtolhhyaz",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-mwtolhhyaz",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "CustomerAccountBankStatement",
+		"ToTableName": "CustomerAccountBankStatementLineItem",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "CustomerAccountId",
+				"ToColumnName": "CustomerAccountId"
+			},
+			{
+				"FromColumnName": "PeriodEndDate",
+				"ToColumnName": "PeriodEndDate"
+			},
+			{
+				"FromColumnName": "PeriodStartDate",
+				"ToColumnName": "PeriodStartDate"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"CustomerAccountBankStatement.cdm.json/CustomerAccountBankStatement\",\"toEntity\":\"CustomerAccountBankStatementLineItem.cdm.json/CustomerAccountBankStatementLineItem\",\"joinPairs\":[{\"fromAttribute\":\"CustomerAccountId\",\"toAttribute\":\"CustomerAccountId\"},{\"fromAttribute\":\"PeriodEndDate\",\"toAttribute\":\"PeriodEndDate\"},{\"fromAttribute\":\"PeriodStartDate\",\"toAttribute\":\"PeriodStartDate\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

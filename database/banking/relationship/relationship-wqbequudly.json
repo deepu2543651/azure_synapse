@@ -1,0 +1,26 @@
+{
+	"name": "relationship-wqbequudly",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-wqbequudly",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Charge",
+		"ToTableName": "TransactionCharge",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ChargeId",
+				"ToColumnName": "ChargeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Charge.cdm.json/Charge\",\"toEntity\":\"TransactionCharge.cdm.json/TransactionCharge\",\"joinPairs\":[{\"fromAttribute\":\"ChargeId\",\"toAttribute\":\"ChargeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

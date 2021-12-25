@@ -1,0 +1,26 @@
+{
+	"name": "relationship-lcxtlhgonr",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-lcxtlhgonr",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "AdvertisingEvent",
+		"ToTableName": "RadioAdvertisingEvent",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "AdvertisingEventId",
+				"ToColumnName": "AdvertisingEventId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"AdvertisingEvent.cdm.json/AdvertisingEvent\",\"toEntity\":\"RadioAdvertisingEvent.cdm.json/RadioAdvertisingEvent\",\"joinPairs\":[{\"fromAttribute\":\"AdvertisingEventId\",\"toAttribute\":\"AdvertisingEventId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

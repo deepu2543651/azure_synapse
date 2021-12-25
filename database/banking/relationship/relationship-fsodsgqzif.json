@@ -1,0 +1,26 @@
+{
+	"name": "relationship-fsodsgqzif",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-fsodsgqzif",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "BillingCycle",
+		"ToTableName": "CustomerAccountBillingCycle",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "BillingCycleId",
+				"ToColumnName": "BillingCycleId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"BillingCycle.cdm.json/BillingCycle\",\"toEntity\":\"CustomerAccountBillingCycle.cdm.json/CustomerAccountBillingCycle\",\"joinPairs\":[{\"fromAttribute\":\"BillingCycleId\",\"toAttribute\":\"BillingCycleId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

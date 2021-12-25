@@ -1,0 +1,227 @@
+{
+	"name": "Payee",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "Payee",
+		"Description": "A party that has made arrangements with an organization to allow the organization to collect payments from the payee's customers and remit the payment to the payee through the identified organization.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "PayeeId",
+					"Description": "The unique identifier of a Payee.",
+					"BaseAttributeReference": {
+						"Entity": "Payee.cdm.json/Payee",
+						"Name": "PayeeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PayeeName",
+					"Description": "The name of a Payee.",
+					"BaseAttributeReference": {
+						"Entity": "Payee.cdm.json/Payee",
+						"Name": "PayeeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "PayeeDescription",
+					"Description": "The description of a Payee.",
+					"BaseAttributeReference": {
+						"Entity": "Payee.cdm.json/Payee",
+						"Name": "PayeeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "PayeeAccountNumberValidationDescription",
+					"Description": "A description of the validation rules for an account number with the payee.",
+					"BaseAttributeReference": {
+						"Entity": "Payee.cdm.json/Payee",
+						"Name": "PayeeAccountNumberValidationDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "PayeeNote",
+					"Description": "A note, comment or additional information regarding the payee.",
+					"BaseAttributeReference": {
+						"Entity": "Payee.cdm.json/Payee",
+						"Name": "PayeeNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "PartyId",
+					"Description": "The unique identifier of a Party.",
+					"BaseAttributeReference": {
+						"Entity": "Payee.cdm.json/Payee",
+						"Name": "PartyId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "PayeeGovernedByPartyId",
+					"Description": "The unique identifier of a Party.",
+					"BaseAttributeReference": {
+						"Entity": "Payee.cdm.json/Payee",
+						"Name": "PayeeGovernedByPartyId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "PayeeIdentificationNumber",
+					"Description": "The identification number provided by the governing party.",
+					"BaseAttributeReference": {
+						"Entity": "Payee.cdm.json/Payee",
+						"Name": "PayeeIdentificationNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "PayeeCategoryId",
+					"Description": "The unique identifier of a Payee Category.",
+					"BaseAttributeReference": {
+						"Entity": "Payee.cdm.json/Payee",
+						"Name": "PayeeCategoryId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PayeeStatusId",
+					"Description": "The unique identifier of a Payee Status.",
+					"BaseAttributeReference": {
+						"Entity": "Payee.cdm.json/Payee",
+						"Name": "PayeeStatusId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/Payee",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/Payee",
+				"Properties": {
+					"LinkedServiceName": "wspc-dpu-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"PayeeId\":{\"entity\":\"Payee.cdm.json/Payee\",\"name\":\"PayeeId\"},\"PayeeName\":{\"entity\":\"Payee.cdm.json/Payee\",\"name\":\"PayeeName\"},\"PayeeDescription\":{\"entity\":\"Payee.cdm.json/Payee\",\"name\":\"PayeeDescription\"},\"PayeeAccountNumberValidationDescription\":{\"entity\":\"Payee.cdm.json/Payee\",\"name\":\"PayeeAccountNumberValidationDescription\"},\"PayeeNote\":{\"entity\":\"Payee.cdm.json/Payee\",\"name\":\"PayeeNote\"},\"PartyId\":{\"entity\":\"Payee.cdm.json/Payee\",\"name\":\"PartyId\"},\"PayeeGovernedByPartyId\":{\"entity\":\"Payee.cdm.json/Payee\",\"name\":\"PayeeGovernedByPartyId\"},\"PayeeIdentificationNumber\":{\"entity\":\"Payee.cdm.json/Payee\",\"name\":\"PayeeIdentificationNumber\"},\"PayeeCategoryId\":{\"entity\":\"Payee.cdm.json/Payee\",\"name\":\"PayeeCategoryId\"},\"PayeeStatusId\":{\"entity\":\"Payee.cdm.json/Payee\",\"name\":\"PayeeStatusId\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"Payee\",\"path\":\"Payee.cdm.json/Payee\"},\"description\":\"A party that has made arrangements with an organization to allow the organization to collect payments from the payee's customers and remit the payment to the payee through the identified organization.\",\"primaryKey\":[\"PayeeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"PayeeId\",\"attributeReference\":{\"entity\":\"Payee.cdm.json/Payee\",\"name\":\"PayeeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"PayeeName\",\"attributeReference\":{\"entity\":\"Payee.cdm.json/Payee\",\"name\":\"PayeeName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"PayeeDescription\",\"attributeReference\":{\"entity\":\"Payee.cdm.json/Payee\",\"name\":\"PayeeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512},{\"type\":\"Existing\",\"name\":\"PayeeAccountNumberValidationDescription\",\"attributeReference\":{\"entity\":\"Payee.cdm.json/Payee\",\"name\":\"PayeeAccountNumberValidationDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512},{\"type\":\"Existing\",\"name\":\"PayeeNote\",\"attributeReference\":{\"entity\":\"Payee.cdm.json/Payee\",\"name\":\"PayeeNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024},{\"type\":\"Existing\",\"name\":\"PartyId\",\"attributeReference\":{\"entity\":\"Payee.cdm.json/Payee\",\"name\":\"PartyId\"},\"dataType\":\"long\"},{\"type\":\"Existing\",\"name\":\"PayeeGovernedByPartyId\",\"attributeReference\":{\"entity\":\"Payee.cdm.json/Payee\",\"name\":\"PayeeGovernedByPartyId\"},\"dataType\":\"long\"},{\"type\":\"Existing\",\"name\":\"PayeeIdentificationNumber\",\"attributeReference\":{\"entity\":\"Payee.cdm.json/Payee\",\"name\":\"PayeeIdentificationNumber\"},\"dataType\":\"string\",\"dataTypeLength\":1024},{\"type\":\"Existing\",\"name\":\"PayeeCategoryId\",\"attributeReference\":{\"entity\":\"Payee.cdm.json/Payee\",\"name\":\"PayeeCategoryId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"PayeeStatusId\",\"attributeReference\":{\"entity\":\"Payee.cdm.json/Payee\",\"name\":\"PayeeStatusId\"},\"dataType\":\"integer\"}]}}}",
+			"Description": "A party that has made arrangements with an organization to allow the organization to collect payments from the payee's customers and remit the payment to the payee through the identified organization.",
+			"DisplayFolderInfo": "{\"name\":\"Party\",\"colorCode\":\"#00727A\"}",
+			"PrimaryKeys": "PayeeId",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

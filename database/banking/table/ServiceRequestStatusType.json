@@ -1,0 +1,112 @@
+{
+	"name": "ServiceRequestStatusType",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "ServiceRequestStatusType",
+		"Description": "The type of Service Request Status that may be applied to a Service Request.\n\nEx:\n-  Received Not Assigned\n-  Resolved\n-  Open\n-  In-process\n-  Promoted to Issue\n-  Unknown\n-  N/A",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ServiceRequestStatusTypeId",
+					"Description": "The unique identifier of a Service Request Status Type.",
+					"BaseAttributeReference": {
+						"Entity": "ServiceRequestStatusType.cdm.json/ServiceRequestStatusType",
+						"Name": "ServiceRequestStatusTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ServiceRequestStatusTypeName",
+					"Description": "The name of a Service Request Status Type.",
+					"BaseAttributeReference": {
+						"Entity": "ServiceRequestStatusType.cdm.json/ServiceRequestStatusType",
+						"Name": "ServiceRequestStatusTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ServiceRequestStatusTypeDescription",
+					"Description": "The description of a Service Request Status Type.",
+					"BaseAttributeReference": {
+						"Entity": "ServiceRequestStatusType.cdm.json/ServiceRequestStatusType",
+						"Name": "ServiceRequestStatusTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/ServiceRequestStatusType",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/ServiceRequestStatusType",
+				"Properties": {
+					"LinkedServiceName": "wspc-dpu-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ServiceRequestStatusTypeId\":{\"entity\":\"ServiceRequestStatusType.cdm.json/ServiceRequestStatusType\",\"name\":\"ServiceRequestStatusTypeId\"},\"ServiceRequestStatusTypeName\":{\"entity\":\"ServiceRequestStatusType.cdm.json/ServiceRequestStatusType\",\"name\":\"ServiceRequestStatusTypeName\"},\"ServiceRequestStatusTypeDescription\":{\"entity\":\"ServiceRequestStatusType.cdm.json/ServiceRequestStatusType\",\"name\":\"ServiceRequestStatusTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"ServiceRequestStatusType\",\"path\":\"ServiceRequestStatusType.cdm.json/ServiceRequestStatusType\"},\"description\":\"The type of Service Request Status that may be applied to a Service Request.\\n\\nEx:\\n-  Received Not Assigned\\n-  Resolved\\n-  Open\\n-  In-process\\n-  Promoted to Issue\\n-  Unknown\\n-  N/A\",\"primaryKey\":[\"ServiceRequestStatusTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"ServiceRequestStatusTypeId\",\"attributeReference\":{\"entity\":\"ServiceRequestStatusType.cdm.json/ServiceRequestStatusType\",\"name\":\"ServiceRequestStatusTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ServiceRequestStatusTypeName\",\"attributeReference\":{\"entity\":\"ServiceRequestStatusType.cdm.json/ServiceRequestStatusType\",\"name\":\"ServiceRequestStatusTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"ServiceRequestStatusTypeDescription\",\"attributeReference\":{\"entity\":\"ServiceRequestStatusType.cdm.json/ServiceRequestStatusType\",\"name\":\"ServiceRequestStatusTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512}]}}}",
+			"Description": "The type of Service Request Status that may be applied to a Service Request.\n\nEx:\n-  Received Not Assigned\n-  Resolved\n-  Open\n-  In-process\n-  Promoted to Issue\n-  Unknown\n-  N/A",
+			"DisplayFolderInfo": "{\"name\":\"Customer Service & Contact Management\",\"colorCode\":\"#Ef6950\"}",
+			"PrimaryKeys": "ServiceRequestStatusTypeId",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

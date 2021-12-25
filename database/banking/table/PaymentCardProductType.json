@@ -1,0 +1,128 @@
+{
+	"name": "PaymentCardProductType",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "PaymentCardProductType",
+		"Description": "A type of payment cards based upon issuer.\n\nEx:\n- Amex\n- Diners Club\n- Discover\n- Discover Classic Card\n- Discover Gold Card\n- Discover Platinum Card\n- Discover Platinum Designs\n- Discover Student Card\n- Discover Titanium Card\n- MasterCard Credit Card\n- MasterCard Business card\n- MasterCard Business card\n- MasterCard Corporate Card\n- MasterCard Corporate Fleet Card\n- MasterCard Corporate Multicard\n- MasterCard Corporate Purchasing Card\n- MasterCard Corporate, Government / Public Sector\n- MasterCard Debit Card\n- MasterCard Debit MasterCard\n- MasterCard Executive Business Card\n- MasterCard Gold\n- MasterCard Platinum\n- MasterCard Small business\n- MasterCard Student Card\n- MasterCard World\n- Visa Credit Card\n- Visa Business Check Card\n- Visa Business Credit\n- Visa Business Platinum Check Card\n- Visa Business Platinum Credit\n- Visa Classic check Card\n- Visa Commercial\n- Visa Consumer Card\n- Visa Corporate\n- Visa Debit Card\n- Visa Fleet\n- Visa Gold\n- Visa Gold Check Card\n- Visa Government\n- Visa Infinite\n- Visa Platinum\n- Visa Platinum Check Card\n- Visa Purchasing\n- Visa Secured\n- Visa Signature",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "PaymentCardTypeId",
+					"Description": "The unique identifier of a Payment Card Type.",
+					"BaseAttributeReference": {
+						"Entity": "PaymentCardProductType.cdm.json/PaymentCardProductType",
+						"Name": "PaymentCardTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PaymentCardTypeName",
+					"Description": "The name of a Payment Card Type.",
+					"BaseAttributeReference": {
+						"Entity": "PaymentCardProductType.cdm.json/PaymentCardProductType",
+						"Name": "PaymentCardTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "PaymentCardTypeDescription",
+					"Description": "The description of a Payment Card Type.",
+					"BaseAttributeReference": {
+						"Entity": "PaymentCardProductType.cdm.json/PaymentCardProductType",
+						"Name": "PaymentCardTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "CardAssociationId",
+					"Description": "The unique identifier of a Card Association.",
+					"BaseAttributeReference": {
+						"Entity": "PaymentCardProductType.cdm.json/PaymentCardProductType",
+						"Name": "CardAssociationId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/PaymentCardProductType",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/PaymentCardProductType",
+				"Properties": {
+					"LinkedServiceName": "wspc-dpu-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"PaymentCardTypeId\":{\"entity\":\"PaymentCardProductType.cdm.json/PaymentCardProductType\",\"name\":\"PaymentCardTypeId\"},\"PaymentCardTypeName\":{\"entity\":\"PaymentCardProductType.cdm.json/PaymentCardProductType\",\"name\":\"PaymentCardTypeName\"},\"PaymentCardTypeDescription\":{\"entity\":\"PaymentCardProductType.cdm.json/PaymentCardProductType\",\"name\":\"PaymentCardTypeDescription\"},\"CardAssociationId\":{\"entity\":\"PaymentCardProductType.cdm.json/PaymentCardProductType\",\"name\":\"CardAssociationId\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"PaymentCardProductType\",\"path\":\"PaymentCardProductType.cdm.json/PaymentCardProductType\"},\"description\":\"A type of payment cards based upon issuer.\\n\\nEx:\\n- Amex\\n- Diners Club\\n- Discover\\n- Discover Classic Card\\n- Discover Gold Card\\n- Discover Platinum Card\\n- Discover Platinum Designs\\n- Discover Student Card\\n- Discover Titanium Card\\n- MasterCard Credit Card\\n- MasterCard Business card\\n- MasterCard Business card\\n- MasterCard Corporate Card\\n- MasterCard Corporate Fleet Card\\n- MasterCard Corporate Multicard\\n- MasterCard Corporate Purchasing Card\\n- MasterCard Corporate, Government / Public Sector\\n- MasterCard Debit Card\\n- MasterCard Debit MasterCard\\n- MasterCard Executive Business Card\\n- MasterCard Gold\\n- MasterCard Platinum\\n- MasterCard Small business\\n- MasterCard Student Card\\n- MasterCard World\\n- Visa Credit Card\\n- Visa Business Check Card\\n- Visa Business Credit\\n- Visa Business Platinum Check Card\\n- Visa Business Platinum Credit\\n- Visa Classic check Card\\n- Visa Commercial\\n- Visa Consumer Card\\n- Visa Corporate\\n- Visa Debit Card\\n- Visa Fleet\\n- Visa Gold\\n- Visa Gold Check Card\\n- Visa Government\\n- Visa Infinite\\n- Visa Platinum\\n- Visa Platinum Check Card\\n- Visa Purchasing\\n- Visa Secured\\n- Visa Signature\",\"primaryKey\":[\"PaymentCardTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"PaymentCardTypeId\",\"attributeReference\":{\"entity\":\"PaymentCardProductType.cdm.json/PaymentCardProductType\",\"name\":\"PaymentCardTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"PaymentCardTypeName\",\"attributeReference\":{\"entity\":\"PaymentCardProductType.cdm.json/PaymentCardProductType\",\"name\":\"PaymentCardTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"PaymentCardTypeDescription\",\"attributeReference\":{\"entity\":\"PaymentCardProductType.cdm.json/PaymentCardProductType\",\"name\":\"PaymentCardTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512},{\"type\":\"Existing\",\"name\":\"CardAssociationId\",\"attributeReference\":{\"entity\":\"PaymentCardProductType.cdm.json/PaymentCardProductType\",\"name\":\"CardAssociationId\"},\"dataType\":\"integer\"}]}}}",
+			"Description": "A type of payment cards based upon issuer.\n\nEx:\n- Amex\n- Diners Club\n- Discover\n- Discover Classic Card\n- Discover Gold Card\n- Discover Platinum Card\n- Discover Platinum Designs\n- Discover Student Card\n- Discover Titanium Card\n- MasterCard Credit Card\n- MasterCard Business card\n- MasterCard Business card\n- MasterCard Corporate Card\n- MasterCard Corporate Fleet Card\n- MasterCard Corporate Multicard\n- MasterCard Corporate Purchasing Card\n- MasterCard Corporate, Government / Public Sector\n- MasterCard Debit Card\n- MasterCard Debit MasterCard\n- MasterCard Executive Business Card\n- MasterCard Gold\n- MasterCard Platinum\n- MasterCard Small business\n- MasterCard Student Card\n- MasterCard World\n- Visa Credit Card\n- Visa Business Check Card\n- Visa Business Credit\n- Visa Business Platinum Check Card\n- Visa Business Platinum Credit\n- Visa Classic check Card\n- Visa Commercial\n- Visa Consumer Card\n- Visa Corporate\n- Visa Debit Card\n- Visa Fleet\n- Visa Gold\n- Visa Gold Check Card\n- Visa Government\n- Visa Infinite\n- Visa Platinum\n- Visa Platinum Check Card\n- Visa Purchasing\n- Visa Secured\n- Visa Signature",
+			"DisplayFolderInfo": "{\"name\":\"Product\",\"colorCode\":\"#0E3D73\"}",
+			"PrimaryKeys": "PaymentCardTypeId",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

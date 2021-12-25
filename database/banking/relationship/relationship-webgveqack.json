@@ -1,0 +1,26 @@
+{
+	"name": "relationship-webgveqack",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-webgveqack",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "TransactionType",
+		"ToTableName": "TransactionCategoryTransactionType",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "TransactionTypeId",
+				"ToColumnName": "TransactionTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"TransactionType.cdm.json/TransactionType\",\"toEntity\":\"TransactionCategoryTransactionType.cdm.json/TransactionCategoryTransactionType\",\"joinPairs\":[{\"fromAttribute\":\"TransactionTypeId\",\"toAttribute\":\"TransactionTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

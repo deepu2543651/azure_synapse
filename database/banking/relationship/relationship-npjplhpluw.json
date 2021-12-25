@@ -1,0 +1,26 @@
+{
+	"name": "relationship-npjplhpluw",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-npjplhpluw",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "SavingsBondType",
+		"ToTableName": "SavingsBondProduct",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "SavingsBondTypeId",
+				"ToColumnName": "SavingsBondTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"SavingsBondType.cdm.json/SavingsBondType\",\"toEntity\":\"SavingsBondProduct.cdm.json/SavingsBondProduct\",\"joinPairs\":[{\"fromAttribute\":\"SavingsBondTypeId\",\"toAttribute\":\"SavingsBondTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

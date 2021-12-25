@@ -1,0 +1,26 @@
+{
+	"name": "relationship-hljyoffzpz",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-hljyoffzpz",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "TransactionType",
+		"ToTableName": "BankTransaction",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "TransactionTypeId",
+				"ToColumnName": "TransactionTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"TransactionType.cdm.json/TransactionType\",\"toEntity\":\"BankTransaction.cdm.json/BankTransaction\",\"joinPairs\":[{\"fromAttribute\":\"TransactionTypeId\",\"toAttribute\":\"TransactionTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

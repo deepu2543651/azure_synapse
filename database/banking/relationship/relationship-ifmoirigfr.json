@@ -1,0 +1,26 @@
+{
+	"name": "relationship-ifmoirigfr",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-ifmoirigfr",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Communication",
+		"ToTableName": "Document",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "CommunicationId",
+				"ToColumnName": "DocumentId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Communication.cdm.json/Communication\",\"toEntity\":\"Document.cdm.json/Document\",\"joinPairs\":[{\"fromAttribute\":\"CommunicationId\",\"toAttribute\":\"DocumentId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

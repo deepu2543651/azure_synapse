@@ -1,0 +1,78 @@
+{
+	"name": "PersonalVehicleLoanProduct",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "PersonalVehicleLoanProduct",
+		"Description": "A personal vehicle loan (or auto loan) is a loan used to purchase a new or used vehicle.  \n\nThe vehicle itself is used to secure the loan.  \n\nNew vehicle loans and typically range from 3 to 7 years in length, while used vehicle loans are usually shorter in duration.  \n\nThe interest rate for vehicle loans depends on the length of the loan, vehicle loan purpose and the credit rating of the buyer.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ProductId",
+					"Description": "The unique identifier of a Product.",
+					"BaseAttributeReference": {
+						"Entity": "PersonalVehicleLoanProduct.cdm.json/PersonalVehicleLoanProduct",
+						"Name": "ProductId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/PersonalVehicleLoanProduct",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/PersonalVehicleLoanProduct",
+				"Properties": {
+					"LinkedServiceName": "wspc-dpu-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ProductId\":{\"entity\":\"PersonalVehicleLoanProduct.cdm.json/PersonalVehicleLoanProduct\",\"name\":\"ProductId\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"PersonalVehicleLoanProduct\",\"path\":\"PersonalVehicleLoanProduct.cdm.json/PersonalVehicleLoanProduct\"},\"description\":\"A personal vehicle loan (or auto loan) is a loan used to purchase a new or used vehicle.  \\n\\nThe vehicle itself is used to secure the loan.  \\n\\nNew vehicle loans and typically range from 3 to 7 years in length, while used vehicle loans are usually shorter in duration.  \\n\\nThe interest rate for vehicle loans depends on the length of the loan, vehicle loan purpose and the credit rating of the buyer.\",\"primaryKey\":[\"ProductId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"ProductId\",\"attributeReference\":{\"entity\":\"PersonalVehicleLoanProduct.cdm.json/PersonalVehicleLoanProduct\",\"name\":\"ProductId\"},\"dataType\":\"long\"}]}}}",
+			"Description": "A personal vehicle loan (or auto loan) is a loan used to purchase a new or used vehicle.  \n\nThe vehicle itself is used to secure the loan.  \n\nNew vehicle loans and typically range from 3 to 7 years in length, while used vehicle loans are usually shorter in duration.  \n\nThe interest rate for vehicle loans depends on the length of the loan, vehicle loan purpose and the credit rating of the buyer.",
+			"DisplayFolderInfo": "{\"name\":\"Product\",\"colorCode\":\"#0E3D73\"}",
+			"PrimaryKeys": "ProductId",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

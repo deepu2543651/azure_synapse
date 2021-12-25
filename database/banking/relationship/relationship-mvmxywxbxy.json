@@ -1,0 +1,26 @@
+{
+	"name": "relationship-mvmxywxbxy",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-mvmxywxbxy",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "StatementActivityType",
+		"ToTableName": "CustomerAccountBankStatementLineItem",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "StatementActivityTypeId",
+				"ToColumnName": "StatementActivityTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"StatementActivityType.cdm.json/StatementActivityType\",\"toEntity\":\"CustomerAccountBankStatementLineItem.cdm.json/CustomerAccountBankStatementLineItem\",\"joinPairs\":[{\"fromAttribute\":\"StatementActivityTypeId\",\"toAttribute\":\"StatementActivityTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

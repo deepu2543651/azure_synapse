@@ -1,0 +1,26 @@
+{
+	"name": "relationship-xcqtvnlfvq",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-xcqtvnlfvq",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "FinancialInstitution",
+		"ToTableName": "Atm",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "FinancialInstitutionId",
+				"ToColumnName": "FinancialInstitutionId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"FinancialInstitution.cdm.json/FinancialInstitution\",\"toEntity\":\"Atm.cdm.json/Atm\",\"joinPairs\":[{\"fromAttribute\":\"FinancialInstitutionId\",\"toAttribute\":\"FinancialInstitutionId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

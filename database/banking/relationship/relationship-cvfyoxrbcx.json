@@ -1,0 +1,26 @@
+{
+	"name": "relationship-cvfyoxrbcx",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-cvfyoxrbcx",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "ConstructionLoanType",
+		"ToTableName": "CommercialConstructionLoanProduct",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ConstructionLoanTypeId",
+				"ToColumnName": "ConstructionLoanTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"ConstructionLoanType.cdm.json/ConstructionLoanType\",\"toEntity\":\"CommercialConstructionLoanProduct.cdm.json/CommercialConstructionLoanProduct\",\"joinPairs\":[{\"fromAttribute\":\"ConstructionLoanTypeId\",\"toAttribute\":\"ConstructionLoanTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

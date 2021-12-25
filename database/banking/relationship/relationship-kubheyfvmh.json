@@ -1,0 +1,26 @@
+{
+	"name": "relationship-kubheyfvmh",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-kubheyfvmh",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "ServiceRequestStatusType",
+		"ToTableName": "ServiceRequestStatus",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ServiceRequestStatusTypeId",
+				"ToColumnName": "ServiceRequestStatusTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"ServiceRequestStatusType.cdm.json/ServiceRequestStatusType\",\"toEntity\":\"ServiceRequestStatus.cdm.json/ServiceRequestStatus\",\"joinPairs\":[{\"fromAttribute\":\"ServiceRequestStatusTypeId\",\"toAttribute\":\"ServiceRequestStatusTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

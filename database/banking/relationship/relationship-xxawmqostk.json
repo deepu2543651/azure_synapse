@@ -1,0 +1,26 @@
+{
+	"name": "relationship-xxawmqostk",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-xxawmqostk",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Country",
+		"ToTableName": "BankingProduct",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "CountryId",
+				"ToColumnName": "PrimaryCountryOfOriginCountryId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Country.cdm.json/Country\",\"toEntity\":\"BankingProduct.cdm.json/BankingProduct\",\"joinPairs\":[{\"fromAttribute\":\"CountryId\",\"toAttribute\":\"PrimaryCountryOfOriginCountryId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

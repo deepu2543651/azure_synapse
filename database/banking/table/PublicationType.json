@@ -1,0 +1,112 @@
+{
+	"name": "PublicationType",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "PublicationType",
+		"Description": "A categorization of publications based on common characteristics or objectives.\n\nEx:\n- News\n- Family\n- Sports",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "PublicationTypeId",
+					"Description": "The unique identifier of a Publication Type.",
+					"BaseAttributeReference": {
+						"Entity": "PublicationType.cdm.json/PublicationType",
+						"Name": "PublicationTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PublicationTypeName",
+					"Description": "The name of a Publication Type.",
+					"BaseAttributeReference": {
+						"Entity": "PublicationType.cdm.json/PublicationType",
+						"Name": "PublicationTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "PublicationTypeDescription",
+					"Description": "The description of a Publication Type.",
+					"BaseAttributeReference": {
+						"Entity": "PublicationType.cdm.json/PublicationType",
+						"Name": "PublicationTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/PublicationType",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/PublicationType",
+				"Properties": {
+					"LinkedServiceName": "wspc-dpu-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"PublicationTypeId\":{\"entity\":\"PublicationType.cdm.json/PublicationType\",\"name\":\"PublicationTypeId\"},\"PublicationTypeName\":{\"entity\":\"PublicationType.cdm.json/PublicationType\",\"name\":\"PublicationTypeName\"},\"PublicationTypeDescription\":{\"entity\":\"PublicationType.cdm.json/PublicationType\",\"name\":\"PublicationTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"PublicationType\",\"path\":\"PublicationType.cdm.json/PublicationType\"},\"description\":\"A categorization of publications based on common characteristics or objectives.\\n\\nEx:\\n- News\\n- Family\\n- Sports\",\"primaryKey\":[\"PublicationTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"PublicationTypeId\",\"attributeReference\":{\"entity\":\"PublicationType.cdm.json/PublicationType\",\"name\":\"PublicationTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"PublicationTypeName\",\"attributeReference\":{\"entity\":\"PublicationType.cdm.json/PublicationType\",\"name\":\"PublicationTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"PublicationTypeDescription\",\"attributeReference\":{\"entity\":\"PublicationType.cdm.json/PublicationType\",\"name\":\"PublicationTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512}]}}}",
+			"Description": "A categorization of publications based on common characteristics or objectives.\n\nEx:\n- News\n- Family\n- Sports",
+			"DisplayFolderInfo": "{\"name\":\"Marketing & Advertising\",\"colorCode\":\"#692B0C\"}",
+			"PrimaryKeys": "PublicationTypeId",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

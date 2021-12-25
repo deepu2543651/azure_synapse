@@ -1,0 +1,112 @@
+{
+	"name": "BankersAcceptanceType",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "BankersAcceptanceType",
+		"Description": "Indicates whether a bankers acceptance  is:\n\n- Documentary Bankers Acceptance\n- Clean Bankers Acceptance\n\nwhere:\n\nA Documentary bankers acceptance is created when a time draft drawn under a documentary letter of credit is accepted by the bank. \nUpon discounting of such a bankers acceptance, the seller of the bankers acceptance is paid immediately, and the buyer receives credit terms.\n\nA Clean bankers acceptance is created in a transaction that has no associated Letter Of Credit.  \nIt is typically used to finance storage of a commodity.  In this instance, drafts will be drawn by the borrower, accepted by a bank, and will be discounted in the money market giving the borrower a competitive borrowing cost.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "BankersAcceptanceTypeId",
+					"Description": "The unique identifier of a Bankers Acceptance Type.",
+					"BaseAttributeReference": {
+						"Entity": "BankersAcceptanceType.cdm.json/BankersAcceptanceType",
+						"Name": "BankersAcceptanceTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "BankersAcceptanceTypeName",
+					"Description": "The name of a Bankers Acceptance Type.",
+					"BaseAttributeReference": {
+						"Entity": "BankersAcceptanceType.cdm.json/BankersAcceptanceType",
+						"Name": "BankersAcceptanceTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "BankersAcceptanceTypeDescription",
+					"Description": "The description of a Bankers Acceptance Type.",
+					"BaseAttributeReference": {
+						"Entity": "BankersAcceptanceType.cdm.json/BankersAcceptanceType",
+						"Name": "BankersAcceptanceTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/BankersAcceptanceType",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/BankersAcceptanceType",
+				"Properties": {
+					"LinkedServiceName": "wspc-dpu-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"BankersAcceptanceTypeId\":{\"entity\":\"BankersAcceptanceType.cdm.json/BankersAcceptanceType\",\"name\":\"BankersAcceptanceTypeId\"},\"BankersAcceptanceTypeName\":{\"entity\":\"BankersAcceptanceType.cdm.json/BankersAcceptanceType\",\"name\":\"BankersAcceptanceTypeName\"},\"BankersAcceptanceTypeDescription\":{\"entity\":\"BankersAcceptanceType.cdm.json/BankersAcceptanceType\",\"name\":\"BankersAcceptanceTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"BankersAcceptanceType\",\"path\":\"BankersAcceptanceType.cdm.json/BankersAcceptanceType\"},\"description\":\"Indicates whether a bankers acceptance  is:\\n\\n- Documentary Bankers Acceptance\\n- Clean Bankers Acceptance\\n\\nwhere:\\n\\nA Documentary bankers acceptance is created when a time draft drawn under a documentary letter of credit is accepted by the bank. \\nUpon discounting of such a bankers acceptance, the seller of the bankers acceptance is paid immediately, and the buyer receives credit terms.\\n\\nA Clean bankers acceptance is created in a transaction that has no associated Letter Of Credit.  \\nIt is typically used to finance storage of a commodity.  In this instance, drafts will be drawn by the borrower, accepted by a bank, and will be discounted in the money market giving the borrower a competitive borrowing cost.\",\"primaryKey\":[\"BankersAcceptanceTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"BankersAcceptanceTypeId\",\"attributeReference\":{\"entity\":\"BankersAcceptanceType.cdm.json/BankersAcceptanceType\",\"name\":\"BankersAcceptanceTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"BankersAcceptanceTypeName\",\"attributeReference\":{\"entity\":\"BankersAcceptanceType.cdm.json/BankersAcceptanceType\",\"name\":\"BankersAcceptanceTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"BankersAcceptanceTypeDescription\",\"attributeReference\":{\"entity\":\"BankersAcceptanceType.cdm.json/BankersAcceptanceType\",\"name\":\"BankersAcceptanceTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512}]}}}",
+			"Description": "Indicates whether a bankers acceptance  is:\n\n- Documentary Bankers Acceptance\n- Clean Bankers Acceptance\n\nwhere:\n\nA Documentary bankers acceptance is created when a time draft drawn under a documentary letter of credit is accepted by the bank. \nUpon discounting of such a bankers acceptance, the seller of the bankers acceptance is paid immediately, and the buyer receives credit terms.\n\nA Clean bankers acceptance is created in a transaction that has no associated Letter Of Credit.  \nIt is typically used to finance storage of a commodity.  In this instance, drafts will be drawn by the borrower, accepted by a bank, and will be discounted in the money market giving the borrower a competitive borrowing cost.",
+			"DisplayFolderInfo": "{\"name\":\"Financial Product\",\"colorCode\":\"#001475\"}",
+			"PrimaryKeys": "BankersAcceptanceTypeId",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

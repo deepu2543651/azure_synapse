@@ -1,0 +1,112 @@
+{
+	"name": "HomeEquityLoanType",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "HomeEquityLoanType",
+		"Description": "Indicates whether a home equity loan is a closed end or open end home equity loan.\n\nCLOSED END HOME EQUITY LOAN\nThe borrower receives a lump sum at the time of the closing and cannot borrow further. The maximum amount of money that can be borrowed is determined by variables including credit history, income, and the appraised value of the collateral, among others. It is common to be able to borrow up to 100% of the appraised value of the home, less any liens, although there are lenders that will go above 100% when doing over-equity loans.  \n\nClosed-end home equity loans generally have fixed rates and can be amortized for periods usually up to 15 years. Some home equity loans offer reduced amortization whereby at the end of the term, a balloon payment is due. These larger lump-sum payments can be avoided by paying above the minimum payment or refinancing the loan.\n\nOPEN END HOME EQUITY LOAN\nThis is a revolving credit loan, also referred to as a home equity line of credit (HELOC), where the borrower can choose when and how often to borrow against the equity in the property, with the lender setting an initial limit to the credit line based on criteria similar to those used for closed-end loans. Like the closed-end loan, it may be possible to borrow up to 100% of the value of a home, less any liens. These lines of credit are available up to 30 years, usually at a variable interest rate. The minimum monthly payment can be as low as only the interest that is due.\n\nTypically, the interest rate is based on the Prime rate plus a margin.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "HomeEquityLoanTypeId",
+					"Description": "The unique identifier of a Home Equity Loan Type.",
+					"BaseAttributeReference": {
+						"Entity": "HomeEquityLoanType.cdm.json/HomeEquityLoanType",
+						"Name": "HomeEquityLoanTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "HomeEquityLoanTypeName",
+					"Description": "The name of a Home Equity Loan Type.",
+					"BaseAttributeReference": {
+						"Entity": "HomeEquityLoanType.cdm.json/HomeEquityLoanType",
+						"Name": "HomeEquityLoanTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "HomeEquityLoanTypeDescription",
+					"Description": "The description of a Home Equity Loan Type.",
+					"BaseAttributeReference": {
+						"Entity": "HomeEquityLoanType.cdm.json/HomeEquityLoanType",
+						"Name": "HomeEquityLoanTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/HomeEquityLoanType",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/HomeEquityLoanType",
+				"Properties": {
+					"LinkedServiceName": "wspc-dpu-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"HomeEquityLoanTypeId\":{\"entity\":\"HomeEquityLoanType.cdm.json/HomeEquityLoanType\",\"name\":\"HomeEquityLoanTypeId\"},\"HomeEquityLoanTypeName\":{\"entity\":\"HomeEquityLoanType.cdm.json/HomeEquityLoanType\",\"name\":\"HomeEquityLoanTypeName\"},\"HomeEquityLoanTypeDescription\":{\"entity\":\"HomeEquityLoanType.cdm.json/HomeEquityLoanType\",\"name\":\"HomeEquityLoanTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"HomeEquityLoanType\",\"path\":\"HomeEquityLoanType.cdm.json/HomeEquityLoanType\"},\"description\":\"Indicates whether a home equity loan is a closed end or open end home equity loan.\\n\\nCLOSED END HOME EQUITY LOAN\\nThe borrower receives a lump sum at the time of the closing and cannot borrow further. The maximum amount of money that can be borrowed is determined by variables including credit history, income, and the appraised value of the collateral, among others. It is common to be able to borrow up to 100% of the appraised value of the home, less any liens, although there are lenders that will go above 100% when doing over-equity loans.  \\n\\nClosed-end home equity loans generally have fixed rates and can be amortized for periods usually up to 15 years. Some home equity loans offer reduced amortization whereby at the end of the term, a balloon payment is due. These larger lump-sum payments can be avoided by paying above the minimum payment or refinancing the loan.\\n\\nOPEN END HOME EQUITY LOAN\\nThis is a revolving credit loan, also referred to as a home equity line of credit (HELOC), where the borrower can choose when and how often to borrow against the equity in the property, with the lender setting an initial limit to the credit line based on criteria similar to those used for closed-end loans. Like the closed-end loan, it may be possible to borrow up to 100% of the value of a home, less any liens. These lines of credit are available up to 30 years, usually at a variable interest rate. The minimum monthly payment can be as low as only the interest that is due.\\n\\nTypically, the interest rate is based on the Prime rate plus a margin.\",\"primaryKey\":[\"HomeEquityLoanTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"HomeEquityLoanTypeId\",\"attributeReference\":{\"entity\":\"HomeEquityLoanType.cdm.json/HomeEquityLoanType\",\"name\":\"HomeEquityLoanTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"HomeEquityLoanTypeName\",\"attributeReference\":{\"entity\":\"HomeEquityLoanType.cdm.json/HomeEquityLoanType\",\"name\":\"HomeEquityLoanTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"HomeEquityLoanTypeDescription\",\"attributeReference\":{\"entity\":\"HomeEquityLoanType.cdm.json/HomeEquityLoanType\",\"name\":\"HomeEquityLoanTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512}]}}}",
+			"Description": "Indicates whether a home equity loan is a closed end or open end home equity loan.\n\nCLOSED END HOME EQUITY LOAN\nThe borrower receives a lump sum at the time of the closing and cannot borrow further. The maximum amount of money that can be borrowed is determined by variables including credit history, income, and the appraised value of the collateral, among others. It is common to be able to borrow up to 100% of the appraised value of the home, less any liens, although there are lenders that will go above 100% when doing over-equity loans.  \n\nClosed-end home equity loans generally have fixed rates and can be amortized for periods usually up to 15 years. Some home equity loans offer reduced amortization whereby at the end of the term, a balloon payment is due. These larger lump-sum payments can be avoided by paying above the minimum payment or refinancing the loan.\n\nOPEN END HOME EQUITY LOAN\nThis is a revolving credit loan, also referred to as a home equity line of credit (HELOC), where the borrower can choose when and how often to borrow against the equity in the property, with the lender setting an initial limit to the credit line based on criteria similar to those used for closed-end loans. Like the closed-end loan, it may be possible to borrow up to 100% of the value of a home, less any liens. These lines of credit are available up to 30 years, usually at a variable interest rate. The minimum monthly payment can be as low as only the interest that is due.\n\nTypically, the interest rate is based on the Prime rate plus a margin.",
+			"DisplayFolderInfo": "{\"name\":\"Product\",\"colorCode\":\"#0E3D73\"}",
+			"PrimaryKeys": "HomeEquityLoanTypeId",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

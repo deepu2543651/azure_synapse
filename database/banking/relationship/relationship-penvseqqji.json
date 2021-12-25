@@ -1,0 +1,26 @@
+{
+	"name": "relationship-penvseqqji",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-penvseqqji",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Activity",
+		"ToTableName": "CustomerActivity",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ActivityId",
+				"ToColumnName": "ActivityId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Activity.cdm.json/Activity\",\"toEntity\":\"CustomerActivity.cdm.json/CustomerActivity\",\"joinPairs\":[{\"fromAttribute\":\"ActivityId\",\"toAttribute\":\"ActivityId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

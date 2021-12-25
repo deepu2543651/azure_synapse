@@ -1,0 +1,26 @@
+{
+	"name": "relationship-uvohomzzvt",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-uvohomzzvt",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Channel",
+		"ToTableName": "FinancialInstitution",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ChannelId",
+				"ToColumnName": "ChannelId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Channel.cdm.json/Channel\",\"toEntity\":\"FinancialInstitution.cdm.json/FinancialInstitution\",\"joinPairs\":[{\"fromAttribute\":\"ChannelId\",\"toAttribute\":\"ChannelId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

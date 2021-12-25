@@ -1,0 +1,112 @@
+{
+	"name": "ProductEligibilityType",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "ProductEligibilityType",
+		"Description": "The provisions of the associated Product that state the requirements that applicants must satisfy or comply with.\n\nEx:\n- Must be a current customer\n- Must be a business customer\n- Must be a residential customer\n- Must be a government customer\n- Must be an Urban area customer\n- Must be a high-use customer\n- Must be under 19 years of age\n- Must be not eligible for Medicaid\n- Must have no health insurance\n- Must be resident of state of 'x'\n- Subscriber (applicant) \n- Subscriber's lawful spouse \n- A child under 23 years of age, unmarried and primarily dependent upon the subscriber for support.\n- Washington state resident \n- Principal residence located in Washington state (excluding Clark County) \n- Not entitled to Medicare due to age or disability on the date coverage will begin.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ProductEligibilityTypeId",
+					"Description": "The unique identifier of a Product Eligibility Type",
+					"BaseAttributeReference": {
+						"Entity": "ProductEligibilityType.cdm.json/ProductEligibilityType",
+						"Name": "ProductEligibilityTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ProductEligibilityTypeName",
+					"Description": "The name of a Product Eligibility Type",
+					"BaseAttributeReference": {
+						"Entity": "ProductEligibilityType.cdm.json/ProductEligibilityType",
+						"Name": "ProductEligibilityTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ProductEligibilityTypeDescription",
+					"Description": "The description of a Product Eligibility Type",
+					"BaseAttributeReference": {
+						"Entity": "ProductEligibilityType.cdm.json/ProductEligibilityType",
+						"Name": "ProductEligibilityTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/ProductEligibilityType",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/ProductEligibilityType",
+				"Properties": {
+					"LinkedServiceName": "wspc-dpu-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ProductEligibilityTypeId\":{\"entity\":\"ProductEligibilityType.cdm.json/ProductEligibilityType\",\"name\":\"ProductEligibilityTypeId\"},\"ProductEligibilityTypeName\":{\"entity\":\"ProductEligibilityType.cdm.json/ProductEligibilityType\",\"name\":\"ProductEligibilityTypeName\"},\"ProductEligibilityTypeDescription\":{\"entity\":\"ProductEligibilityType.cdm.json/ProductEligibilityType\",\"name\":\"ProductEligibilityTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"ProductEligibilityType\",\"path\":\"ProductEligibilityType.cdm.json/ProductEligibilityType\"},\"description\":\"The provisions of the associated Product that state the requirements that applicants must satisfy or comply with.\\n\\nEx:\\n- Must be a current customer\\n- Must be a business customer\\n- Must be a residential customer\\n- Must be a government customer\\n- Must be an Urban area customer\\n- Must be a high-use customer\\n- Must be under 19 years of age\\n- Must be not eligible for Medicaid\\n- Must have no health insurance\\n- Must be resident of state of 'x'\\n- Subscriber (applicant) \\n- Subscriber's lawful spouse \\n- A child under 23 years of age, unmarried and primarily dependent upon the subscriber for support.\\n- Washington state resident \\n- Principal residence located in Washington state (excluding Clark County) \\n- Not entitled to Medicare due to age or disability on the date coverage will begin.\",\"primaryKey\":[\"ProductEligibilityTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"ProductEligibilityTypeId\",\"attributeReference\":{\"entity\":\"ProductEligibilityType.cdm.json/ProductEligibilityType\",\"name\":\"ProductEligibilityTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ProductEligibilityTypeName\",\"attributeReference\":{\"entity\":\"ProductEligibilityType.cdm.json/ProductEligibilityType\",\"name\":\"ProductEligibilityTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"ProductEligibilityTypeDescription\",\"attributeReference\":{\"entity\":\"ProductEligibilityType.cdm.json/ProductEligibilityType\",\"name\":\"ProductEligibilityTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512}]}}}",
+			"Description": "The provisions of the associated Product that state the requirements that applicants must satisfy or comply with.\n\nEx:\n- Must be a current customer\n- Must be a business customer\n- Must be a residential customer\n- Must be a government customer\n- Must be an Urban area customer\n- Must be a high-use customer\n- Must be under 19 years of age\n- Must be not eligible for Medicaid\n- Must have no health insurance\n- Must be resident of state of 'x'\n- Subscriber (applicant) \n- Subscriber's lawful spouse \n- A child under 23 years of age, unmarried and primarily dependent upon the subscriber for support.\n- Washington state resident \n- Principal residence located in Washington state (excluding Clark County) \n- Not entitled to Medicare due to age or disability on the date coverage will begin.",
+			"DisplayFolderInfo": "{\"name\":\"Product\",\"colorCode\":\"#0E3D73\"}",
+			"PrimaryKeys": "ProductEligibilityTypeId",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

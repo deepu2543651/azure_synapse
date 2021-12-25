@@ -1,0 +1,110 @@
+{
+	"name": "Service",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "Service",
+		"Description": "A Service that is offered by the Bank.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ServiceId",
+					"Description": "The unique identifier of a Product.",
+					"BaseAttributeReference": {
+						"Entity": "Service.cdm.json/Service",
+						"Name": "ServiceId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "TransactionTypeId",
+					"Description": "The unique identifier of a Transaction Type.",
+					"BaseAttributeReference": {
+						"Entity": "Service.cdm.json/Service",
+						"Name": "TransactionTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ServiceTypeId",
+					"Description": "The unique identifier of a Service Type.",
+					"BaseAttributeReference": {
+						"Entity": "Service.cdm.json/Service",
+						"Name": "ServiceTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/Service",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/Service",
+				"Properties": {
+					"LinkedServiceName": "wspc-dpu-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ServiceId\":{\"entity\":\"Service.cdm.json/Service\",\"name\":\"ServiceId\"},\"TransactionTypeId\":{\"entity\":\"Service.cdm.json/Service\",\"name\":\"TransactionTypeId\"},\"ServiceTypeId\":{\"entity\":\"Service.cdm.json/Service\",\"name\":\"ServiceTypeId\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"Service\",\"path\":\"Service.cdm.json/Service\"},\"description\":\"A Service that is offered by the Bank.\",\"primaryKey\":[\"ServiceId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"ServiceId\",\"attributeReference\":{\"entity\":\"Service.cdm.json/Service\",\"name\":\"ServiceId\"},\"dataType\":\"long\"},{\"type\":\"Existing\",\"name\":\"TransactionTypeId\",\"attributeReference\":{\"entity\":\"Service.cdm.json/Service\",\"name\":\"TransactionTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ServiceTypeId\",\"attributeReference\":{\"entity\":\"Service.cdm.json/Service\",\"name\":\"ServiceTypeId\"},\"dataType\":\"integer\"}]}}}",
+			"Description": "A Service that is offered by the Bank.",
+			"DisplayFolderInfo": "{\"name\":\"Product\",\"colorCode\":\"#0E3D73\"}",
+			"PrimaryKeys": "ServiceId",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

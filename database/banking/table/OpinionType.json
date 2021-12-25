@@ -1,0 +1,112 @@
+{
+	"name": "OpinionType",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "OpinionType",
+		"Description": "Opinion Type is a larger classification of Opinions that enables them to be grouped for presentation or analysis.\n\nEx:\nOpinion = recycling is important\nOpinion Type = Environment Opinions\n\nOpinion = organic foods are healthier\nOpinion Type = food\n\nOpinion = on-line banking is convenient\nOpinion Type = bank services\n\nOpinion = stocks are risk investments\nOpinion Type = Investing\n\nOpinion = cellular phone are safe to use\nOpinion Type = cellular phone safety",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "OpinionTypeId",
+					"Description": "The unique identifier of an Opinion Type.",
+					"BaseAttributeReference": {
+						"Entity": "OpinionType.cdm.json/OpinionType",
+						"Name": "OpinionTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "OpinionTypeName",
+					"Description": "The name of the Opinion Type.",
+					"BaseAttributeReference": {
+						"Entity": "OpinionType.cdm.json/OpinionType",
+						"Name": "OpinionTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "OpinionTypeDescription",
+					"Description": "The description of the Opinion Type.",
+					"BaseAttributeReference": {
+						"Entity": "OpinionType.cdm.json/OpinionType",
+						"Name": "OpinionTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/OpinionType",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/OpinionType",
+				"Properties": {
+					"LinkedServiceName": "wspc-dpu-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"OpinionTypeId\":{\"entity\":\"OpinionType.cdm.json/OpinionType\",\"name\":\"OpinionTypeId\"},\"OpinionTypeName\":{\"entity\":\"OpinionType.cdm.json/OpinionType\",\"name\":\"OpinionTypeName\"},\"OpinionTypeDescription\":{\"entity\":\"OpinionType.cdm.json/OpinionType\",\"name\":\"OpinionTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"OpinionType\",\"path\":\"OpinionType.cdm.json/OpinionType\"},\"description\":\"Opinion Type is a larger classification of Opinions that enables them to be grouped for presentation or analysis.\\n\\nEx:\\nOpinion = recycling is important\\nOpinion Type = Environment Opinions\\n\\nOpinion = organic foods are healthier\\nOpinion Type = food\\n\\nOpinion = on-line banking is convenient\\nOpinion Type = bank services\\n\\nOpinion = stocks are risk investments\\nOpinion Type = Investing\\n\\nOpinion = cellular phone are safe to use\\nOpinion Type = cellular phone safety\",\"primaryKey\":[\"OpinionTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"OpinionTypeId\",\"attributeReference\":{\"entity\":\"OpinionType.cdm.json/OpinionType\",\"name\":\"OpinionTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"OpinionTypeName\",\"attributeReference\":{\"entity\":\"OpinionType.cdm.json/OpinionType\",\"name\":\"OpinionTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"OpinionTypeDescription\",\"attributeReference\":{\"entity\":\"OpinionType.cdm.json/OpinionType\",\"name\":\"OpinionTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512}]}}}",
+			"Description": "Opinion Type is a larger classification of Opinions that enables them to be grouped for presentation or analysis.\n\nEx:\nOpinion = recycling is important\nOpinion Type = Environment Opinions\n\nOpinion = organic foods are healthier\nOpinion Type = food\n\nOpinion = on-line banking is convenient\nOpinion Type = bank services\n\nOpinion = stocks are risk investments\nOpinion Type = Investing\n\nOpinion = cellular phone are safe to use\nOpinion Type = cellular phone safety",
+			"DisplayFolderInfo": "{\"name\":\"Party\",\"colorCode\":\"#00727A\"}",
+			"PrimaryKeys": "OpinionTypeId",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

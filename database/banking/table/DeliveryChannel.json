@@ -1,0 +1,112 @@
+{
+	"name": "DeliveryChannel",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "DeliveryChannel",
+		"Description": "The method or medium by which learning event communication travels from a source or sender to a receiver.\n\nEx:\n- Cable Television\n- Direct Satellite Broadcast (DBS)\n- Radio\n- Newspaper\n- Direct Mail\n- Email\n- SMS / Text\n- Correspondence\n- Billboard\n- Internet \n- Podcast\n- Internal Class\n- Public Seminar\n- Tradeshow\n- DVD Video",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "DeliveryChannelId",
+					"Description": "The unique identifier of a Delivery Channel.",
+					"BaseAttributeReference": {
+						"Entity": "DeliveryChannel.cdm.json/DeliveryChannel",
+						"Name": "DeliveryChannelId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "DeliveryChannelName",
+					"Description": "The name of a Delivery Channel.",
+					"BaseAttributeReference": {
+						"Entity": "DeliveryChannel.cdm.json/DeliveryChannel",
+						"Name": "DeliveryChannelName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "DeliveryChannelDescription",
+					"Description": "The description of a Delivery Channel.",
+					"BaseAttributeReference": {
+						"Entity": "DeliveryChannel.cdm.json/DeliveryChannel",
+						"Name": "DeliveryChannelDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/DeliveryChannel",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/DeliveryChannel",
+				"Properties": {
+					"LinkedServiceName": "wspc-dpu-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"DeliveryChannelId\":{\"entity\":\"DeliveryChannel.cdm.json/DeliveryChannel\",\"name\":\"DeliveryChannelId\"},\"DeliveryChannelName\":{\"entity\":\"DeliveryChannel.cdm.json/DeliveryChannel\",\"name\":\"DeliveryChannelName\"},\"DeliveryChannelDescription\":{\"entity\":\"DeliveryChannel.cdm.json/DeliveryChannel\",\"name\":\"DeliveryChannelDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"DeliveryChannel\",\"path\":\"DeliveryChannel.cdm.json/DeliveryChannel\"},\"description\":\"The method or medium by which learning event communication travels from a source or sender to a receiver.\\n\\nEx:\\n- Cable Television\\n- Direct Satellite Broadcast (DBS)\\n- Radio\\n- Newspaper\\n- Direct Mail\\n- Email\\n- SMS / Text\\n- Correspondence\\n- Billboard\\n- Internet \\n- Podcast\\n- Internal Class\\n- Public Seminar\\n- Tradeshow\\n- DVD Video\",\"primaryKey\":[\"DeliveryChannelId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"DeliveryChannelId\",\"attributeReference\":{\"entity\":\"DeliveryChannel.cdm.json/DeliveryChannel\",\"name\":\"DeliveryChannelId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"DeliveryChannelName\",\"attributeReference\":{\"entity\":\"DeliveryChannel.cdm.json/DeliveryChannel\",\"name\":\"DeliveryChannelName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"DeliveryChannelDescription\",\"attributeReference\":{\"entity\":\"DeliveryChannel.cdm.json/DeliveryChannel\",\"name\":\"DeliveryChannelDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512}]}}}",
+			"Description": "The method or medium by which learning event communication travels from a source or sender to a receiver.\n\nEx:\n- Cable Television\n- Direct Satellite Broadcast (DBS)\n- Radio\n- Newspaper\n- Direct Mail\n- Email\n- SMS / Text\n- Correspondence\n- Billboard\n- Internet \n- Podcast\n- Internal Class\n- Public Seminar\n- Tradeshow\n- DVD Video",
+			"DisplayFolderInfo": "{\"name\":\"Marketing & Advertising\",\"colorCode\":\"#692B0C\"}",
+			"PrimaryKeys": "DeliveryChannelId",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

@@ -1,0 +1,112 @@
+{
+	"name": "ProgramParticipationStatus",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "ProgramParticipationStatus",
+		"Description": "The participation status of the customer account in conjunction with the program for the associated period.\n\nEx:\n- Eligible\n- Eligible/Unavailable in Area\n- Participating",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ProgramParticipationStatusId",
+					"Description": "The unique identifier of a Program Participation Status.",
+					"BaseAttributeReference": {
+						"Entity": "ProgramParticipationStatus.cdm.json/ProgramParticipationStatus",
+						"Name": "ProgramParticipationStatusId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ProgramParticipationStatusName",
+					"Description": "The name of a Program Participation Status.",
+					"BaseAttributeReference": {
+						"Entity": "ProgramParticipationStatus.cdm.json/ProgramParticipationStatus",
+						"Name": "ProgramParticipationStatusName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ProgramParticipationStatusDescription",
+					"Description": "The description of a Program Participation Status.",
+					"BaseAttributeReference": {
+						"Entity": "ProgramParticipationStatus.cdm.json/ProgramParticipationStatus",
+						"Name": "ProgramParticipationStatusDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/ProgramParticipationStatus",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/ProgramParticipationStatus",
+				"Properties": {
+					"LinkedServiceName": "wspc-dpu-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ProgramParticipationStatusId\":{\"entity\":\"ProgramParticipationStatus.cdm.json/ProgramParticipationStatus\",\"name\":\"ProgramParticipationStatusId\"},\"ProgramParticipationStatusName\":{\"entity\":\"ProgramParticipationStatus.cdm.json/ProgramParticipationStatus\",\"name\":\"ProgramParticipationStatusName\"},\"ProgramParticipationStatusDescription\":{\"entity\":\"ProgramParticipationStatus.cdm.json/ProgramParticipationStatus\",\"name\":\"ProgramParticipationStatusDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"ProgramParticipationStatus\",\"path\":\"ProgramParticipationStatus.cdm.json/ProgramParticipationStatus\"},\"description\":\"The participation status of the customer account in conjunction with the program for the associated period.\\n\\nEx:\\n- Eligible\\n- Eligible/Unavailable in Area\\n- Participating\",\"primaryKey\":[\"ProgramParticipationStatusId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"ProgramParticipationStatusId\",\"attributeReference\":{\"entity\":\"ProgramParticipationStatus.cdm.json/ProgramParticipationStatus\",\"name\":\"ProgramParticipationStatusId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ProgramParticipationStatusName\",\"attributeReference\":{\"entity\":\"ProgramParticipationStatus.cdm.json/ProgramParticipationStatus\",\"name\":\"ProgramParticipationStatusName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"ProgramParticipationStatusDescription\",\"attributeReference\":{\"entity\":\"ProgramParticipationStatus.cdm.json/ProgramParticipationStatus\",\"name\":\"ProgramParticipationStatusDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512}]}}}",
+			"Description": "The participation status of the customer account in conjunction with the program for the associated period.\n\nEx:\n- Eligible\n- Eligible/Unavailable in Area\n- Participating",
+			"DisplayFolderInfo": "{\"name\":\"Customer Account\",\"colorCode\":\"#E3008C\"}",
+			"PrimaryKeys": "ProgramParticipationStatusId",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

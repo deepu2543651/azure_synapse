@@ -1,0 +1,112 @@
+{
+	"name": "SavingsBondType",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "SavingsBondType",
+		"Description": "The type of Savings Bond.\n\nEx:\n- I\n- EE/E\n- HH/H\n\nwhere:\nI\n Rates & Terms\n-  I Bonds have an annual interest rate that reflects the combined effects of a fixed rate and a semiannual inflation rate. They are an accrual-type security. Interest is added to the bond monthly and is paid when you cash the bond.\n-  I Bonds are sold at face value; i.e., you pay $50 for a $50 bond.\n\nRedemption Information\n-  Minimum term of ownership: 1 year \n-  Interest-earning period: 30 years \n-  Early redemption penalties: \n-  Before 5 years, forfeit 3 most recent months' interest \n-  After 5 years, no penalty\n\nTax Considerations\n-  Interest earnings are exempt from State and local income taxes, but are subject to State and local estate, inheritance, gift, and other excise taxes.\n-  Interest earnings are subject to Federal income tax.\n-  Interest earnings may be excluded from Federal income tax when used to finance education (see education tax exclusions).\n\nEE/E\nBuying Electronic EE Bonds\n-  Sold at face value; i.e., you pay $50 for a $50 bond and it's worth its full value when it's available for redemption.\n-  Purchase in amounts of $25 or more, to the penny.\n-  $5,000 maximum purchase in one calendar year.\n-  Issued electronically to your designated account.\n\nBuying Paper EE Bonds\n-  Sold at half their face value;\n-  Purchase in denominations of $50, $75, $100, $200, $500, $1,000, and $5,000, and $10,000.\n-  $5,000 maximum purchase in one calendar year.\n-  Issued as paper bond certificates.\nIf you redeem EE/E Bonds in the first 5 years, you'll forfeit the 3 most-recent months' interest. If you redeem them after 5 years, you won't be penalized.\n\nYou can own U.S. Savings Bonds if you have a Social Security Number and:\n-  Resident of the United States.\n-  Citizen of the United States living abroad \n-  Civilian employee of the United States regardless of residence.\n-  Minor. Unlike other securities, minors may own U.S. Savings Bonds.\n\nHH/H\nRates & Terms\n-  HH bonds were available only in exchange for Series EE/E bonds or upon reinvestment of matured Series H bonds.\n-  You paid face amount; i.e., a $500 HH bond sold for $500.\n-  HH/H bonds pay a fixed interest rate set on the day the bond was purchased.\n-  The interest rate changes to the current HH Bond rate on the tenth anniversary of the issue date.\n\nRedemption Information\n-  Minimum term of ownership: 6 months\n-  Interest-earning period: 20 years\n\nTax Considerations\n-  Interest earnings are exempt from State and local income taxes but are subject to Federal, State, and local estate, inheritance, gift, and other excise taxes.\n-  Interest earnings are subject to Federal income tax.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "SavingsBondTypeId",
+					"Description": "The unique identifier of a savings bond type.",
+					"BaseAttributeReference": {
+						"Entity": "SavingsBondType.cdm.json/SavingsBondType",
+						"Name": "SavingsBondTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "SavingsBondTypeName",
+					"Description": "The name of a savings bond type.",
+					"BaseAttributeReference": {
+						"Entity": "SavingsBondType.cdm.json/SavingsBondType",
+						"Name": "SavingsBondTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "SavingsBondTypeDescription",
+					"Description": "The description of a savings bond type.",
+					"BaseAttributeReference": {
+						"Entity": "SavingsBondType.cdm.json/SavingsBondType",
+						"Name": "SavingsBondTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/SavingsBondType",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/SavingsBondType",
+				"Properties": {
+					"LinkedServiceName": "wspc-dpu-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"SavingsBondTypeId\":{\"entity\":\"SavingsBondType.cdm.json/SavingsBondType\",\"name\":\"SavingsBondTypeId\"},\"SavingsBondTypeName\":{\"entity\":\"SavingsBondType.cdm.json/SavingsBondType\",\"name\":\"SavingsBondTypeName\"},\"SavingsBondTypeDescription\":{\"entity\":\"SavingsBondType.cdm.json/SavingsBondType\",\"name\":\"SavingsBondTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"SavingsBondType\",\"path\":\"SavingsBondType.cdm.json/SavingsBondType\"},\"description\":\"The type of Savings Bond.\\n\\nEx:\\n- I\\n- EE/E\\n- HH/H\\n\\nwhere:\\nI\\n Rates & Terms\\n-  I Bonds have an annual interest rate that reflects the combined effects of a fixed rate and a semiannual inflation rate. They are an accrual-type security. Interest is added to the bond monthly and is paid when you cash the bond.\\n-  I Bonds are sold at face value; i.e., you pay $50 for a $50 bond.\\n\\nRedemption Information\\n-  Minimum term of ownership: 1 year \\n-  Interest-earning period: 30 years \\n-  Early redemption penalties: \\n-  Before 5 years, forfeit 3 most recent months' interest \\n-  After 5 years, no penalty\\n\\nTax Considerations\\n-  Interest earnings are exempt from State and local income taxes, but are subject to State and local estate, inheritance, gift, and other excise taxes.\\n-  Interest earnings are subject to Federal income tax.\\n-  Interest earnings may be excluded from Federal income tax when used to finance education (see education tax exclusions).\\n\\nEE/E\\nBuying Electronic EE Bonds\\n-  Sold at face value; i.e., you pay $50 for a $50 bond and it's worth its full value when it's available for redemption.\\n-  Purchase in amounts of $25 or more, to the penny.\\n-  $5,000 maximum purchase in one calendar year.\\n-  Issued electronically to your designated account.\\n\\nBuying Paper EE Bonds\\n-  Sold at half their face value;\\n-  Purchase in denominations of $50, $75, $100, $200, $500, $1,000, and $5,000, and $10,000.\\n-  $5,000 maximum purchase in one calendar year.\\n-  Issued as paper bond certificates.\\nIf you redeem EE/E Bonds in the first 5 years, you'll forfeit the 3 most-recent months' interest. If you redeem them after 5 years, you won't be penalized.\\n\\nYou can own U.S. Savings Bonds if you have a Social Security Number and:\\n-  Resident of the United States.\\n-  Citizen of the United States living abroad \\n-  Civilian employee of the United States regardless of residence.\\n-  Minor. Unlike other securities, minors may own U.S. Savings Bonds.\\n\\nHH/H\\nRates & Terms\\n-  HH bonds were available only in exchange for Series EE/E bonds or upon reinvestment of matured Series H bonds.\\n-  You paid face amount; i.e., a $500 HH bond sold for $500.\\n-  HH/H bonds pay a fixed interest rate set on the day the bond was purchased.\\n-  The interest rate changes to the current HH Bond rate on the tenth anniversary of the issue date.\\n\\nRedemption Information\\n-  Minimum term of ownership: 6 months\\n-  Interest-earning period: 20 years\\n\\nTax Considerations\\n-  Interest earnings are exempt from State and local income taxes but are subject to Federal, State, and local estate, inheritance, gift, and other excise taxes.\\n-  Interest earnings are subject to Federal income tax.\",\"primaryKey\":[\"SavingsBondTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"SavingsBondTypeId\",\"attributeReference\":{\"entity\":\"SavingsBondType.cdm.json/SavingsBondType\",\"name\":\"SavingsBondTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"SavingsBondTypeName\",\"attributeReference\":{\"entity\":\"SavingsBondType.cdm.json/SavingsBondType\",\"name\":\"SavingsBondTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"SavingsBondTypeDescription\",\"attributeReference\":{\"entity\":\"SavingsBondType.cdm.json/SavingsBondType\",\"name\":\"SavingsBondTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512}]}}}",
+			"Description": "The type of Savings Bond.\n\nEx:\n- I\n- EE/E\n- HH/H\n\nwhere:\nI\n Rates & Terms\n-  I Bonds have an annual interest rate that reflects the combined effects of a fixed rate and a semiannual inflation rate. They are an accrual-type security. Interest is added to the bond monthly and is paid when you cash the bond.\n-  I Bonds are sold at face value; i.e., you pay $50 for a $50 bond.\n\nRedemption Information\n-  Minimum term of ownership: 1 year \n-  Interest-earning period: 30 years \n-  Early redemption penalties: \n-  Before 5 years, forfeit 3 most recent months' interest \n-  After 5 years, no penalty\n\nTax Considerations\n-  Interest earnings are exempt from State and local income taxes, but are subject to State and local estate, inheritance, gift, and other excise taxes.\n-  Interest earnings are subject to Federal income tax.\n-  Interest earnings may be excluded from Federal income tax when used to finance education (see education tax exclusions).\n\nEE/E\nBuying Electronic EE Bonds\n-  Sold at face value; i.e., you pay $50 for a $50 bond and it's worth its full value when it's available for redemption.\n-  Purchase in amounts of $25 or more, to the penny.\n-  $5,000 maximum purchase in one calendar year.\n-  Issued electronically to your designated account.\n\nBuying Paper EE Bonds\n-  Sold at half their face value;\n-  Purchase in denominations of $50, $75, $100, $200, $500, $1,000, and $5,000, and $10,000.\n-  $5,000 maximum purchase in one calendar year.\n-  Issued as paper bond certificates.\nIf you redeem EE/E Bonds in the first 5 years, you'll forfeit the 3 most-recent months' interest. If you redeem them after 5 years, you won't be penalized.\n\nYou can own U.S. Savings Bonds if you have a Social Security Number and:\n-  Resident of the United States.\n-  Citizen of the United States living abroad \n-  Civilian employee of the United States regardless of residence.\n-  Minor. Unlike other securities, minors may own U.S. Savings Bonds.\n\nHH/H\nRates & Terms\n-  HH bonds were available only in exchange for Series EE/E bonds or upon reinvestment of matured Series H bonds.\n-  You paid face amount; i.e., a $500 HH bond sold for $500.\n-  HH/H bonds pay a fixed interest rate set on the day the bond was purchased.\n-  The interest rate changes to the current HH Bond rate on the tenth anniversary of the issue date.\n\nRedemption Information\n-  Minimum term of ownership: 6 months\n-  Interest-earning period: 20 years\n\nTax Considerations\n-  Interest earnings are exempt from State and local income taxes but are subject to Federal, State, and local estate, inheritance, gift, and other excise taxes.\n-  Interest earnings are subject to Federal income tax.",
+			"DisplayFolderInfo": "{\"name\":\"Product\",\"colorCode\":\"#0E3D73\"}",
+			"PrimaryKeys": "SavingsBondTypeId",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

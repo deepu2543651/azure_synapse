@@ -1,0 +1,146 @@
+{
+	"name": "MarketingCampaignBudgetedCostItem",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "MarketingCampaignBudgetedCostItem",
+		"Description": "The planned and actual marketing campaign costs for a specific cost item.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "MarketingCampaignId",
+					"Description": "The unique identifier of a Marketing Campaign.",
+					"BaseAttributeReference": {
+						"Entity": "MarketingCampaignBudgetedCostItem.cdm.json/MarketingCampaignBudgetedCostItem",
+						"Name": "MarketingCampaignId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "BudgetId",
+					"Description": "The unique identifier of a budget.",
+					"BaseAttributeReference": {
+						"Entity": "MarketingCampaignBudgetedCostItem.cdm.json/MarketingCampaignBudgetedCostItem",
+						"Name": "BudgetId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "CostItemId",
+					"Description": "The unique identifier of a Cost Item.",
+					"BaseAttributeReference": {
+						"Entity": "MarketingCampaignBudgetedCostItem.cdm.json/MarketingCampaignBudgetedCostItem",
+						"Name": "CostItemId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "MarketingCampaignCostItemPlannedBudgetAmount",
+					"Description": "The amount of the associated Cost Item planned to be spent within the Budget by the Marketing Campaign.",
+					"BaseAttributeReference": {
+						"Entity": "MarketingCampaignBudgetedCostItem.cdm.json/MarketingCampaignBudgetedCostItem",
+						"Name": "MarketingCampaignCostItemPlannedBudgetAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "MarketingCampaignCostItemActualBudgetAmount",
+					"Description": "The amount of the associated Cost Item actually spent within the Budget by the Marketing Campaign.",
+					"BaseAttributeReference": {
+						"Entity": "MarketingCampaignBudgetedCostItem.cdm.json/MarketingCampaignBudgetedCostItem",
+						"Name": "MarketingCampaignCostItemActualBudgetAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/MarketingCampaignBudgetedCostItem",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/MarketingCampaignBudgetedCostItem",
+				"Properties": {
+					"LinkedServiceName": "wspc-dpu-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"MarketingCampaignId\":{\"entity\":\"MarketingCampaignBudgetedCostItem.cdm.json/MarketingCampaignBudgetedCostItem\",\"name\":\"MarketingCampaignId\"},\"BudgetId\":{\"entity\":\"MarketingCampaignBudgetedCostItem.cdm.json/MarketingCampaignBudgetedCostItem\",\"name\":\"BudgetId\"},\"CostItemId\":{\"entity\":\"MarketingCampaignBudgetedCostItem.cdm.json/MarketingCampaignBudgetedCostItem\",\"name\":\"CostItemId\"},\"MarketingCampaignCostItemPlannedBudgetAmount\":{\"entity\":\"MarketingCampaignBudgetedCostItem.cdm.json/MarketingCampaignBudgetedCostItem\",\"name\":\"MarketingCampaignCostItemPlannedBudgetAmount\"},\"MarketingCampaignCostItemActualBudgetAmount\":{\"entity\":\"MarketingCampaignBudgetedCostItem.cdm.json/MarketingCampaignBudgetedCostItem\",\"name\":\"MarketingCampaignCostItemActualBudgetAmount\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"MarketingCampaignBudgetedCostItem\",\"path\":\"MarketingCampaignBudgetedCostItem.cdm.json/MarketingCampaignBudgetedCostItem\"},\"description\":\"The planned and actual marketing campaign costs for a specific cost item.\",\"primaryKey\":[\"MarketingCampaignId\",\"BudgetId\",\"CostItemId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"MarketingCampaignId\",\"attributeReference\":{\"entity\":\"MarketingCampaignBudgetedCostItem.cdm.json/MarketingCampaignBudgetedCostItem\",\"name\":\"MarketingCampaignId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"BudgetId\",\"attributeReference\":{\"entity\":\"MarketingCampaignBudgetedCostItem.cdm.json/MarketingCampaignBudgetedCostItem\",\"name\":\"BudgetId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"CostItemId\",\"attributeReference\":{\"entity\":\"MarketingCampaignBudgetedCostItem.cdm.json/MarketingCampaignBudgetedCostItem\",\"name\":\"CostItemId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"MarketingCampaignCostItemPlannedBudgetAmount\",\"attributeReference\":{\"entity\":\"MarketingCampaignBudgetedCostItem.cdm.json/MarketingCampaignBudgetedCostItem\",\"name\":\"MarketingCampaignCostItemPlannedBudgetAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"MarketingCampaignCostItemActualBudgetAmount\",\"attributeReference\":{\"entity\":\"MarketingCampaignBudgetedCostItem.cdm.json/MarketingCampaignBudgetedCostItem\",\"name\":\"MarketingCampaignCostItemActualBudgetAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2}]}}}",
+			"Description": "The planned and actual marketing campaign costs for a specific cost item.",
+			"DisplayFolderInfo": "{\"name\":\"Marketing & Advertising\",\"colorCode\":\"#692B0C\"}",
+			"PrimaryKeys": "MarketingCampaignId,BudgetId,CostItemId",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

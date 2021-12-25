@@ -1,0 +1,128 @@
+{
+	"name": "ServiceRequestCostType",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "ServiceRequestCostType",
+		"Description": "A cost that may be allocated to a Service Request or Service Request Activity, Issue Activity or Work Order or charged to a customer as a charge.\n\nOne or more costs may be aggregated to provide a single charge.\n\nEx:\n- Administrative cost\n- Customer Support\n- Dispute Resolution\n- Billing Resolution\n- Legal Cost\n- Third-Party Cost\n- Third-Party Documentation Cost",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ServiceRequestCostTypeId",
+					"Description": "The unique identifier of a Service Request Cost Type.",
+					"BaseAttributeReference": {
+						"Entity": "ServiceRequestCostType.cdm.json/ServiceRequestCostType",
+						"Name": "ServiceRequestCostTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ServiceRequestCostTypeName",
+					"Description": "The name of a Service Request Cost Type.",
+					"BaseAttributeReference": {
+						"Entity": "ServiceRequestCostType.cdm.json/ServiceRequestCostType",
+						"Name": "ServiceRequestCostTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ServiceRequestCostTypeDescription",
+					"Description": "The description of a Service Request Cost Type.",
+					"BaseAttributeReference": {
+						"Entity": "ServiceRequestCostType.cdm.json/ServiceRequestCostType",
+						"Name": "ServiceRequestCostTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "BudgetId",
+					"Description": "The unique identifier of a Budget.",
+					"BaseAttributeReference": {
+						"Entity": "ServiceRequestCostType.cdm.json/ServiceRequestCostType",
+						"Name": "BudgetId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/ServiceRequestCostType",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/ServiceRequestCostType",
+				"Properties": {
+					"LinkedServiceName": "wspc-dpu-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ServiceRequestCostTypeId\":{\"entity\":\"ServiceRequestCostType.cdm.json/ServiceRequestCostType\",\"name\":\"ServiceRequestCostTypeId\"},\"ServiceRequestCostTypeName\":{\"entity\":\"ServiceRequestCostType.cdm.json/ServiceRequestCostType\",\"name\":\"ServiceRequestCostTypeName\"},\"ServiceRequestCostTypeDescription\":{\"entity\":\"ServiceRequestCostType.cdm.json/ServiceRequestCostType\",\"name\":\"ServiceRequestCostTypeDescription\"},\"BudgetId\":{\"entity\":\"ServiceRequestCostType.cdm.json/ServiceRequestCostType\",\"name\":\"BudgetId\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"ServiceRequestCostType\",\"path\":\"ServiceRequestCostType.cdm.json/ServiceRequestCostType\"},\"description\":\"A cost that may be allocated to a Service Request or Service Request Activity, Issue Activity or Work Order or charged to a customer as a charge.\\n\\nOne or more costs may be aggregated to provide a single charge.\\n\\nEx:\\n- Administrative cost\\n- Customer Support\\n- Dispute Resolution\\n- Billing Resolution\\n- Legal Cost\\n- Third-Party Cost\\n- Third-Party Documentation Cost\",\"primaryKey\":[\"ServiceRequestCostTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"ServiceRequestCostTypeId\",\"attributeReference\":{\"entity\":\"ServiceRequestCostType.cdm.json/ServiceRequestCostType\",\"name\":\"ServiceRequestCostTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ServiceRequestCostTypeName\",\"attributeReference\":{\"entity\":\"ServiceRequestCostType.cdm.json/ServiceRequestCostType\",\"name\":\"ServiceRequestCostTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"ServiceRequestCostTypeDescription\",\"attributeReference\":{\"entity\":\"ServiceRequestCostType.cdm.json/ServiceRequestCostType\",\"name\":\"ServiceRequestCostTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512},{\"type\":\"Existing\",\"name\":\"BudgetId\",\"attributeReference\":{\"entity\":\"ServiceRequestCostType.cdm.json/ServiceRequestCostType\",\"name\":\"BudgetId\"},\"dataType\":\"integer\"}]}}}",
+			"Description": "A cost that may be allocated to a Service Request or Service Request Activity, Issue Activity or Work Order or charged to a customer as a charge.\n\nOne or more costs may be aggregated to provide a single charge.\n\nEx:\n- Administrative cost\n- Customer Support\n- Dispute Resolution\n- Billing Resolution\n- Legal Cost\n- Third-Party Cost\n- Third-Party Documentation Cost",
+			"DisplayFolderInfo": "{\"name\":\"Customer Service & Contact Management\",\"colorCode\":\"#Ef6950\"}",
+			"PrimaryKeys": "ServiceRequestCostTypeId",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

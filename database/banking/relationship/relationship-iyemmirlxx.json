@@ -1,0 +1,26 @@
+{
+	"name": "relationship-iyemmirlxx",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-iyemmirlxx",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Atm",
+		"ToTableName": "AtmService",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "AtmId",
+				"ToColumnName": "AtmId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Atm.cdm.json/Atm\",\"toEntity\":\"AtmService.cdm.json/AtmService\",\"joinPairs\":[{\"fromAttribute\":\"AtmId\",\"toAttribute\":\"AtmId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

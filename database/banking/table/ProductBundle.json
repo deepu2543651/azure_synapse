@@ -1,0 +1,165 @@
+{
+	"name": "ProductBundle",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "ProductBundle",
+		"Description": "One or more dissimilar products/services that are bundled together to create a new 'product/service' under a unique product ID and name.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ProductId",
+					"Description": "The unique identifier of a Product.",
+					"BaseAttributeReference": {
+						"Entity": "ProductBundle.cdm.json/ProductBundle",
+						"Name": "ProductId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "BundledProductId",
+					"Description": "The unique identifier of a Product.",
+					"BaseAttributeReference": {
+						"Entity": "ProductBundle.cdm.json/ProductBundle",
+						"Name": "BundledProductId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "BundledProductQuantity",
+					"Description": "The quantity of a bundled product included in a bundle.",
+					"BaseAttributeReference": {
+						"Entity": "ProductBundle.cdm.json/ProductBundle",
+						"Name": "BundledProductQuantity"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "ProductWeighting",
+					"Description": "The relative weighting of the product as compared to the bundled product.",
+					"BaseAttributeReference": {
+						"Entity": "ProductBundle.cdm.json/ProductBundle",
+						"Name": "ProductWeighting"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "BundledProductWeighting",
+					"Description": "The relative weighting of the bundled product as compared to the product.",
+					"BaseAttributeReference": {
+						"Entity": "ProductBundle.cdm.json/ProductBundle",
+						"Name": "BundledProductWeighting"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "ProductBundleNote",
+					"Description": "A note, comment or additional information regarding the Product Bundle.",
+					"BaseAttributeReference": {
+						"Entity": "ProductBundle.cdm.json/ProductBundle",
+						"Name": "ProductBundleNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/ProductBundle",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/ProductBundle",
+				"Properties": {
+					"LinkedServiceName": "wspc-dpu-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ProductId\":{\"entity\":\"ProductBundle.cdm.json/ProductBundle\",\"name\":\"ProductId\"},\"BundledProductId\":{\"entity\":\"ProductBundle.cdm.json/ProductBundle\",\"name\":\"BundledProductId\"},\"BundledProductQuantity\":{\"entity\":\"ProductBundle.cdm.json/ProductBundle\",\"name\":\"BundledProductQuantity\"},\"ProductWeighting\":{\"entity\":\"ProductBundle.cdm.json/ProductBundle\",\"name\":\"ProductWeighting\"},\"BundledProductWeighting\":{\"entity\":\"ProductBundle.cdm.json/ProductBundle\",\"name\":\"BundledProductWeighting\"},\"ProductBundleNote\":{\"entity\":\"ProductBundle.cdm.json/ProductBundle\",\"name\":\"ProductBundleNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"ProductBundle\",\"path\":\"ProductBundle.cdm.json/ProductBundle\"},\"description\":\"One or more dissimilar products/services that are bundled together to create a new 'product/service' under a unique product ID and name.\",\"primaryKey\":[\"ProductId\",\"BundledProductId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"ProductId\",\"attributeReference\":{\"entity\":\"ProductBundle.cdm.json/ProductBundle\",\"name\":\"ProductId\"},\"dataType\":\"long\"},{\"type\":\"Existing\",\"name\":\"BundledProductId\",\"attributeReference\":{\"entity\":\"ProductBundle.cdm.json/ProductBundle\",\"name\":\"BundledProductId\"},\"dataType\":\"long\"},{\"type\":\"Existing\",\"name\":\"BundledProductQuantity\",\"attributeReference\":{\"entity\":\"ProductBundle.cdm.json/ProductBundle\",\"name\":\"BundledProductQuantity\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"ProductWeighting\",\"attributeReference\":{\"entity\":\"ProductBundle.cdm.json/ProductBundle\",\"name\":\"ProductWeighting\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"BundledProductWeighting\",\"attributeReference\":{\"entity\":\"ProductBundle.cdm.json/ProductBundle\",\"name\":\"BundledProductWeighting\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"ProductBundleNote\",\"attributeReference\":{\"entity\":\"ProductBundle.cdm.json/ProductBundle\",\"name\":\"ProductBundleNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024}]}}}",
+			"Description": "One or more dissimilar products/services that are bundled together to create a new 'product/service' under a unique product ID and name.",
+			"DisplayFolderInfo": "{\"name\":\"Product\",\"colorCode\":\"#0E3D73\"}",
+			"PrimaryKeys": "ProductId,BundledProductId",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

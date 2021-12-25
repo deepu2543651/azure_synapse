@@ -1,0 +1,26 @@
+{
+	"name": "relationship-tmktqxayqx",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-tmktqxayqx",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "RadioStation",
+		"ToTableName": "RadioAdvertisingEvent",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "RadioStationId",
+				"ToColumnName": "RadioStationId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"RadioStation.cdm.json/RadioStation\",\"toEntity\":\"RadioAdvertisingEvent.cdm.json/RadioAdvertisingEvent\",\"joinPairs\":[{\"fromAttribute\":\"RadioStationId\",\"toAttribute\":\"RadioStationId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

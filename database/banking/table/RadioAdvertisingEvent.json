@@ -1,0 +1,240 @@
+{
+	"name": "RadioAdvertisingEvent",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "RadioAdvertisingEvent",
+		"Description": "A radio Advertising Event.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "AdvertisingEventId",
+					"Description": "The unique identifier of an Advertising Event.",
+					"BaseAttributeReference": {
+						"Entity": "RadioAdvertisingEvent.cdm.json/RadioAdvertisingEvent",
+						"Name": "AdvertisingEventId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "CommercialName",
+					"Description": "The name of the commercial.",
+					"BaseAttributeReference": {
+						"Entity": "RadioAdvertisingEvent.cdm.json/RadioAdvertisingEvent",
+						"Name": "CommercialName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "CommercialAircheck",
+					"Description": "Tape of live broadcast.",
+					"BaseAttributeReference": {
+						"Entity": "RadioAdvertisingEvent.cdm.json/RadioAdvertisingEvent",
+						"Name": "CommercialAircheck"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "binary",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "binary"
+						}
+					}
+				},
+				{
+					"Name": "CommercialCopyText",
+					"Description": "The text message of the radio commercial.",
+					"BaseAttributeReference": {
+						"Entity": "RadioAdvertisingEvent.cdm.json/RadioAdvertisingEvent",
+						"Name": "CommercialCopyText"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "CommercialLengthSeconds",
+					"Description": "The length in seconds of the commercial.",
+					"BaseAttributeReference": {
+						"Entity": "RadioAdvertisingEvent.cdm.json/RadioAdvertisingEvent",
+						"Name": "CommercialLengthSeconds"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "RadioStationId",
+					"Description": "The unique identifier of a Radio Station.",
+					"BaseAttributeReference": {
+						"Entity": "RadioAdvertisingEvent.cdm.json/RadioAdvertisingEvent",
+						"Name": "RadioStationId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "OneTimeOnlyRadioSpotIndicator",
+					"Description": "One Time Only, a radio spot which is ordered in a particular time period for a particular day (or week) and which is not scheduled for the same time period in subsequent weeks of a flight.",
+					"BaseAttributeReference": {
+						"Entity": "RadioAdvertisingEvent.cdm.json/RadioAdvertisingEvent",
+						"Name": "OneTimeOnlyRadioSpotIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "FixedPositionRadioAdIndicator",
+					"Description": "Indicates a guarantee for a Radio Ad that will not be preempted.",
+					"BaseAttributeReference": {
+						"Entity": "RadioAdvertisingEvent.cdm.json/RadioAdvertisingEvent",
+						"Name": "FixedPositionRadioAdIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "RunOfStationCommercialIndicator",
+					"Description": "Indicates that the start timestamp in which the TV advertising event will be run-of-station positioned.\n\nRun-of-station TV advertising is bulk commercial buying plan where station's traffic department will fit the commercials into available time locations.",
+					"BaseAttributeReference": {
+						"Entity": "RadioAdvertisingEvent.cdm.json/RadioAdvertisingEvent",
+						"Name": "RunOfStationCommercialIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "RadioRoadblockIndicator",
+					"Description": "Indicates that the start timestamp in which the advertising event will be a roadblock.\n\nA Roadblock is a specified time for a spot to run simultaneously on all stations in a market or on the networks.",
+					"BaseAttributeReference": {
+						"Entity": "RadioAdvertisingEvent.cdm.json/RadioAdvertisingEvent",
+						"Name": "RadioRoadblockIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "DaypartId",
+					"Description": "The unique identifier of a Daypart.",
+					"BaseAttributeReference": {
+						"Entity": "RadioAdvertisingEvent.cdm.json/RadioAdvertisingEvent",
+						"Name": "DaypartId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/RadioAdvertisingEvent",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/RadioAdvertisingEvent",
+				"Properties": {
+					"LinkedServiceName": "wspc-dpu-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"AdvertisingEventId\":{\"entity\":\"RadioAdvertisingEvent.cdm.json/RadioAdvertisingEvent\",\"name\":\"AdvertisingEventId\"},\"CommercialName\":{\"entity\":\"RadioAdvertisingEvent.cdm.json/RadioAdvertisingEvent\",\"name\":\"CommercialName\"},\"CommercialAircheck\":{\"entity\":\"RadioAdvertisingEvent.cdm.json/RadioAdvertisingEvent\",\"name\":\"CommercialAircheck\"},\"CommercialCopyText\":{\"entity\":\"RadioAdvertisingEvent.cdm.json/RadioAdvertisingEvent\",\"name\":\"CommercialCopyText\"},\"CommercialLengthSeconds\":{\"entity\":\"RadioAdvertisingEvent.cdm.json/RadioAdvertisingEvent\",\"name\":\"CommercialLengthSeconds\"},\"RadioStationId\":{\"entity\":\"RadioAdvertisingEvent.cdm.json/RadioAdvertisingEvent\",\"name\":\"RadioStationId\"},\"OneTimeOnlyRadioSpotIndicator\":{\"entity\":\"RadioAdvertisingEvent.cdm.json/RadioAdvertisingEvent\",\"name\":\"OneTimeOnlyRadioSpotIndicator\"},\"FixedPositionRadioAdIndicator\":{\"entity\":\"RadioAdvertisingEvent.cdm.json/RadioAdvertisingEvent\",\"name\":\"FixedPositionRadioAdIndicator\"},\"RunOfStationCommercialIndicator\":{\"entity\":\"RadioAdvertisingEvent.cdm.json/RadioAdvertisingEvent\",\"name\":\"RunOfStationCommercialIndicator\"},\"RadioRoadblockIndicator\":{\"entity\":\"RadioAdvertisingEvent.cdm.json/RadioAdvertisingEvent\",\"name\":\"RadioRoadblockIndicator\"},\"DaypartId\":{\"entity\":\"RadioAdvertisingEvent.cdm.json/RadioAdvertisingEvent\",\"name\":\"DaypartId\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"RadioAdvertisingEvent\",\"path\":\"RadioAdvertisingEvent.cdm.json/RadioAdvertisingEvent\"},\"description\":\"A radio Advertising Event.\",\"primaryKey\":[\"AdvertisingEventId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"AdvertisingEventId\",\"attributeReference\":{\"entity\":\"RadioAdvertisingEvent.cdm.json/RadioAdvertisingEvent\",\"name\":\"AdvertisingEventId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"CommercialName\",\"attributeReference\":{\"entity\":\"RadioAdvertisingEvent.cdm.json/RadioAdvertisingEvent\",\"name\":\"CommercialName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"CommercialAircheck\",\"attributeReference\":{\"entity\":\"RadioAdvertisingEvent.cdm.json/RadioAdvertisingEvent\",\"name\":\"CommercialAircheck\"},\"dataType\":\"binary\"},{\"type\":\"Existing\",\"name\":\"CommercialCopyText\",\"attributeReference\":{\"entity\":\"RadioAdvertisingEvent.cdm.json/RadioAdvertisingEvent\",\"name\":\"CommercialCopyText\"},\"dataType\":\"string\",\"dataTypeLength\":1024},{\"type\":\"Existing\",\"name\":\"CommercialLengthSeconds\",\"attributeReference\":{\"entity\":\"RadioAdvertisingEvent.cdm.json/RadioAdvertisingEvent\",\"name\":\"CommercialLengthSeconds\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"RadioStationId\",\"attributeReference\":{\"entity\":\"RadioAdvertisingEvent.cdm.json/RadioAdvertisingEvent\",\"name\":\"RadioStationId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"OneTimeOnlyRadioSpotIndicator\",\"attributeReference\":{\"entity\":\"RadioAdvertisingEvent.cdm.json/RadioAdvertisingEvent\",\"name\":\"OneTimeOnlyRadioSpotIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"FixedPositionRadioAdIndicator\",\"attributeReference\":{\"entity\":\"RadioAdvertisingEvent.cdm.json/RadioAdvertisingEvent\",\"name\":\"FixedPositionRadioAdIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"RunOfStationCommercialIndicator\",\"attributeReference\":{\"entity\":\"RadioAdvertisingEvent.cdm.json/RadioAdvertisingEvent\",\"name\":\"RunOfStationCommercialIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"RadioRoadblockIndicator\",\"attributeReference\":{\"entity\":\"RadioAdvertisingEvent.cdm.json/RadioAdvertisingEvent\",\"name\":\"RadioRoadblockIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"DaypartId\",\"attributeReference\":{\"entity\":\"RadioAdvertisingEvent.cdm.json/RadioAdvertisingEvent\",\"name\":\"DaypartId\"},\"dataType\":\"integer\"}]}}}",
+			"Description": "A radio Advertising Event.",
+			"DisplayFolderInfo": "{\"name\":\"Marketing & Advertising\",\"colorCode\":\"#692B0C\"}",
+			"PrimaryKeys": "AdvertisingEventId",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

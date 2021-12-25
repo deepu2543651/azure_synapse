@@ -1,0 +1,26 @@
+{
+	"name": "relationship-qvybyyofis",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-qvybyyofis",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "UnitOfMeasure",
+		"ToTableName": "AssetType",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "UnitOfMeasureId",
+				"ToColumnName": "AssetTypeEmissionFactorUomId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"UnitOfMeasure.cdm.json/UnitOfMeasure\",\"toEntity\":\"AssetType.cdm.json/AssetType\",\"joinPairs\":[{\"fromAttribute\":\"UnitOfMeasureId\",\"toAttribute\":\"AssetTypeEmissionFactorUomId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

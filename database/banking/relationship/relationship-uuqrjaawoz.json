@@ -1,0 +1,26 @@
+{
+	"name": "relationship-uuqrjaawoz",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-uuqrjaawoz",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "GeographicArea",
+		"ToTableName": "ProductGeographicAvailability",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "GeographicAreaId",
+				"ToColumnName": "GeographicAreaId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"GeographicArea.cdm.json/GeographicArea\",\"toEntity\":\"ProductGeographicAvailability.cdm.json/ProductGeographicAvailability\",\"joinPairs\":[{\"fromAttribute\":\"GeographicAreaId\",\"toAttribute\":\"GeographicAreaId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

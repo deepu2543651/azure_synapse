@@ -1,0 +1,243 @@
+{
+	"name": "PrintAdvertisingEvent",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "PrintAdvertisingEvent",
+		"Description": "A printed work offered for distribution.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "AdvertisingEventId",
+					"Description": "The unique identifier of an Advertising Event.",
+					"BaseAttributeReference": {
+						"Entity": "PrintAdvertisingEvent.cdm.json/PrintAdvertisingEvent",
+						"Name": "AdvertisingEventId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PublicationId",
+					"Description": "The unique identifier of a Publication.",
+					"BaseAttributeReference": {
+						"Entity": "PrintAdvertisingEvent.cdm.json/PrintAdvertisingEvent",
+						"Name": "PublicationId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PublicationPageNumber",
+					"Description": "The page number of the publication that features the print advertising event.",
+					"BaseAttributeReference": {
+						"Entity": "PrintAdvertisingEvent.cdm.json/PrintAdvertisingEvent",
+						"Name": "PublicationPageNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "AgateLineSize",
+					"Description": "The agate line size of the printed advertisement.\n\nThe basic unit of newspaper space equal to one column in width and 1/14 inch in height (i.e., agate lines per inch).",
+					"BaseAttributeReference": {
+						"Entity": "PrintAdvertisingEvent.cdm.json/PrintAdvertisingEvent",
+						"Name": "AgateLineSize"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "LineRateAmount",
+					"Description": "The line rate amount for the printed advertisement.\n\nCost per agate line, the basic unit used to compute the cost for newspaper space.",
+					"BaseAttributeReference": {
+						"Entity": "PrintAdvertisingEvent.cdm.json/PrintAdvertisingEvent",
+						"Name": "LineRateAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "ClosingDate",
+					"Description": "The final date for contracting to run the ad in a newspaper or magazine.",
+					"BaseAttributeReference": {
+						"Entity": "PrintAdvertisingEvent.cdm.json/PrintAdvertisingEvent",
+						"Name": "ClosingDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "DailyInchRateAmount",
+					"Description": "The daily inch rate of the printed advertisement.\n\nA cost figure used in periodicals based on an advertisement placed one inch deep and one column wide (whatever the column inch).",
+					"BaseAttributeReference": {
+						"Entity": "PrintAdvertisingEvent.cdm.json/PrintAdvertisingEvent",
+						"Name": "DailyInchRateAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "DisplayAdvertisingIndicator",
+					"Description": "Advertising in newspapers and magazines that uses illustrations, photos, headlines, and other\n visual elements in addition to copy text.",
+					"BaseAttributeReference": {
+						"Entity": "PrintAdvertisingEvent.cdm.json/PrintAdvertisingEvent",
+						"Name": "DisplayAdvertisingIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "FixedPositionCommunicationIndicator",
+					"Description": "The guaranteed location of an ad in a particular vehicle (e.g., opposite the table of contents). Also, the guaranteed location of a commercial at a specific time on a specific day.",
+					"BaseAttributeReference": {
+						"Entity": "PrintAdvertisingEvent.cdm.json/PrintAdvertisingEvent",
+						"Name": "FixedPositionCommunicationIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "RunOfPaperRateIndicator",
+					"Description": "A rate quoted by newspapers that allows the ad to appear on any page or in any position desired\n by the medium.",
+					"BaseAttributeReference": {
+						"Entity": "PrintAdvertisingEvent.cdm.json/PrintAdvertisingEvent",
+						"Name": "RunOfPaperRateIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "ControlledCirculationIndicator",
+					"Description": "Indicates a publication, generally business-oriented, that is delivered only to readers who have some special qualifications. Generally, publications are free to the qualified recipients.",
+					"BaseAttributeReference": {
+						"Entity": "PrintAdvertisingEvent.cdm.json/PrintAdvertisingEvent",
+						"Name": "ControlledCirculationIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/PrintAdvertisingEvent",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/PrintAdvertisingEvent",
+				"Properties": {
+					"LinkedServiceName": "wspc-dpu-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"AdvertisingEventId\":{\"entity\":\"PrintAdvertisingEvent.cdm.json/PrintAdvertisingEvent\",\"name\":\"AdvertisingEventId\"},\"PublicationId\":{\"entity\":\"PrintAdvertisingEvent.cdm.json/PrintAdvertisingEvent\",\"name\":\"PublicationId\"},\"PublicationPageNumber\":{\"entity\":\"PrintAdvertisingEvent.cdm.json/PrintAdvertisingEvent\",\"name\":\"PublicationPageNumber\"},\"AgateLineSize\":{\"entity\":\"PrintAdvertisingEvent.cdm.json/PrintAdvertisingEvent\",\"name\":\"AgateLineSize\"},\"LineRateAmount\":{\"entity\":\"PrintAdvertisingEvent.cdm.json/PrintAdvertisingEvent\",\"name\":\"LineRateAmount\"},\"ClosingDate\":{\"entity\":\"PrintAdvertisingEvent.cdm.json/PrintAdvertisingEvent\",\"name\":\"ClosingDate\"},\"DailyInchRateAmount\":{\"entity\":\"PrintAdvertisingEvent.cdm.json/PrintAdvertisingEvent\",\"name\":\"DailyInchRateAmount\"},\"DisplayAdvertisingIndicator\":{\"entity\":\"PrintAdvertisingEvent.cdm.json/PrintAdvertisingEvent\",\"name\":\"DisplayAdvertisingIndicator\"},\"FixedPositionCommunicationIndicator\":{\"entity\":\"PrintAdvertisingEvent.cdm.json/PrintAdvertisingEvent\",\"name\":\"FixedPositionCommunicationIndicator\"},\"RunOfPaperRateIndicator\":{\"entity\":\"PrintAdvertisingEvent.cdm.json/PrintAdvertisingEvent\",\"name\":\"RunOfPaperRateIndicator\"},\"ControlledCirculationIndicator\":{\"entity\":\"PrintAdvertisingEvent.cdm.json/PrintAdvertisingEvent\",\"name\":\"ControlledCirculationIndicator\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"PrintAdvertisingEvent\",\"path\":\"PrintAdvertisingEvent.cdm.json/PrintAdvertisingEvent\"},\"description\":\"A printed work offered for distribution.\",\"primaryKey\":[\"AdvertisingEventId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"AdvertisingEventId\",\"attributeReference\":{\"entity\":\"PrintAdvertisingEvent.cdm.json/PrintAdvertisingEvent\",\"name\":\"AdvertisingEventId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"PublicationId\",\"attributeReference\":{\"entity\":\"PrintAdvertisingEvent.cdm.json/PrintAdvertisingEvent\",\"name\":\"PublicationId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"PublicationPageNumber\",\"attributeReference\":{\"entity\":\"PrintAdvertisingEvent.cdm.json/PrintAdvertisingEvent\",\"name\":\"PublicationPageNumber\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"AgateLineSize\",\"attributeReference\":{\"entity\":\"PrintAdvertisingEvent.cdm.json/PrintAdvertisingEvent\",\"name\":\"AgateLineSize\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"LineRateAmount\",\"attributeReference\":{\"entity\":\"PrintAdvertisingEvent.cdm.json/PrintAdvertisingEvent\",\"name\":\"LineRateAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"ClosingDate\",\"attributeReference\":{\"entity\":\"PrintAdvertisingEvent.cdm.json/PrintAdvertisingEvent\",\"name\":\"ClosingDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\"},{\"type\":\"Existing\",\"name\":\"DailyInchRateAmount\",\"attributeReference\":{\"entity\":\"PrintAdvertisingEvent.cdm.json/PrintAdvertisingEvent\",\"name\":\"DailyInchRateAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"DisplayAdvertisingIndicator\",\"attributeReference\":{\"entity\":\"PrintAdvertisingEvent.cdm.json/PrintAdvertisingEvent\",\"name\":\"DisplayAdvertisingIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"FixedPositionCommunicationIndicator\",\"attributeReference\":{\"entity\":\"PrintAdvertisingEvent.cdm.json/PrintAdvertisingEvent\",\"name\":\"FixedPositionCommunicationIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"RunOfPaperRateIndicator\",\"attributeReference\":{\"entity\":\"PrintAdvertisingEvent.cdm.json/PrintAdvertisingEvent\",\"name\":\"RunOfPaperRateIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"ControlledCirculationIndicator\",\"attributeReference\":{\"entity\":\"PrintAdvertisingEvent.cdm.json/PrintAdvertisingEvent\",\"name\":\"ControlledCirculationIndicator\"},\"dataType\":\"boolean\"}]}}}",
+			"Description": "A printed work offered for distribution.",
+			"DisplayFolderInfo": "{\"name\":\"Marketing & Advertising\",\"colorCode\":\"#692B0C\"}",
+			"PrimaryKeys": "AdvertisingEventId",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

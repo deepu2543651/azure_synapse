@@ -1,0 +1,34 @@
+{
+	"name": "relationship-rzipprymvb",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-rzipprymvb",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "HouseholdMember",
+		"ToTableName": "HouseholdMemberRole",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "HouseholdId",
+				"ToColumnName": "HouseholdId"
+			},
+			{
+				"FromColumnName": "HouseholdMemberPartyId",
+				"ToColumnName": "HouseholdMemberPartyId"
+			},
+			{
+				"FromColumnName": "HouseholdMemberPeriodStartDate",
+				"ToColumnName": "HouseholdMemberPeriodStartDate"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"HouseholdMember.cdm.json/HouseholdMember\",\"toEntity\":\"HouseholdMemberRole.cdm.json/HouseholdMemberRole\",\"joinPairs\":[{\"fromAttribute\":\"HouseholdId\",\"toAttribute\":\"HouseholdId\"},{\"fromAttribute\":\"HouseholdMemberPartyId\",\"toAttribute\":\"HouseholdMemberPartyId\"},{\"fromAttribute\":\"HouseholdMemberPeriodStartDate\",\"toAttribute\":\"HouseholdMemberPeriodStartDate\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

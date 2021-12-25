@@ -1,0 +1,26 @@
+{
+	"name": "relationship-vscijpbxpk",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-vscijpbxpk",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "GovernmentSecurityProduct",
+		"ToTableName": "TreasurySecurityPrice",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ProductId",
+				"ToColumnName": "ProductId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"GovernmentSecurityProduct.cdm.json/GovernmentSecurityProduct\",\"toEntity\":\"TreasurySecurityPrice.cdm.json/TreasurySecurityPrice\",\"joinPairs\":[{\"fromAttribute\":\"ProductId\",\"toAttribute\":\"ProductId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

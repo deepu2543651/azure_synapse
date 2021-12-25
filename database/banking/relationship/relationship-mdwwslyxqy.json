@@ -1,0 +1,26 @@
+{
+	"name": "relationship-mdwwslyxqy",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-mdwwslyxqy",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Party",
+		"ToTableName": "InternalCostOfFunds",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "PartyId",
+				"ToColumnName": "FundsProvidedByPartyId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Party.cdm.json/Party\",\"toEntity\":\"InternalCostOfFunds.cdm.json/InternalCostOfFunds\",\"joinPairs\":[{\"fromAttribute\":\"PartyId\",\"toAttribute\":\"FundsProvidedByPartyId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

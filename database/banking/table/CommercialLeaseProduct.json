@@ -1,0 +1,442 @@
+{
+	"name": "CommercialLeaseProduct",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "CommercialLeaseProduct",
+		"Description": "A lease is an agreement allowing one party to use another's property, plant, or equipment for a stated period of time in exchange for consideration. \n\nLeases have become more prevalent as businesses and consumers look for alternatives to finance the acquisition of fixed assets. \n\nA lease agreement involves at least two parties ) a lessor (such as a bank), who owns the property, and a lessee, who uses the property. \n\nThe lessor, essentially a creditor in the transaction, is repaid from a combination of lease or rental payments, tax benefits, and proceeds from the sale or re-lease of the property at the end of the lease term.\n\nLeasing is a way for lessees (customers) to conserve capital because, in effect, they obtain 100 percent financing. \n\nDepending on the structure of the lease, the risks of ownership (such as the possibility that the product will become obsolete) can be transferred to the lessor. Tax benefits could also be transferred to a lessor, resulting in lower lease payments to the lessee. Operating leases are off-balance-sheet, which may improve certain of the lessee's key financial ratios.\n\nA special type of transaction, the sale-leaseback, allows the owner of a piece of property (usually real estate) to raise funds while retaining use of the property. In such a transaction (actually two separate transactions), the owner of the property sells the property and immediately leases it back. \n\nThere is no physical transfer of the property. From a safety and soundness perspective, leases that result from sale-leaseback transactions should be reviewed in essentially the same manner as other leases.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ProductId",
+					"Description": "The unique identifier of a Product.",
+					"BaseAttributeReference": {
+						"Entity": "CommercialLeaseProduct.cdm.json/CommercialLeaseProduct",
+						"Name": "ProductId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "BargainPurchaseOptionProvision",
+					"Description": "A provision allowing the lessee the option of purchasing the leased property for an amount lower than the expected fair value of the property at the date the option becomes exercisable.",
+					"BaseAttributeReference": {
+						"Entity": "CommercialLeaseProduct.cdm.json/CommercialLeaseProduct",
+						"Name": "BargainPurchaseOptionProvision"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 2048,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "BargainRenewalOptionProvision",
+					"Description": "A provision allowing the lessee the option of renewing the lease for an amount lower than the expected rental for equivalent property under similar terms and conditions at the date the option becomes exercisable.",
+					"BaseAttributeReference": {
+						"Entity": "CommercialLeaseProduct.cdm.json/CommercialLeaseProduct",
+						"Name": "BargainRenewalOptionProvision"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 2048,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "PurchaseOptionStatement",
+					"Description": "A provision by which a lessee has the right to purchase the equipment at the end of the lease. The purchase option may be stated at a specified amount or at fair market value.",
+					"BaseAttributeReference": {
+						"Entity": "CommercialLeaseProduct.cdm.json/CommercialLeaseProduct",
+						"Name": "PurchaseOptionStatement"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 2048,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "CertificateOfAcceptanceStatement",
+					"Description": "A document whereby the lessee acknowledges that the equipment to be leased has been delivered, accepted, and has been manufactured or constructed according to specifications.",
+					"BaseAttributeReference": {
+						"Entity": "CommercialLeaseProduct.cdm.json/CommercialLeaseProduct",
+						"Name": "CertificateOfAcceptanceStatement"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 2048,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "FairMarketPurchaseOptionStatement",
+					"Description": "An option to purchase leased property at the end of the lease term at its then fair market value. The lessor does not have the ability to retain title to the equipment if the lessee chooses to exercise the purchase option.",
+					"BaseAttributeReference": {
+						"Entity": "CommercialLeaseProduct.cdm.json/CommercialLeaseProduct",
+						"Name": "FairMarketPurchaseOptionStatement"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 2048,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ExemptionCertificateStatement",
+					"Description": "A document exempting a lessor from paying sales tax on the equipment being leased. A lessor may be buying the equipment for \"re-sale\" as would a vendor/supplier, while a lessee may be tax exempt for other reasons, i.e., non-profit entity or a bank.",
+					"BaseAttributeReference": {
+						"Entity": "CommercialLeaseProduct.cdm.json/CommercialLeaseProduct",
+						"Name": "ExemptionCertificateStatement"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 2048,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "FairMarketValuePurchaseOptionStatement",
+					"Description": "An option to purchase leased property at the end of the lease term at its then fair market value. The lessor does not have the ability to retain title to the equipment if the lessee chooses to exercise the purchase option.",
+					"BaseAttributeReference": {
+						"Entity": "CommercialLeaseProduct.cdm.json/CommercialLeaseProduct",
+						"Name": "FairMarketValuePurchaseOptionStatement"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 2048,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "RecourseAgreementStatement",
+					"Description": "An agreement with a vendor whereby the vendor will purchase or repurchase the lessor's interest in a lease, usually upon demand, after default of the lessee. Generally, the lease must be in default and a reasonable amount of collection effort exerted by the lessor.",
+					"BaseAttributeReference": {
+						"Entity": "CommercialLeaseProduct.cdm.json/CommercialLeaseProduct",
+						"Name": "RecourseAgreementStatement"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 2048,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "StipulatedLossValueStatement",
+					"Description": "A schedule included in the lease that states the value of the equipment at various times during the lease, plus its residual value and associated tax benefits, and which establishes the liability of the lessee if the equipment is lost, suffers damage, or becomes unusable during the lease term.",
+					"BaseAttributeReference": {
+						"Entity": "CommercialLeaseProduct.cdm.json/CommercialLeaseProduct",
+						"Name": "StipulatedLossValueStatement"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 2048,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "AssignmentOfProceedsStatement",
+					"Description": "Under an Assignment of Proceeds agreement, the vendor agrees to allow the Lessor to fund the manufacturer's cost of the equipment directly to the manufacturer at the time of funding.",
+					"BaseAttributeReference": {
+						"Entity": "CommercialLeaseProduct.cdm.json/CommercialLeaseProduct",
+						"Name": "AssignmentOfProceedsStatement"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 2048,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "CommitmentLetterStatement",
+					"Description": "The letter prepared by the Lessor to spell out terms and conditions between Lessee and Lessor for a master lease line of credit.",
+					"BaseAttributeReference": {
+						"Entity": "CommercialLeaseProduct.cdm.json/CommercialLeaseProduct",
+						"Name": "CommitmentLetterStatement"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 2048,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "NoncancelableLeaseIndicator",
+					"Description": "A lease that cannot be canceled without the permission of the lessor or unless circumstances develop that appear to be remote possibilities at the inception of the lease.",
+					"BaseAttributeReference": {
+						"Entity": "CommercialLeaseProduct.cdm.json/CommercialLeaseProduct",
+						"Name": "NoncancelableLeaseIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "FullPayoutLeaseIndicator",
+					"Description": "A lease in which the national bank reasonably expects to realize the return of its full investment in the leased property, plus the estimated cost of financing the property over the term of the lease, from rentals, estimated tax benefits, and the estimated residual value of the property.",
+					"BaseAttributeReference": {
+						"Entity": "CommercialLeaseProduct.cdm.json/CommercialLeaseProduct",
+						"Name": "FullPayoutLeaseIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "CoterminousLeaseIndicator",
+					"Description": "Two of more leases that end at the same time. A Coterminous Addendum can be used allowing you to add equipment to an existing lease, adjusting the payments to reflect the addition. Both the original lease and the addendum will terminate at the same time.",
+					"BaseAttributeReference": {
+						"Entity": "CommercialLeaseProduct.cdm.json/CommercialLeaseProduct",
+						"Name": "CoterminousLeaseIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "NetLeaseIndicator",
+					"Description": "A lease under which the national bank-lessor will not, directly or indirectly, provide or be obligated to provide for:\n\n(1)  Servicing, repair, or maintenance of the leased property during the lease term;\n\n(2)  Parts or accessories for the leased property;\n\n(3)  Loan of replacement or substitute property while the leased property is being serviced;\n\n(4)  Payment of insurance for the lessee, except when the lessee has failed in its contractual obligation to purchase or maintain required insurance; or\n\n(5)  Renewal of any license or registration for the property unless renewal by the lessor is necessary to protect its interest as owner or financier of the property.",
+					"BaseAttributeReference": {
+						"Entity": "CommercialLeaseProduct.cdm.json/CommercialLeaseProduct",
+						"Name": "NetLeaseIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "LevelPaymentsIndicator",
+					"Description": "Equal periodic payments over the term of the lease.",
+					"BaseAttributeReference": {
+						"Entity": "CommercialLeaseProduct.cdm.json/CommercialLeaseProduct",
+						"Name": "LevelPaymentsIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "OpenEndLeaseIndicator",
+					"Description": "A lease which includes a provision for extending payments under the lease on predetermined terms after a set period of time.",
+					"BaseAttributeReference": {
+						"Entity": "CommercialLeaseProduct.cdm.json/CommercialLeaseProduct",
+						"Name": "OpenEndLeaseIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "SingleInvestorLeaseIndictor",
+					"Description": "A tax-oriented lease whereby the lessor achieves its desired rate of return via a combination of the rental payments, depreciation, and the fair market value of the equipment at the end of the original lease term. Because of the value of the benefit, the rental payments will be lower than for a finance lease.",
+					"BaseAttributeReference": {
+						"Entity": "CommercialLeaseProduct.cdm.json/CommercialLeaseProduct",
+						"Name": "SingleInvestorLeaseIndictor"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "PreFundedLeaseIndicator",
+					"Description": "Many vendors require that they be paid at least 50% of the invoice amount once the lease is funded. This is called prefunding. It must be approved by the funding source. For Pre-Funding to be accepted, both the vendor and lessee must be stable for acceptance.",
+					"BaseAttributeReference": {
+						"Entity": "CommercialLeaseProduct.cdm.json/CommercialLeaseProduct",
+						"Name": "PreFundedLeaseIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "SaleAndLeasebackArrangementIndicator",
+					"Description": "An arrangement where equipment is purchased by a lessor from the company owning and using it. The lessor then becomes the owner and leases it back to the original owner, who continues to use the equipment.",
+					"BaseAttributeReference": {
+						"Entity": "CommercialLeaseProduct.cdm.json/CommercialLeaseProduct",
+						"Name": "SaleAndLeasebackArrangementIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "RenewalOptionStatement",
+					"Description": "Lessee's option to renew a lease contract when it ends.",
+					"BaseAttributeReference": {
+						"Entity": "CommercialLeaseProduct.cdm.json/CommercialLeaseProduct",
+						"Name": "RenewalOptionStatement"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 2048,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "CommercialLeaseTypeId",
+					"Description": "The unique identifier of a Lease Type.",
+					"BaseAttributeReference": {
+						"Entity": "CommercialLeaseProduct.cdm.json/CommercialLeaseProduct",
+						"Name": "CommercialLeaseTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/CommercialLeaseProduct",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/CommercialLeaseProduct",
+				"Properties": {
+					"LinkedServiceName": "wspc-dpu-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ProductId\":{\"entity\":\"CommercialLeaseProduct.cdm.json/CommercialLeaseProduct\",\"name\":\"ProductId\"},\"BargainPurchaseOptionProvision\":{\"entity\":\"CommercialLeaseProduct.cdm.json/CommercialLeaseProduct\",\"name\":\"BargainPurchaseOptionProvision\"},\"BargainRenewalOptionProvision\":{\"entity\":\"CommercialLeaseProduct.cdm.json/CommercialLeaseProduct\",\"name\":\"BargainRenewalOptionProvision\"},\"PurchaseOptionStatement\":{\"entity\":\"CommercialLeaseProduct.cdm.json/CommercialLeaseProduct\",\"name\":\"PurchaseOptionStatement\"},\"CertificateOfAcceptanceStatement\":{\"entity\":\"CommercialLeaseProduct.cdm.json/CommercialLeaseProduct\",\"name\":\"CertificateOfAcceptanceStatement\"},\"FairMarketPurchaseOptionStatement\":{\"entity\":\"CommercialLeaseProduct.cdm.json/CommercialLeaseProduct\",\"name\":\"FairMarketPurchaseOptionStatement\"},\"ExemptionCertificateStatement\":{\"entity\":\"CommercialLeaseProduct.cdm.json/CommercialLeaseProduct\",\"name\":\"ExemptionCertificateStatement\"},\"FairMarketValuePurchaseOptionStatement\":{\"entity\":\"CommercialLeaseProduct.cdm.json/CommercialLeaseProduct\",\"name\":\"FairMarketValuePurchaseOptionStatement\"},\"RecourseAgreementStatement\":{\"entity\":\"CommercialLeaseProduct.cdm.json/CommercialLeaseProduct\",\"name\":\"RecourseAgreementStatement\"},\"StipulatedLossValueStatement\":{\"entity\":\"CommercialLeaseProduct.cdm.json/CommercialLeaseProduct\",\"name\":\"StipulatedLossValueStatement\"},\"AssignmentOfProceedsStatement\":{\"entity\":\"CommercialLeaseProduct.cdm.json/CommercialLeaseProduct\",\"name\":\"AssignmentOfProceedsStatement\"},\"CommitmentLetterStatement\":{\"entity\":\"CommercialLeaseProduct.cdm.json/CommercialLeaseProduct\",\"name\":\"CommitmentLetterStatement\"},\"NoncancelableLeaseIndicator\":{\"entity\":\"CommercialLeaseProduct.cdm.json/CommercialLeaseProduct\",\"name\":\"NoncancelableLeaseIndicator\"},\"FullPayoutLeaseIndicator\":{\"entity\":\"CommercialLeaseProduct.cdm.json/CommercialLeaseProduct\",\"name\":\"FullPayoutLeaseIndicator\"},\"CoterminousLeaseIndicator\":{\"entity\":\"CommercialLeaseProduct.cdm.json/CommercialLeaseProduct\",\"name\":\"CoterminousLeaseIndicator\"},\"NetLeaseIndicator\":{\"entity\":\"CommercialLeaseProduct.cdm.json/CommercialLeaseProduct\",\"name\":\"NetLeaseIndicator\"},\"LevelPaymentsIndicator\":{\"entity\":\"CommercialLeaseProduct.cdm.json/CommercialLeaseProduct\",\"name\":\"LevelPaymentsIndicator\"},\"OpenEndLeaseIndicator\":{\"entity\":\"CommercialLeaseProduct.cdm.json/CommercialLeaseProduct\",\"name\":\"OpenEndLeaseIndicator\"},\"SingleInvestorLeaseIndictor\":{\"entity\":\"CommercialLeaseProduct.cdm.json/CommercialLeaseProduct\",\"name\":\"SingleInvestorLeaseIndictor\"},\"PreFundedLeaseIndicator\":{\"entity\":\"CommercialLeaseProduct.cdm.json/CommercialLeaseProduct\",\"name\":\"PreFundedLeaseIndicator\"},\"SaleAndLeasebackArrangementIndicator\":{\"entity\":\"CommercialLeaseProduct.cdm.json/CommercialLeaseProduct\",\"name\":\"SaleAndLeasebackArrangementIndicator\"},\"RenewalOptionStatement\":{\"entity\":\"CommercialLeaseProduct.cdm.json/CommercialLeaseProduct\",\"name\":\"RenewalOptionStatement\"},\"CommercialLeaseTypeId\":{\"entity\":\"CommercialLeaseProduct.cdm.json/CommercialLeaseProduct\",\"name\":\"CommercialLeaseTypeId\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"CommercialLeaseProduct\",\"path\":\"CommercialLeaseProduct.cdm.json/CommercialLeaseProduct\"},\"description\":\"A lease is an agreement allowing one party to use another's property, plant, or equipment for a stated period of time in exchange for consideration. \\n\\nLeases have become more prevalent as businesses and consumers look for alternatives to finance the acquisition of fixed assets. \\n\\nA lease agreement involves at least two parties ) a lessor (such as a bank), who owns the property, and a lessee, who uses the property. \\n\\nThe lessor, essentially a creditor in the transaction, is repaid from a combination of lease or rental payments, tax benefits, and proceeds from the sale or re-lease of the property at the end of the lease term.\\n\\nLeasing is a way for lessees (customers) to conserve capital because, in effect, they obtain 100 percent financing. \\n\\nDepending on the structure of the lease, the risks of ownership (such as the possibility that the product will become obsolete) can be transferred to the lessor. Tax benefits could also be transferred to a lessor, resulting in lower lease payments to the lessee. Operating leases are off-balance-sheet, which may improve certain of the lessee's key financial ratios.\\n\\nA special type of transaction, the sale-leaseback, allows the owner of a piece of property (usually real estate) to raise funds while retaining use of the property. In such a transaction (actually two separate transactions), the owner of the property sells the property and immediately leases it back. \\n\\nThere is no physical transfer of the property. From a safety and soundness perspective, leases that result from sale-leaseback transactions should be reviewed in essentially the same manner as other leases.\",\"primaryKey\":[\"ProductId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"ProductId\",\"attributeReference\":{\"entity\":\"CommercialLeaseProduct.cdm.json/CommercialLeaseProduct\",\"name\":\"ProductId\"},\"dataType\":\"long\"},{\"type\":\"Existing\",\"name\":\"BargainPurchaseOptionProvision\",\"attributeReference\":{\"entity\":\"CommercialLeaseProduct.cdm.json/CommercialLeaseProduct\",\"name\":\"BargainPurchaseOptionProvision\"},\"dataType\":\"string\",\"dataTypeLength\":2048},{\"type\":\"Existing\",\"name\":\"BargainRenewalOptionProvision\",\"attributeReference\":{\"entity\":\"CommercialLeaseProduct.cdm.json/CommercialLeaseProduct\",\"name\":\"BargainRenewalOptionProvision\"},\"dataType\":\"string\",\"dataTypeLength\":2048},{\"type\":\"Existing\",\"name\":\"PurchaseOptionStatement\",\"attributeReference\":{\"entity\":\"CommercialLeaseProduct.cdm.json/CommercialLeaseProduct\",\"name\":\"PurchaseOptionStatement\"},\"dataType\":\"string\",\"dataTypeLength\":2048},{\"type\":\"Existing\",\"name\":\"CertificateOfAcceptanceStatement\",\"attributeReference\":{\"entity\":\"CommercialLeaseProduct.cdm.json/CommercialLeaseProduct\",\"name\":\"CertificateOfAcceptanceStatement\"},\"dataType\":\"string\",\"dataTypeLength\":2048},{\"type\":\"Existing\",\"name\":\"FairMarketPurchaseOptionStatement\",\"attributeReference\":{\"entity\":\"CommercialLeaseProduct.cdm.json/CommercialLeaseProduct\",\"name\":\"FairMarketPurchaseOptionStatement\"},\"dataType\":\"string\",\"dataTypeLength\":2048},{\"type\":\"Existing\",\"name\":\"ExemptionCertificateStatement\",\"attributeReference\":{\"entity\":\"CommercialLeaseProduct.cdm.json/CommercialLeaseProduct\",\"name\":\"ExemptionCertificateStatement\"},\"dataType\":\"string\",\"dataTypeLength\":2048},{\"type\":\"Existing\",\"name\":\"FairMarketValuePurchaseOptionStatement\",\"attributeReference\":{\"entity\":\"CommercialLeaseProduct.cdm.json/CommercialLeaseProduct\",\"name\":\"FairMarketValuePurchaseOptionStatement\"},\"dataType\":\"string\",\"dataTypeLength\":2048},{\"type\":\"Existing\",\"name\":\"RecourseAgreementStatement\",\"attributeReference\":{\"entity\":\"CommercialLeaseProduct.cdm.json/CommercialLeaseProduct\",\"name\":\"RecourseAgreementStatement\"},\"dataType\":\"string\",\"dataTypeLength\":2048},{\"type\":\"Existing\",\"name\":\"StipulatedLossValueStatement\",\"attributeReference\":{\"entity\":\"CommercialLeaseProduct.cdm.json/CommercialLeaseProduct\",\"name\":\"StipulatedLossValueStatement\"},\"dataType\":\"string\",\"dataTypeLength\":2048},{\"type\":\"Existing\",\"name\":\"AssignmentOfProceedsStatement\",\"attributeReference\":{\"entity\":\"CommercialLeaseProduct.cdm.json/CommercialLeaseProduct\",\"name\":\"AssignmentOfProceedsStatement\"},\"dataType\":\"string\",\"dataTypeLength\":2048},{\"type\":\"Existing\",\"name\":\"CommitmentLetterStatement\",\"attributeReference\":{\"entity\":\"CommercialLeaseProduct.cdm.json/CommercialLeaseProduct\",\"name\":\"CommitmentLetterStatement\"},\"dataType\":\"string\",\"dataTypeLength\":2048},{\"type\":\"Existing\",\"name\":\"NoncancelableLeaseIndicator\",\"attributeReference\":{\"entity\":\"CommercialLeaseProduct.cdm.json/CommercialLeaseProduct\",\"name\":\"NoncancelableLeaseIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"FullPayoutLeaseIndicator\",\"attributeReference\":{\"entity\":\"CommercialLeaseProduct.cdm.json/CommercialLeaseProduct\",\"name\":\"FullPayoutLeaseIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"CoterminousLeaseIndicator\",\"attributeReference\":{\"entity\":\"CommercialLeaseProduct.cdm.json/CommercialLeaseProduct\",\"name\":\"CoterminousLeaseIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"NetLeaseIndicator\",\"attributeReference\":{\"entity\":\"CommercialLeaseProduct.cdm.json/CommercialLeaseProduct\",\"name\":\"NetLeaseIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"LevelPaymentsIndicator\",\"attributeReference\":{\"entity\":\"CommercialLeaseProduct.cdm.json/CommercialLeaseProduct\",\"name\":\"LevelPaymentsIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"OpenEndLeaseIndicator\",\"attributeReference\":{\"entity\":\"CommercialLeaseProduct.cdm.json/CommercialLeaseProduct\",\"name\":\"OpenEndLeaseIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"SingleInvestorLeaseIndictor\",\"attributeReference\":{\"entity\":\"CommercialLeaseProduct.cdm.json/CommercialLeaseProduct\",\"name\":\"SingleInvestorLeaseIndictor\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"PreFundedLeaseIndicator\",\"attributeReference\":{\"entity\":\"CommercialLeaseProduct.cdm.json/CommercialLeaseProduct\",\"name\":\"PreFundedLeaseIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"SaleAndLeasebackArrangementIndicator\",\"attributeReference\":{\"entity\":\"CommercialLeaseProduct.cdm.json/CommercialLeaseProduct\",\"name\":\"SaleAndLeasebackArrangementIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"RenewalOptionStatement\",\"attributeReference\":{\"entity\":\"CommercialLeaseProduct.cdm.json/CommercialLeaseProduct\",\"name\":\"RenewalOptionStatement\"},\"dataType\":\"string\",\"dataTypeLength\":2048},{\"type\":\"Existing\",\"name\":\"CommercialLeaseTypeId\",\"attributeReference\":{\"entity\":\"CommercialLeaseProduct.cdm.json/CommercialLeaseProduct\",\"name\":\"CommercialLeaseTypeId\"},\"dataType\":\"integer\"}]}}}",
+			"Description": "A lease is an agreement allowing one party to use another's property, plant, or equipment for a stated period of time in exchange for consideration. \n\nLeases have become more prevalent as businesses and consumers look for alternatives to finance the acquisition of fixed assets. \n\nA lease agreement involves at least two parties ) a lessor (such as a bank), who owns the property, and a lessee, who uses the property. \n\nThe lessor, essentially a creditor in the transaction, is repaid from a combination of lease or rental payments, tax benefits, and proceeds from the sale or re-lease of the property at the end of the lease term.\n\nLeasing is a way for lessees (customers) to conserve capital because, in effect, they obtain 100 percent financing. \n\nDepending on the structure of the lease, the risks of ownership (such as the possibility that the product will become obsolete) can be transferred to the lessor. Tax benefits could also be transferred to a lessor, resulting in lower lease payments to the lessee. Operating leases are off-balance-sheet, which may improve certain of the lessee's key financial ratios.\n\nA special type of transaction, the sale-leaseback, allows the owner of a piece of property (usually real estate) to raise funds while retaining use of the property. In such a transaction (actually two separate transactions), the owner of the property sells the property and immediately leases it back. \n\nThere is no physical transfer of the property. From a safety and soundness perspective, leases that result from sale-leaseback transactions should be reviewed in essentially the same manner as other leases.",
+			"DisplayFolderInfo": "{\"name\":\"Product\",\"colorCode\":\"#0E3D73\"}",
+			"PrimaryKeys": "ProductId",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

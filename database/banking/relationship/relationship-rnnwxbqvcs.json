@@ -1,0 +1,38 @@
+{
+	"name": "relationship-rnnwxbqvcs",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-rnnwxbqvcs",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "CustomerAccountRelatedParty",
+		"ToTableName": "CustomerAccountRelatedPartyAuthenticationMethod",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "CustomerAccountId",
+				"ToColumnName": "CustomerAccountId"
+			},
+			{
+				"FromColumnName": "CustomerAccountPartyRelationshipTypeId",
+				"ToColumnName": "CustomerAccountPartyRelationshipTypeId"
+			},
+			{
+				"FromColumnName": "PartyId",
+				"ToColumnName": "PartyId"
+			},
+			{
+				"FromColumnName": "PeriodStartTimestamp",
+				"ToColumnName": "PeriodStartTimestamp"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"CustomerAccountRelatedParty.cdm.json/CustomerAccountRelatedParty\",\"toEntity\":\"CustomerAccountRelatedPartyAuthenticationMethod.cdm.json/CustomerAccountRelatedPartyAuthenticationMethod\",\"joinPairs\":[{\"fromAttribute\":\"CustomerAccountId\",\"toAttribute\":\"CustomerAccountId\"},{\"fromAttribute\":\"CustomerAccountPartyRelationshipTypeId\",\"toAttribute\":\"CustomerAccountPartyRelationshipTypeId\"},{\"fromAttribute\":\"PartyId\",\"toAttribute\":\"PartyId\"},{\"fromAttribute\":\"PeriodStartTimestamp\",\"toAttribute\":\"PeriodStartTimestamp\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

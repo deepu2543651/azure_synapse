@@ -1,0 +1,128 @@
+{
+	"name": "Restriction",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "Restriction",
+		"Description": "A limitation placed upon the use, procurement, operation or sale of a Product.\n\nExamples:\n\n-  May be sold only to adults over 18\n-  Must have US tax number\n-  May not be exported without license\n-  Must be provided under medical guidance\n-  Available only from approved service providers\n-  May not be sold to minors, as defined by local state law\n-  Requires toxic substance compliance per local state law\n-  Purchases may not exceed $x per day\n-  Maximum $500 cash back\n- May only be sold under prescription",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "RestrictionId",
+					"Description": "The unique identifier of a Restriction.",
+					"BaseAttributeReference": {
+						"Entity": "Restriction.cdm.json/Restriction",
+						"Name": "RestrictionId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "RestrictionName",
+					"Description": "The name of a Restriction.",
+					"BaseAttributeReference": {
+						"Entity": "Restriction.cdm.json/Restriction",
+						"Name": "RestrictionName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "RestrictionDescription",
+					"Description": "The description of a Restriction.",
+					"BaseAttributeReference": {
+						"Entity": "Restriction.cdm.json/Restriction",
+						"Name": "RestrictionDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "RestrictionTypeId",
+					"Description": "The unique identifier of a Restriction Type.",
+					"BaseAttributeReference": {
+						"Entity": "Restriction.cdm.json/Restriction",
+						"Name": "RestrictionTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/Restriction",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/Restriction",
+				"Properties": {
+					"LinkedServiceName": "wspc-dpu-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"RestrictionId\":{\"entity\":\"Restriction.cdm.json/Restriction\",\"name\":\"RestrictionId\"},\"RestrictionName\":{\"entity\":\"Restriction.cdm.json/Restriction\",\"name\":\"RestrictionName\"},\"RestrictionDescription\":{\"entity\":\"Restriction.cdm.json/Restriction\",\"name\":\"RestrictionDescription\"},\"RestrictionTypeId\":{\"entity\":\"Restriction.cdm.json/Restriction\",\"name\":\"RestrictionTypeId\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"Restriction\",\"path\":\"Restriction.cdm.json/Restriction\"},\"description\":\"A limitation placed upon the use, procurement, operation or sale of a Product.\\n\\nExamples:\\n\\n-  May be sold only to adults over 18\\n-  Must have US tax number\\n-  May not be exported without license\\n-  Must be provided under medical guidance\\n-  Available only from approved service providers\\n-  May not be sold to minors, as defined by local state law\\n-  Requires toxic substance compliance per local state law\\n-  Purchases may not exceed $x per day\\n-  Maximum $500 cash back\\n- May only be sold under prescription\",\"primaryKey\":[\"RestrictionId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"RestrictionId\",\"attributeReference\":{\"entity\":\"Restriction.cdm.json/Restriction\",\"name\":\"RestrictionId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"RestrictionName\",\"attributeReference\":{\"entity\":\"Restriction.cdm.json/Restriction\",\"name\":\"RestrictionName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"RestrictionDescription\",\"attributeReference\":{\"entity\":\"Restriction.cdm.json/Restriction\",\"name\":\"RestrictionDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512},{\"type\":\"Existing\",\"name\":\"RestrictionTypeId\",\"attributeReference\":{\"entity\":\"Restriction.cdm.json/Restriction\",\"name\":\"RestrictionTypeId\"},\"dataType\":\"integer\"}]}}}",
+			"Description": "A limitation placed upon the use, procurement, operation or sale of a Product.\n\nExamples:\n\n-  May be sold only to adults over 18\n-  Must have US tax number\n-  May not be exported without license\n-  Must be provided under medical guidance\n-  Available only from approved service providers\n-  May not be sold to minors, as defined by local state law\n-  Requires toxic substance compliance per local state law\n-  Purchases may not exceed $x per day\n-  Maximum $500 cash back\n- May only be sold under prescription",
+			"DisplayFolderInfo": "{\"name\":\"Product\",\"colorCode\":\"#0E3D73\"}",
+			"PrimaryKeys": "RestrictionId",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

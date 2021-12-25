@@ -1,0 +1,330 @@
+{
+	"name": "CustomerAccountBankStatementLineItem",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "CustomerAccountBankStatementLineItem",
+		"Description": "The line item detail of a Customer Account Bank Statement, which record the specific activities/transactions that comprise the Customer Account Bank Statement.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "CustomerAccountId",
+					"Description": "The unique identifier of a Customer Account.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountBankStatementLineItem.cdm.json/CustomerAccountBankStatementLineItem",
+						"Name": "CustomerAccountId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "PeriodStartDate",
+					"Description": "The period start date for which the Customer Statement is prepared.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountBankStatementLineItem.cdm.json/CustomerAccountBankStatementLineItem",
+						"Name": "PeriodStartDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "PeriodEndDate",
+					"Description": "The period end date for which the Customer Statement is prepared.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountBankStatementLineItem.cdm.json/CustomerAccountBankStatementLineItem",
+						"Name": "PeriodEndDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "CustomerAccountStatementLineItemNumber",
+					"Description": "A specific line item detailing a transaction summarized and presented upon a Customer Account Statement.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountBankStatementLineItem.cdm.json/CustomerAccountBankStatementLineItem",
+						"Name": "CustomerAccountStatementLineItemNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ActivityDescription",
+					"Description": "A description of the associated Activity.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountBankStatementLineItem.cdm.json/CustomerAccountBankStatementLineItem",
+						"Name": "ActivityDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "StatementActivityTypeId",
+					"Description": "The unique identifier of a Statement Activity Type.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountBankStatementLineItem.cdm.json/CustomerAccountBankStatementLineItem",
+						"Name": "StatementActivityTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ActivityDate",
+					"Description": "The date that the Activity occurred or was recorded associated with the statement line item.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountBankStatementLineItem.cdm.json/CustomerAccountBankStatementLineItem",
+						"Name": "ActivityDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "PostedDate",
+					"Description": "The date that the associated activity was posted.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountBankStatementLineItem.cdm.json/CustomerAccountBankStatementLineItem",
+						"Name": "PostedDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "ActivityAmount",
+					"Description": "The amount associated with the associated Activity Type.\n\nEx:\n\nDeposit - $20",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountBankStatementLineItem.cdm.json/CustomerAccountBankStatementLineItem",
+						"Name": "ActivityAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "PreActivityBalanceAmount",
+					"Description": "The balance amount before the activity is applied to the statement.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountBankStatementLineItem.cdm.json/CustomerAccountBankStatementLineItem",
+						"Name": "PreActivityBalanceAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "PostActivityBalanceAmount",
+					"Description": "The balance amount after the activity is applied to the statement.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountBankStatementLineItem.cdm.json/CustomerAccountBankStatementLineItem",
+						"Name": "PostActivityBalanceAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "ProductId",
+					"Description": "The unique identifier of a Product.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountBankStatementLineItem.cdm.json/CustomerAccountBankStatementLineItem",
+						"Name": "ProductId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "ProductInstanceId",
+					"Description": "The unique instance of a product:\n\nEx:\n- Check number",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountBankStatementLineItem.cdm.json/CustomerAccountBankStatementLineItem",
+						"Name": "ProductInstanceId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "RelatedCustomerAccountId",
+					"Description": "The unique identifier of a Customer Account.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountBankStatementLineItem.cdm.json/CustomerAccountBankStatementLineItem",
+						"Name": "RelatedCustomerAccountId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "TransactionId",
+					"Description": "The unique identifier of a Transaction.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountBankStatementLineItem.cdm.json/CustomerAccountBankStatementLineItem",
+						"Name": "TransactionId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "StatementLineItemNote",
+					"Description": "A note, comment or additional information regarding the statement line item.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountBankStatementLineItem.cdm.json/CustomerAccountBankStatementLineItem",
+						"Name": "StatementLineItemNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/CustomerAccountBankStatementLineItem",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/CustomerAccountBankStatementLineItem",
+				"Properties": {
+					"LinkedServiceName": "wspc-dpu-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"CustomerAccountId\":{\"entity\":\"CustomerAccountBankStatementLineItem.cdm.json/CustomerAccountBankStatementLineItem\",\"name\":\"CustomerAccountId\"},\"PeriodStartDate\":{\"entity\":\"CustomerAccountBankStatementLineItem.cdm.json/CustomerAccountBankStatementLineItem\",\"name\":\"PeriodStartDate\"},\"PeriodEndDate\":{\"entity\":\"CustomerAccountBankStatementLineItem.cdm.json/CustomerAccountBankStatementLineItem\",\"name\":\"PeriodEndDate\"},\"CustomerAccountStatementLineItemNumber\":{\"entity\":\"CustomerAccountBankStatementLineItem.cdm.json/CustomerAccountBankStatementLineItem\",\"name\":\"CustomerAccountStatementLineItemNumber\"},\"ActivityDescription\":{\"entity\":\"CustomerAccountBankStatementLineItem.cdm.json/CustomerAccountBankStatementLineItem\",\"name\":\"ActivityDescription\"},\"StatementActivityTypeId\":{\"entity\":\"CustomerAccountBankStatementLineItem.cdm.json/CustomerAccountBankStatementLineItem\",\"name\":\"StatementActivityTypeId\"},\"ActivityDate\":{\"entity\":\"CustomerAccountBankStatementLineItem.cdm.json/CustomerAccountBankStatementLineItem\",\"name\":\"ActivityDate\"},\"PostedDate\":{\"entity\":\"CustomerAccountBankStatementLineItem.cdm.json/CustomerAccountBankStatementLineItem\",\"name\":\"PostedDate\"},\"ActivityAmount\":{\"entity\":\"CustomerAccountBankStatementLineItem.cdm.json/CustomerAccountBankStatementLineItem\",\"name\":\"ActivityAmount\"},\"PreActivityBalanceAmount\":{\"entity\":\"CustomerAccountBankStatementLineItem.cdm.json/CustomerAccountBankStatementLineItem\",\"name\":\"PreActivityBalanceAmount\"},\"PostActivityBalanceAmount\":{\"entity\":\"CustomerAccountBankStatementLineItem.cdm.json/CustomerAccountBankStatementLineItem\",\"name\":\"PostActivityBalanceAmount\"},\"ProductId\":{\"entity\":\"CustomerAccountBankStatementLineItem.cdm.json/CustomerAccountBankStatementLineItem\",\"name\":\"ProductId\"},\"ProductInstanceId\":{\"entity\":\"CustomerAccountBankStatementLineItem.cdm.json/CustomerAccountBankStatementLineItem\",\"name\":\"ProductInstanceId\"},\"RelatedCustomerAccountId\":{\"entity\":\"CustomerAccountBankStatementLineItem.cdm.json/CustomerAccountBankStatementLineItem\",\"name\":\"RelatedCustomerAccountId\"},\"TransactionId\":{\"entity\":\"CustomerAccountBankStatementLineItem.cdm.json/CustomerAccountBankStatementLineItem\",\"name\":\"TransactionId\"},\"StatementLineItemNote\":{\"entity\":\"CustomerAccountBankStatementLineItem.cdm.json/CustomerAccountBankStatementLineItem\",\"name\":\"StatementLineItemNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"CustomerAccountBankStatementLineItem\",\"path\":\"CustomerAccountBankStatementLineItem.cdm.json/CustomerAccountBankStatementLineItem\"},\"description\":\"The line item detail of a Customer Account Bank Statement, which record the specific activities/transactions that comprise the Customer Account Bank Statement.\",\"primaryKey\":[\"CustomerAccountId\",\"PeriodStartDate\",\"PeriodEndDate\",\"CustomerAccountStatementLineItemNumber\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"CustomerAccountId\",\"attributeReference\":{\"entity\":\"CustomerAccountBankStatementLineItem.cdm.json/CustomerAccountBankStatementLineItem\",\"name\":\"CustomerAccountId\"},\"dataType\":\"long\"},{\"type\":\"Existing\",\"name\":\"PeriodStartDate\",\"attributeReference\":{\"entity\":\"CustomerAccountBankStatementLineItem.cdm.json/CustomerAccountBankStatementLineItem\",\"name\":\"PeriodStartDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\"},{\"type\":\"Existing\",\"name\":\"PeriodEndDate\",\"attributeReference\":{\"entity\":\"CustomerAccountBankStatementLineItem.cdm.json/CustomerAccountBankStatementLineItem\",\"name\":\"PeriodEndDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\"},{\"type\":\"Existing\",\"name\":\"CustomerAccountStatementLineItemNumber\",\"attributeReference\":{\"entity\":\"CustomerAccountBankStatementLineItem.cdm.json/CustomerAccountBankStatementLineItem\",\"name\":\"CustomerAccountStatementLineItemNumber\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ActivityDescription\",\"attributeReference\":{\"entity\":\"CustomerAccountBankStatementLineItem.cdm.json/CustomerAccountBankStatementLineItem\",\"name\":\"ActivityDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512},{\"type\":\"Existing\",\"name\":\"StatementActivityTypeId\",\"attributeReference\":{\"entity\":\"CustomerAccountBankStatementLineItem.cdm.json/CustomerAccountBankStatementLineItem\",\"name\":\"StatementActivityTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ActivityDate\",\"attributeReference\":{\"entity\":\"CustomerAccountBankStatementLineItem.cdm.json/CustomerAccountBankStatementLineItem\",\"name\":\"ActivityDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\"},{\"type\":\"Existing\",\"name\":\"PostedDate\",\"attributeReference\":{\"entity\":\"CustomerAccountBankStatementLineItem.cdm.json/CustomerAccountBankStatementLineItem\",\"name\":\"PostedDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\"},{\"type\":\"Existing\",\"name\":\"ActivityAmount\",\"attributeReference\":{\"entity\":\"CustomerAccountBankStatementLineItem.cdm.json/CustomerAccountBankStatementLineItem\",\"name\":\"ActivityAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"PreActivityBalanceAmount\",\"attributeReference\":{\"entity\":\"CustomerAccountBankStatementLineItem.cdm.json/CustomerAccountBankStatementLineItem\",\"name\":\"PreActivityBalanceAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"PostActivityBalanceAmount\",\"attributeReference\":{\"entity\":\"CustomerAccountBankStatementLineItem.cdm.json/CustomerAccountBankStatementLineItem\",\"name\":\"PostActivityBalanceAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"ProductId\",\"attributeReference\":{\"entity\":\"CustomerAccountBankStatementLineItem.cdm.json/CustomerAccountBankStatementLineItem\",\"name\":\"ProductId\"},\"dataType\":\"long\"},{\"type\":\"Existing\",\"name\":\"ProductInstanceId\",\"attributeReference\":{\"entity\":\"CustomerAccountBankStatementLineItem.cdm.json/CustomerAccountBankStatementLineItem\",\"name\":\"ProductInstanceId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"RelatedCustomerAccountId\",\"attributeReference\":{\"entity\":\"CustomerAccountBankStatementLineItem.cdm.json/CustomerAccountBankStatementLineItem\",\"name\":\"RelatedCustomerAccountId\"},\"dataType\":\"long\"},{\"type\":\"Existing\",\"name\":\"TransactionId\",\"attributeReference\":{\"entity\":\"CustomerAccountBankStatementLineItem.cdm.json/CustomerAccountBankStatementLineItem\",\"name\":\"TransactionId\"},\"dataType\":\"long\"},{\"type\":\"Existing\",\"name\":\"StatementLineItemNote\",\"attributeReference\":{\"entity\":\"CustomerAccountBankStatementLineItem.cdm.json/CustomerAccountBankStatementLineItem\",\"name\":\"StatementLineItemNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024}]}}}",
+			"Description": "The line item detail of a Customer Account Bank Statement, which record the specific activities/transactions that comprise the Customer Account Bank Statement.",
+			"DisplayFolderInfo": "{\"name\":\"Customer Account\",\"colorCode\":\"#E3008C\"}",
+			"PrimaryKeys": "CustomerAccountId,PeriodStartDate,PeriodEndDate,CustomerAccountStatementLineItemNumber",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

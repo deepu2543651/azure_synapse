@@ -1,0 +1,26 @@
+{
+	"name": "relationship-tbjbjyxgjp",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-tbjbjyxgjp",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "CustomerAsset",
+		"ToTableName": "CustomerAssetOwnership",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "CustomerAssetId",
+				"ToColumnName": "CustomerAssetId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"CustomerAsset.cdm.json/CustomerAsset\",\"toEntity\":\"CustomerAssetOwnership.cdm.json/CustomerAssetOwnership\",\"joinPairs\":[{\"fromAttribute\":\"CustomerAssetId\",\"toAttribute\":\"CustomerAssetId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

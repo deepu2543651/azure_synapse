@@ -1,0 +1,112 @@
+{
+	"name": "ServiceType",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "ServiceType",
+		"Description": "A specific type of service or function that may be offered at a bank such as:\n\n- Cash Withdrawal\n- Deposit\n- Currency Exchange\n- Bill Payment (Electronic)\n- Bill Payment (Cash)\n- Bill Payment (Email)\n- Bill Payment (Global Business)\n- Loan payment\n- Wire Transfer (Immediate)\n- Wire Transfer (Next Day)\n- Wire Transfer (Economy)\n- Money Order\n- Money Transfer\n- Stamp purchase\n- Account Access\n- Printing of statements\n- Transfer of funds between Accounts\n- Transfer of funds between Banks\n- Bond Coupon Redemption\n- Coin Purchase\n- Coin Counting\n- Express Mail\n- Signature Guarantee\n- Bond Coupon Redemption\n- Travelers Checks\n- Safe Deposit Box\n- Fax\n- Bank Administration Institute (BAI) formats\n- Consolidation of receipts into single transmission\n- Check imaging\n- Document imaging\n- Double-side imaging\n- On-line Reports \n- On-line Research\n- Conversion of electronic payments to other electronic formats\n- Prepaid Visa Card\n- Prepaid Phone",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ServiceTypeId",
+					"Description": "The unique identifier of a Service Type.",
+					"BaseAttributeReference": {
+						"Entity": "ServiceType.cdm.json/ServiceType",
+						"Name": "ServiceTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ServiceTypeName",
+					"Description": "The name of a Service Type.",
+					"BaseAttributeReference": {
+						"Entity": "ServiceType.cdm.json/ServiceType",
+						"Name": "ServiceTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ServiceTypeDescription",
+					"Description": "The description of a Service Type.",
+					"BaseAttributeReference": {
+						"Entity": "ServiceType.cdm.json/ServiceType",
+						"Name": "ServiceTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/ServiceType",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/ServiceType",
+				"Properties": {
+					"LinkedServiceName": "wspc-dpu-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ServiceTypeId\":{\"entity\":\"ServiceType.cdm.json/ServiceType\",\"name\":\"ServiceTypeId\"},\"ServiceTypeName\":{\"entity\":\"ServiceType.cdm.json/ServiceType\",\"name\":\"ServiceTypeName\"},\"ServiceTypeDescription\":{\"entity\":\"ServiceType.cdm.json/ServiceType\",\"name\":\"ServiceTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"ServiceType\",\"path\":\"ServiceType.cdm.json/ServiceType\"},\"description\":\"A specific type of service or function that may be offered at a bank such as:\\n\\n- Cash Withdrawal\\n- Deposit\\n- Currency Exchange\\n- Bill Payment (Electronic)\\n- Bill Payment (Cash)\\n- Bill Payment (Email)\\n- Bill Payment (Global Business)\\n- Loan payment\\n- Wire Transfer (Immediate)\\n- Wire Transfer (Next Day)\\n- Wire Transfer (Economy)\\n- Money Order\\n- Money Transfer\\n- Stamp purchase\\n- Account Access\\n- Printing of statements\\n- Transfer of funds between Accounts\\n- Transfer of funds between Banks\\n- Bond Coupon Redemption\\n- Coin Purchase\\n- Coin Counting\\n- Express Mail\\n- Signature Guarantee\\n- Bond Coupon Redemption\\n- Travelers Checks\\n- Safe Deposit Box\\n- Fax\\n- Bank Administration Institute (BAI) formats\\n- Consolidation of receipts into single transmission\\n- Check imaging\\n- Document imaging\\n- Double-side imaging\\n- On-line Reports \\n- On-line Research\\n- Conversion of electronic payments to other electronic formats\\n- Prepaid Visa Card\\n- Prepaid Phone\",\"primaryKey\":[\"ServiceTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"ServiceTypeId\",\"attributeReference\":{\"entity\":\"ServiceType.cdm.json/ServiceType\",\"name\":\"ServiceTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ServiceTypeName\",\"attributeReference\":{\"entity\":\"ServiceType.cdm.json/ServiceType\",\"name\":\"ServiceTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"ServiceTypeDescription\",\"attributeReference\":{\"entity\":\"ServiceType.cdm.json/ServiceType\",\"name\":\"ServiceTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512}]}}}",
+			"Description": "A specific type of service or function that may be offered at a bank such as:\n\n- Cash Withdrawal\n- Deposit\n- Currency Exchange\n- Bill Payment (Electronic)\n- Bill Payment (Cash)\n- Bill Payment (Email)\n- Bill Payment (Global Business)\n- Loan payment\n- Wire Transfer (Immediate)\n- Wire Transfer (Next Day)\n- Wire Transfer (Economy)\n- Money Order\n- Money Transfer\n- Stamp purchase\n- Account Access\n- Printing of statements\n- Transfer of funds between Accounts\n- Transfer of funds between Banks\n- Bond Coupon Redemption\n- Coin Purchase\n- Coin Counting\n- Express Mail\n- Signature Guarantee\n- Bond Coupon Redemption\n- Travelers Checks\n- Safe Deposit Box\n- Fax\n- Bank Administration Institute (BAI) formats\n- Consolidation of receipts into single transmission\n- Check imaging\n- Document imaging\n- Double-side imaging\n- On-line Reports \n- On-line Research\n- Conversion of electronic payments to other electronic formats\n- Prepaid Visa Card\n- Prepaid Phone",
+			"DisplayFolderInfo": "{\"name\":\"Product\",\"colorCode\":\"#0E3D73\"}",
+			"PrimaryKeys": "ServiceTypeId",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

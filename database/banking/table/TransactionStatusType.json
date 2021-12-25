@@ -1,0 +1,112 @@
+{
+	"name": "TransactionStatusType",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "TransactionStatusType",
+		"Description": "The status type of the associated transaction.\n\nEx:\n- Issued\n- Acknowledged\n- Executed\n- Delivered\n- Completed\n- Cancelled\n- Pending\n- Incomplete\n- Invalid\n- Failed to Deliver\n- Fail to Receive\n- Settled\n- Partial Delivery\n- Open\n- Filled\n- Acknowledged/Incomplete\n- Referred to Supervisor\n- Refused\n\nwhere:\n\nFILLED\nAn transaction/order is filled when the  full amount/quantity of the  order or the  service desired is supplied.\n\nOPEN\nThe  status of an order that has not yet been executed but on which settlement has not yet occurred.\n\nFAIL TO DELIVER\nBroker-dealer on the  sell side has not delivered securities on the  buy side or the  service could not be completed.\n\nA situation that occurs when the  broker-dealer on the  sell side of a transaction does not deliver securities to the  broker-dealer on the  buy side by the  settlement date of the  transaction. Usually this occurs because the  selling broker-dealer has not received the  certificates from the  selling customer. The  buying broker-dealer will not pay for the  securities until the  fail to deliver is eliminated by delivery of the  certificates.\n\nPARTIAL DELIVERY\nAn order or service request is partially filled when less than the  full amount/quantity of the  order or the  service requested is supplied.\n\nPARTIAL FILL EXPIRED\nA partial fill has expired and the  transaction cannot be completed.\n\nFAIL TO RECEIVE\nBroker-dealer on buy side has not received delivery of securities from broker-dealer on sell side.  \n\nA situation that occurs when the  broker-dealer on the  buy side of a transaction has not received securities from the  broker-dealer on the  sell side by the  settlement date of the  transaction. The  buying broker-dealer will not pay for the  securities until the  fail to receive is eliminated by delivery of the  certificates.\n\nSETTLED\nThe  trade order has settled.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "TransactionStatusTypeId",
+					"Description": "The unique identifier of a Transaction Status Type.",
+					"BaseAttributeReference": {
+						"Entity": "TransactionStatusType.cdm.json/TransactionStatusType",
+						"Name": "TransactionStatusTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "TransactionStatusTypeName",
+					"Description": "The name of a Transaction Status Type.",
+					"BaseAttributeReference": {
+						"Entity": "TransactionStatusType.cdm.json/TransactionStatusType",
+						"Name": "TransactionStatusTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "TransactionStatusTypeDescription",
+					"Description": "The description of a Transaction Status Type.",
+					"BaseAttributeReference": {
+						"Entity": "TransactionStatusType.cdm.json/TransactionStatusType",
+						"Name": "TransactionStatusTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/TransactionStatusType",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/TransactionStatusType",
+				"Properties": {
+					"LinkedServiceName": "wspc-dpu-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"TransactionStatusTypeId\":{\"entity\":\"TransactionStatusType.cdm.json/TransactionStatusType\",\"name\":\"TransactionStatusTypeId\"},\"TransactionStatusTypeName\":{\"entity\":\"TransactionStatusType.cdm.json/TransactionStatusType\",\"name\":\"TransactionStatusTypeName\"},\"TransactionStatusTypeDescription\":{\"entity\":\"TransactionStatusType.cdm.json/TransactionStatusType\",\"name\":\"TransactionStatusTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"TransactionStatusType\",\"path\":\"TransactionStatusType.cdm.json/TransactionStatusType\"},\"description\":\"The status type of the associated transaction.\\n\\nEx:\\n- Issued\\n- Acknowledged\\n- Executed\\n- Delivered\\n- Completed\\n- Cancelled\\n- Pending\\n- Incomplete\\n- Invalid\\n- Failed to Deliver\\n- Fail to Receive\\n- Settled\\n- Partial Delivery\\n- Open\\n- Filled\\n- Acknowledged/Incomplete\\n- Referred to Supervisor\\n- Refused\\n\\nwhere:\\n\\nFILLED\\nAn transaction/order is filled when the  full amount/quantity of the  order or the  service desired is supplied.\\n\\nOPEN\\nThe  status of an order that has not yet been executed but on which settlement has not yet occurred.\\n\\nFAIL TO DELIVER\\nBroker-dealer on the  sell side has not delivered securities on the  buy side or the  service could not be completed.\\n\\nA situation that occurs when the  broker-dealer on the  sell side of a transaction does not deliver securities to the  broker-dealer on the  buy side by the  settlement date of the  transaction. Usually this occurs because the  selling broker-dealer has not received the  certificates from the  selling customer. The  buying broker-dealer will not pay for the  securities until the  fail to deliver is eliminated by delivery of the  certificates.\\n\\nPARTIAL DELIVERY\\nAn order or service request is partially filled when less than the  full amount/quantity of the  order or the  service requested is supplied.\\n\\nPARTIAL FILL EXPIRED\\nA partial fill has expired and the  transaction cannot be completed.\\n\\nFAIL TO RECEIVE\\nBroker-dealer on buy side has not received delivery of securities from broker-dealer on sell side.  \\n\\nA situation that occurs when the  broker-dealer on the  buy side of a transaction has not received securities from the  broker-dealer on the  sell side by the  settlement date of the  transaction. The  buying broker-dealer will not pay for the  securities until the  fail to receive is eliminated by delivery of the  certificates.\\n\\nSETTLED\\nThe  trade order has settled.\",\"primaryKey\":[\"TransactionStatusTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"TransactionStatusTypeId\",\"attributeReference\":{\"entity\":\"TransactionStatusType.cdm.json/TransactionStatusType\",\"name\":\"TransactionStatusTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"TransactionStatusTypeName\",\"attributeReference\":{\"entity\":\"TransactionStatusType.cdm.json/TransactionStatusType\",\"name\":\"TransactionStatusTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"TransactionStatusTypeDescription\",\"attributeReference\":{\"entity\":\"TransactionStatusType.cdm.json/TransactionStatusType\",\"name\":\"TransactionStatusTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512}]}}}",
+			"Description": "The status type of the associated transaction.\n\nEx:\n- Issued\n- Acknowledged\n- Executed\n- Delivered\n- Completed\n- Cancelled\n- Pending\n- Incomplete\n- Invalid\n- Failed to Deliver\n- Fail to Receive\n- Settled\n- Partial Delivery\n- Open\n- Filled\n- Acknowledged/Incomplete\n- Referred to Supervisor\n- Refused\n\nwhere:\n\nFILLED\nAn transaction/order is filled when the  full amount/quantity of the  order or the  service desired is supplied.\n\nOPEN\nThe  status of an order that has not yet been executed but on which settlement has not yet occurred.\n\nFAIL TO DELIVER\nBroker-dealer on the  sell side has not delivered securities on the  buy side or the  service could not be completed.\n\nA situation that occurs when the  broker-dealer on the  sell side of a transaction does not deliver securities to the  broker-dealer on the  buy side by the  settlement date of the  transaction. Usually this occurs because the  selling broker-dealer has not received the  certificates from the  selling customer. The  buying broker-dealer will not pay for the  securities until the  fail to deliver is eliminated by delivery of the  certificates.\n\nPARTIAL DELIVERY\nAn order or service request is partially filled when less than the  full amount/quantity of the  order or the  service requested is supplied.\n\nPARTIAL FILL EXPIRED\nA partial fill has expired and the  transaction cannot be completed.\n\nFAIL TO RECEIVE\nBroker-dealer on buy side has not received delivery of securities from broker-dealer on sell side.  \n\nA situation that occurs when the  broker-dealer on the  buy side of a transaction has not received securities from the  broker-dealer on the  sell side by the  settlement date of the  transaction. The  buying broker-dealer will not pay for the  securities until the  fail to receive is eliminated by delivery of the  certificates.\n\nSETTLED\nThe  trade order has settled.",
+			"DisplayFolderInfo": "{\"name\":\"Transaction\",\"colorCode\":\"#823A16\"}",
+			"PrimaryKeys": "TransactionStatusTypeId",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

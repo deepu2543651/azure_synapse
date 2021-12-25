@@ -1,0 +1,367 @@
+{
+	"name": "ProductServiceChannelFee",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "ProductServiceChannelFee",
+		"Description": "The products/services available from the Bank through the indicated Channels.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ProductId",
+					"Description": "The unique identifier of a Product.",
+					"BaseAttributeReference": {
+						"Entity": "ProductServiceChannelFee.cdm.json/ProductServiceChannelFee",
+						"Name": "ProductId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "ServiceId",
+					"Description": "The unique identifier of a Product.",
+					"BaseAttributeReference": {
+						"Entity": "ProductServiceChannelFee.cdm.json/ProductServiceChannelFee",
+						"Name": "ServiceId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "ChannelId",
+					"Description": "The unique identifier of a Channel.",
+					"BaseAttributeReference": {
+						"Entity": "ProductServiceChannelFee.cdm.json/ProductServiceChannelFee",
+						"Name": "ChannelId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ProductServiceChannelFeeTypeId",
+					"Description": "The unique identifier of a Product Service Channel Fee Type.",
+					"BaseAttributeReference": {
+						"Entity": "ProductServiceChannelFee.cdm.json/ProductServiceChannelFee",
+						"Name": "ProductServiceChannelFeeTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "MinimumAmount",
+					"Description": "The minimum amount for which the associated Product Charge Schedule applies.",
+					"BaseAttributeReference": {
+						"Entity": "ProductServiceChannelFee.cdm.json/ProductServiceChannelFee",
+						"Name": "MinimumAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "MaximumAmount",
+					"Description": "The maximum amount for which the associated Product Charge Schedule applies.",
+					"BaseAttributeReference": {
+						"Entity": "ProductServiceChannelFee.cdm.json/ProductServiceChannelFee",
+						"Name": "MaximumAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "PeriodStartDate",
+					"Description": "The period start date for which the product available channel relationship is valid.",
+					"BaseAttributeReference": {
+						"Entity": "ProductServiceChannelFee.cdm.json/ProductServiceChannelFee",
+						"Name": "PeriodStartDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "PeriodEndDate",
+					"Description": "The period end date for which the product available channel relationship is valid.",
+					"BaseAttributeReference": {
+						"Entity": "ProductServiceChannelFee.cdm.json/ProductServiceChannelFee",
+						"Name": "PeriodEndDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "ProductServiceChannelAvailabilityAnnouncedDate",
+					"Description": "The date that the Bank Service availability was announced for the Channel.",
+					"BaseAttributeReference": {
+						"Entity": "ProductServiceChannelFee.cdm.json/ProductServiceChannelFee",
+						"Name": "ProductServiceChannelAvailabilityAnnouncedDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "ProductServiceChannelAvailabilityLastDate",
+					"Description": "The last date that the Bank Service is available at the associated Channel.",
+					"BaseAttributeReference": {
+						"Entity": "ProductServiceChannelFee.cdm.json/ProductServiceChannelFee",
+						"Name": "ProductServiceChannelAvailabilityLastDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "ProductServiceChannelAvailabilityRestrictionsNote",
+					"Description": "Restrictions regarding the availability of the Bank Service at the Channel.",
+					"BaseAttributeReference": {
+						"Entity": "ProductServiceChannelFee.cdm.json/ProductServiceChannelFee",
+						"Name": "ProductServiceChannelAvailabilityRestrictionsNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ProductServiceChannelAvailabilityNote",
+					"Description": "Notes, comments or additional information regarding the availability of the Bank Service at the Channel.",
+					"BaseAttributeReference": {
+						"Entity": "ProductServiceChannelFee.cdm.json/ProductServiceChannelFee",
+						"Name": "ProductServiceChannelAvailabilityNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ProductServiceChannelPlannedAbandonmentDate",
+					"Description": "The planned abandonment date of the ATM Service at the ATM Site.",
+					"BaseAttributeReference": {
+						"Entity": "ProductServiceChannelFee.cdm.json/ProductServiceChannelFee",
+						"Name": "ProductServiceChannelPlannedAbandonmentDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "ProductServiceChannelFirstOfferedDate",
+					"Description": "The first date that the Service was offered through the Channel.",
+					"BaseAttributeReference": {
+						"Entity": "ProductServiceChannelFee.cdm.json/ProductServiceChannelFee",
+						"Name": "ProductServiceChannelFirstOfferedDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "ProductServiceChannelFeeAmount",
+					"Description": "The amount of the product service channel fee.",
+					"BaseAttributeReference": {
+						"Entity": "ProductServiceChannelFee.cdm.json/ProductServiceChannelFee",
+						"Name": "ProductServiceChannelFeeAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "ProductServiceChannelFeeNote",
+					"Description": "A note, comment or additional information regarding product service channel fee.",
+					"BaseAttributeReference": {
+						"Entity": "ProductServiceChannelFee.cdm.json/ProductServiceChannelFee",
+						"Name": "ProductServiceChannelFeeNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "CommissionScheduleRestrictionsStatement",
+					"Description": "A statement detailing the restrictions that are applied to the associated Schedule.",
+					"BaseAttributeReference": {
+						"Entity": "ProductServiceChannelFee.cdm.json/ProductServiceChannelFee",
+						"Name": "CommissionScheduleRestrictionsStatement"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 2048,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "CommissionScheduleEligibilityStatement",
+					"Description": "A statement of the eligibility of an employee or third party to be assigned commissions using the associated Schedule.",
+					"BaseAttributeReference": {
+						"Entity": "ProductServiceChannelFee.cdm.json/ProductServiceChannelFee",
+						"Name": "CommissionScheduleEligibilityStatement"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 2048,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/ProductServiceChannelFee",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/ProductServiceChannelFee",
+				"Properties": {
+					"LinkedServiceName": "wspc-dpu-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ProductId\":{\"entity\":\"ProductServiceChannelFee.cdm.json/ProductServiceChannelFee\",\"name\":\"ProductId\"},\"ServiceId\":{\"entity\":\"ProductServiceChannelFee.cdm.json/ProductServiceChannelFee\",\"name\":\"ServiceId\"},\"ChannelId\":{\"entity\":\"ProductServiceChannelFee.cdm.json/ProductServiceChannelFee\",\"name\":\"ChannelId\"},\"ProductServiceChannelFeeTypeId\":{\"entity\":\"ProductServiceChannelFee.cdm.json/ProductServiceChannelFee\",\"name\":\"ProductServiceChannelFeeTypeId\"},\"MinimumAmount\":{\"entity\":\"ProductServiceChannelFee.cdm.json/ProductServiceChannelFee\",\"name\":\"MinimumAmount\"},\"MaximumAmount\":{\"entity\":\"ProductServiceChannelFee.cdm.json/ProductServiceChannelFee\",\"name\":\"MaximumAmount\"},\"PeriodStartDate\":{\"entity\":\"ProductServiceChannelFee.cdm.json/ProductServiceChannelFee\",\"name\":\"PeriodStartDate\"},\"PeriodEndDate\":{\"entity\":\"ProductServiceChannelFee.cdm.json/ProductServiceChannelFee\",\"name\":\"PeriodEndDate\"},\"ProductServiceChannelAvailabilityAnnouncedDate\":{\"entity\":\"ProductServiceChannelFee.cdm.json/ProductServiceChannelFee\",\"name\":\"ProductServiceChannelAvailabilityAnnouncedDate\"},\"ProductServiceChannelAvailabilityLastDate\":{\"entity\":\"ProductServiceChannelFee.cdm.json/ProductServiceChannelFee\",\"name\":\"ProductServiceChannelAvailabilityLastDate\"},\"ProductServiceChannelAvailabilityRestrictionsNote\":{\"entity\":\"ProductServiceChannelFee.cdm.json/ProductServiceChannelFee\",\"name\":\"ProductServiceChannelAvailabilityRestrictionsNote\"},\"ProductServiceChannelAvailabilityNote\":{\"entity\":\"ProductServiceChannelFee.cdm.json/ProductServiceChannelFee\",\"name\":\"ProductServiceChannelAvailabilityNote\"},\"ProductServiceChannelPlannedAbandonmentDate\":{\"entity\":\"ProductServiceChannelFee.cdm.json/ProductServiceChannelFee\",\"name\":\"ProductServiceChannelPlannedAbandonmentDate\"},\"ProductServiceChannelFirstOfferedDate\":{\"entity\":\"ProductServiceChannelFee.cdm.json/ProductServiceChannelFee\",\"name\":\"ProductServiceChannelFirstOfferedDate\"},\"ProductServiceChannelFeeAmount\":{\"entity\":\"ProductServiceChannelFee.cdm.json/ProductServiceChannelFee\",\"name\":\"ProductServiceChannelFeeAmount\"},\"ProductServiceChannelFeeNote\":{\"entity\":\"ProductServiceChannelFee.cdm.json/ProductServiceChannelFee\",\"name\":\"ProductServiceChannelFeeNote\"},\"CommissionScheduleRestrictionsStatement\":{\"entity\":\"ProductServiceChannelFee.cdm.json/ProductServiceChannelFee\",\"name\":\"CommissionScheduleRestrictionsStatement\"},\"CommissionScheduleEligibilityStatement\":{\"entity\":\"ProductServiceChannelFee.cdm.json/ProductServiceChannelFee\",\"name\":\"CommissionScheduleEligibilityStatement\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"ProductServiceChannelFee\",\"path\":\"ProductServiceChannelFee.cdm.json/ProductServiceChannelFee\"},\"description\":\"The products/services available from the Bank through the indicated Channels.\",\"primaryKey\":[\"ProductId\",\"ServiceId\",\"ChannelId\",\"ProductServiceChannelFeeTypeId\",\"MinimumAmount\",\"MaximumAmount\",\"PeriodStartDate\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"ProductId\",\"attributeReference\":{\"entity\":\"ProductServiceChannelFee.cdm.json/ProductServiceChannelFee\",\"name\":\"ProductId\"},\"dataType\":\"long\"},{\"type\":\"Existing\",\"name\":\"ServiceId\",\"attributeReference\":{\"entity\":\"ProductServiceChannelFee.cdm.json/ProductServiceChannelFee\",\"name\":\"ServiceId\"},\"dataType\":\"long\"},{\"type\":\"Existing\",\"name\":\"ChannelId\",\"attributeReference\":{\"entity\":\"ProductServiceChannelFee.cdm.json/ProductServiceChannelFee\",\"name\":\"ChannelId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ProductServiceChannelFeeTypeId\",\"attributeReference\":{\"entity\":\"ProductServiceChannelFee.cdm.json/ProductServiceChannelFee\",\"name\":\"ProductServiceChannelFeeTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"MinimumAmount\",\"attributeReference\":{\"entity\":\"ProductServiceChannelFee.cdm.json/ProductServiceChannelFee\",\"name\":\"MinimumAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"MaximumAmount\",\"attributeReference\":{\"entity\":\"ProductServiceChannelFee.cdm.json/ProductServiceChannelFee\",\"name\":\"MaximumAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"PeriodStartDate\",\"attributeReference\":{\"entity\":\"ProductServiceChannelFee.cdm.json/ProductServiceChannelFee\",\"name\":\"PeriodStartDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\"},{\"type\":\"Existing\",\"name\":\"PeriodEndDate\",\"attributeReference\":{\"entity\":\"ProductServiceChannelFee.cdm.json/ProductServiceChannelFee\",\"name\":\"PeriodEndDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\"},{\"type\":\"Existing\",\"name\":\"ProductServiceChannelAvailabilityAnnouncedDate\",\"attributeReference\":{\"entity\":\"ProductServiceChannelFee.cdm.json/ProductServiceChannelFee\",\"name\":\"ProductServiceChannelAvailabilityAnnouncedDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\"},{\"type\":\"Existing\",\"name\":\"ProductServiceChannelAvailabilityLastDate\",\"attributeReference\":{\"entity\":\"ProductServiceChannelFee.cdm.json/ProductServiceChannelFee\",\"name\":\"ProductServiceChannelAvailabilityLastDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\"},{\"type\":\"Existing\",\"name\":\"ProductServiceChannelAvailabilityRestrictionsNote\",\"attributeReference\":{\"entity\":\"ProductServiceChannelFee.cdm.json/ProductServiceChannelFee\",\"name\":\"ProductServiceChannelAvailabilityRestrictionsNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024},{\"type\":\"Existing\",\"name\":\"ProductServiceChannelAvailabilityNote\",\"attributeReference\":{\"entity\":\"ProductServiceChannelFee.cdm.json/ProductServiceChannelFee\",\"name\":\"ProductServiceChannelAvailabilityNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024},{\"type\":\"Existing\",\"name\":\"ProductServiceChannelPlannedAbandonmentDate\",\"attributeReference\":{\"entity\":\"ProductServiceChannelFee.cdm.json/ProductServiceChannelFee\",\"name\":\"ProductServiceChannelPlannedAbandonmentDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\"},{\"type\":\"Existing\",\"name\":\"ProductServiceChannelFirstOfferedDate\",\"attributeReference\":{\"entity\":\"ProductServiceChannelFee.cdm.json/ProductServiceChannelFee\",\"name\":\"ProductServiceChannelFirstOfferedDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\"},{\"type\":\"Existing\",\"name\":\"ProductServiceChannelFeeAmount\",\"attributeReference\":{\"entity\":\"ProductServiceChannelFee.cdm.json/ProductServiceChannelFee\",\"name\":\"ProductServiceChannelFeeAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"ProductServiceChannelFeeNote\",\"attributeReference\":{\"entity\":\"ProductServiceChannelFee.cdm.json/ProductServiceChannelFee\",\"name\":\"ProductServiceChannelFeeNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024},{\"type\":\"Existing\",\"name\":\"CommissionScheduleRestrictionsStatement\",\"attributeReference\":{\"entity\":\"ProductServiceChannelFee.cdm.json/ProductServiceChannelFee\",\"name\":\"CommissionScheduleRestrictionsStatement\"},\"dataType\":\"string\",\"dataTypeLength\":2048},{\"type\":\"Existing\",\"name\":\"CommissionScheduleEligibilityStatement\",\"attributeReference\":{\"entity\":\"ProductServiceChannelFee.cdm.json/ProductServiceChannelFee\",\"name\":\"CommissionScheduleEligibilityStatement\"},\"dataType\":\"string\",\"dataTypeLength\":2048}]}}}",
+			"Description": "The products/services available from the Bank through the indicated Channels.",
+			"DisplayFolderInfo": "{\"name\":\"Product\",\"colorCode\":\"#0E3D73\"}",
+			"PrimaryKeys": "ProductId,ServiceId,ChannelId,ProductServiceChannelFeeTypeId,MinimumAmount,MaximumAmount,PeriodStartDate",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

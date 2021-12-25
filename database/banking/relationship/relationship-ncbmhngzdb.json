@@ -1,0 +1,26 @@
+{
+	"name": "relationship-ncbmhngzdb",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-ncbmhngzdb",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "CustomerPartyRelationshipType",
+		"ToTableName": "CustomerRelatedParty",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "CustomerPartyRelationshipTypeId",
+				"ToColumnName": "CustomerPartyRelationshipTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"CustomerPartyRelationshipType.cdm.json/CustomerPartyRelationshipType\",\"toEntity\":\"CustomerRelatedParty.cdm.json/CustomerRelatedParty\",\"joinPairs\":[{\"fromAttribute\":\"CustomerPartyRelationshipTypeId\",\"toAttribute\":\"CustomerPartyRelationshipTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

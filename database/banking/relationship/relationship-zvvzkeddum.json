@@ -1,0 +1,26 @@
+{
+	"name": "relationship-zvvzkeddum",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-zvvzkeddum",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "BankTransaction",
+		"ToTableName": "TransactionRestriction",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "TransactionId",
+				"ToColumnName": "TransactionId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"BankTransaction.cdm.json/BankTransaction\",\"toEntity\":\"TransactionRestriction.cdm.json/TransactionRestriction\",\"joinPairs\":[{\"fromAttribute\":\"TransactionId\",\"toAttribute\":\"TransactionId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

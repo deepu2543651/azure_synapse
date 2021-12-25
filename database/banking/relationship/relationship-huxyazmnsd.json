@@ -1,0 +1,26 @@
+{
+	"name": "relationship-huxyazmnsd",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-huxyazmnsd",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "IssueRelationshipType",
+		"ToTableName": "RelatedIssue",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "IssueRelationshipTypeId",
+				"ToColumnName": "IssueRelationshipTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"IssueRelationshipType.cdm.json/IssueRelationshipType\",\"toEntity\":\"RelatedIssue.cdm.json/RelatedIssue\",\"joinPairs\":[{\"fromAttribute\":\"IssueRelationshipTypeId\",\"toAttribute\":\"IssueRelationshipTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

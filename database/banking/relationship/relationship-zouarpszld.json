@@ -1,0 +1,26 @@
+{
+	"name": "relationship-zouarpszld",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-zouarpszld",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Publication",
+		"ToTableName": "PrintAdvertisingEvent",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "PublicationId",
+				"ToColumnName": "PublicationId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Publication.cdm.json/Publication\",\"toEntity\":\"PrintAdvertisingEvent.cdm.json/PrintAdvertisingEvent\",\"joinPairs\":[{\"fromAttribute\":\"PublicationId\",\"toAttribute\":\"PublicationId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

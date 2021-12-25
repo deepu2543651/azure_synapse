@@ -1,0 +1,112 @@
+{
+	"name": "PayeeCategory",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "PayeeCategory",
+		"Description": "The category of the Payee.\n\nEx:\n- Bank\n- Utility\n- Credit Card\n- Retail Store\n- Taxes",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "PayeeCategoryId",
+					"Description": "The unique identifier of a Payee Category.",
+					"BaseAttributeReference": {
+						"Entity": "PayeeCategory.cdm.json/PayeeCategory",
+						"Name": "PayeeCategoryId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PayeeCategoryName",
+					"Description": "The name of a Payee Category.",
+					"BaseAttributeReference": {
+						"Entity": "PayeeCategory.cdm.json/PayeeCategory",
+						"Name": "PayeeCategoryName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "PayeeCategoryDescription",
+					"Description": "The description of a Payee Category.",
+					"BaseAttributeReference": {
+						"Entity": "PayeeCategory.cdm.json/PayeeCategory",
+						"Name": "PayeeCategoryDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/PayeeCategory",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/PayeeCategory",
+				"Properties": {
+					"LinkedServiceName": "wspc-dpu-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"PayeeCategoryId\":{\"entity\":\"PayeeCategory.cdm.json/PayeeCategory\",\"name\":\"PayeeCategoryId\"},\"PayeeCategoryName\":{\"entity\":\"PayeeCategory.cdm.json/PayeeCategory\",\"name\":\"PayeeCategoryName\"},\"PayeeCategoryDescription\":{\"entity\":\"PayeeCategory.cdm.json/PayeeCategory\",\"name\":\"PayeeCategoryDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"PayeeCategory\",\"path\":\"PayeeCategory.cdm.json/PayeeCategory\"},\"description\":\"The category of the Payee.\\n\\nEx:\\n- Bank\\n- Utility\\n- Credit Card\\n- Retail Store\\n- Taxes\",\"primaryKey\":[\"PayeeCategoryId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"PayeeCategoryId\",\"attributeReference\":{\"entity\":\"PayeeCategory.cdm.json/PayeeCategory\",\"name\":\"PayeeCategoryId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"PayeeCategoryName\",\"attributeReference\":{\"entity\":\"PayeeCategory.cdm.json/PayeeCategory\",\"name\":\"PayeeCategoryName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"PayeeCategoryDescription\",\"attributeReference\":{\"entity\":\"PayeeCategory.cdm.json/PayeeCategory\",\"name\":\"PayeeCategoryDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512}]}}}",
+			"Description": "The category of the Payee.\n\nEx:\n- Bank\n- Utility\n- Credit Card\n- Retail Store\n- Taxes",
+			"DisplayFolderInfo": "{\"name\":\"Party\",\"colorCode\":\"#00727A\"}",
+			"PrimaryKeys": "PayeeCategoryId",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

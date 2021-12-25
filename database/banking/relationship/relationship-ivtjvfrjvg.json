@@ -1,0 +1,26 @@
+{
+	"name": "relationship-ivtjvfrjvg",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-ivtjvfrjvg",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "UnitOfMeasure",
+		"ToTableName": "BankTransaction",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "UnitOfMeasureId",
+				"ToColumnName": "UnitOfMeasureId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"UnitOfMeasure.cdm.json/UnitOfMeasure\",\"toEntity\":\"BankTransaction.cdm.json/BankTransaction\",\"joinPairs\":[{\"fromAttribute\":\"UnitOfMeasureId\",\"toAttribute\":\"UnitOfMeasureId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

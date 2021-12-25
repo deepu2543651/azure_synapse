@@ -1,0 +1,316 @@
+{
+	"name": "BankersAcceptance",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "BankersAcceptance",
+		"Description": "Bankers' Acceptances are drafts drawn by a commercial firm upon a bank and \"accepted\" by the bank. The drafts instruct the bank to pay a designated party a certain sum of money at a specified time in the future. The bank's \"acceptance\" means that the bank is guaranteeing the availability of the funds at the maturity of the Acceptance.\n\nBAs can provide an excellent alternative to traditional short-term borrowing via bank loans or commercial paper. If a company's name is not widely known, or if credit rating demands too high of a borrowing premium to issue commercial paper in the company's own name, then BAs may provide a cheaper borrowing alternative.\n\nWhen a bank places its acceptance on the draft it is assuring the holder that the bank will pay the obligation upon maturity. The draft may then be sold to an investor for a money market rate of return based upon the credit risk of the bank. Bankers' Acceptances typically result in an interest savings to the borrower.\n\nSince banks are not required to provide reserves for financing such transactions, they can be financed at a rate lower than more traditional credit facilities, due to the extreme liquidity that a BA can provide, the party may be able to gain access to a source of funds at a lower cost.\n\nTypical Terms:\n\nTerms and Structures\nMaturity\nGenerally 30 to 180 days \n\nIssued\nOffered on a continuing basis and readily marketable; maturities contingent on supply \n\nForm\nSecurities can either be maintained in a trust department, or with another custodian.\n\nQuoted\nOn a discount yield basis \n\nRate Structure\nYields vary according to money market conditions, maturities, and size of Acceptance \n\nInterest\nAcceptances are discounted at purchase and the return to the investor is the difference between the purchase price and face (par) value of the Acceptance \n\nDenominations\nTypically $1,000,000 \n\nSecurity\nAcceptances carry the irrevocable credit of the accepting bank to make payment at maturity \n\nTax Status\nFully taxable on the federal and state level",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "BankersAcceptanceId",
+					"Description": "The unique identifier of a Bankers Acceptance.",
+					"BaseAttributeReference": {
+						"Entity": "BankersAcceptance.cdm.json/BankersAcceptance",
+						"Name": "BankersAcceptanceId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "BankersAcceptanceTypeId",
+					"Description": "The unique identifier of a Bankers Acceptance Type.",
+					"BaseAttributeReference": {
+						"Entity": "BankersAcceptance.cdm.json/BankersAcceptance",
+						"Name": "BankersAcceptanceTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "BankersAcceptanceDate",
+					"Description": "The date of the bankers acceptance.",
+					"BaseAttributeReference": {
+						"Entity": "BankersAcceptance.cdm.json/BankersAcceptance",
+						"Name": "BankersAcceptanceDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "BankersAcceptanceFaceValueAmount",
+					"Description": "The face value of the bankers acceptance.",
+					"BaseAttributeReference": {
+						"Entity": "BankersAcceptance.cdm.json/BankersAcceptance",
+						"Name": "BankersAcceptanceFaceValueAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "BankersAcceptanceDiscountedAmount",
+					"Description": "The discounted amount associated with the bankers acceptance.",
+					"BaseAttributeReference": {
+						"Entity": "BankersAcceptance.cdm.json/BankersAcceptance",
+						"Name": "BankersAcceptanceDiscountedAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "BankersAcceptanceMaturityDate",
+					"Description": "The maturity date of the bankers acceptance.",
+					"BaseAttributeReference": {
+						"Entity": "BankersAcceptance.cdm.json/BankersAcceptance",
+						"Name": "BankersAcceptanceMaturityDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "BankersAcceptanceInterestPercentage",
+					"Description": "The percentage interest paid to by the banker's acceptance.\n\nAcceptances are discounted at purchase and the return to the investor is the difference between the purchase price and face (par) value of the Acceptance",
+					"BaseAttributeReference": {
+						"Entity": "BankersAcceptance.cdm.json/BankersAcceptance",
+						"Name": "BankersAcceptanceInterestPercentage"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "BankersAcceptanceSettlementDate",
+					"Description": "The date upon which the bankers acceptance settles.\n\nUsually the same as the contract date.",
+					"BaseAttributeReference": {
+						"Entity": "BankersAcceptance.cdm.json/BankersAcceptance",
+						"Name": "BankersAcceptanceSettlementDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "BankersAcceptanceYieldPercentage",
+					"Description": "The percentage yield of the banker's acceptance.\n\nNote:\nYields vary according to money market conditions, maturities, and size of Acceptance",
+					"BaseAttributeReference": {
+						"Entity": "BankersAcceptance.cdm.json/BankersAcceptance",
+						"Name": "BankersAcceptanceYieldPercentage"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "BankersAcceptanceSoldDate",
+					"Description": "The date that the bankers acceptance is sold.",
+					"BaseAttributeReference": {
+						"Entity": "BankersAcceptance.cdm.json/BankersAcceptance",
+						"Name": "BankersAcceptanceSoldDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "BankersAcceptanceSoldAmount",
+					"Description": "The amount for which the bankers acceptance is sold.",
+					"BaseAttributeReference": {
+						"Entity": "BankersAcceptance.cdm.json/BankersAcceptance",
+						"Name": "BankersAcceptanceSoldAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "CreditLineRequiredIndicator",
+					"Description": "Indicates that a credit line is required by the buyer of the bankers acceptance.",
+					"BaseAttributeReference": {
+						"Entity": "BankersAcceptance.cdm.json/BankersAcceptance",
+						"Name": "CreditLineRequiredIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "BearerFormIndicator",
+					"Description": "Indicates that the bankers acceptance is issued in bearer form.",
+					"BaseAttributeReference": {
+						"Entity": "BankersAcceptance.cdm.json/BankersAcceptance",
+						"Name": "BearerFormIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "SightDraftIndicator",
+					"Description": "A draft can require immediate payment by the second party to the third upon presentation of the draft. This is called a sight draft",
+					"BaseAttributeReference": {
+						"Entity": "BankersAcceptance.cdm.json/BankersAcceptance",
+						"Name": "SightDraftIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "OddLotBankersAcceptanceIndicator",
+					"Description": "Banker's acceptances are typically sold in multiples of US $100,000.\n\nBanker's acceptances smaller than this amount are referred to as odd lots.",
+					"BaseAttributeReference": {
+						"Entity": "BankersAcceptance.cdm.json/BankersAcceptance",
+						"Name": "OddLotBankersAcceptanceIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/BankersAcceptance",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/BankersAcceptance",
+				"Properties": {
+					"LinkedServiceName": "wspc-dpu-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"BankersAcceptanceId\":{\"entity\":\"BankersAcceptance.cdm.json/BankersAcceptance\",\"name\":\"BankersAcceptanceId\"},\"BankersAcceptanceTypeId\":{\"entity\":\"BankersAcceptance.cdm.json/BankersAcceptance\",\"name\":\"BankersAcceptanceTypeId\"},\"BankersAcceptanceDate\":{\"entity\":\"BankersAcceptance.cdm.json/BankersAcceptance\",\"name\":\"BankersAcceptanceDate\"},\"BankersAcceptanceFaceValueAmount\":{\"entity\":\"BankersAcceptance.cdm.json/BankersAcceptance\",\"name\":\"BankersAcceptanceFaceValueAmount\"},\"BankersAcceptanceDiscountedAmount\":{\"entity\":\"BankersAcceptance.cdm.json/BankersAcceptance\",\"name\":\"BankersAcceptanceDiscountedAmount\"},\"BankersAcceptanceMaturityDate\":{\"entity\":\"BankersAcceptance.cdm.json/BankersAcceptance\",\"name\":\"BankersAcceptanceMaturityDate\"},\"BankersAcceptanceInterestPercentage\":{\"entity\":\"BankersAcceptance.cdm.json/BankersAcceptance\",\"name\":\"BankersAcceptanceInterestPercentage\"},\"BankersAcceptanceSettlementDate\":{\"entity\":\"BankersAcceptance.cdm.json/BankersAcceptance\",\"name\":\"BankersAcceptanceSettlementDate\"},\"BankersAcceptanceYieldPercentage\":{\"entity\":\"BankersAcceptance.cdm.json/BankersAcceptance\",\"name\":\"BankersAcceptanceYieldPercentage\"},\"BankersAcceptanceSoldDate\":{\"entity\":\"BankersAcceptance.cdm.json/BankersAcceptance\",\"name\":\"BankersAcceptanceSoldDate\"},\"BankersAcceptanceSoldAmount\":{\"entity\":\"BankersAcceptance.cdm.json/BankersAcceptance\",\"name\":\"BankersAcceptanceSoldAmount\"},\"CreditLineRequiredIndicator\":{\"entity\":\"BankersAcceptance.cdm.json/BankersAcceptance\",\"name\":\"CreditLineRequiredIndicator\"},\"BearerFormIndicator\":{\"entity\":\"BankersAcceptance.cdm.json/BankersAcceptance\",\"name\":\"BearerFormIndicator\"},\"SightDraftIndicator\":{\"entity\":\"BankersAcceptance.cdm.json/BankersAcceptance\",\"name\":\"SightDraftIndicator\"},\"OddLotBankersAcceptanceIndicator\":{\"entity\":\"BankersAcceptance.cdm.json/BankersAcceptance\",\"name\":\"OddLotBankersAcceptanceIndicator\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"BankersAcceptance\",\"path\":\"BankersAcceptance.cdm.json/BankersAcceptance\"},\"description\":\"Bankers' Acceptances are drafts drawn by a commercial firm upon a bank and \\\"accepted\\\" by the bank. The drafts instruct the bank to pay a designated party a certain sum of money at a specified time in the future. The bank's \\\"acceptance\\\" means that the bank is guaranteeing the availability of the funds at the maturity of the Acceptance.\\n\\nBAs can provide an excellent alternative to traditional short-term borrowing via bank loans or commercial paper. If a company's name is not widely known, or if credit rating demands too high of a borrowing premium to issue commercial paper in the company's own name, then BAs may provide a cheaper borrowing alternative.\\n\\nWhen a bank places its acceptance on the draft it is assuring the holder that the bank will pay the obligation upon maturity. The draft may then be sold to an investor for a money market rate of return based upon the credit risk of the bank. Bankers' Acceptances typically result in an interest savings to the borrower.\\n\\nSince banks are not required to provide reserves for financing such transactions, they can be financed at a rate lower than more traditional credit facilities, due to the extreme liquidity that a BA can provide, the party may be able to gain access to a source of funds at a lower cost.\\n\\nTypical Terms:\\n\\nTerms and Structures\\nMaturity\\nGenerally 30 to 180 days \\n\\nIssued\\nOffered on a continuing basis and readily marketable; maturities contingent on supply \\n\\nForm\\nSecurities can either be maintained in a trust department, or with another custodian.\\n\\nQuoted\\nOn a discount yield basis \\n\\nRate Structure\\nYields vary according to money market conditions, maturities, and size of Acceptance \\n\\nInterest\\nAcceptances are discounted at purchase and the return to the investor is the difference between the purchase price and face (par) value of the Acceptance \\n\\nDenominations\\nTypically $1,000,000 \\n\\nSecurity\\nAcceptances carry the irrevocable credit of the accepting bank to make payment at maturity \\n\\nTax Status\\nFully taxable on the federal and state level\",\"primaryKey\":[\"BankersAcceptanceId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"BankersAcceptanceId\",\"attributeReference\":{\"entity\":\"BankersAcceptance.cdm.json/BankersAcceptance\",\"name\":\"BankersAcceptanceId\"},\"dataType\":\"long\"},{\"type\":\"Existing\",\"name\":\"BankersAcceptanceTypeId\",\"attributeReference\":{\"entity\":\"BankersAcceptance.cdm.json/BankersAcceptance\",\"name\":\"BankersAcceptanceTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"BankersAcceptanceDate\",\"attributeReference\":{\"entity\":\"BankersAcceptance.cdm.json/BankersAcceptance\",\"name\":\"BankersAcceptanceDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\"},{\"type\":\"Existing\",\"name\":\"BankersAcceptanceFaceValueAmount\",\"attributeReference\":{\"entity\":\"BankersAcceptance.cdm.json/BankersAcceptance\",\"name\":\"BankersAcceptanceFaceValueAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"BankersAcceptanceDiscountedAmount\",\"attributeReference\":{\"entity\":\"BankersAcceptance.cdm.json/BankersAcceptance\",\"name\":\"BankersAcceptanceDiscountedAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"BankersAcceptanceMaturityDate\",\"attributeReference\":{\"entity\":\"BankersAcceptance.cdm.json/BankersAcceptance\",\"name\":\"BankersAcceptanceMaturityDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\"},{\"type\":\"Existing\",\"name\":\"BankersAcceptanceInterestPercentage\",\"attributeReference\":{\"entity\":\"BankersAcceptance.cdm.json/BankersAcceptance\",\"name\":\"BankersAcceptanceInterestPercentage\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":8},{\"type\":\"Existing\",\"name\":\"BankersAcceptanceSettlementDate\",\"attributeReference\":{\"entity\":\"BankersAcceptance.cdm.json/BankersAcceptance\",\"name\":\"BankersAcceptanceSettlementDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\"},{\"type\":\"Existing\",\"name\":\"BankersAcceptanceYieldPercentage\",\"attributeReference\":{\"entity\":\"BankersAcceptance.cdm.json/BankersAcceptance\",\"name\":\"BankersAcceptanceYieldPercentage\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":8},{\"type\":\"Existing\",\"name\":\"BankersAcceptanceSoldDate\",\"attributeReference\":{\"entity\":\"BankersAcceptance.cdm.json/BankersAcceptance\",\"name\":\"BankersAcceptanceSoldDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\"},{\"type\":\"Existing\",\"name\":\"BankersAcceptanceSoldAmount\",\"attributeReference\":{\"entity\":\"BankersAcceptance.cdm.json/BankersAcceptance\",\"name\":\"BankersAcceptanceSoldAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"CreditLineRequiredIndicator\",\"attributeReference\":{\"entity\":\"BankersAcceptance.cdm.json/BankersAcceptance\",\"name\":\"CreditLineRequiredIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"BearerFormIndicator\",\"attributeReference\":{\"entity\":\"BankersAcceptance.cdm.json/BankersAcceptance\",\"name\":\"BearerFormIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"SightDraftIndicator\",\"attributeReference\":{\"entity\":\"BankersAcceptance.cdm.json/BankersAcceptance\",\"name\":\"SightDraftIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"OddLotBankersAcceptanceIndicator\",\"attributeReference\":{\"entity\":\"BankersAcceptance.cdm.json/BankersAcceptance\",\"name\":\"OddLotBankersAcceptanceIndicator\"},\"dataType\":\"boolean\"}]}}}",
+			"Description": "Bankers' Acceptances are drafts drawn by a commercial firm upon a bank and \"accepted\" by the bank. The drafts instruct the bank to pay a designated party a certain sum of money at a specified time in the future. The bank's \"acceptance\" means that the bank is guaranteeing the availability of the funds at the maturity of the Acceptance.\n\nBAs can provide an excellent alternative to traditional short-term borrowing via bank loans or commercial paper. If a company's name is not widely known, or if credit rating demands too high of a borrowing premium to issue commercial paper in the company's own name, then BAs may provide a cheaper borrowing alternative.\n\nWhen a bank places its acceptance on the draft it is assuring the holder that the bank will pay the obligation upon maturity. The draft may then be sold to an investor for a money market rate of return based upon the credit risk of the bank. Bankers' Acceptances typically result in an interest savings to the borrower.\n\nSince banks are not required to provide reserves for financing such transactions, they can be financed at a rate lower than more traditional credit facilities, due to the extreme liquidity that a BA can provide, the party may be able to gain access to a source of funds at a lower cost.\n\nTypical Terms:\n\nTerms and Structures\nMaturity\nGenerally 30 to 180 days \n\nIssued\nOffered on a continuing basis and readily marketable; maturities contingent on supply \n\nForm\nSecurities can either be maintained in a trust department, or with another custodian.\n\nQuoted\nOn a discount yield basis \n\nRate Structure\nYields vary according to money market conditions, maturities, and size of Acceptance \n\nInterest\nAcceptances are discounted at purchase and the return to the investor is the difference between the purchase price and face (par) value of the Acceptance \n\nDenominations\nTypically $1,000,000 \n\nSecurity\nAcceptances carry the irrevocable credit of the accepting bank to make payment at maturity \n\nTax Status\nFully taxable on the federal and state level",
+			"DisplayFolderInfo": "{\"name\":\"Financial Product\",\"colorCode\":\"#001475\"}",
+			"PrimaryKeys": "BankersAcceptanceId",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

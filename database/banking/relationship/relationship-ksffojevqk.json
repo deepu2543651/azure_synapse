@@ -1,0 +1,26 @@
+{
+	"name": "relationship-ksffojevqk",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-ksffojevqk",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "AssetBackedSecurity",
+		"ToTableName": "NoteClass",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "AssetBackedSecurityId",
+				"ToColumnName": "AssetBackedSecurityId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"AssetBackedSecurity.cdm.json/AssetBackedSecurity\",\"toEntity\":\"NoteClass.cdm.json/NoteClass\",\"joinPairs\":[{\"fromAttribute\":\"AssetBackedSecurityId\",\"toAttribute\":\"AssetBackedSecurityId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

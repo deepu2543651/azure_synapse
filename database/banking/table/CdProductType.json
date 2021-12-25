@@ -1,0 +1,112 @@
+{
+	"name": "CdProductType",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "CdProductType",
+		"Description": "The type of CD determined by common characteristics.\n\nEx:\n- Brokered CD\n- Bump-Up CD\n- Individual CD\n- Institutional CD (Jumbo CD)\n- Zero Coupon CD\n- Liquid CD\n- Step-Up/Step-Down CD\n- Add-On CD\n- Variable CD\n- Negotiable Certificate Of Deposit (NCD)\n\nWhere:\n\nBROKERED CD\nA certificate of deposit (CD) issued by a financial institution, bank or thrift institution and then purchased in bulk by a brokerage firm and resold to brokerage customers.\n\nBrokered CD's typically pay 1% more than CD's issued by major banks and also carry federal deposit insurance up to $100,000 and may not require an investor to pay a commission.\n\nBUMP-UP CD\nA certificate of deposit that gives the owner a one-time right to increase its yield for the remaining term of the CD should interest rates rise from the issue date.   The yield of the CD yield will not be adjusted downward if rates fall.\n\nINDIVIDUAL CD\nIndividual CD's are issued in denominations of as low as $100.\n\nMaturities range from a few weeks to several years.\n\nINSTITUTIONAL CD (JUMBO CD)\nInstitutional CD's are issued in denominations of $100,000 or more.\n\nMaturities range from a few weeks to several years.\n\nZERO COUPON CD\nCD's that are issued at a substantial discount from the face amount of the CD. \n\nMaturity terms are usually much longer, 15 to 20 years, which results in the discounted price. \n\nZero coupon CD's do not pay interest until the maturity date.\n\nLIQUID CD\nThis type of CD is generally a fixed rate certificate of deposit, which allows you to withdraw a portion of the original deposit during the term without paying a penalty. There will be some limits on when you can take the money out, the amount that can be withdrawn and how many separate withdrawals you can make from the CD.\n\nSTEP-UP / STEP-DOWN CD\nCertificates of deposit with a step up or down feature have a fixed interest rate for a period of time, usually one year and then the interest rate automatically rises up to a predetermined rate or is lowered to a predetermined rate.\n\nADD-ON CD\nFixed or variable rate CDs to which you can make additional deposits.\n\nThere may be a restriction regarding the minimum or maximum deposit that can be made.\n\nVARIABLE CD\nCD's that pay a variable interest rate tied to a market index.\n\nThese certificates of deposit can be tied to a bond or stock index or a reference rate like the Treasury bills, Prime Rate or the Consumer Price Index.\n\nNEGOTIABLE CERTIFICATE OF DEPOSIT (NCD)\nA certificate of deposit with a minimum face value of $100,000. These are guaranteed by the bank and can usually be sold in a highly liquid secondary market, but they cannot be cashed-in before maturity. \n\nDue to their large denominations, NCDs are bought most often by large institutional investors. Institutions often use these as a way to invest in a low-risk, low-interest security. \n\nA Yankee CD would be one example of a NCD.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "CdProductTypeId",
+					"Description": "The unique identifier of the CD Product Type.",
+					"BaseAttributeReference": {
+						"Entity": "CdProductType.cdm.json/CdProductType",
+						"Name": "CdProductTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "CdProductTypeName",
+					"Description": "The name of the CD Product Type.",
+					"BaseAttributeReference": {
+						"Entity": "CdProductType.cdm.json/CdProductType",
+						"Name": "CdProductTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "CdProductTypeDescription",
+					"Description": "The description of the CD Product Type.",
+					"BaseAttributeReference": {
+						"Entity": "CdProductType.cdm.json/CdProductType",
+						"Name": "CdProductTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/CdProductType",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/CdProductType",
+				"Properties": {
+					"LinkedServiceName": "wspc-dpu-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"CdProductTypeId\":{\"entity\":\"CdProductType.cdm.json/CdProductType\",\"name\":\"CdProductTypeId\"},\"CdProductTypeName\":{\"entity\":\"CdProductType.cdm.json/CdProductType\",\"name\":\"CdProductTypeName\"},\"CdProductTypeDescription\":{\"entity\":\"CdProductType.cdm.json/CdProductType\",\"name\":\"CdProductTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"CdProductType\",\"path\":\"CdProductType.cdm.json/CdProductType\"},\"description\":\"The type of CD determined by common characteristics.\\n\\nEx:\\n- Brokered CD\\n- Bump-Up CD\\n- Individual CD\\n- Institutional CD (Jumbo CD)\\n- Zero Coupon CD\\n- Liquid CD\\n- Step-Up/Step-Down CD\\n- Add-On CD\\n- Variable CD\\n- Negotiable Certificate Of Deposit (NCD)\\n\\nWhere:\\n\\nBROKERED CD\\nA certificate of deposit (CD) issued by a financial institution, bank or thrift institution and then purchased in bulk by a brokerage firm and resold to brokerage customers.\\n\\nBrokered CD's typically pay 1% more than CD's issued by major banks and also carry federal deposit insurance up to $100,000 and may not require an investor to pay a commission.\\n\\nBUMP-UP CD\\nA certificate of deposit that gives the owner a one-time right to increase its yield for the remaining term of the CD should interest rates rise from the issue date.   The yield of the CD yield will not be adjusted downward if rates fall.\\n\\nINDIVIDUAL CD\\nIndividual CD's are issued in denominations of as low as $100.\\n\\nMaturities range from a few weeks to several years.\\n\\nINSTITUTIONAL CD (JUMBO CD)\\nInstitutional CD's are issued in denominations of $100,000 or more.\\n\\nMaturities range from a few weeks to several years.\\n\\nZERO COUPON CD\\nCD's that are issued at a substantial discount from the face amount of the CD. \\n\\nMaturity terms are usually much longer, 15 to 20 years, which results in the discounted price. \\n\\nZero coupon CD's do not pay interest until the maturity date.\\n\\nLIQUID CD\\nThis type of CD is generally a fixed rate certificate of deposit, which allows you to withdraw a portion of the original deposit during the term without paying a penalty. There will be some limits on when you can take the money out, the amount that can be withdrawn and how many separate withdrawals you can make from the CD.\\n\\nSTEP-UP / STEP-DOWN CD\\nCertificates of deposit with a step up or down feature have a fixed interest rate for a period of time, usually one year and then the interest rate automatically rises up to a predetermined rate or is lowered to a predetermined rate.\\n\\nADD-ON CD\\nFixed or variable rate CDs to which you can make additional deposits.\\n\\nThere may be a restriction regarding the minimum or maximum deposit that can be made.\\n\\nVARIABLE CD\\nCD's that pay a variable interest rate tied to a market index.\\n\\nThese certificates of deposit can be tied to a bond or stock index or a reference rate like the Treasury bills, Prime Rate or the Consumer Price Index.\\n\\nNEGOTIABLE CERTIFICATE OF DEPOSIT (NCD)\\nA certificate of deposit with a minimum face value of $100,000. These are guaranteed by the bank and can usually be sold in a highly liquid secondary market, but they cannot be cashed-in before maturity. \\n\\nDue to their large denominations, NCDs are bought most often by large institutional investors. Institutions often use these as a way to invest in a low-risk, low-interest security. \\n\\nA Yankee CD would be one example of a NCD.\",\"primaryKey\":[\"CdProductTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"CdProductTypeId\",\"attributeReference\":{\"entity\":\"CdProductType.cdm.json/CdProductType\",\"name\":\"CdProductTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"CdProductTypeName\",\"attributeReference\":{\"entity\":\"CdProductType.cdm.json/CdProductType\",\"name\":\"CdProductTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"CdProductTypeDescription\",\"attributeReference\":{\"entity\":\"CdProductType.cdm.json/CdProductType\",\"name\":\"CdProductTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512}]}}}",
+			"Description": "The type of CD determined by common characteristics.\n\nEx:\n- Brokered CD\n- Bump-Up CD\n- Individual CD\n- Institutional CD (Jumbo CD)\n- Zero Coupon CD\n- Liquid CD\n- Step-Up/Step-Down CD\n- Add-On CD\n- Variable CD\n- Negotiable Certificate Of Deposit (NCD)\n\nWhere:\n\nBROKERED CD\nA certificate of deposit (CD) issued by a financial institution, bank or thrift institution and then purchased in bulk by a brokerage firm and resold to brokerage customers.\n\nBrokered CD's typically pay 1% more than CD's issued by major banks and also carry federal deposit insurance up to $100,000 and may not require an investor to pay a commission.\n\nBUMP-UP CD\nA certificate of deposit that gives the owner a one-time right to increase its yield for the remaining term of the CD should interest rates rise from the issue date.   The yield of the CD yield will not be adjusted downward if rates fall.\n\nINDIVIDUAL CD\nIndividual CD's are issued in denominations of as low as $100.\n\nMaturities range from a few weeks to several years.\n\nINSTITUTIONAL CD (JUMBO CD)\nInstitutional CD's are issued in denominations of $100,000 or more.\n\nMaturities range from a few weeks to several years.\n\nZERO COUPON CD\nCD's that are issued at a substantial discount from the face amount of the CD. \n\nMaturity terms are usually much longer, 15 to 20 years, which results in the discounted price. \n\nZero coupon CD's do not pay interest until the maturity date.\n\nLIQUID CD\nThis type of CD is generally a fixed rate certificate of deposit, which allows you to withdraw a portion of the original deposit during the term without paying a penalty. There will be some limits on when you can take the money out, the amount that can be withdrawn and how many separate withdrawals you can make from the CD.\n\nSTEP-UP / STEP-DOWN CD\nCertificates of deposit with a step up or down feature have a fixed interest rate for a period of time, usually one year and then the interest rate automatically rises up to a predetermined rate or is lowered to a predetermined rate.\n\nADD-ON CD\nFixed or variable rate CDs to which you can make additional deposits.\n\nThere may be a restriction regarding the minimum or maximum deposit that can be made.\n\nVARIABLE CD\nCD's that pay a variable interest rate tied to a market index.\n\nThese certificates of deposit can be tied to a bond or stock index or a reference rate like the Treasury bills, Prime Rate or the Consumer Price Index.\n\nNEGOTIABLE CERTIFICATE OF DEPOSIT (NCD)\nA certificate of deposit with a minimum face value of $100,000. These are guaranteed by the bank and can usually be sold in a highly liquid secondary market, but they cannot be cashed-in before maturity. \n\nDue to their large denominations, NCDs are bought most often by large institutional investors. Institutions often use these as a way to invest in a low-risk, low-interest security. \n\nA Yankee CD would be one example of a NCD.",
+			"DisplayFolderInfo": "{\"name\":\"Financial Product\",\"colorCode\":\"#001475\"}",
+			"PrimaryKeys": "CdProductTypeId",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

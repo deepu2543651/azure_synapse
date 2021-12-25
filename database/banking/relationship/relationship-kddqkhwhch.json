@@ -1,0 +1,26 @@
+{
+	"name": "relationship-kddqkhwhch",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-kddqkhwhch",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Currency",
+		"ToTableName": "BankTransaction",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "IsoCurrencyCode",
+				"ToColumnName": "IsoCurrencyCode"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Currency.cdm.json/Currency\",\"toEntity\":\"BankTransaction.cdm.json/BankTransaction\",\"joinPairs\":[{\"fromAttribute\":\"IsoCurrencyCode\",\"toAttribute\":\"IsoCurrencyCode\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

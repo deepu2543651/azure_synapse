@@ -1,0 +1,26 @@
+{
+	"name": "relationship-qtzzgagewq",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-qtzzgagewq",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "FamilyLifeCycle",
+		"ToTableName": "CustomerFamilyLifeCycle",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "FamilyLifeCycleId",
+				"ToColumnName": "FamilyLifeCycleId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"FamilyLifeCycle.cdm.json/FamilyLifeCycle\",\"toEntity\":\"CustomerFamilyLifeCycle.cdm.json/CustomerFamilyLifeCycle\",\"joinPairs\":[{\"fromAttribute\":\"FamilyLifeCycleId\",\"toAttribute\":\"FamilyLifeCycleId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

@@ -1,0 +1,26 @@
+{
+	"name": "relationship-djsjoinscx",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-djsjoinscx",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Channel",
+		"ToTableName": "BankTransaction",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ChannelId",
+				"ToColumnName": "DistributionChannelId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Channel.cdm.json/Channel\",\"toEntity\":\"BankTransaction.cdm.json/BankTransaction\",\"joinPairs\":[{\"fromAttribute\":\"ChannelId\",\"toAttribute\":\"DistributionChannelId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

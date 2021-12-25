@@ -1,0 +1,26 @@
+{
+	"name": "relationship-uzrreuiwvv",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-uzrreuiwvv",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "SatisfactionRating",
+		"ToTableName": "ProductSatisfactionRating",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "SatisfactionRatingId",
+				"ToColumnName": "SatisfactionRatingId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"SatisfactionRating.cdm.json/SatisfactionRating\",\"toEntity\":\"ProductSatisfactionRating.cdm.json/ProductSatisfactionRating\",\"joinPairs\":[{\"fromAttribute\":\"SatisfactionRatingId\",\"toAttribute\":\"SatisfactionRatingId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

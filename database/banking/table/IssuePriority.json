@@ -1,0 +1,112 @@
+{
+	"name": "IssuePriority",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "IssuePriority",
+		"Description": "The priority of the Issue.\n\nEx:\n-  Critical\n-  High \n-  Medium  \n-  Low  \n-  Unknown\n-  N/A",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "IssuePriorityId",
+					"Description": "The unique identifier of the Issue Priority.",
+					"BaseAttributeReference": {
+						"Entity": "IssuePriority.cdm.json/IssuePriority",
+						"Name": "IssuePriorityId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "IssuePriorityName",
+					"Description": "The name of the Issue Priority.",
+					"BaseAttributeReference": {
+						"Entity": "IssuePriority.cdm.json/IssuePriority",
+						"Name": "IssuePriorityName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "IssuePriorityDescription",
+					"Description": "The description of the Issue Priority.",
+					"BaseAttributeReference": {
+						"Entity": "IssuePriority.cdm.json/IssuePriority",
+						"Name": "IssuePriorityDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/IssuePriority",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/IssuePriority",
+				"Properties": {
+					"LinkedServiceName": "wspc-dpu-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"IssuePriorityId\":{\"entity\":\"IssuePriority.cdm.json/IssuePriority\",\"name\":\"IssuePriorityId\"},\"IssuePriorityName\":{\"entity\":\"IssuePriority.cdm.json/IssuePriority\",\"name\":\"IssuePriorityName\"},\"IssuePriorityDescription\":{\"entity\":\"IssuePriority.cdm.json/IssuePriority\",\"name\":\"IssuePriorityDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"IssuePriority\",\"path\":\"IssuePriority.cdm.json/IssuePriority\"},\"description\":\"The priority of the Issue.\\n\\nEx:\\n-  Critical\\n-  High \\n-  Medium  \\n-  Low  \\n-  Unknown\\n-  N/A\",\"primaryKey\":[\"IssuePriorityId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"IssuePriorityId\",\"attributeReference\":{\"entity\":\"IssuePriority.cdm.json/IssuePriority\",\"name\":\"IssuePriorityId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"IssuePriorityName\",\"attributeReference\":{\"entity\":\"IssuePriority.cdm.json/IssuePriority\",\"name\":\"IssuePriorityName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"IssuePriorityDescription\",\"attributeReference\":{\"entity\":\"IssuePriority.cdm.json/IssuePriority\",\"name\":\"IssuePriorityDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512}]}}}",
+			"Description": "The priority of the Issue.\n\nEx:\n-  Critical\n-  High \n-  Medium  \n-  Low  \n-  Unknown\n-  N/A",
+			"DisplayFolderInfo": "{\"name\":\"Customer Service & Contact Management\",\"colorCode\":\"#Ef6950\"}",
+			"PrimaryKeys": "IssuePriorityId",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

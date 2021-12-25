@@ -1,0 +1,26 @@
+{
+	"name": "relationship-imufqsmwzw",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-imufqsmwzw",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "BankingProduct",
+		"ToTableName": "AssetBackedSecurity",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ProductId",
+				"ToColumnName": "AssetBackedSecurityId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"BankingProduct.cdm.json/BankingProduct\",\"toEntity\":\"AssetBackedSecurity.cdm.json/AssetBackedSecurity\",\"joinPairs\":[{\"fromAttribute\":\"ProductId\",\"toAttribute\":\"AssetBackedSecurityId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

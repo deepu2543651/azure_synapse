@@ -1,0 +1,26 @@
+{
+	"name": "relationship-dsfxzjyumt",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-dsfxzjyumt",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "TransactionEventType",
+		"ToTableName": "TransactionEvent",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "TransactionEventTypeId",
+				"ToColumnName": "TransactionEventTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"TransactionEventType.cdm.json/TransactionEventType\",\"toEntity\":\"TransactionEvent.cdm.json/TransactionEvent\",\"joinPairs\":[{\"fromAttribute\":\"TransactionEventTypeId\",\"toAttribute\":\"TransactionEventTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

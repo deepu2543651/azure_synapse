@@ -1,0 +1,161 @@
+{
+	"name": "PayeeCustomerAccount",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "PayeeCustomerAccount",
+		"Description": "The Payee Account that the Customer Account wishes to have a transaction with.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "CustomerAccountId",
+					"Description": "The unique identifier of a Customer Account.",
+					"BaseAttributeReference": {
+						"Entity": "PayeeCustomerAccount.cdm.json/PayeeCustomerAccount",
+						"Name": "CustomerAccountId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "PayeeId",
+					"Description": "The unique identifier of a Payee.",
+					"BaseAttributeReference": {
+						"Entity": "PayeeCustomerAccount.cdm.json/PayeeCustomerAccount",
+						"Name": "PayeeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PayeeCustomerAccountNumber",
+					"Description": "The account number for the payee belonging to the Customer Account.",
+					"BaseAttributeReference": {
+						"Entity": "PayeeCustomerAccount.cdm.json/PayeeCustomerAccount",
+						"Name": "PayeeCustomerAccountNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Length": 16,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "PayeeAccountStatusId",
+					"Description": "The unique identifier of a Payee Account Status.",
+					"BaseAttributeReference": {
+						"Entity": "PayeeCustomerAccount.cdm.json/PayeeCustomerAccount",
+						"Name": "PayeeAccountStatusId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PayeeCustomerAccountOptionalName",
+					"Description": "The optional description provided by the Customer as a description of the associated customer account.",
+					"BaseAttributeReference": {
+						"Entity": "PayeeCustomerAccount.cdm.json/PayeeCustomerAccount",
+						"Name": "PayeeCustomerAccountOptionalName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "PayeeCustomerAccountNote",
+					"Description": "A note, comment or additional information regarding the payee customer account.",
+					"BaseAttributeReference": {
+						"Entity": "PayeeCustomerAccount.cdm.json/PayeeCustomerAccount",
+						"Name": "PayeeCustomerAccountNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/PayeeCustomerAccount",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/PayeeCustomerAccount",
+				"Properties": {
+					"LinkedServiceName": "wspc-dpu-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"CustomerAccountId\":{\"entity\":\"PayeeCustomerAccount.cdm.json/PayeeCustomerAccount\",\"name\":\"CustomerAccountId\"},\"PayeeId\":{\"entity\":\"PayeeCustomerAccount.cdm.json/PayeeCustomerAccount\",\"name\":\"PayeeId\"},\"PayeeCustomerAccountNumber\":{\"entity\":\"PayeeCustomerAccount.cdm.json/PayeeCustomerAccount\",\"name\":\"PayeeCustomerAccountNumber\"},\"PayeeAccountStatusId\":{\"entity\":\"PayeeCustomerAccount.cdm.json/PayeeCustomerAccount\",\"name\":\"PayeeAccountStatusId\"},\"PayeeCustomerAccountOptionalName\":{\"entity\":\"PayeeCustomerAccount.cdm.json/PayeeCustomerAccount\",\"name\":\"PayeeCustomerAccountOptionalName\"},\"PayeeCustomerAccountNote\":{\"entity\":\"PayeeCustomerAccount.cdm.json/PayeeCustomerAccount\",\"name\":\"PayeeCustomerAccountNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"PayeeCustomerAccount\",\"path\":\"PayeeCustomerAccount.cdm.json/PayeeCustomerAccount\"},\"description\":\"The Payee Account that the Customer Account wishes to have a transaction with.\",\"primaryKey\":[\"CustomerAccountId\",\"PayeeId\",\"PayeeCustomerAccountNumber\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"CustomerAccountId\",\"attributeReference\":{\"entity\":\"PayeeCustomerAccount.cdm.json/PayeeCustomerAccount\",\"name\":\"CustomerAccountId\"},\"dataType\":\"long\"},{\"type\":\"Existing\",\"name\":\"PayeeId\",\"attributeReference\":{\"entity\":\"PayeeCustomerAccount.cdm.json/PayeeCustomerAccount\",\"name\":\"PayeeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"PayeeCustomerAccountNumber\",\"attributeReference\":{\"entity\":\"PayeeCustomerAccount.cdm.json/PayeeCustomerAccount\",\"name\":\"PayeeCustomerAccountNumber\"},\"dataType\":\"string\",\"dataTypeLength\":16},{\"type\":\"Existing\",\"name\":\"PayeeAccountStatusId\",\"attributeReference\":{\"entity\":\"PayeeCustomerAccount.cdm.json/PayeeCustomerAccount\",\"name\":\"PayeeAccountStatusId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"PayeeCustomerAccountOptionalName\",\"attributeReference\":{\"entity\":\"PayeeCustomerAccount.cdm.json/PayeeCustomerAccount\",\"name\":\"PayeeCustomerAccountOptionalName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"PayeeCustomerAccountNote\",\"attributeReference\":{\"entity\":\"PayeeCustomerAccount.cdm.json/PayeeCustomerAccount\",\"name\":\"PayeeCustomerAccountNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024}]}}}",
+			"Description": "The Payee Account that the Customer Account wishes to have a transaction with.",
+			"DisplayFolderInfo": "{\"name\":\"Customer Account\",\"colorCode\":\"#E3008C\"}",
+			"PrimaryKeys": "CustomerAccountId,PayeeId,PayeeCustomerAccountNumber",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

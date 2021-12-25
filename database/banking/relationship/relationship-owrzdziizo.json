@@ -1,0 +1,26 @@
+{
+	"name": "relationship-owrzdziizo",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-owrzdziizo",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "RatingCriteria",
+		"ToTableName": "CustomerAccountSatisfactionRating",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "RatingCriteriaId",
+				"ToColumnName": "RatingCriteriaId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"RatingCriteria.cdm.json/RatingCriteria\",\"toEntity\":\"CustomerAccountSatisfactionRating.cdm.json/CustomerAccountSatisfactionRating\",\"joinPairs\":[{\"fromAttribute\":\"RatingCriteriaId\",\"toAttribute\":\"RatingCriteriaId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

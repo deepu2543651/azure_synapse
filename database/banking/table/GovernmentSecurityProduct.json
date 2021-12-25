@@ -1,0 +1,299 @@
+{
+	"name": "GovernmentSecurityProduct",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "GovernmentSecurityProduct",
+		"Description": "A government security such as a bond, note or bill.\n\nTreasury securities are government bonds and debt financing instruments of the US Federal government that are issued by the US Department of the Treasury through the Bureau of the Public Debt.   They are sold in order to pay off maturing debt and raise the cash needed to run the federal government.\n\nThere are several types of non-marketable treasury securities including State and Local Government Series (SLGS), Government Account Series debt issued to government-managed trust funds, and savings bonds. All of the marketable Treasury securities are very liquid and are heavily traded on the secondary market.\n\nThere are six types of common marketable treasury securities:\n  - Treasury Bill\n  - Treasury Note\n  - Treasury Bond\n  - Treasury Inflation-Protected Security TIPS\n  - Separate Trading of Registered Interest and Principal of Securities (STRIPS)\n  - Cash Management Bill (CMB)\n\nAlthough Treasuries are considered free from credit risk, they are affected by other types of risk, principally interest-rate risk and inflation risk. \n\nWhile investors are effectively guaranteed to receive interest and principal as promised, the underlying value of the bond itself may change depending on the direction of interest rates.\n\nAs with all fixed-income securities, if interest rates in general rise after a Treasury security is issued, the value of the issued security will fall, since bonds paying higher rates will come into the market. \n\nSimilarly, if interest rates fall, the value of the older, higher-paying bond will rise in comparison with new issues.\n\nThe primary advantage of Treasury securities is safety. No other investment carries as strong a guarantee that interest and principal will be paid on time. Because these payments are predictable, many people invest in them to preserve and increase their capital and to receive a dependable income stream -- to help meet living expenses during retirement, for example, or to fund specific objectives, such as paying for a college education.\n\nThe benefit of predictability is enhanced by the fact that Treasuries generally do not have \"call\" provision. In fact, the Treasury has not issued \"callable\" securities since 1985. Call provisions, common in municipal and corporate bonds, permit the issuer to pay off the bond in full before its scheduled maturity. \n\nThis is especially likely to happen when interest rates decline; the issuer will refinance its debt to obtain the lower prevailing interest rate, just as home owners refinance mortgages. When that happens, the investor would be forced to pay more to earn the same interest rate. \n\nIf you own Treasuries that have no call provisions, you know exactly how long your income stream will last.\n\nAnother advantage of Treasuries is that they are available with a wide range of maturity dates. This allows an investor to structure a portfolio to specific time horizons.\n\nBecause they are the safest investments available, Treasury securities pay somewhat lower interest rates than other taxable fixed-income investments. Many investors accept this as a trade-off for security. In a diversified portfolio, Treasury securities usually represent money that investors want to keep safe from risk.\n\nAn added benefit of Treasury securities is that their interest payments are exempt from state and local income taxes (but not federal taxes). This has the effect of increasing the after-tax benefits of these investments. Investors in high-tax states should take special note of this benefit.\n\nAnother important characteristic of the Treasury market is its high level of liquidity, which means that Treasuries are easy to buy and sell. Because they trade so frequently in large volume, the spreads between what a dealer would be willing to pay and what a dealer would be willing to sell for is lower than for other securities.\n\nA short-term maturity (up to one year) discounted government security that is sold via competitive bidding at weekly or monthly government auctions in denominations from $10,000 to $1,000,000.    \n\nThe US Treasury invites all interested parties to submit bids, called a tender, then awards units to the highest bidders going down the list.\n\nThree and six-month bills are auctioned weekly.\nNine-month and one-year bills are auctioned monthly.\n\nThe high degree of safety and liquidity make treasury bills popular investments.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ProductId",
+					"Description": "The unique identifier of a Product.",
+					"BaseAttributeReference": {
+						"Entity": "GovernmentSecurityProduct.cdm.json/GovernmentSecurityProduct",
+						"Name": "ProductId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "MinimumInvestmentAmount",
+					"Description": "The minimum that may be invested to acquire  the associated security.",
+					"BaseAttributeReference": {
+						"Entity": "GovernmentSecurityProduct.cdm.json/GovernmentSecurityProduct",
+						"Name": "MinimumInvestmentAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "DiscountPriceAmount",
+					"Description": "The price at which the security is purchased at discount.",
+					"BaseAttributeReference": {
+						"Entity": "GovernmentSecurityProduct.cdm.json/GovernmentSecurityProduct",
+						"Name": "DiscountPriceAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "FaceValueAmount",
+					"Description": "Par value (principal or maturity value) of a security.",
+					"BaseAttributeReference": {
+						"Entity": "GovernmentSecurityProduct.cdm.json/GovernmentSecurityProduct",
+						"Name": "FaceValueAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "MaturityDate",
+					"Description": "The date when the principal amount is due to be repaid.",
+					"BaseAttributeReference": {
+						"Entity": "GovernmentSecurityProduct.cdm.json/GovernmentSecurityProduct",
+						"Name": "MaturityDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "AuctionDate",
+					"Description": "The auction date of the government security.",
+					"BaseAttributeReference": {
+						"Entity": "GovernmentSecurityProduct.cdm.json/GovernmentSecurityProduct",
+						"Name": "AuctionDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "YieldToMaturity",
+					"Description": "A yield based on the assumption that the security remains outstanding to maturity. It represents the total of coupon payments until maturity, plus interest on interest, and whatever gain or loss is realized from the security at maturity.",
+					"BaseAttributeReference": {
+						"Entity": "GovernmentSecurityProduct.cdm.json/GovernmentSecurityProduct",
+						"Name": "YieldToMaturity"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "Discount",
+					"Description": "The amount by which price of a bond is less than its par or face value. Treasury bills, like zero-coupon bonds, are sold at a discount. No interest payments are made, but the investor receives the full face value when the security matures. from quotes for other government obligations since Treasury bills are issued at a discount from par or face value, with the holder receiving full value at maturity.",
+					"BaseAttributeReference": {
+						"Entity": "GovernmentSecurityProduct.cdm.json/GovernmentSecurityProduct",
+						"Name": "Discount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "GovernmentSecurityProductTypeId",
+					"Description": "The unique identifier of a Government Security Product Type.",
+					"BaseAttributeReference": {
+						"Entity": "GovernmentSecurityProduct.cdm.json/GovernmentSecurityProduct",
+						"Name": "GovernmentSecurityProductTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "FormOfIssueId",
+					"Description": "The unique identifier of a Form Of Issue.",
+					"BaseAttributeReference": {
+						"Entity": "GovernmentSecurityProduct.cdm.json/GovernmentSecurityProduct",
+						"Name": "FormOfIssueId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "InterestRate",
+					"Description": "The interest rate for the associated security.",
+					"BaseAttributeReference": {
+						"Entity": "GovernmentSecurityProduct.cdm.json/GovernmentSecurityProduct",
+						"Name": "InterestRate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "TermUnits",
+					"Description": "The term in units of Term Unit of Measure ID. \n\nEx:\nTreasury bill are sold in terms that range from a few days to 52 weeks.",
+					"BaseAttributeReference": {
+						"Entity": "GovernmentSecurityProduct.cdm.json/GovernmentSecurityProduct",
+						"Name": "TermUnits"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "UnitOfMeasureId",
+					"Description": "The unique identifier of a Unit Of Measure.",
+					"BaseAttributeReference": {
+						"Entity": "GovernmentSecurityProduct.cdm.json/GovernmentSecurityProduct",
+						"Name": "UnitOfMeasureId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "TreasurySecurityNumber",
+					"Description": "The Treasury Security number or identified (if different from the account #).",
+					"BaseAttributeReference": {
+						"Entity": "GovernmentSecurityProduct.cdm.json/GovernmentSecurityProduct",
+						"Name": "TreasurySecurityNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/GovernmentSecurityProduct",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/GovernmentSecurityProduct",
+				"Properties": {
+					"LinkedServiceName": "wspc-dpu-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ProductId\":{\"entity\":\"GovernmentSecurityProduct.cdm.json/GovernmentSecurityProduct\",\"name\":\"ProductId\"},\"MinimumInvestmentAmount\":{\"entity\":\"GovernmentSecurityProduct.cdm.json/GovernmentSecurityProduct\",\"name\":\"MinimumInvestmentAmount\"},\"DiscountPriceAmount\":{\"entity\":\"GovernmentSecurityProduct.cdm.json/GovernmentSecurityProduct\",\"name\":\"DiscountPriceAmount\"},\"FaceValueAmount\":{\"entity\":\"GovernmentSecurityProduct.cdm.json/GovernmentSecurityProduct\",\"name\":\"FaceValueAmount\"},\"MaturityDate\":{\"entity\":\"GovernmentSecurityProduct.cdm.json/GovernmentSecurityProduct\",\"name\":\"MaturityDate\"},\"AuctionDate\":{\"entity\":\"GovernmentSecurityProduct.cdm.json/GovernmentSecurityProduct\",\"name\":\"AuctionDate\"},\"YieldToMaturity\":{\"entity\":\"GovernmentSecurityProduct.cdm.json/GovernmentSecurityProduct\",\"name\":\"YieldToMaturity\"},\"Discount\":{\"entity\":\"GovernmentSecurityProduct.cdm.json/GovernmentSecurityProduct\",\"name\":\"Discount\"},\"GovernmentSecurityProductTypeId\":{\"entity\":\"GovernmentSecurityProduct.cdm.json/GovernmentSecurityProduct\",\"name\":\"GovernmentSecurityProductTypeId\"},\"FormOfIssueId\":{\"entity\":\"GovernmentSecurityProduct.cdm.json/GovernmentSecurityProduct\",\"name\":\"FormOfIssueId\"},\"InterestRate\":{\"entity\":\"GovernmentSecurityProduct.cdm.json/GovernmentSecurityProduct\",\"name\":\"InterestRate\"},\"TermUnits\":{\"entity\":\"GovernmentSecurityProduct.cdm.json/GovernmentSecurityProduct\",\"name\":\"TermUnits\"},\"UnitOfMeasureId\":{\"entity\":\"GovernmentSecurityProduct.cdm.json/GovernmentSecurityProduct\",\"name\":\"UnitOfMeasureId\"},\"TreasurySecurityNumber\":{\"entity\":\"GovernmentSecurityProduct.cdm.json/GovernmentSecurityProduct\",\"name\":\"TreasurySecurityNumber\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"GovernmentSecurityProduct\",\"path\":\"GovernmentSecurityProduct.cdm.json/GovernmentSecurityProduct\"},\"description\":\"A government security such as a bond, note or bill.\\n\\nTreasury securities are government bonds and debt financing instruments of the US Federal government that are issued by the US Department of the Treasury through the Bureau of the Public Debt.   They are sold in order to pay off maturing debt and raise the cash needed to run the federal government.\\n\\nThere are several types of non-marketable treasury securities including State and Local Government Series (SLGS), Government Account Series debt issued to government-managed trust funds, and savings bonds. All of the marketable Treasury securities are very liquid and are heavily traded on the secondary market.\\n\\nThere are six types of common marketable treasury securities:\\n  - Treasury Bill\\n  - Treasury Note\\n  - Treasury Bond\\n  - Treasury Inflation-Protected Security TIPS\\n  - Separate Trading of Registered Interest and Principal of Securities (STRIPS)\\n  - Cash Management Bill (CMB)\\n\\nAlthough Treasuries are considered free from credit risk, they are affected by other types of risk, principally interest-rate risk and inflation risk. \\n\\nWhile investors are effectively guaranteed to receive interest and principal as promised, the underlying value of the bond itself may change depending on the direction of interest rates.\\n\\nAs with all fixed-income securities, if interest rates in general rise after a Treasury security is issued, the value of the issued security will fall, since bonds paying higher rates will come into the market. \\n\\nSimilarly, if interest rates fall, the value of the older, higher-paying bond will rise in comparison with new issues.\\n\\nThe primary advantage of Treasury securities is safety. No other investment carries as strong a guarantee that interest and principal will be paid on time. Because these payments are predictable, many people invest in them to preserve and increase their capital and to receive a dependable income stream -- to help meet living expenses during retirement, for example, or to fund specific objectives, such as paying for a college education.\\n\\nThe benefit of predictability is enhanced by the fact that Treasuries generally do not have \\\"call\\\" provision. In fact, the Treasury has not issued \\\"callable\\\" securities since 1985. Call provisions, common in municipal and corporate bonds, permit the issuer to pay off the bond in full before its scheduled maturity. \\n\\nThis is especially likely to happen when interest rates decline; the issuer will refinance its debt to obtain the lower prevailing interest rate, just as home owners refinance mortgages. When that happens, the investor would be forced to pay more to earn the same interest rate. \\n\\nIf you own Treasuries that have no call provisions, you know exactly how long your income stream will last.\\n\\nAnother advantage of Treasuries is that they are available with a wide range of maturity dates. This allows an investor to structure a portfolio to specific time horizons.\\n\\nBecause they are the safest investments available, Treasury securities pay somewhat lower interest rates than other taxable fixed-income investments. Many investors accept this as a trade-off for security. In a diversified portfolio, Treasury securities usually represent money that investors want to keep safe from risk.\\n\\nAn added benefit of Treasury securities is that their interest payments are exempt from state and local income taxes (but not federal taxes). This has the effect of increasing the after-tax benefits of these investments. Investors in high-tax states should take special note of this benefit.\\n\\nAnother important characteristic of the Treasury market is its high level of liquidity, which means that Treasuries are easy to buy and sell. Because they trade so frequently in large volume, the spreads between what a dealer would be willing to pay and what a dealer would be willing to sell for is lower than for other securities.\\n\\nA short-term maturity (up to one year) discounted government security that is sold via competitive bidding at weekly or monthly government auctions in denominations from $10,000 to $1,000,000.    \\n\\nThe US Treasury invites all interested parties to submit bids, called a tender, then awards units to the highest bidders going down the list.\\n\\nThree and six-month bills are auctioned weekly.\\nNine-month and one-year bills are auctioned monthly.\\n\\nThe high degree of safety and liquidity make treasury bills popular investments.\",\"primaryKey\":[\"ProductId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"ProductId\",\"attributeReference\":{\"entity\":\"GovernmentSecurityProduct.cdm.json/GovernmentSecurityProduct\",\"name\":\"ProductId\"},\"dataType\":\"long\"},{\"type\":\"Existing\",\"name\":\"MinimumInvestmentAmount\",\"attributeReference\":{\"entity\":\"GovernmentSecurityProduct.cdm.json/GovernmentSecurityProduct\",\"name\":\"MinimumInvestmentAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"DiscountPriceAmount\",\"attributeReference\":{\"entity\":\"GovernmentSecurityProduct.cdm.json/GovernmentSecurityProduct\",\"name\":\"DiscountPriceAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"FaceValueAmount\",\"attributeReference\":{\"entity\":\"GovernmentSecurityProduct.cdm.json/GovernmentSecurityProduct\",\"name\":\"FaceValueAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"MaturityDate\",\"attributeReference\":{\"entity\":\"GovernmentSecurityProduct.cdm.json/GovernmentSecurityProduct\",\"name\":\"MaturityDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\"},{\"type\":\"Existing\",\"name\":\"AuctionDate\",\"attributeReference\":{\"entity\":\"GovernmentSecurityProduct.cdm.json/GovernmentSecurityProduct\",\"name\":\"AuctionDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\"},{\"type\":\"Existing\",\"name\":\"YieldToMaturity\",\"attributeReference\":{\"entity\":\"GovernmentSecurityProduct.cdm.json/GovernmentSecurityProduct\",\"name\":\"YieldToMaturity\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"Discount\",\"attributeReference\":{\"entity\":\"GovernmentSecurityProduct.cdm.json/GovernmentSecurityProduct\",\"name\":\"Discount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"GovernmentSecurityProductTypeId\",\"attributeReference\":{\"entity\":\"GovernmentSecurityProduct.cdm.json/GovernmentSecurityProduct\",\"name\":\"GovernmentSecurityProductTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"FormOfIssueId\",\"attributeReference\":{\"entity\":\"GovernmentSecurityProduct.cdm.json/GovernmentSecurityProduct\",\"name\":\"FormOfIssueId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"InterestRate\",\"attributeReference\":{\"entity\":\"GovernmentSecurityProduct.cdm.json/GovernmentSecurityProduct\",\"name\":\"InterestRate\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":8},{\"type\":\"Existing\",\"name\":\"TermUnits\",\"attributeReference\":{\"entity\":\"GovernmentSecurityProduct.cdm.json/GovernmentSecurityProduct\",\"name\":\"TermUnits\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"UnitOfMeasureId\",\"attributeReference\":{\"entity\":\"GovernmentSecurityProduct.cdm.json/GovernmentSecurityProduct\",\"name\":\"UnitOfMeasureId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"TreasurySecurityNumber\",\"attributeReference\":{\"entity\":\"GovernmentSecurityProduct.cdm.json/GovernmentSecurityProduct\",\"name\":\"TreasurySecurityNumber\"},\"dataType\":\"string\",\"dataTypeLength\":1024}]}}}",
+			"Description": "A government security such as a bond, note or bill.\n\nTreasury securities are government bonds and debt financing instruments of the US Federal government that are issued by the US Department of the Treasury through the Bureau of the Public Debt.   They are sold in order to pay off maturing debt and raise the cash needed to run the federal government.\n\nThere are several types of non-marketable treasury securities including State and Local Government Series (SLGS), Government Account Series debt issued to government-managed trust funds, and savings bonds. All of the marketable Treasury securities are very liquid and are heavily traded on the secondary market.\n\nThere are six types of common marketable treasury securities:\n  - Treasury Bill\n  - Treasury Note\n  - Treasury Bond\n  - Treasury Inflation-Protected Security TIPS\n  - Separate Trading of Registered Interest and Principal of Securities (STRIPS)\n  - Cash Management Bill (CMB)\n\nAlthough Treasuries are considered free from credit risk, they are affected by other types of risk, principally interest-rate risk and inflation risk. \n\nWhile investors are effectively guaranteed to receive interest and principal as promised, the underlying value of the bond itself may change depending on the direction of interest rates.\n\nAs with all fixed-income securities, if interest rates in general rise after a Treasury security is issued, the value of the issued security will fall, since bonds paying higher rates will come into the market. \n\nSimilarly, if interest rates fall, the value of the older, higher-paying bond will rise in comparison with new issues.\n\nThe primary advantage of Treasury securities is safety. No other investment carries as strong a guarantee that interest and principal will be paid on time. Because these payments are predictable, many people invest in them to preserve and increase their capital and to receive a dependable income stream -- to help meet living expenses during retirement, for example, or to fund specific objectives, such as paying for a college education.\n\nThe benefit of predictability is enhanced by the fact that Treasuries generally do not have \"call\" provision. In fact, the Treasury has not issued \"callable\" securities since 1985. Call provisions, common in municipal and corporate bonds, permit the issuer to pay off the bond in full before its scheduled maturity. \n\nThis is especially likely to happen when interest rates decline; the issuer will refinance its debt to obtain the lower prevailing interest rate, just as home owners refinance mortgages. When that happens, the investor would be forced to pay more to earn the same interest rate. \n\nIf you own Treasuries that have no call provisions, you know exactly how long your income stream will last.\n\nAnother advantage of Treasuries is that they are available with a wide range of maturity dates. This allows an investor to structure a portfolio to specific time horizons.\n\nBecause they are the safest investments available, Treasury securities pay somewhat lower interest rates than other taxable fixed-income investments. Many investors accept this as a trade-off for security. In a diversified portfolio, Treasury securities usually represent money that investors want to keep safe from risk.\n\nAn added benefit of Treasury securities is that their interest payments are exempt from state and local income taxes (but not federal taxes). This has the effect of increasing the after-tax benefits of these investments. Investors in high-tax states should take special note of this benefit.\n\nAnother important characteristic of the Treasury market is its high level of liquidity, which means that Treasuries are easy to buy and sell. Because they trade so frequently in large volume, the spreads between what a dealer would be willing to pay and what a dealer would be willing to sell for is lower than for other securities.\n\nA short-term maturity (up to one year) discounted government security that is sold via competitive bidding at weekly or monthly government auctions in denominations from $10,000 to $1,000,000.    \n\nThe US Treasury invites all interested parties to submit bids, called a tender, then awards units to the highest bidders going down the list.\n\nThree and six-month bills are auctioned weekly.\nNine-month and one-year bills are auctioned monthly.\n\nThe high degree of safety and liquidity make treasury bills popular investments.",
+			"DisplayFolderInfo": "{\"name\":\"Product\",\"colorCode\":\"#0E3D73\"}",
+			"PrimaryKeys": "ProductId",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

@@ -1,0 +1,26 @@
+{
+	"name": "relationship-ufabgewnka",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-ufabgewnka",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "AtmServiceType",
+		"ToTableName": "AtmService",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "AtmServiceTypeId",
+				"ToColumnName": "AtmServiceTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"AtmServiceType.cdm.json/AtmServiceType\",\"toEntity\":\"AtmService.cdm.json/AtmService\",\"joinPairs\":[{\"fromAttribute\":\"AtmServiceTypeId\",\"toAttribute\":\"AtmServiceTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

@@ -1,0 +1,26 @@
+{
+	"name": "relationship-dhrtfihrds",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-dhrtfihrds",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Household",
+		"ToTableName": "HouseholdLocation",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "HouseholdId",
+				"ToColumnName": "HouseholdId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Household.cdm.json/Household\",\"toEntity\":\"HouseholdLocation.cdm.json/HouseholdLocation\",\"joinPairs\":[{\"fromAttribute\":\"HouseholdId\",\"toAttribute\":\"HouseholdId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

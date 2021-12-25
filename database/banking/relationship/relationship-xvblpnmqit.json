@@ -1,0 +1,26 @@
+{
+	"name": "relationship-xvblpnmqit",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-xvblpnmqit",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "AdvertisingCollateral",
+		"ToTableName": "AdvertisingCollateralCost",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "AdvertisingCollateralId",
+				"ToColumnName": "AdvertisingCollateralId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"AdvertisingCollateral.cdm.json/AdvertisingCollateral\",\"toEntity\":\"AdvertisingCollateralCost.cdm.json/AdvertisingCollateralCost\",\"joinPairs\":[{\"fromAttribute\":\"AdvertisingCollateralId\",\"toAttribute\":\"AdvertisingCollateralId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

@@ -1,0 +1,26 @@
+{
+	"name": "relationship-gkivrphqya",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-gkivrphqya",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "PersonalLoanType",
+		"ToTableName": "PersonalLoanProduct",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "PersonalLoanTypeId",
+				"ToColumnName": "PersonalLoanTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"PersonalLoanType.cdm.json/PersonalLoanType\",\"toEntity\":\"PersonalLoanProduct.cdm.json/PersonalLoanProduct\",\"joinPairs\":[{\"fromAttribute\":\"PersonalLoanTypeId\",\"toAttribute\":\"PersonalLoanTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

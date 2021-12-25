@@ -1,0 +1,26 @@
+{
+	"name": "relationship-pdauirlxwk",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-pdauirlxwk",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Language",
+		"ToTableName": "Communication",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "IsoLanguageId",
+				"ToColumnName": "IsoLanguageId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Language.cdm.json/Language\",\"toEntity\":\"Communication.cdm.json/Communication\",\"joinPairs\":[{\"fromAttribute\":\"IsoLanguageId\",\"toAttribute\":\"IsoLanguageId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

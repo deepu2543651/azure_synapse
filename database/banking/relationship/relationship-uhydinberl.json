@@ -1,0 +1,26 @@
+{
+	"name": "relationship-uhydinberl",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-uhydinberl",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "ProductEligibilityType",
+		"ToTableName": "ProductEligibility",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ProductEligibilityTypeId",
+				"ToColumnName": "ProductEligibilityTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"ProductEligibilityType.cdm.json/ProductEligibilityType\",\"toEntity\":\"ProductEligibility.cdm.json/ProductEligibility\",\"joinPairs\":[{\"fromAttribute\":\"ProductEligibilityTypeId\",\"toAttribute\":\"ProductEligibilityTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

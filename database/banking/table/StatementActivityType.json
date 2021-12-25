@@ -1,0 +1,112 @@
+{
+	"name": "StatementActivityType",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "StatementActivityType",
+		"Description": "The type of activity recorded on the associated statement line item.\n\nEx:\n- deposit\n- withdrawal\n- interest posting\n- balance\n- account transfer\n- note",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "StatementActivityTypeId",
+					"Description": "The unique identifier of a Statement Activity Type.",
+					"BaseAttributeReference": {
+						"Entity": "StatementActivityType.cdm.json/StatementActivityType",
+						"Name": "StatementActivityTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "StatementActivityTypeName",
+					"Description": "The name of a Statement Activity Type.",
+					"BaseAttributeReference": {
+						"Entity": "StatementActivityType.cdm.json/StatementActivityType",
+						"Name": "StatementActivityTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "StatementActivityTypeDescription",
+					"Description": "The description of a Statement Activity Type.",
+					"BaseAttributeReference": {
+						"Entity": "StatementActivityType.cdm.json/StatementActivityType",
+						"Name": "StatementActivityTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/StatementActivityType",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/StatementActivityType",
+				"Properties": {
+					"LinkedServiceName": "wspc-dpu-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"StatementActivityTypeId\":{\"entity\":\"StatementActivityType.cdm.json/StatementActivityType\",\"name\":\"StatementActivityTypeId\"},\"StatementActivityTypeName\":{\"entity\":\"StatementActivityType.cdm.json/StatementActivityType\",\"name\":\"StatementActivityTypeName\"},\"StatementActivityTypeDescription\":{\"entity\":\"StatementActivityType.cdm.json/StatementActivityType\",\"name\":\"StatementActivityTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"StatementActivityType\",\"path\":\"StatementActivityType.cdm.json/StatementActivityType\"},\"description\":\"The type of activity recorded on the associated statement line item.\\n\\nEx:\\n- deposit\\n- withdrawal\\n- interest posting\\n- balance\\n- account transfer\\n- note\",\"primaryKey\":[\"StatementActivityTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"StatementActivityTypeId\",\"attributeReference\":{\"entity\":\"StatementActivityType.cdm.json/StatementActivityType\",\"name\":\"StatementActivityTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"StatementActivityTypeName\",\"attributeReference\":{\"entity\":\"StatementActivityType.cdm.json/StatementActivityType\",\"name\":\"StatementActivityTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"StatementActivityTypeDescription\",\"attributeReference\":{\"entity\":\"StatementActivityType.cdm.json/StatementActivityType\",\"name\":\"StatementActivityTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512}]}}}",
+			"Description": "The type of activity recorded on the associated statement line item.\n\nEx:\n- deposit\n- withdrawal\n- interest posting\n- balance\n- account transfer\n- note",
+			"DisplayFolderInfo": "{\"name\":\"Customer Account\",\"colorCode\":\"#E3008C\"}",
+			"PrimaryKeys": "StatementActivityTypeId",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

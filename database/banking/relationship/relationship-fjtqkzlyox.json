@@ -1,0 +1,26 @@
+{
+	"name": "relationship-fjtqkzlyox",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-fjtqkzlyox",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "GeographicCriteria",
+		"ToTableName": "CustomerLocationGeographicCriteria",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "GeographicCriteriaId",
+				"ToColumnName": "GeographicCriteriaId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"GeographicCriteria.cdm.json/GeographicCriteria\",\"toEntity\":\"CustomerLocationGeographicCriteria.cdm.json/CustomerLocationGeographicCriteria\",\"joinPairs\":[{\"fromAttribute\":\"GeographicCriteriaId\",\"toAttribute\":\"GeographicCriteriaId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

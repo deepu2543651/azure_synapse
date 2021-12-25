@@ -1,0 +1,128 @@
+{
+	"name": "BankIdentificationNumber",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "BankIdentificationNumber",
+		"Description": "Bank Identification Number - BIN - is used as  initial four to six numbers that appear on a credit card. The bank identification number uniquely identifies the institution issuing the card. The BIN is key in the process of matching transactions to the issuer of the card. This numbering system also applies to charge cards, gift cards, debit cards, prepaid cards and electronic benefit cards.\n\nOther institutions, such as American Express, also use BINs. The term \"issuer identification number\" (IIN) is used interchangeably with BIN.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "BankIdentificationNumber",
+					"Description": "The unique identifier of a Bank Identification Number.\n\nThe first six digits of a Visa or MasterCard account number. This number is used to identify the card issuing institution.",
+					"BaseAttributeReference": {
+						"Entity": "BankIdentificationNumber.cdm.json/BankIdentificationNumber",
+						"Name": "BankIdentificationNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "BinName",
+					"Description": "The name of a BIN.",
+					"BaseAttributeReference": {
+						"Entity": "BankIdentificationNumber.cdm.json/BankIdentificationNumber",
+						"Name": "BinName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "BinDescription",
+					"Description": "The description of a BIN.",
+					"BaseAttributeReference": {
+						"Entity": "BankIdentificationNumber.cdm.json/BankIdentificationNumber",
+						"Name": "BinDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "FinancialInstitutionId",
+					"Description": "The unique identifier of a Financial Institution.",
+					"BaseAttributeReference": {
+						"Entity": "BankIdentificationNumber.cdm.json/BankIdentificationNumber",
+						"Name": "FinancialInstitutionId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/BankIdentificationNumber",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/BankIdentificationNumber",
+				"Properties": {
+					"LinkedServiceName": "wspc-dpu-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"BankIdentificationNumber\":{\"entity\":\"BankIdentificationNumber.cdm.json/BankIdentificationNumber\",\"name\":\"BankIdentificationNumber\"},\"BinName\":{\"entity\":\"BankIdentificationNumber.cdm.json/BankIdentificationNumber\",\"name\":\"BinName\"},\"BinDescription\":{\"entity\":\"BankIdentificationNumber.cdm.json/BankIdentificationNumber\",\"name\":\"BinDescription\"},\"FinancialInstitutionId\":{\"entity\":\"BankIdentificationNumber.cdm.json/BankIdentificationNumber\",\"name\":\"FinancialInstitutionId\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"BankIdentificationNumber\",\"path\":\"BankIdentificationNumber.cdm.json/BankIdentificationNumber\"},\"description\":\"Bank Identification Number - BIN - is used as  initial four to six numbers that appear on a credit card. The bank identification number uniquely identifies the institution issuing the card. The BIN is key in the process of matching transactions to the issuer of the card. This numbering system also applies to charge cards, gift cards, debit cards, prepaid cards and electronic benefit cards.\\n\\nOther institutions, such as American Express, also use BINs. The term \\\"issuer identification number\\\" (IIN) is used interchangeably with BIN.\",\"primaryKey\":[\"BankIdentificationNumber\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"BankIdentificationNumber\",\"attributeReference\":{\"entity\":\"BankIdentificationNumber.cdm.json/BankIdentificationNumber\",\"name\":\"BankIdentificationNumber\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"BinName\",\"attributeReference\":{\"entity\":\"BankIdentificationNumber.cdm.json/BankIdentificationNumber\",\"name\":\"BinName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"BinDescription\",\"attributeReference\":{\"entity\":\"BankIdentificationNumber.cdm.json/BankIdentificationNumber\",\"name\":\"BinDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512},{\"type\":\"Existing\",\"name\":\"FinancialInstitutionId\",\"attributeReference\":{\"entity\":\"BankIdentificationNumber.cdm.json/BankIdentificationNumber\",\"name\":\"FinancialInstitutionId\"},\"dataType\":\"integer\"}]}}}",
+			"Description": "Bank Identification Number - BIN - is used as  initial four to six numbers that appear on a credit card. The bank identification number uniquely identifies the institution issuing the card. The BIN is key in the process of matching transactions to the issuer of the card. This numbering system also applies to charge cards, gift cards, debit cards, prepaid cards and electronic benefit cards.\n\nOther institutions, such as American Express, also use BINs. The term \"issuer identification number\" (IIN) is used interchangeably with BIN.",
+			"DisplayFolderInfo": "{\"name\":\"Channel\",\"colorCode\":\"#001D3F\"}",
+			"PrimaryKeys": "BankIdentificationNumber",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

@@ -1,0 +1,26 @@
+{
+	"name": "relationship-cbubksuzlq",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-cbubksuzlq",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "LegalEntity",
+		"ToTableName": "SetOfFinancialStatements",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "LegalEntityId",
+				"ToColumnName": "LegalEntityId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"LegalEntity.cdm.json/LegalEntity\",\"toEntity\":\"SetOfFinancialStatements.cdm.json/SetOfFinancialStatements\",\"joinPairs\":[{\"fromAttribute\":\"LegalEntityId\",\"toAttribute\":\"LegalEntityId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

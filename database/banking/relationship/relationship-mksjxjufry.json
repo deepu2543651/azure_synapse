@@ -1,0 +1,26 @@
+{
+	"name": "relationship-mksjxjufry",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-mksjxjufry",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "LoanConversionOption",
+		"ToTableName": "MortgageLoanProduct",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "LoanConversionOptionId",
+				"ToColumnName": "LoanConversionOptionId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"LoanConversionOption.cdm.json/LoanConversionOption\",\"toEntity\":\"MortgageLoanProduct.cdm.json/MortgageLoanProduct\",\"joinPairs\":[{\"fromAttribute\":\"LoanConversionOptionId\",\"toAttribute\":\"LoanConversionOptionId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

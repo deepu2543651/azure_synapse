@@ -1,0 +1,112 @@
+{
+	"name": "TransactionPriority",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "TransactionPriority",
+		"Description": "The priority associated with the Transaction.\n\nEx:\n- Execute immediately\n- Execute pending authorization\n- Batch execute\n- High\n- Medium\n- Low\n- N/A",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "TransactionPriorityId",
+					"Description": "The unique identifier of a Transaction Priority.",
+					"BaseAttributeReference": {
+						"Entity": "TransactionPriority.cdm.json/TransactionPriority",
+						"Name": "TransactionPriorityId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "TransactionPriorityName",
+					"Description": "The name of a Transaction Priority.",
+					"BaseAttributeReference": {
+						"Entity": "TransactionPriority.cdm.json/TransactionPriority",
+						"Name": "TransactionPriorityName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "TransactionPriorityDescription",
+					"Description": "The description of a Transaction Priority.",
+					"BaseAttributeReference": {
+						"Entity": "TransactionPriority.cdm.json/TransactionPriority",
+						"Name": "TransactionPriorityDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/TransactionPriority",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/TransactionPriority",
+				"Properties": {
+					"LinkedServiceName": "wspc-dpu-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"TransactionPriorityId\":{\"entity\":\"TransactionPriority.cdm.json/TransactionPriority\",\"name\":\"TransactionPriorityId\"},\"TransactionPriorityName\":{\"entity\":\"TransactionPriority.cdm.json/TransactionPriority\",\"name\":\"TransactionPriorityName\"},\"TransactionPriorityDescription\":{\"entity\":\"TransactionPriority.cdm.json/TransactionPriority\",\"name\":\"TransactionPriorityDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"TransactionPriority\",\"path\":\"TransactionPriority.cdm.json/TransactionPriority\"},\"description\":\"The priority associated with the Transaction.\\n\\nEx:\\n- Execute immediately\\n- Execute pending authorization\\n- Batch execute\\n- High\\n- Medium\\n- Low\\n- N/A\",\"primaryKey\":[\"TransactionPriorityId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"TransactionPriorityId\",\"attributeReference\":{\"entity\":\"TransactionPriority.cdm.json/TransactionPriority\",\"name\":\"TransactionPriorityId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"TransactionPriorityName\",\"attributeReference\":{\"entity\":\"TransactionPriority.cdm.json/TransactionPriority\",\"name\":\"TransactionPriorityName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"TransactionPriorityDescription\",\"attributeReference\":{\"entity\":\"TransactionPriority.cdm.json/TransactionPriority\",\"name\":\"TransactionPriorityDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512}]}}}",
+			"Description": "The priority associated with the Transaction.\n\nEx:\n- Execute immediately\n- Execute pending authorization\n- Batch execute\n- High\n- Medium\n- Low\n- N/A",
+			"DisplayFolderInfo": "{\"name\":\"Transaction\",\"colorCode\":\"#823A16\"}",
+			"PrimaryKeys": "TransactionPriorityId",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

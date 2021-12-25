@@ -1,0 +1,26 @@
+{
+	"name": "relationship-mmgbugvlaf",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-mmgbugvlaf",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "MoneyMarketInvestmentType",
+		"ToTableName": "MoneyMarketInvestment",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "MoneyMarketInvestmentTypeId",
+				"ToColumnName": "MoneyMarketInvestmentTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"MoneyMarketInvestmentType.cdm.json/MoneyMarketInvestmentType\",\"toEntity\":\"MoneyMarketInvestment.cdm.json/MoneyMarketInvestment\",\"joinPairs\":[{\"fromAttribute\":\"MoneyMarketInvestmentTypeId\",\"toAttribute\":\"MoneyMarketInvestmentTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

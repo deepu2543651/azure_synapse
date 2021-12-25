@@ -1,0 +1,112 @@
+{
+	"name": "AdvertisingCampaignStatusType",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "AdvertisingCampaignStatusType",
+		"Description": "The status of the associated Advertising Campaign.\n\nEx:\n- Planned\n- Funded\n- In process\n- Pending Approval\n- Completed\n- Cancelled",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "AdvertisingCampaignStatusTypeId",
+					"Description": "The unique identifier of an Advertising Campaign Status Type.",
+					"BaseAttributeReference": {
+						"Entity": "AdvertisingCampaignStatusType.cdm.json/AdvertisingCampaignStatusType",
+						"Name": "AdvertisingCampaignStatusTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "AdvertisingCampaignStatusTypeName",
+					"Description": "The name of an Advertising Campaign Status Type.",
+					"BaseAttributeReference": {
+						"Entity": "AdvertisingCampaignStatusType.cdm.json/AdvertisingCampaignStatusType",
+						"Name": "AdvertisingCampaignStatusTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "AdvertisingCampaignStatusTypeDescription",
+					"Description": "The description of an Advertising Campaign Status Type.",
+					"BaseAttributeReference": {
+						"Entity": "AdvertisingCampaignStatusType.cdm.json/AdvertisingCampaignStatusType",
+						"Name": "AdvertisingCampaignStatusTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/AdvertisingCampaignStatusType",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/AdvertisingCampaignStatusType",
+				"Properties": {
+					"LinkedServiceName": "wspc-dpu-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"AdvertisingCampaignStatusTypeId\":{\"entity\":\"AdvertisingCampaignStatusType.cdm.json/AdvertisingCampaignStatusType\",\"name\":\"AdvertisingCampaignStatusTypeId\"},\"AdvertisingCampaignStatusTypeName\":{\"entity\":\"AdvertisingCampaignStatusType.cdm.json/AdvertisingCampaignStatusType\",\"name\":\"AdvertisingCampaignStatusTypeName\"},\"AdvertisingCampaignStatusTypeDescription\":{\"entity\":\"AdvertisingCampaignStatusType.cdm.json/AdvertisingCampaignStatusType\",\"name\":\"AdvertisingCampaignStatusTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"AdvertisingCampaignStatusType\",\"path\":\"AdvertisingCampaignStatusType.cdm.json/AdvertisingCampaignStatusType\"},\"description\":\"The status of the associated Advertising Campaign.\\n\\nEx:\\n- Planned\\n- Funded\\n- In process\\n- Pending Approval\\n- Completed\\n- Cancelled\",\"primaryKey\":[\"AdvertisingCampaignStatusTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"AdvertisingCampaignStatusTypeId\",\"attributeReference\":{\"entity\":\"AdvertisingCampaignStatusType.cdm.json/AdvertisingCampaignStatusType\",\"name\":\"AdvertisingCampaignStatusTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"AdvertisingCampaignStatusTypeName\",\"attributeReference\":{\"entity\":\"AdvertisingCampaignStatusType.cdm.json/AdvertisingCampaignStatusType\",\"name\":\"AdvertisingCampaignStatusTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"AdvertisingCampaignStatusTypeDescription\",\"attributeReference\":{\"entity\":\"AdvertisingCampaignStatusType.cdm.json/AdvertisingCampaignStatusType\",\"name\":\"AdvertisingCampaignStatusTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512}]}}}",
+			"Description": "The status of the associated Advertising Campaign.\n\nEx:\n- Planned\n- Funded\n- In process\n- Pending Approval\n- Completed\n- Cancelled",
+			"DisplayFolderInfo": "{\"name\":\"Marketing & Advertising\",\"colorCode\":\"#692B0C\"}",
+			"PrimaryKeys": "AdvertisingCampaignStatusTypeId",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

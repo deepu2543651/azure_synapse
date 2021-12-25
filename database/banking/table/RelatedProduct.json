@@ -1,0 +1,267 @@
+{
+	"name": "RelatedProduct",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "RelatedProduct",
+		"Description": "A relationship that exists between the related product during the associated period.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ProductId",
+					"Description": "The unique identifier of a Product.",
+					"BaseAttributeReference": {
+						"Entity": "RelatedProduct.cdm.json/RelatedProduct",
+						"Name": "ProductId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "RelatedProductId",
+					"Description": "The unique identifier of a Product.",
+					"BaseAttributeReference": {
+						"Entity": "RelatedProduct.cdm.json/RelatedProduct",
+						"Name": "RelatedProductId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "ProductRelationshipTypeId",
+					"Description": "The unique identifier of a Product Relationship Type.",
+					"BaseAttributeReference": {
+						"Entity": "RelatedProduct.cdm.json/RelatedProduct",
+						"Name": "ProductRelationshipTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PeriodStartDate",
+					"Description": "The period start date associated with the product relationship.",
+					"BaseAttributeReference": {
+						"Entity": "RelatedProduct.cdm.json/RelatedProduct",
+						"Name": "PeriodStartDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "PeriodEndDate",
+					"Description": "The period end date associated with the product relationship.",
+					"BaseAttributeReference": {
+						"Entity": "RelatedProduct.cdm.json/RelatedProduct",
+						"Name": "PeriodEndDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "RelatedProductCostAmount",
+					"Description": "The cost of the associated related product.",
+					"BaseAttributeReference": {
+						"Entity": "RelatedProduct.cdm.json/RelatedProduct",
+						"Name": "RelatedProductCostAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "DiscountPercentage",
+					"Description": "The percentage discount for the product in conjunction with the related product.",
+					"BaseAttributeReference": {
+						"Entity": "RelatedProduct.cdm.json/RelatedProduct",
+						"Name": "DiscountPercentage"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "RelatedProductQuantity",
+					"Description": "The quantity of related product required in the relationship with the product.",
+					"BaseAttributeReference": {
+						"Entity": "RelatedProduct.cdm.json/RelatedProduct",
+						"Name": "RelatedProductQuantity"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "RelatedProductIncludedNoChargeIndicator",
+					"Description": "Indicates that the related product at no charge.",
+					"BaseAttributeReference": {
+						"Entity": "RelatedProduct.cdm.json/RelatedProduct",
+						"Name": "RelatedProductIncludedNoChargeIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "ProductWeighting",
+					"Description": "The relative weighting of the product as compared to the related product.",
+					"BaseAttributeReference": {
+						"Entity": "RelatedProduct.cdm.json/RelatedProduct",
+						"Name": "ProductWeighting"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "RelatedProductWeighting",
+					"Description": "The relative weighting of the related product as compared to the product.",
+					"BaseAttributeReference": {
+						"Entity": "RelatedProduct.cdm.json/RelatedProduct",
+						"Name": "RelatedProductWeighting"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "ProductRelationshipNote",
+					"Description": "A note, comment or additional information regarding the product relationship.",
+					"BaseAttributeReference": {
+						"Entity": "RelatedProduct.cdm.json/RelatedProduct",
+						"Name": "ProductRelationshipNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/RelatedProduct",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/RelatedProduct",
+				"Properties": {
+					"LinkedServiceName": "wspc-dpu-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ProductId\":{\"entity\":\"RelatedProduct.cdm.json/RelatedProduct\",\"name\":\"ProductId\"},\"RelatedProductId\":{\"entity\":\"RelatedProduct.cdm.json/RelatedProduct\",\"name\":\"RelatedProductId\"},\"ProductRelationshipTypeId\":{\"entity\":\"RelatedProduct.cdm.json/RelatedProduct\",\"name\":\"ProductRelationshipTypeId\"},\"PeriodStartDate\":{\"entity\":\"RelatedProduct.cdm.json/RelatedProduct\",\"name\":\"PeriodStartDate\"},\"PeriodEndDate\":{\"entity\":\"RelatedProduct.cdm.json/RelatedProduct\",\"name\":\"PeriodEndDate\"},\"RelatedProductCostAmount\":{\"entity\":\"RelatedProduct.cdm.json/RelatedProduct\",\"name\":\"RelatedProductCostAmount\"},\"DiscountPercentage\":{\"entity\":\"RelatedProduct.cdm.json/RelatedProduct\",\"name\":\"DiscountPercentage\"},\"RelatedProductQuantity\":{\"entity\":\"RelatedProduct.cdm.json/RelatedProduct\",\"name\":\"RelatedProductQuantity\"},\"RelatedProductIncludedNoChargeIndicator\":{\"entity\":\"RelatedProduct.cdm.json/RelatedProduct\",\"name\":\"RelatedProductIncludedNoChargeIndicator\"},\"ProductWeighting\":{\"entity\":\"RelatedProduct.cdm.json/RelatedProduct\",\"name\":\"ProductWeighting\"},\"RelatedProductWeighting\":{\"entity\":\"RelatedProduct.cdm.json/RelatedProduct\",\"name\":\"RelatedProductWeighting\"},\"ProductRelationshipNote\":{\"entity\":\"RelatedProduct.cdm.json/RelatedProduct\",\"name\":\"ProductRelationshipNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"RelatedProduct\",\"path\":\"RelatedProduct.cdm.json/RelatedProduct\"},\"description\":\"A relationship that exists between the related product during the associated period.\",\"primaryKey\":[\"ProductId\",\"RelatedProductId\",\"ProductRelationshipTypeId\",\"PeriodStartDate\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"ProductId\",\"attributeReference\":{\"entity\":\"RelatedProduct.cdm.json/RelatedProduct\",\"name\":\"ProductId\"},\"dataType\":\"long\"},{\"type\":\"Existing\",\"name\":\"RelatedProductId\",\"attributeReference\":{\"entity\":\"RelatedProduct.cdm.json/RelatedProduct\",\"name\":\"RelatedProductId\"},\"dataType\":\"long\"},{\"type\":\"Existing\",\"name\":\"ProductRelationshipTypeId\",\"attributeReference\":{\"entity\":\"RelatedProduct.cdm.json/RelatedProduct\",\"name\":\"ProductRelationshipTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"PeriodStartDate\",\"attributeReference\":{\"entity\":\"RelatedProduct.cdm.json/RelatedProduct\",\"name\":\"PeriodStartDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\"},{\"type\":\"Existing\",\"name\":\"PeriodEndDate\",\"attributeReference\":{\"entity\":\"RelatedProduct.cdm.json/RelatedProduct\",\"name\":\"PeriodEndDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\"},{\"type\":\"Existing\",\"name\":\"RelatedProductCostAmount\",\"attributeReference\":{\"entity\":\"RelatedProduct.cdm.json/RelatedProduct\",\"name\":\"RelatedProductCostAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"DiscountPercentage\",\"attributeReference\":{\"entity\":\"RelatedProduct.cdm.json/RelatedProduct\",\"name\":\"DiscountPercentage\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":8},{\"type\":\"Existing\",\"name\":\"RelatedProductQuantity\",\"attributeReference\":{\"entity\":\"RelatedProduct.cdm.json/RelatedProduct\",\"name\":\"RelatedProductQuantity\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"RelatedProductIncludedNoChargeIndicator\",\"attributeReference\":{\"entity\":\"RelatedProduct.cdm.json/RelatedProduct\",\"name\":\"RelatedProductIncludedNoChargeIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"ProductWeighting\",\"attributeReference\":{\"entity\":\"RelatedProduct.cdm.json/RelatedProduct\",\"name\":\"ProductWeighting\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"RelatedProductWeighting\",\"attributeReference\":{\"entity\":\"RelatedProduct.cdm.json/RelatedProduct\",\"name\":\"RelatedProductWeighting\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"ProductRelationshipNote\",\"attributeReference\":{\"entity\":\"RelatedProduct.cdm.json/RelatedProduct\",\"name\":\"ProductRelationshipNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024}]}}}",
+			"Description": "A relationship that exists between the related product during the associated period.",
+			"DisplayFolderInfo": "{\"name\":\"Product\",\"colorCode\":\"#0E3D73\"}",
+			"PrimaryKeys": "ProductId,RelatedProductId,ProductRelationshipTypeId,PeriodStartDate",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

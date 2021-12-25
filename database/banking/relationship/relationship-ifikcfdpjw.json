@@ -1,0 +1,26 @@
+{
+	"name": "relationship-ifikcfdpjw",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-ifikcfdpjw",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "HouseholdRelationshipType",
+		"ToTableName": "RelatedHousehold",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "HouseholdRelationshipTypeId",
+				"ToColumnName": "HouseholdRelationshipTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"HouseholdRelationshipType.cdm.json/HouseholdRelationshipType\",\"toEntity\":\"RelatedHousehold.cdm.json/RelatedHousehold\",\"joinPairs\":[{\"fromAttribute\":\"HouseholdRelationshipTypeId\",\"toAttribute\":\"HouseholdRelationshipTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

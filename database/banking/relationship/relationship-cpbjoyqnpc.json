@@ -1,0 +1,26 @@
+{
+	"name": "relationship-cpbjoyqnpc",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-cpbjoyqnpc",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "TransactionType",
+		"ToTableName": "Service",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "TransactionTypeId",
+				"ToColumnName": "TransactionTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"TransactionType.cdm.json/TransactionType\",\"toEntity\":\"Service.cdm.json/Service\",\"joinPairs\":[{\"fromAttribute\":\"TransactionTypeId\",\"toAttribute\":\"TransactionTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

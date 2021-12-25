@@ -1,0 +1,26 @@
+{
+	"name": "relationship-mwpfwhrdzo",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-mwpfwhrdzo",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Issue",
+		"ToTableName": "ServiceRequest",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "IssueId",
+				"ToColumnName": "IssueId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Issue.cdm.json/Issue\",\"toEntity\":\"ServiceRequest.cdm.json/ServiceRequest\",\"joinPairs\":[{\"fromAttribute\":\"IssueId\",\"toAttribute\":\"IssueId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

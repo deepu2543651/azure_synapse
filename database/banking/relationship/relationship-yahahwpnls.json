@@ -1,0 +1,26 @@
+{
+	"name": "relationship-yahahwpnls",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-yahahwpnls",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "BankTransaction",
+		"ToTableName": "TransactionCharge",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "TransactionId",
+				"ToColumnName": "TransactionId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"BankTransaction.cdm.json/BankTransaction\",\"toEntity\":\"TransactionCharge.cdm.json/TransactionCharge\",\"joinPairs\":[{\"fromAttribute\":\"TransactionId\",\"toAttribute\":\"TransactionId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

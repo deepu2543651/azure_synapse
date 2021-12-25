@@ -1,0 +1,163 @@
+{
+	"name": "AdvertisingEventBudgetedCostItem",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "AdvertisingEventBudgetedCostItem",
+		"Description": "The cost of the advertising event in terms of associated cost item(s) for a period and within a specific Budget.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "AdvertisingEventId",
+					"Description": "The unique identifier of an Advertising Event.",
+					"BaseAttributeReference": {
+						"Entity": "AdvertisingEventBudgetedCostItem.cdm.json/AdvertisingEventBudgetedCostItem",
+						"Name": "AdvertisingEventId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "BudgetId",
+					"Description": "The unique identifier of a Budget.",
+					"BaseAttributeReference": {
+						"Entity": "AdvertisingEventBudgetedCostItem.cdm.json/AdvertisingEventBudgetedCostItem",
+						"Name": "BudgetId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "CostItemId",
+					"Description": "The unique identifier of a Cost Item.",
+					"BaseAttributeReference": {
+						"Entity": "AdvertisingEventBudgetedCostItem.cdm.json/AdvertisingEventBudgetedCostItem",
+						"Name": "CostItemId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "Date",
+					"Description": "The date for which the associated actual incurred cost item amount is presented",
+					"BaseAttributeReference": {
+						"Entity": "AdvertisingEventBudgetedCostItem.cdm.json/AdvertisingEventBudgetedCostItem",
+						"Name": "Date"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "AdvertisingEventCostItemBudgetedAmount",
+					"Description": "The amount of cost item budgeted for the advertising event under the indicated budget.",
+					"BaseAttributeReference": {
+						"Entity": "AdvertisingEventBudgetedCostItem.cdm.json/AdvertisingEventBudgetedCostItem",
+						"Name": "AdvertisingEventCostItemBudgetedAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "AdvertisingEventCostItemIncurredAmount",
+					"Description": "The amount of cost item incurred by the advertising event under the indicated budget.",
+					"BaseAttributeReference": {
+						"Entity": "AdvertisingEventBudgetedCostItem.cdm.json/AdvertisingEventBudgetedCostItem",
+						"Name": "AdvertisingEventCostItemIncurredAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/AdvertisingEventBudgetedCostItem",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/AdvertisingEventBudgetedCostItem",
+				"Properties": {
+					"LinkedServiceName": "wspc-dpu-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"AdvertisingEventId\":{\"entity\":\"AdvertisingEventBudgetedCostItem.cdm.json/AdvertisingEventBudgetedCostItem\",\"name\":\"AdvertisingEventId\"},\"BudgetId\":{\"entity\":\"AdvertisingEventBudgetedCostItem.cdm.json/AdvertisingEventBudgetedCostItem\",\"name\":\"BudgetId\"},\"CostItemId\":{\"entity\":\"AdvertisingEventBudgetedCostItem.cdm.json/AdvertisingEventBudgetedCostItem\",\"name\":\"CostItemId\"},\"Date\":{\"entity\":\"AdvertisingEventBudgetedCostItem.cdm.json/AdvertisingEventBudgetedCostItem\",\"name\":\"Date\"},\"AdvertisingEventCostItemBudgetedAmount\":{\"entity\":\"AdvertisingEventBudgetedCostItem.cdm.json/AdvertisingEventBudgetedCostItem\",\"name\":\"AdvertisingEventCostItemBudgetedAmount\"},\"AdvertisingEventCostItemIncurredAmount\":{\"entity\":\"AdvertisingEventBudgetedCostItem.cdm.json/AdvertisingEventBudgetedCostItem\",\"name\":\"AdvertisingEventCostItemIncurredAmount\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"AdvertisingEventBudgetedCostItem\",\"path\":\"AdvertisingEventBudgetedCostItem.cdm.json/AdvertisingEventBudgetedCostItem\"},\"description\":\"The cost of the advertising event in terms of associated cost item(s) for a period and within a specific Budget.\",\"primaryKey\":[\"AdvertisingEventId\",\"BudgetId\",\"CostItemId\",\"Date\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"AdvertisingEventId\",\"attributeReference\":{\"entity\":\"AdvertisingEventBudgetedCostItem.cdm.json/AdvertisingEventBudgetedCostItem\",\"name\":\"AdvertisingEventId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"BudgetId\",\"attributeReference\":{\"entity\":\"AdvertisingEventBudgetedCostItem.cdm.json/AdvertisingEventBudgetedCostItem\",\"name\":\"BudgetId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"CostItemId\",\"attributeReference\":{\"entity\":\"AdvertisingEventBudgetedCostItem.cdm.json/AdvertisingEventBudgetedCostItem\",\"name\":\"CostItemId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"Date\",\"attributeReference\":{\"entity\":\"AdvertisingEventBudgetedCostItem.cdm.json/AdvertisingEventBudgetedCostItem\",\"name\":\"Date\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\"},{\"type\":\"Existing\",\"name\":\"AdvertisingEventCostItemBudgetedAmount\",\"attributeReference\":{\"entity\":\"AdvertisingEventBudgetedCostItem.cdm.json/AdvertisingEventBudgetedCostItem\",\"name\":\"AdvertisingEventCostItemBudgetedAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"AdvertisingEventCostItemIncurredAmount\",\"attributeReference\":{\"entity\":\"AdvertisingEventBudgetedCostItem.cdm.json/AdvertisingEventBudgetedCostItem\",\"name\":\"AdvertisingEventCostItemIncurredAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2}]}}}",
+			"Description": "The cost of the advertising event in terms of associated cost item(s) for a period and within a specific Budget.",
+			"DisplayFolderInfo": "{\"name\":\"Marketing & Advertising\",\"colorCode\":\"#692B0C\"}",
+			"PrimaryKeys": "AdvertisingEventId,BudgetId,CostItemId,Date",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

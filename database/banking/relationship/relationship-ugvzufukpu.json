@@ -1,0 +1,26 @@
+{
+	"name": "relationship-ugvzufukpu",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-ugvzufukpu",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "BankingProduct",
+		"ToTableName": "Service",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ProductId",
+				"ToColumnName": "ServiceId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"BankingProduct.cdm.json/BankingProduct\",\"toEntity\":\"Service.cdm.json/Service\",\"joinPairs\":[{\"fromAttribute\":\"ProductId\",\"toAttribute\":\"ServiceId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

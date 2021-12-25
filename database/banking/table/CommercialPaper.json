@@ -1,0 +1,367 @@
+{
+	"name": "CommercialPaper",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "CommercialPaper",
+		"Description": "Commercial paper is an unsecured, short-term loan issued by a corporation, typically for financing accounts receivable and inventories. \n\nIt is usually issued at a discount, reflecting current market interest rates. \n\nMaturities on commercial paper are usually no longer than 9 months, with maturities of 1-2 months being the average.\n\nCommercial paper is generally considered to be the highest yielding money market investment.\n\nThe notes are normally sold at a discount and mature in from three to six months.    \n\nCommercial paper may also be offered as either a 'discounted instrument' or as a 'principal plus interest'.\n\nIn the case of a 'discounted instrument', there are no interest payment made.   The price paid to buy the instrument is lower than the face value, which is paid to the buyer upon maturity.    In this case, commercial paper is zero coupon debt, meaning that the investor buys the bond at a discount from face value (par), holds the bond until maturity, and earns interest income based on the difference between the buy price and the face value. \n\nIn the case of a 'plus interest instrument' the client pays the full face to buy the paper and receives that face value plus the interest.\n\nFor many corporations, borrowing short-term money from banks is often a labored and annoying task. Their desire to avoid banks as much as possible has led to the widespread popularity of commercial paper.\n\nFor the most part, commercial paper is a very safe investment because the financial situation of a company can easily be predicted over a few months. Furthermore, typically only companies with high credit ratings and credit worthiness issue commercial paper. Over the past 40 years, there have only been a handful of cases where corporations have defaulted on their commercial paper repayment.\n\nCommercial paper is usually issued with denominations of $100,000 or more. Therefore, smaller investors can only invest in commercial paper indirectly through money market funds.\n\nCommercial paper is subject to federal and state taxes.\n\nCorporations have the ability to raise money by:\n\n- issuing stock\n- issuing bonds\n- issuing commercial paper\n\nCommercial paper is a debt instrument that is offered as either a 'discounted instrument' or as a 'principal plus interest'.\n\nIn the case of a 'discounted instrument', there are no interest payment made.  The price paid to buy the instrument is lower than the face value, which is paid to the buyer upon maturity.\n\nIn the case of a 'plus interest instrument' the client pays the full face to buy the paper and receives that face value plus the interest accrued at maturity.\n\nThe interest rate is negotiated at the time of purchase and the interest is calculated from face or full value.  \n\nThe buyer must hold the instrument until maturity to receive the interest.\n\nIf the paper is sold during its lifetime, the price is subject to market conditions and associated market pricing.\n\nCommercial paper settles on the same day.\n\nLike all fixed income securities, commercial paper prices are susceptible to fluctuations in interest rates. If interest rates rise, commercial paper prices will decline.  \n\nThe short-term nature of a commercial paper investment makes it less susceptible to interest rate risk than many other fixed income securities because interest rate risk typically increases as maturity lengths increase.\n\nCommercial paper tends to yield smaller returns than longer-term corporate debt because securities with shorter maturities typically have lower effective yields than those with longer maturities.\n\nAs with most fixed income securities, there is a chance that the issuer will default on its commercial paper obligation.\n\nKey Benefits offered include:\n\n-  Access to higher rates of return, commensurate with underlying credit risk, than those generally available on alternative short term investments (i.e. bank bills) \n\n-  Can be held by the Bank on a safe custody basis free of charge \n\n-  Bank fees are not applicable",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "CommercialPaperId",
+					"Description": "The unique identifier of a Commercial Paper.",
+					"BaseAttributeReference": {
+						"Entity": "CommercialPaper.cdm.json/CommercialPaper",
+						"Name": "CommercialPaperId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "IssuingDenomination",
+					"Description": "The face value or 'denominated amount' of the commercial paper offered.\n\nCommercial paper is usually issued with denominations of $100,000 or more. Therefore, smaller investors can only invest in commercial paper indirectly through money market funds.",
+					"BaseAttributeReference": {
+						"Entity": "CommercialPaper.cdm.json/CommercialPaper",
+						"Name": "IssuingDenomination"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "PurchasePriceAmount",
+					"Description": "The purchase price to the buyer of the commercial paper.\n\nCorporations have the ability to raise money by:\n\n- issuing stock\n- issuing bonds\n- issuing commercial paper\n\nCommercial paper is a debt instrument that is offered as either a 'discounted instrument' or as a 'principal plus interest'.\n\nIn the case of a 'discounted instrument', there are no interest payment made.   The price paid to buy the instrument is lower than the face value, which is paid to the buyer upon maturity.\n\nIn the case of a 'plus interest instrument' the client pays the full face to buy the paper and receives that face value plus the interest accrued at maturity.\n\nThe interest rate is negotiated at the time of purchase and the interest is calculated from face or full value.  \n\nThe buyer must hold the instrument until maturity to receive the interest.\n\nIf the paper is sold during its lifetime, the price is subject to market conditions and associated market pricing.",
+					"BaseAttributeReference": {
+						"Entity": "CommercialPaper.cdm.json/CommercialPaper",
+						"Name": "PurchasePriceAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "InterestRate",
+					"Description": "The interest rate associated with the commercial paper.",
+					"BaseAttributeReference": {
+						"Entity": "CommercialPaper.cdm.json/CommercialPaper",
+						"Name": "InterestRate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "YieldPercentage",
+					"Description": "Yields on commercial paper are quoted on a discount basis-the discount return to commercial paper holders is the annualized percentage difference between the price paid for the paper and the par value using a 360-day year",
+					"BaseAttributeReference": {
+						"Entity": "CommercialPaper.cdm.json/CommercialPaper",
+						"Name": "YieldPercentage"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "MaximumAuthorizedAmount",
+					"Description": "The maximum authorized amount of commercial paper to be issued.\n\nEx:\nMaximum Authorized: $12.0 billion",
+					"BaseAttributeReference": {
+						"Entity": "CommercialPaper.cdm.json/CommercialPaper",
+						"Name": "MaximumAuthorizedAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "AdditionalPurchasingIncrementsAmount",
+					"Description": "The minimum additional purchasing increments for the commercial paper.",
+					"BaseAttributeReference": {
+						"Entity": "CommercialPaper.cdm.json/CommercialPaper",
+						"Name": "AdditionalPurchasingIncrementsAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "DeliveryInstructions",
+					"Description": "The delivery instructions associated with the commercial paper.\n\nEx:\nDelivery Instructions: Bank One DTC participant #1504",
+					"BaseAttributeReference": {
+						"Entity": "CommercialPaper.cdm.json/CommercialPaper",
+						"Name": "DeliveryInstructions"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 2048,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "SalesPolicyStatement",
+					"Description": "The statement regarding the sales policy of the commercial paper.\n\nEx:\n\nSales Policies: Notes are offered directly to investors in discount or interest-bearing form.",
+					"BaseAttributeReference": {
+						"Entity": "CommercialPaper.cdm.json/CommercialPaper",
+						"Name": "SalesPolicyStatement"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 2048,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "AgentName",
+					"Description": "The name of the agent for the commercial paper (AKA 'paying agent').\n\nEx:\nWachovia Securities, Inc. acts as agent for the issue of Commercial Paper of Wachovia Corporation, the bank's holding company and other issuers as well",
+					"BaseAttributeReference": {
+						"Entity": "CommercialPaper.cdm.json/CommercialPaper",
+						"Name": "AgentName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "QuotingBasis",
+					"Description": "The basis on which commercial paper is quoted.\n\nEx:\nOn a discount yield basis",
+					"BaseAttributeReference": {
+						"Entity": "CommercialPaper.cdm.json/CommercialPaper",
+						"Name": "QuotingBasis"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "RateStructure",
+					"Description": "The rate structure associated with the commercial paper.\n\nEx:\nRates on commercial paper fluctuate on a daily basis",
+					"BaseAttributeReference": {
+						"Entity": "CommercialPaper.cdm.json/CommercialPaper",
+						"Name": "RateStructure"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "CommercialPaperTypeId",
+					"Description": "The unique identifier of a Commercial Paper Type.",
+					"BaseAttributeReference": {
+						"Entity": "CommercialPaper.cdm.json/CommercialPaper",
+						"Name": "CommercialPaperTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ConduitId",
+					"Description": "The unique identifier of a conduit.",
+					"BaseAttributeReference": {
+						"Entity": "CommercialPaper.cdm.json/CommercialPaper",
+						"Name": "ConduitId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "AssetBackedCommercialPaperIndicator",
+					"Description": "Indicates that the commercial paper is asset backed.\n\nThe distinction between asset-backed securities and asset-backed commercial paper is primarily one of the tenure of the paper - commercial paper by definition is short-term funding, and is therefore mostly used for short-term assets such as trade receivables\n\nAsset backed commercial paper (ABCP) is a device used by banks to get operating assets such as trade receivables funded by issuance of securities. Traditionally, banks devised ABCP conduits as a device to put their current asset credits off their balance sheets and yet provide liquidity support to their clients.\n\nFor example, assume Bank A has a client X, whose working capital needs are funded by the bank. If the bank wants to release the regulatory capital that is locked in this credit asset, the bank can set up a conduit, essentially an SPV that issues commercial paper. The conduit will buy the receivables of the client and get the same funded by issuance of commercial paper. The bank will be required to provide some liquidity support to the conduit, as it is practically impossible to match the maturities of the commercial paper to the realization of trade receivables. Thus, the credit asset is moved off the balance sheet giving the bank a regulatory relief.\n\nSo depending upon whether the bank provides full or partial liquidity support to the conduit, ABCP can be either fully supported or partly supported. \n\nABCP conduits are virtual subsets of the parent bank. If the bank provides full liquidity support to the conduit, for regulatory purposes, the liquidity support given by the bank may be treated as a direct credit substitute in which case the assets held by the conduit are aggregated with those of the bank.\n\nNot only are ABCP conduits set up by banks, there are also large issuers who set up their own conduits.\n\nFrom viewpoint of the number of originators throwing their receivables into the program, ABCP conduits are known as single originator and multiple originator conduits. In the latter case, the credit enhancements (and/or liquidity enhancements) are found both at the level of transfer by each originator (originator-level enhancement) and at the program level.",
+					"BaseAttributeReference": {
+						"Entity": "CommercialPaper.cdm.json/CommercialPaper",
+						"Name": "AssetBackedCommercialPaperIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "DiscountedCommercialPaperIndicator",
+					"Description": "Indicates that the commercial paper is a  'discounted instrument', there are no interest payment made.   The price paid to buy the instrument is lower than the face value, which is paid to the buyer upon maturity.",
+					"BaseAttributeReference": {
+						"Entity": "CommercialPaper.cdm.json/CommercialPaper",
+						"Name": "DiscountedCommercialPaperIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "PlusInterestCommercialPaperIndicator",
+					"Description": "Indicates that the commercial paper is a 'plus interest instrument' the client pays the full face to buy the paper and receives that face value plus the interest.",
+					"BaseAttributeReference": {
+						"Entity": "CommercialPaper.cdm.json/CommercialPaper",
+						"Name": "PlusInterestCommercialPaperIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "CommercialPaperIssueMethodId",
+					"Description": "The unique identifier of a Commercial Paper Issue Method.",
+					"BaseAttributeReference": {
+						"Entity": "CommercialPaper.cdm.json/CommercialPaper",
+						"Name": "CommercialPaperIssueMethodId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/CommercialPaper",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/CommercialPaper",
+				"Properties": {
+					"LinkedServiceName": "wspc-dpu-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"CommercialPaperId\":{\"entity\":\"CommercialPaper.cdm.json/CommercialPaper\",\"name\":\"CommercialPaperId\"},\"IssuingDenomination\":{\"entity\":\"CommercialPaper.cdm.json/CommercialPaper\",\"name\":\"IssuingDenomination\"},\"PurchasePriceAmount\":{\"entity\":\"CommercialPaper.cdm.json/CommercialPaper\",\"name\":\"PurchasePriceAmount\"},\"InterestRate\":{\"entity\":\"CommercialPaper.cdm.json/CommercialPaper\",\"name\":\"InterestRate\"},\"YieldPercentage\":{\"entity\":\"CommercialPaper.cdm.json/CommercialPaper\",\"name\":\"YieldPercentage\"},\"MaximumAuthorizedAmount\":{\"entity\":\"CommercialPaper.cdm.json/CommercialPaper\",\"name\":\"MaximumAuthorizedAmount\"},\"AdditionalPurchasingIncrementsAmount\":{\"entity\":\"CommercialPaper.cdm.json/CommercialPaper\",\"name\":\"AdditionalPurchasingIncrementsAmount\"},\"DeliveryInstructions\":{\"entity\":\"CommercialPaper.cdm.json/CommercialPaper\",\"name\":\"DeliveryInstructions\"},\"SalesPolicyStatement\":{\"entity\":\"CommercialPaper.cdm.json/CommercialPaper\",\"name\":\"SalesPolicyStatement\"},\"AgentName\":{\"entity\":\"CommercialPaper.cdm.json/CommercialPaper\",\"name\":\"AgentName\"},\"QuotingBasis\":{\"entity\":\"CommercialPaper.cdm.json/CommercialPaper\",\"name\":\"QuotingBasis\"},\"RateStructure\":{\"entity\":\"CommercialPaper.cdm.json/CommercialPaper\",\"name\":\"RateStructure\"},\"CommercialPaperTypeId\":{\"entity\":\"CommercialPaper.cdm.json/CommercialPaper\",\"name\":\"CommercialPaperTypeId\"},\"ConduitId\":{\"entity\":\"CommercialPaper.cdm.json/CommercialPaper\",\"name\":\"ConduitId\"},\"AssetBackedCommercialPaperIndicator\":{\"entity\":\"CommercialPaper.cdm.json/CommercialPaper\",\"name\":\"AssetBackedCommercialPaperIndicator\"},\"DiscountedCommercialPaperIndicator\":{\"entity\":\"CommercialPaper.cdm.json/CommercialPaper\",\"name\":\"DiscountedCommercialPaperIndicator\"},\"PlusInterestCommercialPaperIndicator\":{\"entity\":\"CommercialPaper.cdm.json/CommercialPaper\",\"name\":\"PlusInterestCommercialPaperIndicator\"},\"CommercialPaperIssueMethodId\":{\"entity\":\"CommercialPaper.cdm.json/CommercialPaper\",\"name\":\"CommercialPaperIssueMethodId\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"CommercialPaper\",\"path\":\"CommercialPaper.cdm.json/CommercialPaper\"},\"description\":\"Commercial paper is an unsecured, short-term loan issued by a corporation, typically for financing accounts receivable and inventories. \\n\\nIt is usually issued at a discount, reflecting current market interest rates. \\n\\nMaturities on commercial paper are usually no longer than 9 months, with maturities of 1-2 months being the average.\\n\\nCommercial paper is generally considered to be the highest yielding money market investment.\\n\\nThe notes are normally sold at a discount and mature in from three to six months.    \\n\\nCommercial paper may also be offered as either a 'discounted instrument' or as a 'principal plus interest'.\\n\\nIn the case of a 'discounted instrument', there are no interest payment made.   The price paid to buy the instrument is lower than the face value, which is paid to the buyer upon maturity.    In this case, commercial paper is zero coupon debt, meaning that the investor buys the bond at a discount from face value (par), holds the bond until maturity, and earns interest income based on the difference between the buy price and the face value. \\n\\nIn the case of a 'plus interest instrument' the client pays the full face to buy the paper and receives that face value plus the interest.\\n\\nFor many corporations, borrowing short-term money from banks is often a labored and annoying task. Their desire to avoid banks as much as possible has led to the widespread popularity of commercial paper.\\n\\nFor the most part, commercial paper is a very safe investment because the financial situation of a company can easily be predicted over a few months. Furthermore, typically only companies with high credit ratings and credit worthiness issue commercial paper. Over the past 40 years, there have only been a handful of cases where corporations have defaulted on their commercial paper repayment.\\n\\nCommercial paper is usually issued with denominations of $100,000 or more. Therefore, smaller investors can only invest in commercial paper indirectly through money market funds.\\n\\nCommercial paper is subject to federal and state taxes.\\n\\nCorporations have the ability to raise money by:\\n\\n- issuing stock\\n- issuing bonds\\n- issuing commercial paper\\n\\nCommercial paper is a debt instrument that is offered as either a 'discounted instrument' or as a 'principal plus interest'.\\n\\nIn the case of a 'discounted instrument', there are no interest payment made.  The price paid to buy the instrument is lower than the face value, which is paid to the buyer upon maturity.\\n\\nIn the case of a 'plus interest instrument' the client pays the full face to buy the paper and receives that face value plus the interest accrued at maturity.\\n\\nThe interest rate is negotiated at the time of purchase and the interest is calculated from face or full value.  \\n\\nThe buyer must hold the instrument until maturity to receive the interest.\\n\\nIf the paper is sold during its lifetime, the price is subject to market conditions and associated market pricing.\\n\\nCommercial paper settles on the same day.\\n\\nLike all fixed income securities, commercial paper prices are susceptible to fluctuations in interest rates. If interest rates rise, commercial paper prices will decline.  \\n\\nThe short-term nature of a commercial paper investment makes it less susceptible to interest rate risk than many other fixed income securities because interest rate risk typically increases as maturity lengths increase.\\n\\nCommercial paper tends to yield smaller returns than longer-term corporate debt because securities with shorter maturities typically have lower effective yields than those with longer maturities.\\n\\nAs with most fixed income securities, there is a chance that the issuer will default on its commercial paper obligation.\\n\\nKey Benefits offered include:\\n\\n-  Access to higher rates of return, commensurate with underlying credit risk, than those generally available on alternative short term investments (i.e. bank bills) \\n\\n-  Can be held by the Bank on a safe custody basis free of charge \\n\\n-  Bank fees are not applicable\",\"primaryKey\":[\"CommercialPaperId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"CommercialPaperId\",\"attributeReference\":{\"entity\":\"CommercialPaper.cdm.json/CommercialPaper\",\"name\":\"CommercialPaperId\"},\"dataType\":\"long\"},{\"type\":\"Existing\",\"name\":\"IssuingDenomination\",\"attributeReference\":{\"entity\":\"CommercialPaper.cdm.json/CommercialPaper\",\"name\":\"IssuingDenomination\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"PurchasePriceAmount\",\"attributeReference\":{\"entity\":\"CommercialPaper.cdm.json/CommercialPaper\",\"name\":\"PurchasePriceAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"InterestRate\",\"attributeReference\":{\"entity\":\"CommercialPaper.cdm.json/CommercialPaper\",\"name\":\"InterestRate\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":8},{\"type\":\"Existing\",\"name\":\"YieldPercentage\",\"attributeReference\":{\"entity\":\"CommercialPaper.cdm.json/CommercialPaper\",\"name\":\"YieldPercentage\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":8},{\"type\":\"Existing\",\"name\":\"MaximumAuthorizedAmount\",\"attributeReference\":{\"entity\":\"CommercialPaper.cdm.json/CommercialPaper\",\"name\":\"MaximumAuthorizedAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"AdditionalPurchasingIncrementsAmount\",\"attributeReference\":{\"entity\":\"CommercialPaper.cdm.json/CommercialPaper\",\"name\":\"AdditionalPurchasingIncrementsAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"DeliveryInstructions\",\"attributeReference\":{\"entity\":\"CommercialPaper.cdm.json/CommercialPaper\",\"name\":\"DeliveryInstructions\"},\"dataType\":\"string\",\"dataTypeLength\":2048},{\"type\":\"Existing\",\"name\":\"SalesPolicyStatement\",\"attributeReference\":{\"entity\":\"CommercialPaper.cdm.json/CommercialPaper\",\"name\":\"SalesPolicyStatement\"},\"dataType\":\"string\",\"dataTypeLength\":2048},{\"type\":\"Existing\",\"name\":\"AgentName\",\"attributeReference\":{\"entity\":\"CommercialPaper.cdm.json/CommercialPaper\",\"name\":\"AgentName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"QuotingBasis\",\"attributeReference\":{\"entity\":\"CommercialPaper.cdm.json/CommercialPaper\",\"name\":\"QuotingBasis\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"RateStructure\",\"attributeReference\":{\"entity\":\"CommercialPaper.cdm.json/CommercialPaper\",\"name\":\"RateStructure\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"CommercialPaperTypeId\",\"attributeReference\":{\"entity\":\"CommercialPaper.cdm.json/CommercialPaper\",\"name\":\"CommercialPaperTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ConduitId\",\"attributeReference\":{\"entity\":\"CommercialPaper.cdm.json/CommercialPaper\",\"name\":\"ConduitId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"AssetBackedCommercialPaperIndicator\",\"attributeReference\":{\"entity\":\"CommercialPaper.cdm.json/CommercialPaper\",\"name\":\"AssetBackedCommercialPaperIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"DiscountedCommercialPaperIndicator\",\"attributeReference\":{\"entity\":\"CommercialPaper.cdm.json/CommercialPaper\",\"name\":\"DiscountedCommercialPaperIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"PlusInterestCommercialPaperIndicator\",\"attributeReference\":{\"entity\":\"CommercialPaper.cdm.json/CommercialPaper\",\"name\":\"PlusInterestCommercialPaperIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"CommercialPaperIssueMethodId\",\"attributeReference\":{\"entity\":\"CommercialPaper.cdm.json/CommercialPaper\",\"name\":\"CommercialPaperIssueMethodId\"},\"dataType\":\"integer\"}]}}}",
+			"Description": "Commercial paper is an unsecured, short-term loan issued by a corporation, typically for financing accounts receivable and inventories. \n\nIt is usually issued at a discount, reflecting current market interest rates. \n\nMaturities on commercial paper are usually no longer than 9 months, with maturities of 1-2 months being the average.\n\nCommercial paper is generally considered to be the highest yielding money market investment.\n\nThe notes are normally sold at a discount and mature in from three to six months.    \n\nCommercial paper may also be offered as either a 'discounted instrument' or as a 'principal plus interest'.\n\nIn the case of a 'discounted instrument', there are no interest payment made.   The price paid to buy the instrument is lower than the face value, which is paid to the buyer upon maturity.    In this case, commercial paper is zero coupon debt, meaning that the investor buys the bond at a discount from face value (par), holds the bond until maturity, and earns interest income based on the difference between the buy price and the face value. \n\nIn the case of a 'plus interest instrument' the client pays the full face to buy the paper and receives that face value plus the interest.\n\nFor many corporations, borrowing short-term money from banks is often a labored and annoying task. Their desire to avoid banks as much as possible has led to the widespread popularity of commercial paper.\n\nFor the most part, commercial paper is a very safe investment because the financial situation of a company can easily be predicted over a few months. Furthermore, typically only companies with high credit ratings and credit worthiness issue commercial paper. Over the past 40 years, there have only been a handful of cases where corporations have defaulted on their commercial paper repayment.\n\nCommercial paper is usually issued with denominations of $100,000 or more. Therefore, smaller investors can only invest in commercial paper indirectly through money market funds.\n\nCommercial paper is subject to federal and state taxes.\n\nCorporations have the ability to raise money by:\n\n- issuing stock\n- issuing bonds\n- issuing commercial paper\n\nCommercial paper is a debt instrument that is offered as either a 'discounted instrument' or as a 'principal plus interest'.\n\nIn the case of a 'discounted instrument', there are no interest payment made.  The price paid to buy the instrument is lower than the face value, which is paid to the buyer upon maturity.\n\nIn the case of a 'plus interest instrument' the client pays the full face to buy the paper and receives that face value plus the interest accrued at maturity.\n\nThe interest rate is negotiated at the time of purchase and the interest is calculated from face or full value.  \n\nThe buyer must hold the instrument until maturity to receive the interest.\n\nIf the paper is sold during its lifetime, the price is subject to market conditions and associated market pricing.\n\nCommercial paper settles on the same day.\n\nLike all fixed income securities, commercial paper prices are susceptible to fluctuations in interest rates. If interest rates rise, commercial paper prices will decline.  \n\nThe short-term nature of a commercial paper investment makes it less susceptible to interest rate risk than many other fixed income securities because interest rate risk typically increases as maturity lengths increase.\n\nCommercial paper tends to yield smaller returns than longer-term corporate debt because securities with shorter maturities typically have lower effective yields than those with longer maturities.\n\nAs with most fixed income securities, there is a chance that the issuer will default on its commercial paper obligation.\n\nKey Benefits offered include:\n\n-  Access to higher rates of return, commensurate with underlying credit risk, than those generally available on alternative short term investments (i.e. bank bills) \n\n-  Can be held by the Bank on a safe custody basis free of charge \n\n-  Bank fees are not applicable",
+			"DisplayFolderInfo": "{\"name\":\"Financial Product\",\"colorCode\":\"#001475\"}",
+			"PrimaryKeys": "CommercialPaperId",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

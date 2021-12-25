@@ -1,0 +1,129 @@
+{
+	"name": "HomeEquityLineOfCreditProduct",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "HomeEquityLineOfCreditProduct",
+		"Description": "A Home Equity Line of Credit (HELOC) is a loan in which the lender agrees to lend a maximum amount within an agreed period or term.\n\nThe collateral is the borrower's equity in their home.\n\nA HELOC is different from a conventional home equity loan in that the borrower is not advanced the entire sum up front.  The borrower uses the line of credit to borrow sums that total no more than the amount much like a payment card. \n\nAt closing you are assigned a specified credit limit that you can borrow up to. \nDuring the draw period, which is normally 5-25 years,  funds can be borrowed and you pay back only what you use plus interest. \n\nDepending on how much you use the HELOC, you will have a minimum monthly payment requirement (often \"interest only\"); beyond the minimum, it is up to you how much to pay and when to pay. \n\nAt the end of the draw period, you will have to pay back the full principal amount borrowed as either a lump-sum balloon payment or according to a loan amortization schedule.\n\nAnother important difference from a conventional loan: the interest rate on a HELOC is variable based on an index.\n\nThis means that the interest rate can change over time. \n\nHome Equity Loan:\n- Interest is tax deductible in most cases\n- Interest rates are fixed\n- Funds are disbursed in a single check\n\nHome Equity Line Of Credit:\n- Interest is tax deductible in most cases\n- Interest rates are fixed or variable\n- Funds may be accessed via ATMs, checks, payment cards, online banking and at banking centers",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ProductId",
+					"Description": "The unique identifier of a Product.",
+					"BaseAttributeReference": {
+						"Entity": "HomeEquityLineOfCreditProduct.cdm.json/HomeEquityLineOfCreditProduct",
+						"Name": "ProductId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "MaximumCltvPercentage",
+					"Description": "The maximum CLTV Percentage of the associated parameters.",
+					"BaseAttributeReference": {
+						"Entity": "HomeEquityLineOfCreditProduct.cdm.json/HomeEquityLineOfCreditProduct",
+						"Name": "MaximumCltvPercentage"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "MinimumPaymentPercentageOfBalance",
+					"Description": "The minimum payment per payment period expressed as a percentage of the total incurred.\n\nEx:\n$25 or 1/120th of outstanding principal, whichever is greater, plus accrued interest.",
+					"BaseAttributeReference": {
+						"Entity": "HomeEquityLineOfCreditProduct.cdm.json/HomeEquityLineOfCreditProduct",
+						"Name": "MinimumPaymentPercentageOfBalance"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "LineOfCreditRestrictionsStatement",
+					"Description": "A statement regarding any restrictions applied to the home equity line of credit.\n\nEx:\nThere may be limitations on how you use the line. Some plans may require you to borrow a minimum amount each time you draw on the line (for example, $300) and to keep a minimum amount outstanding. Some plans may also require that you take an initial advance when the line is set up.",
+					"BaseAttributeReference": {
+						"Entity": "HomeEquityLineOfCreditProduct.cdm.json/HomeEquityLineOfCreditProduct",
+						"Name": "LineOfCreditRestrictionsStatement"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 2048,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/HomeEquityLineOfCreditProduct",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/HomeEquityLineOfCreditProduct",
+				"Properties": {
+					"LinkedServiceName": "wspc-dpu-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ProductId\":{\"entity\":\"HomeEquityLineOfCreditProduct.cdm.json/HomeEquityLineOfCreditProduct\",\"name\":\"ProductId\"},\"MaximumCltvPercentage\":{\"entity\":\"HomeEquityLineOfCreditProduct.cdm.json/HomeEquityLineOfCreditProduct\",\"name\":\"MaximumCltvPercentage\"},\"MinimumPaymentPercentageOfBalance\":{\"entity\":\"HomeEquityLineOfCreditProduct.cdm.json/HomeEquityLineOfCreditProduct\",\"name\":\"MinimumPaymentPercentageOfBalance\"},\"LineOfCreditRestrictionsStatement\":{\"entity\":\"HomeEquityLineOfCreditProduct.cdm.json/HomeEquityLineOfCreditProduct\",\"name\":\"LineOfCreditRestrictionsStatement\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"HomeEquityLineOfCreditProduct\",\"path\":\"HomeEquityLineOfCreditProduct.cdm.json/HomeEquityLineOfCreditProduct\"},\"description\":\"A Home Equity Line of Credit (HELOC) is a loan in which the lender agrees to lend a maximum amount within an agreed period or term.\\n\\nThe collateral is the borrower's equity in their home.\\n\\nA HELOC is different from a conventional home equity loan in that the borrower is not advanced the entire sum up front.  The borrower uses the line of credit to borrow sums that total no more than the amount much like a payment card. \\n\\nAt closing you are assigned a specified credit limit that you can borrow up to. \\nDuring the draw period, which is normally 5-25 years,  funds can be borrowed and you pay back only what you use plus interest. \\n\\nDepending on how much you use the HELOC, you will have a minimum monthly payment requirement (often \\\"interest only\\\"); beyond the minimum, it is up to you how much to pay and when to pay. \\n\\nAt the end of the draw period, you will have to pay back the full principal amount borrowed as either a lump-sum balloon payment or according to a loan amortization schedule.\\n\\nAnother important difference from a conventional loan: the interest rate on a HELOC is variable based on an index.\\n\\nThis means that the interest rate can change over time. \\n\\nHome Equity Loan:\\n- Interest is tax deductible in most cases\\n- Interest rates are fixed\\n- Funds are disbursed in a single check\\n\\nHome Equity Line Of Credit:\\n- Interest is tax deductible in most cases\\n- Interest rates are fixed or variable\\n- Funds may be accessed via ATMs, checks, payment cards, online banking and at banking centers\",\"primaryKey\":[\"ProductId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"ProductId\",\"attributeReference\":{\"entity\":\"HomeEquityLineOfCreditProduct.cdm.json/HomeEquityLineOfCreditProduct\",\"name\":\"ProductId\"},\"dataType\":\"long\"},{\"type\":\"Existing\",\"name\":\"MaximumCltvPercentage\",\"attributeReference\":{\"entity\":\"HomeEquityLineOfCreditProduct.cdm.json/HomeEquityLineOfCreditProduct\",\"name\":\"MaximumCltvPercentage\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":8},{\"type\":\"Existing\",\"name\":\"MinimumPaymentPercentageOfBalance\",\"attributeReference\":{\"entity\":\"HomeEquityLineOfCreditProduct.cdm.json/HomeEquityLineOfCreditProduct\",\"name\":\"MinimumPaymentPercentageOfBalance\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"LineOfCreditRestrictionsStatement\",\"attributeReference\":{\"entity\":\"HomeEquityLineOfCreditProduct.cdm.json/HomeEquityLineOfCreditProduct\",\"name\":\"LineOfCreditRestrictionsStatement\"},\"dataType\":\"string\",\"dataTypeLength\":2048}]}}}",
+			"Description": "A Home Equity Line of Credit (HELOC) is a loan in which the lender agrees to lend a maximum amount within an agreed period or term.\n\nThe collateral is the borrower's equity in their home.\n\nA HELOC is different from a conventional home equity loan in that the borrower is not advanced the entire sum up front.  The borrower uses the line of credit to borrow sums that total no more than the amount much like a payment card. \n\nAt closing you are assigned a specified credit limit that you can borrow up to. \nDuring the draw period, which is normally 5-25 years,  funds can be borrowed and you pay back only what you use plus interest. \n\nDepending on how much you use the HELOC, you will have a minimum monthly payment requirement (often \"interest only\"); beyond the minimum, it is up to you how much to pay and when to pay. \n\nAt the end of the draw period, you will have to pay back the full principal amount borrowed as either a lump-sum balloon payment or according to a loan amortization schedule.\n\nAnother important difference from a conventional loan: the interest rate on a HELOC is variable based on an index.\n\nThis means that the interest rate can change over time. \n\nHome Equity Loan:\n- Interest is tax deductible in most cases\n- Interest rates are fixed\n- Funds are disbursed in a single check\n\nHome Equity Line Of Credit:\n- Interest is tax deductible in most cases\n- Interest rates are fixed or variable\n- Funds may be accessed via ATMs, checks, payment cards, online banking and at banking centers",
+			"DisplayFolderInfo": "{\"name\":\"Product\",\"colorCode\":\"#0E3D73\"}",
+			"PrimaryKeys": "ProductId",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

@@ -1,0 +1,249 @@
+{
+	"name": "BankProductFee",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "BankProductFee",
+		"Description": "The fee(s) that may be applied to a bank product or service for the associated period.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ProductId",
+					"Description": "The unique identifier of a Product.",
+					"BaseAttributeReference": {
+						"Entity": "BankProductFee.cdm.json/BankProductFee",
+						"Name": "ProductId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "ProductFeeTypeId",
+					"Description": "The unique identifier of a Bank Fee Type.",
+					"BaseAttributeReference": {
+						"Entity": "BankProductFee.cdm.json/BankProductFee",
+						"Name": "ProductFeeTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "MinimumAccountBalance",
+					"Description": "The minimum account balance for which the associated product fee is applicable.",
+					"BaseAttributeReference": {
+						"Entity": "BankProductFee.cdm.json/BankProductFee",
+						"Name": "MinimumAccountBalance"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "MaximumAccountBalance",
+					"Description": "The maximum account balance for which the associated product fee is applicable.",
+					"BaseAttributeReference": {
+						"Entity": "BankProductFee.cdm.json/BankProductFee",
+						"Name": "MaximumAccountBalance"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "PeriodStartDate",
+					"Description": "The period start date that the associated retail banking product fee is applied to the associated retail banking product.",
+					"BaseAttributeReference": {
+						"Entity": "BankProductFee.cdm.json/BankProductFee",
+						"Name": "PeriodStartDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "PeriodEndDate",
+					"Description": "The period end date that the associated retail banking product fee is applied to the associated retail banking product.",
+					"BaseAttributeReference": {
+						"Entity": "BankProductFee.cdm.json/BankProductFee",
+						"Name": "PeriodEndDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "FeeAmount",
+					"Description": "The amount of the fee.",
+					"BaseAttributeReference": {
+						"Entity": "BankProductFee.cdm.json/BankProductFee",
+						"Name": "FeeAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "FeePercentage",
+					"Description": "The percentage of the transaction that is charged as the fee.",
+					"BaseAttributeReference": {
+						"Entity": "BankProductFee.cdm.json/BankProductFee",
+						"Name": "FeePercentage"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "OneTimeFeeIndicator",
+					"Description": "Indicates that the associated fee is a one-time only fee.",
+					"BaseAttributeReference": {
+						"Entity": "BankProductFee.cdm.json/BankProductFee",
+						"Name": "OneTimeFeeIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "BillingCycleId",
+					"Description": "The unique identifier of a Billing Cycle.",
+					"BaseAttributeReference": {
+						"Entity": "BankProductFee.cdm.json/BankProductFee",
+						"Name": "BillingCycleId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ProductFeeNote",
+					"Description": "A note, comment or additional information regarding the product fee.",
+					"BaseAttributeReference": {
+						"Entity": "BankProductFee.cdm.json/BankProductFee",
+						"Name": "ProductFeeNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/BankProductFee",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/BankProductFee",
+				"Properties": {
+					"LinkedServiceName": "wspc-dpu-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ProductId\":{\"entity\":\"BankProductFee.cdm.json/BankProductFee\",\"name\":\"ProductId\"},\"ProductFeeTypeId\":{\"entity\":\"BankProductFee.cdm.json/BankProductFee\",\"name\":\"ProductFeeTypeId\"},\"MinimumAccountBalance\":{\"entity\":\"BankProductFee.cdm.json/BankProductFee\",\"name\":\"MinimumAccountBalance\"},\"MaximumAccountBalance\":{\"entity\":\"BankProductFee.cdm.json/BankProductFee\",\"name\":\"MaximumAccountBalance\"},\"PeriodStartDate\":{\"entity\":\"BankProductFee.cdm.json/BankProductFee\",\"name\":\"PeriodStartDate\"},\"PeriodEndDate\":{\"entity\":\"BankProductFee.cdm.json/BankProductFee\",\"name\":\"PeriodEndDate\"},\"FeeAmount\":{\"entity\":\"BankProductFee.cdm.json/BankProductFee\",\"name\":\"FeeAmount\"},\"FeePercentage\":{\"entity\":\"BankProductFee.cdm.json/BankProductFee\",\"name\":\"FeePercentage\"},\"OneTimeFeeIndicator\":{\"entity\":\"BankProductFee.cdm.json/BankProductFee\",\"name\":\"OneTimeFeeIndicator\"},\"BillingCycleId\":{\"entity\":\"BankProductFee.cdm.json/BankProductFee\",\"name\":\"BillingCycleId\"},\"ProductFeeNote\":{\"entity\":\"BankProductFee.cdm.json/BankProductFee\",\"name\":\"ProductFeeNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"BankProductFee\",\"path\":\"BankProductFee.cdm.json/BankProductFee\"},\"description\":\"The fee(s) that may be applied to a bank product or service for the associated period.\",\"primaryKey\":[\"ProductId\",\"ProductFeeTypeId\",\"MinimumAccountBalance\",\"MaximumAccountBalance\",\"PeriodStartDate\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"ProductId\",\"attributeReference\":{\"entity\":\"BankProductFee.cdm.json/BankProductFee\",\"name\":\"ProductId\"},\"dataType\":\"long\"},{\"type\":\"Existing\",\"name\":\"ProductFeeTypeId\",\"attributeReference\":{\"entity\":\"BankProductFee.cdm.json/BankProductFee\",\"name\":\"ProductFeeTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"MinimumAccountBalance\",\"attributeReference\":{\"entity\":\"BankProductFee.cdm.json/BankProductFee\",\"name\":\"MinimumAccountBalance\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"MaximumAccountBalance\",\"attributeReference\":{\"entity\":\"BankProductFee.cdm.json/BankProductFee\",\"name\":\"MaximumAccountBalance\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"PeriodStartDate\",\"attributeReference\":{\"entity\":\"BankProductFee.cdm.json/BankProductFee\",\"name\":\"PeriodStartDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\"},{\"type\":\"Existing\",\"name\":\"PeriodEndDate\",\"attributeReference\":{\"entity\":\"BankProductFee.cdm.json/BankProductFee\",\"name\":\"PeriodEndDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\"},{\"type\":\"Existing\",\"name\":\"FeeAmount\",\"attributeReference\":{\"entity\":\"BankProductFee.cdm.json/BankProductFee\",\"name\":\"FeeAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"FeePercentage\",\"attributeReference\":{\"entity\":\"BankProductFee.cdm.json/BankProductFee\",\"name\":\"FeePercentage\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":8},{\"type\":\"Existing\",\"name\":\"OneTimeFeeIndicator\",\"attributeReference\":{\"entity\":\"BankProductFee.cdm.json/BankProductFee\",\"name\":\"OneTimeFeeIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"BillingCycleId\",\"attributeReference\":{\"entity\":\"BankProductFee.cdm.json/BankProductFee\",\"name\":\"BillingCycleId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ProductFeeNote\",\"attributeReference\":{\"entity\":\"BankProductFee.cdm.json/BankProductFee\",\"name\":\"ProductFeeNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024}]}}}",
+			"Description": "The fee(s) that may be applied to a bank product or service for the associated period.",
+			"DisplayFolderInfo": "{\"name\":\"Product\",\"colorCode\":\"#0E3D73\"}",
+			"PrimaryKeys": "ProductId,ProductFeeTypeId,MinimumAccountBalance,MaximumAccountBalance,PeriodStartDate",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

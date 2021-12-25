@@ -1,0 +1,26 @@
+{
+	"name": "relationship-dxvgwgmgrm",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-dxvgwgmgrm",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "FinancialStatementDurationType",
+		"ToTableName": "SetOfFinancialStatements",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "FinancialStatementDurationTypeId",
+				"ToColumnName": "FinancialStatementDurationTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"FinancialStatementDurationType.cdm.json/FinancialStatementDurationType\",\"toEntity\":\"SetOfFinancialStatements.cdm.json/SetOfFinancialStatements\",\"joinPairs\":[{\"fromAttribute\":\"FinancialStatementDurationTypeId\",\"toAttribute\":\"FinancialStatementDurationTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

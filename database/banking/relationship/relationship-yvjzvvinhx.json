@@ -1,0 +1,26 @@
+{
+	"name": "relationship-yvjzvvinhx",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-yvjzvvinhx",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Asset",
+		"ToTableName": "AssetReplacementCost",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "AssetId",
+				"ToColumnName": "AssetId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Asset.cdm.json/Asset\",\"toEntity\":\"AssetReplacementCost.cdm.json/AssetReplacementCost\",\"joinPairs\":[{\"fromAttribute\":\"AssetId\",\"toAttribute\":\"AssetId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

@@ -1,0 +1,26 @@
+{
+	"name": "relationship-ajzajikvra",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-ajzajikvra",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "CommercialLeaseType",
+		"ToTableName": "CommercialLeaseProduct",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "CommercialLeaseTypeId",
+				"ToColumnName": "CommercialLeaseTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"CommercialLeaseType.cdm.json/CommercialLeaseType\",\"toEntity\":\"CommercialLeaseProduct.cdm.json/CommercialLeaseProduct\",\"joinPairs\":[{\"fromAttribute\":\"CommercialLeaseTypeId\",\"toAttribute\":\"CommercialLeaseTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

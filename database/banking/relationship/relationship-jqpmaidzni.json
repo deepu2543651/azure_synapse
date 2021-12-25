@@ -1,0 +1,26 @@
+{
+	"name": "relationship-jqpmaidzni",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-jqpmaidzni",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "LegalEntityCustomer",
+		"ToTableName": "CustomerDunBradstreetReport",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "CustomerId",
+				"ToColumnName": "CustomerId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"LegalEntityCustomer.cdm.json/LegalEntityCustomer\",\"toEntity\":\"CustomerDunBradstreetReport.cdm.json/CustomerDunBradstreetReport\",\"joinPairs\":[{\"fromAttribute\":\"CustomerId\",\"toAttribute\":\"CustomerId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

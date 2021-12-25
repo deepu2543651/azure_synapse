@@ -1,0 +1,387 @@
+{
+	"name": "RadioStation",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "RadioStation",
+		"Description": "Broadcast facility given specific frequency by FCC.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "RadioStationId",
+					"Description": "The unique identifier of a Radio Station.",
+					"BaseAttributeReference": {
+						"Entity": "RadioStation.cdm.json/RadioStation",
+						"Name": "RadioStationId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "RadioStationCallLetters",
+					"Description": "Assigned station identification generally beginning with W east of the Mississippi and K west of the Mississippi.",
+					"BaseAttributeReference": {
+						"Entity": "RadioStation.cdm.json/RadioStation",
+						"Name": "RadioStationCallLetters"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "RadioStationName",
+					"Description": "The name of a Radio Station.",
+					"BaseAttributeReference": {
+						"Entity": "RadioStation.cdm.json/RadioStation",
+						"Name": "RadioStationName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "RadioStationCommunityOfLicense",
+					"Description": "The community that a radio station or television station is officially licensed  to serve by that country's broadcast regulator.",
+					"BaseAttributeReference": {
+						"Entity": "RadioStation.cdm.json/RadioStation",
+						"Name": "RadioStationCommunityOfLicense"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "FirstLicensedDate",
+					"Description": "The date that the radio station was first licensed.",
+					"BaseAttributeReference": {
+						"Entity": "RadioStation.cdm.json/RadioStation",
+						"Name": "FirstLicensedDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "CurrentLicensedDate",
+					"Description": "The last date of the current license.",
+					"BaseAttributeReference": {
+						"Entity": "RadioStation.cdm.json/RadioStation",
+						"Name": "CurrentLicensedDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "LocationId",
+					"Description": "The unique identifier of a Location.",
+					"BaseAttributeReference": {
+						"Entity": "RadioStation.cdm.json/RadioStation",
+						"Name": "LocationId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ClearChannelRatioStationIndicator",
+					"Description": "A radio station operating at maximum power (50,000 watts) on an exclusive frequency that is designed to serve large areas. This also refers to any radio station owned by \"Clear Channel Communications,\" the largest radio company in the United States.",
+					"BaseAttributeReference": {
+						"Entity": "RadioStation.cdm.json/RadioStation",
+						"Name": "ClearChannelRatioStationIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "SmallMarketRadioStationIndicator",
+					"Description": "A radio or TV station located in a small city or town.",
+					"BaseAttributeReference": {
+						"Entity": "RadioStation.cdm.json/RadioStation",
+						"Name": "SmallMarketRadioStationIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "MajorMarketRadioStationIndicator",
+					"Description": "A large city radio or TV station. The top 20 cities in the U.S. (New York, Chicago, Los Angeles, etc.)",
+					"BaseAttributeReference": {
+						"Entity": "RadioStation.cdm.json/RadioStation",
+						"Name": "MajorMarketRadioStationIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "BonusRadioStationIndicator",
+					"Description": "A network or local radio or TV station that airs a program with commercials free of charge.",
+					"BaseAttributeReference": {
+						"Entity": "RadioStation.cdm.json/RadioStation",
+						"Name": "BonusRadioStationIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "MediumMarketRadioStationIndicator",
+					"Description": "A city in the country which is medium in size, maybe up to 500,000 people.",
+					"BaseAttributeReference": {
+						"Entity": "RadioStation.cdm.json/RadioStation",
+						"Name": "MediumMarketRadioStationIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "IndependentRadioStationIndicator",
+					"Description": "A local station unaffiliated with a national network.",
+					"BaseAttributeReference": {
+						"Entity": "RadioStation.cdm.json/RadioStation",
+						"Name": "IndependentRadioStationIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "AffiliateRadioStationIndicator",
+					"Description": "Local radio stations that are associated with a major network. Affiliates agree to preempt time during specified hours for programming provided by the network and carry the advertising contained in the program.",
+					"BaseAttributeReference": {
+						"Entity": "RadioStation.cdm.json/RadioStation",
+						"Name": "AffiliateRadioStationIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "OwnedAndOperatedLocalStationIndicator",
+					"Description": "A local station owned and operated by a network.",
+					"BaseAttributeReference": {
+						"Entity": "RadioStation.cdm.json/RadioStation",
+						"Name": "OwnedAndOperatedLocalStationIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "AmFmStationIndicator",
+					"Description": "Indicates whether the radio station is an AM or FM station.",
+					"BaseAttributeReference": {
+						"Entity": "RadioStation.cdm.json/RadioStation",
+						"Name": "AmFmStationIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "PartyId",
+					"Description": "The unique identifier of a Party.",
+					"BaseAttributeReference": {
+						"Entity": "RadioStation.cdm.json/RadioStation",
+						"Name": "PartyId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "RadioStationCategoryId",
+					"Description": "The unique identifier of a radio station category.",
+					"BaseAttributeReference": {
+						"Entity": "RadioStation.cdm.json/RadioStation",
+						"Name": "RadioStationCategoryId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "RadioNetworkId",
+					"Description": "The unique identifier of a Radio Network.",
+					"BaseAttributeReference": {
+						"Entity": "RadioStation.cdm.json/RadioStation",
+						"Name": "RadioNetworkId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "RadioStationFormatId",
+					"Description": "The unique identifier of a Radio Station Format.",
+					"BaseAttributeReference": {
+						"Entity": "RadioStation.cdm.json/RadioStation",
+						"Name": "RadioStationFormatId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/RadioStation",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/RadioStation",
+				"Properties": {
+					"LinkedServiceName": "wspc-dpu-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"RadioStationId\":{\"entity\":\"RadioStation.cdm.json/RadioStation\",\"name\":\"RadioStationId\"},\"RadioStationCallLetters\":{\"entity\":\"RadioStation.cdm.json/RadioStation\",\"name\":\"RadioStationCallLetters\"},\"RadioStationName\":{\"entity\":\"RadioStation.cdm.json/RadioStation\",\"name\":\"RadioStationName\"},\"RadioStationCommunityOfLicense\":{\"entity\":\"RadioStation.cdm.json/RadioStation\",\"name\":\"RadioStationCommunityOfLicense\"},\"FirstLicensedDate\":{\"entity\":\"RadioStation.cdm.json/RadioStation\",\"name\":\"FirstLicensedDate\"},\"CurrentLicensedDate\":{\"entity\":\"RadioStation.cdm.json/RadioStation\",\"name\":\"CurrentLicensedDate\"},\"LocationId\":{\"entity\":\"RadioStation.cdm.json/RadioStation\",\"name\":\"LocationId\"},\"ClearChannelRatioStationIndicator\":{\"entity\":\"RadioStation.cdm.json/RadioStation\",\"name\":\"ClearChannelRatioStationIndicator\"},\"SmallMarketRadioStationIndicator\":{\"entity\":\"RadioStation.cdm.json/RadioStation\",\"name\":\"SmallMarketRadioStationIndicator\"},\"MajorMarketRadioStationIndicator\":{\"entity\":\"RadioStation.cdm.json/RadioStation\",\"name\":\"MajorMarketRadioStationIndicator\"},\"BonusRadioStationIndicator\":{\"entity\":\"RadioStation.cdm.json/RadioStation\",\"name\":\"BonusRadioStationIndicator\"},\"MediumMarketRadioStationIndicator\":{\"entity\":\"RadioStation.cdm.json/RadioStation\",\"name\":\"MediumMarketRadioStationIndicator\"},\"IndependentRadioStationIndicator\":{\"entity\":\"RadioStation.cdm.json/RadioStation\",\"name\":\"IndependentRadioStationIndicator\"},\"AffiliateRadioStationIndicator\":{\"entity\":\"RadioStation.cdm.json/RadioStation\",\"name\":\"AffiliateRadioStationIndicator\"},\"OwnedAndOperatedLocalStationIndicator\":{\"entity\":\"RadioStation.cdm.json/RadioStation\",\"name\":\"OwnedAndOperatedLocalStationIndicator\"},\"AmFmStationIndicator\":{\"entity\":\"RadioStation.cdm.json/RadioStation\",\"name\":\"AmFmStationIndicator\"},\"PartyId\":{\"entity\":\"RadioStation.cdm.json/RadioStation\",\"name\":\"PartyId\"},\"RadioStationCategoryId\":{\"entity\":\"RadioStation.cdm.json/RadioStation\",\"name\":\"RadioStationCategoryId\"},\"RadioNetworkId\":{\"entity\":\"RadioStation.cdm.json/RadioStation\",\"name\":\"RadioNetworkId\"},\"RadioStationFormatId\":{\"entity\":\"RadioStation.cdm.json/RadioStation\",\"name\":\"RadioStationFormatId\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"RadioStation\",\"path\":\"RadioStation.cdm.json/RadioStation\"},\"description\":\"Broadcast facility given specific frequency by FCC.\",\"primaryKey\":[\"RadioStationId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"RadioStationId\",\"attributeReference\":{\"entity\":\"RadioStation.cdm.json/RadioStation\",\"name\":\"RadioStationId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"RadioStationCallLetters\",\"attributeReference\":{\"entity\":\"RadioStation.cdm.json/RadioStation\",\"name\":\"RadioStationCallLetters\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"RadioStationName\",\"attributeReference\":{\"entity\":\"RadioStation.cdm.json/RadioStation\",\"name\":\"RadioStationName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"RadioStationCommunityOfLicense\",\"attributeReference\":{\"entity\":\"RadioStation.cdm.json/RadioStation\",\"name\":\"RadioStationCommunityOfLicense\"},\"dataType\":\"string\",\"dataTypeLength\":1024},{\"type\":\"Existing\",\"name\":\"FirstLicensedDate\",\"attributeReference\":{\"entity\":\"RadioStation.cdm.json/RadioStation\",\"name\":\"FirstLicensedDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\"},{\"type\":\"Existing\",\"name\":\"CurrentLicensedDate\",\"attributeReference\":{\"entity\":\"RadioStation.cdm.json/RadioStation\",\"name\":\"CurrentLicensedDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\"},{\"type\":\"Existing\",\"name\":\"LocationId\",\"attributeReference\":{\"entity\":\"RadioStation.cdm.json/RadioStation\",\"name\":\"LocationId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ClearChannelRatioStationIndicator\",\"attributeReference\":{\"entity\":\"RadioStation.cdm.json/RadioStation\",\"name\":\"ClearChannelRatioStationIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"SmallMarketRadioStationIndicator\",\"attributeReference\":{\"entity\":\"RadioStation.cdm.json/RadioStation\",\"name\":\"SmallMarketRadioStationIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"MajorMarketRadioStationIndicator\",\"attributeReference\":{\"entity\":\"RadioStation.cdm.json/RadioStation\",\"name\":\"MajorMarketRadioStationIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"BonusRadioStationIndicator\",\"attributeReference\":{\"entity\":\"RadioStation.cdm.json/RadioStation\",\"name\":\"BonusRadioStationIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"MediumMarketRadioStationIndicator\",\"attributeReference\":{\"entity\":\"RadioStation.cdm.json/RadioStation\",\"name\":\"MediumMarketRadioStationIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"IndependentRadioStationIndicator\",\"attributeReference\":{\"entity\":\"RadioStation.cdm.json/RadioStation\",\"name\":\"IndependentRadioStationIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"AffiliateRadioStationIndicator\",\"attributeReference\":{\"entity\":\"RadioStation.cdm.json/RadioStation\",\"name\":\"AffiliateRadioStationIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"OwnedAndOperatedLocalStationIndicator\",\"attributeReference\":{\"entity\":\"RadioStation.cdm.json/RadioStation\",\"name\":\"OwnedAndOperatedLocalStationIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"AmFmStationIndicator\",\"attributeReference\":{\"entity\":\"RadioStation.cdm.json/RadioStation\",\"name\":\"AmFmStationIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"PartyId\",\"attributeReference\":{\"entity\":\"RadioStation.cdm.json/RadioStation\",\"name\":\"PartyId\"},\"dataType\":\"long\"},{\"type\":\"Existing\",\"name\":\"RadioStationCategoryId\",\"attributeReference\":{\"entity\":\"RadioStation.cdm.json/RadioStation\",\"name\":\"RadioStationCategoryId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"RadioNetworkId\",\"attributeReference\":{\"entity\":\"RadioStation.cdm.json/RadioStation\",\"name\":\"RadioNetworkId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"RadioStationFormatId\",\"attributeReference\":{\"entity\":\"RadioStation.cdm.json/RadioStation\",\"name\":\"RadioStationFormatId\"},\"dataType\":\"integer\"}]}}}",
+			"Description": "Broadcast facility given specific frequency by FCC.",
+			"DisplayFolderInfo": "{\"name\":\"Marketing & Advertising\",\"colorCode\":\"#692B0C\"}",
+			"PrimaryKeys": "RadioStationId",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

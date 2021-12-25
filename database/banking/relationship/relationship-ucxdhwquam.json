@@ -1,0 +1,26 @@
+{
+	"name": "relationship-ucxdhwquam",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-ucxdhwquam",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Restriction",
+		"ToTableName": "ProductRestriction",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "RestrictionId",
+				"ToColumnName": "RestrictionId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Restriction.cdm.json/Restriction\",\"toEntity\":\"ProductRestriction.cdm.json/ProductRestriction\",\"joinPairs\":[{\"fromAttribute\":\"RestrictionId\",\"toAttribute\":\"RestrictionId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

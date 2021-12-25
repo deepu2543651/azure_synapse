@@ -1,0 +1,762 @@
+{
+	"name": "PaymentCardProduct",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "PaymentCardProduct",
+		"Description": "A payment card enables card holders to purchase products or services without cash and to pay for them at a later date or with the value associated with the payment card related account or it's stored value.\n\nTypically in order to qualify for this type of credit, the card holder must open an account with a bank or company, which sponsors a card. \n\nThe card holder then receives a line of credit with a specified dollar amount.   They can use the card to make purchases from participating merchants until they reach this credit limit. \n\nEvery month the sponsor provides a bill, which aggregates the card activity during the previous 30 days. Depending on the terms of the card, the customer may pay interest charges on the amount that they do not pay for on a monthly basis.  \n\nThe banks and companies that provide or sponsor payment cards profit in three ways. \n\n(1)  They make money from the interest payments charged on the unpaid balance\n\n(2)  They also can make money by charging an annual fee for the use of the card\n\n(3)  The sponsors make money by charging merchants a small percentage of income for the service of the card. This arrangement is acceptable to the merchants because they can let their customers pay by payment card instead of requiring cash. \n\nThe merchant makes arrangements to participate in a payment card program with a merchant bank, which in turn works with a card-issuing bank. The merchant bank determines what percentage of the total purchase value has to be paid by the merchant to the card-issuing bank. The amount varies depending on the volume and type of business, but in general it is between 1-2%. A percentage of that amount is kept by the merchant bank as a transaction-processing fee.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ProductId",
+					"Description": "The unique identifier of a Product.",
+					"BaseAttributeReference": {
+						"Entity": "PaymentCardProduct.cdm.json/PaymentCardProduct",
+						"Name": "ProductId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "PaymentCardClassificationId",
+					"Description": "The unique identifier of a Payment Card Classification.",
+					"BaseAttributeReference": {
+						"Entity": "PaymentCardProduct.cdm.json/PaymentCardProduct",
+						"Name": "PaymentCardClassificationId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PaymentCardTypeId",
+					"Description": "The unique identifier of a Payment Card Type.",
+					"BaseAttributeReference": {
+						"Entity": "PaymentCardProduct.cdm.json/PaymentCardProduct",
+						"Name": "PaymentCardTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "CardAssociationId",
+					"Description": "The unique identifier of a Card Association.",
+					"BaseAttributeReference": {
+						"Entity": "PaymentCardProduct.cdm.json/PaymentCardProduct",
+						"Name": "CardAssociationId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "BankIdentificationNumber",
+					"Description": "The first six digits of a Visa or MasterCard account number. This number is used to identify the card issuing institution.",
+					"BaseAttributeReference": {
+						"Entity": "PaymentCardProduct.cdm.json/PaymentCardProduct",
+						"Name": "BankIdentificationNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "GracePeriod",
+					"Description": "If payment of the New Balance is received in full by the Payment Due Date, no additional Finance Charge will be imposed on the purpose portion of that New Balance during the billing period.   \n\nThere is normally no grace period for cash advances.",
+					"BaseAttributeReference": {
+						"Entity": "PaymentCardProduct.cdm.json/PaymentCardProduct",
+						"Name": "GracePeriod"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "GracePeriodStatement",
+					"Description": "A statement describing the grace period.",
+					"BaseAttributeReference": {
+						"Entity": "PaymentCardProduct.cdm.json/PaymentCardProduct",
+						"Name": "GracePeriodStatement"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 2048,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "MinimumFinanceChargePercentage",
+					"Description": "If your account is subject to a finance charge, a minimum finance charge may apply.",
+					"BaseAttributeReference": {
+						"Entity": "PaymentCardProduct.cdm.json/PaymentCardProduct",
+						"Name": "MinimumFinanceChargePercentage"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "MinimumLineOfCreditPercentage",
+					"Description": "The minimum rate possible on a line of credit, after any initial introductory rate period. For example, on a credit card with the Prime rate as its index, no matter how low the Prime rate drops, the rate on the line may never decrease below the stated rate floor.",
+					"BaseAttributeReference": {
+						"Entity": "PaymentCardProduct.cdm.json/PaymentCardProduct",
+						"Name": "MinimumLineOfCreditPercentage"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "MinimumVariableRateLoanFloorPercentage",
+					"Description": "The minimum rate possible on a variable-rate loan, after any initial introductory rate period. For example, on a credit card with the Prime rate as its index, no matter how low the Prime rate drops, the rate on the line may never decrease below the stated rate floor.",
+					"BaseAttributeReference": {
+						"Entity": "PaymentCardProduct.cdm.json/PaymentCardProduct",
+						"Name": "MinimumVariableRateLoanFloorPercentage"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "MinimumPaymentAmount",
+					"Description": "The minimum amount a cardholder can pay to keep the account from going into default. Some card issuers will set a high minimum if they are uncertain of the cardholder's ability to pay. Most card issuers require a minimum payment of two percent of the outstanding balance.",
+					"BaseAttributeReference": {
+						"Entity": "PaymentCardProduct.cdm.json/PaymentCardProduct",
+						"Name": "MinimumPaymentAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "MinimumPaymentPercent",
+					"Description": "The minimum percent is used to override the minimum amount should the percent result in a higher value. The amount calculated as a percent of the outstanding amount a cardholder must pay to keep the account from going into default. Some card issuers will set a high minimum if they are uncertain of the cardholder's ability to pay. Most card issuers require a minimum payment of two percent of the outstanding balance.",
+					"BaseAttributeReference": {
+						"Entity": "PaymentCardProduct.cdm.json/PaymentCardProduct",
+						"Name": "MinimumPaymentPercent"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "PaymentDueNumberOfDaysAfterBillingCycle",
+					"Description": "The number of days past the end of the billing cycle when payment is due without financial penalty.\n\nThe date a payment must be received before the account is considered late and a late fee is charged.",
+					"BaseAttributeReference": {
+						"Entity": "PaymentCardProduct.cdm.json/PaymentCardProduct",
+						"Name": "PaymentDueNumberOfDaysAfterBillingCycle"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PaymentCardPurchasesLiabilityAmount",
+					"Description": "The amount that the cardholder is liable for in case of fraud or theft.",
+					"BaseAttributeReference": {
+						"Entity": "PaymentCardProduct.cdm.json/PaymentCardProduct",
+						"Name": "PaymentCardPurchasesLiabilityAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "PaymentCardBillingCycleNumberOfDays",
+					"Description": "The length of time between billing statements. A billing cycle is typically 30 days.",
+					"BaseAttributeReference": {
+						"Entity": "PaymentCardProduct.cdm.json/PaymentCardProduct",
+						"Name": "PaymentCardBillingCycleNumberOfDays"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PaymentCardClosingDayNumberOfBillingCycle",
+					"Description": "The last day that transactions are posted on your account for that billing cycle.",
+					"BaseAttributeReference": {
+						"Entity": "PaymentCardProduct.cdm.json/PaymentCardProduct",
+						"Name": "PaymentCardClosingDayNumberOfBillingCycle"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "SmartCardIndicator",
+					"Description": "A plastic card containing a computer chip with memory and CPU capabilities. Such a card may be used for identification, to store information or financial amounts, or other forms of data. Also called an integrated circuit card or a chip card.",
+					"BaseAttributeReference": {
+						"Entity": "PaymentCardProduct.cdm.json/PaymentCardProduct",
+						"Name": "SmartCardIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "StoredValueCardIndicator",
+					"Description": "A stored-value card is a credit-card-sized device, implanted with a computer chip, with stored money value. A reloadable stored-value card can be reused by transferring value to it from an automated teller machine or other device. A disposable card cannot be reloaded.",
+					"BaseAttributeReference": {
+						"Entity": "PaymentCardProduct.cdm.json/PaymentCardProduct",
+						"Name": "StoredValueCardIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "SecuredCreditCardIndicator",
+					"Description": "A credit card that requires you to pledge collateral to receive credit.",
+					"BaseAttributeReference": {
+						"Entity": "PaymentCardProduct.cdm.json/PaymentCardProduct",
+						"Name": "SecuredCreditCardIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "UnsecuredPaymentCardIndicator",
+					"Description": "A credit card that is not secured with collateral. A customer can qualify for unsecured credit based on their credit history and financial strength.",
+					"BaseAttributeReference": {
+						"Entity": "PaymentCardProduct.cdm.json/PaymentCardProduct",
+						"Name": "UnsecuredPaymentCardIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "TwoCycleBalanceCalculationIndicator",
+					"Description": "Two-cycle Balances. Issuers sometimes use various methods to calculate your balance. This is just another computation method that payment card issuers use to calculate account balance. This balance is calculated by taking the sum of the average daily balances for two billing cycles. The first balance is for the current billing cycle and the second balance is for the previous billing cycle.",
+					"BaseAttributeReference": {
+						"Entity": "PaymentCardProduct.cdm.json/PaymentCardProduct",
+						"Name": "TwoCycleBalanceCalculationIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "CreditInsuranceOptionalIndicator",
+					"Description": "Indicates that credit card insurance is optionally available.",
+					"BaseAttributeReference": {
+						"Entity": "PaymentCardProduct.cdm.json/PaymentCardProduct",
+						"Name": "CreditInsuranceOptionalIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "MinimumAutomaticPaymentIndicator",
+					"Description": "Indicates that the associated Automatic Payment Feature will automatically pay the minimum monthly credit card payment required from the associated checking, savings or market rate account.",
+					"BaseAttributeReference": {
+						"Entity": "PaymentCardProduct.cdm.json/PaymentCardProduct",
+						"Name": "MinimumAutomaticPaymentIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "FullAutomaticPaymentIndicator",
+					"Description": "Indicates that the associated Automatic Payment Feature will automatically pay the full credit card payment required from the associated checking, savings or market rate account.",
+					"BaseAttributeReference": {
+						"Entity": "PaymentCardProduct.cdm.json/PaymentCardProduct",
+						"Name": "FullAutomaticPaymentIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "AccountToAccountTransfersIndicator",
+					"Description": "Indicates that account-to-account transfers are allowed.",
+					"BaseAttributeReference": {
+						"Entity": "PaymentCardProduct.cdm.json/PaymentCardProduct",
+						"Name": "AccountToAccountTransfersIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "ChargebackAndRetrievalServicesIndicator",
+					"Description": "Same day online notice of all chargeback activity.",
+					"BaseAttributeReference": {
+						"Entity": "PaymentCardProduct.cdm.json/PaymentCardProduct",
+						"Name": "ChargebackAndRetrievalServicesIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "CardmemberAgreement",
+					"Description": "The issuer's written statement of terms and conditions relating to your credit card account. The Cardmember Agreement is required by Federal Reserve regulations. The Agreement states that  the annual percentage rate, the monthly minimum payment formula, annual fee, if applicable, and your rights in billing disputes.",
+					"BaseAttributeReference": {
+						"Entity": "PaymentCardProduct.cdm.json/PaymentCardProduct",
+						"Name": "CardmemberAgreement"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 2048,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "AgreementText",
+					"Description": "The text of the payment card agreement.",
+					"BaseAttributeReference": {
+						"Entity": "PaymentCardProduct.cdm.json/PaymentCardProduct",
+						"Name": "AgreementText"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "BalanceCalculationMethodStatement",
+					"Description": "A statement regarding the method used by a credit card issuer to calculate the balance owed and the interest due each month.",
+					"BaseAttributeReference": {
+						"Entity": "PaymentCardProduct.cdm.json/PaymentCardProduct",
+						"Name": "BalanceCalculationMethodStatement"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 2048,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "PrivacyNoticeStatement",
+					"Description": "A statement regarding privacy and the use of payment card data.",
+					"BaseAttributeReference": {
+						"Entity": "PaymentCardProduct.cdm.json/PaymentCardProduct",
+						"Name": "PrivacyNoticeStatement"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 2048,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "NoticeToStateResidentsStatement",
+					"Description": "A notice to the resident of a specific state that the payment card is issued in.",
+					"BaseAttributeReference": {
+						"Entity": "PaymentCardProduct.cdm.json/PaymentCardProduct",
+						"Name": "NoticeToStateResidentsStatement"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 2048,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "NoticeToMarriedStateResidents",
+					"Description": "A notice to married state residents regarding the joint liabilities of using the card.",
+					"BaseAttributeReference": {
+						"Entity": "PaymentCardProduct.cdm.json/PaymentCardProduct",
+						"Name": "NoticeToMarriedStateResidents"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 2048,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "SecurityInterestPledgeAssignmentOfCollateralStatement",
+					"Description": "This is an application for secured payment card account. In consideration of the issuance of this secured payment card account, you have authorized Wells Fargo Bank Nevada, N.A. to open a deposit account called the \"Secured Card Collateral Account\" (the \"Collateral Account\") in your name. To secure all of your obligations arising under this payment card account, you assign, transfer, pledge, grant a security interest in, and set over to the bank all rights, title and interest in the Collateral Account and in all renewals, additions and proceeds of the Collateral Account. You agree that this security interest, pledge, and assignment includes and gives the Bank the right to redeem, collect and withdraw any part or the full amount of the Collateral Account upon any default under the secured payment card agreement or in the event your secured payment card account is terminated for any reason. You acknowledge and agree that this security interest, pledge, and assignment means that the bank has exclusive control over the Collateral Account. You may not make any withdrawals from the Collateral Account while it secures your payment card. This security interest, pledge, and assignment is given as security for any and all amounts you may owe, including but not limited to interest, fees and charges which may accrue under your secured payment card account. You agree that if the secured payment card account is closed for any reason, the funds in the Collateral Account shall remain on deposit for up to 30-60 days after the balance on the secured payment card account has been paid in full. The Collateral Account will be a non-interest bearing FDIC insured account.",
+					"BaseAttributeReference": {
+						"Entity": "PaymentCardProduct.cdm.json/PaymentCardProduct",
+						"Name": "SecurityInterestPledgeAssignmentOfCollateralStatement"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 2048,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "CollateralAccountAuthorizationStatement",
+					"Description": "You request that the Bank open the Collateral Account described above and agree: \nThe Collateral Account and the Bank's practices are subject to the terms of the Collateral Account, to federal and state laws, and to Bank policies. \nTo pay all charges and follow all practices set forth in the terms applicable to the Collateral Account. \nTo hereby stipulate to the terms of the arbitration program described in the Secured Visa card Customer Agreement and Disclosure Statement. \nTo abide by all future changes to the terms for the Collateral Account. \nThe Bank may disclose information about the Collateral Account and payment card account to credit reporting agencies and to other persons or agencies who, in its judgement, have legitimate business purpose for obtaining such information, subject to applicable law.",
+					"BaseAttributeReference": {
+						"Entity": "PaymentCardProduct.cdm.json/PaymentCardProduct",
+						"Name": "CollateralAccountAuthorizationStatement"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 2048,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ApplicationAgreementStatement",
+					"Description": "Application Agreement: This application is for a payment card with Wells Fargo Bank Nevada, N.A. governed by Nevada law. I certify that all information provided is true, correct, and complete and that I have the legal capacity to enter into this contract. The bank is authorized to verify or check any of the information given, to obtain credit reports on me and to make overdraft protection advances if I requested that feature. I authorize the Bank to obtain information from others to investigate my credit, employment and income history and state records including state employment security agency records and to report information regarding my account to consumer reporting agencies. I agree that the Bank will determine the amount of credit extended, as well as which product I qualify for, based on the Bank's review criteria. If I do not qualify for the product or pricing requested or for the lowest pricing offered, I authorize the Bank to grant me the product and pricing for which I do qualify. I agree to be bound by the terms and conditions of the Customer Agreement and Disclosure Statement, which will be sent to me, and understand that the terms of my account may be changed at any time, subject to applicable law. I hereby stipulate to the terms of the arbitration program described in the Customer Agreement and Disclosure Statement. I understand and agree that I will be liable for payment of all amounts owing on the account. I understand and agree that each person applying will have full and equal access to any credit line extended and each will be individually and jointly liable for payment of all amounts owed even if only one applicant uses the account. I acknowledge receipt of the insurance disclosure above. I further acknowledge that the bank will not consider my decision whether to enroll in Credit Defense Service in its credit approval process.",
+					"BaseAttributeReference": {
+						"Entity": "PaymentCardProduct.cdm.json/PaymentCardProduct",
+						"Name": "ApplicationAgreementStatement"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 2048,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "UseOfInformationStatement",
+					"Description": "To provide you with superior service, to inform you of product opportunities and for other business purposes, the family of banks and companies affiliated with Wells Fargo & Company may share information about you, including information obtained from consumer credit reports, among themselves. If you do not want us to share information in this fashion, provide us with your name, address and social security number or taxpayer identification number (if one has been issued) and your direction, such as, \"I request to be excluded from sharing of information among affiliates.\" You can provide us with that information by calling us at 1-888-528-8460. Even if you give us such directions, we may still disclose identifying information and information about your transactions and experiences with us to other Wells Fargo companies as permitted by the federal Fair Credit Reporting Act.",
+					"BaseAttributeReference": {
+						"Entity": "PaymentCardProduct.cdm.json/PaymentCardProduct",
+						"Name": "UseOfInformationStatement"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 2048,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "TransactionFeesStatement",
+					"Description": "A free describing transaction fees required with the payment card.",
+					"BaseAttributeReference": {
+						"Entity": "PaymentCardProduct.cdm.json/PaymentCardProduct",
+						"Name": "TransactionFeesStatement"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 2048,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "TransactionFeeForPurchasesStatement",
+					"Description": "A statement describing any charge imposed when you use the card for a purchases.",
+					"BaseAttributeReference": {
+						"Entity": "PaymentCardProduct.cdm.json/PaymentCardProduct",
+						"Name": "TransactionFeeForPurchasesStatement"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 2048,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "OtherAprsStatement",
+					"Description": "A statement describing other APR's to be paid.\n\nThe interest rates you will pay, on an annual basis, if you get a cash advance on your payment card, if you transfer a balance from another payment card, or if the card issuer applies penalty rates. (More information on the penalty rate may be included outside the disclosure box--for example, in a footnote.)",
+					"BaseAttributeReference": {
+						"Entity": "PaymentCardProduct.cdm.json/PaymentCardProduct",
+						"Name": "OtherAprsStatement"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 2048,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "LatePaymentChargeAmount",
+					"Description": "A charge imposed when your payment is late. If your payment arrives after the grace period, you may be charged both a finance charge (the interest on your outstanding balance) and a late-payment charge. Some card issuers may also impose a penalty rate if you have more than one late payment within several months.",
+					"BaseAttributeReference": {
+						"Entity": "PaymentCardProduct.cdm.json/PaymentCardProduct",
+						"Name": "LatePaymentChargeAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "AccountBalanceCalculationMethodId",
+					"Description": "The unique identifier of an Account Balance Calculation Method.",
+					"BaseAttributeReference": {
+						"Entity": "PaymentCardProduct.cdm.json/PaymentCardProduct",
+						"Name": "AccountBalanceCalculationMethodId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "LoyaltyProgramId",
+					"Description": "The unique identifier of a Loyalty Program.",
+					"BaseAttributeReference": {
+						"Entity": "PaymentCardProduct.cdm.json/PaymentCardProduct",
+						"Name": "LoyaltyProgramId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/PaymentCardProduct",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/PaymentCardProduct",
+				"Properties": {
+					"LinkedServiceName": "wspc-dpu-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ProductId\":{\"entity\":\"PaymentCardProduct.cdm.json/PaymentCardProduct\",\"name\":\"ProductId\"},\"PaymentCardClassificationId\":{\"entity\":\"PaymentCardProduct.cdm.json/PaymentCardProduct\",\"name\":\"PaymentCardClassificationId\"},\"PaymentCardTypeId\":{\"entity\":\"PaymentCardProduct.cdm.json/PaymentCardProduct\",\"name\":\"PaymentCardTypeId\"},\"CardAssociationId\":{\"entity\":\"PaymentCardProduct.cdm.json/PaymentCardProduct\",\"name\":\"CardAssociationId\"},\"BankIdentificationNumber\":{\"entity\":\"PaymentCardProduct.cdm.json/PaymentCardProduct\",\"name\":\"BankIdentificationNumber\"},\"GracePeriod\":{\"entity\":\"PaymentCardProduct.cdm.json/PaymentCardProduct\",\"name\":\"GracePeriod\"},\"GracePeriodStatement\":{\"entity\":\"PaymentCardProduct.cdm.json/PaymentCardProduct\",\"name\":\"GracePeriodStatement\"},\"MinimumFinanceChargePercentage\":{\"entity\":\"PaymentCardProduct.cdm.json/PaymentCardProduct\",\"name\":\"MinimumFinanceChargePercentage\"},\"MinimumLineOfCreditPercentage\":{\"entity\":\"PaymentCardProduct.cdm.json/PaymentCardProduct\",\"name\":\"MinimumLineOfCreditPercentage\"},\"MinimumVariableRateLoanFloorPercentage\":{\"entity\":\"PaymentCardProduct.cdm.json/PaymentCardProduct\",\"name\":\"MinimumVariableRateLoanFloorPercentage\"},\"MinimumPaymentAmount\":{\"entity\":\"PaymentCardProduct.cdm.json/PaymentCardProduct\",\"name\":\"MinimumPaymentAmount\"},\"MinimumPaymentPercent\":{\"entity\":\"PaymentCardProduct.cdm.json/PaymentCardProduct\",\"name\":\"MinimumPaymentPercent\"},\"PaymentDueNumberOfDaysAfterBillingCycle\":{\"entity\":\"PaymentCardProduct.cdm.json/PaymentCardProduct\",\"name\":\"PaymentDueNumberOfDaysAfterBillingCycle\"},\"PaymentCardPurchasesLiabilityAmount\":{\"entity\":\"PaymentCardProduct.cdm.json/PaymentCardProduct\",\"name\":\"PaymentCardPurchasesLiabilityAmount\"},\"PaymentCardBillingCycleNumberOfDays\":{\"entity\":\"PaymentCardProduct.cdm.json/PaymentCardProduct\",\"name\":\"PaymentCardBillingCycleNumberOfDays\"},\"PaymentCardClosingDayNumberOfBillingCycle\":{\"entity\":\"PaymentCardProduct.cdm.json/PaymentCardProduct\",\"name\":\"PaymentCardClosingDayNumberOfBillingCycle\"},\"SmartCardIndicator\":{\"entity\":\"PaymentCardProduct.cdm.json/PaymentCardProduct\",\"name\":\"SmartCardIndicator\"},\"StoredValueCardIndicator\":{\"entity\":\"PaymentCardProduct.cdm.json/PaymentCardProduct\",\"name\":\"StoredValueCardIndicator\"},\"SecuredCreditCardIndicator\":{\"entity\":\"PaymentCardProduct.cdm.json/PaymentCardProduct\",\"name\":\"SecuredCreditCardIndicator\"},\"UnsecuredPaymentCardIndicator\":{\"entity\":\"PaymentCardProduct.cdm.json/PaymentCardProduct\",\"name\":\"UnsecuredPaymentCardIndicator\"},\"TwoCycleBalanceCalculationIndicator\":{\"entity\":\"PaymentCardProduct.cdm.json/PaymentCardProduct\",\"name\":\"TwoCycleBalanceCalculationIndicator\"},\"CreditInsuranceOptionalIndicator\":{\"entity\":\"PaymentCardProduct.cdm.json/PaymentCardProduct\",\"name\":\"CreditInsuranceOptionalIndicator\"},\"MinimumAutomaticPaymentIndicator\":{\"entity\":\"PaymentCardProduct.cdm.json/PaymentCardProduct\",\"name\":\"MinimumAutomaticPaymentIndicator\"},\"FullAutomaticPaymentIndicator\":{\"entity\":\"PaymentCardProduct.cdm.json/PaymentCardProduct\",\"name\":\"FullAutomaticPaymentIndicator\"},\"AccountToAccountTransfersIndicator\":{\"entity\":\"PaymentCardProduct.cdm.json/PaymentCardProduct\",\"name\":\"AccountToAccountTransfersIndicator\"},\"ChargebackAndRetrievalServicesIndicator\":{\"entity\":\"PaymentCardProduct.cdm.json/PaymentCardProduct\",\"name\":\"ChargebackAndRetrievalServicesIndicator\"},\"CardmemberAgreement\":{\"entity\":\"PaymentCardProduct.cdm.json/PaymentCardProduct\",\"name\":\"CardmemberAgreement\"},\"AgreementText\":{\"entity\":\"PaymentCardProduct.cdm.json/PaymentCardProduct\",\"name\":\"AgreementText\"},\"BalanceCalculationMethodStatement\":{\"entity\":\"PaymentCardProduct.cdm.json/PaymentCardProduct\",\"name\":\"BalanceCalculationMethodStatement\"},\"PrivacyNoticeStatement\":{\"entity\":\"PaymentCardProduct.cdm.json/PaymentCardProduct\",\"name\":\"PrivacyNoticeStatement\"},\"NoticeToStateResidentsStatement\":{\"entity\":\"PaymentCardProduct.cdm.json/PaymentCardProduct\",\"name\":\"NoticeToStateResidentsStatement\"},\"NoticeToMarriedStateResidents\":{\"entity\":\"PaymentCardProduct.cdm.json/PaymentCardProduct\",\"name\":\"NoticeToMarriedStateResidents\"},\"SecurityInterestPledgeAssignmentOfCollateralStatement\":{\"entity\":\"PaymentCardProduct.cdm.json/PaymentCardProduct\",\"name\":\"SecurityInterestPledgeAssignmentOfCollateralStatement\"},\"CollateralAccountAuthorizationStatement\":{\"entity\":\"PaymentCardProduct.cdm.json/PaymentCardProduct\",\"name\":\"CollateralAccountAuthorizationStatement\"},\"ApplicationAgreementStatement\":{\"entity\":\"PaymentCardProduct.cdm.json/PaymentCardProduct\",\"name\":\"ApplicationAgreementStatement\"},\"UseOfInformationStatement\":{\"entity\":\"PaymentCardProduct.cdm.json/PaymentCardProduct\",\"name\":\"UseOfInformationStatement\"},\"TransactionFeesStatement\":{\"entity\":\"PaymentCardProduct.cdm.json/PaymentCardProduct\",\"name\":\"TransactionFeesStatement\"},\"TransactionFeeForPurchasesStatement\":{\"entity\":\"PaymentCardProduct.cdm.json/PaymentCardProduct\",\"name\":\"TransactionFeeForPurchasesStatement\"},\"OtherAprsStatement\":{\"entity\":\"PaymentCardProduct.cdm.json/PaymentCardProduct\",\"name\":\"OtherAprsStatement\"},\"LatePaymentChargeAmount\":{\"entity\":\"PaymentCardProduct.cdm.json/PaymentCardProduct\",\"name\":\"LatePaymentChargeAmount\"},\"AccountBalanceCalculationMethodId\":{\"entity\":\"PaymentCardProduct.cdm.json/PaymentCardProduct\",\"name\":\"AccountBalanceCalculationMethodId\"},\"LoyaltyProgramId\":{\"entity\":\"PaymentCardProduct.cdm.json/PaymentCardProduct\",\"name\":\"LoyaltyProgramId\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"PaymentCardProduct\",\"path\":\"PaymentCardProduct.cdm.json/PaymentCardProduct\"},\"description\":\"A payment card enables card holders to purchase products or services without cash and to pay for them at a later date or with the value associated with the payment card related account or it's stored value.\\n\\nTypically in order to qualify for this type of credit, the card holder must open an account with a bank or company, which sponsors a card. \\n\\nThe card holder then receives a line of credit with a specified dollar amount.   They can use the card to make purchases from participating merchants until they reach this credit limit. \\n\\nEvery month the sponsor provides a bill, which aggregates the card activity during the previous 30 days. Depending on the terms of the card, the customer may pay interest charges on the amount that they do not pay for on a monthly basis.  \\n\\nThe banks and companies that provide or sponsor payment cards profit in three ways. \\n\\n(1)  They make money from the interest payments charged on the unpaid balance\\n\\n(2)  They also can make money by charging an annual fee for the use of the card\\n\\n(3)  The sponsors make money by charging merchants a small percentage of income for the service of the card. This arrangement is acceptable to the merchants because they can let their customers pay by payment card instead of requiring cash. \\n\\nThe merchant makes arrangements to participate in a payment card program with a merchant bank, which in turn works with a card-issuing bank. The merchant bank determines what percentage of the total purchase value has to be paid by the merchant to the card-issuing bank. The amount varies depending on the volume and type of business, but in general it is between 1-2%. A percentage of that amount is kept by the merchant bank as a transaction-processing fee.\",\"primaryKey\":[\"ProductId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"ProductId\",\"attributeReference\":{\"entity\":\"PaymentCardProduct.cdm.json/PaymentCardProduct\",\"name\":\"ProductId\"},\"dataType\":\"long\"},{\"type\":\"Existing\",\"name\":\"PaymentCardClassificationId\",\"attributeReference\":{\"entity\":\"PaymentCardProduct.cdm.json/PaymentCardProduct\",\"name\":\"PaymentCardClassificationId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"PaymentCardTypeId\",\"attributeReference\":{\"entity\":\"PaymentCardProduct.cdm.json/PaymentCardProduct\",\"name\":\"PaymentCardTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"CardAssociationId\",\"attributeReference\":{\"entity\":\"PaymentCardProduct.cdm.json/PaymentCardProduct\",\"name\":\"CardAssociationId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"BankIdentificationNumber\",\"attributeReference\":{\"entity\":\"PaymentCardProduct.cdm.json/PaymentCardProduct\",\"name\":\"BankIdentificationNumber\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"GracePeriod\",\"attributeReference\":{\"entity\":\"PaymentCardProduct.cdm.json/PaymentCardProduct\",\"name\":\"GracePeriod\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"GracePeriodStatement\",\"attributeReference\":{\"entity\":\"PaymentCardProduct.cdm.json/PaymentCardProduct\",\"name\":\"GracePeriodStatement\"},\"dataType\":\"string\",\"dataTypeLength\":2048},{\"type\":\"Existing\",\"name\":\"MinimumFinanceChargePercentage\",\"attributeReference\":{\"entity\":\"PaymentCardProduct.cdm.json/PaymentCardProduct\",\"name\":\"MinimumFinanceChargePercentage\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":8},{\"type\":\"Existing\",\"name\":\"MinimumLineOfCreditPercentage\",\"attributeReference\":{\"entity\":\"PaymentCardProduct.cdm.json/PaymentCardProduct\",\"name\":\"MinimumLineOfCreditPercentage\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":8},{\"type\":\"Existing\",\"name\":\"MinimumVariableRateLoanFloorPercentage\",\"attributeReference\":{\"entity\":\"PaymentCardProduct.cdm.json/PaymentCardProduct\",\"name\":\"MinimumVariableRateLoanFloorPercentage\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":8},{\"type\":\"Existing\",\"name\":\"MinimumPaymentAmount\",\"attributeReference\":{\"entity\":\"PaymentCardProduct.cdm.json/PaymentCardProduct\",\"name\":\"MinimumPaymentAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"MinimumPaymentPercent\",\"attributeReference\":{\"entity\":\"PaymentCardProduct.cdm.json/PaymentCardProduct\",\"name\":\"MinimumPaymentPercent\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"PaymentDueNumberOfDaysAfterBillingCycle\",\"attributeReference\":{\"entity\":\"PaymentCardProduct.cdm.json/PaymentCardProduct\",\"name\":\"PaymentDueNumberOfDaysAfterBillingCycle\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"PaymentCardPurchasesLiabilityAmount\",\"attributeReference\":{\"entity\":\"PaymentCardProduct.cdm.json/PaymentCardProduct\",\"name\":\"PaymentCardPurchasesLiabilityAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"PaymentCardBillingCycleNumberOfDays\",\"attributeReference\":{\"entity\":\"PaymentCardProduct.cdm.json/PaymentCardProduct\",\"name\":\"PaymentCardBillingCycleNumberOfDays\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"PaymentCardClosingDayNumberOfBillingCycle\",\"attributeReference\":{\"entity\":\"PaymentCardProduct.cdm.json/PaymentCardProduct\",\"name\":\"PaymentCardClosingDayNumberOfBillingCycle\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"SmartCardIndicator\",\"attributeReference\":{\"entity\":\"PaymentCardProduct.cdm.json/PaymentCardProduct\",\"name\":\"SmartCardIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"StoredValueCardIndicator\",\"attributeReference\":{\"entity\":\"PaymentCardProduct.cdm.json/PaymentCardProduct\",\"name\":\"StoredValueCardIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"SecuredCreditCardIndicator\",\"attributeReference\":{\"entity\":\"PaymentCardProduct.cdm.json/PaymentCardProduct\",\"name\":\"SecuredCreditCardIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"UnsecuredPaymentCardIndicator\",\"attributeReference\":{\"entity\":\"PaymentCardProduct.cdm.json/PaymentCardProduct\",\"name\":\"UnsecuredPaymentCardIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"TwoCycleBalanceCalculationIndicator\",\"attributeReference\":{\"entity\":\"PaymentCardProduct.cdm.json/PaymentCardProduct\",\"name\":\"TwoCycleBalanceCalculationIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"CreditInsuranceOptionalIndicator\",\"attributeReference\":{\"entity\":\"PaymentCardProduct.cdm.json/PaymentCardProduct\",\"name\":\"CreditInsuranceOptionalIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"MinimumAutomaticPaymentIndicator\",\"attributeReference\":{\"entity\":\"PaymentCardProduct.cdm.json/PaymentCardProduct\",\"name\":\"MinimumAutomaticPaymentIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"FullAutomaticPaymentIndicator\",\"attributeReference\":{\"entity\":\"PaymentCardProduct.cdm.json/PaymentCardProduct\",\"name\":\"FullAutomaticPaymentIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"AccountToAccountTransfersIndicator\",\"attributeReference\":{\"entity\":\"PaymentCardProduct.cdm.json/PaymentCardProduct\",\"name\":\"AccountToAccountTransfersIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"ChargebackAndRetrievalServicesIndicator\",\"attributeReference\":{\"entity\":\"PaymentCardProduct.cdm.json/PaymentCardProduct\",\"name\":\"ChargebackAndRetrievalServicesIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"CardmemberAgreement\",\"attributeReference\":{\"entity\":\"PaymentCardProduct.cdm.json/PaymentCardProduct\",\"name\":\"CardmemberAgreement\"},\"dataType\":\"string\",\"dataTypeLength\":2048},{\"type\":\"Existing\",\"name\":\"AgreementText\",\"attributeReference\":{\"entity\":\"PaymentCardProduct.cdm.json/PaymentCardProduct\",\"name\":\"AgreementText\"},\"dataType\":\"string\",\"dataTypeLength\":1024},{\"type\":\"Existing\",\"name\":\"BalanceCalculationMethodStatement\",\"attributeReference\":{\"entity\":\"PaymentCardProduct.cdm.json/PaymentCardProduct\",\"name\":\"BalanceCalculationMethodStatement\"},\"dataType\":\"string\",\"dataTypeLength\":2048},{\"type\":\"Existing\",\"name\":\"PrivacyNoticeStatement\",\"attributeReference\":{\"entity\":\"PaymentCardProduct.cdm.json/PaymentCardProduct\",\"name\":\"PrivacyNoticeStatement\"},\"dataType\":\"string\",\"dataTypeLength\":2048},{\"type\":\"Existing\",\"name\":\"NoticeToStateResidentsStatement\",\"attributeReference\":{\"entity\":\"PaymentCardProduct.cdm.json/PaymentCardProduct\",\"name\":\"NoticeToStateResidentsStatement\"},\"dataType\":\"string\",\"dataTypeLength\":2048},{\"type\":\"Existing\",\"name\":\"NoticeToMarriedStateResidents\",\"attributeReference\":{\"entity\":\"PaymentCardProduct.cdm.json/PaymentCardProduct\",\"name\":\"NoticeToMarriedStateResidents\"},\"dataType\":\"string\",\"dataTypeLength\":2048},{\"type\":\"Existing\",\"name\":\"SecurityInterestPledgeAssignmentOfCollateralStatement\",\"attributeReference\":{\"entity\":\"PaymentCardProduct.cdm.json/PaymentCardProduct\",\"name\":\"SecurityInterestPledgeAssignmentOfCollateralStatement\"},\"dataType\":\"string\",\"dataTypeLength\":2048},{\"type\":\"Existing\",\"name\":\"CollateralAccountAuthorizationStatement\",\"attributeReference\":{\"entity\":\"PaymentCardProduct.cdm.json/PaymentCardProduct\",\"name\":\"CollateralAccountAuthorizationStatement\"},\"dataType\":\"string\",\"dataTypeLength\":2048},{\"type\":\"Existing\",\"name\":\"ApplicationAgreementStatement\",\"attributeReference\":{\"entity\":\"PaymentCardProduct.cdm.json/PaymentCardProduct\",\"name\":\"ApplicationAgreementStatement\"},\"dataType\":\"string\",\"dataTypeLength\":2048},{\"type\":\"Existing\",\"name\":\"UseOfInformationStatement\",\"attributeReference\":{\"entity\":\"PaymentCardProduct.cdm.json/PaymentCardProduct\",\"name\":\"UseOfInformationStatement\"},\"dataType\":\"string\",\"dataTypeLength\":2048},{\"type\":\"Existing\",\"name\":\"TransactionFeesStatement\",\"attributeReference\":{\"entity\":\"PaymentCardProduct.cdm.json/PaymentCardProduct\",\"name\":\"TransactionFeesStatement\"},\"dataType\":\"string\",\"dataTypeLength\":2048},{\"type\":\"Existing\",\"name\":\"TransactionFeeForPurchasesStatement\",\"attributeReference\":{\"entity\":\"PaymentCardProduct.cdm.json/PaymentCardProduct\",\"name\":\"TransactionFeeForPurchasesStatement\"},\"dataType\":\"string\",\"dataTypeLength\":2048},{\"type\":\"Existing\",\"name\":\"OtherAprsStatement\",\"attributeReference\":{\"entity\":\"PaymentCardProduct.cdm.json/PaymentCardProduct\",\"name\":\"OtherAprsStatement\"},\"dataType\":\"string\",\"dataTypeLength\":2048},{\"type\":\"Existing\",\"name\":\"LatePaymentChargeAmount\",\"attributeReference\":{\"entity\":\"PaymentCardProduct.cdm.json/PaymentCardProduct\",\"name\":\"LatePaymentChargeAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"AccountBalanceCalculationMethodId\",\"attributeReference\":{\"entity\":\"PaymentCardProduct.cdm.json/PaymentCardProduct\",\"name\":\"AccountBalanceCalculationMethodId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"LoyaltyProgramId\",\"attributeReference\":{\"entity\":\"PaymentCardProduct.cdm.json/PaymentCardProduct\",\"name\":\"LoyaltyProgramId\"},\"dataType\":\"integer\"}]}}}",
+			"Description": "A payment card enables card holders to purchase products or services without cash and to pay for them at a later date or with the value associated with the payment card related account or it's stored value.\n\nTypically in order to qualify for this type of credit, the card holder must open an account with a bank or company, which sponsors a card. \n\nThe card holder then receives a line of credit with a specified dollar amount.   They can use the card to make purchases from participating merchants until they reach this credit limit. \n\nEvery month the sponsor provides a bill, which aggregates the card activity during the previous 30 days. Depending on the terms of the card, the customer may pay interest charges on the amount that they do not pay for on a monthly basis.  \n\nThe banks and companies that provide or sponsor payment cards profit in three ways. \n\n(1)  They make money from the interest payments charged on the unpaid balance\n\n(2)  They also can make money by charging an annual fee for the use of the card\n\n(3)  The sponsors make money by charging merchants a small percentage of income for the service of the card. This arrangement is acceptable to the merchants because they can let their customers pay by payment card instead of requiring cash. \n\nThe merchant makes arrangements to participate in a payment card program with a merchant bank, which in turn works with a card-issuing bank. The merchant bank determines what percentage of the total purchase value has to be paid by the merchant to the card-issuing bank. The amount varies depending on the volume and type of business, but in general it is between 1-2%. A percentage of that amount is kept by the merchant bank as a transaction-processing fee.",
+			"DisplayFolderInfo": "{\"name\":\"Product\",\"colorCode\":\"#0E3D73\"}",
+			"PrimaryKeys": "ProductId",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

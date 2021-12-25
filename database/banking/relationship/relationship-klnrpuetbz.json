@@ -1,0 +1,26 @@
+{
+	"name": "relationship-klnrpuetbz",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-klnrpuetbz",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Communication",
+		"ToTableName": "AdvertisingCollateral",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "CommunicationId",
+				"ToColumnName": "AdvertisingCollateralId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Communication.cdm.json/Communication\",\"toEntity\":\"AdvertisingCollateral.cdm.json/AdvertisingCollateral\",\"joinPairs\":[{\"fromAttribute\":\"CommunicationId\",\"toAttribute\":\"AdvertisingCollateralId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

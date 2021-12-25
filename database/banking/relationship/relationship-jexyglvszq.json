@@ -1,0 +1,26 @@
+{
+	"name": "relationship-jexyglvszq",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-jexyglvszq",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "MinorityCategory",
+		"ToTableName": "CustomerMinorityCategory",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "MinorityCategoryId",
+				"ToColumnName": "MinorityCategoryId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"MinorityCategory.cdm.json/MinorityCategory\",\"toEntity\":\"CustomerMinorityCategory.cdm.json/CustomerMinorityCategory\",\"joinPairs\":[{\"fromAttribute\":\"MinorityCategoryId\",\"toAttribute\":\"MinorityCategoryId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

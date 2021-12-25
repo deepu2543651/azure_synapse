@@ -1,0 +1,26 @@
+{
+	"name": "relationship-bxrvqgtxil",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-bxrvqgtxil",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "TransactionPartyRelationshipType",
+		"ToTableName": "TransactionRelatedParty",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "TransactionPartyRelationshipTypeId",
+				"ToColumnName": "TransactionPartyRelationshipTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"TransactionPartyRelationshipType.cdm.json/TransactionPartyRelationshipType\",\"toEntity\":\"TransactionRelatedParty.cdm.json/TransactionRelatedParty\",\"joinPairs\":[{\"fromAttribute\":\"TransactionPartyRelationshipTypeId\",\"toAttribute\":\"TransactionPartyRelationshipTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

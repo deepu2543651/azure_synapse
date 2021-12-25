@@ -1,0 +1,26 @@
+{
+	"name": "relationship-ggfgvjxzlj",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-ggfgvjxzlj",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "SpecialPurposeVehicle",
+		"ToTableName": "AssetBackedSecurity",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "SpvId",
+				"ToColumnName": "SpvId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"SpecialPurposeVehicle.cdm.json/SpecialPurposeVehicle\",\"toEntity\":\"AssetBackedSecurity.cdm.json/AssetBackedSecurity\",\"joinPairs\":[{\"fromAttribute\":\"SpvId\",\"toAttribute\":\"SpvId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

@@ -1,0 +1,26 @@
+{
+	"name": "relationship-scgcpsnuzk",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-scgcpsnuzk",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "UnitOfMeasure",
+		"ToTableName": "BaseRate",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "UnitOfMeasureId",
+				"ToColumnName": "RateDurationUnitOfMeasureId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"UnitOfMeasure.cdm.json/UnitOfMeasure\",\"toEntity\":\"BaseRate.cdm.json/BaseRate\",\"joinPairs\":[{\"fromAttribute\":\"UnitOfMeasureId\",\"toAttribute\":\"RateDurationUnitOfMeasureId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

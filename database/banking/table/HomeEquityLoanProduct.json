@@ -1,0 +1,142 @@
+{
+	"name": "HomeEquityLoanProduct",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "HomeEquityLoanProduct",
+		"Description": "A home equity loan is a type of loan in which the borrower uses the equity in their home as collateral. \n\nA home equity loan creates a lien against the borrower's house, and reduces actual home equity.\n\nHome equity loans are most commonly second position liens although they can be held in other positions.  . Most home equity loans require good credit, loan-to-value and combined loan-to-value ratios. \n\nHome equity loans come in two types, closed end and open end.\n\nBoth are usually referred to as second mortgages, because they are secured against the value of the property, as with  a traditional mortgage. Home equity loans and lines of credit are usually, but not always, for a shorter term than first mortgages. \n\nThere is a specific difference between a home equity loan and a Home Equity Line of Credit (HELOC). A HELOC is a line of revolving credit with an adjustable interest rate whereas a home equity loan is a one time lump-sum loan, often with a fixed interest rate.\n\nWhat is the difference between a Home Equity Loan and a Home Equity Line Of Credit?\n\nHome Equity Loan:\n- Interest is tax deductible in most cases\n- Interest rates are fixed\n- Funds are disbursed in a single check\n\nHome Equity Line Of Credit:\n- Interest is tax deductible in most cases\n- Interest rates are fixed or variable\n- Funds may be accessed via ATMs, checks, payment cards, online banking and at banking centers",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ProductId",
+					"Description": "The unique identifier of a Product.",
+					"BaseAttributeReference": {
+						"Entity": "HomeEquityLoanProduct.cdm.json/HomeEquityLoanProduct",
+						"Name": "ProductId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "HomeEquityLoanTypeId",
+					"Description": "The unique identifier of a Home Equity Loan Type.",
+					"BaseAttributeReference": {
+						"Entity": "HomeEquityLoanProduct.cdm.json/HomeEquityLoanProduct",
+						"Name": "HomeEquityLoanTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "AutomaticPaymentIndicator",
+					"Description": "Indicates that automatic payments may be made upon the personal loan.",
+					"BaseAttributeReference": {
+						"Entity": "HomeEquityLoanProduct.cdm.json/HomeEquityLoanProduct",
+						"Name": "AutomaticPaymentIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "PaymentProtectionInsuranceIndicator",
+					"Description": "Indicates that payment protection is in effect for the personal loan.\n\nCredit insurance that provides life insurance which pays a lump sum toward a personal loan or line of credit upon the death of the borrower or co-borrower. Also, disability insurance for the primary borrower that pays monthly benefits toward the loan or line payment when life insurance is also purchased.",
+					"BaseAttributeReference": {
+						"Entity": "HomeEquityLoanProduct.cdm.json/HomeEquityLoanProduct",
+						"Name": "PaymentProtectionInsuranceIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "PrepaymentPenaltyIndicator",
+					"Description": "Indicates that a prepayment penalty is due for early payment of the personal loan.\n\nA penalty fee charged to a borrower who pays off a loan before the term of the loan is complete. Bremer does not have a pre-payment penalty, so you can pay off your loan as early as you choose and you pay interest only for the amount you have borrowed for the length you need",
+					"BaseAttributeReference": {
+						"Entity": "HomeEquityLoanProduct.cdm.json/HomeEquityLoanProduct",
+						"Name": "PrepaymentPenaltyIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/HomeEquityLoanProduct",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/HomeEquityLoanProduct",
+				"Properties": {
+					"LinkedServiceName": "wspc-dpu-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ProductId\":{\"entity\":\"HomeEquityLoanProduct.cdm.json/HomeEquityLoanProduct\",\"name\":\"ProductId\"},\"HomeEquityLoanTypeId\":{\"entity\":\"HomeEquityLoanProduct.cdm.json/HomeEquityLoanProduct\",\"name\":\"HomeEquityLoanTypeId\"},\"AutomaticPaymentIndicator\":{\"entity\":\"HomeEquityLoanProduct.cdm.json/HomeEquityLoanProduct\",\"name\":\"AutomaticPaymentIndicator\"},\"PaymentProtectionInsuranceIndicator\":{\"entity\":\"HomeEquityLoanProduct.cdm.json/HomeEquityLoanProduct\",\"name\":\"PaymentProtectionInsuranceIndicator\"},\"PrepaymentPenaltyIndicator\":{\"entity\":\"HomeEquityLoanProduct.cdm.json/HomeEquityLoanProduct\",\"name\":\"PrepaymentPenaltyIndicator\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"HomeEquityLoanProduct\",\"path\":\"HomeEquityLoanProduct.cdm.json/HomeEquityLoanProduct\"},\"description\":\"A home equity loan is a type of loan in which the borrower uses the equity in their home as collateral. \\n\\nA home equity loan creates a lien against the borrower's house, and reduces actual home equity.\\n\\nHome equity loans are most commonly second position liens although they can be held in other positions.  . Most home equity loans require good credit, loan-to-value and combined loan-to-value ratios. \\n\\nHome equity loans come in two types, closed end and open end.\\n\\nBoth are usually referred to as second mortgages, because they are secured against the value of the property, as with  a traditional mortgage. Home equity loans and lines of credit are usually, but not always, for a shorter term than first mortgages. \\n\\nThere is a specific difference between a home equity loan and a Home Equity Line of Credit (HELOC). A HELOC is a line of revolving credit with an adjustable interest rate whereas a home equity loan is a one time lump-sum loan, often with a fixed interest rate.\\n\\nWhat is the difference between a Home Equity Loan and a Home Equity Line Of Credit?\\n\\nHome Equity Loan:\\n- Interest is tax deductible in most cases\\n- Interest rates are fixed\\n- Funds are disbursed in a single check\\n\\nHome Equity Line Of Credit:\\n- Interest is tax deductible in most cases\\n- Interest rates are fixed or variable\\n- Funds may be accessed via ATMs, checks, payment cards, online banking and at banking centers\",\"primaryKey\":[\"ProductId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"ProductId\",\"attributeReference\":{\"entity\":\"HomeEquityLoanProduct.cdm.json/HomeEquityLoanProduct\",\"name\":\"ProductId\"},\"dataType\":\"long\"},{\"type\":\"Existing\",\"name\":\"HomeEquityLoanTypeId\",\"attributeReference\":{\"entity\":\"HomeEquityLoanProduct.cdm.json/HomeEquityLoanProduct\",\"name\":\"HomeEquityLoanTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"AutomaticPaymentIndicator\",\"attributeReference\":{\"entity\":\"HomeEquityLoanProduct.cdm.json/HomeEquityLoanProduct\",\"name\":\"AutomaticPaymentIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"PaymentProtectionInsuranceIndicator\",\"attributeReference\":{\"entity\":\"HomeEquityLoanProduct.cdm.json/HomeEquityLoanProduct\",\"name\":\"PaymentProtectionInsuranceIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"PrepaymentPenaltyIndicator\",\"attributeReference\":{\"entity\":\"HomeEquityLoanProduct.cdm.json/HomeEquityLoanProduct\",\"name\":\"PrepaymentPenaltyIndicator\"},\"dataType\":\"boolean\"}]}}}",
+			"Description": "A home equity loan is a type of loan in which the borrower uses the equity in their home as collateral. \n\nA home equity loan creates a lien against the borrower's house, and reduces actual home equity.\n\nHome equity loans are most commonly second position liens although they can be held in other positions.  . Most home equity loans require good credit, loan-to-value and combined loan-to-value ratios. \n\nHome equity loans come in two types, closed end and open end.\n\nBoth are usually referred to as second mortgages, because they are secured against the value of the property, as with  a traditional mortgage. Home equity loans and lines of credit are usually, but not always, for a shorter term than first mortgages. \n\nThere is a specific difference between a home equity loan and a Home Equity Line of Credit (HELOC). A HELOC is a line of revolving credit with an adjustable interest rate whereas a home equity loan is a one time lump-sum loan, often with a fixed interest rate.\n\nWhat is the difference between a Home Equity Loan and a Home Equity Line Of Credit?\n\nHome Equity Loan:\n- Interest is tax deductible in most cases\n- Interest rates are fixed\n- Funds are disbursed in a single check\n\nHome Equity Line Of Credit:\n- Interest is tax deductible in most cases\n- Interest rates are fixed or variable\n- Funds may be accessed via ATMs, checks, payment cards, online banking and at banking centers",
+			"DisplayFolderInfo": "{\"name\":\"Product\",\"colorCode\":\"#0E3D73\"}",
+			"PrimaryKeys": "ProductId",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

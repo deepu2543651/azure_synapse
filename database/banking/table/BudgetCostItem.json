@@ -1,0 +1,112 @@
+{
+	"name": "BudgetCostItem",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "BudgetCostItem",
+		"Description": "A cost item contained on the associated budget.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "BudgetId",
+					"Description": "The unique identifier of a Budget.",
+					"BaseAttributeReference": {
+						"Entity": "BudgetCostItem.cdm.json/BudgetCostItem",
+						"Name": "BudgetId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "CostItemId",
+					"Description": "The unique identifier of a Cost Item.",
+					"BaseAttributeReference": {
+						"Entity": "BudgetCostItem.cdm.json/BudgetCostItem",
+						"Name": "CostItemId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "CostItemBudgetedAmount",
+					"Description": "The amount budgeted on the associated Budget for the Cost Item.",
+					"BaseAttributeReference": {
+						"Entity": "BudgetCostItem.cdm.json/BudgetCostItem",
+						"Name": "CostItemBudgetedAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/BudgetCostItem",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/BudgetCostItem",
+				"Properties": {
+					"LinkedServiceName": "wspc-dpu-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"BudgetId\":{\"entity\":\"BudgetCostItem.cdm.json/BudgetCostItem\",\"name\":\"BudgetId\"},\"CostItemId\":{\"entity\":\"BudgetCostItem.cdm.json/BudgetCostItem\",\"name\":\"CostItemId\"},\"CostItemBudgetedAmount\":{\"entity\":\"BudgetCostItem.cdm.json/BudgetCostItem\",\"name\":\"CostItemBudgetedAmount\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"BudgetCostItem\",\"path\":\"BudgetCostItem.cdm.json/BudgetCostItem\"},\"description\":\"A cost item contained on the associated budget.\",\"primaryKey\":[\"BudgetId\",\"CostItemId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"BudgetId\",\"attributeReference\":{\"entity\":\"BudgetCostItem.cdm.json/BudgetCostItem\",\"name\":\"BudgetId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"CostItemId\",\"attributeReference\":{\"entity\":\"BudgetCostItem.cdm.json/BudgetCostItem\",\"name\":\"CostItemId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"CostItemBudgetedAmount\",\"attributeReference\":{\"entity\":\"BudgetCostItem.cdm.json/BudgetCostItem\",\"name\":\"CostItemBudgetedAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2}]}}}",
+			"Description": "A cost item contained on the associated budget.",
+			"DisplayFolderInfo": "{\"name\":\"Customer Service & Contact Management\",\"colorCode\":\"#Ef6950\"}",
+			"PrimaryKeys": "BudgetId,CostItemId",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

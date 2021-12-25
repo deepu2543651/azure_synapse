@@ -1,0 +1,26 @@
+{
+	"name": "relationship-ljoovltbcv",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-ljoovltbcv",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Agency",
+		"ToTableName": "AdvertisingCampaign",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "AgencyId",
+				"ToColumnName": "AgencyId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Agency.cdm.json/Agency\",\"toEntity\":\"AdvertisingCampaign.cdm.json/AdvertisingCampaign\",\"joinPairs\":[{\"fromAttribute\":\"AgencyId\",\"toAttribute\":\"AgencyId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

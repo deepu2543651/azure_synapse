@@ -1,0 +1,26 @@
+{
+	"name": "relationship-tdcrrtcyon",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-tdcrrtcyon",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "ServiceRequestCostType",
+		"ToTableName": "ServiceRequestCost",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ServiceRequestCostTypeId",
+				"ToColumnName": "ServiceRequestCostTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"ServiceRequestCostType.cdm.json/ServiceRequestCostType\",\"toEntity\":\"ServiceRequestCost.cdm.json/ServiceRequestCost\",\"joinPairs\":[{\"fromAttribute\":\"ServiceRequestCostTypeId\",\"toAttribute\":\"ServiceRequestCostTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

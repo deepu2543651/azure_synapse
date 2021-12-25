@@ -1,0 +1,508 @@
+{
+	"name": "AdvertisingCollateral",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "AdvertisingCollateral",
+		"Description": "An Advertising Collateral is a specific piece, article or preparation of media designed to communicate a message to an existing or potential customer, which can be used once or many times on a single media or multiple media.\n\nEx:\n- Accordion Insert\n- Ad-A-Card\n- Adjacency Commercials\n- Advertising Specialty\n- Advertorial\n- Aerial Advertising\n- All-In-Family-Programming\n- Audiotex\n- Banner Ad\n- Billboard\n- Bind-In Card\n- Bingo Card\n- Blind Ad\n- Bonus Pack\n- Bounce Back Coupon\n- Broadside\n- Brochure\n- Buckslip\n- Business Letter\n- Business Reply Card\n- Car Card\n- Card Deck\n- Centerspread\n- Classified Advertising\n- Commercial\n- Cross-Ruff Coupon\n- Cut-In\n- Double Truck\n- Envelope Stuffer\n- Flyer\n- Free Standing Insert\n- Gatefold\n- Imprinted Product\n- Infomercial\n- Insert\n- Internet Banner\n- Island Display\n- Jingle\n- Jumble Display\n- Kiosk\n- Leave-Behind\n- Lottery\n- Mailgram\n- Mobile Billboards\n- Network TV Spot\n- Newspaper Ad\n- One Sheet Poster\n- Outside Poster\n- Package Insert\n- Painted Bulletin\n- Panel\n- Participation Announcement\n- Poster Panel\n- Premium\n- Preprinted Insert\n- Press Release\n- Radio Commercial\n- Radio Spot\n- Reading Notice\n- Rolling Boards\n- Romance Card\n- Rotary Display\n- Sample\n- Self-Mailer\n- Slogan\n- Specialty Advertising\n- Split 30s\n- Spread\n- Sweepstakes\n- Tag Line\n- Tear Sheet\n- Testimonial\n- Tradeshow\n- TV Commercial\n- TV Spot\n- Video Advertising\n- White Paper\n- Zine\n\nwhere:\n\nACCORDION INSERT\nAn ad inserted in a magazine, folded with an accordion-style fold.\n\nAD-A-CARD\nA perforated, tear-off coupon attached to ads in Sunday comics and supplements.\n\nADJACENCY COMMERCIALS\nCommercial spots purchased from local television stations that generally appear during the time periods adjacent to network programs.\n\nADVERTISING SPECIALTY\nItems used as giveaways to serve as a reminder or stimulate remembrance of a company or brand such as calendars, T-shirts, pens, key tags, and the like. Specialties are usually imprinted with a company or brand name and other identifying marks such as an address and phone number.\n\nADVERTORIAL\nAn advertisement that has the appearance of a news article or editorial, in a print publication.\n\nAERIAL ADVERTISING\nA form of outdoor advertising where messages appear in the sky in the form of banners pulled by airplanes, skywriting, and on blimps.\n\nALL-IN-FAMILY-PROGRAMMING\nGenerally refers to early fringe programs intended to attract all demographic groups, including children. \n\nPartridge Family and Andy Griffith are examples of All-Family programs.\n\nAUDIOTEX\nThe use of the telephone and voice information services to market, advertise, promote, entertain, and inform consumers.\n\nBANNER AD\nAn ad in the form of a graphic image that typically runs across a web page or is positioning in a margin or other space reserved for ads.\n\nBILLBOARD\nAn announcement (usually five seconds in length) identifying an advertiser at the beginning, end, or break of a broadcast. Also, an outdoor advertising display.\n\nBIND-IN CARD\nAn insert card in a magazine that is stitched in with the printed pages and often used to sells subscriptions.\n\nBINGO CARD\nA card inserted into a publication that allows readers to request information from one or more of a group of companies listed on the card.\n\nBLIND AD\nAn advertisement that does not identify the advertiser, but provides a box number for replies.\n\nBONUS PACK\nSpecial packaging that provides consumers with extra quantity of merchandise at no extra charge over the regular price.\n\nBOUNCE BACK COUPON\nA coupon offer made to consumers as an inducement to repurchase the brand.\n\nBROADSIDE\nA promotion that is printed on a single large sheet of paper, usually on only one side of the paper, as opposed to a tabloid or other off-size newspaper.\n\nBROCHURE\nA multi-page document providing information favorable to a product, product family or service. Contents may include features, functions, benefits, support options, warranty terms, appropriate uses or implementation.\n\nBUCKSLIP\nIn direct mail, one or more small inserts about the size of a dollar bill included with a letter or brochure. \n\nBuck slips are used to emphasize special offers, or to summarize or reiterate an  offer included in the letter/brochure.\n\nBUSINESS LETTER\nA letter in a #10 envelope (or the equivalent) with direct addressing and without any teaser copy on the envelope. This letter has the appearance of a manager to manager, one at a time, communication.\n\nBUSINESS REPLY CARD\nA card distributed with an advertising piece. The card is preprinted with the address of advertiser or its fulfillment house.  Return postage is prepaid by the advertiser. The recipient uses it to respond to an offer (which may simply be an offer to provide more  information) made by the advertiser.\n\nCAR CARD\nA poster placed in buses, subways, etc. Also called a Bus card.\n\nCARD DECK\nA collection of post card size advertisements, each promoting a different product, service, brand, organization or event, distributed as a group.\n\nThe post card is usually pre-addressed, and often postage-paid, to be mailed back to the advertiser to request more information, place an order, register for an event, etc.\n\nCard decks are often an advertising service of magazine publishers, but may also be an independent service.\n\nCENTERSPREAD\nThe two facing pages at the center of a magazine, desirable because the pages are continuous with little or no interruption at the gutter.\n\nCLASSIFIED ADVERTISING\nAdvertising that runs in newspapers and magazines that generally contains text only and is arranged under subheading according to the product, service, or offering. Employment, real estate, and automotive ads are the major forms of classified advertising.\n\nCOMMERCIAL\nA commercial typically lasts 90 seconds or more in length and is designed to supply information about a product or services as opposed to a specific sales message.\n\nCROSS-RUFF COUPON\nA coupon offer delivered on one product that is redeemable for the purchase of another product. \n\nThe other product is usually one made by the same company but may involve a tie in with another manufacturer.\n\nCUT-IN\nA locally aired television commercial which mechanically replaces a network originated announcement. The premium cost paid for cut-ins is often justified in copy test situations.\n\nDOUBLE TRUCK\nA two-page spread in a print publication, where the ad runs across the middle gutter.\n\nENVELOPE STUFFER\nA direct mail advertisement included with another mailed message (such as a bill).\n\nFLYER\nA one-page, two-sided promotional vehicle, generally 8½\" x 11\" in size.\n\nFREE STANDING INSERT\nA special coupon, subscription or advertisement that is inserted but not bound to a magazine.\n\nGATEFOLD\nA multi-page advertisement or brochure spread created by folding a double-sized page (or pages). These extended pages fold out, much like opening a gate, to reveal the entire advertisement or spread.\n\nDouble or triple-size pages, generally in magazines, that fold out into a large advertisement.\n\nIMPRINTED PRODUCT\nA promotional product, this is a product with a company logo or advertising message printed on it.\n\nINFOMERCIAL\nTelevision commercials that are very long, ranging from several minutes to an hour. Infomercials are designed to provide consumers with detailed information about a product or service.\n\nINSERT\nAn advertisement, collection of advertisements, or other promotional matter published by an advertiser or group of advertisers, to be inserted in a magazine or newspaper. It may be bound into the publication, or be inserted without binding. See Free-standing insert, above.\n\nINTERNET BANNER\nAn advertisement that is inserted into an internet message or www site URL.\n\nISLAND DISPLAY\nA point-of-purchase display away from competitive products, typically in the middle or at the end of an aisle.\n\nJINGLE\nSongs about a product or service that usually carry the advertising theme and a simple message.\n\nJUMBLE DISPLAY\nA mixture of products or brands on a single display, such as a clearance table.\n\nKIOSK\nA free standing and usually permanent display used in outdoor advertising.\n\nLEAVE-BEHIND\nA premium left with prospective customers by a sales person, to remind them of the product or service being sold.\n\nLOTTERY\nA scheme in which making a required purchase gives a person a chance to win a prize which is awarded at random, usually through an electronic drawing. Lotteries may not be used as promotion devices under U.S. laws.\n\nMAILGRAM\nA combination telegram-letter, with the telegram transmitted to a postal facility close to the addressee and then delivered as first class mail.\n\nMOBILE BILLBOARDS\nBillboards that are towed or displayed on trucks that circulate through a target area.\n\nNETWORK TV SPOT\nTelevision time offered by network TV as opposed to local TV.\n\nNEWSPAPER AD\nAn ad presented in a newspaper.\n\nONE SHEET POSTER\nA vertical Poster Panel placed on transit stations or point of purchases locales such as grocery stores, convenience stores etc.)\n\nOUTSIDE POSTER\nOutdoor transit posters appearing on buses, taxis, trains, subways, and trolley cars.\n\nPACKAGE INSERT\nSeparate advertising material included in merchandise packages that advertises goods or services; also referred to as Package Stuffer.\n\nPAINTED BULLETIN\nA freestanding steel or wooden structure, approximately 50' wide by 15' high, with molding around the outer edges similar to a poster panel, and including a hand painted copy message. Bulletins are generally found near highways or roofs of buildings in high traffic areas.\n\nPANEL\nThis includes regular and illuminated types of outdoor advertising. A regular panel is only seen during the daytime, while an illuminated panel is seen also from dusk until dawn.\n\nPARTICIPATION ANNOUNCEMENT\nAnnouncements made inside the context of a program as opposed to those shown during station breaks. (2) An announcement or amount of broadcasting time which is shared by several advertisers.\n\nPOSTER PANEL\nAn outdoor billboard in which advertising is displayed on printed paper sheets rather than being painted. The most widely used form of outdoor advertising; standard size approximately 25' x 12' with the image printed on sections of 24 to 30 sheets.\n\nPREMIUM\nPromotional efforts designed to stimulate short-term purchasing behavior. Coupons, premiums, and samples are examples of consumer stimulants.\n\nPREPRINTED INSERT\nAdvertising distributed through newspapers that is not part of the newspaper itself, but is printed by the advertiser and then taken to the newspaper itself, but is printed by the advertiser and then taken to the newspaper to be inserted.\n\nPRESS RELEASE\nFactual and interesting information released to the press to deliver information about a product, service or event to appropriate media.\n\nRADIO COMMERCIAL\nA commercial presented on the radio.\n\nRADIO SPOT\nRadio time offered by local stations.\n\nREADING NOTICE\nA non-illustrated advertisement set in the type style of a publication and that gives the appearance of being editorial content.   It is marked with the abbreviation 'ADV'.\n\nROLLING BOARDS\nBillboards that have a number of ads that rotate on a timed basis.\n\nROMANCE CARD\nWritten material that accompanies an advertising specialty, providing information about the product and its background.\n\nROTARY DISPLAY\nPainted bulletins who face is periodically rotated to new locations.\n\nSAMPLE\nPromotional efforts designed to stimulate short-term purchasing behavior. Coupons, premiums, and samples are examples of consumer stimulants.\n\nSELF-MAILER\nA direct-mail piece in which no envelope or wrapper is required for mailing.\n\nSLOGAN\nA short, memorable advertising phrase that often appears in advertisements. For example the athletic shoe maker Nike's, \"Just Do It\".\n\nSPECIALTY ADVERTISING\nAn advertising, sales promotion, and motivational communications medium that employs useful articles of merchandise imprinted with an advertiser's name, message, or logo.\n\nSPLIT 30s\n30-second TV spots in which the advertiser promotes two different products with two different messages during a 30-second commercial.\n\nSPREAD\nA single print ad positioned on two facing pages of a publication.\n\nSWEEPSTAKES\nA promotion whereby consumers submit their names for consideration in the drawing or selection of prizes and winners are determined purely by chance. Sweepstakes cannot require a proof of purchases as a condition for entry.\n\nTAG LINE\nA slogan or phrase that visually conveys the most important product attribute or benefit that the advertiser wishes to convey. Generally, a theme to a campaign.\n\nTEAR SHEET\nA page cut from a magazine or newspaper that is sent to the advertiser as proof of the ad insertion. Also used to check color reproduction of advertisements.\n\nTESTIMONIAL\nA statement made by a customer endorsing a product, service or company. A testimonial may be a single customer quote or it may be integrated into other marketing material such as a case study about the customer's use of a company's product or service.\n\nTRADESHOW\nA marketing message that is delivered at a tradeshow.\n\nTRADESHOW\nAdvertising targeted to target audiences exposed to commercial transportation facilities, including buses, taxis, trains, elevators, trolleys, airplanes, and subways.\n\nTV COMMERCIAL\nUse of pictures in an advertisement on television.\n\nTV SPOT\nTelevision time offered by local stations as opposed to Network TV.\n\nVIDEO ADVERTISING\nAdvertisements appearing in movie theaters and on videotapes.\n\nWHITE PAPER\nA document written in essay style that provides an in-depth discussion of an issue, technology, trend, product or process. White papers are predominantly informational rather than promotional.\n\nZINE\nMagazines that are published online instead of in print. Often cover very specific subjects and thus have very targeted readers.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "AdvertisingCollateralId",
+					"Description": "The unique identifier of a Marketing Communication.",
+					"BaseAttributeReference": {
+						"Entity": "AdvertisingCollateral.cdm.json/AdvertisingCollateral",
+						"Name": "AdvertisingCollateralId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "AdvertisingCollateralName",
+					"Description": "The name of the Marketing Communication.",
+					"BaseAttributeReference": {
+						"Entity": "AdvertisingCollateral.cdm.json/AdvertisingCollateral",
+						"Name": "AdvertisingCollateralName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "AdvertisingCollateralDescription",
+					"Description": "The description of the Marketing Communication.",
+					"BaseAttributeReference": {
+						"Entity": "AdvertisingCollateral.cdm.json/AdvertisingCollateral",
+						"Name": "AdvertisingCollateralDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "AdvertisingCopy",
+					"Description": "The main text portion of an ad.   This is a term usually applied to print ads, and also is known as 'copy'.",
+					"BaseAttributeReference": {
+						"Entity": "AdvertisingCollateral.cdm.json/AdvertisingCollateral",
+						"Name": "AdvertisingCopy"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "AdvertisingArtwork",
+					"Description": "The visual components of an ad, not including the typeset text.",
+					"BaseAttributeReference": {
+						"Entity": "AdvertisingCollateral.cdm.json/AdvertisingCollateral",
+						"Name": "AdvertisingArtwork"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "binary",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "binary"
+						}
+					}
+				},
+				{
+					"Name": "AdvertisingVideoClip",
+					"Description": "A video clip containing the advertising collateral full-motion video.",
+					"BaseAttributeReference": {
+						"Entity": "AdvertisingCollateral.cdm.json/AdvertisingCollateral",
+						"Name": "AdvertisingVideoClip"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "binary",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "binary"
+						}
+					}
+				},
+				{
+					"Name": "AdvertisingAudioClip",
+					"Description": "An audio clip containing the advertising collateral audio.",
+					"BaseAttributeReference": {
+						"Entity": "AdvertisingCollateral.cdm.json/AdvertisingCollateral",
+						"Name": "AdvertisingAudioClip"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "binary",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "binary"
+						}
+					}
+				},
+				{
+					"Name": "MinimumFrequencyNumber",
+					"Description": "Minimum number of exposures thought necessary for an advertisement to be effective.",
+					"BaseAttributeReference": {
+						"Entity": "AdvertisingCollateral.cdm.json/AdvertisingCollateral",
+						"Name": "MinimumFrequencyNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "AdvertisingComprehensiveLayoutDate",
+					"Description": "The completion date of a rough layout of an ad designed for presentation only, but so detailed as to appear very much like the finished ad will look.",
+					"BaseAttributeReference": {
+						"Entity": "AdvertisingCollateral.cdm.json/AdvertisingCollateral",
+						"Name": "AdvertisingComprehensiveLayoutDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "GalleyProofAvailableDate",
+					"Description": "The completion date of a typeset copy of an ad or editorial material, before it is made into pages for final production.",
+					"BaseAttributeReference": {
+						"Entity": "AdvertisingCollateral.cdm.json/AdvertisingCollateral",
+						"Name": "GalleyProofAvailableDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "GalleyProofApprovalDate",
+					"Description": "The approval date of a typeset copy of an ad or editorial material, before it is made into pages for final production.",
+					"BaseAttributeReference": {
+						"Entity": "AdvertisingCollateral.cdm.json/AdvertisingCollateral",
+						"Name": "GalleyProofApprovalDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "DateCreated",
+					"Description": "The date that the Marketing Communication was created or approved for release.",
+					"BaseAttributeReference": {
+						"Entity": "AdvertisingCollateral.cdm.json/AdvertisingCollateral",
+						"Name": "DateCreated"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "CancellationDate",
+					"Description": "The final date for deleting ordered media activity.",
+					"BaseAttributeReference": {
+						"Entity": "AdvertisingCollateral.cdm.json/AdvertisingCollateral",
+						"Name": "CancellationDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "CopyrightDate",
+					"Description": "The date that the Marketing Communication was copyrighted.",
+					"BaseAttributeReference": {
+						"Entity": "AdvertisingCollateral.cdm.json/AdvertisingCollateral",
+						"Name": "CopyrightDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "AffirmativeDisclosureStatement",
+					"Description": "A Federal Trade Commission program whereby advertisers may be required to include certain  types of information in their advertisements so consumers will be aware of all the consequences, conditions, and limitations associated with the use of the product or service.",
+					"BaseAttributeReference": {
+						"Entity": "AdvertisingCollateral.cdm.json/AdvertisingCollateral",
+						"Name": "AffirmativeDisclosureStatement"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 2048,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "CopyrightStatement",
+					"Description": "A statement regarding the right of copyright gives protection to the originator of material to prevent use without express permission or acknowledgement of the originator.",
+					"BaseAttributeReference": {
+						"Entity": "AdvertisingCollateral.cdm.json/AdvertisingCollateral",
+						"Name": "CopyrightStatement"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 2048,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "MediaPlanStatement",
+					"Description": "A document consisting of objectives, strategies, and tactics for reaching a target audience through various media vehicles.",
+					"BaseAttributeReference": {
+						"Entity": "AdvertisingCollateral.cdm.json/AdvertisingCollateral",
+						"Name": "MediaPlanStatement"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 2048,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "AdvertisingCollateralTotalCostAmount",
+					"Description": "The total cost of the advertising collateral.",
+					"BaseAttributeReference": {
+						"Entity": "AdvertisingCollateral.cdm.json/AdvertisingCollateral",
+						"Name": "AdvertisingCollateralTotalCostAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "BuriedPositionAdvertisementIndicator",
+					"Description": "Placing an ad between other ads in a print publication, so that readers are less likely to see it.",
+					"BaseAttributeReference": {
+						"Entity": "AdvertisingCollateral.cdm.json/AdvertisingCollateral",
+						"Name": "BuriedPositionAdvertisementIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "DealerImprintIndicator",
+					"Description": "Indicates an ad that has the dealer's name and address included and is prepared by a national advertiser for local advertisement.",
+					"BaseAttributeReference": {
+						"Entity": "AdvertisingCollateral.cdm.json/AdvertisingCollateral",
+						"Name": "DealerImprintIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "ActionDeviceIndicator",
+					"Description": "Indicates a technique used in a marketing piece to generate a response by the reader.",
+					"BaseAttributeReference": {
+						"Entity": "AdvertisingCollateral.cdm.json/AdvertisingCollateral",
+						"Name": "ActionDeviceIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "TargetedAdvertisementIndicator",
+					"Description": "Refers to advertisements that are aimed, on the basis of demographic analysis, at one specific subsection of the market.",
+					"BaseAttributeReference": {
+						"Entity": "AdvertisingCollateral.cdm.json/AdvertisingCollateral",
+						"Name": "TargetedAdvertisementIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "ContinuousAdvertisingIndicator",
+					"Description": "Scheduling advertisements to appear regularly, even during times when consumers are not likely to purchase the product or service, so that consumers are constantly reminded of the brand.",
+					"BaseAttributeReference": {
+						"Entity": "AdvertisingCollateral.cdm.json/AdvertisingCollateral",
+						"Name": "ContinuousAdvertisingIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "DeliveryChannelId",
+					"Description": "The unique identifier of a Delivery Channel.",
+					"BaseAttributeReference": {
+						"Entity": "AdvertisingCollateral.cdm.json/AdvertisingCollateral",
+						"Name": "DeliveryChannelId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "AdvertisingCollateralTypeId",
+					"Description": "The unique identifier of a Media Type.",
+					"BaseAttributeReference": {
+						"Entity": "AdvertisingCollateral.cdm.json/AdvertisingCollateral",
+						"Name": "AdvertisingCollateralTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "AdvertisingCollateralStatusId",
+					"Description": "The unique identifier of an Advertising Collateral Status.",
+					"BaseAttributeReference": {
+						"Entity": "AdvertisingCollateral.cdm.json/AdvertisingCollateral",
+						"Name": "AdvertisingCollateralStatusId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "IsoLanguageId",
+					"Description": "The unique identifier of an ISO Language.",
+					"BaseAttributeReference": {
+						"Entity": "AdvertisingCollateral.cdm.json/AdvertisingCollateral",
+						"Name": "IsoLanguageId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/AdvertisingCollateral",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/AdvertisingCollateral",
+				"Properties": {
+					"LinkedServiceName": "wspc-dpu-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"AdvertisingCollateralId\":{\"entity\":\"AdvertisingCollateral.cdm.json/AdvertisingCollateral\",\"name\":\"AdvertisingCollateralId\"},\"AdvertisingCollateralName\":{\"entity\":\"AdvertisingCollateral.cdm.json/AdvertisingCollateral\",\"name\":\"AdvertisingCollateralName\"},\"AdvertisingCollateralDescription\":{\"entity\":\"AdvertisingCollateral.cdm.json/AdvertisingCollateral\",\"name\":\"AdvertisingCollateralDescription\"},\"AdvertisingCopy\":{\"entity\":\"AdvertisingCollateral.cdm.json/AdvertisingCollateral\",\"name\":\"AdvertisingCopy\"},\"AdvertisingArtwork\":{\"entity\":\"AdvertisingCollateral.cdm.json/AdvertisingCollateral\",\"name\":\"AdvertisingArtwork\"},\"AdvertisingVideoClip\":{\"entity\":\"AdvertisingCollateral.cdm.json/AdvertisingCollateral\",\"name\":\"AdvertisingVideoClip\"},\"AdvertisingAudioClip\":{\"entity\":\"AdvertisingCollateral.cdm.json/AdvertisingCollateral\",\"name\":\"AdvertisingAudioClip\"},\"MinimumFrequencyNumber\":{\"entity\":\"AdvertisingCollateral.cdm.json/AdvertisingCollateral\",\"name\":\"MinimumFrequencyNumber\"},\"AdvertisingComprehensiveLayoutDate\":{\"entity\":\"AdvertisingCollateral.cdm.json/AdvertisingCollateral\",\"name\":\"AdvertisingComprehensiveLayoutDate\"},\"GalleyProofAvailableDate\":{\"entity\":\"AdvertisingCollateral.cdm.json/AdvertisingCollateral\",\"name\":\"GalleyProofAvailableDate\"},\"GalleyProofApprovalDate\":{\"entity\":\"AdvertisingCollateral.cdm.json/AdvertisingCollateral\",\"name\":\"GalleyProofApprovalDate\"},\"DateCreated\":{\"entity\":\"AdvertisingCollateral.cdm.json/AdvertisingCollateral\",\"name\":\"DateCreated\"},\"CancellationDate\":{\"entity\":\"AdvertisingCollateral.cdm.json/AdvertisingCollateral\",\"name\":\"CancellationDate\"},\"CopyrightDate\":{\"entity\":\"AdvertisingCollateral.cdm.json/AdvertisingCollateral\",\"name\":\"CopyrightDate\"},\"AffirmativeDisclosureStatement\":{\"entity\":\"AdvertisingCollateral.cdm.json/AdvertisingCollateral\",\"name\":\"AffirmativeDisclosureStatement\"},\"CopyrightStatement\":{\"entity\":\"AdvertisingCollateral.cdm.json/AdvertisingCollateral\",\"name\":\"CopyrightStatement\"},\"MediaPlanStatement\":{\"entity\":\"AdvertisingCollateral.cdm.json/AdvertisingCollateral\",\"name\":\"MediaPlanStatement\"},\"AdvertisingCollateralTotalCostAmount\":{\"entity\":\"AdvertisingCollateral.cdm.json/AdvertisingCollateral\",\"name\":\"AdvertisingCollateralTotalCostAmount\"},\"BuriedPositionAdvertisementIndicator\":{\"entity\":\"AdvertisingCollateral.cdm.json/AdvertisingCollateral\",\"name\":\"BuriedPositionAdvertisementIndicator\"},\"DealerImprintIndicator\":{\"entity\":\"AdvertisingCollateral.cdm.json/AdvertisingCollateral\",\"name\":\"DealerImprintIndicator\"},\"ActionDeviceIndicator\":{\"entity\":\"AdvertisingCollateral.cdm.json/AdvertisingCollateral\",\"name\":\"ActionDeviceIndicator\"},\"TargetedAdvertisementIndicator\":{\"entity\":\"AdvertisingCollateral.cdm.json/AdvertisingCollateral\",\"name\":\"TargetedAdvertisementIndicator\"},\"ContinuousAdvertisingIndicator\":{\"entity\":\"AdvertisingCollateral.cdm.json/AdvertisingCollateral\",\"name\":\"ContinuousAdvertisingIndicator\"},\"DeliveryChannelId\":{\"entity\":\"AdvertisingCollateral.cdm.json/AdvertisingCollateral\",\"name\":\"DeliveryChannelId\"},\"AdvertisingCollateralTypeId\":{\"entity\":\"AdvertisingCollateral.cdm.json/AdvertisingCollateral\",\"name\":\"AdvertisingCollateralTypeId\"},\"AdvertisingCollateralStatusId\":{\"entity\":\"AdvertisingCollateral.cdm.json/AdvertisingCollateral\",\"name\":\"AdvertisingCollateralStatusId\"},\"IsoLanguageId\":{\"entity\":\"AdvertisingCollateral.cdm.json/AdvertisingCollateral\",\"name\":\"IsoLanguageId\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"AdvertisingCollateral\",\"path\":\"AdvertisingCollateral.cdm.json/AdvertisingCollateral\"},\"description\":\"An Advertising Collateral is a specific piece, article or preparation of media designed to communicate a message to an existing or potential customer, which can be used once or many times on a single media or multiple media.\\n\\nEx:\\n- Accordion Insert\\n- Ad-A-Card\\n- Adjacency Commercials\\n- Advertising Specialty\\n- Advertorial\\n- Aerial Advertising\\n- All-In-Family-Programming\\n- Audiotex\\n- Banner Ad\\n- Billboard\\n- Bind-In Card\\n- Bingo Card\\n- Blind Ad\\n- Bonus Pack\\n- Bounce Back Coupon\\n- Broadside\\n- Brochure\\n- Buckslip\\n- Business Letter\\n- Business Reply Card\\n- Car Card\\n- Card Deck\\n- Centerspread\\n- Classified Advertising\\n- Commercial\\n- Cross-Ruff Coupon\\n- Cut-In\\n- Double Truck\\n- Envelope Stuffer\\n- Flyer\\n- Free Standing Insert\\n- Gatefold\\n- Imprinted Product\\n- Infomercial\\n- Insert\\n- Internet Banner\\n- Island Display\\n- Jingle\\n- Jumble Display\\n- Kiosk\\n- Leave-Behind\\n- Lottery\\n- Mailgram\\n- Mobile Billboards\\n- Network TV Spot\\n- Newspaper Ad\\n- One Sheet Poster\\n- Outside Poster\\n- Package Insert\\n- Painted Bulletin\\n- Panel\\n- Participation Announcement\\n- Poster Panel\\n- Premium\\n- Preprinted Insert\\n- Press Release\\n- Radio Commercial\\n- Radio Spot\\n- Reading Notice\\n- Rolling Boards\\n- Romance Card\\n- Rotary Display\\n- Sample\\n- Self-Mailer\\n- Slogan\\n- Specialty Advertising\\n- Split 30s\\n- Spread\\n- Sweepstakes\\n- Tag Line\\n- Tear Sheet\\n- Testimonial\\n- Tradeshow\\n- TV Commercial\\n- TV Spot\\n- Video Advertising\\n- White Paper\\n- Zine\\n\\nwhere:\\n\\nACCORDION INSERT\\nAn ad inserted in a magazine, folded with an accordion-style fold.\\n\\nAD-A-CARD\\nA perforated, tear-off coupon attached to ads in Sunday comics and supplements.\\n\\nADJACENCY COMMERCIALS\\nCommercial spots purchased from local television stations that generally appear during the time periods adjacent to network programs.\\n\\nADVERTISING SPECIALTY\\nItems used as giveaways to serve as a reminder or stimulate remembrance of a company or brand such as calendars, T-shirts, pens, key tags, and the like. Specialties are usually imprinted with a company or brand name and other identifying marks such as an address and phone number.\\n\\nADVERTORIAL\\nAn advertisement that has the appearance of a news article or editorial, in a print publication.\\n\\nAERIAL ADVERTISING\\nA form of outdoor advertising where messages appear in the sky in the form of banners pulled by airplanes, skywriting, and on blimps.\\n\\nALL-IN-FAMILY-PROGRAMMING\\nGenerally refers to early fringe programs intended to attract all demographic groups, including children. \\n\\nPartridge Family and Andy Griffith are examples of All-Family programs.\\n\\nAUDIOTEX\\nThe use of the telephone and voice information services to market, advertise, promote, entertain, and inform consumers.\\n\\nBANNER AD\\nAn ad in the form of a graphic image that typically runs across a web page or is positioning in a margin or other space reserved for ads.\\n\\nBILLBOARD\\nAn announcement (usually five seconds in length) identifying an advertiser at the beginning, end, or break of a broadcast. Also, an outdoor advertising display.\\n\\nBIND-IN CARD\\nAn insert card in a magazine that is stitched in with the printed pages and often used to sells subscriptions.\\n\\nBINGO CARD\\nA card inserted into a publication that allows readers to request information from one or more of a group of companies listed on the card.\\n\\nBLIND AD\\nAn advertisement that does not identify the advertiser, but provides a box number for replies.\\n\\nBONUS PACK\\nSpecial packaging that provides consumers with extra quantity of merchandise at no extra charge over the regular price.\\n\\nBOUNCE BACK COUPON\\nA coupon offer made to consumers as an inducement to repurchase the brand.\\n\\nBROADSIDE\\nA promotion that is printed on a single large sheet of paper, usually on only one side of the paper, as opposed to a tabloid or other off-size newspaper.\\n\\nBROCHURE\\nA multi-page document providing information favorable to a product, product family or service. Contents may include features, functions, benefits, support options, warranty terms, appropriate uses or implementation.\\n\\nBUCKSLIP\\nIn direct mail, one or more small inserts about the size of a dollar bill included with a letter or brochure. \\n\\nBuck slips are used to emphasize special offers, or to summarize or reiterate an  offer included in the letter/brochure.\\n\\nBUSINESS LETTER\\nA letter in a #10 envelope (or the equivalent) with direct addressing and without any teaser copy on the envelope. This letter has the appearance of a manager to manager, one at a time, communication.\\n\\nBUSINESS REPLY CARD\\nA card distributed with an advertising piece. The card is preprinted with the address of advertiser or its fulfillment house.  Return postage is prepaid by the advertiser. The recipient uses it to respond to an offer (which may simply be an offer to provide more  information) made by the advertiser.\\n\\nCAR CARD\\nA poster placed in buses, subways, etc. Also called a Bus card.\\n\\nCARD DECK\\nA collection of post card size advertisements, each promoting a different product, service, brand, organization or event, distributed as a group.\\n\\nThe post card is usually pre-addressed, and often postage-paid, to be mailed back to the advertiser to request more information, place an order, register for an event, etc.\\n\\nCard decks are often an advertising service of magazine publishers, but may also be an independent service.\\n\\nCENTERSPREAD\\nThe two facing pages at the center of a magazine, desirable because the pages are continuous with little or no interruption at the gutter.\\n\\nCLASSIFIED ADVERTISING\\nAdvertising that runs in newspapers and magazines that generally contains text only and is arranged under subheading according to the product, service, or offering. Employment, real estate, and automotive ads are the major forms of classified advertising.\\n\\nCOMMERCIAL\\nA commercial typically lasts 90 seconds or more in length and is designed to supply information about a product or services as opposed to a specific sales message.\\n\\nCROSS-RUFF COUPON\\nA coupon offer delivered on one product that is redeemable for the purchase of another product. \\n\\nThe other product is usually one made by the same company but may involve a tie in with another manufacturer.\\n\\nCUT-IN\\nA locally aired television commercial which mechanically replaces a network originated announcement. The premium cost paid for cut-ins is often justified in copy test situations.\\n\\nDOUBLE TRUCK\\nA two-page spread in a print publication, where the ad runs across the middle gutter.\\n\\nENVELOPE STUFFER\\nA direct mail advertisement included with another mailed message (such as a bill).\\n\\nFLYER\\nA one-page, two-sided promotional vehicle, generally 8½\\\" x 11\\\" in size.\\n\\nFREE STANDING INSERT\\nA special coupon, subscription or advertisement that is inserted but not bound to a magazine.\\n\\nGATEFOLD\\nA multi-page advertisement or brochure spread created by folding a double-sized page (or pages). These extended pages fold out, much like opening a gate, to reveal the entire advertisement or spread.\\n\\nDouble or triple-size pages, generally in magazines, that fold out into a large advertisement.\\n\\nIMPRINTED PRODUCT\\nA promotional product, this is a product with a company logo or advertising message printed on it.\\n\\nINFOMERCIAL\\nTelevision commercials that are very long, ranging from several minutes to an hour. Infomercials are designed to provide consumers with detailed information about a product or service.\\n\\nINSERT\\nAn advertisement, collection of advertisements, or other promotional matter published by an advertiser or group of advertisers, to be inserted in a magazine or newspaper. It may be bound into the publication, or be inserted without binding. See Free-standing insert, above.\\n\\nINTERNET BANNER\\nAn advertisement that is inserted into an internet message or www site URL.\\n\\nISLAND DISPLAY\\nA point-of-purchase display away from competitive products, typically in the middle or at the end of an aisle.\\n\\nJINGLE\\nSongs about a product or service that usually carry the advertising theme and a simple message.\\n\\nJUMBLE DISPLAY\\nA mixture of products or brands on a single display, such as a clearance table.\\n\\nKIOSK\\nA free standing and usually permanent display used in outdoor advertising.\\n\\nLEAVE-BEHIND\\nA premium left with prospective customers by a sales person, to remind them of the product or service being sold.\\n\\nLOTTERY\\nA scheme in which making a required purchase gives a person a chance to win a prize which is awarded at random, usually through an electronic drawing. Lotteries may not be used as promotion devices under U.S. laws.\\n\\nMAILGRAM\\nA combination telegram-letter, with the telegram transmitted to a postal facility close to the addressee and then delivered as first class mail.\\n\\nMOBILE BILLBOARDS\\nBillboards that are towed or displayed on trucks that circulate through a target area.\\n\\nNETWORK TV SPOT\\nTelevision time offered by network TV as opposed to local TV.\\n\\nNEWSPAPER AD\\nAn ad presented in a newspaper.\\n\\nONE SHEET POSTER\\nA vertical Poster Panel placed on transit stations or point of purchases locales such as grocery stores, convenience stores etc.)\\n\\nOUTSIDE POSTER\\nOutdoor transit posters appearing on buses, taxis, trains, subways, and trolley cars.\\n\\nPACKAGE INSERT\\nSeparate advertising material included in merchandise packages that advertises goods or services; also referred to as Package Stuffer.\\n\\nPAINTED BULLETIN\\nA freestanding steel or wooden structure, approximately 50' wide by 15' high, with molding around the outer edges similar to a poster panel, and including a hand painted copy message. Bulletins are generally found near highways or roofs of buildings in high traffic areas.\\n\\nPANEL\\nThis includes regular and illuminated types of outdoor advertising. A regular panel is only seen during the daytime, while an illuminated panel is seen also from dusk until dawn.\\n\\nPARTICIPATION ANNOUNCEMENT\\nAnnouncements made inside the context of a program as opposed to those shown during station breaks. (2) An announcement or amount of broadcasting time which is shared by several advertisers.\\n\\nPOSTER PANEL\\nAn outdoor billboard in which advertising is displayed on printed paper sheets rather than being painted. The most widely used form of outdoor advertising; standard size approximately 25' x 12' with the image printed on sections of 24 to 30 sheets.\\n\\nPREMIUM\\nPromotional efforts designed to stimulate short-term purchasing behavior. Coupons, premiums, and samples are examples of consumer stimulants.\\n\\nPREPRINTED INSERT\\nAdvertising distributed through newspapers that is not part of the newspaper itself, but is printed by the advertiser and then taken to the newspaper itself, but is printed by the advertiser and then taken to the newspaper to be inserted.\\n\\nPRESS RELEASE\\nFactual and interesting information released to the press to deliver information about a product, service or event to appropriate media.\\n\\nRADIO COMMERCIAL\\nA commercial presented on the radio.\\n\\nRADIO SPOT\\nRadio time offered by local stations.\\n\\nREADING NOTICE\\nA non-illustrated advertisement set in the type style of a publication and that gives the appearance of being editorial content.   It is marked with the abbreviation 'ADV'.\\n\\nROLLING BOARDS\\nBillboards that have a number of ads that rotate on a timed basis.\\n\\nROMANCE CARD\\nWritten material that accompanies an advertising specialty, providing information about the product and its background.\\n\\nROTARY DISPLAY\\nPainted bulletins who face is periodically rotated to new locations.\\n\\nSAMPLE\\nPromotional efforts designed to stimulate short-term purchasing behavior. Coupons, premiums, and samples are examples of consumer stimulants.\\n\\nSELF-MAILER\\nA direct-mail piece in which no envelope or wrapper is required for mailing.\\n\\nSLOGAN\\nA short, memorable advertising phrase that often appears in advertisements. For example the athletic shoe maker Nike's, \\\"Just Do It\\\".\\n\\nSPECIALTY ADVERTISING\\nAn advertising, sales promotion, and motivational communications medium that employs useful articles of merchandise imprinted with an advertiser's name, message, or logo.\\n\\nSPLIT 30s\\n30-second TV spots in which the advertiser promotes two different products with two different messages during a 30-second commercial.\\n\\nSPREAD\\nA single print ad positioned on two facing pages of a publication.\\n\\nSWEEPSTAKES\\nA promotion whereby consumers submit their names for consideration in the drawing or selection of prizes and winners are determined purely by chance. Sweepstakes cannot require a proof of purchases as a condition for entry.\\n\\nTAG LINE\\nA slogan or phrase that visually conveys the most important product attribute or benefit that the advertiser wishes to convey. Generally, a theme to a campaign.\\n\\nTEAR SHEET\\nA page cut from a magazine or newspaper that is sent to the advertiser as proof of the ad insertion. Also used to check color reproduction of advertisements.\\n\\nTESTIMONIAL\\nA statement made by a customer endorsing a product, service or company. A testimonial may be a single customer quote or it may be integrated into other marketing material such as a case study about the customer's use of a company's product or service.\\n\\nTRADESHOW\\nA marketing message that is delivered at a tradeshow.\\n\\nTRADESHOW\\nAdvertising targeted to target audiences exposed to commercial transportation facilities, including buses, taxis, trains, elevators, trolleys, airplanes, and subways.\\n\\nTV COMMERCIAL\\nUse of pictures in an advertisement on television.\\n\\nTV SPOT\\nTelevision time offered by local stations as opposed to Network TV.\\n\\nVIDEO ADVERTISING\\nAdvertisements appearing in movie theaters and on videotapes.\\n\\nWHITE PAPER\\nA document written in essay style that provides an in-depth discussion of an issue, technology, trend, product or process. White papers are predominantly informational rather than promotional.\\n\\nZINE\\nMagazines that are published online instead of in print. Often cover very specific subjects and thus have very targeted readers.\",\"primaryKey\":[\"AdvertisingCollateralId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"AdvertisingCollateralId\",\"attributeReference\":{\"entity\":\"AdvertisingCollateral.cdm.json/AdvertisingCollateral\",\"name\":\"AdvertisingCollateralId\"},\"dataType\":\"long\"},{\"type\":\"Existing\",\"name\":\"AdvertisingCollateralName\",\"attributeReference\":{\"entity\":\"AdvertisingCollateral.cdm.json/AdvertisingCollateral\",\"name\":\"AdvertisingCollateralName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"AdvertisingCollateralDescription\",\"attributeReference\":{\"entity\":\"AdvertisingCollateral.cdm.json/AdvertisingCollateral\",\"name\":\"AdvertisingCollateralDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512},{\"type\":\"Existing\",\"name\":\"AdvertisingCopy\",\"attributeReference\":{\"entity\":\"AdvertisingCollateral.cdm.json/AdvertisingCollateral\",\"name\":\"AdvertisingCopy\"},\"dataType\":\"string\",\"dataTypeLength\":1024},{\"type\":\"Existing\",\"name\":\"AdvertisingArtwork\",\"attributeReference\":{\"entity\":\"AdvertisingCollateral.cdm.json/AdvertisingCollateral\",\"name\":\"AdvertisingArtwork\"},\"dataType\":\"binary\"},{\"type\":\"Existing\",\"name\":\"AdvertisingVideoClip\",\"attributeReference\":{\"entity\":\"AdvertisingCollateral.cdm.json/AdvertisingCollateral\",\"name\":\"AdvertisingVideoClip\"},\"dataType\":\"binary\"},{\"type\":\"Existing\",\"name\":\"AdvertisingAudioClip\",\"attributeReference\":{\"entity\":\"AdvertisingCollateral.cdm.json/AdvertisingCollateral\",\"name\":\"AdvertisingAudioClip\"},\"dataType\":\"binary\"},{\"type\":\"Existing\",\"name\":\"MinimumFrequencyNumber\",\"attributeReference\":{\"entity\":\"AdvertisingCollateral.cdm.json/AdvertisingCollateral\",\"name\":\"MinimumFrequencyNumber\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"AdvertisingComprehensiveLayoutDate\",\"attributeReference\":{\"entity\":\"AdvertisingCollateral.cdm.json/AdvertisingCollateral\",\"name\":\"AdvertisingComprehensiveLayoutDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\"},{\"type\":\"Existing\",\"name\":\"GalleyProofAvailableDate\",\"attributeReference\":{\"entity\":\"AdvertisingCollateral.cdm.json/AdvertisingCollateral\",\"name\":\"GalleyProofAvailableDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\"},{\"type\":\"Existing\",\"name\":\"GalleyProofApprovalDate\",\"attributeReference\":{\"entity\":\"AdvertisingCollateral.cdm.json/AdvertisingCollateral\",\"name\":\"GalleyProofApprovalDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\"},{\"type\":\"Existing\",\"name\":\"DateCreated\",\"attributeReference\":{\"entity\":\"AdvertisingCollateral.cdm.json/AdvertisingCollateral\",\"name\":\"DateCreated\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\"},{\"type\":\"Existing\",\"name\":\"CancellationDate\",\"attributeReference\":{\"entity\":\"AdvertisingCollateral.cdm.json/AdvertisingCollateral\",\"name\":\"CancellationDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\"},{\"type\":\"Existing\",\"name\":\"CopyrightDate\",\"attributeReference\":{\"entity\":\"AdvertisingCollateral.cdm.json/AdvertisingCollateral\",\"name\":\"CopyrightDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\"},{\"type\":\"Existing\",\"name\":\"AffirmativeDisclosureStatement\",\"attributeReference\":{\"entity\":\"AdvertisingCollateral.cdm.json/AdvertisingCollateral\",\"name\":\"AffirmativeDisclosureStatement\"},\"dataType\":\"string\",\"dataTypeLength\":2048},{\"type\":\"Existing\",\"name\":\"CopyrightStatement\",\"attributeReference\":{\"entity\":\"AdvertisingCollateral.cdm.json/AdvertisingCollateral\",\"name\":\"CopyrightStatement\"},\"dataType\":\"string\",\"dataTypeLength\":2048},{\"type\":\"Existing\",\"name\":\"MediaPlanStatement\",\"attributeReference\":{\"entity\":\"AdvertisingCollateral.cdm.json/AdvertisingCollateral\",\"name\":\"MediaPlanStatement\"},\"dataType\":\"string\",\"dataTypeLength\":2048},{\"type\":\"Existing\",\"name\":\"AdvertisingCollateralTotalCostAmount\",\"attributeReference\":{\"entity\":\"AdvertisingCollateral.cdm.json/AdvertisingCollateral\",\"name\":\"AdvertisingCollateralTotalCostAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"BuriedPositionAdvertisementIndicator\",\"attributeReference\":{\"entity\":\"AdvertisingCollateral.cdm.json/AdvertisingCollateral\",\"name\":\"BuriedPositionAdvertisementIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"DealerImprintIndicator\",\"attributeReference\":{\"entity\":\"AdvertisingCollateral.cdm.json/AdvertisingCollateral\",\"name\":\"DealerImprintIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"ActionDeviceIndicator\",\"attributeReference\":{\"entity\":\"AdvertisingCollateral.cdm.json/AdvertisingCollateral\",\"name\":\"ActionDeviceIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"TargetedAdvertisementIndicator\",\"attributeReference\":{\"entity\":\"AdvertisingCollateral.cdm.json/AdvertisingCollateral\",\"name\":\"TargetedAdvertisementIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"ContinuousAdvertisingIndicator\",\"attributeReference\":{\"entity\":\"AdvertisingCollateral.cdm.json/AdvertisingCollateral\",\"name\":\"ContinuousAdvertisingIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"DeliveryChannelId\",\"attributeReference\":{\"entity\":\"AdvertisingCollateral.cdm.json/AdvertisingCollateral\",\"name\":\"DeliveryChannelId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"AdvertisingCollateralTypeId\",\"attributeReference\":{\"entity\":\"AdvertisingCollateral.cdm.json/AdvertisingCollateral\",\"name\":\"AdvertisingCollateralTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"AdvertisingCollateralStatusId\",\"attributeReference\":{\"entity\":\"AdvertisingCollateral.cdm.json/AdvertisingCollateral\",\"name\":\"AdvertisingCollateralStatusId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"IsoLanguageId\",\"attributeReference\":{\"entity\":\"AdvertisingCollateral.cdm.json/AdvertisingCollateral\",\"name\":\"IsoLanguageId\"},\"dataType\":\"integer\"}]}}}",
+			"Description": "An Advertising Collateral is a specific piece, article or preparation of media designed to communicate a message to an existing or potential customer, which can be used once or many times on a single media or multiple media.\n\nEx:\n- Accordion Insert\n- Ad-A-Card\n- Adjacency Commercials\n- Advertising Specialty\n- Advertorial\n- Aerial Advertising\n- All-In-Family-Programming\n- Audiotex\n- Banner Ad\n- Billboard\n- Bind-In Card\n- Bingo Card\n- Blind Ad\n- Bonus Pack\n- Bounce Back Coupon\n- Broadside\n- Brochure\n- Buckslip\n- Business Letter\n- Business Reply Card\n- Car Card\n- Card Deck\n- Centerspread\n- Classified Advertising\n- Commercial\n- Cross-Ruff Coupon\n- Cut-In\n- Double Truck\n- Envelope Stuffer\n- Flyer\n- Free Standing Insert\n- Gatefold\n- Imprinted Product\n- Infomercial\n- Insert\n- Internet Banner\n- Island Display\n- Jingle\n- Jumble Display\n- Kiosk\n- Leave-Behind\n- Lottery\n- Mailgram\n- Mobile Billboards\n- Network TV Spot\n- Newspaper Ad\n- One Sheet Poster\n- Outside Poster\n- Package Insert\n- Painted Bulletin\n- Panel\n- Participation Announcement\n- Poster Panel\n- Premium\n- Preprinted Insert\n- Press Release\n- Radio Commercial\n- Radio Spot\n- Reading Notice\n- Rolling Boards\n- Romance Card\n- Rotary Display\n- Sample\n- Self-Mailer\n- Slogan\n- Specialty Advertising\n- Split 30s\n- Spread\n- Sweepstakes\n- Tag Line\n- Tear Sheet\n- Testimonial\n- Tradeshow\n- TV Commercial\n- TV Spot\n- Video Advertising\n- White Paper\n- Zine\n\nwhere:\n\nACCORDION INSERT\nAn ad inserted in a magazine, folded with an accordion-style fold.\n\nAD-A-CARD\nA perforated, tear-off coupon attached to ads in Sunday comics and supplements.\n\nADJACENCY COMMERCIALS\nCommercial spots purchased from local television stations that generally appear during the time periods adjacent to network programs.\n\nADVERTISING SPECIALTY\nItems used as giveaways to serve as a reminder or stimulate remembrance of a company or brand such as calendars, T-shirts, pens, key tags, and the like. Specialties are usually imprinted with a company or brand name and other identifying marks such as an address and phone number.\n\nADVERTORIAL\nAn advertisement that has the appearance of a news article or editorial, in a print publication.\n\nAERIAL ADVERTISING\nA form of outdoor advertising where messages appear in the sky in the form of banners pulled by airplanes, skywriting, and on blimps.\n\nALL-IN-FAMILY-PROGRAMMING\nGenerally refers to early fringe programs intended to attract all demographic groups, including children. \n\nPartridge Family and Andy Griffith are examples of All-Family programs.\n\nAUDIOTEX\nThe use of the telephone and voice information services to market, advertise, promote, entertain, and inform consumers.\n\nBANNER AD\nAn ad in the form of a graphic image that typically runs across a web page or is positioning in a margin or other space reserved for ads.\n\nBILLBOARD\nAn announcement (usually five seconds in length) identifying an advertiser at the beginning, end, or break of a broadcast. Also, an outdoor advertising display.\n\nBIND-IN CARD\nAn insert card in a magazine that is stitched in with the printed pages and often used to sells subscriptions.\n\nBINGO CARD\nA card inserted into a publication that allows readers to request information from one or more of a group of companies listed on the card.\n\nBLIND AD\nAn advertisement that does not identify the advertiser, but provides a box number for replies.\n\nBONUS PACK\nSpecial packaging that provides consumers with extra quantity of merchandise at no extra charge over the regular price.\n\nBOUNCE BACK COUPON\nA coupon offer made to consumers as an inducement to repurchase the brand.\n\nBROADSIDE\nA promotion that is printed on a single large sheet of paper, usually on only one side of the paper, as opposed to a tabloid or other off-size newspaper.\n\nBROCHURE\nA multi-page document providing information favorable to a product, product family or service. Contents may include features, functions, benefits, support options, warranty terms, appropriate uses or implementation.\n\nBUCKSLIP\nIn direct mail, one or more small inserts about the size of a dollar bill included with a letter or brochure. \n\nBuck slips are used to emphasize special offers, or to summarize or reiterate an  offer included in the letter/brochure.\n\nBUSINESS LETTER\nA letter in a #10 envelope (or the equivalent) with direct addressing and without any teaser copy on the envelope. This letter has the appearance of a manager to manager, one at a time, communication.\n\nBUSINESS REPLY CARD\nA card distributed with an advertising piece. The card is preprinted with the address of advertiser or its fulfillment house.  Return postage is prepaid by the advertiser. The recipient uses it to respond to an offer (which may simply be an offer to provide more  information) made by the advertiser.\n\nCAR CARD\nA poster placed in buses, subways, etc. Also called a Bus card.\n\nCARD DECK\nA collection of post card size advertisements, each promoting a different product, service, brand, organization or event, distributed as a group.\n\nThe post card is usually pre-addressed, and often postage-paid, to be mailed back to the advertiser to request more information, place an order, register for an event, etc.\n\nCard decks are often an advertising service of magazine publishers, but may also be an independent service.\n\nCENTERSPREAD\nThe two facing pages at the center of a magazine, desirable because the pages are continuous with little or no interruption at the gutter.\n\nCLASSIFIED ADVERTISING\nAdvertising that runs in newspapers and magazines that generally contains text only and is arranged under subheading according to the product, service, or offering. Employment, real estate, and automotive ads are the major forms of classified advertising.\n\nCOMMERCIAL\nA commercial typically lasts 90 seconds or more in length and is designed to supply information about a product or services as opposed to a specific sales message.\n\nCROSS-RUFF COUPON\nA coupon offer delivered on one product that is redeemable for the purchase of another product. \n\nThe other product is usually one made by the same company but may involve a tie in with another manufacturer.\n\nCUT-IN\nA locally aired television commercial which mechanically replaces a network originated announcement. The premium cost paid for cut-ins is often justified in copy test situations.\n\nDOUBLE TRUCK\nA two-page spread in a print publication, where the ad runs across the middle gutter.\n\nENVELOPE STUFFER\nA direct mail advertisement included with another mailed message (such as a bill).\n\nFLYER\nA one-page, two-sided promotional vehicle, generally 8½\" x 11\" in size.\n\nFREE STANDING INSERT\nA special coupon, subscription or advertisement that is inserted but not bound to a magazine.\n\nGATEFOLD\nA multi-page advertisement or brochure spread created by folding a double-sized page (or pages). These extended pages fold out, much like opening a gate, to reveal the entire advertisement or spread.\n\nDouble or triple-size pages, generally in magazines, that fold out into a large advertisement.\n\nIMPRINTED PRODUCT\nA promotional product, this is a product with a company logo or advertising message printed on it.\n\nINFOMERCIAL\nTelevision commercials that are very long, ranging from several minutes to an hour. Infomercials are designed to provide consumers with detailed information about a product or service.\n\nINSERT\nAn advertisement, collection of advertisements, or other promotional matter published by an advertiser or group of advertisers, to be inserted in a magazine or newspaper. It may be bound into the publication, or be inserted without binding. See Free-standing insert, above.\n\nINTERNET BANNER\nAn advertisement that is inserted into an internet message or www site URL.\n\nISLAND DISPLAY\nA point-of-purchase display away from competitive products, typically in the middle or at the end of an aisle.\n\nJINGLE\nSongs about a product or service that usually carry the advertising theme and a simple message.\n\nJUMBLE DISPLAY\nA mixture of products or brands on a single display, such as a clearance table.\n\nKIOSK\nA free standing and usually permanent display used in outdoor advertising.\n\nLEAVE-BEHIND\nA premium left with prospective customers by a sales person, to remind them of the product or service being sold.\n\nLOTTERY\nA scheme in which making a required purchase gives a person a chance to win a prize which is awarded at random, usually through an electronic drawing. Lotteries may not be used as promotion devices under U.S. laws.\n\nMAILGRAM\nA combination telegram-letter, with the telegram transmitted to a postal facility close to the addressee and then delivered as first class mail.\n\nMOBILE BILLBOARDS\nBillboards that are towed or displayed on trucks that circulate through a target area.\n\nNETWORK TV SPOT\nTelevision time offered by network TV as opposed to local TV.\n\nNEWSPAPER AD\nAn ad presented in a newspaper.\n\nONE SHEET POSTER\nA vertical Poster Panel placed on transit stations or point of purchases locales such as grocery stores, convenience stores etc.)\n\nOUTSIDE POSTER\nOutdoor transit posters appearing on buses, taxis, trains, subways, and trolley cars.\n\nPACKAGE INSERT\nSeparate advertising material included in merchandise packages that advertises goods or services; also referred to as Package Stuffer.\n\nPAINTED BULLETIN\nA freestanding steel or wooden structure, approximately 50' wide by 15' high, with molding around the outer edges similar to a poster panel, and including a hand painted copy message. Bulletins are generally found near highways or roofs of buildings in high traffic areas.\n\nPANEL\nThis includes regular and illuminated types of outdoor advertising. A regular panel is only seen during the daytime, while an illuminated panel is seen also from dusk until dawn.\n\nPARTICIPATION ANNOUNCEMENT\nAnnouncements made inside the context of a program as opposed to those shown during station breaks. (2) An announcement or amount of broadcasting time which is shared by several advertisers.\n\nPOSTER PANEL\nAn outdoor billboard in which advertising is displayed on printed paper sheets rather than being painted. The most widely used form of outdoor advertising; standard size approximately 25' x 12' with the image printed on sections of 24 to 30 sheets.\n\nPREMIUM\nPromotional efforts designed to stimulate short-term purchasing behavior. Coupons, premiums, and samples are examples of consumer stimulants.\n\nPREPRINTED INSERT\nAdvertising distributed through newspapers that is not part of the newspaper itself, but is printed by the advertiser and then taken to the newspaper itself, but is printed by the advertiser and then taken to the newspaper to be inserted.\n\nPRESS RELEASE\nFactual and interesting information released to the press to deliver information about a product, service or event to appropriate media.\n\nRADIO COMMERCIAL\nA commercial presented on the radio.\n\nRADIO SPOT\nRadio time offered by local stations.\n\nREADING NOTICE\nA non-illustrated advertisement set in the type style of a publication and that gives the appearance of being editorial content.   It is marked with the abbreviation 'ADV'.\n\nROLLING BOARDS\nBillboards that have a number of ads that rotate on a timed basis.\n\nROMANCE CARD\nWritten material that accompanies an advertising specialty, providing information about the product and its background.\n\nROTARY DISPLAY\nPainted bulletins who face is periodically rotated to new locations.\n\nSAMPLE\nPromotional efforts designed to stimulate short-term purchasing behavior. Coupons, premiums, and samples are examples of consumer stimulants.\n\nSELF-MAILER\nA direct-mail piece in which no envelope or wrapper is required for mailing.\n\nSLOGAN\nA short, memorable advertising phrase that often appears in advertisements. For example the athletic shoe maker Nike's, \"Just Do It\".\n\nSPECIALTY ADVERTISING\nAn advertising, sales promotion, and motivational communications medium that employs useful articles of merchandise imprinted with an advertiser's name, message, or logo.\n\nSPLIT 30s\n30-second TV spots in which the advertiser promotes two different products with two different messages during a 30-second commercial.\n\nSPREAD\nA single print ad positioned on two facing pages of a publication.\n\nSWEEPSTAKES\nA promotion whereby consumers submit their names for consideration in the drawing or selection of prizes and winners are determined purely by chance. Sweepstakes cannot require a proof of purchases as a condition for entry.\n\nTAG LINE\nA slogan or phrase that visually conveys the most important product attribute or benefit that the advertiser wishes to convey. Generally, a theme to a campaign.\n\nTEAR SHEET\nA page cut from a magazine or newspaper that is sent to the advertiser as proof of the ad insertion. Also used to check color reproduction of advertisements.\n\nTESTIMONIAL\nA statement made by a customer endorsing a product, service or company. A testimonial may be a single customer quote or it may be integrated into other marketing material such as a case study about the customer's use of a company's product or service.\n\nTRADESHOW\nA marketing message that is delivered at a tradeshow.\n\nTRADESHOW\nAdvertising targeted to target audiences exposed to commercial transportation facilities, including buses, taxis, trains, elevators, trolleys, airplanes, and subways.\n\nTV COMMERCIAL\nUse of pictures in an advertisement on television.\n\nTV SPOT\nTelevision time offered by local stations as opposed to Network TV.\n\nVIDEO ADVERTISING\nAdvertisements appearing in movie theaters and on videotapes.\n\nWHITE PAPER\nA document written in essay style that provides an in-depth discussion of an issue, technology, trend, product or process. White papers are predominantly informational rather than promotional.\n\nZINE\nMagazines that are published online instead of in print. Often cover very specific subjects and thus have very targeted readers.",
+			"DisplayFolderInfo": "{\"name\":\"Marketing & Advertising\",\"colorCode\":\"#692B0C\"}",
+			"PrimaryKeys": "AdvertisingCollateralId",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

@@ -1,0 +1,26 @@
+{
+	"name": "relationship-mxddlaooiy",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-mxddlaooiy",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "BankProductType",
+		"ToTableName": "BankingProduct",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ProductTypeId",
+				"ToColumnName": "ProductTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"BankProductType.cdm.json/BankProductType\",\"toEntity\":\"BankingProduct.cdm.json/BankingProduct\",\"joinPairs\":[{\"fromAttribute\":\"ProductTypeId\",\"toAttribute\":\"ProductTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

@@ -1,0 +1,132 @@
+{
+	"name": "NaicsIndustryGroup",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "NaicsIndustryGroup",
+		"Description": "The NAICS Industry Group.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "NaicsIndustryGroupCode",
+					"Description": "The unique identifier of a NAICS Industry Group.",
+					"BaseAttributeReference": {
+						"Entity": "NaicsIndustryGroup.cdm.json/NaicsIndustryGroup",
+						"Name": "NaicsIndustryGroupCode"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Precision": 4,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "NaicsIndustryGroupName",
+					"Description": "The name of a NAICS Industry Group.",
+					"BaseAttributeReference": {
+						"Entity": "NaicsIndustryGroup.cdm.json/NaicsIndustryGroup",
+						"Name": "NaicsIndustryGroupName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "NaicsIndustryGroupDescription",
+					"Description": "The description of a NAICS Industry Group.",
+					"BaseAttributeReference": {
+						"Entity": "NaicsIndustryGroup.cdm.json/NaicsIndustryGroup",
+						"Name": "NaicsIndustryGroupDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "NaicsSubsectorCode",
+					"Description": "The unique identifier of a NAICS Subsector.",
+					"BaseAttributeReference": {
+						"Entity": "NaicsIndustryGroup.cdm.json/NaicsIndustryGroup",
+						"Name": "NaicsSubsectorCode"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Precision": 3,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/NaicsIndustryGroup",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/NaicsIndustryGroup",
+				"Properties": {
+					"LinkedServiceName": "wspc-dpu-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"NaicsIndustryGroupCode\":{\"entity\":\"NaicsIndustryGroup.cdm.json/NaicsIndustryGroup\",\"name\":\"NaicsIndustryGroupCode\"},\"NaicsIndustryGroupName\":{\"entity\":\"NaicsIndustryGroup.cdm.json/NaicsIndustryGroup\",\"name\":\"NaicsIndustryGroupName\"},\"NaicsIndustryGroupDescription\":{\"entity\":\"NaicsIndustryGroup.cdm.json/NaicsIndustryGroup\",\"name\":\"NaicsIndustryGroupDescription\"},\"NaicsSubsectorCode\":{\"entity\":\"NaicsIndustryGroup.cdm.json/NaicsIndustryGroup\",\"name\":\"NaicsSubsectorCode\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"NaicsIndustryGroup\",\"path\":\"NaicsIndustryGroup.cdm.json/NaicsIndustryGroup\"},\"description\":\"The NAICS Industry Group.\",\"primaryKey\":[\"NaicsIndustryGroupCode\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"NaicsIndustryGroupCode\",\"attributeReference\":{\"entity\":\"NaicsIndustryGroup.cdm.json/NaicsIndustryGroup\",\"name\":\"NaicsIndustryGroupCode\"},\"dataType\":\"decimal\",\"dataTypeLength\":4,\"scale\":0},{\"type\":\"Existing\",\"name\":\"NaicsIndustryGroupName\",\"attributeReference\":{\"entity\":\"NaicsIndustryGroup.cdm.json/NaicsIndustryGroup\",\"name\":\"NaicsIndustryGroupName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"NaicsIndustryGroupDescription\",\"attributeReference\":{\"entity\":\"NaicsIndustryGroup.cdm.json/NaicsIndustryGroup\",\"name\":\"NaicsIndustryGroupDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512},{\"type\":\"Existing\",\"name\":\"NaicsSubsectorCode\",\"attributeReference\":{\"entity\":\"NaicsIndustryGroup.cdm.json/NaicsIndustryGroup\",\"name\":\"NaicsSubsectorCode\"},\"dataType\":\"decimal\",\"dataTypeLength\":3,\"scale\":0}]}}}",
+			"Description": "The NAICS Industry Group.",
+			"DisplayFolderInfo": "{\"name\":\"Party\",\"colorCode\":\"#00727A\"}",
+			"PrimaryKeys": "NaicsIndustryGroupCode",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

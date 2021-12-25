@@ -1,0 +1,26 @@
+{
+	"name": "relationship-rmldexzegw",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-rmldexzegw",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "NaicsNationalIndustry",
+		"ToTableName": "LegalEntityCustomer",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "NaicsNationalIndustryCode",
+				"ToColumnName": "NaicsNationalIndustryCode"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"NaicsNationalIndustry.cdm.json/NaicsNationalIndustry\",\"toEntity\":\"LegalEntityCustomer.cdm.json/LegalEntityCustomer\",\"joinPairs\":[{\"fromAttribute\":\"NaicsNationalIndustryCode\",\"toAttribute\":\"NaicsNationalIndustryCode\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

@@ -1,0 +1,26 @@
+{
+	"name": "relationship-dclfawinvd",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-dclfawinvd",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Sex",
+		"ToTableName": "CustomerSex",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "SexId",
+				"ToColumnName": "SexId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Sex.cdm.json/Sex\",\"toEntity\":\"CustomerSex.cdm.json/CustomerSex\",\"joinPairs\":[{\"fromAttribute\":\"SexId\",\"toAttribute\":\"SexId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

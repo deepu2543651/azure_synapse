@@ -1,0 +1,26 @@
+{
+	"name": "relationship-uoaajambpk",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-uoaajambpk",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "SocialMediaPlatform",
+		"ToTableName": "AdvertisingEventSocialMediaPlatformAdPlacement",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "SocialMediaPlatformId",
+				"ToColumnName": "SocialMediaPlatformId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"SocialMediaPlatform.cdm.json/SocialMediaPlatform\",\"toEntity\":\"AdvertisingEventSocialMediaPlatformAdPlacement.cdm.json/AdvertisingEventSocialMediaPlatformAdPlacement\",\"joinPairs\":[{\"fromAttribute\":\"SocialMediaPlatformId\",\"toAttribute\":\"SocialMediaPlatformId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

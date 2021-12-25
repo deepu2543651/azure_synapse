@@ -1,0 +1,26 @@
+{
+	"name": "relationship-kvhzznaicu",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-kvhzznaicu",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Asset",
+		"ToTableName": "AssetAssessment",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "AssetId",
+				"ToColumnName": "AssetId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Asset.cdm.json/Asset\",\"toEntity\":\"AssetAssessment.cdm.json/AssetAssessment\",\"joinPairs\":[{\"fromAttribute\":\"AssetId\",\"toAttribute\":\"AssetId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

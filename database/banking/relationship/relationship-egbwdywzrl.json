@@ -1,0 +1,26 @@
+{
+	"name": "relationship-egbwdywzrl",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-egbwdywzrl",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "BankingProduct",
+		"ToTableName": "BankersAcceptance",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ProductId",
+				"ToColumnName": "BankersAcceptanceId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"BankingProduct.cdm.json/BankingProduct\",\"toEntity\":\"BankersAcceptance.cdm.json/BankersAcceptance\",\"joinPairs\":[{\"fromAttribute\":\"ProductId\",\"toAttribute\":\"BankersAcceptanceId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

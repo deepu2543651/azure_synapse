@@ -1,0 +1,244 @@
+{
+	"name": "CommercialDemandAccountProduct",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "CommercialDemandAccountProduct",
+		"Description": "An account which allows the business and commercial customers to write checks against deposited funds. \n\nDemand accounts which pay interest are sometimes referred to as negotiable order of withdrawal (NOW) accounts. \n\nThe interest rate often depends on how large the balance in the account is, and most charge a monthly service fee if the account balance falls below a preset level.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ProductId",
+					"Description": "The unique identifier of a Product.",
+					"BaseAttributeReference": {
+						"Entity": "CommercialDemandAccountProduct.cdm.json/CommercialDemandAccountProduct",
+						"Name": "ProductId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "InterestPaidPeriod",
+					"Description": "The period of days upon which interest is calculated and paid.",
+					"BaseAttributeReference": {
+						"Entity": "CommercialDemandAccountProduct.cdm.json/CommercialDemandAccountProduct",
+						"Name": "InterestPaidPeriod"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "MinimumBalanceNoFeeAmount",
+					"Description": "The minimum balance amount required to keep the checking account open without additional fees.",
+					"BaseAttributeReference": {
+						"Entity": "CommercialDemandAccountProduct.cdm.json/CommercialDemandAccountProduct",
+						"Name": "MinimumBalanceNoFeeAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "MinimumAmountToOpenCheckingAccount",
+					"Description": "The minimum amount to open the checking account.",
+					"BaseAttributeReference": {
+						"Entity": "CommercialDemandAccountProduct.cdm.json/CommercialDemandAccountProduct",
+						"Name": "MinimumAmountToOpenCheckingAccount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "FreeChecksBalanceAmount",
+					"Description": "The balance that must be maintained in order to receive free checks.",
+					"BaseAttributeReference": {
+						"Entity": "CommercialDemandAccountProduct.cdm.json/CommercialDemandAccountProduct",
+						"Name": "FreeChecksBalanceAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "FreeCashiersChecksIndicator",
+					"Description": "Indicates that the checking account includes free cashiers checks.",
+					"BaseAttributeReference": {
+						"Entity": "CommercialDemandAccountProduct.cdm.json/CommercialDemandAccountProduct",
+						"Name": "FreeCashiersChecksIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "FreeTravelersChecksIndicator",
+					"Description": "Indicates that the checking account includes free travelers checks.",
+					"BaseAttributeReference": {
+						"Entity": "CommercialDemandAccountProduct.cdm.json/CommercialDemandAccountProduct",
+						"Name": "FreeTravelersChecksIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "FreeNotaryServicesIndicator",
+					"Description": "Indicates that the checking account includes free notary services",
+					"BaseAttributeReference": {
+						"Entity": "CommercialDemandAccountProduct.cdm.json/CommercialDemandAccountProduct",
+						"Name": "FreeNotaryServicesIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "FreeChecksIndicator",
+					"Description": "Indicates that the checking account includes free checks.",
+					"BaseAttributeReference": {
+						"Entity": "CommercialDemandAccountProduct.cdm.json/CommercialDemandAccountProduct",
+						"Name": "FreeChecksIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "FreeEmailNotificationsIndicator",
+					"Description": "Indicates that the commercial checking account includes free email notifications.",
+					"BaseAttributeReference": {
+						"Entity": "CommercialDemandAccountProduct.cdm.json/CommercialDemandAccountProduct",
+						"Name": "FreeEmailNotificationsIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "DemandAccountTypeId",
+					"Description": "The unique identifier of a Demand Account Type.",
+					"BaseAttributeReference": {
+						"Entity": "CommercialDemandAccountProduct.cdm.json/CommercialDemandAccountProduct",
+						"Name": "DemandAccountTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/CommercialDemandAccountProduct",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/CommercialDemandAccountProduct",
+				"Properties": {
+					"LinkedServiceName": "wspc-dpu-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ProductId\":{\"entity\":\"CommercialDemandAccountProduct.cdm.json/CommercialDemandAccountProduct\",\"name\":\"ProductId\"},\"InterestPaidPeriod\":{\"entity\":\"CommercialDemandAccountProduct.cdm.json/CommercialDemandAccountProduct\",\"name\":\"InterestPaidPeriod\"},\"MinimumBalanceNoFeeAmount\":{\"entity\":\"CommercialDemandAccountProduct.cdm.json/CommercialDemandAccountProduct\",\"name\":\"MinimumBalanceNoFeeAmount\"},\"MinimumAmountToOpenCheckingAccount\":{\"entity\":\"CommercialDemandAccountProduct.cdm.json/CommercialDemandAccountProduct\",\"name\":\"MinimumAmountToOpenCheckingAccount\"},\"FreeChecksBalanceAmount\":{\"entity\":\"CommercialDemandAccountProduct.cdm.json/CommercialDemandAccountProduct\",\"name\":\"FreeChecksBalanceAmount\"},\"FreeCashiersChecksIndicator\":{\"entity\":\"CommercialDemandAccountProduct.cdm.json/CommercialDemandAccountProduct\",\"name\":\"FreeCashiersChecksIndicator\"},\"FreeTravelersChecksIndicator\":{\"entity\":\"CommercialDemandAccountProduct.cdm.json/CommercialDemandAccountProduct\",\"name\":\"FreeTravelersChecksIndicator\"},\"FreeNotaryServicesIndicator\":{\"entity\":\"CommercialDemandAccountProduct.cdm.json/CommercialDemandAccountProduct\",\"name\":\"FreeNotaryServicesIndicator\"},\"FreeChecksIndicator\":{\"entity\":\"CommercialDemandAccountProduct.cdm.json/CommercialDemandAccountProduct\",\"name\":\"FreeChecksIndicator\"},\"FreeEmailNotificationsIndicator\":{\"entity\":\"CommercialDemandAccountProduct.cdm.json/CommercialDemandAccountProduct\",\"name\":\"FreeEmailNotificationsIndicator\"},\"DemandAccountTypeId\":{\"entity\":\"CommercialDemandAccountProduct.cdm.json/CommercialDemandAccountProduct\",\"name\":\"DemandAccountTypeId\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"CommercialDemandAccountProduct\",\"path\":\"CommercialDemandAccountProduct.cdm.json/CommercialDemandAccountProduct\"},\"description\":\"An account which allows the business and commercial customers to write checks against deposited funds. \\n\\nDemand accounts which pay interest are sometimes referred to as negotiable order of withdrawal (NOW) accounts. \\n\\nThe interest rate often depends on how large the balance in the account is, and most charge a monthly service fee if the account balance falls below a preset level.\",\"primaryKey\":[\"ProductId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"ProductId\",\"attributeReference\":{\"entity\":\"CommercialDemandAccountProduct.cdm.json/CommercialDemandAccountProduct\",\"name\":\"ProductId\"},\"dataType\":\"long\"},{\"type\":\"Existing\",\"name\":\"InterestPaidPeriod\",\"attributeReference\":{\"entity\":\"CommercialDemandAccountProduct.cdm.json/CommercialDemandAccountProduct\",\"name\":\"InterestPaidPeriod\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"MinimumBalanceNoFeeAmount\",\"attributeReference\":{\"entity\":\"CommercialDemandAccountProduct.cdm.json/CommercialDemandAccountProduct\",\"name\":\"MinimumBalanceNoFeeAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"MinimumAmountToOpenCheckingAccount\",\"attributeReference\":{\"entity\":\"CommercialDemandAccountProduct.cdm.json/CommercialDemandAccountProduct\",\"name\":\"MinimumAmountToOpenCheckingAccount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"FreeChecksBalanceAmount\",\"attributeReference\":{\"entity\":\"CommercialDemandAccountProduct.cdm.json/CommercialDemandAccountProduct\",\"name\":\"FreeChecksBalanceAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"FreeCashiersChecksIndicator\",\"attributeReference\":{\"entity\":\"CommercialDemandAccountProduct.cdm.json/CommercialDemandAccountProduct\",\"name\":\"FreeCashiersChecksIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"FreeTravelersChecksIndicator\",\"attributeReference\":{\"entity\":\"CommercialDemandAccountProduct.cdm.json/CommercialDemandAccountProduct\",\"name\":\"FreeTravelersChecksIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"FreeNotaryServicesIndicator\",\"attributeReference\":{\"entity\":\"CommercialDemandAccountProduct.cdm.json/CommercialDemandAccountProduct\",\"name\":\"FreeNotaryServicesIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"FreeChecksIndicator\",\"attributeReference\":{\"entity\":\"CommercialDemandAccountProduct.cdm.json/CommercialDemandAccountProduct\",\"name\":\"FreeChecksIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"FreeEmailNotificationsIndicator\",\"attributeReference\":{\"entity\":\"CommercialDemandAccountProduct.cdm.json/CommercialDemandAccountProduct\",\"name\":\"FreeEmailNotificationsIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"DemandAccountTypeId\",\"attributeReference\":{\"entity\":\"CommercialDemandAccountProduct.cdm.json/CommercialDemandAccountProduct\",\"name\":\"DemandAccountTypeId\"},\"dataType\":\"integer\"}]}}}",
+			"Description": "An account which allows the business and commercial customers to write checks against deposited funds. \n\nDemand accounts which pay interest are sometimes referred to as negotiable order of withdrawal (NOW) accounts. \n\nThe interest rate often depends on how large the balance in the account is, and most charge a monthly service fee if the account balance falls below a preset level.",
+			"DisplayFolderInfo": "{\"name\":\"Product\",\"colorCode\":\"#0E3D73\"}",
+			"PrimaryKeys": "ProductId",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

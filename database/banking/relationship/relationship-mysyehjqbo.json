@@ -1,0 +1,26 @@
+{
+	"name": "relationship-mysyehjqbo",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-mysyehjqbo",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "InterestRateDirection",
+		"ToTableName": "BaseRate",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "InterestRateDirectionId",
+				"ToColumnName": "InterestRateDirectionId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"InterestRateDirection.cdm.json/InterestRateDirection\",\"toEntity\":\"BaseRate.cdm.json/BaseRate\",\"joinPairs\":[{\"fromAttribute\":\"InterestRateDirectionId\",\"toAttribute\":\"InterestRateDirectionId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

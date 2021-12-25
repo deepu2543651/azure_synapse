@@ -1,0 +1,26 @@
+{
+	"name": "relationship-ekyvzlsyqn",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-ekyvzlsyqn",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "BankTransactionCategory",
+		"ToTableName": "TransactionCategoryTransactionType",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "TransactionCategoryId",
+				"ToColumnName": "TransactionCategoryId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"BankTransactionCategory.cdm.json/BankTransactionCategory\",\"toEntity\":\"TransactionCategoryTransactionType.cdm.json/TransactionCategoryTransactionType\",\"joinPairs\":[{\"fromAttribute\":\"TransactionCategoryId\",\"toAttribute\":\"TransactionCategoryId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

@@ -1,0 +1,26 @@
+{
+	"name": "relationship-pifribahdl",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-pifribahdl",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "AuthenticationMethod",
+		"ToTableName": "CustomerAccountRelatedPartyAuthenticationMethod",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "AuthenticationMethodId",
+				"ToColumnName": "AuthenticationMethodId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"AuthenticationMethod.cdm.json/AuthenticationMethod\",\"toEntity\":\"CustomerAccountRelatedPartyAuthenticationMethod.cdm.json/CustomerAccountRelatedPartyAuthenticationMethod\",\"joinPairs\":[{\"fromAttribute\":\"AuthenticationMethodId\",\"toAttribute\":\"AuthenticationMethodId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

@@ -1,0 +1,26 @@
+{
+	"name": "relationship-cjmuhlqouz",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-cjmuhlqouz",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "CustomerAsset",
+		"ToTableName": "Collateral",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "CustomerAssetId",
+				"ToColumnName": "CustomerAssetId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"CustomerAsset.cdm.json/CustomerAsset\",\"toEntity\":\"Collateral.cdm.json/Collateral\",\"joinPairs\":[{\"fromAttribute\":\"CustomerAssetId\",\"toAttribute\":\"CustomerAssetId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

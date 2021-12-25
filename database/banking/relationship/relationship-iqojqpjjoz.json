@@ -1,0 +1,26 @@
+{
+	"name": "relationship-iqojqpjjoz",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-iqojqpjjoz",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "AdvertisingEvent",
+		"ToTableName": "AdvertisingEventSocialMediaPlatformAdPlacement",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "AdvertisingEventId",
+				"ToColumnName": "AdvertisingEventId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"AdvertisingEvent.cdm.json/AdvertisingEvent\",\"toEntity\":\"AdvertisingEventSocialMediaPlatformAdPlacement.cdm.json/AdvertisingEventSocialMediaPlatformAdPlacement\",\"joinPairs\":[{\"fromAttribute\":\"AdvertisingEventId\",\"toAttribute\":\"AdvertisingEventId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

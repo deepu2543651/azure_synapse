@@ -1,0 +1,26 @@
+{
+	"name": "relationship-riuovhcwmk",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-riuovhcwmk",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "MarketingEvent",
+		"ToTableName": "MarketingEventIncurredCostItem",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "MarketingEventId",
+				"ToColumnName": "MarketingEventId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"MarketingEvent.cdm.json/MarketingEvent\",\"toEntity\":\"MarketingEventIncurredCostItem.cdm.json/MarketingEventIncurredCostItem\",\"joinPairs\":[{\"fromAttribute\":\"MarketingEventId\",\"toAttribute\":\"MarketingEventId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

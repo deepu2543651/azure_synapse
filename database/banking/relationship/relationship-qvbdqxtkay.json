@@ -1,0 +1,26 @@
+{
+	"name": "relationship-qvbdqxtkay",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-qvbdqxtkay",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Conduit",
+		"ToTableName": "CommercialPaper",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ConduitId",
+				"ToColumnName": "ConduitId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Conduit.cdm.json/Conduit\",\"toEntity\":\"CommercialPaper.cdm.json/CommercialPaper\",\"joinPairs\":[{\"fromAttribute\":\"ConduitId\",\"toAttribute\":\"ConduitId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

@@ -1,0 +1,112 @@
+{
+	"name": "PayeeStatus",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "PayeeStatus",
+		"Description": "The status type of the associated payee:\n\nEx:\n- Active\n- Inactive",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "PayeeStatusId",
+					"Description": "The unique identifier of a Payee Status.",
+					"BaseAttributeReference": {
+						"Entity": "PayeeStatus.cdm.json/PayeeStatus",
+						"Name": "PayeeStatusId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PayeeStatusName",
+					"Description": "The name of a Payee Status.",
+					"BaseAttributeReference": {
+						"Entity": "PayeeStatus.cdm.json/PayeeStatus",
+						"Name": "PayeeStatusName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "PayeeStatusDescription",
+					"Description": "The description of a Payee Status.",
+					"BaseAttributeReference": {
+						"Entity": "PayeeStatus.cdm.json/PayeeStatus",
+						"Name": "PayeeStatusDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/PayeeStatus",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/PayeeStatus",
+				"Properties": {
+					"LinkedServiceName": "wspc-dpu-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"PayeeStatusId\":{\"entity\":\"PayeeStatus.cdm.json/PayeeStatus\",\"name\":\"PayeeStatusId\"},\"PayeeStatusName\":{\"entity\":\"PayeeStatus.cdm.json/PayeeStatus\",\"name\":\"PayeeStatusName\"},\"PayeeStatusDescription\":{\"entity\":\"PayeeStatus.cdm.json/PayeeStatus\",\"name\":\"PayeeStatusDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"PayeeStatus\",\"path\":\"PayeeStatus.cdm.json/PayeeStatus\"},\"description\":\"The status type of the associated payee:\\n\\nEx:\\n- Active\\n- Inactive\",\"primaryKey\":[\"PayeeStatusId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"PayeeStatusId\",\"attributeReference\":{\"entity\":\"PayeeStatus.cdm.json/PayeeStatus\",\"name\":\"PayeeStatusId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"PayeeStatusName\",\"attributeReference\":{\"entity\":\"PayeeStatus.cdm.json/PayeeStatus\",\"name\":\"PayeeStatusName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"PayeeStatusDescription\",\"attributeReference\":{\"entity\":\"PayeeStatus.cdm.json/PayeeStatus\",\"name\":\"PayeeStatusDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512}]}}}",
+			"Description": "The status type of the associated payee:\n\nEx:\n- Active\n- Inactive",
+			"DisplayFolderInfo": "{\"name\":\"Party\",\"colorCode\":\"#00727A\"}",
+			"PrimaryKeys": "PayeeStatusId",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

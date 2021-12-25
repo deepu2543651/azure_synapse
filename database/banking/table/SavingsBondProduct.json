@@ -1,0 +1,216 @@
+{
+	"name": "SavingsBondProduct",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "SavingsBondProduct",
+		"Description": "A savings bond is a registered, non-callable, non-transferable bond issued by a government, and backed by its full faith and credit. Savings bonds differ from other Treasury securities in several ways. Savings bonds are non-marketable, meaning that they cannot be bought and sold after they are purchased from the government; therefore, there is no secondary market for savings bonds. The tax benefits associated with savings bonds are significant. Like all treasury securities, they are exempt from state and local taxes, but in the specific case of savings bonds, all federal taxes may be deferred until the bond is redeemed. Therefore, even though interest will accrue, no taxes will be due until that money can be accessed. Additionally, if the money received at redemption is used to pay tuition expenses for the holder, a spouse or a dependent in the same year, the interest earned may be exempt from federal taxes as well.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ProductId",
+					"Description": "The unique identifier of a Product.",
+					"BaseAttributeReference": {
+						"Entity": "SavingsBondProduct.cdm.json/SavingsBondProduct",
+						"Name": "ProductId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "MaximumPurchasesInOneCalendarYearAmount",
+					"Description": "The maximum amount that may be purchased in a calendar year.\n\nEx:\nEE = $5,000/calendar year",
+					"BaseAttributeReference": {
+						"Entity": "SavingsBondProduct.cdm.json/SavingsBondProduct",
+						"Name": "MaximumPurchasesInOneCalendarYearAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "MinimumPurchaseAmount",
+					"Description": "The minimum purchase amount for a bond.",
+					"BaseAttributeReference": {
+						"Entity": "SavingsBondProduct.cdm.json/SavingsBondProduct",
+						"Name": "MinimumPurchaseAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "FaceValueAmount",
+					"Description": "The face value amount of the bond when it matures.",
+					"BaseAttributeReference": {
+						"Entity": "SavingsBondProduct.cdm.json/SavingsBondProduct",
+						"Name": "FaceValueAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "DiscountValueAmount",
+					"Description": "The discount value amount of the bond at which it is purchased.",
+					"BaseAttributeReference": {
+						"Entity": "SavingsBondProduct.cdm.json/SavingsBondProduct",
+						"Name": "DiscountValueAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "SavingsBondEligibilityToPurchaseRequirementsStatement",
+					"Description": "A statement regarding the eligibility to purchase savings bonds.\n\nYou can own U.S. Savings Bonds if you have a Social Security Number and you're a:\n\n- Resident of the United States.\n\n - Citizen of the United States living abroad (must have U.S. address of record)\n\n - Civilian employee of the United States regardless of residence.\n\n- Minor. Unlike other securities, minors may own U.S. Savings Bonds.",
+					"BaseAttributeReference": {
+						"Entity": "SavingsBondProduct.cdm.json/SavingsBondProduct",
+						"Name": "SavingsBondEligibilityToPurchaseRequirementsStatement"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 2048,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "EarlyRedemptionPenaltyStatement",
+					"Description": "A statement regarding early redemption of the savings bond.",
+					"BaseAttributeReference": {
+						"Entity": "SavingsBondProduct.cdm.json/SavingsBondProduct",
+						"Name": "EarlyRedemptionPenaltyStatement"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 2048,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "SavingsBondTypeId",
+					"Description": "The unique identifier of a savings bond type.",
+					"BaseAttributeReference": {
+						"Entity": "SavingsBondProduct.cdm.json/SavingsBondProduct",
+						"Name": "SavingsBondTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "FormOfIssueId",
+					"Description": "The unique identifier of a Form Of Issue.",
+					"BaseAttributeReference": {
+						"Entity": "SavingsBondProduct.cdm.json/SavingsBondProduct",
+						"Name": "FormOfIssueId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/SavingsBondProduct",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/SavingsBondProduct",
+				"Properties": {
+					"LinkedServiceName": "wspc-dpu-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ProductId\":{\"entity\":\"SavingsBondProduct.cdm.json/SavingsBondProduct\",\"name\":\"ProductId\"},\"MaximumPurchasesInOneCalendarYearAmount\":{\"entity\":\"SavingsBondProduct.cdm.json/SavingsBondProduct\",\"name\":\"MaximumPurchasesInOneCalendarYearAmount\"},\"MinimumPurchaseAmount\":{\"entity\":\"SavingsBondProduct.cdm.json/SavingsBondProduct\",\"name\":\"MinimumPurchaseAmount\"},\"FaceValueAmount\":{\"entity\":\"SavingsBondProduct.cdm.json/SavingsBondProduct\",\"name\":\"FaceValueAmount\"},\"DiscountValueAmount\":{\"entity\":\"SavingsBondProduct.cdm.json/SavingsBondProduct\",\"name\":\"DiscountValueAmount\"},\"SavingsBondEligibilityToPurchaseRequirementsStatement\":{\"entity\":\"SavingsBondProduct.cdm.json/SavingsBondProduct\",\"name\":\"SavingsBondEligibilityToPurchaseRequirementsStatement\"},\"EarlyRedemptionPenaltyStatement\":{\"entity\":\"SavingsBondProduct.cdm.json/SavingsBondProduct\",\"name\":\"EarlyRedemptionPenaltyStatement\"},\"SavingsBondTypeId\":{\"entity\":\"SavingsBondProduct.cdm.json/SavingsBondProduct\",\"name\":\"SavingsBondTypeId\"},\"FormOfIssueId\":{\"entity\":\"SavingsBondProduct.cdm.json/SavingsBondProduct\",\"name\":\"FormOfIssueId\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"SavingsBondProduct\",\"path\":\"SavingsBondProduct.cdm.json/SavingsBondProduct\"},\"description\":\"A savings bond is a registered, non-callable, non-transferable bond issued by a government, and backed by its full faith and credit. Savings bonds differ from other Treasury securities in several ways. Savings bonds are non-marketable, meaning that they cannot be bought and sold after they are purchased from the government; therefore, there is no secondary market for savings bonds. The tax benefits associated with savings bonds are significant. Like all treasury securities, they are exempt from state and local taxes, but in the specific case of savings bonds, all federal taxes may be deferred until the bond is redeemed. Therefore, even though interest will accrue, no taxes will be due until that money can be accessed. Additionally, if the money received at redemption is used to pay tuition expenses for the holder, a spouse or a dependent in the same year, the interest earned may be exempt from federal taxes as well.\",\"primaryKey\":[\"ProductId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"ProductId\",\"attributeReference\":{\"entity\":\"SavingsBondProduct.cdm.json/SavingsBondProduct\",\"name\":\"ProductId\"},\"dataType\":\"long\"},{\"type\":\"Existing\",\"name\":\"MaximumPurchasesInOneCalendarYearAmount\",\"attributeReference\":{\"entity\":\"SavingsBondProduct.cdm.json/SavingsBondProduct\",\"name\":\"MaximumPurchasesInOneCalendarYearAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"MinimumPurchaseAmount\",\"attributeReference\":{\"entity\":\"SavingsBondProduct.cdm.json/SavingsBondProduct\",\"name\":\"MinimumPurchaseAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"FaceValueAmount\",\"attributeReference\":{\"entity\":\"SavingsBondProduct.cdm.json/SavingsBondProduct\",\"name\":\"FaceValueAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"DiscountValueAmount\",\"attributeReference\":{\"entity\":\"SavingsBondProduct.cdm.json/SavingsBondProduct\",\"name\":\"DiscountValueAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"SavingsBondEligibilityToPurchaseRequirementsStatement\",\"attributeReference\":{\"entity\":\"SavingsBondProduct.cdm.json/SavingsBondProduct\",\"name\":\"SavingsBondEligibilityToPurchaseRequirementsStatement\"},\"dataType\":\"string\",\"dataTypeLength\":2048},{\"type\":\"Existing\",\"name\":\"EarlyRedemptionPenaltyStatement\",\"attributeReference\":{\"entity\":\"SavingsBondProduct.cdm.json/SavingsBondProduct\",\"name\":\"EarlyRedemptionPenaltyStatement\"},\"dataType\":\"string\",\"dataTypeLength\":2048},{\"type\":\"Existing\",\"name\":\"SavingsBondTypeId\",\"attributeReference\":{\"entity\":\"SavingsBondProduct.cdm.json/SavingsBondProduct\",\"name\":\"SavingsBondTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"FormOfIssueId\",\"attributeReference\":{\"entity\":\"SavingsBondProduct.cdm.json/SavingsBondProduct\",\"name\":\"FormOfIssueId\"},\"dataType\":\"integer\"}]}}}",
+			"Description": "A savings bond is a registered, non-callable, non-transferable bond issued by a government, and backed by its full faith and credit. Savings bonds differ from other Treasury securities in several ways. Savings bonds are non-marketable, meaning that they cannot be bought and sold after they are purchased from the government; therefore, there is no secondary market for savings bonds. The tax benefits associated with savings bonds are significant. Like all treasury securities, they are exempt from state and local taxes, but in the specific case of savings bonds, all federal taxes may be deferred until the bond is redeemed. Therefore, even though interest will accrue, no taxes will be due until that money can be accessed. Additionally, if the money received at redemption is used to pay tuition expenses for the holder, a spouse or a dependent in the same year, the interest earned may be exempt from federal taxes as well.",
+			"DisplayFolderInfo": "{\"name\":\"Product\",\"colorCode\":\"#0E3D73\"}",
+			"PrimaryKeys": "ProductId",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

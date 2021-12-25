@@ -1,0 +1,26 @@
+{
+	"name": "relationship-drbrujbrqt",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-drbrujbrqt",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Asset",
+		"ToTableName": "AssetSalvageValue",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "AssetId",
+				"ToColumnName": "AssetId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Asset.cdm.json/Asset\",\"toEntity\":\"AssetSalvageValue.cdm.json/AssetSalvageValue\",\"joinPairs\":[{\"fromAttribute\":\"AssetId\",\"toAttribute\":\"AssetId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

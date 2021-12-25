@@ -1,0 +1,26 @@
+{
+	"name": "relationship-shqkhmuuah",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-shqkhmuuah",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "ChargeType",
+		"ToTableName": "Charge",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ChargeTypeId",
+				"ToColumnName": "ChargeTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"ChargeType.cdm.json/ChargeType\",\"toEntity\":\"Charge.cdm.json/Charge\",\"joinPairs\":[{\"fromAttribute\":\"ChargeTypeId\",\"toAttribute\":\"ChargeTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

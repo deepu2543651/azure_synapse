@@ -1,0 +1,145 @@
+{
+	"name": "ServiceRequestStatus",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "ServiceRequestStatus",
+		"Description": "The status of the associated Service Request.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ServiceRequestId",
+					"Description": "The unique identifier of a Service Request.",
+					"BaseAttributeReference": {
+						"Entity": "ServiceRequestStatus.cdm.json/ServiceRequestStatus",
+						"Name": "ServiceRequestId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PeriodStartTimestamp",
+					"Description": "The period start timestamp that the associated status is effective or valid.",
+					"BaseAttributeReference": {
+						"Entity": "ServiceRequestStatus.cdm.json/ServiceRequestStatus",
+						"Name": "PeriodStartTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "PeriodEndTimestamp",
+					"Description": "The period end timestamp that the associated status is effective or valid.",
+					"BaseAttributeReference": {
+						"Entity": "ServiceRequestStatus.cdm.json/ServiceRequestStatus",
+						"Name": "PeriodEndTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "ServiceRequestStatusTypeId",
+					"Description": "The unique identifier of a Service Request Status Type.",
+					"BaseAttributeReference": {
+						"Entity": "ServiceRequestStatus.cdm.json/ServiceRequestStatus",
+						"Name": "ServiceRequestStatusTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ServiceRequestStatusNote",
+					"Description": "A note, comment or additional information regarding the Service Request Status.",
+					"BaseAttributeReference": {
+						"Entity": "ServiceRequestStatus.cdm.json/ServiceRequestStatus",
+						"Name": "ServiceRequestStatusNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/ServiceRequestStatus",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/ServiceRequestStatus",
+				"Properties": {
+					"LinkedServiceName": "wspc-dpu-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ServiceRequestId\":{\"entity\":\"ServiceRequestStatus.cdm.json/ServiceRequestStatus\",\"name\":\"ServiceRequestId\"},\"PeriodStartTimestamp\":{\"entity\":\"ServiceRequestStatus.cdm.json/ServiceRequestStatus\",\"name\":\"PeriodStartTimestamp\"},\"PeriodEndTimestamp\":{\"entity\":\"ServiceRequestStatus.cdm.json/ServiceRequestStatus\",\"name\":\"PeriodEndTimestamp\"},\"ServiceRequestStatusTypeId\":{\"entity\":\"ServiceRequestStatus.cdm.json/ServiceRequestStatus\",\"name\":\"ServiceRequestStatusTypeId\"},\"ServiceRequestStatusNote\":{\"entity\":\"ServiceRequestStatus.cdm.json/ServiceRequestStatus\",\"name\":\"ServiceRequestStatusNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"ServiceRequestStatus\",\"path\":\"ServiceRequestStatus.cdm.json/ServiceRequestStatus\"},\"description\":\"The status of the associated Service Request.\",\"primaryKey\":[\"ServiceRequestId\",\"PeriodStartTimestamp\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"ServiceRequestId\",\"attributeReference\":{\"entity\":\"ServiceRequestStatus.cdm.json/ServiceRequestStatus\",\"name\":\"ServiceRequestId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"PeriodStartTimestamp\",\"attributeReference\":{\"entity\":\"ServiceRequestStatus.cdm.json/ServiceRequestStatus\",\"name\":\"PeriodStartTimestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"PeriodEndTimestamp\",\"attributeReference\":{\"entity\":\"ServiceRequestStatus.cdm.json/ServiceRequestStatus\",\"name\":\"PeriodEndTimestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"ServiceRequestStatusTypeId\",\"attributeReference\":{\"entity\":\"ServiceRequestStatus.cdm.json/ServiceRequestStatus\",\"name\":\"ServiceRequestStatusTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ServiceRequestStatusNote\",\"attributeReference\":{\"entity\":\"ServiceRequestStatus.cdm.json/ServiceRequestStatus\",\"name\":\"ServiceRequestStatusNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024}]}}}",
+			"Description": "The status of the associated Service Request.",
+			"DisplayFolderInfo": "{\"name\":\"Customer Service & Contact Management\",\"colorCode\":\"#Ef6950\"}",
+			"PrimaryKeys": "ServiceRequestId,PeriodStartTimestamp",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

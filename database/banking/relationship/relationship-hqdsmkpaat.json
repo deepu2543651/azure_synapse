@@ -1,0 +1,26 @@
+{
+	"name": "relationship-hqdsmkpaat",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-hqdsmkpaat",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "CommercialLoanType",
+		"ToTableName": "CommercialLoanProduct",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "CommercialLoanTypeId",
+				"ToColumnName": "CommercialLoanTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"CommercialLoanType.cdm.json/CommercialLoanType\",\"toEntity\":\"CommercialLoanProduct.cdm.json/CommercialLoanProduct\",\"joinPairs\":[{\"fromAttribute\":\"CommercialLoanTypeId\",\"toAttribute\":\"CommercialLoanTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

@@ -1,0 +1,26 @@
+{
+	"name": "relationship-oxzfjzhnpp",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-oxzfjzhnpp",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "LockboxServiceTransmissionMethod",
+		"ToTableName": "LockboxProduct",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "LockboxServiceTransmissionMethodId",
+				"ToColumnName": "LockboxServiceTransmissionMethodId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"LockboxServiceTransmissionMethod.cdm.json/LockboxServiceTransmissionMethod\",\"toEntity\":\"LockboxProduct.cdm.json/LockboxProduct\",\"joinPairs\":[{\"fromAttribute\":\"LockboxServiceTransmissionMethodId\",\"toAttribute\":\"LockboxServiceTransmissionMethodId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

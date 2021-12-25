@@ -1,0 +1,26 @@
+{
+	"name": "relationship-bmxumqnmxz",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-bmxumqnmxz",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Household",
+		"ToTableName": "RelatedHousehold",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "HouseholdId",
+				"ToColumnName": "RelatedHouseholdId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Household.cdm.json/Household\",\"toEntity\":\"RelatedHousehold.cdm.json/RelatedHousehold\",\"joinPairs\":[{\"fromAttribute\":\"HouseholdId\",\"toAttribute\":\"RelatedHouseholdId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

@@ -1,0 +1,112 @@
+{
+	"name": "BankGuaranteeIssueMethod",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "BankGuaranteeIssueMethod",
+		"Description": "There are two basic methods that a bank guarantee can be issued: \n\nDIRECT GUARANTEE\nA direct guarantee occurs when the client instructs the bank to issue a guarantee directly in favor of the beneficiary. \n\nINDIRECT GUARANTEE\nWith an indirect guarantee, a second bank is involved. This bank (usually a foreign bank with head office in the beneficiary's country of domicile) is requested by the initiating bank to issue a guarantee in return for the latter's counter-liability and counter-guarantee. In this case, the initiating bank will cover the guaranteeing (foreign) bank against the risk of any losses which it may incur in the event that a claim is made under the guarantee. It formally pledges to pay the amounts claimed under the guarantee upon first demand by the guaranteeing bank.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "BankGuaranteeIssueMethodId",
+					"Description": "The unique identifier of a Bank Guarantee Issue Method.",
+					"BaseAttributeReference": {
+						"Entity": "BankGuaranteeIssueMethod.cdm.json/BankGuaranteeIssueMethod",
+						"Name": "BankGuaranteeIssueMethodId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "BankGuaranteeIssueMethodName",
+					"Description": "The name of a Bank Guarantee Issue Method.",
+					"BaseAttributeReference": {
+						"Entity": "BankGuaranteeIssueMethod.cdm.json/BankGuaranteeIssueMethod",
+						"Name": "BankGuaranteeIssueMethodName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "BankGuaranteeIssueMethodDescription",
+					"Description": "The description of a Bank Guarantee Issue Method.",
+					"BaseAttributeReference": {
+						"Entity": "BankGuaranteeIssueMethod.cdm.json/BankGuaranteeIssueMethod",
+						"Name": "BankGuaranteeIssueMethodDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/BankGuaranteeIssueMethod",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/BankGuaranteeIssueMethod",
+				"Properties": {
+					"LinkedServiceName": "wspc-dpu-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"BankGuaranteeIssueMethodId\":{\"entity\":\"BankGuaranteeIssueMethod.cdm.json/BankGuaranteeIssueMethod\",\"name\":\"BankGuaranteeIssueMethodId\"},\"BankGuaranteeIssueMethodName\":{\"entity\":\"BankGuaranteeIssueMethod.cdm.json/BankGuaranteeIssueMethod\",\"name\":\"BankGuaranteeIssueMethodName\"},\"BankGuaranteeIssueMethodDescription\":{\"entity\":\"BankGuaranteeIssueMethod.cdm.json/BankGuaranteeIssueMethod\",\"name\":\"BankGuaranteeIssueMethodDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"BankGuaranteeIssueMethod\",\"path\":\"BankGuaranteeIssueMethod.cdm.json/BankGuaranteeIssueMethod\"},\"description\":\"There are two basic methods that a bank guarantee can be issued: \\n\\nDIRECT GUARANTEE\\nA direct guarantee occurs when the client instructs the bank to issue a guarantee directly in favor of the beneficiary. \\n\\nINDIRECT GUARANTEE\\nWith an indirect guarantee, a second bank is involved. This bank (usually a foreign bank with head office in the beneficiary's country of domicile) is requested by the initiating bank to issue a guarantee in return for the latter's counter-liability and counter-guarantee. In this case, the initiating bank will cover the guaranteeing (foreign) bank against the risk of any losses which it may incur in the event that a claim is made under the guarantee. It formally pledges to pay the amounts claimed under the guarantee upon first demand by the guaranteeing bank.\",\"primaryKey\":[\"BankGuaranteeIssueMethodId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"BankGuaranteeIssueMethodId\",\"attributeReference\":{\"entity\":\"BankGuaranteeIssueMethod.cdm.json/BankGuaranteeIssueMethod\",\"name\":\"BankGuaranteeIssueMethodId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"BankGuaranteeIssueMethodName\",\"attributeReference\":{\"entity\":\"BankGuaranteeIssueMethod.cdm.json/BankGuaranteeIssueMethod\",\"name\":\"BankGuaranteeIssueMethodName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"BankGuaranteeIssueMethodDescription\",\"attributeReference\":{\"entity\":\"BankGuaranteeIssueMethod.cdm.json/BankGuaranteeIssueMethod\",\"name\":\"BankGuaranteeIssueMethodDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512}]}}}",
+			"Description": "There are two basic methods that a bank guarantee can be issued: \n\nDIRECT GUARANTEE\nA direct guarantee occurs when the client instructs the bank to issue a guarantee directly in favor of the beneficiary. \n\nINDIRECT GUARANTEE\nWith an indirect guarantee, a second bank is involved. This bank (usually a foreign bank with head office in the beneficiary's country of domicile) is requested by the initiating bank to issue a guarantee in return for the latter's counter-liability and counter-guarantee. In this case, the initiating bank will cover the guaranteeing (foreign) bank against the risk of any losses which it may incur in the event that a claim is made under the guarantee. It formally pledges to pay the amounts claimed under the guarantee upon first demand by the guaranteeing bank.",
+			"DisplayFolderInfo": "{\"name\":\"Product\",\"colorCode\":\"#0E3D73\"}",
+			"PrimaryKeys": "BankGuaranteeIssueMethodId",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

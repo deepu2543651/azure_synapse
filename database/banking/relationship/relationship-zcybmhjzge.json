@@ -1,0 +1,26 @@
+{
+	"name": "relationship-zcybmhjzge",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-zcybmhjzge",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "CustomerAsset",
+		"ToTableName": "CustomerAccountFinancedCustomerAsset",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "CustomerAssetId",
+				"ToColumnName": "CustomerAssetId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"CustomerAsset.cdm.json/CustomerAsset\",\"toEntity\":\"CustomerAccountFinancedCustomerAsset.cdm.json/CustomerAccountFinancedCustomerAsset\",\"joinPairs\":[{\"fromAttribute\":\"CustomerAssetId\",\"toAttribute\":\"CustomerAssetId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

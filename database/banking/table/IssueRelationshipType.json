@@ -1,0 +1,112 @@
+{
+	"name": "IssueRelationshipType",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "IssueRelationshipType",
+		"Description": "A classification or categorization of relationships that may exist between Issues.\n\nEx:\n- Common service requests\n- Common organization practices\n- Common services\n- Common Quality Issues\n- Common Production Issues\n- Common Vendor/Supplier Issue\n- Common Inventory Issue",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "IssueRelationshipTypeId",
+					"Description": "The unique identifier of a Issue Relationship Type.",
+					"BaseAttributeReference": {
+						"Entity": "IssueRelationshipType.cdm.json/IssueRelationshipType",
+						"Name": "IssueRelationshipTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "IssueRelationshipTypeName",
+					"Description": "The name of a Issue Relationship Type.",
+					"BaseAttributeReference": {
+						"Entity": "IssueRelationshipType.cdm.json/IssueRelationshipType",
+						"Name": "IssueRelationshipTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "IssueRelationshipTypeDescription",
+					"Description": "The description of a Issue Relationship Type.",
+					"BaseAttributeReference": {
+						"Entity": "IssueRelationshipType.cdm.json/IssueRelationshipType",
+						"Name": "IssueRelationshipTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/IssueRelationshipType",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/IssueRelationshipType",
+				"Properties": {
+					"LinkedServiceName": "wspc-dpu-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"IssueRelationshipTypeId\":{\"entity\":\"IssueRelationshipType.cdm.json/IssueRelationshipType\",\"name\":\"IssueRelationshipTypeId\"},\"IssueRelationshipTypeName\":{\"entity\":\"IssueRelationshipType.cdm.json/IssueRelationshipType\",\"name\":\"IssueRelationshipTypeName\"},\"IssueRelationshipTypeDescription\":{\"entity\":\"IssueRelationshipType.cdm.json/IssueRelationshipType\",\"name\":\"IssueRelationshipTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"IssueRelationshipType\",\"path\":\"IssueRelationshipType.cdm.json/IssueRelationshipType\"},\"description\":\"A classification or categorization of relationships that may exist between Issues.\\n\\nEx:\\n- Common service requests\\n- Common organization practices\\n- Common services\\n- Common Quality Issues\\n- Common Production Issues\\n- Common Vendor/Supplier Issue\\n- Common Inventory Issue\",\"primaryKey\":[\"IssueRelationshipTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"IssueRelationshipTypeId\",\"attributeReference\":{\"entity\":\"IssueRelationshipType.cdm.json/IssueRelationshipType\",\"name\":\"IssueRelationshipTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"IssueRelationshipTypeName\",\"attributeReference\":{\"entity\":\"IssueRelationshipType.cdm.json/IssueRelationshipType\",\"name\":\"IssueRelationshipTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"IssueRelationshipTypeDescription\",\"attributeReference\":{\"entity\":\"IssueRelationshipType.cdm.json/IssueRelationshipType\",\"name\":\"IssueRelationshipTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512}]}}}",
+			"Description": "A classification or categorization of relationships that may exist between Issues.\n\nEx:\n- Common service requests\n- Common organization practices\n- Common services\n- Common Quality Issues\n- Common Production Issues\n- Common Vendor/Supplier Issue\n- Common Inventory Issue",
+			"DisplayFolderInfo": "{\"name\":\"Customer Service & Contact Management\",\"colorCode\":\"#Ef6950\"}",
+			"PrimaryKeys": "IssueRelationshipTypeId",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

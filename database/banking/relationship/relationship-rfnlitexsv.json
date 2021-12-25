@@ -1,0 +1,26 @@
+{
+	"name": "relationship-rfnlitexsv",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-rfnlitexsv",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "MaritalStatus",
+		"ToTableName": "CustomerMaritalStatus",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "MaritalStatusId",
+				"ToColumnName": "MaritalStatusId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"MaritalStatus.cdm.json/MaritalStatus\",\"toEntity\":\"CustomerMaritalStatus.cdm.json/CustomerMaritalStatus\",\"joinPairs\":[{\"fromAttribute\":\"MaritalStatusId\",\"toAttribute\":\"MaritalStatusId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

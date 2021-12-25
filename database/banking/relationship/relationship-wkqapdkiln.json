@@ -1,0 +1,26 @@
+{
+	"name": "relationship-wkqapdkiln",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-wkqapdkiln",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "IndividualCustomer",
+		"ToTableName": "CustomerBehavioralCriteria",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "CustomerId",
+				"ToColumnName": "CustomerId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"IndividualCustomer.cdm.json/IndividualCustomer\",\"toEntity\":\"CustomerBehavioralCriteria.cdm.json/CustomerBehavioralCriteria\",\"joinPairs\":[{\"fromAttribute\":\"CustomerId\",\"toAttribute\":\"CustomerId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

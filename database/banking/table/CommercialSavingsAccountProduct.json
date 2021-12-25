@@ -1,0 +1,218 @@
+{
+	"name": "CommercialSavingsAccountProduct",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "CommercialSavingsAccountProduct",
+		"Description": "Savings accounts are accounts maintained by commercial banks, savings and loan associations, credit unions, building societies and mutual savings banks that pay interest but may not be accessed directly via check.  These accounts let customers set aside a portion of their liquid assets while earning a monetary return.\n\nSome savings accounts require funds to be kept on deposit for a minimum length of time, but most permit unlimited access to funds. \n\nThe account holder may be able to access funds via an ATM or a debit card.\n\nIn the US, Regulation D, 12 CFR 204.2(d)(2)] limits the withdrawals, payments, and transfers that a savings account may perform.  Banks comply with these regulations differently; some will immediately prevent the transfer from happening, while others will allow the transfer to occur but will notify the account holder upon violation of the regulation. \n\nTrue savings accounts do not offer check-writing privileges, although many institutions will call their higher-interest demand accounts or money market accounts \"savings accounts.\"\n\nAll savings accounts offer itemized lists of all financial transactions, traditionally through a passbook, but also through a bank statement.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ProductId",
+					"Description": "The unique identifier of a Product.",
+					"BaseAttributeReference": {
+						"Entity": "CommercialSavingsAccountProduct.cdm.json/CommercialSavingsAccountProduct",
+						"Name": "ProductId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "InterestCompoundingPeriod",
+					"Description": "The period for which interest compounding is calculated for the checking account.",
+					"BaseAttributeReference": {
+						"Entity": "CommercialSavingsAccountProduct.cdm.json/CommercialSavingsAccountProduct",
+						"Name": "InterestCompoundingPeriod"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 3,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "InterestPaidPeriod",
+					"Description": "The period of days upon which interest is calculated and paid.",
+					"BaseAttributeReference": {
+						"Entity": "CommercialSavingsAccountProduct.cdm.json/CommercialSavingsAccountProduct",
+						"Name": "InterestPaidPeriod"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "GuaranteedMinimumInterestRatePercentage",
+					"Description": "The lowest minimum interest rate that will be paid on the savings account.",
+					"BaseAttributeReference": {
+						"Entity": "CommercialSavingsAccountProduct.cdm.json/CommercialSavingsAccountProduct",
+						"Name": "GuaranteedMinimumInterestRatePercentage"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "MinimumAccountOpeningAmountRequired",
+					"Description": "The minimum amount required to open a savings account.",
+					"BaseAttributeReference": {
+						"Entity": "CommercialSavingsAccountProduct.cdm.json/CommercialSavingsAccountProduct",
+						"Name": "MinimumAccountOpeningAmountRequired"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "MinimumDailyBalanceRequiredAmount",
+					"Description": "The minimum daily balance required to keep the savings account open without additional penalty fees.",
+					"BaseAttributeReference": {
+						"Entity": "CommercialSavingsAccountProduct.cdm.json/CommercialSavingsAccountProduct",
+						"Name": "MinimumDailyBalanceRequiredAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "MinimumBalanceRequiredToEarnInterest",
+					"Description": "The minimum amount required in order for the savings account to earn interest.",
+					"BaseAttributeReference": {
+						"Entity": "CommercialSavingsAccountProduct.cdm.json/CommercialSavingsAccountProduct",
+						"Name": "MinimumBalanceRequiredToEarnInterest"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "MinimumAutomaticTransferPerTransactionAmount",
+					"Description": "The minimum amount that must be transferred for each automatic transfer.",
+					"BaseAttributeReference": {
+						"Entity": "CommercialSavingsAccountProduct.cdm.json/CommercialSavingsAccountProduct",
+						"Name": "MinimumAutomaticTransferPerTransactionAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "CommercialSavingsAccountTypeId",
+					"Description": "The unique identifier of a Commercial Savings Account Type.",
+					"BaseAttributeReference": {
+						"Entity": "CommercialSavingsAccountProduct.cdm.json/CommercialSavingsAccountProduct",
+						"Name": "CommercialSavingsAccountTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/CommercialSavingsAccountProduct",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/CommercialSavingsAccountProduct",
+				"Properties": {
+					"LinkedServiceName": "wspc-dpu-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ProductId\":{\"entity\":\"CommercialSavingsAccountProduct.cdm.json/CommercialSavingsAccountProduct\",\"name\":\"ProductId\"},\"InterestCompoundingPeriod\":{\"entity\":\"CommercialSavingsAccountProduct.cdm.json/CommercialSavingsAccountProduct\",\"name\":\"InterestCompoundingPeriod\"},\"InterestPaidPeriod\":{\"entity\":\"CommercialSavingsAccountProduct.cdm.json/CommercialSavingsAccountProduct\",\"name\":\"InterestPaidPeriod\"},\"GuaranteedMinimumInterestRatePercentage\":{\"entity\":\"CommercialSavingsAccountProduct.cdm.json/CommercialSavingsAccountProduct\",\"name\":\"GuaranteedMinimumInterestRatePercentage\"},\"MinimumAccountOpeningAmountRequired\":{\"entity\":\"CommercialSavingsAccountProduct.cdm.json/CommercialSavingsAccountProduct\",\"name\":\"MinimumAccountOpeningAmountRequired\"},\"MinimumDailyBalanceRequiredAmount\":{\"entity\":\"CommercialSavingsAccountProduct.cdm.json/CommercialSavingsAccountProduct\",\"name\":\"MinimumDailyBalanceRequiredAmount\"},\"MinimumBalanceRequiredToEarnInterest\":{\"entity\":\"CommercialSavingsAccountProduct.cdm.json/CommercialSavingsAccountProduct\",\"name\":\"MinimumBalanceRequiredToEarnInterest\"},\"MinimumAutomaticTransferPerTransactionAmount\":{\"entity\":\"CommercialSavingsAccountProduct.cdm.json/CommercialSavingsAccountProduct\",\"name\":\"MinimumAutomaticTransferPerTransactionAmount\"},\"CommercialSavingsAccountTypeId\":{\"entity\":\"CommercialSavingsAccountProduct.cdm.json/CommercialSavingsAccountProduct\",\"name\":\"CommercialSavingsAccountTypeId\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"CommercialSavingsAccountProduct\",\"path\":\"CommercialSavingsAccountProduct.cdm.json/CommercialSavingsAccountProduct\"},\"description\":\"Savings accounts are accounts maintained by commercial banks, savings and loan associations, credit unions, building societies and mutual savings banks that pay interest but may not be accessed directly via check.  These accounts let customers set aside a portion of their liquid assets while earning a monetary return.\\n\\nSome savings accounts require funds to be kept on deposit for a minimum length of time, but most permit unlimited access to funds. \\n\\nThe account holder may be able to access funds via an ATM or a debit card.\\n\\nIn the US, Regulation D, 12 CFR 204.2(d)(2)] limits the withdrawals, payments, and transfers that a savings account may perform.  Banks comply with these regulations differently; some will immediately prevent the transfer from happening, while others will allow the transfer to occur but will notify the account holder upon violation of the regulation. \\n\\nTrue savings accounts do not offer check-writing privileges, although many institutions will call their higher-interest demand accounts or money market accounts \\\"savings accounts.\\\"\\n\\nAll savings accounts offer itemized lists of all financial transactions, traditionally through a passbook, but also through a bank statement.\",\"primaryKey\":[\"ProductId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"ProductId\",\"attributeReference\":{\"entity\":\"CommercialSavingsAccountProduct.cdm.json/CommercialSavingsAccountProduct\",\"name\":\"ProductId\"},\"dataType\":\"long\"},{\"type\":\"Existing\",\"name\":\"InterestCompoundingPeriod\",\"attributeReference\":{\"entity\":\"CommercialSavingsAccountProduct.cdm.json/CommercialSavingsAccountProduct\",\"name\":\"InterestCompoundingPeriod\"},\"dataType\":\"decimal\",\"dataTypeLength\":3,\"scale\":0},{\"type\":\"Existing\",\"name\":\"InterestPaidPeriod\",\"attributeReference\":{\"entity\":\"CommercialSavingsAccountProduct.cdm.json/CommercialSavingsAccountProduct\",\"name\":\"InterestPaidPeriod\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"GuaranteedMinimumInterestRatePercentage\",\"attributeReference\":{\"entity\":\"CommercialSavingsAccountProduct.cdm.json/CommercialSavingsAccountProduct\",\"name\":\"GuaranteedMinimumInterestRatePercentage\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":8},{\"type\":\"Existing\",\"name\":\"MinimumAccountOpeningAmountRequired\",\"attributeReference\":{\"entity\":\"CommercialSavingsAccountProduct.cdm.json/CommercialSavingsAccountProduct\",\"name\":\"MinimumAccountOpeningAmountRequired\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"MinimumDailyBalanceRequiredAmount\",\"attributeReference\":{\"entity\":\"CommercialSavingsAccountProduct.cdm.json/CommercialSavingsAccountProduct\",\"name\":\"MinimumDailyBalanceRequiredAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"MinimumBalanceRequiredToEarnInterest\",\"attributeReference\":{\"entity\":\"CommercialSavingsAccountProduct.cdm.json/CommercialSavingsAccountProduct\",\"name\":\"MinimumBalanceRequiredToEarnInterest\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"MinimumAutomaticTransferPerTransactionAmount\",\"attributeReference\":{\"entity\":\"CommercialSavingsAccountProduct.cdm.json/CommercialSavingsAccountProduct\",\"name\":\"MinimumAutomaticTransferPerTransactionAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"CommercialSavingsAccountTypeId\",\"attributeReference\":{\"entity\":\"CommercialSavingsAccountProduct.cdm.json/CommercialSavingsAccountProduct\",\"name\":\"CommercialSavingsAccountTypeId\"},\"dataType\":\"integer\"}]}}}",
+			"Description": "Savings accounts are accounts maintained by commercial banks, savings and loan associations, credit unions, building societies and mutual savings banks that pay interest but may not be accessed directly via check.  These accounts let customers set aside a portion of their liquid assets while earning a monetary return.\n\nSome savings accounts require funds to be kept on deposit for a minimum length of time, but most permit unlimited access to funds. \n\nThe account holder may be able to access funds via an ATM or a debit card.\n\nIn the US, Regulation D, 12 CFR 204.2(d)(2)] limits the withdrawals, payments, and transfers that a savings account may perform.  Banks comply with these regulations differently; some will immediately prevent the transfer from happening, while others will allow the transfer to occur but will notify the account holder upon violation of the regulation. \n\nTrue savings accounts do not offer check-writing privileges, although many institutions will call their higher-interest demand accounts or money market accounts \"savings accounts.\"\n\nAll savings accounts offer itemized lists of all financial transactions, traditionally through a passbook, but also through a bank statement.",
+			"DisplayFolderInfo": "{\"name\":\"Product\",\"colorCode\":\"#0E3D73\"}",
+			"PrimaryKeys": "ProductId",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

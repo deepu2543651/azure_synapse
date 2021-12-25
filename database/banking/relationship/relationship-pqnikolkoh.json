@@ -1,0 +1,26 @@
+{
+	"name": "relationship-pqnikolkoh",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-pqnikolkoh",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "TransactionAccountRelationshipType",
+		"ToTableName": "TransactionRelatedCustomerAccount",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "TransactionAccountRelationshipTypeId",
+				"ToColumnName": "TransactionAccountRelationshipTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"TransactionAccountRelationshipType.cdm.json/TransactionAccountRelationshipType\",\"toEntity\":\"TransactionRelatedCustomerAccount.cdm.json/TransactionRelatedCustomerAccount\",\"joinPairs\":[{\"fromAttribute\":\"TransactionAccountRelationshipTypeId\",\"toAttribute\":\"TransactionAccountRelationshipTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

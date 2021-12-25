@@ -1,0 +1,26 @@
+{
+	"name": "relationship-yoovbqeril",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-yoovbqeril",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "BillingCycle",
+		"ToTableName": "ProductOption",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "BillingCycleId",
+				"ToColumnName": "BillingCycleId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"BillingCycle.cdm.json/BillingCycle\",\"toEntity\":\"ProductOption.cdm.json/ProductOption\",\"joinPairs\":[{\"fromAttribute\":\"BillingCycleId\",\"toAttribute\":\"BillingCycleId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

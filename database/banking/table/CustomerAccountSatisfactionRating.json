@@ -1,0 +1,161 @@
+{
+	"name": "CustomerAccountSatisfactionRating",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "CustomerAccountSatisfactionRating",
+		"Description": "The overall satisfaction rating determined for the associated Customer Account for the period in terms of the associated Rating Criteria with the associated Satisfaction Rating applied.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "CustomerAccountId",
+					"Description": "The unique identifier of a Customer Account.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountSatisfactionRating.cdm.json/CustomerAccountSatisfactionRating",
+						"Name": "CustomerAccountId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "RatingCriteriaId",
+					"Description": "The unique identifier of a Rating Criteria.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountSatisfactionRating.cdm.json/CustomerAccountSatisfactionRating",
+						"Name": "RatingCriteriaId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PeriodStartDate",
+					"Description": "The period start date for which the associated Satisfaction Rating is provided.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountSatisfactionRating.cdm.json/CustomerAccountSatisfactionRating",
+						"Name": "PeriodStartDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "PeriodEndDate",
+					"Description": "The period end date for which the associated Satisfaction Rating is provided.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountSatisfactionRating.cdm.json/CustomerAccountSatisfactionRating",
+						"Name": "PeriodEndDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "SatisfactionRatingId",
+					"Description": "The unique identifier of a Satisfaction Rating.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountSatisfactionRating.cdm.json/CustomerAccountSatisfactionRating",
+						"Name": "SatisfactionRatingId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "CustomerAccountSatisfactionRatingNote",
+					"Description": "A note, comment or additional information regarding the Customer Account Satisfaction Rating.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountSatisfactionRating.cdm.json/CustomerAccountSatisfactionRating",
+						"Name": "CustomerAccountSatisfactionRatingNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/CustomerAccountSatisfactionRating",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/CustomerAccountSatisfactionRating",
+				"Properties": {
+					"LinkedServiceName": "wspc-dpu-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"CustomerAccountId\":{\"entity\":\"CustomerAccountSatisfactionRating.cdm.json/CustomerAccountSatisfactionRating\",\"name\":\"CustomerAccountId\"},\"RatingCriteriaId\":{\"entity\":\"CustomerAccountSatisfactionRating.cdm.json/CustomerAccountSatisfactionRating\",\"name\":\"RatingCriteriaId\"},\"PeriodStartDate\":{\"entity\":\"CustomerAccountSatisfactionRating.cdm.json/CustomerAccountSatisfactionRating\",\"name\":\"PeriodStartDate\"},\"PeriodEndDate\":{\"entity\":\"CustomerAccountSatisfactionRating.cdm.json/CustomerAccountSatisfactionRating\",\"name\":\"PeriodEndDate\"},\"SatisfactionRatingId\":{\"entity\":\"CustomerAccountSatisfactionRating.cdm.json/CustomerAccountSatisfactionRating\",\"name\":\"SatisfactionRatingId\"},\"CustomerAccountSatisfactionRatingNote\":{\"entity\":\"CustomerAccountSatisfactionRating.cdm.json/CustomerAccountSatisfactionRating\",\"name\":\"CustomerAccountSatisfactionRatingNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"CustomerAccountSatisfactionRating\",\"path\":\"CustomerAccountSatisfactionRating.cdm.json/CustomerAccountSatisfactionRating\"},\"description\":\"The overall satisfaction rating determined for the associated Customer Account for the period in terms of the associated Rating Criteria with the associated Satisfaction Rating applied.\",\"primaryKey\":[\"CustomerAccountId\",\"RatingCriteriaId\",\"PeriodStartDate\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"CustomerAccountId\",\"attributeReference\":{\"entity\":\"CustomerAccountSatisfactionRating.cdm.json/CustomerAccountSatisfactionRating\",\"name\":\"CustomerAccountId\"},\"dataType\":\"long\"},{\"type\":\"Existing\",\"name\":\"RatingCriteriaId\",\"attributeReference\":{\"entity\":\"CustomerAccountSatisfactionRating.cdm.json/CustomerAccountSatisfactionRating\",\"name\":\"RatingCriteriaId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"PeriodStartDate\",\"attributeReference\":{\"entity\":\"CustomerAccountSatisfactionRating.cdm.json/CustomerAccountSatisfactionRating\",\"name\":\"PeriodStartDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\"},{\"type\":\"Existing\",\"name\":\"PeriodEndDate\",\"attributeReference\":{\"entity\":\"CustomerAccountSatisfactionRating.cdm.json/CustomerAccountSatisfactionRating\",\"name\":\"PeriodEndDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\"},{\"type\":\"Existing\",\"name\":\"SatisfactionRatingId\",\"attributeReference\":{\"entity\":\"CustomerAccountSatisfactionRating.cdm.json/CustomerAccountSatisfactionRating\",\"name\":\"SatisfactionRatingId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"CustomerAccountSatisfactionRatingNote\",\"attributeReference\":{\"entity\":\"CustomerAccountSatisfactionRating.cdm.json/CustomerAccountSatisfactionRating\",\"name\":\"CustomerAccountSatisfactionRatingNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024}]}}}",
+			"Description": "The overall satisfaction rating determined for the associated Customer Account for the period in terms of the associated Rating Criteria with the associated Satisfaction Rating applied.",
+			"DisplayFolderInfo": "{\"name\":\"Customer Account\",\"colorCode\":\"#E3008C\"}",
+			"PrimaryKeys": "CustomerAccountId,RatingCriteriaId,PeriodStartDate",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

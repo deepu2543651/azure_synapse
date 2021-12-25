@@ -1,0 +1,26 @@
+{
+	"name": "relationship-yqebhmahrb",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-yqebhmahrb",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "BankingProduct",
+		"ToTableName": "CommercialPaper",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ProductId",
+				"ToColumnName": "CommercialPaperId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"BankingProduct.cdm.json/BankingProduct\",\"toEntity\":\"CommercialPaper.cdm.json/CommercialPaper\",\"joinPairs\":[{\"fromAttribute\":\"ProductId\",\"toAttribute\":\"CommercialPaperId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

@@ -1,0 +1,177 @@
+{
+	"name": "AssetType",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "AssetType",
+		"Description": "A classification of Asset based upon common characteristics, attributes, or functions.\n\nEx:\n- Land\n- Building\n- Lease\n- Intellectual Property\n- Right\n- Software\n- Furniture\n- Computer\n- Machinery\n- Vehicle\n- Investment Property\n- Residential Property\n- Real Property\n- Cash\n- Equities\n- Treasury bonds",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "AssetTypeId",
+					"Description": "The unique identifier of an Asset Type.",
+					"BaseAttributeReference": {
+						"Entity": "AssetType.cdm.json/AssetType",
+						"Name": "AssetTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "AssetTypeName",
+					"Description": "The name of an Asset Type.",
+					"BaseAttributeReference": {
+						"Entity": "AssetType.cdm.json/AssetType",
+						"Name": "AssetTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "AssetTypeDescription",
+					"Description": "The description of an Asset Type.",
+					"BaseAttributeReference": {
+						"Entity": "AssetType.cdm.json/AssetType",
+						"Name": "AssetTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "GlobalReturnableAssetIdentifier",
+					"Description": "The Global Returnable Asset Identifier (GRAI) was developed by GS1 to be used to identify assets by type. It can also be used to uniquely identify assets by including the serial number. \n\nThe GRAI is used to identify Returnable Transport Items (RTI) such as pallets, roll container, crates. The GRAI identifies the type of returnable asset.",
+					"BaseAttributeReference": {
+						"Entity": "AssetType.cdm.json/AssetType",
+						"Name": "GlobalReturnableAssetIdentifier"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 29,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "AssetTypeEmissionFactorUnits",
+					"Description": "The asset type emission factor units.",
+					"BaseAttributeReference": {
+						"Entity": "AssetType.cdm.json/AssetType",
+						"Name": "AssetTypeEmissionFactorUnits"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "AssetTypeEmissionFactorUomId",
+					"Description": "The asset type emission factor UOM.",
+					"BaseAttributeReference": {
+						"Entity": "AssetType.cdm.json/AssetType",
+						"Name": "AssetTypeEmissionFactorUomId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "MaintenancePeriodId",
+					"Description": "The unique identifier of a Maintenance Period.",
+					"BaseAttributeReference": {
+						"Entity": "AssetType.cdm.json/AssetType",
+						"Name": "MaintenancePeriodId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/AssetType",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/AssetType",
+				"Properties": {
+					"LinkedServiceName": "wspc-dpu-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"AssetTypeId\":{\"entity\":\"AssetType.cdm.json/AssetType\",\"name\":\"AssetTypeId\"},\"AssetTypeName\":{\"entity\":\"AssetType.cdm.json/AssetType\",\"name\":\"AssetTypeName\"},\"AssetTypeDescription\":{\"entity\":\"AssetType.cdm.json/AssetType\",\"name\":\"AssetTypeDescription\"},\"GlobalReturnableAssetIdentifier\":{\"entity\":\"AssetType.cdm.json/AssetType\",\"name\":\"GlobalReturnableAssetIdentifier\"},\"AssetTypeEmissionFactorUnits\":{\"entity\":\"AssetType.cdm.json/AssetType\",\"name\":\"AssetTypeEmissionFactorUnits\"},\"AssetTypeEmissionFactorUomId\":{\"entity\":\"AssetType.cdm.json/AssetType\",\"name\":\"AssetTypeEmissionFactorUomId\"},\"MaintenancePeriodId\":{\"entity\":\"AssetType.cdm.json/AssetType\",\"name\":\"MaintenancePeriodId\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"AssetType\",\"path\":\"AssetType.cdm.json/AssetType\"},\"description\":\"A classification of Asset based upon common characteristics, attributes, or functions.\\n\\nEx:\\n- Land\\n- Building\\n- Lease\\n- Intellectual Property\\n- Right\\n- Software\\n- Furniture\\n- Computer\\n- Machinery\\n- Vehicle\\n- Investment Property\\n- Residential Property\\n- Real Property\\n- Cash\\n- Equities\\n- Treasury bonds\",\"primaryKey\":[\"AssetTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"AssetTypeId\",\"attributeReference\":{\"entity\":\"AssetType.cdm.json/AssetType\",\"name\":\"AssetTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"AssetTypeName\",\"attributeReference\":{\"entity\":\"AssetType.cdm.json/AssetType\",\"name\":\"AssetTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"AssetTypeDescription\",\"attributeReference\":{\"entity\":\"AssetType.cdm.json/AssetType\",\"name\":\"AssetTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512},{\"type\":\"Existing\",\"name\":\"GlobalReturnableAssetIdentifier\",\"attributeReference\":{\"entity\":\"AssetType.cdm.json/AssetType\",\"name\":\"GlobalReturnableAssetIdentifier\"},\"dataType\":\"string\",\"dataTypeLength\":29},{\"type\":\"Existing\",\"name\":\"AssetTypeEmissionFactorUnits\",\"attributeReference\":{\"entity\":\"AssetType.cdm.json/AssetType\",\"name\":\"AssetTypeEmissionFactorUnits\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"AssetTypeEmissionFactorUomId\",\"attributeReference\":{\"entity\":\"AssetType.cdm.json/AssetType\",\"name\":\"AssetTypeEmissionFactorUomId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"MaintenancePeriodId\",\"attributeReference\":{\"entity\":\"AssetType.cdm.json/AssetType\",\"name\":\"MaintenancePeriodId\"},\"dataType\":\"integer\"}]}}}",
+			"Description": "A classification of Asset based upon common characteristics, attributes, or functions.\n\nEx:\n- Land\n- Building\n- Lease\n- Intellectual Property\n- Right\n- Software\n- Furniture\n- Computer\n- Machinery\n- Vehicle\n- Investment Property\n- Residential Property\n- Real Property\n- Cash\n- Equities\n- Treasury bonds",
+			"DisplayFolderInfo": "{\"name\":\"Property & Equipment\",\"colorCode\":\"#7D0F6C\"}",
+			"PrimaryKeys": "AssetTypeId",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

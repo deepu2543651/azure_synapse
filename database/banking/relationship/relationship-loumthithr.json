@@ -1,0 +1,26 @@
+{
+	"name": "relationship-loumthithr",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-loumthithr",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Interest",
+		"ToTableName": "CustomerInterest",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "InterestId",
+				"ToColumnName": "InterestId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Interest.cdm.json/Interest\",\"toEntity\":\"CustomerInterest.cdm.json/CustomerInterest\",\"joinPairs\":[{\"fromAttribute\":\"InterestId\",\"toAttribute\":\"InterestId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

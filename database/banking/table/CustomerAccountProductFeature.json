@@ -1,0 +1,161 @@
+{
+	"name": "CustomerAccountProductFeature",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "CustomerAccountProductFeature",
+		"Description": "The product feature associated with the associated Customer Account.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "CustomerAccountId",
+					"Description": "The unique identifier of a Customer Account.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountProductFeature.cdm.json/CustomerAccountProductFeature",
+						"Name": "CustomerAccountId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "ProductId",
+					"Description": "The unique identifier of a Product.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountProductFeature.cdm.json/CustomerAccountProductFeature",
+						"Name": "ProductId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "ProductFeatureTypeId",
+					"Description": "The unique identifier of a Product Feature Type.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountProductFeature.cdm.json/CustomerAccountProductFeature",
+						"Name": "ProductFeatureTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PeriodStartDate",
+					"Description": "The period start date for which the associated feature is applicable to the product.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountProductFeature.cdm.json/CustomerAccountProductFeature",
+						"Name": "PeriodStartDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "PeriodEndDate",
+					"Description": "The period end date for which the associated feature is applicable to the product.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountProductFeature.cdm.json/CustomerAccountProductFeature",
+						"Name": "PeriodEndDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "CustomerAccountProductFeatureNote",
+					"Description": "A note, comment or additional information regarding the customer account product feature.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountProductFeature.cdm.json/CustomerAccountProductFeature",
+						"Name": "CustomerAccountProductFeatureNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/CustomerAccountProductFeature",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/CustomerAccountProductFeature",
+				"Properties": {
+					"LinkedServiceName": "wspc-dpu-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"CustomerAccountId\":{\"entity\":\"CustomerAccountProductFeature.cdm.json/CustomerAccountProductFeature\",\"name\":\"CustomerAccountId\"},\"ProductId\":{\"entity\":\"CustomerAccountProductFeature.cdm.json/CustomerAccountProductFeature\",\"name\":\"ProductId\"},\"ProductFeatureTypeId\":{\"entity\":\"CustomerAccountProductFeature.cdm.json/CustomerAccountProductFeature\",\"name\":\"ProductFeatureTypeId\"},\"PeriodStartDate\":{\"entity\":\"CustomerAccountProductFeature.cdm.json/CustomerAccountProductFeature\",\"name\":\"PeriodStartDate\"},\"PeriodEndDate\":{\"entity\":\"CustomerAccountProductFeature.cdm.json/CustomerAccountProductFeature\",\"name\":\"PeriodEndDate\"},\"CustomerAccountProductFeatureNote\":{\"entity\":\"CustomerAccountProductFeature.cdm.json/CustomerAccountProductFeature\",\"name\":\"CustomerAccountProductFeatureNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"CustomerAccountProductFeature\",\"path\":\"CustomerAccountProductFeature.cdm.json/CustomerAccountProductFeature\"},\"description\":\"The product feature associated with the associated Customer Account.\",\"primaryKey\":[\"CustomerAccountId\",\"ProductId\",\"ProductFeatureTypeId\",\"PeriodStartDate\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"CustomerAccountId\",\"attributeReference\":{\"entity\":\"CustomerAccountProductFeature.cdm.json/CustomerAccountProductFeature\",\"name\":\"CustomerAccountId\"},\"dataType\":\"long\"},{\"type\":\"Existing\",\"name\":\"ProductId\",\"attributeReference\":{\"entity\":\"CustomerAccountProductFeature.cdm.json/CustomerAccountProductFeature\",\"name\":\"ProductId\"},\"dataType\":\"long\"},{\"type\":\"Existing\",\"name\":\"ProductFeatureTypeId\",\"attributeReference\":{\"entity\":\"CustomerAccountProductFeature.cdm.json/CustomerAccountProductFeature\",\"name\":\"ProductFeatureTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"PeriodStartDate\",\"attributeReference\":{\"entity\":\"CustomerAccountProductFeature.cdm.json/CustomerAccountProductFeature\",\"name\":\"PeriodStartDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\"},{\"type\":\"Existing\",\"name\":\"PeriodEndDate\",\"attributeReference\":{\"entity\":\"CustomerAccountProductFeature.cdm.json/CustomerAccountProductFeature\",\"name\":\"PeriodEndDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\"},{\"type\":\"Existing\",\"name\":\"CustomerAccountProductFeatureNote\",\"attributeReference\":{\"entity\":\"CustomerAccountProductFeature.cdm.json/CustomerAccountProductFeature\",\"name\":\"CustomerAccountProductFeatureNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024}]}}}",
+			"Description": "The product feature associated with the associated Customer Account.",
+			"DisplayFolderInfo": "{\"name\":\"Customer Account\",\"colorCode\":\"#E3008C\"}",
+			"PrimaryKeys": "CustomerAccountId,ProductId,ProductFeatureTypeId,PeriodStartDate",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

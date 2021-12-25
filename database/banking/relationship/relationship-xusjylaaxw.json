@@ -1,0 +1,26 @@
+{
+	"name": "relationship-xusjylaaxw",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-xusjylaaxw",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Preference",
+		"ToTableName": "CustomerEmail",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "PreferenceId",
+				"ToColumnName": "PreferenceId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Preference.cdm.json/Preference\",\"toEntity\":\"CustomerEmail.cdm.json/CustomerEmail\",\"joinPairs\":[{\"fromAttribute\":\"PreferenceId\",\"toAttribute\":\"PreferenceId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

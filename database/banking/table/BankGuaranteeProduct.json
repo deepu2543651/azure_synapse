@@ -1,0 +1,430 @@
+{
+	"name": "BankGuaranteeProduct",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "BankGuaranteeProduct",
+		"Description": "Unilateral contract between a bank as guarantor and a beneficiary in which the bank commits itself versus the beneficiary to pay a certain sum if a third party fails to perform or if any other specified event fails to take place, resulting in a default. \n\nBank guarantees are often used as a generic term for security instruments such as guarantees, sureties, standbys and confirmed instruction to pay. \n\nGuarantees are not negotiable as they do not have the status of a security such as a share or a bond. A guarantee is a contingent and not a book-entry claim. \n\nA bank guarantee is a written obligation, or guarantee, from an issuing bank promising to pay a set sum of money to a beneficiary who is doing business with a client of the bank's, in the event that the bank's client defaults on the payment contractually promised to the beneficiary.\n\nA bank guarantee and a letter of credit are similar in many ways.   However, they are different in two ways. Letters of credit ensure that a transaction proceeds as planned, while bank guarantees reduce the loss if the transaction doesn't go as planned.\n\nA letter of credit is an obligation taken on by a bank to make a payment when pre-specified criteria are met. When these terms are completed and confirmed, the bank will transfer the funds. This ensures the payment will be made as long as the services are performed.\n\nA bank guarantee guarantees a sum of money to a beneficiary. The sum is only paid if the opposing party does not fulfill the stipulated obligations under the contract. This can be used to essentially insure a buyer or seller from loss or damage due to nonperformance by the other party in a contract.\n\nA bank guarantee might be used when a buyer obtains goods from a seller then runs into cash flow difficulties and can't pay the seller. The bank guarantee would pay an agreed-upon sum to the seller. Similarly, if the supplier was unable to provide the goods, the bank would then pay the purchaser the agreed-upon sum. Essentially, the bank guarantee acts as a safety measure for the opposing party in the transaction.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ProductId",
+					"Description": "The unique identifier of a Product.",
+					"BaseAttributeReference": {
+						"Entity": "BankGuaranteeProduct.cdm.json/BankGuaranteeProduct",
+						"Name": "ProductId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "TermsAndConditionsStatement",
+					"Description": "A statement regarding the underlying terms and conditions supporting the bank guarantee.\n\nEx:\n\"...guarantee will be automatically reduced by 2 per cent of the invoice value with each part-shipment made by supplier when evidence of delivery is deemed to have been provided once and supplier has submitted the proper documents to the band under the documentary credit #...\"",
+					"BaseAttributeReference": {
+						"Entity": "BankGuaranteeProduct.cdm.json/BankGuaranteeProduct",
+						"Name": "TermsAndConditionsStatement"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 2048,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "GuaranteeTerm",
+					"Description": "The term for which the guarantee is in effect.",
+					"BaseAttributeReference": {
+						"Entity": "BankGuaranteeProduct.cdm.json/BankGuaranteeProduct",
+						"Name": "GuaranteeTerm"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "GuaranteeTermPeriod",
+					"Description": "The period of the corresponding guarantee term.\n\nEx:\n\n- Days\n- Weeks\n- Months\n- Years\n- Expiry of loan + 15 days",
+					"BaseAttributeReference": {
+						"Entity": "BankGuaranteeProduct.cdm.json/BankGuaranteeProduct",
+						"Name": "GuaranteeTermPeriod"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 3,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "ExpiryDate",
+					"Description": "The date upon which the bank guarantee expires.",
+					"BaseAttributeReference": {
+						"Entity": "BankGuaranteeProduct.cdm.json/BankGuaranteeProduct",
+						"Name": "ExpiryDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "GuaranteePercentageOfContract",
+					"Description": "The percentage amount of the overall contract that is used to calculate the guarantee amount.",
+					"BaseAttributeReference": {
+						"Entity": "BankGuaranteeProduct.cdm.json/BankGuaranteeProduct",
+						"Name": "GuaranteePercentageOfContract"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "GuaranteeAmount",
+					"Description": "The amount of the bid bond or guarantee.",
+					"BaseAttributeReference": {
+						"Entity": "BankGuaranteeProduct.cdm.json/BankGuaranteeProduct",
+						"Name": "GuaranteeAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "GuaranteeTermPeriodStartDate",
+					"Description": "The period start date that the guarantee is valid for.",
+					"BaseAttributeReference": {
+						"Entity": "BankGuaranteeProduct.cdm.json/BankGuaranteeProduct",
+						"Name": "GuaranteeTermPeriodStartDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "GuaranteeTermPeriodEndDate",
+					"Description": "The period end date that the guarantee is valid for.",
+					"BaseAttributeReference": {
+						"Entity": "BankGuaranteeProduct.cdm.json/BankGuaranteeProduct",
+						"Name": "GuaranteeTermPeriodEndDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "PayOrExtendClaimDate",
+					"Description": "The date that a pay or extend claim is made, which extend the validity period of the guarantee.",
+					"BaseAttributeReference": {
+						"Entity": "BankGuaranteeProduct.cdm.json/BankGuaranteeProduct",
+						"Name": "PayOrExtendClaimDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "PayOrExtendPeriodStartDate",
+					"Description": "The period start date of the pay or extend claim.",
+					"BaseAttributeReference": {
+						"Entity": "BankGuaranteeProduct.cdm.json/BankGuaranteeProduct",
+						"Name": "PayOrExtendPeriodStartDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "PayOrExtendPeriodEndDate",
+					"Description": "The period end date of the pay or extend claim.",
+					"BaseAttributeReference": {
+						"Entity": "BankGuaranteeProduct.cdm.json/BankGuaranteeProduct",
+						"Name": "PayOrExtendPeriodEndDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "GuaranteeSignedPlace",
+					"Description": "The city in which the guarantee was signed.",
+					"BaseAttributeReference": {
+						"Entity": "BankGuaranteeProduct.cdm.json/BankGuaranteeProduct",
+						"Name": "GuaranteeSignedPlace"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "GuaranteeSignedDate",
+					"Description": "The date on which the guarantee was signed.",
+					"BaseAttributeReference": {
+						"Entity": "BankGuaranteeProduct.cdm.json/BankGuaranteeProduct",
+						"Name": "GuaranteeSignedDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "Stamp",
+					"Description": "The stamp image associated with the bank guarantee.",
+					"BaseAttributeReference": {
+						"Entity": "BankGuaranteeProduct.cdm.json/BankGuaranteeProduct",
+						"Name": "Stamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "binary",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "binary"
+						}
+					}
+				},
+				{
+					"Name": "ApplicantSignature",
+					"Description": "The applicant signature.",
+					"BaseAttributeReference": {
+						"Entity": "BankGuaranteeProduct.cdm.json/BankGuaranteeProduct",
+						"Name": "ApplicantSignature"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "binary",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "binary"
+						}
+					}
+				},
+				{
+					"Name": "BankGuaranteeNotes",
+					"Description": "Notes, comments or additional information regarding the bank guarantee.",
+					"BaseAttributeReference": {
+						"Entity": "BankGuaranteeProduct.cdm.json/BankGuaranteeProduct",
+						"Name": "BankGuaranteeNotes"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "BankGuaranteeExpiryReasonId",
+					"Description": "The unique identifier of a guarantee expiry reason.",
+					"BaseAttributeReference": {
+						"Entity": "BankGuaranteeProduct.cdm.json/BankGuaranteeProduct",
+						"Name": "BankGuaranteeExpiryReasonId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "BankGuaranteeTransmissionMethodId",
+					"Description": "The unique identifier of a transmission method.",
+					"BaseAttributeReference": {
+						"Entity": "BankGuaranteeProduct.cdm.json/BankGuaranteeProduct",
+						"Name": "BankGuaranteeTransmissionMethodId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "BankGuaranteeIssueMethodId",
+					"Description": "The unique identifier of a Guarantee Type.",
+					"BaseAttributeReference": {
+						"Entity": "BankGuaranteeProduct.cdm.json/BankGuaranteeProduct",
+						"Name": "BankGuaranteeIssueMethodId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "BankGuaranteeLegalFormId",
+					"Description": "The unique identifier of a guarantee legal form.",
+					"BaseAttributeReference": {
+						"Entity": "BankGuaranteeProduct.cdm.json/BankGuaranteeProduct",
+						"Name": "BankGuaranteeLegalFormId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "BankGuaranteeTypeId",
+					"Description": "The unique identifier of a Bank Guarantee Type.",
+					"BaseAttributeReference": {
+						"Entity": "BankGuaranteeProduct.cdm.json/BankGuaranteeProduct",
+						"Name": "BankGuaranteeTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/BankGuaranteeProduct",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/BankGuaranteeProduct",
+				"Properties": {
+					"LinkedServiceName": "wspc-dpu-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ProductId\":{\"entity\":\"BankGuaranteeProduct.cdm.json/BankGuaranteeProduct\",\"name\":\"ProductId\"},\"TermsAndConditionsStatement\":{\"entity\":\"BankGuaranteeProduct.cdm.json/BankGuaranteeProduct\",\"name\":\"TermsAndConditionsStatement\"},\"GuaranteeTerm\":{\"entity\":\"BankGuaranteeProduct.cdm.json/BankGuaranteeProduct\",\"name\":\"GuaranteeTerm\"},\"GuaranteeTermPeriod\":{\"entity\":\"BankGuaranteeProduct.cdm.json/BankGuaranteeProduct\",\"name\":\"GuaranteeTermPeriod\"},\"ExpiryDate\":{\"entity\":\"BankGuaranteeProduct.cdm.json/BankGuaranteeProduct\",\"name\":\"ExpiryDate\"},\"GuaranteePercentageOfContract\":{\"entity\":\"BankGuaranteeProduct.cdm.json/BankGuaranteeProduct\",\"name\":\"GuaranteePercentageOfContract\"},\"GuaranteeAmount\":{\"entity\":\"BankGuaranteeProduct.cdm.json/BankGuaranteeProduct\",\"name\":\"GuaranteeAmount\"},\"GuaranteeTermPeriodStartDate\":{\"entity\":\"BankGuaranteeProduct.cdm.json/BankGuaranteeProduct\",\"name\":\"GuaranteeTermPeriodStartDate\"},\"GuaranteeTermPeriodEndDate\":{\"entity\":\"BankGuaranteeProduct.cdm.json/BankGuaranteeProduct\",\"name\":\"GuaranteeTermPeriodEndDate\"},\"PayOrExtendClaimDate\":{\"entity\":\"BankGuaranteeProduct.cdm.json/BankGuaranteeProduct\",\"name\":\"PayOrExtendClaimDate\"},\"PayOrExtendPeriodStartDate\":{\"entity\":\"BankGuaranteeProduct.cdm.json/BankGuaranteeProduct\",\"name\":\"PayOrExtendPeriodStartDate\"},\"PayOrExtendPeriodEndDate\":{\"entity\":\"BankGuaranteeProduct.cdm.json/BankGuaranteeProduct\",\"name\":\"PayOrExtendPeriodEndDate\"},\"GuaranteeSignedPlace\":{\"entity\":\"BankGuaranteeProduct.cdm.json/BankGuaranteeProduct\",\"name\":\"GuaranteeSignedPlace\"},\"GuaranteeSignedDate\":{\"entity\":\"BankGuaranteeProduct.cdm.json/BankGuaranteeProduct\",\"name\":\"GuaranteeSignedDate\"},\"Stamp\":{\"entity\":\"BankGuaranteeProduct.cdm.json/BankGuaranteeProduct\",\"name\":\"Stamp\"},\"ApplicantSignature\":{\"entity\":\"BankGuaranteeProduct.cdm.json/BankGuaranteeProduct\",\"name\":\"ApplicantSignature\"},\"BankGuaranteeNotes\":{\"entity\":\"BankGuaranteeProduct.cdm.json/BankGuaranteeProduct\",\"name\":\"BankGuaranteeNotes\"},\"BankGuaranteeExpiryReasonId\":{\"entity\":\"BankGuaranteeProduct.cdm.json/BankGuaranteeProduct\",\"name\":\"BankGuaranteeExpiryReasonId\"},\"BankGuaranteeTransmissionMethodId\":{\"entity\":\"BankGuaranteeProduct.cdm.json/BankGuaranteeProduct\",\"name\":\"BankGuaranteeTransmissionMethodId\"},\"BankGuaranteeIssueMethodId\":{\"entity\":\"BankGuaranteeProduct.cdm.json/BankGuaranteeProduct\",\"name\":\"BankGuaranteeIssueMethodId\"},\"BankGuaranteeLegalFormId\":{\"entity\":\"BankGuaranteeProduct.cdm.json/BankGuaranteeProduct\",\"name\":\"BankGuaranteeLegalFormId\"},\"BankGuaranteeTypeId\":{\"entity\":\"BankGuaranteeProduct.cdm.json/BankGuaranteeProduct\",\"name\":\"BankGuaranteeTypeId\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"BankGuaranteeProduct\",\"path\":\"BankGuaranteeProduct.cdm.json/BankGuaranteeProduct\"},\"description\":\"Unilateral contract between a bank as guarantor and a beneficiary in which the bank commits itself versus the beneficiary to pay a certain sum if a third party fails to perform or if any other specified event fails to take place, resulting in a default. \\n\\nBank guarantees are often used as a generic term for security instruments such as guarantees, sureties, standbys and confirmed instruction to pay. \\n\\nGuarantees are not negotiable as they do not have the status of a security such as a share or a bond. A guarantee is a contingent and not a book-entry claim. \\n\\nA bank guarantee is a written obligation, or guarantee, from an issuing bank promising to pay a set sum of money to a beneficiary who is doing business with a client of the bank's, in the event that the bank's client defaults on the payment contractually promised to the beneficiary.\\n\\nA bank guarantee and a letter of credit are similar in many ways.   However, they are different in two ways. Letters of credit ensure that a transaction proceeds as planned, while bank guarantees reduce the loss if the transaction doesn't go as planned.\\n\\nA letter of credit is an obligation taken on by a bank to make a payment when pre-specified criteria are met. When these terms are completed and confirmed, the bank will transfer the funds. This ensures the payment will be made as long as the services are performed.\\n\\nA bank guarantee guarantees a sum of money to a beneficiary. The sum is only paid if the opposing party does not fulfill the stipulated obligations under the contract. This can be used to essentially insure a buyer or seller from loss or damage due to nonperformance by the other party in a contract.\\n\\nA bank guarantee might be used when a buyer obtains goods from a seller then runs into cash flow difficulties and can't pay the seller. The bank guarantee would pay an agreed-upon sum to the seller. Similarly, if the supplier was unable to provide the goods, the bank would then pay the purchaser the agreed-upon sum. Essentially, the bank guarantee acts as a safety measure for the opposing party in the transaction.\",\"primaryKey\":[\"ProductId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"ProductId\",\"attributeReference\":{\"entity\":\"BankGuaranteeProduct.cdm.json/BankGuaranteeProduct\",\"name\":\"ProductId\"},\"dataType\":\"long\"},{\"type\":\"Existing\",\"name\":\"TermsAndConditionsStatement\",\"attributeReference\":{\"entity\":\"BankGuaranteeProduct.cdm.json/BankGuaranteeProduct\",\"name\":\"TermsAndConditionsStatement\"},\"dataType\":\"string\",\"dataTypeLength\":2048},{\"type\":\"Existing\",\"name\":\"GuaranteeTerm\",\"attributeReference\":{\"entity\":\"BankGuaranteeProduct.cdm.json/BankGuaranteeProduct\",\"name\":\"GuaranteeTerm\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"GuaranteeTermPeriod\",\"attributeReference\":{\"entity\":\"BankGuaranteeProduct.cdm.json/BankGuaranteeProduct\",\"name\":\"GuaranteeTermPeriod\"},\"dataType\":\"decimal\",\"dataTypeLength\":3,\"scale\":0},{\"type\":\"Existing\",\"name\":\"ExpiryDate\",\"attributeReference\":{\"entity\":\"BankGuaranteeProduct.cdm.json/BankGuaranteeProduct\",\"name\":\"ExpiryDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\"},{\"type\":\"Existing\",\"name\":\"GuaranteePercentageOfContract\",\"attributeReference\":{\"entity\":\"BankGuaranteeProduct.cdm.json/BankGuaranteeProduct\",\"name\":\"GuaranteePercentageOfContract\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":8},{\"type\":\"Existing\",\"name\":\"GuaranteeAmount\",\"attributeReference\":{\"entity\":\"BankGuaranteeProduct.cdm.json/BankGuaranteeProduct\",\"name\":\"GuaranteeAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"GuaranteeTermPeriodStartDate\",\"attributeReference\":{\"entity\":\"BankGuaranteeProduct.cdm.json/BankGuaranteeProduct\",\"name\":\"GuaranteeTermPeriodStartDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\"},{\"type\":\"Existing\",\"name\":\"GuaranteeTermPeriodEndDate\",\"attributeReference\":{\"entity\":\"BankGuaranteeProduct.cdm.json/BankGuaranteeProduct\",\"name\":\"GuaranteeTermPeriodEndDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\"},{\"type\":\"Existing\",\"name\":\"PayOrExtendClaimDate\",\"attributeReference\":{\"entity\":\"BankGuaranteeProduct.cdm.json/BankGuaranteeProduct\",\"name\":\"PayOrExtendClaimDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\"},{\"type\":\"Existing\",\"name\":\"PayOrExtendPeriodStartDate\",\"attributeReference\":{\"entity\":\"BankGuaranteeProduct.cdm.json/BankGuaranteeProduct\",\"name\":\"PayOrExtendPeriodStartDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\"},{\"type\":\"Existing\",\"name\":\"PayOrExtendPeriodEndDate\",\"attributeReference\":{\"entity\":\"BankGuaranteeProduct.cdm.json/BankGuaranteeProduct\",\"name\":\"PayOrExtendPeriodEndDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\"},{\"type\":\"Existing\",\"name\":\"GuaranteeSignedPlace\",\"attributeReference\":{\"entity\":\"BankGuaranteeProduct.cdm.json/BankGuaranteeProduct\",\"name\":\"GuaranteeSignedPlace\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"GuaranteeSignedDate\",\"attributeReference\":{\"entity\":\"BankGuaranteeProduct.cdm.json/BankGuaranteeProduct\",\"name\":\"GuaranteeSignedDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\"},{\"type\":\"Existing\",\"name\":\"Stamp\",\"attributeReference\":{\"entity\":\"BankGuaranteeProduct.cdm.json/BankGuaranteeProduct\",\"name\":\"Stamp\"},\"dataType\":\"binary\"},{\"type\":\"Existing\",\"name\":\"ApplicantSignature\",\"attributeReference\":{\"entity\":\"BankGuaranteeProduct.cdm.json/BankGuaranteeProduct\",\"name\":\"ApplicantSignature\"},\"dataType\":\"binary\"},{\"type\":\"Existing\",\"name\":\"BankGuaranteeNotes\",\"attributeReference\":{\"entity\":\"BankGuaranteeProduct.cdm.json/BankGuaranteeProduct\",\"name\":\"BankGuaranteeNotes\"},\"dataType\":\"string\",\"dataTypeLength\":1024},{\"type\":\"Existing\",\"name\":\"BankGuaranteeExpiryReasonId\",\"attributeReference\":{\"entity\":\"BankGuaranteeProduct.cdm.json/BankGuaranteeProduct\",\"name\":\"BankGuaranteeExpiryReasonId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"BankGuaranteeTransmissionMethodId\",\"attributeReference\":{\"entity\":\"BankGuaranteeProduct.cdm.json/BankGuaranteeProduct\",\"name\":\"BankGuaranteeTransmissionMethodId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"BankGuaranteeIssueMethodId\",\"attributeReference\":{\"entity\":\"BankGuaranteeProduct.cdm.json/BankGuaranteeProduct\",\"name\":\"BankGuaranteeIssueMethodId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"BankGuaranteeLegalFormId\",\"attributeReference\":{\"entity\":\"BankGuaranteeProduct.cdm.json/BankGuaranteeProduct\",\"name\":\"BankGuaranteeLegalFormId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"BankGuaranteeTypeId\",\"attributeReference\":{\"entity\":\"BankGuaranteeProduct.cdm.json/BankGuaranteeProduct\",\"name\":\"BankGuaranteeTypeId\"},\"dataType\":\"integer\"}]}}}",
+			"Description": "Unilateral contract between a bank as guarantor and a beneficiary in which the bank commits itself versus the beneficiary to pay a certain sum if a third party fails to perform or if any other specified event fails to take place, resulting in a default. \n\nBank guarantees are often used as a generic term for security instruments such as guarantees, sureties, standbys and confirmed instruction to pay. \n\nGuarantees are not negotiable as they do not have the status of a security such as a share or a bond. A guarantee is a contingent and not a book-entry claim. \n\nA bank guarantee is a written obligation, or guarantee, from an issuing bank promising to pay a set sum of money to a beneficiary who is doing business with a client of the bank's, in the event that the bank's client defaults on the payment contractually promised to the beneficiary.\n\nA bank guarantee and a letter of credit are similar in many ways.   However, they are different in two ways. Letters of credit ensure that a transaction proceeds as planned, while bank guarantees reduce the loss if the transaction doesn't go as planned.\n\nA letter of credit is an obligation taken on by a bank to make a payment when pre-specified criteria are met. When these terms are completed and confirmed, the bank will transfer the funds. This ensures the payment will be made as long as the services are performed.\n\nA bank guarantee guarantees a sum of money to a beneficiary. The sum is only paid if the opposing party does not fulfill the stipulated obligations under the contract. This can be used to essentially insure a buyer or seller from loss or damage due to nonperformance by the other party in a contract.\n\nA bank guarantee might be used when a buyer obtains goods from a seller then runs into cash flow difficulties and can't pay the seller. The bank guarantee would pay an agreed-upon sum to the seller. Similarly, if the supplier was unable to provide the goods, the bank would then pay the purchaser the agreed-upon sum. Essentially, the bank guarantee acts as a safety measure for the opposing party in the transaction.",
+			"DisplayFolderInfo": "{\"name\":\"Product\",\"colorCode\":\"#0E3D73\"}",
+			"PrimaryKeys": "ProductId",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

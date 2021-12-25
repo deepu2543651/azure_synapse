@@ -1,0 +1,50 @@
+{
+	"name": "relationship-hungcvfigr",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-hungcvfigr",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "ProductServiceChannelFee",
+		"ToTableName": "CustomerAccountProductServiceChannelFee",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ChannelId",
+				"ToColumnName": "ChannelId"
+			},
+			{
+				"FromColumnName": "MaximumAmount",
+				"ToColumnName": "MaximumAmount"
+			},
+			{
+				"FromColumnName": "MinimumAmount",
+				"ToColumnName": "MinimumAmount"
+			},
+			{
+				"FromColumnName": "PeriodStartDate",
+				"ToColumnName": "PeriodStartDate"
+			},
+			{
+				"FromColumnName": "ProductId",
+				"ToColumnName": "ProductId"
+			},
+			{
+				"FromColumnName": "ProductServiceChannelFeeTypeId",
+				"ToColumnName": "ProductServiceChannelFeeTypeId"
+			},
+			{
+				"FromColumnName": "ServiceId",
+				"ToColumnName": "ServiceId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"ProductServiceChannelFee.cdm.json/ProductServiceChannelFee\",\"toEntity\":\"CustomerAccountProductServiceChannelFee.cdm.json/CustomerAccountProductServiceChannelFee\",\"joinPairs\":[{\"fromAttribute\":\"ChannelId\",\"toAttribute\":\"ChannelId\"},{\"fromAttribute\":\"MaximumAmount\",\"toAttribute\":\"MaximumAmount\"},{\"fromAttribute\":\"MinimumAmount\",\"toAttribute\":\"MinimumAmount\"},{\"fromAttribute\":\"PeriodStartDate\",\"toAttribute\":\"PeriodStartDate\"},{\"fromAttribute\":\"ProductId\",\"toAttribute\":\"ProductId\"},{\"fromAttribute\":\"ProductServiceChannelFeeTypeId\",\"toAttribute\":\"ProductServiceChannelFeeTypeId\"},{\"fromAttribute\":\"ServiceId\",\"toAttribute\":\"ServiceId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

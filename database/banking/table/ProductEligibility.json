@@ -1,0 +1,145 @@
+{
+	"name": "ProductEligibility",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "ProductEligibility",
+		"Description": "The one or more Eligibility Types applicable to a Product during the indicated period.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ProductId",
+					"Description": "The unique identifier of a Product.",
+					"BaseAttributeReference": {
+						"Entity": "ProductEligibility.cdm.json/ProductEligibility",
+						"Name": "ProductId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "ProductEligibilityTypeId",
+					"Description": "The unique identifier of a Product Eligibility Type",
+					"BaseAttributeReference": {
+						"Entity": "ProductEligibility.cdm.json/ProductEligibility",
+						"Name": "ProductEligibilityTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PeriodStartTimestamp",
+					"Description": "The period start date for which the associated eligibility type is applicable to the product.",
+					"BaseAttributeReference": {
+						"Entity": "ProductEligibility.cdm.json/ProductEligibility",
+						"Name": "PeriodStartTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "PeriodEndTimestamp",
+					"Description": "The period end date for which the associated eligibility type is applicable to the product.",
+					"BaseAttributeReference": {
+						"Entity": "ProductEligibility.cdm.json/ProductEligibility",
+						"Name": "PeriodEndTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "ProductEligibilityNote",
+					"Description": "A note, comment or additional information regarding the Product eligibility.",
+					"BaseAttributeReference": {
+						"Entity": "ProductEligibility.cdm.json/ProductEligibility",
+						"Name": "ProductEligibilityNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/ProductEligibility",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/ProductEligibility",
+				"Properties": {
+					"LinkedServiceName": "wspc-dpu-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ProductId\":{\"entity\":\"ProductEligibility.cdm.json/ProductEligibility\",\"name\":\"ProductId\"},\"ProductEligibilityTypeId\":{\"entity\":\"ProductEligibility.cdm.json/ProductEligibility\",\"name\":\"ProductEligibilityTypeId\"},\"PeriodStartTimestamp\":{\"entity\":\"ProductEligibility.cdm.json/ProductEligibility\",\"name\":\"PeriodStartTimestamp\"},\"PeriodEndTimestamp\":{\"entity\":\"ProductEligibility.cdm.json/ProductEligibility\",\"name\":\"PeriodEndTimestamp\"},\"ProductEligibilityNote\":{\"entity\":\"ProductEligibility.cdm.json/ProductEligibility\",\"name\":\"ProductEligibilityNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"ProductEligibility\",\"path\":\"ProductEligibility.cdm.json/ProductEligibility\"},\"description\":\"The one or more Eligibility Types applicable to a Product during the indicated period.\",\"primaryKey\":[\"ProductId\",\"ProductEligibilityTypeId\",\"PeriodStartTimestamp\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"ProductId\",\"attributeReference\":{\"entity\":\"ProductEligibility.cdm.json/ProductEligibility\",\"name\":\"ProductId\"},\"dataType\":\"long\"},{\"type\":\"Existing\",\"name\":\"ProductEligibilityTypeId\",\"attributeReference\":{\"entity\":\"ProductEligibility.cdm.json/ProductEligibility\",\"name\":\"ProductEligibilityTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"PeriodStartTimestamp\",\"attributeReference\":{\"entity\":\"ProductEligibility.cdm.json/ProductEligibility\",\"name\":\"PeriodStartTimestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"PeriodEndTimestamp\",\"attributeReference\":{\"entity\":\"ProductEligibility.cdm.json/ProductEligibility\",\"name\":\"PeriodEndTimestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"ProductEligibilityNote\",\"attributeReference\":{\"entity\":\"ProductEligibility.cdm.json/ProductEligibility\",\"name\":\"ProductEligibilityNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024}]}}}",
+			"Description": "The one or more Eligibility Types applicable to a Product during the indicated period.",
+			"DisplayFolderInfo": "{\"name\":\"Product\",\"colorCode\":\"#0E3D73\"}",
+			"PrimaryKeys": "ProductId,ProductEligibilityTypeId,PeriodStartTimestamp",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

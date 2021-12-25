@@ -1,0 +1,26 @@
+{
+	"name": "relationship-jspjmcjqgl",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-jspjmcjqgl",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "RepaymentPlanType",
+		"ToTableName": "EducationLoanProduct",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "RepaymentPlanTypeId",
+				"ToColumnName": "RepaymentPlanTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"RepaymentPlanType.cdm.json/RepaymentPlanType\",\"toEntity\":\"EducationLoanProduct.cdm.json/EducationLoanProduct\",\"joinPairs\":[{\"fromAttribute\":\"RepaymentPlanTypeId\",\"toAttribute\":\"RepaymentPlanTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

@@ -1,0 +1,26 @@
+{
+	"name": "relationship-mrrfytumyd",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-mrrfytumyd",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Language",
+		"ToTableName": "AdvertisingCollateral",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "IsoLanguageId",
+				"ToColumnName": "IsoLanguageId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Language.cdm.json/Language\",\"toEntity\":\"AdvertisingCollateral.cdm.json/AdvertisingCollateral\",\"joinPairs\":[{\"fromAttribute\":\"IsoLanguageId\",\"toAttribute\":\"IsoLanguageId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

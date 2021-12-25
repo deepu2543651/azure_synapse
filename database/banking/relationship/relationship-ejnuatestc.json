@@ -1,0 +1,26 @@
+{
+	"name": "relationship-ejnuatestc",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-ejnuatestc",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "LetterOfCreditType",
+		"ToTableName": "LetterOfCreditProduct",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "LetterOfCreditTypeId",
+				"ToColumnName": "LetterOfCreditTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"LetterOfCreditType.cdm.json/LetterOfCreditType\",\"toEntity\":\"LetterOfCreditProduct.cdm.json/LetterOfCreditProduct\",\"joinPairs\":[{\"fromAttribute\":\"LetterOfCreditTypeId\",\"toAttribute\":\"LetterOfCreditTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

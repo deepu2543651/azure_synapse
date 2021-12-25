@@ -1,0 +1,161 @@
+{
+	"name": "TransactionTypeCountryReportingRequirement",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "TransactionTypeCountryReportingRequirement",
+		"Description": "The reporting requirement(s) for the associated transaction type in the indicated  country in the indicated language for the indicated period.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "TransactionTypeId",
+					"Description": "The unique identifier of a Transaction Type.",
+					"BaseAttributeReference": {
+						"Entity": "TransactionTypeCountryReportingRequirement.cdm.json/TransactionTypeCountryReportingRequirement",
+						"Name": "TransactionTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ReportingRequirementId",
+					"Description": "The unique identifier of a reporting requirement.",
+					"BaseAttributeReference": {
+						"Entity": "TransactionTypeCountryReportingRequirement.cdm.json/TransactionTypeCountryReportingRequirement",
+						"Name": "ReportingRequirementId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "CountryId",
+					"Description": "The unique identifier of the Country.",
+					"BaseAttributeReference": {
+						"Entity": "TransactionTypeCountryReportingRequirement.cdm.json/TransactionTypeCountryReportingRequirement",
+						"Name": "CountryId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PeriodStartDate",
+					"Description": "The period start date for which the transaction type reporting requirement is defined.",
+					"BaseAttributeReference": {
+						"Entity": "TransactionTypeCountryReportingRequirement.cdm.json/TransactionTypeCountryReportingRequirement",
+						"Name": "PeriodStartDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "PeriodEndDate",
+					"Description": "The period end date for which the transaction type reporting requirement is defined.",
+					"BaseAttributeReference": {
+						"Entity": "TransactionTypeCountryReportingRequirement.cdm.json/TransactionTypeCountryReportingRequirement",
+						"Name": "PeriodEndDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "ReportingRequirementNote",
+					"Description": "A note, comment or additional information regarding the associated transaction type reporting requirement.",
+					"BaseAttributeReference": {
+						"Entity": "TransactionTypeCountryReportingRequirement.cdm.json/TransactionTypeCountryReportingRequirement",
+						"Name": "ReportingRequirementNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/TransactionTypeCountryReportingRequirement",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/TransactionTypeCountryReportingRequirement",
+				"Properties": {
+					"LinkedServiceName": "wspc-dpu-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"TransactionTypeId\":{\"entity\":\"TransactionTypeCountryReportingRequirement.cdm.json/TransactionTypeCountryReportingRequirement\",\"name\":\"TransactionTypeId\"},\"ReportingRequirementId\":{\"entity\":\"TransactionTypeCountryReportingRequirement.cdm.json/TransactionTypeCountryReportingRequirement\",\"name\":\"ReportingRequirementId\"},\"CountryId\":{\"entity\":\"TransactionTypeCountryReportingRequirement.cdm.json/TransactionTypeCountryReportingRequirement\",\"name\":\"CountryId\"},\"PeriodStartDate\":{\"entity\":\"TransactionTypeCountryReportingRequirement.cdm.json/TransactionTypeCountryReportingRequirement\",\"name\":\"PeriodStartDate\"},\"PeriodEndDate\":{\"entity\":\"TransactionTypeCountryReportingRequirement.cdm.json/TransactionTypeCountryReportingRequirement\",\"name\":\"PeriodEndDate\"},\"ReportingRequirementNote\":{\"entity\":\"TransactionTypeCountryReportingRequirement.cdm.json/TransactionTypeCountryReportingRequirement\",\"name\":\"ReportingRequirementNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"TransactionTypeCountryReportingRequirement\",\"path\":\"TransactionTypeCountryReportingRequirement.cdm.json/TransactionTypeCountryReportingRequirement\"},\"description\":\"The reporting requirement(s) for the associated transaction type in the indicated  country in the indicated language for the indicated period.\",\"primaryKey\":[\"TransactionTypeId\",\"ReportingRequirementId\",\"CountryId\",\"PeriodStartDate\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"TransactionTypeId\",\"attributeReference\":{\"entity\":\"TransactionTypeCountryReportingRequirement.cdm.json/TransactionTypeCountryReportingRequirement\",\"name\":\"TransactionTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ReportingRequirementId\",\"attributeReference\":{\"entity\":\"TransactionTypeCountryReportingRequirement.cdm.json/TransactionTypeCountryReportingRequirement\",\"name\":\"ReportingRequirementId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"CountryId\",\"attributeReference\":{\"entity\":\"TransactionTypeCountryReportingRequirement.cdm.json/TransactionTypeCountryReportingRequirement\",\"name\":\"CountryId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"PeriodStartDate\",\"attributeReference\":{\"entity\":\"TransactionTypeCountryReportingRequirement.cdm.json/TransactionTypeCountryReportingRequirement\",\"name\":\"PeriodStartDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\"},{\"type\":\"Existing\",\"name\":\"PeriodEndDate\",\"attributeReference\":{\"entity\":\"TransactionTypeCountryReportingRequirement.cdm.json/TransactionTypeCountryReportingRequirement\",\"name\":\"PeriodEndDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\"},{\"type\":\"Existing\",\"name\":\"ReportingRequirementNote\",\"attributeReference\":{\"entity\":\"TransactionTypeCountryReportingRequirement.cdm.json/TransactionTypeCountryReportingRequirement\",\"name\":\"ReportingRequirementNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024}]}}}",
+			"Description": "The reporting requirement(s) for the associated transaction type in the indicated  country in the indicated language for the indicated period.",
+			"DisplayFolderInfo": "{\"name\":\"Transaction\",\"colorCode\":\"#823A16\"}",
+			"PrimaryKeys": "TransactionTypeId,ReportingRequirementId,CountryId,PeriodStartDate",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

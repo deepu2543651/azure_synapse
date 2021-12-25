@@ -1,0 +1,26 @@
+{
+	"name": "relationship-syhoszzjrl",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-syhoszzjrl",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "LockboxProcessingSchedule",
+		"ToTableName": "LockboxProduct",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "LockboxProcessingScheduleId",
+				"ToColumnName": "LockboxProcessingScheduleId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"LockboxProcessingSchedule.cdm.json/LockboxProcessingSchedule\",\"toEntity\":\"LockboxProduct.cdm.json/LockboxProduct\",\"joinPairs\":[{\"fromAttribute\":\"LockboxProcessingScheduleId\",\"toAttribute\":\"LockboxProcessingScheduleId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

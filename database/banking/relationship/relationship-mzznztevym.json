@@ -1,0 +1,26 @@
+{
+	"name": "relationship-mzznztevym",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-mzznztevym",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "SicIndustry",
+		"ToTableName": "Channel",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "SicIndustryCode",
+				"ToColumnName": "SicIndustryCode"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"SicIndustry.cdm.json/SicIndustry\",\"toEntity\":\"Channel.cdm.json/Channel\",\"joinPairs\":[{\"fromAttribute\":\"SicIndustryCode\",\"toAttribute\":\"SicIndustryCode\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

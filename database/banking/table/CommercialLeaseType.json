@@ -1,0 +1,112 @@
+{
+	"name": "CommercialLeaseType",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "CommercialLeaseType",
+		"Description": "The type of commercial lease.\n\nEx:\nCAPITAL LEASE\nType of lease classified and accounted for by a lessee as a purchase and by the lessor as a sale or financing, if it meets any one of the following criteria: \n\n(a) the lessor transfers ownership to the lessee at the end of the lease term; \n(b) the lease contains an option to purchase the asset at a bargain price\n(c) the lease term is equal to 75 percent or more of the estimated economic life of the property (exceptions for used property leased toward the end of its useful life)\n(d) the present value of minimum lease rental payments is equal to 90 percent or more of the fair market value of the leased asset less related investment tax credits retained by the lessor.\n\nA capital lease transfers substantially all the risks and benefits of ownership to the lessee. Any other kind of lease is an operating lease.\n\nCLOSED END LEASE\nA true lease in which the lessor assumes the depreciation risk. The lessee bears no obligation at the end of the lease. This term is used to distinguish the lease from an open-end lease.\n\nA direct financing lease is one in which the lessor's only source of revenue is interest. The lessor (generally a bank or other financial institution) buys an asset and leases it to the lessee. This transaction is an alternative to the more customary lending arrangement in which a borrower uses the loan proceeds to purchase an asset. A direct financing lease is the functional equivalent of a loan.\n\nDIRECT FINANCE LEASE\nSame as a capital lease except this accounting classification only applies to a lessor.\n\nFULL PAYOUT LEASE\nA lease in which the cash flows will return to the lessor the acquisition cost of the asset, the cost of financing, overhead and an acceptable return on investment.\n\nLEVERAGED LEASE\nA leveraged lease is a specialized form of direct financing lease that involves at least three parties: a lessee, a long -term creditor (the debt participant), and a lessor (the equity participant). This type of lease transaction is complex because of its size, the number of parties involved, legal demands, and the unique advantages to all parties. \n\nBecause of the legal expenses and administrative costs involved, leveraged leasing usually finances only large capital property projects. The structure of leveraged leases allows them to be tailored to best meet the tax needs of the parties involved.\n\nIn a leveraged lease, the lessor that purchases the property provides only a percentage (usually 20 to 40 percent) of the capital needed. After obtaining this substantial leverage in the transaction, the lessor takes out a nonrecourse loan for the balance of the purchase price from long -term lenders (the debt participants). That borrowing is secured by a first lien on the property, assignment of the lease, and assignment of the lease rental payments. \n\nThe lessor, as the owner, is able to take accelerated depreciation and to claim any available investment tax credit based on the total cost of the property. The lessor also retains the residual value rights to the property at the end of the lease period. Under this arrangement, the lessee has use of the property at a lower cost in exchange for leaving the tax benefits with the lessor. \n\nThis tradeoff ideally produces an attractive rate of return for the lessor and financing for the lessee at a cost below the lessee's normal borrowing rate.\n\nWhen the purchase price of the property is large, a leveraged lease may involve several lessors and debt participants. In such cases, an owner trustee generally holds title to the property and represents the lessors. Or an indenture trustee may hold the mortgage on the property on behalf of the debt participants.\n\nOPERATING LEASE\nAn operating lease does not transfer the risk and benefits of ownership to the lessee. The lessor, as owner of the property, retains legal title. In this transaction, the lessor is entitled to any tax benefits of ownership (such as accelerated depreciation). The lessor also retains the rights to the property's residual value at the end of the term. In most operating leases the term of the initial lease agreement is significantly shorter than the economic life of the property.\n\nSTEP LEASE\nA lease where the rent may change during the term of the lease. The change is known at lease inception and is agreed by both the lessor and the lessee. Often a step-up lease allows the lessee to pay less initially and more later in the term. A Step Down Lease is the opposite. The lessee pays more initially and the payment amount decreases over the term of the lease.\n\nSYNTHETIC LEASE\nA synthetic lease is basically a financing structured to be treated as a lease for accounting purposes, but as a loan for tax purposes. \n\nThe structure is used by corporations that are seeking off-balance sheet reporting of their asset based financing, and who can efficiently use the tax benefits of owning the financed asset.\n\nTRUE LEASE\nA type of transaction that qualifies as a lease under the Internal Revenue Service Code. It allows the lessor to claim ownership and the lessee to claim rental payments as tax deductions.\n\n(1) Title must remain with the lessor\n\n(2) The rental payments must be competitive with industry rates, represent payment for use of the equipment and have a rate that does not vary appreciably with or without purchase option\n\n(3) The option to purchase price must not be less than the fair market price at the lease's expiration date\n\n(4) Equity cannot be allowed on rental payments. For tax purposes, the total monthly payments can be deducted.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "CommercialLeaseTypeId",
+					"Description": "The unique identifier of a Commercial Lease Type.",
+					"BaseAttributeReference": {
+						"Entity": "CommercialLeaseType.cdm.json/CommercialLeaseType",
+						"Name": "CommercialLeaseTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "CommercialLeaseTypeName",
+					"Description": "The name of a Commercial Lease Type.",
+					"BaseAttributeReference": {
+						"Entity": "CommercialLeaseType.cdm.json/CommercialLeaseType",
+						"Name": "CommercialLeaseTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "CommercialLeaseTypeDescription",
+					"Description": "The description of a Commercial Lease Type.",
+					"BaseAttributeReference": {
+						"Entity": "CommercialLeaseType.cdm.json/CommercialLeaseType",
+						"Name": "CommercialLeaseTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/CommercialLeaseType",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/CommercialLeaseType",
+				"Properties": {
+					"LinkedServiceName": "wspc-dpu-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"CommercialLeaseTypeId\":{\"entity\":\"CommercialLeaseType.cdm.json/CommercialLeaseType\",\"name\":\"CommercialLeaseTypeId\"},\"CommercialLeaseTypeName\":{\"entity\":\"CommercialLeaseType.cdm.json/CommercialLeaseType\",\"name\":\"CommercialLeaseTypeName\"},\"CommercialLeaseTypeDescription\":{\"entity\":\"CommercialLeaseType.cdm.json/CommercialLeaseType\",\"name\":\"CommercialLeaseTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"CommercialLeaseType\",\"path\":\"CommercialLeaseType.cdm.json/CommercialLeaseType\"},\"description\":\"The type of commercial lease.\\n\\nEx:\\nCAPITAL LEASE\\nType of lease classified and accounted for by a lessee as a purchase and by the lessor as a sale or financing, if it meets any one of the following criteria: \\n\\n(a) the lessor transfers ownership to the lessee at the end of the lease term; \\n(b) the lease contains an option to purchase the asset at a bargain price\\n(c) the lease term is equal to 75 percent or more of the estimated economic life of the property (exceptions for used property leased toward the end of its useful life)\\n(d) the present value of minimum lease rental payments is equal to 90 percent or more of the fair market value of the leased asset less related investment tax credits retained by the lessor.\\n\\nA capital lease transfers substantially all the risks and benefits of ownership to the lessee. Any other kind of lease is an operating lease.\\n\\nCLOSED END LEASE\\nA true lease in which the lessor assumes the depreciation risk. The lessee bears no obligation at the end of the lease. This term is used to distinguish the lease from an open-end lease.\\n\\nA direct financing lease is one in which the lessor's only source of revenue is interest. The lessor (generally a bank or other financial institution) buys an asset and leases it to the lessee. This transaction is an alternative to the more customary lending arrangement in which a borrower uses the loan proceeds to purchase an asset. A direct financing lease is the functional equivalent of a loan.\\n\\nDIRECT FINANCE LEASE\\nSame as a capital lease except this accounting classification only applies to a lessor.\\n\\nFULL PAYOUT LEASE\\nA lease in which the cash flows will return to the lessor the acquisition cost of the asset, the cost of financing, overhead and an acceptable return on investment.\\n\\nLEVERAGED LEASE\\nA leveraged lease is a specialized form of direct financing lease that involves at least three parties: a lessee, a long -term creditor (the debt participant), and a lessor (the equity participant). This type of lease transaction is complex because of its size, the number of parties involved, legal demands, and the unique advantages to all parties. \\n\\nBecause of the legal expenses and administrative costs involved, leveraged leasing usually finances only large capital property projects. The structure of leveraged leases allows them to be tailored to best meet the tax needs of the parties involved.\\n\\nIn a leveraged lease, the lessor that purchases the property provides only a percentage (usually 20 to 40 percent) of the capital needed. After obtaining this substantial leverage in the transaction, the lessor takes out a nonrecourse loan for the balance of the purchase price from long -term lenders (the debt participants). That borrowing is secured by a first lien on the property, assignment of the lease, and assignment of the lease rental payments. \\n\\nThe lessor, as the owner, is able to take accelerated depreciation and to claim any available investment tax credit based on the total cost of the property. The lessor also retains the residual value rights to the property at the end of the lease period. Under this arrangement, the lessee has use of the property at a lower cost in exchange for leaving the tax benefits with the lessor. \\n\\nThis tradeoff ideally produces an attractive rate of return for the lessor and financing for the lessee at a cost below the lessee's normal borrowing rate.\\n\\nWhen the purchase price of the property is large, a leveraged lease may involve several lessors and debt participants. In such cases, an owner trustee generally holds title to the property and represents the lessors. Or an indenture trustee may hold the mortgage on the property on behalf of the debt participants.\\n\\nOPERATING LEASE\\nAn operating lease does not transfer the risk and benefits of ownership to the lessee. The lessor, as owner of the property, retains legal title. In this transaction, the lessor is entitled to any tax benefits of ownership (such as accelerated depreciation). The lessor also retains the rights to the property's residual value at the end of the term. In most operating leases the term of the initial lease agreement is significantly shorter than the economic life of the property.\\n\\nSTEP LEASE\\nA lease where the rent may change during the term of the lease. The change is known at lease inception and is agreed by both the lessor and the lessee. Often a step-up lease allows the lessee to pay less initially and more later in the term. A Step Down Lease is the opposite. The lessee pays more initially and the payment amount decreases over the term of the lease.\\n\\nSYNTHETIC LEASE\\nA synthetic lease is basically a financing structured to be treated as a lease for accounting purposes, but as a loan for tax purposes. \\n\\nThe structure is used by corporations that are seeking off-balance sheet reporting of their asset based financing, and who can efficiently use the tax benefits of owning the financed asset.\\n\\nTRUE LEASE\\nA type of transaction that qualifies as a lease under the Internal Revenue Service Code. It allows the lessor to claim ownership and the lessee to claim rental payments as tax deductions.\\n\\n(1) Title must remain with the lessor\\n\\n(2) The rental payments must be competitive with industry rates, represent payment for use of the equipment and have a rate that does not vary appreciably with or without purchase option\\n\\n(3) The option to purchase price must not be less than the fair market price at the lease's expiration date\\n\\n(4) Equity cannot be allowed on rental payments. For tax purposes, the total monthly payments can be deducted.\",\"primaryKey\":[\"CommercialLeaseTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"CommercialLeaseTypeId\",\"attributeReference\":{\"entity\":\"CommercialLeaseType.cdm.json/CommercialLeaseType\",\"name\":\"CommercialLeaseTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"CommercialLeaseTypeName\",\"attributeReference\":{\"entity\":\"CommercialLeaseType.cdm.json/CommercialLeaseType\",\"name\":\"CommercialLeaseTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"CommercialLeaseTypeDescription\",\"attributeReference\":{\"entity\":\"CommercialLeaseType.cdm.json/CommercialLeaseType\",\"name\":\"CommercialLeaseTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512}]}}}",
+			"Description": "The type of commercial lease.\n\nEx:\nCAPITAL LEASE\nType of lease classified and accounted for by a lessee as a purchase and by the lessor as a sale or financing, if it meets any one of the following criteria: \n\n(a) the lessor transfers ownership to the lessee at the end of the lease term; \n(b) the lease contains an option to purchase the asset at a bargain price\n(c) the lease term is equal to 75 percent or more of the estimated economic life of the property (exceptions for used property leased toward the end of its useful life)\n(d) the present value of minimum lease rental payments is equal to 90 percent or more of the fair market value of the leased asset less related investment tax credits retained by the lessor.\n\nA capital lease transfers substantially all the risks and benefits of ownership to the lessee. Any other kind of lease is an operating lease.\n\nCLOSED END LEASE\nA true lease in which the lessor assumes the depreciation risk. The lessee bears no obligation at the end of the lease. This term is used to distinguish the lease from an open-end lease.\n\nA direct financing lease is one in which the lessor's only source of revenue is interest. The lessor (generally a bank or other financial institution) buys an asset and leases it to the lessee. This transaction is an alternative to the more customary lending arrangement in which a borrower uses the loan proceeds to purchase an asset. A direct financing lease is the functional equivalent of a loan.\n\nDIRECT FINANCE LEASE\nSame as a capital lease except this accounting classification only applies to a lessor.\n\nFULL PAYOUT LEASE\nA lease in which the cash flows will return to the lessor the acquisition cost of the asset, the cost of financing, overhead and an acceptable return on investment.\n\nLEVERAGED LEASE\nA leveraged lease is a specialized form of direct financing lease that involves at least three parties: a lessee, a long -term creditor (the debt participant), and a lessor (the equity participant). This type of lease transaction is complex because of its size, the number of parties involved, legal demands, and the unique advantages to all parties. \n\nBecause of the legal expenses and administrative costs involved, leveraged leasing usually finances only large capital property projects. The structure of leveraged leases allows them to be tailored to best meet the tax needs of the parties involved.\n\nIn a leveraged lease, the lessor that purchases the property provides only a percentage (usually 20 to 40 percent) of the capital needed. After obtaining this substantial leverage in the transaction, the lessor takes out a nonrecourse loan for the balance of the purchase price from long -term lenders (the debt participants). That borrowing is secured by a first lien on the property, assignment of the lease, and assignment of the lease rental payments. \n\nThe lessor, as the owner, is able to take accelerated depreciation and to claim any available investment tax credit based on the total cost of the property. The lessor also retains the residual value rights to the property at the end of the lease period. Under this arrangement, the lessee has use of the property at a lower cost in exchange for leaving the tax benefits with the lessor. \n\nThis tradeoff ideally produces an attractive rate of return for the lessor and financing for the lessee at a cost below the lessee's normal borrowing rate.\n\nWhen the purchase price of the property is large, a leveraged lease may involve several lessors and debt participants. In such cases, an owner trustee generally holds title to the property and represents the lessors. Or an indenture trustee may hold the mortgage on the property on behalf of the debt participants.\n\nOPERATING LEASE\nAn operating lease does not transfer the risk and benefits of ownership to the lessee. The lessor, as owner of the property, retains legal title. In this transaction, the lessor is entitled to any tax benefits of ownership (such as accelerated depreciation). The lessor also retains the rights to the property's residual value at the end of the term. In most operating leases the term of the initial lease agreement is significantly shorter than the economic life of the property.\n\nSTEP LEASE\nA lease where the rent may change during the term of the lease. The change is known at lease inception and is agreed by both the lessor and the lessee. Often a step-up lease allows the lessee to pay less initially and more later in the term. A Step Down Lease is the opposite. The lessee pays more initially and the payment amount decreases over the term of the lease.\n\nSYNTHETIC LEASE\nA synthetic lease is basically a financing structured to be treated as a lease for accounting purposes, but as a loan for tax purposes. \n\nThe structure is used by corporations that are seeking off-balance sheet reporting of their asset based financing, and who can efficiently use the tax benefits of owning the financed asset.\n\nTRUE LEASE\nA type of transaction that qualifies as a lease under the Internal Revenue Service Code. It allows the lessor to claim ownership and the lessee to claim rental payments as tax deductions.\n\n(1) Title must remain with the lessor\n\n(2) The rental payments must be competitive with industry rates, represent payment for use of the equipment and have a rate that does not vary appreciably with or without purchase option\n\n(3) The option to purchase price must not be less than the fair market price at the lease's expiration date\n\n(4) Equity cannot be allowed on rental payments. For tax purposes, the total monthly payments can be deducted.",
+			"DisplayFolderInfo": "{\"name\":\"Product\",\"colorCode\":\"#0E3D73\"}",
+			"PrimaryKeys": "CommercialLeaseTypeId",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

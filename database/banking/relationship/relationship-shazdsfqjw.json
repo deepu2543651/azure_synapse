@@ -1,0 +1,26 @@
+{
+	"name": "relationship-shazdsfqjw",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-shazdsfqjw",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Regulation",
+		"ToTableName": "ProductRegulation",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "RegulationId",
+				"ToColumnName": "RegulationId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Regulation.cdm.json/Regulation\",\"toEntity\":\"ProductRegulation.cdm.json/ProductRegulation\",\"joinPairs\":[{\"fromAttribute\":\"RegulationId\",\"toAttribute\":\"RegulationId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

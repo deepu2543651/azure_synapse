@@ -1,0 +1,26 @@
+{
+	"name": "relationship-wosspyilup",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-wosspyilup",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Gender",
+		"ToTableName": "CustomerGender",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "GenderId",
+				"ToColumnName": "GenderId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Gender.cdm.json/Gender\",\"toEntity\":\"CustomerGender.cdm.json/CustomerGender\",\"joinPairs\":[{\"fromAttribute\":\"GenderId\",\"toAttribute\":\"GenderId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

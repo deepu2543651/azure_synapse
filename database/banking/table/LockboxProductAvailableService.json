@@ -1,0 +1,128 @@
+{
+	"name": "LockboxProductAvailableService",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "LockboxProductAvailableService",
+		"Description": "The services available to the lockbox product.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ProductId",
+					"Description": "The unique identifier of a Product.",
+					"BaseAttributeReference": {
+						"Entity": "LockboxProductAvailableService.cdm.json/LockboxProductAvailableService",
+						"Name": "ProductId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "LockboxServiceTypeId",
+					"Description": "The unique identifier of a Service.",
+					"BaseAttributeReference": {
+						"Entity": "LockboxProductAvailableService.cdm.json/LockboxProductAvailableService",
+						"Name": "LockboxServiceTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PeriodStartDate",
+					"Description": "The period start date that the Service is offered to holder's of a Lockbox Product.",
+					"BaseAttributeReference": {
+						"Entity": "LockboxProductAvailableService.cdm.json/LockboxProductAvailableService",
+						"Name": "PeriodStartDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "PeriodEndDate",
+					"Description": "The period end date that the Service is offered to holder's of a Lockbox Product.",
+					"BaseAttributeReference": {
+						"Entity": "LockboxProductAvailableService.cdm.json/LockboxProductAvailableService",
+						"Name": "PeriodEndDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/LockboxProductAvailableService",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/LockboxProductAvailableService",
+				"Properties": {
+					"LinkedServiceName": "wspc-dpu-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ProductId\":{\"entity\":\"LockboxProductAvailableService.cdm.json/LockboxProductAvailableService\",\"name\":\"ProductId\"},\"LockboxServiceTypeId\":{\"entity\":\"LockboxProductAvailableService.cdm.json/LockboxProductAvailableService\",\"name\":\"LockboxServiceTypeId\"},\"PeriodStartDate\":{\"entity\":\"LockboxProductAvailableService.cdm.json/LockboxProductAvailableService\",\"name\":\"PeriodStartDate\"},\"PeriodEndDate\":{\"entity\":\"LockboxProductAvailableService.cdm.json/LockboxProductAvailableService\",\"name\":\"PeriodEndDate\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"LockboxProductAvailableService\",\"path\":\"LockboxProductAvailableService.cdm.json/LockboxProductAvailableService\"},\"description\":\"The services available to the lockbox product.\",\"primaryKey\":[\"ProductId\",\"LockboxServiceTypeId\",\"PeriodStartDate\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"ProductId\",\"attributeReference\":{\"entity\":\"LockboxProductAvailableService.cdm.json/LockboxProductAvailableService\",\"name\":\"ProductId\"},\"dataType\":\"long\"},{\"type\":\"Existing\",\"name\":\"LockboxServiceTypeId\",\"attributeReference\":{\"entity\":\"LockboxProductAvailableService.cdm.json/LockboxProductAvailableService\",\"name\":\"LockboxServiceTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"PeriodStartDate\",\"attributeReference\":{\"entity\":\"LockboxProductAvailableService.cdm.json/LockboxProductAvailableService\",\"name\":\"PeriodStartDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\"},{\"type\":\"Existing\",\"name\":\"PeriodEndDate\",\"attributeReference\":{\"entity\":\"LockboxProductAvailableService.cdm.json/LockboxProductAvailableService\",\"name\":\"PeriodEndDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\"}]}}}",
+			"Description": "The services available to the lockbox product.",
+			"DisplayFolderInfo": "{\"name\":\"Product\",\"colorCode\":\"#0E3D73\"}",
+			"PrimaryKeys": "ProductId,LockboxServiceTypeId,PeriodStartDate",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

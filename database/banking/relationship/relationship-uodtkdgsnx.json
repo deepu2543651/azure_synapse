@@ -1,0 +1,30 @@
+{
+	"name": "relationship-uodtkdgsnx",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-uodtkdgsnx",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "PartyOrganization",
+		"ToTableName": "ServiceRequest",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "OrganizationId",
+				"ToColumnName": "OrganizationId"
+			},
+			{
+				"FromColumnName": "PartyId",
+				"ToColumnName": "PartyId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"PartyOrganization.cdm.json/PartyOrganization\",\"toEntity\":\"ServiceRequest.cdm.json/ServiceRequest\",\"joinPairs\":[{\"fromAttribute\":\"OrganizationId\",\"toAttribute\":\"OrganizationId\"},{\"fromAttribute\":\"PartyId\",\"toAttribute\":\"PartyId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

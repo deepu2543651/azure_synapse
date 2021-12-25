@@ -1,0 +1,161 @@
+{
+	"name": "AtmLocation",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "AtmLocation",
+		"Description": "The location of an ATM, which is many cases is a  financial institution, bank, retail, airport or similar location at which one or more ATM's are located.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "AtmId",
+					"Description": "The unique identifier of an ATM.",
+					"BaseAttributeReference": {
+						"Entity": "AtmLocation.cdm.json/AtmLocation",
+						"Name": "AtmId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PeriodStartDate",
+					"Description": "The period start date for which the ATM location is valid.",
+					"BaseAttributeReference": {
+						"Entity": "AtmLocation.cdm.json/AtmLocation",
+						"Name": "PeriodStartDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "PeriodEndDate",
+					"Description": "The period end date for which the ATM location is valid.",
+					"BaseAttributeReference": {
+						"Entity": "AtmLocation.cdm.json/AtmLocation",
+						"Name": "PeriodEndDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "LocationId",
+					"Description": "The unique identifier of a Location.",
+					"BaseAttributeReference": {
+						"Entity": "AtmLocation.cdm.json/AtmLocation",
+						"Name": "LocationId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "AtmLocationTypeId",
+					"Description": "The unique identifier of the ATM Location Type.",
+					"BaseAttributeReference": {
+						"Entity": "AtmLocation.cdm.json/AtmLocation",
+						"Name": "AtmLocationTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "AtmLocationNote",
+					"Description": "A note, comment or additional information regarding an ATM location.",
+					"BaseAttributeReference": {
+						"Entity": "AtmLocation.cdm.json/AtmLocation",
+						"Name": "AtmLocationNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/AtmLocation",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/AtmLocation",
+				"Properties": {
+					"LinkedServiceName": "wspc-dpu-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"AtmId\":{\"entity\":\"AtmLocation.cdm.json/AtmLocation\",\"name\":\"AtmId\"},\"PeriodStartDate\":{\"entity\":\"AtmLocation.cdm.json/AtmLocation\",\"name\":\"PeriodStartDate\"},\"PeriodEndDate\":{\"entity\":\"AtmLocation.cdm.json/AtmLocation\",\"name\":\"PeriodEndDate\"},\"LocationId\":{\"entity\":\"AtmLocation.cdm.json/AtmLocation\",\"name\":\"LocationId\"},\"AtmLocationTypeId\":{\"entity\":\"AtmLocation.cdm.json/AtmLocation\",\"name\":\"AtmLocationTypeId\"},\"AtmLocationNote\":{\"entity\":\"AtmLocation.cdm.json/AtmLocation\",\"name\":\"AtmLocationNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"AtmLocation\",\"path\":\"AtmLocation.cdm.json/AtmLocation\"},\"description\":\"The location of an ATM, which is many cases is a  financial institution, bank, retail, airport or similar location at which one or more ATM's are located.\",\"primaryKey\":[\"AtmId\",\"PeriodStartDate\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"AtmId\",\"attributeReference\":{\"entity\":\"AtmLocation.cdm.json/AtmLocation\",\"name\":\"AtmId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"PeriodStartDate\",\"attributeReference\":{\"entity\":\"AtmLocation.cdm.json/AtmLocation\",\"name\":\"PeriodStartDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\"},{\"type\":\"Existing\",\"name\":\"PeriodEndDate\",\"attributeReference\":{\"entity\":\"AtmLocation.cdm.json/AtmLocation\",\"name\":\"PeriodEndDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\"},{\"type\":\"Existing\",\"name\":\"LocationId\",\"attributeReference\":{\"entity\":\"AtmLocation.cdm.json/AtmLocation\",\"name\":\"LocationId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"AtmLocationTypeId\",\"attributeReference\":{\"entity\":\"AtmLocation.cdm.json/AtmLocation\",\"name\":\"AtmLocationTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"AtmLocationNote\",\"attributeReference\":{\"entity\":\"AtmLocation.cdm.json/AtmLocation\",\"name\":\"AtmLocationNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024}]}}}",
+			"Description": "The location of an ATM, which is many cases is a  financial institution, bank, retail, airport or similar location at which one or more ATM's are located.",
+			"DisplayFolderInfo": "{\"name\":\"Channel\",\"colorCode\":\"#001D3F\"}",
+			"PrimaryKeys": "AtmId,PeriodStartDate",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

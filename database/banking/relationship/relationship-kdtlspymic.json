@@ -1,0 +1,26 @@
+{
+	"name": "relationship-kdtlspymic",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-kdtlspymic",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "UnitOfMeasure",
+		"ToTableName": "BankingProduct",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "UnitOfMeasureId",
+				"ToColumnName": "NetContentUomId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"UnitOfMeasure.cdm.json/UnitOfMeasure\",\"toEntity\":\"BankingProduct.cdm.json/BankingProduct\",\"joinPairs\":[{\"fromAttribute\":\"UnitOfMeasureId\",\"toAttribute\":\"NetContentUomId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

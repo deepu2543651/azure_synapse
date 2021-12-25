@@ -1,0 +1,26 @@
+{
+	"name": "relationship-lqwkeasinl",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-lqwkeasinl",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "AdvertisingEvent",
+		"ToTableName": "BankTransaction",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "AdvertisingEventId",
+				"ToColumnName": "AdvertisingEventId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"AdvertisingEvent.cdm.json/AdvertisingEvent\",\"toEntity\":\"BankTransaction.cdm.json/BankTransaction\",\"joinPairs\":[{\"fromAttribute\":\"AdvertisingEventId\",\"toAttribute\":\"AdvertisingEventId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

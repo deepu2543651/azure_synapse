@@ -1,0 +1,26 @@
+{
+	"name": "relationship-nsupvdrvkl",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-nsupvdrvkl",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "PayeeCategory",
+		"ToTableName": "Payee",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "PayeeCategoryId",
+				"ToColumnName": "PayeeCategoryId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"PayeeCategory.cdm.json/PayeeCategory\",\"toEntity\":\"Payee.cdm.json/Payee\",\"joinPairs\":[{\"fromAttribute\":\"PayeeCategoryId\",\"toAttribute\":\"PayeeCategoryId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

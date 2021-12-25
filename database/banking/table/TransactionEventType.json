@@ -1,0 +1,112 @@
+{
+	"name": "TransactionEventType",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "TransactionEventType",
+		"Description": "A discrete event, which may be associated with a transaction. \n\nA transaction consists of one or more events.\n\nEx:\n- Receive Transaction Request\n- Initiate Transaction Processing\n- Request Transaction Authorization\n- Receive Transaction Authorization\n- Close Transaction\n- Archive Transaction\n- Transaction Confirmed\n- Payment Transmitted\n- Payment Receipt Confirmed",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "TransactionEventTypeId",
+					"Description": "The unique identifier of a Transaction Event Type.",
+					"BaseAttributeReference": {
+						"Entity": "TransactionEventType.cdm.json/TransactionEventType",
+						"Name": "TransactionEventTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "TransactionEventTypeName",
+					"Description": "The name of a Transaction Event Type.",
+					"BaseAttributeReference": {
+						"Entity": "TransactionEventType.cdm.json/TransactionEventType",
+						"Name": "TransactionEventTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "TransactionEventTypeDescription",
+					"Description": "The description of a Transaction Event Type.",
+					"BaseAttributeReference": {
+						"Entity": "TransactionEventType.cdm.json/TransactionEventType",
+						"Name": "TransactionEventTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/TransactionEventType",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/TransactionEventType",
+				"Properties": {
+					"LinkedServiceName": "wspc-dpu-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"TransactionEventTypeId\":{\"entity\":\"TransactionEventType.cdm.json/TransactionEventType\",\"name\":\"TransactionEventTypeId\"},\"TransactionEventTypeName\":{\"entity\":\"TransactionEventType.cdm.json/TransactionEventType\",\"name\":\"TransactionEventTypeName\"},\"TransactionEventTypeDescription\":{\"entity\":\"TransactionEventType.cdm.json/TransactionEventType\",\"name\":\"TransactionEventTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"TransactionEventType\",\"path\":\"TransactionEventType.cdm.json/TransactionEventType\"},\"description\":\"A discrete event, which may be associated with a transaction. \\n\\nA transaction consists of one or more events.\\n\\nEx:\\n- Receive Transaction Request\\n- Initiate Transaction Processing\\n- Request Transaction Authorization\\n- Receive Transaction Authorization\\n- Close Transaction\\n- Archive Transaction\\n- Transaction Confirmed\\n- Payment Transmitted\\n- Payment Receipt Confirmed\",\"primaryKey\":[\"TransactionEventTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"TransactionEventTypeId\",\"attributeReference\":{\"entity\":\"TransactionEventType.cdm.json/TransactionEventType\",\"name\":\"TransactionEventTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"TransactionEventTypeName\",\"attributeReference\":{\"entity\":\"TransactionEventType.cdm.json/TransactionEventType\",\"name\":\"TransactionEventTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"TransactionEventTypeDescription\",\"attributeReference\":{\"entity\":\"TransactionEventType.cdm.json/TransactionEventType\",\"name\":\"TransactionEventTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512}]}}}",
+			"Description": "A discrete event, which may be associated with a transaction. \n\nA transaction consists of one or more events.\n\nEx:\n- Receive Transaction Request\n- Initiate Transaction Processing\n- Request Transaction Authorization\n- Receive Transaction Authorization\n- Close Transaction\n- Archive Transaction\n- Transaction Confirmed\n- Payment Transmitted\n- Payment Receipt Confirmed",
+			"DisplayFolderInfo": "{\"name\":\"Transaction\",\"colorCode\":\"#823A16\"}",
+			"PrimaryKeys": "TransactionEventTypeId",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

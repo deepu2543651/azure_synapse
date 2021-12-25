@@ -1,0 +1,26 @@
+{
+	"name": "relationship-zdnwxzyhnu",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-zdnwxzyhnu",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "AprBasisType",
+		"ToTableName": "BaseRate",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "AprBasisTypeId",
+				"ToColumnName": "AprBasisTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"AprBasisType.cdm.json/AprBasisType\",\"toEntity\":\"BaseRate.cdm.json/BaseRate\",\"joinPairs\":[{\"fromAttribute\":\"AprBasisTypeId\",\"toAttribute\":\"AprBasisTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

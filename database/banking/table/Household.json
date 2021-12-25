@@ -1,0 +1,161 @@
+{
+	"name": "Household",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "Household",
+		"Description": "A household is established at a location and consists of one or more members.\n\nA household is a broader term than the family, it refers to any group of individuals living together in a common dwelling in which the individuals may or may not be related.\n\nA household consists of all the people who occupy a housing unit. A house, an apartment or other group of rooms, or a single room, is regarded as a housing unit when it is occupied or intended for occupancy as separate living quarters.\n\nA household includes the related family members and all the unrelated people, if any, such as lodgers, foster children, wards, or employees who share the housing unit. A person living alone in a housing unit, or a group of unrelated people sharing a housing unit such as partners or roomers, is also counted as a household",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "HouseholdId",
+					"Description": "The unique identifier of a Household.",
+					"BaseAttributeReference": {
+						"Entity": "Household.cdm.json/Household",
+						"Name": "HouseholdId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "HouseholdTypeId",
+					"Description": "The unique identifier of a Household Type.",
+					"BaseAttributeReference": {
+						"Entity": "Household.cdm.json/Household",
+						"Name": "HouseholdTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "HouseholdEstablishedDate",
+					"Description": "The date that the household was established.",
+					"BaseAttributeReference": {
+						"Entity": "Household.cdm.json/Household",
+						"Name": "HouseholdEstablishedDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "HouseholdTerminatedDate",
+					"Description": "The date that the household was terminated.",
+					"BaseAttributeReference": {
+						"Entity": "Household.cdm.json/Household",
+						"Name": "HouseholdTerminatedDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "HouseholdNote",
+					"Description": "A note, comment or additional information regarding the household.",
+					"BaseAttributeReference": {
+						"Entity": "Household.cdm.json/Household",
+						"Name": "HouseholdNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "PartyId",
+					"Description": "The unique identifier of a Party.",
+					"BaseAttributeReference": {
+						"Entity": "Household.cdm.json/Household",
+						"Name": "PartyId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/Household",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/Household",
+				"Properties": {
+					"LinkedServiceName": "wspc-dpu-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"HouseholdId\":{\"entity\":\"Household.cdm.json/Household\",\"name\":\"HouseholdId\"},\"HouseholdTypeId\":{\"entity\":\"Household.cdm.json/Household\",\"name\":\"HouseholdTypeId\"},\"HouseholdEstablishedDate\":{\"entity\":\"Household.cdm.json/Household\",\"name\":\"HouseholdEstablishedDate\"},\"HouseholdTerminatedDate\":{\"entity\":\"Household.cdm.json/Household\",\"name\":\"HouseholdTerminatedDate\"},\"HouseholdNote\":{\"entity\":\"Household.cdm.json/Household\",\"name\":\"HouseholdNote\"},\"PartyId\":{\"entity\":\"Household.cdm.json/Household\",\"name\":\"PartyId\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"Household\",\"path\":\"Household.cdm.json/Household\"},\"description\":\"A household is established at a location and consists of one or more members.\\n\\nA household is a broader term than the family, it refers to any group of individuals living together in a common dwelling in which the individuals may or may not be related.\\n\\nA household consists of all the people who occupy a housing unit. A house, an apartment or other group of rooms, or a single room, is regarded as a housing unit when it is occupied or intended for occupancy as separate living quarters.\\n\\nA household includes the related family members and all the unrelated people, if any, such as lodgers, foster children, wards, or employees who share the housing unit. A person living alone in a housing unit, or a group of unrelated people sharing a housing unit such as partners or roomers, is also counted as a household\",\"primaryKey\":[\"HouseholdId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"HouseholdId\",\"attributeReference\":{\"entity\":\"Household.cdm.json/Household\",\"name\":\"HouseholdId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"HouseholdTypeId\",\"attributeReference\":{\"entity\":\"Household.cdm.json/Household\",\"name\":\"HouseholdTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"HouseholdEstablishedDate\",\"attributeReference\":{\"entity\":\"Household.cdm.json/Household\",\"name\":\"HouseholdEstablishedDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\"},{\"type\":\"Existing\",\"name\":\"HouseholdTerminatedDate\",\"attributeReference\":{\"entity\":\"Household.cdm.json/Household\",\"name\":\"HouseholdTerminatedDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\"},{\"type\":\"Existing\",\"name\":\"HouseholdNote\",\"attributeReference\":{\"entity\":\"Household.cdm.json/Household\",\"name\":\"HouseholdNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024},{\"type\":\"Existing\",\"name\":\"PartyId\",\"attributeReference\":{\"entity\":\"Household.cdm.json/Household\",\"name\":\"PartyId\"},\"dataType\":\"long\"}]}}}",
+			"Description": "A household is established at a location and consists of one or more members.\n\nA household is a broader term than the family, it refers to any group of individuals living together in a common dwelling in which the individuals may or may not be related.\n\nA household consists of all the people who occupy a housing unit. A house, an apartment or other group of rooms, or a single room, is regarded as a housing unit when it is occupied or intended for occupancy as separate living quarters.\n\nA household includes the related family members and all the unrelated people, if any, such as lodgers, foster children, wards, or employees who share the housing unit. A person living alone in a housing unit, or a group of unrelated people sharing a housing unit such as partners or roomers, is also counted as a household",
+			"DisplayFolderInfo": "{\"name\":\"Party\",\"colorCode\":\"#00727A\"}",
+			"PrimaryKeys": "HouseholdId",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

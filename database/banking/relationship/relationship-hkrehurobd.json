@@ -1,0 +1,26 @@
+{
+	"name": "relationship-hkrehurobd",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-hkrehurobd",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "ProductRelationshipType",
+		"ToTableName": "RelatedProduct",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ProductRelationshipTypeId",
+				"ToColumnName": "ProductRelationshipTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"ProductRelationshipType.cdm.json/ProductRelationshipType\",\"toEntity\":\"RelatedProduct.cdm.json/RelatedProduct\",\"joinPairs\":[{\"fromAttribute\":\"ProductRelationshipTypeId\",\"toAttribute\":\"ProductRelationshipTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

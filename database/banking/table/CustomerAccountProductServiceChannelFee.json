@@ -1,0 +1,264 @@
+{
+	"name": "CustomerAccountProductServiceChannelFee",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "CustomerAccountProductServiceChannelFee",
+		"Description": "A specific Schedule which is defined for or assigned to a Customer Account for an associated period.\n\nSome accounts based on size or volume will have commission schedules defined just for them based on specific Products.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "CustomerAccountId",
+					"Description": "The unique identifier of a Customer Account.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountProductServiceChannelFee.cdm.json/CustomerAccountProductServiceChannelFee",
+						"Name": "CustomerAccountId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "ProductId",
+					"Description": "The unique identifier of a Product.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountProductServiceChannelFee.cdm.json/CustomerAccountProductServiceChannelFee",
+						"Name": "ProductId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "ServiceId",
+					"Description": "The unique identifier of a Product.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountProductServiceChannelFee.cdm.json/CustomerAccountProductServiceChannelFee",
+						"Name": "ServiceId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "ChannelId",
+					"Description": "The unique identifier of a Channel.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountProductServiceChannelFee.cdm.json/CustomerAccountProductServiceChannelFee",
+						"Name": "ChannelId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ProductServiceChannelFeeTypeId",
+					"Description": "The unique identifier of a Product Service Channel Fee Type.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountProductServiceChannelFee.cdm.json/CustomerAccountProductServiceChannelFee",
+						"Name": "ProductServiceChannelFeeTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "MinimumAmount",
+					"Description": "The minimum amount for which the associated Product Charge Schedule applies.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountProductServiceChannelFee.cdm.json/CustomerAccountProductServiceChannelFee",
+						"Name": "MinimumAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "MaximumAmount",
+					"Description": "The maximum amount for which the associated Product Charge Schedule applies.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountProductServiceChannelFee.cdm.json/CustomerAccountProductServiceChannelFee",
+						"Name": "MaximumAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "PeriodStartDate",
+					"Description": "The period start date for which the product available channel relationship is valid.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountProductServiceChannelFee.cdm.json/CustomerAccountProductServiceChannelFee",
+						"Name": "PeriodStartDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "EffectiveStartDate",
+					"Description": "The effective start date for which the associated Schedule is assigned to the Customer Account.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountProductServiceChannelFee.cdm.json/CustomerAccountProductServiceChannelFee",
+						"Name": "EffectiveStartDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "EffectiveEndDate",
+					"Description": "The effective end date for which the associated Schedule is assigned to the Customer Account.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountProductServiceChannelFee.cdm.json/CustomerAccountProductServiceChannelFee",
+						"Name": "EffectiveEndDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "CustomerAccountProductServiceChannelFeeAmount",
+					"Description": "The amount of the customer account product service channel fee.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountProductServiceChannelFee.cdm.json/CustomerAccountProductServiceChannelFee",
+						"Name": "CustomerAccountProductServiceChannelFeeAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "CustomerAccountProductServiceChannelFeeNote",
+					"Description": "Notes, comments or additional information regarding the Customer Account Product Service Channel Fee.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountProductServiceChannelFee.cdm.json/CustomerAccountProductServiceChannelFee",
+						"Name": "CustomerAccountProductServiceChannelFeeNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/CustomerAccountProductServiceChannelFee",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/CustomerAccountProductServiceChannelFee",
+				"Properties": {
+					"LinkedServiceName": "wspc-dpu-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"CustomerAccountId\":{\"entity\":\"CustomerAccountProductServiceChannelFee.cdm.json/CustomerAccountProductServiceChannelFee\",\"name\":\"CustomerAccountId\"},\"ProductId\":{\"entity\":\"CustomerAccountProductServiceChannelFee.cdm.json/CustomerAccountProductServiceChannelFee\",\"name\":\"ProductId\"},\"ServiceId\":{\"entity\":\"CustomerAccountProductServiceChannelFee.cdm.json/CustomerAccountProductServiceChannelFee\",\"name\":\"ServiceId\"},\"ChannelId\":{\"entity\":\"CustomerAccountProductServiceChannelFee.cdm.json/CustomerAccountProductServiceChannelFee\",\"name\":\"ChannelId\"},\"ProductServiceChannelFeeTypeId\":{\"entity\":\"CustomerAccountProductServiceChannelFee.cdm.json/CustomerAccountProductServiceChannelFee\",\"name\":\"ProductServiceChannelFeeTypeId\"},\"MinimumAmount\":{\"entity\":\"CustomerAccountProductServiceChannelFee.cdm.json/CustomerAccountProductServiceChannelFee\",\"name\":\"MinimumAmount\"},\"MaximumAmount\":{\"entity\":\"CustomerAccountProductServiceChannelFee.cdm.json/CustomerAccountProductServiceChannelFee\",\"name\":\"MaximumAmount\"},\"PeriodStartDate\":{\"entity\":\"CustomerAccountProductServiceChannelFee.cdm.json/CustomerAccountProductServiceChannelFee\",\"name\":\"PeriodStartDate\"},\"EffectiveStartDate\":{\"entity\":\"CustomerAccountProductServiceChannelFee.cdm.json/CustomerAccountProductServiceChannelFee\",\"name\":\"EffectiveStartDate\"},\"EffectiveEndDate\":{\"entity\":\"CustomerAccountProductServiceChannelFee.cdm.json/CustomerAccountProductServiceChannelFee\",\"name\":\"EffectiveEndDate\"},\"CustomerAccountProductServiceChannelFeeAmount\":{\"entity\":\"CustomerAccountProductServiceChannelFee.cdm.json/CustomerAccountProductServiceChannelFee\",\"name\":\"CustomerAccountProductServiceChannelFeeAmount\"},\"CustomerAccountProductServiceChannelFeeNote\":{\"entity\":\"CustomerAccountProductServiceChannelFee.cdm.json/CustomerAccountProductServiceChannelFee\",\"name\":\"CustomerAccountProductServiceChannelFeeNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"CustomerAccountProductServiceChannelFee\",\"path\":\"CustomerAccountProductServiceChannelFee.cdm.json/CustomerAccountProductServiceChannelFee\"},\"description\":\"A specific Schedule which is defined for or assigned to a Customer Account for an associated period.\\n\\nSome accounts based on size or volume will have commission schedules defined just for them based on specific Products.\",\"primaryKey\":[\"CustomerAccountId\",\"ProductId\",\"ServiceId\",\"ChannelId\",\"ProductServiceChannelFeeTypeId\",\"MinimumAmount\",\"MaximumAmount\",\"PeriodStartDate\",\"EffectiveStartDate\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"CustomerAccountId\",\"attributeReference\":{\"entity\":\"CustomerAccountProductServiceChannelFee.cdm.json/CustomerAccountProductServiceChannelFee\",\"name\":\"CustomerAccountId\"},\"dataType\":\"long\"},{\"type\":\"Existing\",\"name\":\"ProductId\",\"attributeReference\":{\"entity\":\"CustomerAccountProductServiceChannelFee.cdm.json/CustomerAccountProductServiceChannelFee\",\"name\":\"ProductId\"},\"dataType\":\"long\"},{\"type\":\"Existing\",\"name\":\"ServiceId\",\"attributeReference\":{\"entity\":\"CustomerAccountProductServiceChannelFee.cdm.json/CustomerAccountProductServiceChannelFee\",\"name\":\"ServiceId\"},\"dataType\":\"long\"},{\"type\":\"Existing\",\"name\":\"ChannelId\",\"attributeReference\":{\"entity\":\"CustomerAccountProductServiceChannelFee.cdm.json/CustomerAccountProductServiceChannelFee\",\"name\":\"ChannelId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ProductServiceChannelFeeTypeId\",\"attributeReference\":{\"entity\":\"CustomerAccountProductServiceChannelFee.cdm.json/CustomerAccountProductServiceChannelFee\",\"name\":\"ProductServiceChannelFeeTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"MinimumAmount\",\"attributeReference\":{\"entity\":\"CustomerAccountProductServiceChannelFee.cdm.json/CustomerAccountProductServiceChannelFee\",\"name\":\"MinimumAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"MaximumAmount\",\"attributeReference\":{\"entity\":\"CustomerAccountProductServiceChannelFee.cdm.json/CustomerAccountProductServiceChannelFee\",\"name\":\"MaximumAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"PeriodStartDate\",\"attributeReference\":{\"entity\":\"CustomerAccountProductServiceChannelFee.cdm.json/CustomerAccountProductServiceChannelFee\",\"name\":\"PeriodStartDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\"},{\"type\":\"Existing\",\"name\":\"EffectiveStartDate\",\"attributeReference\":{\"entity\":\"CustomerAccountProductServiceChannelFee.cdm.json/CustomerAccountProductServiceChannelFee\",\"name\":\"EffectiveStartDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\"},{\"type\":\"Existing\",\"name\":\"EffectiveEndDate\",\"attributeReference\":{\"entity\":\"CustomerAccountProductServiceChannelFee.cdm.json/CustomerAccountProductServiceChannelFee\",\"name\":\"EffectiveEndDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\"},{\"type\":\"Existing\",\"name\":\"CustomerAccountProductServiceChannelFeeAmount\",\"attributeReference\":{\"entity\":\"CustomerAccountProductServiceChannelFee.cdm.json/CustomerAccountProductServiceChannelFee\",\"name\":\"CustomerAccountProductServiceChannelFeeAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"CustomerAccountProductServiceChannelFeeNote\",\"attributeReference\":{\"entity\":\"CustomerAccountProductServiceChannelFee.cdm.json/CustomerAccountProductServiceChannelFee\",\"name\":\"CustomerAccountProductServiceChannelFeeNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024}]}}}",
+			"Description": "A specific Schedule which is defined for or assigned to a Customer Account for an associated period.\n\nSome accounts based on size or volume will have commission schedules defined just for them based on specific Products.",
+			"DisplayFolderInfo": "{\"name\":\"Customer Account\",\"colorCode\":\"#E3008C\"}",
+			"PrimaryKeys": "CustomerAccountId,ProductId,ServiceId,ChannelId,ProductServiceChannelFeeTypeId,MinimumAmount,MaximumAmount,PeriodStartDate,EffectiveStartDate",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

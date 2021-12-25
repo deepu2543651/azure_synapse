@@ -1,0 +1,112 @@
+{
+	"name": "SavingsAccountType",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "SavingsAccountType",
+		"Description": "A type of savings account types based on its functionality and interest rates paid.\n\nEx:\n- Regular\n- Money Market\n- Coverdell Education Savings Account\n- Deposit Account\n\nWhere:\n\nREGULAR\nAlso called passbook savings, this account allows you to add money as often as you like, with no fixed maturity or term. You earn interest on your balance, and can withdraw money at any time. And as long as you meet the low minimum balance requirement, there's no monthly fee.\n\nMONEY MARKET\nMoney market savings accounts are based upon money market rates and the interest rates may change accordingly.\n\nCOVERDELL EDUCATION SAVINGS ACCOUNT\nNon-Deductible account with tax free withdrawals for a child's educational expenses. Federal eligibility requirements and contribution limits apply. Consult your tax advisor.\n\nDEPOSIT ACCOUNT\nA deposit account is a current account at a banking or financial institution that enables money to be deposited and withdrawn by the account holder.  Transactions and resulting balance being recorded on the bank's books. Some banks charge a fee for this service, while others may pay the customer interest on the funds deposited.  Restrictions placed on access to the account depend upon the terms and conditions of the account.  The customer may or may not be able to pay the funds in the account by check, internet banking, EFTPOS or other similar methods.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "SavingsAccountTypeId",
+					"Description": "The unique identifier of a Savings Account Type.",
+					"BaseAttributeReference": {
+						"Entity": "SavingsAccountType.cdm.json/SavingsAccountType",
+						"Name": "SavingsAccountTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "SavingsAccountTypeName",
+					"Description": "The name of a Savings Account Type.",
+					"BaseAttributeReference": {
+						"Entity": "SavingsAccountType.cdm.json/SavingsAccountType",
+						"Name": "SavingsAccountTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "SavingsAccountTypeDescription",
+					"Description": "The description of a Savings Account Type.",
+					"BaseAttributeReference": {
+						"Entity": "SavingsAccountType.cdm.json/SavingsAccountType",
+						"Name": "SavingsAccountTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/SavingsAccountType",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/SavingsAccountType",
+				"Properties": {
+					"LinkedServiceName": "wspc-dpu-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"SavingsAccountTypeId\":{\"entity\":\"SavingsAccountType.cdm.json/SavingsAccountType\",\"name\":\"SavingsAccountTypeId\"},\"SavingsAccountTypeName\":{\"entity\":\"SavingsAccountType.cdm.json/SavingsAccountType\",\"name\":\"SavingsAccountTypeName\"},\"SavingsAccountTypeDescription\":{\"entity\":\"SavingsAccountType.cdm.json/SavingsAccountType\",\"name\":\"SavingsAccountTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"SavingsAccountType\",\"path\":\"SavingsAccountType.cdm.json/SavingsAccountType\"},\"description\":\"A type of savings account types based on its functionality and interest rates paid.\\n\\nEx:\\n- Regular\\n- Money Market\\n- Coverdell Education Savings Account\\n- Deposit Account\\n\\nWhere:\\n\\nREGULAR\\nAlso called passbook savings, this account allows you to add money as often as you like, with no fixed maturity or term. You earn interest on your balance, and can withdraw money at any time. And as long as you meet the low minimum balance requirement, there's no monthly fee.\\n\\nMONEY MARKET\\nMoney market savings accounts are based upon money market rates and the interest rates may change accordingly.\\n\\nCOVERDELL EDUCATION SAVINGS ACCOUNT\\nNon-Deductible account with tax free withdrawals for a child's educational expenses. Federal eligibility requirements and contribution limits apply. Consult your tax advisor.\\n\\nDEPOSIT ACCOUNT\\nA deposit account is a current account at a banking or financial institution that enables money to be deposited and withdrawn by the account holder.  Transactions and resulting balance being recorded on the bank's books. Some banks charge a fee for this service, while others may pay the customer interest on the funds deposited.  Restrictions placed on access to the account depend upon the terms and conditions of the account.  The customer may or may not be able to pay the funds in the account by check, internet banking, EFTPOS or other similar methods.\",\"primaryKey\":[\"SavingsAccountTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"SavingsAccountTypeId\",\"attributeReference\":{\"entity\":\"SavingsAccountType.cdm.json/SavingsAccountType\",\"name\":\"SavingsAccountTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"SavingsAccountTypeName\",\"attributeReference\":{\"entity\":\"SavingsAccountType.cdm.json/SavingsAccountType\",\"name\":\"SavingsAccountTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"SavingsAccountTypeDescription\",\"attributeReference\":{\"entity\":\"SavingsAccountType.cdm.json/SavingsAccountType\",\"name\":\"SavingsAccountTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512}]}}}",
+			"Description": "A type of savings account types based on its functionality and interest rates paid.\n\nEx:\n- Regular\n- Money Market\n- Coverdell Education Savings Account\n- Deposit Account\n\nWhere:\n\nREGULAR\nAlso called passbook savings, this account allows you to add money as often as you like, with no fixed maturity or term. You earn interest on your balance, and can withdraw money at any time. And as long as you meet the low minimum balance requirement, there's no monthly fee.\n\nMONEY MARKET\nMoney market savings accounts are based upon money market rates and the interest rates may change accordingly.\n\nCOVERDELL EDUCATION SAVINGS ACCOUNT\nNon-Deductible account with tax free withdrawals for a child's educational expenses. Federal eligibility requirements and contribution limits apply. Consult your tax advisor.\n\nDEPOSIT ACCOUNT\nA deposit account is a current account at a banking or financial institution that enables money to be deposited and withdrawn by the account holder.  Transactions and resulting balance being recorded on the bank's books. Some banks charge a fee for this service, while others may pay the customer interest on the funds deposited.  Restrictions placed on access to the account depend upon the terms and conditions of the account.  The customer may or may not be able to pay the funds in the account by check, internet banking, EFTPOS or other similar methods.",
+			"DisplayFolderInfo": "{\"name\":\"Product\",\"colorCode\":\"#0E3D73\"}",
+			"PrimaryKeys": "SavingsAccountTypeId",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

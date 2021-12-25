@@ -1,0 +1,26 @@
+{
+	"name": "relationship-cuiqkywlop",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-cuiqkywlop",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "ServiceRequest",
+		"ToTableName": "RelatedServiceRequest",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ServiceRequestId",
+				"ToColumnName": "RelatedServiceRequestId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"ServiceRequest.cdm.json/ServiceRequest\",\"toEntity\":\"RelatedServiceRequest.cdm.json/RelatedServiceRequest\",\"joinPairs\":[{\"fromAttribute\":\"ServiceRequestId\",\"toAttribute\":\"RelatedServiceRequestId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

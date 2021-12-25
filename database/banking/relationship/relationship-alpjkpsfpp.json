@@ -1,0 +1,26 @@
+{
+	"name": "relationship-alpjkpsfpp",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-alpjkpsfpp",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Service",
+		"ToTableName": "BankTransaction",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ServiceId",
+				"ToColumnName": "ServiceId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Service.cdm.json/Service\",\"toEntity\":\"BankTransaction.cdm.json/BankTransaction\",\"joinPairs\":[{\"fromAttribute\":\"ServiceId\",\"toAttribute\":\"ServiceId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

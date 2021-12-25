@@ -1,0 +1,129 @@
+{
+	"name": "AprBasisType",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "AprBasisType",
+		"Description": "The basis upon which payment card APR is determined.\n\nMost APRs are linked to the WSJ Prime Lending Rate, published by the Wall Street Journal. When this rate changes, your payment card rate is not far behind - especially if it goes up.\n\nOther examples of indexes are:\n\n    1 = Prime rate\n    2 = One-month Treasury bill rate\n    3 = Three-month Treasury bill rate\n    4 = Six-month Treasury bill rate\n    5 = One-year Treasury bill rate\n    6 = Federal funds rate\n    7 = Cost of funds to card issuer\n    8 = Federal Reserve discount rate\n    9 = Other",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "AprBasisTypeId",
+					"Description": "The unique identifier of an APR Basis Type.",
+					"BaseAttributeReference": {
+						"Entity": "AprBasisType.cdm.json/AprBasisType",
+						"Name": "AprBasisTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "AprBasisTypeName",
+					"Description": "The name of an APR Basis Type.",
+					"BaseAttributeReference": {
+						"Entity": "AprBasisType.cdm.json/AprBasisType",
+						"Name": "AprBasisTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "AprBasisTypeDescription",
+					"Description": "The description of an APR Basis Type.",
+					"BaseAttributeReference": {
+						"Entity": "AprBasisType.cdm.json/AprBasisType",
+						"Name": "AprBasisTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "AprCalculationStatement",
+					"Description": "A statement describing how APR is calculated.",
+					"BaseAttributeReference": {
+						"Entity": "AprBasisType.cdm.json/AprBasisType",
+						"Name": "AprCalculationStatement"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 2048,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/AprBasisType",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/AprBasisType",
+				"Properties": {
+					"LinkedServiceName": "wspc-dpu-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"AprBasisTypeId\":{\"entity\":\"AprBasisType.cdm.json/AprBasisType\",\"name\":\"AprBasisTypeId\"},\"AprBasisTypeName\":{\"entity\":\"AprBasisType.cdm.json/AprBasisType\",\"name\":\"AprBasisTypeName\"},\"AprBasisTypeDescription\":{\"entity\":\"AprBasisType.cdm.json/AprBasisType\",\"name\":\"AprBasisTypeDescription\"},\"AprCalculationStatement\":{\"entity\":\"AprBasisType.cdm.json/AprBasisType\",\"name\":\"AprCalculationStatement\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"AprBasisType\",\"path\":\"AprBasisType.cdm.json/AprBasisType\"},\"description\":\"The basis upon which payment card APR is determined.\\n\\nMost APRs are linked to the WSJ Prime Lending Rate, published by the Wall Street Journal. When this rate changes, your payment card rate is not far behind - especially if it goes up.\\n\\nOther examples of indexes are:\\n\\n    1 = Prime rate\\n    2 = One-month Treasury bill rate\\n    3 = Three-month Treasury bill rate\\n    4 = Six-month Treasury bill rate\\n    5 = One-year Treasury bill rate\\n    6 = Federal funds rate\\n    7 = Cost of funds to card issuer\\n    8 = Federal Reserve discount rate\\n    9 = Other\",\"primaryKey\":[\"AprBasisTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"AprBasisTypeId\",\"attributeReference\":{\"entity\":\"AprBasisType.cdm.json/AprBasisType\",\"name\":\"AprBasisTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"AprBasisTypeName\",\"attributeReference\":{\"entity\":\"AprBasisType.cdm.json/AprBasisType\",\"name\":\"AprBasisTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"AprBasisTypeDescription\",\"attributeReference\":{\"entity\":\"AprBasisType.cdm.json/AprBasisType\",\"name\":\"AprBasisTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512},{\"type\":\"Existing\",\"name\":\"AprCalculationStatement\",\"attributeReference\":{\"entity\":\"AprBasisType.cdm.json/AprBasisType\",\"name\":\"AprCalculationStatement\"},\"dataType\":\"string\",\"dataTypeLength\":2048}]}}}",
+			"Description": "The basis upon which payment card APR is determined.\n\nMost APRs are linked to the WSJ Prime Lending Rate, published by the Wall Street Journal. When this rate changes, your payment card rate is not far behind - especially if it goes up.\n\nOther examples of indexes are:\n\n    1 = Prime rate\n    2 = One-month Treasury bill rate\n    3 = Three-month Treasury bill rate\n    4 = Six-month Treasury bill rate\n    5 = One-year Treasury bill rate\n    6 = Federal funds rate\n    7 = Cost of funds to card issuer\n    8 = Federal Reserve discount rate\n    9 = Other",
+			"DisplayFolderInfo": "{\"name\":\"Customer Credit & Collections\",\"colorCode\":\"#022F22\"}",
+			"PrimaryKeys": "AprBasisTypeId",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

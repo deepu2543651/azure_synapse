@@ -1,0 +1,26 @@
+{
+	"name": "relationship-vmigkhlvuh",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-vmigkhlvuh",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Currency",
+		"ToTableName": "InternalCostOfFunds",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "IsoCurrencyCode",
+				"ToColumnName": "IsoCurrencyCode"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Currency.cdm.json/Currency\",\"toEntity\":\"InternalCostOfFunds.cdm.json/InternalCostOfFunds\",\"joinPairs\":[{\"fromAttribute\":\"IsoCurrencyCode\",\"toAttribute\":\"IsoCurrencyCode\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

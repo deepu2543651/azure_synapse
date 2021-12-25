@@ -1,0 +1,381 @@
+{
+	"name": "BankFacilityProduct",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "BankFacilityProduct",
+		"Description": "A facility is a formal financial assistance program offered by a lending institution to help a company that requires operating capital. Types of facilities include overdraft services, deferred payment plans, lines of credit, revolving credit, term loans, letters of credit and swingline loans.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "BankFacilityId",
+					"Description": "The unique identifier of a Product.",
+					"BaseAttributeReference": {
+						"Entity": "BankFacilityProduct.cdm.json/BankFacilityProduct",
+						"Name": "BankFacilityId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "BankFacilityTypeId",
+					"Description": "The unique identifier of a bank facility type.",
+					"BaseAttributeReference": {
+						"Entity": "BankFacilityProduct.cdm.json/BankFacilityProduct",
+						"Name": "BankFacilityTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "AdditionalInterestStatement",
+					"Description": "Where the Borrower is permitted to overdraw the Borrower's account or to utilize any overdraft or other facility prior to formal activation of the facility pursuant to the facility letter thereof issued by DBS Bank to the Borrower, or in excess of the approved limit of the facility under such facility letter, the Borrower shall pay to DBS Bank interest at the Overdue Interest Rate on the amount utilized prior to such formal activation or in excess of the said approved limit, subject, in the case of overdrawing of the Borrower's account or utilization of any overdraft facility prior to such formal activation of the facility, to a monthly minimum charge of such amount as may be prescribed by DBS Bank from time to time. Any changes to the monthly minimum charge from time to time shall be notified or announced by DBS Bank in such manner as it may deem fit.",
+					"BaseAttributeReference": {
+						"Entity": "BankFacilityProduct.cdm.json/BankFacilityProduct",
+						"Name": "AdditionalInterestStatement"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 2048,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "FeesStatement",
+					"Description": "Bank shall be entitled to charge the Borrower a facility fee for every calendar month (or other period as selected by DBS Bank from time to time) during which any overdraft facility granted to the Borrower is not utilized by the Borrower. The facility fee shall be at such rate or amount as DBS Bank may prescribe from time to time and payable to DBS Bank at the end of each calendar month or on DBS Bank's earlier demand. Any facility fee not paid when due shall, at DBS Bank's option, be debited to the Borrower's overdraft account and thereafter treated as a principal sum drawndown under the overdraft facility and interest shall be payable thereon accordingly.",
+					"BaseAttributeReference": {
+						"Entity": "BankFacilityProduct.cdm.json/BankFacilityProduct",
+						"Name": "FeesStatement"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 2048,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ChangeInCircumstancesStatement",
+					"Description": "If and whenever, at any time prior to the commencement of an interest period, DBS\nBank shall have determined (which determination shall be conclusive), that:-\n(a) by reason of any national or international, financial, political or economic conditions, currency availability or exchange controls, it is or will be impracticable for any loan, advance or any overdue sum to be drawn down or to remain outstanding in the currency in which it was made;\n(b) there has been adverse change or any development likely to result in an adverse change in the economic, financial or political conditions, interest rates or currency market in Singapore; or\n(c) deposits in the relevant currency are not available to DBS Bank in the Singapore inter-bank market in the ordinary course of business in sufficient amounts to fund any loan, advance or any overdue sum for a particular interest period,",
+					"BaseAttributeReference": {
+						"Entity": "BankFacilityProduct.cdm.json/BankFacilityProduct",
+						"Name": "ChangeInCircumstancesStatement"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 2048,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "IndulgenceOfBankStatement",
+					"Description": "Notwithstanding the fact that it may have delayed or failed or omitted to exercise any right, power, privilege, claim or remedy available to it on default by the Borrower and/or guarantor or that it may have accepted payment for any moneys outstanding under the Facilities after such default DBS Bank shall not be held to have waived or condoned or acquiesced in such default and may at any time thereafter exercise all or any of the remedies available to it and any delay or indulgence on the part of DBS Bank in taking steps to enforce any rights or remedies conferred on or available to it shall not be held to prejudice or be a waiver of its rights of action in respect thereof.",
+					"BaseAttributeReference": {
+						"Entity": "BankFacilityProduct.cdm.json/BankFacilityProduct",
+						"Name": "IndulgenceOfBankStatement"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 2048,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "TermsAndConditionsStatement",
+					"Description": "All other terms and conditions set out in the facility letter, schedules thereto and/or any agreements required by DBS Bank in relation to the Facilities shall also apply.\n19.2 If there is any conflict or inconsistency between the Standard Conditions and those contained in the facility letter, the terms and conditions in the facility letter shall prevail.\n19.3 DBS Bank may from time to time in its discretion vary the Standard Conditions or any part thereof by notice in writing to the Borrower and such variation shall take effect from the date stipulated by DBS Bank in its notice.\n20 DBS PRIVACY POLICY\n20.1 The DBS Privacy Policy, as may be amended, supplemented and/or substituted\nfrom time to time, is incorporated by reference into and forms part of the Standard Conditions and shall apply to all personal data that the Borrower provide to DBS Bank or that DBS Bank have obtained from any other sources or that arises from the Borrower relationship with DBS Group. The DBS Privacy Policy is available at http://www.dbs.com/privacy or from any DBS or POSB branch.\n20.2 The Borrower hereby consent to DBS Bank collection, use, disclosure and processing of the Borrower's personal data in accordance with the DBS Privacy Policy and the Standard Conditions.\n20.3 If the Borrower provide DBS Bank with the personal data of any individual (other than the Borrower's own, if the Borrower is an individual), the Borrower hereby consent on behalf of that individual whose personal data the Borrower provide, to DBS Bank collection, use, disclosure and processing of his/her personal data in accordance with the DBS Privacy Policy and the Standard Conditions. The Borrower warrant that the Borrower have obtained that individual's prior consent to such collection, use, disclosure and processing of his/her personal data by DBS Bank and that the personal data that the Borrower provide to DBS Bank is true, accurate and complete.\n20.4 In the event of conflict or inconsistency between the Standard Conditions and the DBS Privacy Policy, the provisions of the Standard Conditions shall prevail.\n20.5 Any consent the Borrower give pursuant to the Standard Conditions in relation to personal data shall survive the Borrower death, incapacity, bankruptcy or insolvency, as the case may be, and the termination of the Standard Conditions.\n20.6 If DBS Bank has records that the Borrower has opted-out of receiving marketing materials or marketing calls from the DBS Group, then, in accordance with the Borrower's decision to opt-out and notwithstanding anything to the contrary in the Standard Conditions, the Borrower will not receive such materials or calls from DBS Bank. The Borrower may opt-in to receive marketing materials and calls from DBS Bank at any time by submitting an opt-in form, which is available from any DBS/POSB branch.\n21 COMPLIANCE WITH TAX REQUIREMENTS\nThe Borrower agree to be bound by the terms relating to tax requirements (\"Tax Terms\") which forms part of the Standard Conditions and which may be amended, supplemented and/or substituted by DBS Bank from time to time. The Tax Terms are available at http://www.dbs.com.sg/tax-requirements.\n22 ELECTRONIC SIGNATURE INSTRUCTION SERVICE\n22.1 The Borrower acknowledge that DBS Bank may in DBS Bank discretion agree to\nmake available the Electronic Signature Instruction service to the Borrower when the Borrower give instructions to DBS Bank in person.\n22.2 Where DBS Bank, at the Borrower request, make available the Electronic Signature Instruction service to the Borrower, the Borrower will give instructions to DBS Bank in electronic form in a manner which complies with DBS Bank internal processes and requirements (each such instruction an \"Electronic Instruction\").\n22.3 The Borrower acknowledge and agree that DBS Bank shall be entitled to require the Borrower to sign such Electronic Instruction, and in this connection the Borrower authorize and consent to DBS Bank to collect and link the Borrower signature with the relevant Electronic Instruction in electronic form, using an electronic signature pad or other electronic device capable of collecting, recording and/or storing information and signatures in electronic form in a manner which complies with DBS Bank internal processes and requirements. The Electronic Instruction, together with the Borrower signature so collected and linked, are collectively the \"Electronic Signature Instruction\".\n22.4 The Borrower agree that such signature collected, received and/or stored in such electronic form shall be deemed to be equivalent to the Borrower's signature in hard copy for all purposes provided each such signature is collected electronically from the Borrower in person by DBS Bank officer or representative and such officer or representative verifies (whether before or after such signature is taken) the Borrower's identity in a manner which complies with the Bank's internal requirements.\n22.5 The Borrower agree that electronic data or images of any form, document, instruction or communication, other electronic documents, instruction or communication and all records in electronic form (collectively, \"Electronic Records\") maintained by DBS Bank or on DBS Bank's behalf where any signature(s) in electronic form has/have been affixed or appended (including, but not limited to, each Electronic Signature Instruction), which fulfil DBS Bank internal processes and requirements, shall be deemed to be valid, accurate and authentic, and given the between DBS Bank and the Borrower in hard copy.\n22.6 The Borrower acknowledge and agree that such Electronic Records can be used as evidence in any court proceedings as proof of their contents. The Borrower further agree that the Borrower shall not dispute the validity, accuracy or authenticity of the contents of any such Electronic Records (including any Electronic Signature Instruction), including evidence in the form of activity or transaction logs, computer or electronic records, magnetic tapes, cartridges, computer printouts, copies, or any other form of computer or electronic data or information storage or system, and that such Electronic Records shall be final and conclusive of the information and the Borrower instruction and agreement of any matter set out in the associated Electronic Signature Instruction, save in the case of DBS Bank manifest or clerical error. The Borrower further agree that the security procedure applied or to be applied to verify that the Electronic Signature Instruction is commercially reasonable and secure, pursuant to the Electronic Transactions Act (Cap 88).\n22.7 The Borrower acknowledge and agree that Electronic Records shall be stored for as long as the law and the standards and practices of the banking industry say DBS Bank must. After this time DBS Bank may destroy them.\n22.8 The Borrower shall not hold DBS Bank liable for acting in good faith or omitting in good faith to act on the Borrower's instructions given to DBS Bank in accordance with DBS Bank prescribed verification procedure prevailing at the time via the Electronic Signature Instruction service or in any Electronic Instruction forwarded to DBS Bank.",
+					"BaseAttributeReference": {
+						"Entity": "BankFacilityProduct.cdm.json/BankFacilityProduct",
+						"Name": "TermsAndConditionsStatement"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 2048,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "GoverningLawStatement",
+					"Description": "These Standard Conditions, the facility letter and all matters relating to the Facilities\nshall be governed by the laws of Singapore and the Borrower and every guarantor shall submit to the non-exclusive jurisdiction of the Courts in Singapore.",
+					"BaseAttributeReference": {
+						"Entity": "BankFacilityProduct.cdm.json/BankFacilityProduct",
+						"Name": "GoverningLawStatement"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 2048,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "SeverabilityStatement",
+					"Description": "If any one or more of the provisions contained herein or any part thereof shall be deemed invalid, unlawful or unenforceable in any respect under any applicable law, the validity, legality and enforceability of the remaining provisions or part thereof contained herein shall not in any way be affected or impaired but these terms and conditions shall be construed as if such invalid, unlawful or unenforceable provision or part thereof had never been contained herein.",
+					"BaseAttributeReference": {
+						"Entity": "BankFacilityProduct.cdm.json/BankFacilityProduct",
+						"Name": "SeverabilityStatement"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 2048,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "RightsBindingOnBorrowerStatement",
+					"Description": "The rights given to DBS Bank in the facility documents shall be binding on the Borrower and its successors and shall not be determined or in any way prejudiced or affected by (i) any liquidation (whether compulsory or voluntary) affecting the Borrower or any guarantor or any change in the Borrower's or guarantor's constitution whether by way of amalgamation, consolidation, reconstruction or otherwise, or (ii) any change in DBS Bank's constitution whether by way of amalgamation, consolidation, reconstruction or otherwise or (iii) any death, bankruptcy, insanity or other disability affecting any guarantor.",
+					"BaseAttributeReference": {
+						"Entity": "BankFacilityProduct.cdm.json/BankFacilityProduct",
+						"Name": "RightsBindingOnBorrowerStatement"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 2048,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "IndemnityStatement",
+					"Description": "The Borrower shall indemnify DBS Bank against all broken funding costs for any advances prepaid, any advances requested for but not made (other than advances not made due to the gross negligence or willful default on the part of DBS Bank), unwinding costs for foreign exchange, or any derivative transactions terminated before the contracted maturity date, and such amounts as DBS Bank may certify as sufficient to indemnify DBS Bank in respect of the cost or loss incurred by DBS Bank resulting from such prepayment or termination.",
+					"BaseAttributeReference": {
+						"Entity": "BankFacilityProduct.cdm.json/BankFacilityProduct",
+						"Name": "IndemnityStatement"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 2048,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "AcknowledgementOfRiskStatement",
+					"Description": "The Borrower acknowledges that the Facilities granted in a currency other than the\nBorrower's base currency may, because of the lower interest rates in relation to such other currencies, provide potentially cheaper borrowing costs. However, possible adverse currency movements may eliminate the benefit of cheaper borrowing costs and result in substantial losses. The Borrower acknowledges that it is aware of the risk of movements of both interest and exchange rates and has considered the same prior to borrowing in foreign currencies.",
+					"BaseAttributeReference": {
+						"Entity": "BankFacilityProduct.cdm.json/BankFacilityProduct",
+						"Name": "AcknowledgementOfRiskStatement"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 2048,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "RightOfReviewStatement",
+					"Description": "Amounts owing under any overdraft facility, including accrued interest, shall be\npayable by the Borrower on demand. Additionally, we reserve the right to review any or all Facilities granted to the Borrower from time to time at its absolute discretion and notwithstanding any other provisions of the facility letter, these Standard Conditions or any other document, DBS Bank shall have the right at its absolute discretion and without prior notice to the Borrower to vary, terminate, reduce, suspend or cancel the Facilities or any of them and/or to demand immediate repayment of all moneys and liabilities owing to DBS Bank under the Facilities (whether actual or contingent).",
+					"BaseAttributeReference": {
+						"Entity": "BankFacilityProduct.cdm.json/BankFacilityProduct",
+						"Name": "RightOfReviewStatement"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 2048,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "AssignmentAndTransferStatement",
+					"Description": "The Borrower may not assign or transfer any rights or obligations under the facility letter without the prior written consent of DBS Bank. DBS Bank may make the Facilities available and receive the benefit of any payment due to it through any of its offices and may at any time without the consent of and without notice to the Borrower or any other person assign or transfer all or any part of its benefits, rights and/or obligations under any facility document to any person as DBS Bank shall in its absolute discretion think fit. Any such assignee or transferee shall be entitled to the full benefit of such rights and/or obligations as if it were DBS Bank in respect of the rights or obligations assigned or transferred to it.",
+					"BaseAttributeReference": {
+						"Entity": "BankFacilityProduct.cdm.json/BankFacilityProduct",
+						"Name": "AssignmentAndTransferStatement"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 2048,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "RepaymentStatement",
+					"Description": "Interest shall be payable on the Loan on the last day of each interest period.\n41.2 Where any date for payment of principal or interest is not a Business Day, payment shall be made on the next succeeding Business Day.",
+					"BaseAttributeReference": {
+						"Entity": "BankFacilityProduct.cdm.json/BankFacilityProduct",
+						"Name": "RepaymentStatement"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 2048,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "PrepaymentStatement",
+					"Description": "Partial capital repayments (not being full repayment of the whole Loan) of at least\nS$10,000/- or integral multiples of S$10,000/- each or any such amount as DBS Bank may determine from time to time, may be made upon one (1) month's notice in writing to DBS Bank or payment of one (1) month's interest in lieu of notice.\n42.2 The whole Loan may be repaid in full upon the Borrower giving three (3) months' written notice to DBS Bank or payment of three (3) months' interest in lieu of notice. If the Loan is not repaid in full within three (3) months from the date of the Borrower's notice for full repayment, that notice shall be deemed to be ineffective and a fresh three (3) months' notice or payment of three (3) months' interest in lieu of such fresh notice shall be given or paid, as the case may be, if the Borrower wishes to proceed with the full repayment.",
+					"BaseAttributeReference": {
+						"Entity": "BankFacilityProduct.cdm.json/BankFacilityProduct",
+						"Name": "PrepaymentStatement"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 2048,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "TerminationEventsStatement",
+					"Description": "Without prejudice to any other terms in the facility documents (including without limitation, DBS Bank's right of review herein and DBS Bank's right to demand immediate repayment of any Facility which is repayable on demand), if any one or more of the following events (each to be known as a \"Termination Event\") should occur:-\n(a) Failure to pay: Any party to the facility documents (other than DBS Bank) does not pay any amount due by it under any of the facility documents to which it is a party on the due date or on demand if so payable; or\n(b) Other breach: The Borrower or any guarantor does not perform or comply with any of the provisions under any of the facility documents to which it is a party; or\n(c) Misrepresentation: Any representation, warranty or statement by the Borrower or any guarantor in any of the facility documents or in any document delivered thereunder is not complied with or is or proves to have been incorrect or untrue in any respect when made or deemed repeated; or\n(d) Cross Default: Any other indebtedness of the Borrower or any guarantor or any of its subsidiaries (to whomsoever owing) is not paid when due, or is or is declared to be or is capable of being declared due and payable before its normal maturity by reason of any actual or potential default, event of default or the like (however described); or\n(e)Invalidity, repudiation and illegality: Any provision of any of the facility documents is or becomes, or is claimed by the Borrower or any guarantor to be, for any reason invalid or unenforceable; or it is or will become unlawful for the Borrower or any guarantor to perform or comply with any one or more of its obligations under any of the facility documents to which it is a party; or\n(f) Cessation of business: The Borrower or any guarantor or any of its subsidiaries changes or threatens to change the nature or scope of its respective businesses, ceases or suspends or threatens to cease or suspend all or a substantial part of its respective business operations or any governmental or\nPage 23 of 34 06/2014\n other authority takes any step to expropriate, nationalize or compulsorily acquire all or a substantial part of its respective assets or of the shares in the Borrower or any guarantor or any of its subsidiaries; or\n(g) Execution: Any security on or over any part of the assets of the Borrower or any guarantor or any of its subsidiaries becomes enforceable or a distress, attachment or any form of execution is levied or enforced upon or issued against any such assets; or\n(h) Insolvency and moratorium: The Borrower or any guarantor or any of its subsidiaries is insolvent or unable to pay its respective debts, stops, suspends or threatens to stop or suspend payment of all or a material part of (or of a particular type of) its respective indebtedness, begins negotiations or takes any other step with a view to the deferral, rescheduling or other readjustment of all or a material part of (or all of a particular type of) its respective indebtedness (or of any part of its respective indebtedness which it will or might otherwise be unable to pay when due), proposes or makes a general assignment or an arrangement or composition with or for the benefit of its creditors, or a moratorium is agreed or declared in respect of or affecting all or a material part of (or of a particular type of) its respective indebtedness; or\n(i) Winding-up: Any step is taken by any person with a view to the winding-up of the Borrower or any guarantor or any of its subsidiaries or for the appointment of a liquidator (including a provisional liquidator), receiver and/or manager, judicial manager, trustee, administrator, agent or similar officer of the Borrower or any guarantor or any of its subsidiaries or over any part of its respective assets; or\n(j) Material/Adverse change: Any event or series of events occurs which, in DBS Bank's opinion, might have a material or adverse effect on the business or financial condition of the Borrower or any guarantor or any of its subsidiaries or a material or adverse effect on the ability of the Borrower or any guarantor or any of its subsidiaries to perform its respective obligations under the facility documents; or\n(k) Management Authority: The Borrower's present management is wholly or substantially displaced or has its authority curtailed; or\n(l) Business/Security in jeopardy: The business of the Borrower or any guarantor or any Security is in the opinion of DBS Bank in jeopardy and notice thereof has been given to the Borrower or such guarantor; or\n(m)Bankruptcy: Any step is taken to obtain an interim order in respect of the Borrower or any guarantor under the Bankruptcy Act (Cap. 20), or if any application is made or petition presented pursuant to any applicable statutes or regulations for a bankruptcy order against the Borrower or any guarantor, or if there is any death, insanity or disability of the Borrower or any guarantor; or\nPage 24 of 34 06/2014\n (n)Declared company: Where the Borrower or any guarantor is a company incorporated in Singapore, the Borrower or such guarantor is declared by the Minister to be a declared company under the provisions of Part IX of the Companies Act (Cap. 50); or\n(o) Loan to Value/Financing Quantum: (without prejudice to DBS Bank's rights under Section J) there is a breach of the Loan to Value ratio or the Financing Quantum if it increases beyond the level stipulated by DBS Bank; or\n(p) Condition in financial markets: if there occurs, in DBS Bank's opinion, a material adverse change or any development which may result in a prospective material adverse change in the monetary, political, financial (including conditions in any of the financial markets) or economic conditions or exchange control in Singapore or internationally (including any changes in stock, bond, currency, interbank or property market conditions, in interest rates or in existing foreign exchange controls).",
+					"BaseAttributeReference": {
+						"Entity": "BankFacilityProduct.cdm.json/BankFacilityProduct",
+						"Name": "TerminationEventsStatement"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 2048,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "BilateralLoanIndicator",
+					"Description": "A bilateral loan involves two parties, namely the lender and the borrower. Bilateral facilities are common in the case of small term loan, revolving credit and overdraft  facilities.",
+					"BaseAttributeReference": {
+						"Entity": "BankFacilityProduct.cdm.json/BankFacilityProduct",
+						"Name": "BilateralLoanIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "SyndicatedLoanIndicator",
+					"Description": "In a syndicated loan, two or more lenders each lend a proportion of the money. They are common for larger deals where a lender may not be willing and/or able (for example, for regulatory reasons) to lend the whole amount.",
+					"BaseAttributeReference": {
+						"Entity": "BankFacilityProduct.cdm.json/BankFacilityProduct",
+						"Name": "SyndicatedLoanIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/BankFacilityProduct",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/BankFacilityProduct",
+				"Properties": {
+					"LinkedServiceName": "wspc-dpu-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"BankFacilityId\":{\"entity\":\"BankFacilityProduct.cdm.json/BankFacilityProduct\",\"name\":\"BankFacilityId\"},\"BankFacilityTypeId\":{\"entity\":\"BankFacilityProduct.cdm.json/BankFacilityProduct\",\"name\":\"BankFacilityTypeId\"},\"AdditionalInterestStatement\":{\"entity\":\"BankFacilityProduct.cdm.json/BankFacilityProduct\",\"name\":\"AdditionalInterestStatement\"},\"FeesStatement\":{\"entity\":\"BankFacilityProduct.cdm.json/BankFacilityProduct\",\"name\":\"FeesStatement\"},\"ChangeInCircumstancesStatement\":{\"entity\":\"BankFacilityProduct.cdm.json/BankFacilityProduct\",\"name\":\"ChangeInCircumstancesStatement\"},\"IndulgenceOfBankStatement\":{\"entity\":\"BankFacilityProduct.cdm.json/BankFacilityProduct\",\"name\":\"IndulgenceOfBankStatement\"},\"TermsAndConditionsStatement\":{\"entity\":\"BankFacilityProduct.cdm.json/BankFacilityProduct\",\"name\":\"TermsAndConditionsStatement\"},\"GoverningLawStatement\":{\"entity\":\"BankFacilityProduct.cdm.json/BankFacilityProduct\",\"name\":\"GoverningLawStatement\"},\"SeverabilityStatement\":{\"entity\":\"BankFacilityProduct.cdm.json/BankFacilityProduct\",\"name\":\"SeverabilityStatement\"},\"RightsBindingOnBorrowerStatement\":{\"entity\":\"BankFacilityProduct.cdm.json/BankFacilityProduct\",\"name\":\"RightsBindingOnBorrowerStatement\"},\"IndemnityStatement\":{\"entity\":\"BankFacilityProduct.cdm.json/BankFacilityProduct\",\"name\":\"IndemnityStatement\"},\"AcknowledgementOfRiskStatement\":{\"entity\":\"BankFacilityProduct.cdm.json/BankFacilityProduct\",\"name\":\"AcknowledgementOfRiskStatement\"},\"RightOfReviewStatement\":{\"entity\":\"BankFacilityProduct.cdm.json/BankFacilityProduct\",\"name\":\"RightOfReviewStatement\"},\"AssignmentAndTransferStatement\":{\"entity\":\"BankFacilityProduct.cdm.json/BankFacilityProduct\",\"name\":\"AssignmentAndTransferStatement\"},\"RepaymentStatement\":{\"entity\":\"BankFacilityProduct.cdm.json/BankFacilityProduct\",\"name\":\"RepaymentStatement\"},\"PrepaymentStatement\":{\"entity\":\"BankFacilityProduct.cdm.json/BankFacilityProduct\",\"name\":\"PrepaymentStatement\"},\"TerminationEventsStatement\":{\"entity\":\"BankFacilityProduct.cdm.json/BankFacilityProduct\",\"name\":\"TerminationEventsStatement\"},\"BilateralLoanIndicator\":{\"entity\":\"BankFacilityProduct.cdm.json/BankFacilityProduct\",\"name\":\"BilateralLoanIndicator\"},\"SyndicatedLoanIndicator\":{\"entity\":\"BankFacilityProduct.cdm.json/BankFacilityProduct\",\"name\":\"SyndicatedLoanIndicator\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"BankFacilityProduct\",\"path\":\"BankFacilityProduct.cdm.json/BankFacilityProduct\"},\"description\":\"A facility is a formal financial assistance program offered by a lending institution to help a company that requires operating capital. Types of facilities include overdraft services, deferred payment plans, lines of credit, revolving credit, term loans, letters of credit and swingline loans.\",\"primaryKey\":[\"BankFacilityId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"BankFacilityId\",\"attributeReference\":{\"entity\":\"BankFacilityProduct.cdm.json/BankFacilityProduct\",\"name\":\"BankFacilityId\"},\"dataType\":\"long\"},{\"type\":\"Existing\",\"name\":\"BankFacilityTypeId\",\"attributeReference\":{\"entity\":\"BankFacilityProduct.cdm.json/BankFacilityProduct\",\"name\":\"BankFacilityTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"AdditionalInterestStatement\",\"attributeReference\":{\"entity\":\"BankFacilityProduct.cdm.json/BankFacilityProduct\",\"name\":\"AdditionalInterestStatement\"},\"dataType\":\"string\",\"dataTypeLength\":2048},{\"type\":\"Existing\",\"name\":\"FeesStatement\",\"attributeReference\":{\"entity\":\"BankFacilityProduct.cdm.json/BankFacilityProduct\",\"name\":\"FeesStatement\"},\"dataType\":\"string\",\"dataTypeLength\":2048},{\"type\":\"Existing\",\"name\":\"ChangeInCircumstancesStatement\",\"attributeReference\":{\"entity\":\"BankFacilityProduct.cdm.json/BankFacilityProduct\",\"name\":\"ChangeInCircumstancesStatement\"},\"dataType\":\"string\",\"dataTypeLength\":2048},{\"type\":\"Existing\",\"name\":\"IndulgenceOfBankStatement\",\"attributeReference\":{\"entity\":\"BankFacilityProduct.cdm.json/BankFacilityProduct\",\"name\":\"IndulgenceOfBankStatement\"},\"dataType\":\"string\",\"dataTypeLength\":2048},{\"type\":\"Existing\",\"name\":\"TermsAndConditionsStatement\",\"attributeReference\":{\"entity\":\"BankFacilityProduct.cdm.json/BankFacilityProduct\",\"name\":\"TermsAndConditionsStatement\"},\"dataType\":\"string\",\"dataTypeLength\":2048},{\"type\":\"Existing\",\"name\":\"GoverningLawStatement\",\"attributeReference\":{\"entity\":\"BankFacilityProduct.cdm.json/BankFacilityProduct\",\"name\":\"GoverningLawStatement\"},\"dataType\":\"string\",\"dataTypeLength\":2048},{\"type\":\"Existing\",\"name\":\"SeverabilityStatement\",\"attributeReference\":{\"entity\":\"BankFacilityProduct.cdm.json/BankFacilityProduct\",\"name\":\"SeverabilityStatement\"},\"dataType\":\"string\",\"dataTypeLength\":2048},{\"type\":\"Existing\",\"name\":\"RightsBindingOnBorrowerStatement\",\"attributeReference\":{\"entity\":\"BankFacilityProduct.cdm.json/BankFacilityProduct\",\"name\":\"RightsBindingOnBorrowerStatement\"},\"dataType\":\"string\",\"dataTypeLength\":2048},{\"type\":\"Existing\",\"name\":\"IndemnityStatement\",\"attributeReference\":{\"entity\":\"BankFacilityProduct.cdm.json/BankFacilityProduct\",\"name\":\"IndemnityStatement\"},\"dataType\":\"string\",\"dataTypeLength\":2048},{\"type\":\"Existing\",\"name\":\"AcknowledgementOfRiskStatement\",\"attributeReference\":{\"entity\":\"BankFacilityProduct.cdm.json/BankFacilityProduct\",\"name\":\"AcknowledgementOfRiskStatement\"},\"dataType\":\"string\",\"dataTypeLength\":2048},{\"type\":\"Existing\",\"name\":\"RightOfReviewStatement\",\"attributeReference\":{\"entity\":\"BankFacilityProduct.cdm.json/BankFacilityProduct\",\"name\":\"RightOfReviewStatement\"},\"dataType\":\"string\",\"dataTypeLength\":2048},{\"type\":\"Existing\",\"name\":\"AssignmentAndTransferStatement\",\"attributeReference\":{\"entity\":\"BankFacilityProduct.cdm.json/BankFacilityProduct\",\"name\":\"AssignmentAndTransferStatement\"},\"dataType\":\"string\",\"dataTypeLength\":2048},{\"type\":\"Existing\",\"name\":\"RepaymentStatement\",\"attributeReference\":{\"entity\":\"BankFacilityProduct.cdm.json/BankFacilityProduct\",\"name\":\"RepaymentStatement\"},\"dataType\":\"string\",\"dataTypeLength\":2048},{\"type\":\"Existing\",\"name\":\"PrepaymentStatement\",\"attributeReference\":{\"entity\":\"BankFacilityProduct.cdm.json/BankFacilityProduct\",\"name\":\"PrepaymentStatement\"},\"dataType\":\"string\",\"dataTypeLength\":2048},{\"type\":\"Existing\",\"name\":\"TerminationEventsStatement\",\"attributeReference\":{\"entity\":\"BankFacilityProduct.cdm.json/BankFacilityProduct\",\"name\":\"TerminationEventsStatement\"},\"dataType\":\"string\",\"dataTypeLength\":2048},{\"type\":\"Existing\",\"name\":\"BilateralLoanIndicator\",\"attributeReference\":{\"entity\":\"BankFacilityProduct.cdm.json/BankFacilityProduct\",\"name\":\"BilateralLoanIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"SyndicatedLoanIndicator\",\"attributeReference\":{\"entity\":\"BankFacilityProduct.cdm.json/BankFacilityProduct\",\"name\":\"SyndicatedLoanIndicator\"},\"dataType\":\"boolean\"}]}}}",
+			"Description": "A facility is a formal financial assistance program offered by a lending institution to help a company that requires operating capital. Types of facilities include overdraft services, deferred payment plans, lines of credit, revolving credit, term loans, letters of credit and swingline loans.",
+			"DisplayFolderInfo": "{\"name\":\"Product\",\"colorCode\":\"#0E3D73\"}",
+			"PrimaryKeys": "BankFacilityId",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

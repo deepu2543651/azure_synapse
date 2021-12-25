@@ -1,0 +1,181 @@
+{
+	"name": "Collateral",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "Collateral",
+		"Description": "The Customer Asset pledged as a security to back up a promise. In a home loan, the property is considered collateral that can be revoked if loan is not repaid according to the terms of the mortgage or deed of trust.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "CustomerAccountId",
+					"Description": "The unique identifier of a Customer Account.",
+					"BaseAttributeReference": {
+						"Entity": "Collateral.cdm.json/Collateral",
+						"Name": "CustomerAccountId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "CustomerAssetId",
+					"Description": "The unique identifier of a Customer Asset.",
+					"BaseAttributeReference": {
+						"Entity": "Collateral.cdm.json/Collateral",
+						"Name": "CustomerAssetId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "PeriodStartDate",
+					"Description": "The period start date that the customer asset was pledged as collateral for the customer account.",
+					"BaseAttributeReference": {
+						"Entity": "Collateral.cdm.json/Collateral",
+						"Name": "PeriodStartDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "PeriodEndDate",
+					"Description": "The period end date that the customer asset was pledged as collateral for the customer account.",
+					"BaseAttributeReference": {
+						"Entity": "Collateral.cdm.json/Collateral",
+						"Name": "PeriodEndDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "CollateralPledgedPercent",
+					"Description": "The percentage of the customer asset that was pledged as collateral. Note: This percentage may be different that the CUSTOMER ASSET OWNERSHIP.Customer Asset Ownership Percent but should not be more than that value.",
+					"BaseAttributeReference": {
+						"Entity": "Collateral.cdm.json/Collateral",
+						"Name": "CollateralPledgedPercent"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "CollateralPledgedValue",
+					"Description": "The value (amount) of the customer asset that was pledged as collateral. Note: This amount may be different than the CUSTOMER ASSET OWNERSHIP.Customer Asset Ownership Value but should not be more than that value.",
+					"BaseAttributeReference": {
+						"Entity": "Collateral.cdm.json/Collateral",
+						"Name": "CollateralPledgedValue"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "CollateralNote",
+					"Description": "A note, comment or additional information regarding a collateral.",
+					"BaseAttributeReference": {
+						"Entity": "Collateral.cdm.json/Collateral",
+						"Name": "CollateralNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/Collateral",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/Collateral",
+				"Properties": {
+					"LinkedServiceName": "wspc-dpu-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"CustomerAccountId\":{\"entity\":\"Collateral.cdm.json/Collateral\",\"name\":\"CustomerAccountId\"},\"CustomerAssetId\":{\"entity\":\"Collateral.cdm.json/Collateral\",\"name\":\"CustomerAssetId\"},\"PeriodStartDate\":{\"entity\":\"Collateral.cdm.json/Collateral\",\"name\":\"PeriodStartDate\"},\"PeriodEndDate\":{\"entity\":\"Collateral.cdm.json/Collateral\",\"name\":\"PeriodEndDate\"},\"CollateralPledgedPercent\":{\"entity\":\"Collateral.cdm.json/Collateral\",\"name\":\"CollateralPledgedPercent\"},\"CollateralPledgedValue\":{\"entity\":\"Collateral.cdm.json/Collateral\",\"name\":\"CollateralPledgedValue\"},\"CollateralNote\":{\"entity\":\"Collateral.cdm.json/Collateral\",\"name\":\"CollateralNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"Collateral\",\"path\":\"Collateral.cdm.json/Collateral\"},\"description\":\"The Customer Asset pledged as a security to back up a promise. In a home loan, the property is considered collateral that can be revoked if loan is not repaid according to the terms of the mortgage or deed of trust.\",\"primaryKey\":[\"CustomerAccountId\",\"CustomerAssetId\",\"PeriodStartDate\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"CustomerAccountId\",\"attributeReference\":{\"entity\":\"Collateral.cdm.json/Collateral\",\"name\":\"CustomerAccountId\"},\"dataType\":\"long\"},{\"type\":\"Existing\",\"name\":\"CustomerAssetId\",\"attributeReference\":{\"entity\":\"Collateral.cdm.json/Collateral\",\"name\":\"CustomerAssetId\"},\"dataType\":\"long\"},{\"type\":\"Existing\",\"name\":\"PeriodStartDate\",\"attributeReference\":{\"entity\":\"Collateral.cdm.json/Collateral\",\"name\":\"PeriodStartDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\"},{\"type\":\"Existing\",\"name\":\"PeriodEndDate\",\"attributeReference\":{\"entity\":\"Collateral.cdm.json/Collateral\",\"name\":\"PeriodEndDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\"},{\"type\":\"Existing\",\"name\":\"CollateralPledgedPercent\",\"attributeReference\":{\"entity\":\"Collateral.cdm.json/Collateral\",\"name\":\"CollateralPledgedPercent\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":8},{\"type\":\"Existing\",\"name\":\"CollateralPledgedValue\",\"attributeReference\":{\"entity\":\"Collateral.cdm.json/Collateral\",\"name\":\"CollateralPledgedValue\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"CollateralNote\",\"attributeReference\":{\"entity\":\"Collateral.cdm.json/Collateral\",\"name\":\"CollateralNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024}]}}}",
+			"Description": "The Customer Asset pledged as a security to back up a promise. In a home loan, the property is considered collateral that can be revoked if loan is not repaid according to the terms of the mortgage or deed of trust.",
+			"DisplayFolderInfo": "{\"name\":\"Customer Account\",\"colorCode\":\"#E3008C\"}",
+			"PrimaryKeys": "CustomerAccountId,CustomerAssetId,PeriodStartDate",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

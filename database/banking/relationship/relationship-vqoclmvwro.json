@@ -1,0 +1,30 @@
+{
+	"name": "relationship-vqoclmvwro",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-vqoclmvwro",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "PartyOrganization",
+		"ToTableName": "Issue",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "OrganizationId",
+				"ToColumnName": "OrganizationId"
+			},
+			{
+				"FromColumnName": "PartyId",
+				"ToColumnName": "PartyId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"PartyOrganization.cdm.json/PartyOrganization\",\"toEntity\":\"Issue.cdm.json/Issue\",\"joinPairs\":[{\"fromAttribute\":\"OrganizationId\",\"toAttribute\":\"OrganizationId\"},{\"fromAttribute\":\"PartyId\",\"toAttribute\":\"PartyId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

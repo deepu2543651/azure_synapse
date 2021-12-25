@@ -1,0 +1,192 @@
+{
+	"name": "CommercialConstructionLoanProduct",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "CommercialConstructionLoanProduct",
+		"Description": "A short-term interim loan a business or public sector enterprise to fund the construction of buildings or structures, which usually advances the money in installments as work progresses and normally  requires collateral or security.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ProductId",
+					"Description": "The unique identifier of a Product.",
+					"BaseAttributeReference": {
+						"Entity": "CommercialConstructionLoanProduct.cdm.json/CommercialConstructionLoanProduct",
+						"Name": "ProductId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "ConstructionLoanTypeId",
+					"Description": "The unique identifier of a construction loan type.",
+					"BaseAttributeReference": {
+						"Entity": "CommercialConstructionLoanProduct.cdm.json/CommercialConstructionLoanProduct",
+						"Name": "ConstructionLoanTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "InterestOnlyPaymentDuringConstructionPhaseIndicator",
+					"Description": "Indicates that the borrower is charged interest only on the loan during the construction phase.",
+					"BaseAttributeReference": {
+						"Entity": "CommercialConstructionLoanProduct.cdm.json/CommercialConstructionLoanProduct",
+						"Name": "InterestOnlyPaymentDuringConstructionPhaseIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "FastTrackConstructionIndicator",
+					"Description": "A method of construction management which involves a continuous design-construction operation. When a prime or main contractor starts the construction work before the plans and specifications are complete.",
+					"BaseAttributeReference": {
+						"Entity": "CommercialConstructionLoanProduct.cdm.json/CommercialConstructionLoanProduct",
+						"Name": "FastTrackConstructionIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "BrokenPriorityLoanIndicator",
+					"Description": "A loan where construction has already started.\n\nThis is considered \"broken priority\". In order for consideration of the loan request, the borrower will need to provide evidence of payment on work performed, appraiser to address any adverse conditions due to construction in progress, and title company willingness to insure project",
+					"BaseAttributeReference": {
+						"Entity": "CommercialConstructionLoanProduct.cdm.json/CommercialConstructionLoanProduct",
+						"Name": "BrokenPriorityLoanIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "FinishedLotIndicator",
+					"Description": "A \"finished lot\" refers to a portion of land that already has road access and utilities in place to the lot boundary. Additionally, it has been approved by the city or county as a separate parcel of land on a parcel map.",
+					"BaseAttributeReference": {
+						"Entity": "CommercialConstructionLoanProduct.cdm.json/CommercialConstructionLoanProduct",
+						"Name": "FinishedLotIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "AdjustableRateLoanIndicator",
+					"Description": "Indicates that the construction loan is adjustable.",
+					"BaseAttributeReference": {
+						"Entity": "CommercialConstructionLoanProduct.cdm.json/CommercialConstructionLoanProduct",
+						"Name": "AdjustableRateLoanIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "AdjustableRateInitialInterestRatePercentage",
+					"Description": "The initial interest rate of an adjustable construction loan.",
+					"BaseAttributeReference": {
+						"Entity": "CommercialConstructionLoanProduct.cdm.json/CommercialConstructionLoanProduct",
+						"Name": "AdjustableRateInitialInterestRatePercentage"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/CommercialConstructionLoanProduct",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/CommercialConstructionLoanProduct",
+				"Properties": {
+					"LinkedServiceName": "wspc-dpu-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ProductId\":{\"entity\":\"CommercialConstructionLoanProduct.cdm.json/CommercialConstructionLoanProduct\",\"name\":\"ProductId\"},\"ConstructionLoanTypeId\":{\"entity\":\"CommercialConstructionLoanProduct.cdm.json/CommercialConstructionLoanProduct\",\"name\":\"ConstructionLoanTypeId\"},\"InterestOnlyPaymentDuringConstructionPhaseIndicator\":{\"entity\":\"CommercialConstructionLoanProduct.cdm.json/CommercialConstructionLoanProduct\",\"name\":\"InterestOnlyPaymentDuringConstructionPhaseIndicator\"},\"FastTrackConstructionIndicator\":{\"entity\":\"CommercialConstructionLoanProduct.cdm.json/CommercialConstructionLoanProduct\",\"name\":\"FastTrackConstructionIndicator\"},\"BrokenPriorityLoanIndicator\":{\"entity\":\"CommercialConstructionLoanProduct.cdm.json/CommercialConstructionLoanProduct\",\"name\":\"BrokenPriorityLoanIndicator\"},\"FinishedLotIndicator\":{\"entity\":\"CommercialConstructionLoanProduct.cdm.json/CommercialConstructionLoanProduct\",\"name\":\"FinishedLotIndicator\"},\"AdjustableRateLoanIndicator\":{\"entity\":\"CommercialConstructionLoanProduct.cdm.json/CommercialConstructionLoanProduct\",\"name\":\"AdjustableRateLoanIndicator\"},\"AdjustableRateInitialInterestRatePercentage\":{\"entity\":\"CommercialConstructionLoanProduct.cdm.json/CommercialConstructionLoanProduct\",\"name\":\"AdjustableRateInitialInterestRatePercentage\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"CommercialConstructionLoanProduct\",\"path\":\"CommercialConstructionLoanProduct.cdm.json/CommercialConstructionLoanProduct\"},\"description\":\"A short-term interim loan a business or public sector enterprise to fund the construction of buildings or structures, which usually advances the money in installments as work progresses and normally  requires collateral or security.\",\"primaryKey\":[\"ProductId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"ProductId\",\"attributeReference\":{\"entity\":\"CommercialConstructionLoanProduct.cdm.json/CommercialConstructionLoanProduct\",\"name\":\"ProductId\"},\"dataType\":\"long\"},{\"type\":\"Existing\",\"name\":\"ConstructionLoanTypeId\",\"attributeReference\":{\"entity\":\"CommercialConstructionLoanProduct.cdm.json/CommercialConstructionLoanProduct\",\"name\":\"ConstructionLoanTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"InterestOnlyPaymentDuringConstructionPhaseIndicator\",\"attributeReference\":{\"entity\":\"CommercialConstructionLoanProduct.cdm.json/CommercialConstructionLoanProduct\",\"name\":\"InterestOnlyPaymentDuringConstructionPhaseIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"FastTrackConstructionIndicator\",\"attributeReference\":{\"entity\":\"CommercialConstructionLoanProduct.cdm.json/CommercialConstructionLoanProduct\",\"name\":\"FastTrackConstructionIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"BrokenPriorityLoanIndicator\",\"attributeReference\":{\"entity\":\"CommercialConstructionLoanProduct.cdm.json/CommercialConstructionLoanProduct\",\"name\":\"BrokenPriorityLoanIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"FinishedLotIndicator\",\"attributeReference\":{\"entity\":\"CommercialConstructionLoanProduct.cdm.json/CommercialConstructionLoanProduct\",\"name\":\"FinishedLotIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"AdjustableRateLoanIndicator\",\"attributeReference\":{\"entity\":\"CommercialConstructionLoanProduct.cdm.json/CommercialConstructionLoanProduct\",\"name\":\"AdjustableRateLoanIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"AdjustableRateInitialInterestRatePercentage\",\"attributeReference\":{\"entity\":\"CommercialConstructionLoanProduct.cdm.json/CommercialConstructionLoanProduct\",\"name\":\"AdjustableRateInitialInterestRatePercentage\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":8}]}}}",
+			"Description": "A short-term interim loan a business or public sector enterprise to fund the construction of buildings or structures, which usually advances the money in installments as work progresses and normally  requires collateral or security.",
+			"DisplayFolderInfo": "{\"name\":\"Product\",\"colorCode\":\"#0E3D73\"}",
+			"PrimaryKeys": "ProductId",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

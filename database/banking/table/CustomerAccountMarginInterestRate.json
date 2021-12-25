@@ -1,0 +1,264 @@
+{
+	"name": "CustomerAccountMarginInterestRate",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "CustomerAccountMarginInterestRate",
+		"Description": "The application of a margin, interest rate adjustment, to compensate for greater credit risk or other factors that affect the cost of lending for a specific customer account for a specific period.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "CustomerAccountId",
+					"Description": "The unique identifier of a Customer Account.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountMarginInterestRate.cdm.json/CustomerAccountMarginInterestRate",
+						"Name": "CustomerAccountId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "ProductId",
+					"Description": "The unique identifier of a Product.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountMarginInterestRate.cdm.json/CustomerAccountMarginInterestRate",
+						"Name": "ProductId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "InterestRatePurposeId",
+					"Description": "The unique identifier of an Interest Rate Purpose.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountMarginInterestRate.cdm.json/CustomerAccountMarginInterestRate",
+						"Name": "InterestRatePurposeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "MinimumAccountBalance",
+					"Description": "The minimum account balance for which the associated base rate is applicable.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountMarginInterestRate.cdm.json/CustomerAccountMarginInterestRate",
+						"Name": "MinimumAccountBalance"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "MaximumAccountBalance",
+					"Description": "The maximum account balance for which the associated base rate is applicable.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountMarginInterestRate.cdm.json/CustomerAccountMarginInterestRate",
+						"Name": "MaximumAccountBalance"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "BaseRatePeriodStartTimestamp",
+					"Description": "The period start date for which the associated base rate is applicable.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountMarginInterestRate.cdm.json/CustomerAccountMarginInterestRate",
+						"Name": "BaseRatePeriodStartTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "PeriodStartDate",
+					"Description": "The period start date for which the associated spread rate is applicable to the account.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountMarginInterestRate.cdm.json/CustomerAccountMarginInterestRate",
+						"Name": "PeriodStartDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "PeriodEndDate",
+					"Description": "The period end date for which the associated spread rate is applicable to the account.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountMarginInterestRate.cdm.json/CustomerAccountMarginInterestRate",
+						"Name": "PeriodEndDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "MarginInterestRateAdjustmentPercentage",
+					"Description": "A percentage that is added /subtracted from the associated interest rate.\n\nThe rate is adjusted in increments, called the margin, to compensate for greater credit risk or other factors that affect the cost of lending.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountMarginInterestRate.cdm.json/CustomerAccountMarginInterestRate",
+						"Name": "MarginInterestRateAdjustmentPercentage"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "AnnualPercentageRate",
+					"Description": "Annual Percentage Rate. A way of expressing the cost of credit on a loan. Under federal law, all consumer loans must disclose the Annual Percentage Rate.\n\nOften confused with interest rate, an APR supplies the cost of credit over the course of a year. It is supplied as a percentage taking into consideration the amount finance, any charges, and the term of the loan.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountMarginInterestRate.cdm.json/CustomerAccountMarginInterestRate",
+						"Name": "AnnualPercentageRate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "AnnualPercentageYield",
+					"Description": "The APY based on the interest rate percentage.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountMarginInterestRate.cdm.json/CustomerAccountMarginInterestRate",
+						"Name": "AnnualPercentageYield"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "MarginInterestRateAdjustmentNote",
+					"Description": "A note, comment or additional information regarding the margin interest rate adjustment.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountMarginInterestRate.cdm.json/CustomerAccountMarginInterestRate",
+						"Name": "MarginInterestRateAdjustmentNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/CustomerAccountMarginInterestRate",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/CustomerAccountMarginInterestRate",
+				"Properties": {
+					"LinkedServiceName": "wspc-dpu-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"CustomerAccountId\":{\"entity\":\"CustomerAccountMarginInterestRate.cdm.json/CustomerAccountMarginInterestRate\",\"name\":\"CustomerAccountId\"},\"ProductId\":{\"entity\":\"CustomerAccountMarginInterestRate.cdm.json/CustomerAccountMarginInterestRate\",\"name\":\"ProductId\"},\"InterestRatePurposeId\":{\"entity\":\"CustomerAccountMarginInterestRate.cdm.json/CustomerAccountMarginInterestRate\",\"name\":\"InterestRatePurposeId\"},\"MinimumAccountBalance\":{\"entity\":\"CustomerAccountMarginInterestRate.cdm.json/CustomerAccountMarginInterestRate\",\"name\":\"MinimumAccountBalance\"},\"MaximumAccountBalance\":{\"entity\":\"CustomerAccountMarginInterestRate.cdm.json/CustomerAccountMarginInterestRate\",\"name\":\"MaximumAccountBalance\"},\"BaseRatePeriodStartTimestamp\":{\"entity\":\"CustomerAccountMarginInterestRate.cdm.json/CustomerAccountMarginInterestRate\",\"name\":\"BaseRatePeriodStartTimestamp\"},\"PeriodStartDate\":{\"entity\":\"CustomerAccountMarginInterestRate.cdm.json/CustomerAccountMarginInterestRate\",\"name\":\"PeriodStartDate\"},\"PeriodEndDate\":{\"entity\":\"CustomerAccountMarginInterestRate.cdm.json/CustomerAccountMarginInterestRate\",\"name\":\"PeriodEndDate\"},\"MarginInterestRateAdjustmentPercentage\":{\"entity\":\"CustomerAccountMarginInterestRate.cdm.json/CustomerAccountMarginInterestRate\",\"name\":\"MarginInterestRateAdjustmentPercentage\"},\"AnnualPercentageRate\":{\"entity\":\"CustomerAccountMarginInterestRate.cdm.json/CustomerAccountMarginInterestRate\",\"name\":\"AnnualPercentageRate\"},\"AnnualPercentageYield\":{\"entity\":\"CustomerAccountMarginInterestRate.cdm.json/CustomerAccountMarginInterestRate\",\"name\":\"AnnualPercentageYield\"},\"MarginInterestRateAdjustmentNote\":{\"entity\":\"CustomerAccountMarginInterestRate.cdm.json/CustomerAccountMarginInterestRate\",\"name\":\"MarginInterestRateAdjustmentNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"CustomerAccountMarginInterestRate\",\"path\":\"CustomerAccountMarginInterestRate.cdm.json/CustomerAccountMarginInterestRate\"},\"description\":\"The application of a margin, interest rate adjustment, to compensate for greater credit risk or other factors that affect the cost of lending for a specific customer account for a specific period.\",\"primaryKey\":[\"CustomerAccountId\",\"ProductId\",\"InterestRatePurposeId\",\"MinimumAccountBalance\",\"MaximumAccountBalance\",\"BaseRatePeriodStartTimestamp\",\"PeriodStartDate\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"CustomerAccountId\",\"attributeReference\":{\"entity\":\"CustomerAccountMarginInterestRate.cdm.json/CustomerAccountMarginInterestRate\",\"name\":\"CustomerAccountId\"},\"dataType\":\"long\"},{\"type\":\"Existing\",\"name\":\"ProductId\",\"attributeReference\":{\"entity\":\"CustomerAccountMarginInterestRate.cdm.json/CustomerAccountMarginInterestRate\",\"name\":\"ProductId\"},\"dataType\":\"long\"},{\"type\":\"Existing\",\"name\":\"InterestRatePurposeId\",\"attributeReference\":{\"entity\":\"CustomerAccountMarginInterestRate.cdm.json/CustomerAccountMarginInterestRate\",\"name\":\"InterestRatePurposeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"MinimumAccountBalance\",\"attributeReference\":{\"entity\":\"CustomerAccountMarginInterestRate.cdm.json/CustomerAccountMarginInterestRate\",\"name\":\"MinimumAccountBalance\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"MaximumAccountBalance\",\"attributeReference\":{\"entity\":\"CustomerAccountMarginInterestRate.cdm.json/CustomerAccountMarginInterestRate\",\"name\":\"MaximumAccountBalance\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"BaseRatePeriodStartTimestamp\",\"attributeReference\":{\"entity\":\"CustomerAccountMarginInterestRate.cdm.json/CustomerAccountMarginInterestRate\",\"name\":\"BaseRatePeriodStartTimestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"PeriodStartDate\",\"attributeReference\":{\"entity\":\"CustomerAccountMarginInterestRate.cdm.json/CustomerAccountMarginInterestRate\",\"name\":\"PeriodStartDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\"},{\"type\":\"Existing\",\"name\":\"PeriodEndDate\",\"attributeReference\":{\"entity\":\"CustomerAccountMarginInterestRate.cdm.json/CustomerAccountMarginInterestRate\",\"name\":\"PeriodEndDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\"},{\"type\":\"Existing\",\"name\":\"MarginInterestRateAdjustmentPercentage\",\"attributeReference\":{\"entity\":\"CustomerAccountMarginInterestRate.cdm.json/CustomerAccountMarginInterestRate\",\"name\":\"MarginInterestRateAdjustmentPercentage\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":8},{\"type\":\"Existing\",\"name\":\"AnnualPercentageRate\",\"attributeReference\":{\"entity\":\"CustomerAccountMarginInterestRate.cdm.json/CustomerAccountMarginInterestRate\",\"name\":\"AnnualPercentageRate\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"AnnualPercentageYield\",\"attributeReference\":{\"entity\":\"CustomerAccountMarginInterestRate.cdm.json/CustomerAccountMarginInterestRate\",\"name\":\"AnnualPercentageYield\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"MarginInterestRateAdjustmentNote\",\"attributeReference\":{\"entity\":\"CustomerAccountMarginInterestRate.cdm.json/CustomerAccountMarginInterestRate\",\"name\":\"MarginInterestRateAdjustmentNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024}]}}}",
+			"Description": "The application of a margin, interest rate adjustment, to compensate for greater credit risk or other factors that affect the cost of lending for a specific customer account for a specific period.",
+			"DisplayFolderInfo": "{\"name\":\"Customer Account\",\"colorCode\":\"#E3008C\"}",
+			"PrimaryKeys": "CustomerAccountId,ProductId,InterestRatePurposeId,MinimumAccountBalance,MaximumAccountBalance,BaseRatePeriodStartTimestamp,PeriodStartDate",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

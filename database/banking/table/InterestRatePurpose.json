@@ -1,0 +1,112 @@
+{
+	"name": "InterestRatePurpose",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "InterestRatePurpose",
+		"Description": "The purpose of the interest rate associated with the interest rates for the associated period.\n\nEx:\nINTRODUCTORY INTEREST RATE\nThe Introductory Interest Rate is typically extended to the customer at a lower rate that the normal/long-term interest rate as a means of enticing the customer to sign up with a specific payment card offering.\n\nThe Introductory Interest Rate is several interest points less than the standard interest rate and may be extended for a period of several months.    \n\nAfter the introductory period, the account will be charged standard flat or variable rates that may change monthly.\n\nDAILY PERIOD RATE\nThe interest rate factor used to calculate the interest charges on a daily basis. The factor is computed by dividing the yearly rate by 365 days\n\nNOT-IN-GOOD-STANDING INTEREST RATE\nAccounts not in good standing are normally subject to higher interest rates.\n\nCASH ADVANCES\nThe interest rate charged for cash advances upon the associated payment card.\n\nPURCHASES\nCredit card charges you make at merchants. Purchases usually have a lower APR than cash advances.\n\nSTANDARD INTEREST RATE\nThe Introductory Interest Rate is typically extended to the customer at a lower rate that the normal/long-term interest rate as a means of enticing the customer to sign up with a specific payment card offering.\n\nThe Introductory Interest Rate is several interest points less than the standard interest rate and may be extended for a period of several months.    \n\nAfter the introductory period, the account will be charged standard flat or variable rates that may change monthly.\n\nOVERDRAFTS\nThe interest rate charged for overdrafts on the associated payment card.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "InterestRatePurposeId",
+					"Description": "The unique identifier of an Interest Rate Purpose.",
+					"BaseAttributeReference": {
+						"Entity": "InterestRatePurpose.cdm.json/InterestRatePurpose",
+						"Name": "InterestRatePurposeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "InterestRatePurposeName",
+					"Description": "The name of an Interest Rate Purpose.",
+					"BaseAttributeReference": {
+						"Entity": "InterestRatePurpose.cdm.json/InterestRatePurpose",
+						"Name": "InterestRatePurposeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "InterestRatePurposeDescription",
+					"Description": "The description of an Interest Rate Purpose.",
+					"BaseAttributeReference": {
+						"Entity": "InterestRatePurpose.cdm.json/InterestRatePurpose",
+						"Name": "InterestRatePurposeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/InterestRatePurpose",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/InterestRatePurpose",
+				"Properties": {
+					"LinkedServiceName": "wspc-dpu-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"InterestRatePurposeId\":{\"entity\":\"InterestRatePurpose.cdm.json/InterestRatePurpose\",\"name\":\"InterestRatePurposeId\"},\"InterestRatePurposeName\":{\"entity\":\"InterestRatePurpose.cdm.json/InterestRatePurpose\",\"name\":\"InterestRatePurposeName\"},\"InterestRatePurposeDescription\":{\"entity\":\"InterestRatePurpose.cdm.json/InterestRatePurpose\",\"name\":\"InterestRatePurposeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"InterestRatePurpose\",\"path\":\"InterestRatePurpose.cdm.json/InterestRatePurpose\"},\"description\":\"The purpose of the interest rate associated with the interest rates for the associated period.\\n\\nEx:\\nINTRODUCTORY INTEREST RATE\\nThe Introductory Interest Rate is typically extended to the customer at a lower rate that the normal/long-term interest rate as a means of enticing the customer to sign up with a specific payment card offering.\\n\\nThe Introductory Interest Rate is several interest points less than the standard interest rate and may be extended for a period of several months.    \\n\\nAfter the introductory period, the account will be charged standard flat or variable rates that may change monthly.\\n\\nDAILY PERIOD RATE\\nThe interest rate factor used to calculate the interest charges on a daily basis. The factor is computed by dividing the yearly rate by 365 days\\n\\nNOT-IN-GOOD-STANDING INTEREST RATE\\nAccounts not in good standing are normally subject to higher interest rates.\\n\\nCASH ADVANCES\\nThe interest rate charged for cash advances upon the associated payment card.\\n\\nPURCHASES\\nCredit card charges you make at merchants. Purchases usually have a lower APR than cash advances.\\n\\nSTANDARD INTEREST RATE\\nThe Introductory Interest Rate is typically extended to the customer at a lower rate that the normal/long-term interest rate as a means of enticing the customer to sign up with a specific payment card offering.\\n\\nThe Introductory Interest Rate is several interest points less than the standard interest rate and may be extended for a period of several months.    \\n\\nAfter the introductory period, the account will be charged standard flat or variable rates that may change monthly.\\n\\nOVERDRAFTS\\nThe interest rate charged for overdrafts on the associated payment card.\",\"primaryKey\":[\"InterestRatePurposeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"InterestRatePurposeId\",\"attributeReference\":{\"entity\":\"InterestRatePurpose.cdm.json/InterestRatePurpose\",\"name\":\"InterestRatePurposeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"InterestRatePurposeName\",\"attributeReference\":{\"entity\":\"InterestRatePurpose.cdm.json/InterestRatePurpose\",\"name\":\"InterestRatePurposeName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"InterestRatePurposeDescription\",\"attributeReference\":{\"entity\":\"InterestRatePurpose.cdm.json/InterestRatePurpose\",\"name\":\"InterestRatePurposeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512}]}}}",
+			"Description": "The purpose of the interest rate associated with the interest rates for the associated period.\n\nEx:\nINTRODUCTORY INTEREST RATE\nThe Introductory Interest Rate is typically extended to the customer at a lower rate that the normal/long-term interest rate as a means of enticing the customer to sign up with a specific payment card offering.\n\nThe Introductory Interest Rate is several interest points less than the standard interest rate and may be extended for a period of several months.    \n\nAfter the introductory period, the account will be charged standard flat or variable rates that may change monthly.\n\nDAILY PERIOD RATE\nThe interest rate factor used to calculate the interest charges on a daily basis. The factor is computed by dividing the yearly rate by 365 days\n\nNOT-IN-GOOD-STANDING INTEREST RATE\nAccounts not in good standing are normally subject to higher interest rates.\n\nCASH ADVANCES\nThe interest rate charged for cash advances upon the associated payment card.\n\nPURCHASES\nCredit card charges you make at merchants. Purchases usually have a lower APR than cash advances.\n\nSTANDARD INTEREST RATE\nThe Introductory Interest Rate is typically extended to the customer at a lower rate that the normal/long-term interest rate as a means of enticing the customer to sign up with a specific payment card offering.\n\nThe Introductory Interest Rate is several interest points less than the standard interest rate and may be extended for a period of several months.    \n\nAfter the introductory period, the account will be charged standard flat or variable rates that may change monthly.\n\nOVERDRAFTS\nThe interest rate charged for overdrafts on the associated payment card.",
+			"DisplayFolderInfo": "{\"name\":\"Product\",\"colorCode\":\"#0E3D73\"}",
+			"PrimaryKeys": "InterestRatePurposeId",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

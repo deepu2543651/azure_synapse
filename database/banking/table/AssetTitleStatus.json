@@ -1,0 +1,112 @@
+{
+	"name": "AssetTitleStatus",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "AssetTitleStatus",
+		"Description": "The status of the asset title.\n\nEx:\n- Clear\n- Clouded\n- Unknown",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "AssetTitleStatusId",
+					"Description": "The unique identifier of an Asset Title Status.",
+					"BaseAttributeReference": {
+						"Entity": "AssetTitleStatus.cdm.json/AssetTitleStatus",
+						"Name": "AssetTitleStatusId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "AssetTitleStatusName",
+					"Description": "The name of an Asset Title Status.",
+					"BaseAttributeReference": {
+						"Entity": "AssetTitleStatus.cdm.json/AssetTitleStatus",
+						"Name": "AssetTitleStatusName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "AssetTitleStatusDescription",
+					"Description": "The description of an Asset Title Status.",
+					"BaseAttributeReference": {
+						"Entity": "AssetTitleStatus.cdm.json/AssetTitleStatus",
+						"Name": "AssetTitleStatusDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/AssetTitleStatus",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/AssetTitleStatus",
+				"Properties": {
+					"LinkedServiceName": "wspc-dpu-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"AssetTitleStatusId\":{\"entity\":\"AssetTitleStatus.cdm.json/AssetTitleStatus\",\"name\":\"AssetTitleStatusId\"},\"AssetTitleStatusName\":{\"entity\":\"AssetTitleStatus.cdm.json/AssetTitleStatus\",\"name\":\"AssetTitleStatusName\"},\"AssetTitleStatusDescription\":{\"entity\":\"AssetTitleStatus.cdm.json/AssetTitleStatus\",\"name\":\"AssetTitleStatusDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"AssetTitleStatus\",\"path\":\"AssetTitleStatus.cdm.json/AssetTitleStatus\"},\"description\":\"The status of the asset title.\\n\\nEx:\\n- Clear\\n- Clouded\\n- Unknown\",\"primaryKey\":[\"AssetTitleStatusId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"AssetTitleStatusId\",\"attributeReference\":{\"entity\":\"AssetTitleStatus.cdm.json/AssetTitleStatus\",\"name\":\"AssetTitleStatusId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"AssetTitleStatusName\",\"attributeReference\":{\"entity\":\"AssetTitleStatus.cdm.json/AssetTitleStatus\",\"name\":\"AssetTitleStatusName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"AssetTitleStatusDescription\",\"attributeReference\":{\"entity\":\"AssetTitleStatus.cdm.json/AssetTitleStatus\",\"name\":\"AssetTitleStatusDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512}]}}}",
+			"Description": "The status of the asset title.\n\nEx:\n- Clear\n- Clouded\n- Unknown",
+			"DisplayFolderInfo": "{\"name\":\"Property & Equipment\",\"colorCode\":\"#7D0F6C\"}",
+			"PrimaryKeys": "AssetTitleStatusId",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

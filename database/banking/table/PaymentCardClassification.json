@@ -1,0 +1,112 @@
+{
+	"name": "PaymentCardClassification",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "PaymentCardClassification",
+		"Description": "A classification of payment cards based upon common characteristics or functionality.\n\nEx:\n- ATM Card\n- Bankcard\n- Cash Card\n- Charge Card\n- Commercial Card\n- Debit Card\n- Offline Debit Card\n- Online Debit Card\n- Payment Card\n- Proprietary Card\n- Purchasing Card\n- Rebate Card\n- Reloadable Prepaid Card\n- Reward Card\n- Secured Card\n- Specialty Card\n\nWhere:\n\nATM CARD\nA card used in an automated teller machine (ATM) which may access a credit or a debit account to complete banking inquiries and fund transfers between accounts.\n\nBANKCARD \nA payment card issued by a bank.\n\nCASH CARD\naka ATM Card   Also known as a cash card. A payment card used in an ATM for cash withdrawals and other bank services.\n\nCHARGE CARD\nCharge Card A card used as a form of payment. A charge card differs from a payment card, for the balance due that must be paid in full within the payment period.\n\nCOMMERCIAL CARD\nA general name for cards typically issued for business use and may include Corporate Cards, Purchase Cards, Business Cards, Travel and Entertainment Cards.\n\nDEBIT CARD\nDebit cards - a cardholder's bank account can be debited to the limit of their balance or agreed overdraft.\n\nOFFLINE DEBIT CARD\nA new development in cards that share traits of both ATM and payment cards. Offline debit cards have the VISA or MasterCard logo on them and can be issued by a bank, either instead of or in addition to an ATM card. These cards can be used at any establishment which displays the VISA or MasterCard logo, but using them doesn't access a line of credit -- it debits a customer's checking account. It is \"offline\" because the account isn't directly accessed -- there's a delay of 24 to 72 hours before the debit is made in the account. If you sign a slip of paper to conclude the transaction, it was offline. In the U.S., no Personal Identification Number (PIN) is required to use an offline debit card.\n\nONLINE DEBIT CARD\nOnline debit card\n\nPAYMENT CARD \nCredit cards - cardholders can spend up to a limit agreed with their card issuer, and have to repay at least the minimum required each month.\n\nPROPRIETARY CARD\nA card that is distributed by a specific retailer or set of retailers with an identifiable name, only for the customer's use to make purchases at the retailer(s)' location(s).\n\nPURCHASING CARD\nPurchasing cards - used by businesses, rather than individuals, to purchase goods and services from their suppliers.\n\nREBATE CARD\nA \"give back\" or \"incentive\" card. A rebate card offers bonuses, such as airline mileage, cash rebates, or purchase rebates, to cardholders, often for the dollar amount charged on the card. \n\nRELOADABLE PREPAID CARD\nA pre-funded card, you only spend what money you load on it and you can typically get it without a credit check or bank account.\n\nREWARD CARD\nReward card help the holder earn points toward 'rewards' such as free air travel.\n\nSECURED CARD\nA consumer uses savings or cash deposit to guarantee the payment card or loan; the limit of credit is based on the amount of deposit available.\n\nSPECIALTY CARD\nSpecialty cards have a special purpose, application or objective:\n- college students\n- holders of limited means\n- holders with damaged credit histories",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "PaymentCardClassificationId",
+					"Description": "The unique identifier of a Payment Card Classification.",
+					"BaseAttributeReference": {
+						"Entity": "PaymentCardClassification.cdm.json/PaymentCardClassification",
+						"Name": "PaymentCardClassificationId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PaymentCardClassificationName",
+					"Description": "The name of a Payment Card Classification.",
+					"BaseAttributeReference": {
+						"Entity": "PaymentCardClassification.cdm.json/PaymentCardClassification",
+						"Name": "PaymentCardClassificationName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "PaymentCardClassificationDescription",
+					"Description": "The description of a Payment Card Classification.",
+					"BaseAttributeReference": {
+						"Entity": "PaymentCardClassification.cdm.json/PaymentCardClassification",
+						"Name": "PaymentCardClassificationDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/PaymentCardClassification",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/PaymentCardClassification",
+				"Properties": {
+					"LinkedServiceName": "wspc-dpu-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"PaymentCardClassificationId\":{\"entity\":\"PaymentCardClassification.cdm.json/PaymentCardClassification\",\"name\":\"PaymentCardClassificationId\"},\"PaymentCardClassificationName\":{\"entity\":\"PaymentCardClassification.cdm.json/PaymentCardClassification\",\"name\":\"PaymentCardClassificationName\"},\"PaymentCardClassificationDescription\":{\"entity\":\"PaymentCardClassification.cdm.json/PaymentCardClassification\",\"name\":\"PaymentCardClassificationDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"PaymentCardClassification\",\"path\":\"PaymentCardClassification.cdm.json/PaymentCardClassification\"},\"description\":\"A classification of payment cards based upon common characteristics or functionality.\\n\\nEx:\\n- ATM Card\\n- Bankcard\\n- Cash Card\\n- Charge Card\\n- Commercial Card\\n- Debit Card\\n- Offline Debit Card\\n- Online Debit Card\\n- Payment Card\\n- Proprietary Card\\n- Purchasing Card\\n- Rebate Card\\n- Reloadable Prepaid Card\\n- Reward Card\\n- Secured Card\\n- Specialty Card\\n\\nWhere:\\n\\nATM CARD\\nA card used in an automated teller machine (ATM) which may access a credit or a debit account to complete banking inquiries and fund transfers between accounts.\\n\\nBANKCARD \\nA payment card issued by a bank.\\n\\nCASH CARD\\naka ATM Card   Also known as a cash card. A payment card used in an ATM for cash withdrawals and other bank services.\\n\\nCHARGE CARD\\nCharge Card A card used as a form of payment. A charge card differs from a payment card, for the balance due that must be paid in full within the payment period.\\n\\nCOMMERCIAL CARD\\nA general name for cards typically issued for business use and may include Corporate Cards, Purchase Cards, Business Cards, Travel and Entertainment Cards.\\n\\nDEBIT CARD\\nDebit cards - a cardholder's bank account can be debited to the limit of their balance or agreed overdraft.\\n\\nOFFLINE DEBIT CARD\\nA new development in cards that share traits of both ATM and payment cards. Offline debit cards have the VISA or MasterCard logo on them and can be issued by a bank, either instead of or in addition to an ATM card. These cards can be used at any establishment which displays the VISA or MasterCard logo, but using them doesn't access a line of credit -- it debits a customer's checking account. It is \\\"offline\\\" because the account isn't directly accessed -- there's a delay of 24 to 72 hours before the debit is made in the account. If you sign a slip of paper to conclude the transaction, it was offline. In the U.S., no Personal Identification Number (PIN) is required to use an offline debit card.\\n\\nONLINE DEBIT CARD\\nOnline debit card\\n\\nPAYMENT CARD \\nCredit cards - cardholders can spend up to a limit agreed with their card issuer, and have to repay at least the minimum required each month.\\n\\nPROPRIETARY CARD\\nA card that is distributed by a specific retailer or set of retailers with an identifiable name, only for the customer's use to make purchases at the retailer(s)' location(s).\\n\\nPURCHASING CARD\\nPurchasing cards - used by businesses, rather than individuals, to purchase goods and services from their suppliers.\\n\\nREBATE CARD\\nA \\\"give back\\\" or \\\"incentive\\\" card. A rebate card offers bonuses, such as airline mileage, cash rebates, or purchase rebates, to cardholders, often for the dollar amount charged on the card. \\n\\nRELOADABLE PREPAID CARD\\nA pre-funded card, you only spend what money you load on it and you can typically get it without a credit check or bank account.\\n\\nREWARD CARD\\nReward card help the holder earn points toward 'rewards' such as free air travel.\\n\\nSECURED CARD\\nA consumer uses savings or cash deposit to guarantee the payment card or loan; the limit of credit is based on the amount of deposit available.\\n\\nSPECIALTY CARD\\nSpecialty cards have a special purpose, application or objective:\\n- college students\\n- holders of limited means\\n- holders with damaged credit histories\",\"primaryKey\":[\"PaymentCardClassificationId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"PaymentCardClassificationId\",\"attributeReference\":{\"entity\":\"PaymentCardClassification.cdm.json/PaymentCardClassification\",\"name\":\"PaymentCardClassificationId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"PaymentCardClassificationName\",\"attributeReference\":{\"entity\":\"PaymentCardClassification.cdm.json/PaymentCardClassification\",\"name\":\"PaymentCardClassificationName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"PaymentCardClassificationDescription\",\"attributeReference\":{\"entity\":\"PaymentCardClassification.cdm.json/PaymentCardClassification\",\"name\":\"PaymentCardClassificationDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512}]}}}",
+			"Description": "A classification of payment cards based upon common characteristics or functionality.\n\nEx:\n- ATM Card\n- Bankcard\n- Cash Card\n- Charge Card\n- Commercial Card\n- Debit Card\n- Offline Debit Card\n- Online Debit Card\n- Payment Card\n- Proprietary Card\n- Purchasing Card\n- Rebate Card\n- Reloadable Prepaid Card\n- Reward Card\n- Secured Card\n- Specialty Card\n\nWhere:\n\nATM CARD\nA card used in an automated teller machine (ATM) which may access a credit or a debit account to complete banking inquiries and fund transfers between accounts.\n\nBANKCARD \nA payment card issued by a bank.\n\nCASH CARD\naka ATM Card   Also known as a cash card. A payment card used in an ATM for cash withdrawals and other bank services.\n\nCHARGE CARD\nCharge Card A card used as a form of payment. A charge card differs from a payment card, for the balance due that must be paid in full within the payment period.\n\nCOMMERCIAL CARD\nA general name for cards typically issued for business use and may include Corporate Cards, Purchase Cards, Business Cards, Travel and Entertainment Cards.\n\nDEBIT CARD\nDebit cards - a cardholder's bank account can be debited to the limit of their balance or agreed overdraft.\n\nOFFLINE DEBIT CARD\nA new development in cards that share traits of both ATM and payment cards. Offline debit cards have the VISA or MasterCard logo on them and can be issued by a bank, either instead of or in addition to an ATM card. These cards can be used at any establishment which displays the VISA or MasterCard logo, but using them doesn't access a line of credit -- it debits a customer's checking account. It is \"offline\" because the account isn't directly accessed -- there's a delay of 24 to 72 hours before the debit is made in the account. If you sign a slip of paper to conclude the transaction, it was offline. In the U.S., no Personal Identification Number (PIN) is required to use an offline debit card.\n\nONLINE DEBIT CARD\nOnline debit card\n\nPAYMENT CARD \nCredit cards - cardholders can spend up to a limit agreed with their card issuer, and have to repay at least the minimum required each month.\n\nPROPRIETARY CARD\nA card that is distributed by a specific retailer or set of retailers with an identifiable name, only for the customer's use to make purchases at the retailer(s)' location(s).\n\nPURCHASING CARD\nPurchasing cards - used by businesses, rather than individuals, to purchase goods and services from their suppliers.\n\nREBATE CARD\nA \"give back\" or \"incentive\" card. A rebate card offers bonuses, such as airline mileage, cash rebates, or purchase rebates, to cardholders, often for the dollar amount charged on the card. \n\nRELOADABLE PREPAID CARD\nA pre-funded card, you only spend what money you load on it and you can typically get it without a credit check or bank account.\n\nREWARD CARD\nReward card help the holder earn points toward 'rewards' such as free air travel.\n\nSECURED CARD\nA consumer uses savings or cash deposit to guarantee the payment card or loan; the limit of credit is based on the amount of deposit available.\n\nSPECIALTY CARD\nSpecialty cards have a special purpose, application or objective:\n- college students\n- holders of limited means\n- holders with damaged credit histories",
+			"DisplayFolderInfo": "{\"name\":\"Product\",\"colorCode\":\"#0E3D73\"}",
+			"PrimaryKeys": "PaymentCardClassificationId",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

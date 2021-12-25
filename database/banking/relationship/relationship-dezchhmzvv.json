@@ -1,0 +1,26 @@
+{
+	"name": "relationship-dezchhmzvv",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-dezchhmzvv",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "BillingCycle",
+		"ToTableName": "BankProductFee",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "BillingCycleId",
+				"ToColumnName": "BillingCycleId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"BillingCycle.cdm.json/BillingCycle\",\"toEntity\":\"BankProductFee.cdm.json/BankProductFee\",\"joinPairs\":[{\"fromAttribute\":\"BillingCycleId\",\"toAttribute\":\"BillingCycleId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

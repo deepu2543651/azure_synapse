@@ -1,0 +1,26 @@
+{
+	"name": "relationship-jwkxvtpfgp",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-jwkxvtpfgp",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "ServiceRequestType",
+		"ToTableName": "ServiceRequest",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ServiceRequestTypeId",
+				"ToColumnName": "ServiceRequestTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"ServiceRequestType.cdm.json/ServiceRequestType\",\"toEntity\":\"ServiceRequest.cdm.json/ServiceRequest\",\"joinPairs\":[{\"fromAttribute\":\"ServiceRequestTypeId\",\"toAttribute\":\"ServiceRequestTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

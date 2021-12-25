@@ -1,0 +1,26 @@
+{
+	"name": "relationship-enxafwitpr",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-enxafwitpr",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "TelephoneNumberType",
+		"ToTableName": "CustomerTelephoneNumber",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "TelephoneNumberTypeId",
+				"ToColumnName": "TelephoneNumberTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"TelephoneNumberType.cdm.json/TelephoneNumberType\",\"toEntity\":\"CustomerTelephoneNumber.cdm.json/CustomerTelephoneNumber\",\"joinPairs\":[{\"fromAttribute\":\"TelephoneNumberTypeId\",\"toAttribute\":\"TelephoneNumberTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

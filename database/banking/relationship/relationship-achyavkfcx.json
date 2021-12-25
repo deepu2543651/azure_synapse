@@ -1,0 +1,26 @@
+{
+	"name": "relationship-achyavkfcx",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-achyavkfcx",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Currency",
+		"ToTableName": "LegalEntity",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "IsoCurrencyCode",
+				"ToColumnName": "IsoCurrencyCode"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Currency.cdm.json/Currency\",\"toEntity\":\"LegalEntity.cdm.json/LegalEntity\",\"joinPairs\":[{\"fromAttribute\":\"IsoCurrencyCode\",\"toAttribute\":\"IsoCurrencyCode\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

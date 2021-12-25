@@ -1,0 +1,112 @@
+{
+	"name": "TransactionRelationshipType",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "TransactionRelationshipType",
+		"Description": "The type of relationship between the two or more Transactions.\n\nEx:\n- Return\n- Exchange\n- Credit\n- Amended Transaction\n- Same Session\n- Transfer From Transaction\n- Transfer To Transaction",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "TransactionRelationshipTypeId",
+					"Description": "The unique identifier of a Transaction Relationship Type.",
+					"BaseAttributeReference": {
+						"Entity": "TransactionRelationshipType.cdm.json/TransactionRelationshipType",
+						"Name": "TransactionRelationshipTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "TransactionRelationshipTypeName",
+					"Description": "The name of a Transaction Relationship Type.",
+					"BaseAttributeReference": {
+						"Entity": "TransactionRelationshipType.cdm.json/TransactionRelationshipType",
+						"Name": "TransactionRelationshipTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "TransactionRelationshipTypeDescription",
+					"Description": "The description of a Transaction Relationship Type.",
+					"BaseAttributeReference": {
+						"Entity": "TransactionRelationshipType.cdm.json/TransactionRelationshipType",
+						"Name": "TransactionRelationshipTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/TransactionRelationshipType",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/TransactionRelationshipType",
+				"Properties": {
+					"LinkedServiceName": "wspc-dpu-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"TransactionRelationshipTypeId\":{\"entity\":\"TransactionRelationshipType.cdm.json/TransactionRelationshipType\",\"name\":\"TransactionRelationshipTypeId\"},\"TransactionRelationshipTypeName\":{\"entity\":\"TransactionRelationshipType.cdm.json/TransactionRelationshipType\",\"name\":\"TransactionRelationshipTypeName\"},\"TransactionRelationshipTypeDescription\":{\"entity\":\"TransactionRelationshipType.cdm.json/TransactionRelationshipType\",\"name\":\"TransactionRelationshipTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"TransactionRelationshipType\",\"path\":\"TransactionRelationshipType.cdm.json/TransactionRelationshipType\"},\"description\":\"The type of relationship between the two or more Transactions.\\n\\nEx:\\n- Return\\n- Exchange\\n- Credit\\n- Amended Transaction\\n- Same Session\\n- Transfer From Transaction\\n- Transfer To Transaction\",\"primaryKey\":[\"TransactionRelationshipTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"TransactionRelationshipTypeId\",\"attributeReference\":{\"entity\":\"TransactionRelationshipType.cdm.json/TransactionRelationshipType\",\"name\":\"TransactionRelationshipTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"TransactionRelationshipTypeName\",\"attributeReference\":{\"entity\":\"TransactionRelationshipType.cdm.json/TransactionRelationshipType\",\"name\":\"TransactionRelationshipTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"TransactionRelationshipTypeDescription\",\"attributeReference\":{\"entity\":\"TransactionRelationshipType.cdm.json/TransactionRelationshipType\",\"name\":\"TransactionRelationshipTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512}]}}}",
+			"Description": "The type of relationship between the two or more Transactions.\n\nEx:\n- Return\n- Exchange\n- Credit\n- Amended Transaction\n- Same Session\n- Transfer From Transaction\n- Transfer To Transaction",
+			"DisplayFolderInfo": "{\"name\":\"Transaction\",\"colorCode\":\"#823A16\"}",
+			"PrimaryKeys": "TransactionRelationshipTypeId",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

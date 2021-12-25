@@ -1,0 +1,26 @@
+{
+	"name": "relationship-dnxpnjzdex",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-dnxpnjzdex",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "ServiceType",
+		"ToTableName": "Service",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ServiceTypeId",
+				"ToColumnName": "ServiceTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"ServiceType.cdm.json/ServiceType\",\"toEntity\":\"Service.cdm.json/Service\",\"joinPairs\":[{\"fromAttribute\":\"ServiceTypeId\",\"toAttribute\":\"ServiceTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

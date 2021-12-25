@@ -1,0 +1,128 @@
+{
+	"name": "Charge",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "Charge",
+		"Description": "Charges may be applied to a variety of items including transaction, order, work order, line items, documents or shipments.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ChargeId",
+					"Description": "The unique identifier of a Charge.",
+					"BaseAttributeReference": {
+						"Entity": "Charge.cdm.json/Charge",
+						"Name": "ChargeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ChargeName",
+					"Description": "The name of a Charge.",
+					"BaseAttributeReference": {
+						"Entity": "Charge.cdm.json/Charge",
+						"Name": "ChargeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ChargeDescription",
+					"Description": "The description of a Charge.",
+					"BaseAttributeReference": {
+						"Entity": "Charge.cdm.json/Charge",
+						"Name": "ChargeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ChargeTypeId",
+					"Description": "The unique identifier of a Charge Type.",
+					"BaseAttributeReference": {
+						"Entity": "Charge.cdm.json/Charge",
+						"Name": "ChargeTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/Charge",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/Charge",
+				"Properties": {
+					"LinkedServiceName": "wspc-dpu-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ChargeId\":{\"entity\":\"Charge.cdm.json/Charge\",\"name\":\"ChargeId\"},\"ChargeName\":{\"entity\":\"Charge.cdm.json/Charge\",\"name\":\"ChargeName\"},\"ChargeDescription\":{\"entity\":\"Charge.cdm.json/Charge\",\"name\":\"ChargeDescription\"},\"ChargeTypeId\":{\"entity\":\"Charge.cdm.json/Charge\",\"name\":\"ChargeTypeId\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"Charge\",\"path\":\"Charge.cdm.json/Charge\"},\"description\":\"Charges may be applied to a variety of items including transaction, order, work order, line items, documents or shipments.\",\"primaryKey\":[\"ChargeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"ChargeId\",\"attributeReference\":{\"entity\":\"Charge.cdm.json/Charge\",\"name\":\"ChargeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ChargeName\",\"attributeReference\":{\"entity\":\"Charge.cdm.json/Charge\",\"name\":\"ChargeName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"ChargeDescription\",\"attributeReference\":{\"entity\":\"Charge.cdm.json/Charge\",\"name\":\"ChargeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512},{\"type\":\"Existing\",\"name\":\"ChargeTypeId\",\"attributeReference\":{\"entity\":\"Charge.cdm.json/Charge\",\"name\":\"ChargeTypeId\"},\"dataType\":\"integer\"}]}}}",
+			"Description": "Charges may be applied to a variety of items including transaction, order, work order, line items, documents or shipments.",
+			"DisplayFolderInfo": "{\"name\":\"Transaction\",\"colorCode\":\"#823A16\"}",
+			"PrimaryKeys": "ChargeId",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

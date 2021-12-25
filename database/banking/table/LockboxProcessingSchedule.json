@@ -1,0 +1,112 @@
+{
+	"name": "LockboxProcessingSchedule",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "LockboxProcessingSchedule",
+		"Description": "The schedule by which the associated lockbox service is fulfilled.\n\nEx:\n- real-time electronically\n- daily\n- weekly\n- upon demand\n- end of day\n- intra-day",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "LockboxProcessingScheduleId",
+					"Description": "The unique identifier of a Lockbox Processing Schedule.",
+					"BaseAttributeReference": {
+						"Entity": "LockboxProcessingSchedule.cdm.json/LockboxProcessingSchedule",
+						"Name": "LockboxProcessingScheduleId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "LockboxProcessingScheduleName",
+					"Description": "The name of a Lockbox Processing Schedule.",
+					"BaseAttributeReference": {
+						"Entity": "LockboxProcessingSchedule.cdm.json/LockboxProcessingSchedule",
+						"Name": "LockboxProcessingScheduleName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "LockboxProcessingScheduleDescription",
+					"Description": "The description of a Lockbox Processing Schedule.",
+					"BaseAttributeReference": {
+						"Entity": "LockboxProcessingSchedule.cdm.json/LockboxProcessingSchedule",
+						"Name": "LockboxProcessingScheduleDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/LockboxProcessingSchedule",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/LockboxProcessingSchedule",
+				"Properties": {
+					"LinkedServiceName": "wspc-dpu-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"LockboxProcessingScheduleId\":{\"entity\":\"LockboxProcessingSchedule.cdm.json/LockboxProcessingSchedule\",\"name\":\"LockboxProcessingScheduleId\"},\"LockboxProcessingScheduleName\":{\"entity\":\"LockboxProcessingSchedule.cdm.json/LockboxProcessingSchedule\",\"name\":\"LockboxProcessingScheduleName\"},\"LockboxProcessingScheduleDescription\":{\"entity\":\"LockboxProcessingSchedule.cdm.json/LockboxProcessingSchedule\",\"name\":\"LockboxProcessingScheduleDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"LockboxProcessingSchedule\",\"path\":\"LockboxProcessingSchedule.cdm.json/LockboxProcessingSchedule\"},\"description\":\"The schedule by which the associated lockbox service is fulfilled.\\n\\nEx:\\n- real-time electronically\\n- daily\\n- weekly\\n- upon demand\\n- end of day\\n- intra-day\",\"primaryKey\":[\"LockboxProcessingScheduleId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"LockboxProcessingScheduleId\",\"attributeReference\":{\"entity\":\"LockboxProcessingSchedule.cdm.json/LockboxProcessingSchedule\",\"name\":\"LockboxProcessingScheduleId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"LockboxProcessingScheduleName\",\"attributeReference\":{\"entity\":\"LockboxProcessingSchedule.cdm.json/LockboxProcessingSchedule\",\"name\":\"LockboxProcessingScheduleName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"LockboxProcessingScheduleDescription\",\"attributeReference\":{\"entity\":\"LockboxProcessingSchedule.cdm.json/LockboxProcessingSchedule\",\"name\":\"LockboxProcessingScheduleDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512}]}}}",
+			"Description": "The schedule by which the associated lockbox service is fulfilled.\n\nEx:\n- real-time electronically\n- daily\n- weekly\n- upon demand\n- end of day\n- intra-day",
+			"DisplayFolderInfo": "{\"name\":\"Product\",\"colorCode\":\"#0E3D73\"}",
+			"PrimaryKeys": "LockboxProcessingScheduleId",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

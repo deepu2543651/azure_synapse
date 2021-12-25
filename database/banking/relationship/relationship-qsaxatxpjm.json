@@ -1,0 +1,26 @@
+{
+	"name": "relationship-qsaxatxpjm",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-qsaxatxpjm",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Issue",
+		"ToTableName": "RelatedIssue",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "IssueId",
+				"ToColumnName": "RelatedIssueId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Issue.cdm.json/Issue\",\"toEntity\":\"RelatedIssue.cdm.json/RelatedIssue\",\"joinPairs\":[{\"fromAttribute\":\"IssueId\",\"toAttribute\":\"RelatedIssueId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

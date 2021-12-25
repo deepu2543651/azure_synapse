@@ -1,0 +1,161 @@
+{
+	"name": "RelatedHousehold",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "RelatedHousehold",
+		"Description": "The relationship of two or more Households for the associated period of time.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "HouseholdId",
+					"Description": "The unique identifier of a Household.",
+					"BaseAttributeReference": {
+						"Entity": "RelatedHousehold.cdm.json/RelatedHousehold",
+						"Name": "HouseholdId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "RelatedHouseholdId",
+					"Description": "The unique identifier of a Household.",
+					"BaseAttributeReference": {
+						"Entity": "RelatedHousehold.cdm.json/RelatedHousehold",
+						"Name": "RelatedHouseholdId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PeriodStartDate",
+					"Description": "The period start date for which the household relationship is effective.",
+					"BaseAttributeReference": {
+						"Entity": "RelatedHousehold.cdm.json/RelatedHousehold",
+						"Name": "PeriodStartDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "PeriodEndDate",
+					"Description": "The period end date for which the household relationship is effective.",
+					"BaseAttributeReference": {
+						"Entity": "RelatedHousehold.cdm.json/RelatedHousehold",
+						"Name": "PeriodEndDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "RelatedHouseholdNote",
+					"Description": "A note, comment or additional information regarding the household relationship.",
+					"BaseAttributeReference": {
+						"Entity": "RelatedHousehold.cdm.json/RelatedHousehold",
+						"Name": "RelatedHouseholdNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "HouseholdRelationshipTypeId",
+					"Description": "The unique identifier of a Household Relationship Type.",
+					"BaseAttributeReference": {
+						"Entity": "RelatedHousehold.cdm.json/RelatedHousehold",
+						"Name": "HouseholdRelationshipTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/RelatedHousehold",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/RelatedHousehold",
+				"Properties": {
+					"LinkedServiceName": "wspc-dpu-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"HouseholdId\":{\"entity\":\"RelatedHousehold.cdm.json/RelatedHousehold\",\"name\":\"HouseholdId\"},\"RelatedHouseholdId\":{\"entity\":\"RelatedHousehold.cdm.json/RelatedHousehold\",\"name\":\"RelatedHouseholdId\"},\"PeriodStartDate\":{\"entity\":\"RelatedHousehold.cdm.json/RelatedHousehold\",\"name\":\"PeriodStartDate\"},\"PeriodEndDate\":{\"entity\":\"RelatedHousehold.cdm.json/RelatedHousehold\",\"name\":\"PeriodEndDate\"},\"RelatedHouseholdNote\":{\"entity\":\"RelatedHousehold.cdm.json/RelatedHousehold\",\"name\":\"RelatedHouseholdNote\"},\"HouseholdRelationshipTypeId\":{\"entity\":\"RelatedHousehold.cdm.json/RelatedHousehold\",\"name\":\"HouseholdRelationshipTypeId\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"RelatedHousehold\",\"path\":\"RelatedHousehold.cdm.json/RelatedHousehold\"},\"description\":\"The relationship of two or more Households for the associated period of time.\",\"primaryKey\":[\"HouseholdId\",\"RelatedHouseholdId\",\"PeriodStartDate\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"HouseholdId\",\"attributeReference\":{\"entity\":\"RelatedHousehold.cdm.json/RelatedHousehold\",\"name\":\"HouseholdId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"RelatedHouseholdId\",\"attributeReference\":{\"entity\":\"RelatedHousehold.cdm.json/RelatedHousehold\",\"name\":\"RelatedHouseholdId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"PeriodStartDate\",\"attributeReference\":{\"entity\":\"RelatedHousehold.cdm.json/RelatedHousehold\",\"name\":\"PeriodStartDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\"},{\"type\":\"Existing\",\"name\":\"PeriodEndDate\",\"attributeReference\":{\"entity\":\"RelatedHousehold.cdm.json/RelatedHousehold\",\"name\":\"PeriodEndDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\"},{\"type\":\"Existing\",\"name\":\"RelatedHouseholdNote\",\"attributeReference\":{\"entity\":\"RelatedHousehold.cdm.json/RelatedHousehold\",\"name\":\"RelatedHouseholdNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024},{\"type\":\"Existing\",\"name\":\"HouseholdRelationshipTypeId\",\"attributeReference\":{\"entity\":\"RelatedHousehold.cdm.json/RelatedHousehold\",\"name\":\"HouseholdRelationshipTypeId\"},\"dataType\":\"integer\"}]}}}",
+			"Description": "The relationship of two or more Households for the associated period of time.",
+			"DisplayFolderInfo": "{\"name\":\"Party\",\"colorCode\":\"#00727A\"}",
+			"PrimaryKeys": "HouseholdId,RelatedHouseholdId,PeriodStartDate",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

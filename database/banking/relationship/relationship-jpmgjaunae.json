@@ -1,0 +1,26 @@
+{
+	"name": "relationship-jpmgjaunae",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-jpmgjaunae",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Daypart",
+		"ToTableName": "TvAdvertisingEvent",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "DaypartId",
+				"ToColumnName": "DaypartId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Daypart.cdm.json/Daypart\",\"toEntity\":\"TvAdvertisingEvent.cdm.json/TvAdvertisingEvent\",\"joinPairs\":[{\"fromAttribute\":\"DaypartId\",\"toAttribute\":\"DaypartId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

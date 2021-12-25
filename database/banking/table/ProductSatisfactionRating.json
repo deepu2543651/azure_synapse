@@ -1,0 +1,160 @@
+{
+	"name": "ProductSatisfactionRating",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "ProductSatisfactionRating",
+		"Description": "The overall satisfaction rating determined for the associated  period in terms of the associated Rating Criteria.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ProductId",
+					"Description": "The unique identifier of a Product.",
+					"BaseAttributeReference": {
+						"Entity": "ProductSatisfactionRating.cdm.json/ProductSatisfactionRating",
+						"Name": "ProductId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "RatingCriteriaId",
+					"Description": "The unique identifier of a Rating Criteria.",
+					"BaseAttributeReference": {
+						"Entity": "ProductSatisfactionRating.cdm.json/ProductSatisfactionRating",
+						"Name": "RatingCriteriaId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "RatingPeriodStartDate",
+					"Description": "The period start date for which the associated Satisfaction Rating is provided.",
+					"BaseAttributeReference": {
+						"Entity": "ProductSatisfactionRating.cdm.json/ProductSatisfactionRating",
+						"Name": "RatingPeriodStartDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "RatingPeriodEndDate",
+					"Description": "The period end date for which the associated Satisfaction Rating is provided.",
+					"BaseAttributeReference": {
+						"Entity": "ProductSatisfactionRating.cdm.json/ProductSatisfactionRating",
+						"Name": "RatingPeriodEndDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "NumberOfCustomerResponses",
+					"Description": "The number of customer responses indicating the associated product satisfaction rating.",
+					"BaseAttributeReference": {
+						"Entity": "ProductSatisfactionRating.cdm.json/ProductSatisfactionRating",
+						"Name": "NumberOfCustomerResponses"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "SatisfactionRatingId",
+					"Description": "The unique identifier of a Satisfaction Rating.",
+					"BaseAttributeReference": {
+						"Entity": "ProductSatisfactionRating.cdm.json/ProductSatisfactionRating",
+						"Name": "SatisfactionRatingId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/ProductSatisfactionRating",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/ProductSatisfactionRating",
+				"Properties": {
+					"LinkedServiceName": "wspc-dpu-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ProductId\":{\"entity\":\"ProductSatisfactionRating.cdm.json/ProductSatisfactionRating\",\"name\":\"ProductId\"},\"RatingCriteriaId\":{\"entity\":\"ProductSatisfactionRating.cdm.json/ProductSatisfactionRating\",\"name\":\"RatingCriteriaId\"},\"RatingPeriodStartDate\":{\"entity\":\"ProductSatisfactionRating.cdm.json/ProductSatisfactionRating\",\"name\":\"RatingPeriodStartDate\"},\"RatingPeriodEndDate\":{\"entity\":\"ProductSatisfactionRating.cdm.json/ProductSatisfactionRating\",\"name\":\"RatingPeriodEndDate\"},\"NumberOfCustomerResponses\":{\"entity\":\"ProductSatisfactionRating.cdm.json/ProductSatisfactionRating\",\"name\":\"NumberOfCustomerResponses\"},\"SatisfactionRatingId\":{\"entity\":\"ProductSatisfactionRating.cdm.json/ProductSatisfactionRating\",\"name\":\"SatisfactionRatingId\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"ProductSatisfactionRating\",\"path\":\"ProductSatisfactionRating.cdm.json/ProductSatisfactionRating\"},\"description\":\"The overall satisfaction rating determined for the associated  period in terms of the associated Rating Criteria.\",\"primaryKey\":[\"ProductId\",\"RatingCriteriaId\",\"RatingPeriodStartDate\",\"RatingPeriodEndDate\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"ProductId\",\"attributeReference\":{\"entity\":\"ProductSatisfactionRating.cdm.json/ProductSatisfactionRating\",\"name\":\"ProductId\"},\"dataType\":\"long\"},{\"type\":\"Existing\",\"name\":\"RatingCriteriaId\",\"attributeReference\":{\"entity\":\"ProductSatisfactionRating.cdm.json/ProductSatisfactionRating\",\"name\":\"RatingCriteriaId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"RatingPeriodStartDate\",\"attributeReference\":{\"entity\":\"ProductSatisfactionRating.cdm.json/ProductSatisfactionRating\",\"name\":\"RatingPeriodStartDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\"},{\"type\":\"Existing\",\"name\":\"RatingPeriodEndDate\",\"attributeReference\":{\"entity\":\"ProductSatisfactionRating.cdm.json/ProductSatisfactionRating\",\"name\":\"RatingPeriodEndDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\"},{\"type\":\"Existing\",\"name\":\"NumberOfCustomerResponses\",\"attributeReference\":{\"entity\":\"ProductSatisfactionRating.cdm.json/ProductSatisfactionRating\",\"name\":\"NumberOfCustomerResponses\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"SatisfactionRatingId\",\"attributeReference\":{\"entity\":\"ProductSatisfactionRating.cdm.json/ProductSatisfactionRating\",\"name\":\"SatisfactionRatingId\"},\"dataType\":\"integer\"}]}}}",
+			"Description": "The overall satisfaction rating determined for the associated  period in terms of the associated Rating Criteria.",
+			"DisplayFolderInfo": "{\"name\":\"Product\",\"colorCode\":\"#0E3D73\"}",
+			"PrimaryKeys": "ProductId,RatingCriteriaId,RatingPeriodStartDate,RatingPeriodEndDate",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

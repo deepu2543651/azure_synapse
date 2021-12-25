@@ -1,0 +1,26 @@
+{
+	"name": "relationship-unmezvifvk",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-unmezvifvk",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "ProductServiceChannelFeeType",
+		"ToTableName": "ProductServiceChannelFee",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ProductServiceChannelFeeTypeId",
+				"ToColumnName": "ProductServiceChannelFeeTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"ProductServiceChannelFeeType.cdm.json/ProductServiceChannelFeeType\",\"toEntity\":\"ProductServiceChannelFee.cdm.json/ProductServiceChannelFee\",\"joinPairs\":[{\"fromAttribute\":\"ProductServiceChannelFeeTypeId\",\"toAttribute\":\"ProductServiceChannelFeeTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

@@ -1,0 +1,34 @@
+{
+	"name": "relationship-vdalvswnfj",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-vdalvswnfj",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "MarketingEventBudgetedCostItem",
+		"ToTableName": "MarketingEventIncurredCostItem",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "BudgetId",
+				"ToColumnName": "BudgetId"
+			},
+			{
+				"FromColumnName": "CostItemId",
+				"ToColumnName": "CostItemId"
+			},
+			{
+				"FromColumnName": "MarketingEventId",
+				"ToColumnName": "MarketingEventId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"MarketingEventBudgetedCostItem.cdm.json/MarketingEventBudgetedCostItem\",\"toEntity\":\"MarketingEventIncurredCostItem.cdm.json/MarketingEventIncurredCostItem\",\"joinPairs\":[{\"fromAttribute\":\"BudgetId\",\"toAttribute\":\"BudgetId\"},{\"fromAttribute\":\"CostItemId\",\"toAttribute\":\"CostItemId\"},{\"fromAttribute\":\"MarketingEventId\",\"toAttribute\":\"MarketingEventId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

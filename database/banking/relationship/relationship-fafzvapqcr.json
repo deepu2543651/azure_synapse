@@ -1,0 +1,26 @@
+{
+	"name": "relationship-fafzvapqcr",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "relationship-fafzvapqcr",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "AdvertisingCampaign",
+		"ToTableName": "AdvertisingEvent",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "AdvertisingCampaignId",
+				"ToColumnName": "AdvertisingCampaignId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"AdvertisingCampaign.cdm.json/AdvertisingCampaign\",\"toEntity\":\"AdvertisingEvent.cdm.json/AdvertisingEvent\",\"joinPairs\":[{\"fromAttribute\":\"AdvertisingCampaignId\",\"toAttribute\":\"AdvertisingCampaignId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

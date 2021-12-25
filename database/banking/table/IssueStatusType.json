@@ -1,0 +1,112 @@
+{
+	"name": "IssueStatusType",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "banking"
+		},
+		"Name": "IssueStatusType",
+		"Description": "The type of Issue Status that may be applied to an Issue.\n\nEx:\n-  Received Not Assigned\n-  Received Assigned Status\n-  Resolved/Pending Close\n-  Open\n-  Closed\n-  Unknown\n-  N/A",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "IssueStatusTypeId",
+					"Description": "The unique identifier of a Issue Status Type.",
+					"BaseAttributeReference": {
+						"Entity": "IssueStatusType.cdm.json/IssueStatusType",
+						"Name": "IssueStatusTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "IssueStatusTypeName",
+					"Description": "The name of a Issue Status Type.",
+					"BaseAttributeReference": {
+						"Entity": "IssueStatusType.cdm.json/IssueStatusType",
+						"Name": "IssueStatusTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "IssueStatusTypeDescription",
+					"Description": "The description of a Issue Status Type.",
+					"BaseAttributeReference": {
+						"Entity": "IssueStatusType.cdm.json/IssueStatusType",
+						"Name": "IssueStatusTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/IssueStatusType",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dpu@adlsgen2deepu.dfs.core.windows.net/dpu_json_test/IssueStatusType",
+				"Properties": {
+					"LinkedServiceName": "wspc-dpu-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"IssueStatusTypeId\":{\"entity\":\"IssueStatusType.cdm.json/IssueStatusType\",\"name\":\"IssueStatusTypeId\"},\"IssueStatusTypeName\":{\"entity\":\"IssueStatusType.cdm.json/IssueStatusType\",\"name\":\"IssueStatusTypeName\"},\"IssueStatusTypeDescription\":{\"entity\":\"IssueStatusType.cdm.json/IssueStatusType\",\"name\":\"IssueStatusTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"IssueStatusType\",\"path\":\"IssueStatusType.cdm.json/IssueStatusType\"},\"description\":\"The type of Issue Status that may be applied to an Issue.\\n\\nEx:\\n-  Received Not Assigned\\n-  Received Assigned Status\\n-  Resolved/Pending Close\\n-  Open\\n-  Closed\\n-  Unknown\\n-  N/A\",\"primaryKey\":[\"IssueStatusTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"IssueStatusTypeId\",\"attributeReference\":{\"entity\":\"IssueStatusType.cdm.json/IssueStatusType\",\"name\":\"IssueStatusTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"IssueStatusTypeName\",\"attributeReference\":{\"entity\":\"IssueStatusType.cdm.json/IssueStatusType\",\"name\":\"IssueStatusTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"IssueStatusTypeDescription\",\"attributeReference\":{\"entity\":\"IssueStatusType.cdm.json/IssueStatusType\",\"name\":\"IssueStatusTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512}]}}}",
+			"Description": "The type of Issue Status that may be applied to an Issue.\n\nEx:\n-  Received Not Assigned\n-  Received Assigned Status\n-  Resolved/Pending Close\n-  Open\n-  Closed\n-  Unknown\n-  N/A",
+			"DisplayFolderInfo": "{\"name\":\"Customer Service & Contact Management\",\"colorCode\":\"#Ef6950\"}",
+			"PrimaryKeys": "IssueStatusTypeId",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

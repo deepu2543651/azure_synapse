@@ -1,0 +1,36 @@
+{
+	"name": "RestResource1",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "RestService1Airqualitu",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"api-key": {
+				"type": "string",
+				"defaultValue": "579b464db66ec23bdd000001cdd3946e44ce4aad7209ff7b23ac571b"
+			},
+			"format": {
+				"type": "string",
+				"defaultValue": "json"
+			},
+			"offset": {
+				"type": "string",
+				"defaultValue": "0"
+			},
+			"limit": {
+				"type": "string",
+				"defaultValue": "10"
+			}
+		},
+		"annotations": [],
+		"type": "RestResource",
+		"typeProperties": {
+			"relativeUrl": {
+				"value": "@dataset().api-key",
+				"type": "Expression"
+			}
+		},
+		"schema": []
+	}
+}

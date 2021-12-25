@@ -1,0 +1,24 @@
+{
+	"name": "airquality",
+	"properties": {
+		"type": "MappingDataFlow",
+		"typeProperties": {
+			"sources": [
+				{
+					"dataset": {
+						"referenceName": "RestResource1",
+						"type": "DatasetReference"
+					},
+					"name": "source1"
+				}
+			],
+			"sinks": [],
+			"transformations": [
+				{
+					"name": "Flatten1"
+				}
+			],
+			"script": "source(allowSchemaDrift: false,\n\tvalidateSchema: false,\n\thttpMethod: 'GET',\n\ttimeout: 30,\n\trequestInterval: 0,\n\tpaginationRules: ['supportRFC5988' -> 'true'],\n\tresponseFormat: ['type' -> 'json', 'documentForm' -> 'documentPerLine']) ~> source1\nsource1 foldDown(unroll(),\n\tskipDuplicateMapInputs: false,\n\tskipDuplicateMapOutputs: false) ~> Flatten1"
+		}
+	}
+}
